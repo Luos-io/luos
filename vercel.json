@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/app/*",
+      "source": "/app(.*)",
       "has": [
         {
           "type": "host",

@@ -10,7 +10,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md,mdx}\""
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx}\""
   },
   "devDependencies": {
     "eslint-config-custom": "latest",
@@ -18,7 +18,7 @@
     "turbo": "latest"
   },
   "engines": {
-    "npm": ">=7.0.0",
+    "yarn": ">=1.0.0",
     "node": ">=16.0.0"
   },
   "dependencies": {},

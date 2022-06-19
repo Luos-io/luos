@@ -1,7 +1,13 @@
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
-  extends: ["next", "prettier"],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+  ],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
   rules: {
-    "@next/next/no-html-link-for-pages": "off",
-    "react/jsx-key": "off",
+    'react/jsx-key': 'off',
   },
 };

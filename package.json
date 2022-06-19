@@ -13,6 +13,7 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx}\""
   },
   "devDependencies": {
+    "eslint": "latest",
     "eslint-config-custom": "latest",
     "prettier": "latest",
     "turbo": "latest"

@@ -1,0 +1,19 @@
+#layout_content_wrapper {
+  width: 100%;
+}
+
+.notificationWrapper {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 0 16px;
+
+  .notificationMessageWrapper {
+    margin-left: 16px;
+    font-size: 1.2rem;
+
+    p > span {
+      font-size: 1rem;
+    }
+  }
+}

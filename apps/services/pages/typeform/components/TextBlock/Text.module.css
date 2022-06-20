@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  margin: 0px 0px 25px;
+}
+@media screen and (max-width: 1023px) {
+  .mobileNone {
+    display: none;
+  }
+  .desktopNone {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mobileNone {
+    display: block;
+  }
+  .desktopNone {
+    display: none;
+  }
+}
+
+.title {
+  text-align: center;
+  margin: 0;
+  font-family: 'Roboto Mono', sans-serif;
+}

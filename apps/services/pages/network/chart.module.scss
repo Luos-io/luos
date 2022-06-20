@@ -1,0 +1,44 @@
+.titleContainer {
+  text-align: center;
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  border-bottom: 1px solid #a8a8a8;
+}
+
+.titleText {
+  margin-top: -20px;
+  display: block;
+}
+
+.titleImg {
+  display: block;
+  float: left;
+}
+
+.nodePropertiesContainer {
+  border-bottom: 1px solid #a8a8a8;
+  text-align: left;
+}
+
+.nodePropertiesTitle {
+  margin: 10px 5px 25px;
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.status {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-size: 12px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  color: #a8a8a8;
+}
+
+.value {
+  font-size: 12px;
+}

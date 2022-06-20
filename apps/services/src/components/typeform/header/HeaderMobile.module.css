@@ -1,0 +1,73 @@
+@media screen and (max-width: 1023px) {
+  .desktopNone {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .desktopNone {
+    display: none;
+  }
+}
+
+.navBar {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  min-height: 90px;
+  padding: 10px 50px;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+  background-color: #161616;
+}
+
+.brand {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  float: left;
+}
+
+.menu {
+  margin: 20px 0px;
+  float: right;
+  color: white;
+}
+
+.burger {
+  transform: scaleX(-1) rotate(270deg);
+  width: 20px;
+}
+
+.content {
+  margin-top: 65px;
+  width: 100%;
+  background-color: #161616;
+  height: 100%;
+  z-index: 9999999999999;
+  position: fixed;
+  transition-duration: 4s;
+}
+
+.navLink {
+  text-align: center;
+  display: block;
+  font-family: 'Roboto Mono', sans-serif;
+  color: #fff;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  padding: 20px 0px;
+}
+
+.support {
+  border-style: solid;
+  border-color: #75dbc7;
+  margin-bottom: 20px;
+}
+
+.isItForMe {
+  background-color: #75dbc7;
+  color: #161616;
+  border-style: solid;
+  border-color: #75dbc7;
+}

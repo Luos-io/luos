@@ -1,0 +1,95 @@
+.profile {
+  margin: 1rem auto;
+  width: 80%;
+  max-width: 820px;
+
+  .profileTitle {
+    margin: 1rem 6rem 0 6rem;
+    font-size: 1.75rem;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .profileSubTitle {
+    margin: 0.5rem 3rem 0 3rem;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    color: #5f6368;
+  }
+
+  .sections {
+    width: 100%;
+    margin: 0.5rem 0 0 0;
+    border-radius: 0.5rem;
+    border: 1px solid #dadce0;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .section {
+      &::before {
+        opacity: 1;
+      }
+
+      .sectionTitle {
+        font-size: 1.25rem;
+        font-weight: 400;
+      }
+
+      .sectionContent {
+        .sectionContentList {
+          padding: 0 8px;
+          border: 1px solid rgba(0, 0, 0, 0.12);
+          border-radius: 4px;
+
+          .sectionContentListItem {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            .sectionContentListItemAvatar {
+              display: inline-flex;
+              align-items: center;
+
+              & > img {
+                margin: 0 auto;
+              }
+
+              .sectionContentListItemAvatarIcon {
+                width: calc(100% - 5px);
+                text-align: center;
+              }
+            }
+
+            .sectionContentListItemButton {
+              width: 4rem;
+            }
+          }
+
+          .sectionContentListItemAdd {
+            display: inline-flex;
+            justify-content: center;
+            border-bottom: none;
+          }
+        }
+
+        .sectionContentRow {
+          border-top: 1px solid #dadce0;
+          padding: 1rem 1rem 0 1rem;
+        }
+      }
+
+      .sectionKey {
+        font-size: 0.75rem;
+        font-weight: 500;
+        line-height: 1rem;
+        text-transform: uppercase;
+      }
+      .sectionValue {
+        font-size: 1rem;
+      }
+    }
+  }
+}

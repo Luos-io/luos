@@ -1,0 +1,24 @@
+@import 'src/styles/variables.scss';
+
+.carouselItem {
+  background-color: transparent;
+  color: $white;
+  font-family: 'Roboto Mono';
+}
+
+.textContainer {
+  width: 90%;
+  margin: 10px auto;
+  display: block;
+  text-align: left;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+}

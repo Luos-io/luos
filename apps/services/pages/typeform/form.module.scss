@@ -1,0 +1,154 @@
+.main {
+  margin-top: 25px;
+  padding: 5rem 0 2rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainForm {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.containerContent {
+  width: 75%;
+}
+
+.containerContent h1 {
+  margin-bottom: 60px;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.containerContent p {
+  line-height: 30px;
+  margin-bottom: 20px;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.input {
+  width: 100%;
+  padding-bottom: 10px !important;
+}
+
+.textInput {
+  display: block;
+}
+.textInput div {
+  width: 100% !important;
+}
+
+.textInput input {
+  width: 100% !important;
+}
+
+.send {
+  width: 10%;
+  float: right;
+  background-color: #75dbc7 !important;
+}
+
+.send:hover {
+  background-color: #161616 !important;
+  color: #bd99ff !important;
+}
+
+.socialBtn {
+  color: #fff !important;
+  font-family: 'Roboto Mono', sans-serif !important;
+  width: 160px !important;
+  margin: 15px 20px !important;
+  text-transform: none !important;
+  border-radius: 0% !important;
+  font-size: 18px !important;
+}
+
+.socialBtn:hover {
+  background-color: #161616 !important;
+  color: #bd99ff !important;
+}
+
+.discord {
+  background-color: #7289da !important;
+}
+
+.slack {
+  background-color: #4a154b !important;
+}
+
+.reddit {
+  background-color: #ff5700 !important;
+}
+
+.forum {
+  background-color: #74dbc6 !important;
+}
+
+.form {
+  width: 100%;
+  height: 85vh;
+}
+
+@media screen and (max-width: 1023px) {
+  .form {
+    width: 100%;
+    height: 65vh;
+    position: initial;
+  }
+}
+
+.title {
+  margin: 25px 0px;
+  font-family: 'Roboto Mono', sans-serif;
+  z-index: 999;
+  text-align: center;
+}
+
+.btnContainer {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.btnContainer i {
+  margin-right: 15px;
+}
+
+.mention {
+  margin-top: 0;
+  font-size: 10px;
+  line-height: normal !important;
+}
+
+.successMessage {
+  margin-bottom: 15px;
+}
+
+.nickname {
+  text-transform: capitalize;
+}
+
+.diagnosis {
+  font-weight: bold;
+}
+
+.habits {
+  margin-top: 100px;
+}
+
+.habits a {
+  cursor: pointer;
+  color: #aa8be4;
+}
+
+@media screen and (max-width: 1023px) {
+  .habits {
+    margin-top: 50px;
+  }
+}

@@ -1,0 +1,58 @@
+@import 'src/styles/variables.scss';
+
+.navBar {
+  background-color: #323334 !important;
+  font-family: 'Roboto Mono';
+
+  .MuiIconButton-root {
+    padding: 0px !important;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: capitalize;
+    padding: 0 16px;
+  }
+
+  a:hover {
+    color: $purple;
+  }
+}
+
+.logout {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.themeContainer {
+  margin: 15px;
+}
+
+.dropdown {
+  color: white !important;
+  text-transform: capitalize !important;
+  font-family: 'Roboto Mono' !important;
+  font-size: 16px !important;
+  padding: 0 16px;
+}
+
+.dropdown:hover {
+  color: $purple !important;
+  background-color: transparent !important;
+  cursor: pointer !important;
+}
+
+.dropdownLink {
+  font-family: 'Roboto Mono' !important;
+  color: $white !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  text-transform: capitalize !important;
+}
+
+.dropdownLink:hover {
+  color: $purple !important;
+}

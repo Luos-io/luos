@@ -1,0 +1,50 @@
+@import 'src/styles/variables.scss';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $purple !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button:hover {
+  color: $purple;
+}
+
+button a {
+  font-family: 'Roboto Mono' !important;
+}
+
+.MuiIconButton-root {
+  padding: 0 !important;
+}
+
+.Mui-selected {
+  color: $purple !important;
+}
+
+.MuiTabs-indicator {
+  background-color: $purple !important;
+}
+
+.MuiMenuItem-root {
+  background-color: transparent !important;
+}
+
+.dropdownMenu {
+  background-color: #323334;
+}

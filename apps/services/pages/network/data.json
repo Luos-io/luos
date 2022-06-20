@@ -1,0 +1,41 @@
+{
+  "protocol": 0,
+  "target": 0,
+  "mode": 0,
+  "source": 3,
+  "command": 61,
+  "size": 242,
+  "nodes": [
+    {
+      "ID": 1,
+      "certificate": false,
+      "portTable": [2, 65535],
+      "load": 0.35,
+      "services": [
+        { "ID": 1, "type": 1, "access": 0, "alias": "gate" },
+        { "ID": 2, "type": 10, "access": 0, "alias": "Pipe" }
+      ]
+    },
+    {
+      "ID": 2,
+      "certificate": false,
+      "portTable": [3, 1],
+      "load": 0.65,
+      "services": []
+    },
+    {
+      "ID": 3,
+      "certificate": false,
+      "portTable": [4, 2],
+      "load": 0.5,
+      "services": []
+    },
+    {
+      "ID": 4,
+      "certificate": false,
+      "portTable": [65535, 3],
+      "load": 0.1,
+      "services": []
+    }
+  ]
+}

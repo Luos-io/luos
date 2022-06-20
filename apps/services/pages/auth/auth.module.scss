@@ -1,0 +1,115 @@
+@import 'src/styles/variables.scss';
+
+.auth {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+  min-height: 500px;
+  font-family: 'Roboto Mono';
+  text-align: center;
+  border-radius: 2px;
+  i {
+    margin-left: 5px;
+  }
+
+  &__box {
+    width: 40%;
+    text-align: center;
+    &__form {
+      &__button {
+        height: 35px;
+        margin: 15px auto;
+        width: 80%;
+        font-family: 'Roboto';
+
+        &__sso {
+          font-family: 'Roboto';
+          color: white !important;
+          border: 1px solid $gray !important;
+          background-color: $gray !important;
+          height: 45px;
+          margin: 15px auto !important;
+          width: 80%;
+        }
+      }
+
+      &__button__sso:hover {
+        color: $gray !important;
+        background-color: white !important;
+      }
+      &__login {
+        margin-top: 15px !important;
+      }
+    }
+    &__blue {
+      background-color: $dark-blue;
+      width: 60%;
+    }
+  }
+}
+
+.carouselItem {
+  background-color: transparent;
+  color: $white;
+  font-family: 'Roboto Mono';
+
+  span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+}
+
+.separator {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.separator > span {
+  position: relative;
+  display: inline-block;
+  color: #e6e6e6;
+}
+
+.separator > span:before,
+.separator > span:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 90px;
+  height: 3px;
+  background: #e6e6e6;
+}
+
+.separator > span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.separator > span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+.signupContainer {
+  width: 270px;
+  margin: 0 auto;
+  text-align: end;
+}
+.signupLink {
+  font-size: 12px;
+
+  a:hover {
+    color: $purple;
+  }
+}
+
+.typo {
+  margin: 10px 0px;
+  font-size: 12px;
+}
+.sucessLink {
+  text-decoration: underline #1d4620;
+}

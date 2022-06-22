@@ -4,6 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+/*eslint-env browser*/
 import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
@@ -18,15 +19,9 @@ import dataTuto from '../../components/school/index/data/dataIntro.json';
 function Footer() {
   const { isDarkTheme } = useColorMode();
   const { footer } = useThemeConfig();
-  const { copyright, links = [], logo = {} } = footer || {};
-
-  if (!footer) {
-    return null;
-  }
-
+  const { copyright } = footer || {};
   const lastBlogPosts = recentPosts.items.slice(0, 2);
   const lastTuto = dataTuto.tuto.slice(-2);
-
   const [lastCommits, setLastCommits] = useState([]);
 
   useEffect(() => {
@@ -36,6 +31,10 @@ function Footer() {
         setLastCommits(result.slice(0, 3));
       });
   }, []);
+
+  if (!footer) {
+    return null;
+  }
 
   return (
     <footer className={clsx('footer')} style={{ padding: '50px' }}>

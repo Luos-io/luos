@@ -12,6 +12,9 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx}\""
   },
+  "resolutions": {
+    "@types/react": "17.0.43"
+  },
   "devDependencies": {
     "eslint": "latest",
     "eslint-config-custom": "latest",

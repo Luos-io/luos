@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
+    "dev": "dotenv -- turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx}\""
   },
@@ -25,6 +25,9 @@
     "yarn": ">=1.0.0",
     "node": ">=16.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dotenv-cli": "^5.1.0",
+    "dotenv-vault": "^1.8.0"
+  },
   "packageManager": "yarn@1.22.19"
 }

@@ -31,6 +31,7 @@ yarn-error.log*
 .env*
 !.env.example
 !.env.project
+!.env.vault
 
 # turbo
 .turbo

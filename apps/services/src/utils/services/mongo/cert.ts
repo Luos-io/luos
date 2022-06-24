@@ -1,7 +1,5 @@
 import crypto from 'crypto';
 
-console.log('TEST', process.env);
-
 const { VERCEL_ENV, SERVICE_ENCRYPTION_KEY, SERVICE_ENCRYPTION_IV } = process.env;
 
 if (!SERVICE_ENCRYPTION_KEY || !SERVICE_ENCRYPTION_IV) {

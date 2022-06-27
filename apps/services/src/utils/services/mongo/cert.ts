@@ -9,7 +9,7 @@ const {
 
 console.log('src/utils/services/mongo/cert, TEST', process.env);
 console.log('src/utils/services/mongo/cert, TEST1-1', SERVICE_ENCRYPTION_KEY);
-console.log('src/utils/services/mongo/cert, TEST1-2', process.env.SERVICES_ENCRYPTION_KEY);
+console.log('src/utils/services/mongo/cert, TEST1-2', process.env.SERVICE_ENCRYPTION_KEY);
 console.log('src/utils/services/mongo/cert, TEST2-1', NEXT_PUBLIC_EMAILJS_SERVICE_ID);
 console.log('src/utils/services/mongo/cert, TEST2-2', process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
 

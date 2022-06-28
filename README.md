@@ -1,9 +1,9 @@
 <p align="center">
   <a href="https://luos.io">
-    <img src="https://uploads-ssl.webflow.com/601a78a2b5d030260a40b7ad/603e0cc45afbb50963aa85f2_Gif%20noir%20rect.gif" alt="Luos logo" title="Luos" align="center" height="128" />
+    <img src="https://www.luos.io/img/logo_luos_animated_white.gif" alt="Luos logo" title="Luos" align="center" height="100" />
   </a>
 </p>
-
+<br />
 <p align="center">
   <a aria-label="Luos Discord badge" href="https://discord.gg/luos">
     <img src="https://img.shields.io/discord/902486791658041364?color=be99ff&label=Discord&style=flat-square">

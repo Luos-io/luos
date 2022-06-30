@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongodb';
 
 import { withAuth } from 'utils/services/auth';
-import mongoClient from 'utils/services/mongo/mongodbAdapter';
+import mongoClient from '@packages/services/mongo/mongodbAdapter';
 
 import type {
   GetServerSideProps,

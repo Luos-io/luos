@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { InferGetServerSidePropsType } from 'next';
-import { IncomingRequest } from 'next-auth';
 import { BuiltInProviderType } from 'next-auth/providers';
 import { getProviders, LiteralUnion, signIn, SignInOptions } from 'next-auth/react';
 import Button from '@mui/material/Button';
@@ -15,6 +14,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
 import Carousel from 'components/carousel/carousel';
+
+import type { GetServerSidePropsContext } from 'next/types';
 
 import type { SignInErrorTypes } from 'types/auth';
 
@@ -76,7 +77,7 @@ export const SignIn = ({
   const handleLogin =
     (provider: LiteralUnion<BuiltInProviderType, string>, dataForm?: Form) => () => {
       const defaultSignInOptions: SignInOptions = {
-        callbackUrl: callbackUrl || '/',
+        callbackUrl: Array.isArray(callbackUrl) ? callbackUrl[0] : callbackUrl,
       };
       if (provider === 'email') {
         signIn(provider, {
@@ -165,14 +166,13 @@ export const SignIn = ({
 };
 export default SignIn;
 
-export const getServerSideProps = async ({ query }: { query?: IncomingRequest['query'] }) => {
+export const getServerSideProps = async ({ query }: GetServerSidePropsContext) => {
   const providers = await getProviders();
-
   return {
     props: {
       providers,
-      callbackUrl: query?.callbackUrl ? query.callbackUrl : null,
-      error: query?.error ? (query.error as SignInErrorTypes) : null,
+      callbackUrl: query.callbackUrl || '/',
+      error: query.error as SignInErrorTypes,
     },
   };
 };

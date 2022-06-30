@@ -20,12 +20,12 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 import Image from 'next/image';
-import { IncomingRequest, User } from 'next-auth';
+import { RequestInternal, User } from 'next-auth';
 import { getProviders, getSession, signIn } from 'next-auth/react';
 import React, { useContext, useEffect, useState } from 'react';
 
 import { NotificationsContext } from 'utils/contexts';
-import mongoClient from 'utils/services/mongo/mongodbAdapter';
+import mongoClient from '@packages/services/mongo/mongodbAdapter';
 import withUserAccounts from 'utils/services/mongo/withUserAccounts';
 import withUserBadges, { WithUserBadgesResult } from 'utils/services/mongo/withUserBadges';
 
@@ -63,14 +63,14 @@ export const Profile = ({
       const notNotifiedBadges = game.badges.filter((t: Badge) => !t.notified);
       addNotifications(
         notNotifiedBadges.map((b) => ({
-          id: b._id,
+          id: b._id.toString(),
           message: (
             <span>
               You have unlocked: <b>{b.name}</b> badge !
             </span>
           ),
           image: b.image,
-          timestamp: new Date().getTime(),
+          timestamp: new Date().getTime().toString(),
         })),
       );
     }
@@ -362,7 +362,7 @@ export default Profile;
 export const getServerSideProps = withUserBadges(
   withUserAccounts(async (ctx: GetServerSidePropsContext) => {
     // Handle signin errors
-    const { query }: { query?: IncomingRequest['query'] } = ctx;
+    const { query }: { query?: RequestInternal['query'] } = ctx;
 
     const providers = await getProviders();
     const session = await getSession(ctx);

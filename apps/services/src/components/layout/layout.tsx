@@ -31,7 +31,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
   const displayNotification =
     notifications && notifications.length > 1
       ? {
-          id: new Date().getTime(),
+          id: new Date().getTime().toString(),
           message: (
             <p>
               You have unlocked {notifications.length} new badges!

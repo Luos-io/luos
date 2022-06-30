@@ -1,6 +1,6 @@
 import { getToken } from 'next-auth/jwt';
 
-import mongoClient from 'utils/services/mongo/mongodbAdapter';
+import mongoClient from '@packages/services/mongo/mongodbAdapter';
 
 import type { NextApiRequest, NextApiResponse } from 'next/types';
 

@@ -6,7 +6,7 @@ import DiscordProvider from 'next-auth/providers/discord';
 import EmailProvider from 'next-auth/providers/email';
 import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
 
-import mongoClient from 'utils/services/mongo/mongodbAdapter';
+import mongoClient from '@packages/services/mongo/mongodbAdapter';
 
 import type { Badge, UserExtended, UserBadge } from 'types/user';
 

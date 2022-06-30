@@ -1,4 +1,3 @@
-import { ObjectId } from 'mongodb';
 import { createContext, ReactElement, useState, useCallback } from 'react';
 
 import { useInterval } from 'utils/hooks';
@@ -9,18 +8,18 @@ const INTERVAL = 1000;
 const DEFAULT_TIMEOUT = 8000;
 
 export interface Notification {
-  id: ObjectId;
+  id: string;
   message: string | ReactElement;
   variant?: AlertColor;
   image?: string;
   timeout?: number;
-  timestamp: number;
+  timestamp: string;
 }
 
 type NotificationsContextType = {
   notifications: Notification[];
   addNotifications: (notifications: Notification[]) => void;
-  removeNotifications: (url: string, ids: ObjectId[]) => void;
+  removeNotifications: (url: string, ids: string[]) => void;
 };
 
 export const NotificationsContext = createContext<NotificationsContextType>({
@@ -40,12 +39,12 @@ export const NotificationsProvider: INotificationsProvider = ({ children }) => {
 
   const addNotifications = useCallback(
     (newNotifications: Notification[]) => {
-      const timestamp = new Date().getTime();
+      const timestamp = new Date().getTime().toString();
       setNotifications([
         ...notifications,
         ...newNotifications.map((n) => ({
           ...n,
-          id: n.id || timestamp,
+          id: n.id || timestamp.toString(),
           variant: n.variant || 'success',
           image: n.image || 'default.png',
           timeout: n.timeout || DEFAULT_TIMEOUT,
@@ -56,7 +55,7 @@ export const NotificationsProvider: INotificationsProvider = ({ children }) => {
     [notifications, setNotifications],
   );
   const removeNotifications = useCallback(
-    (url, ids: ObjectId[]) => {
+    (url, ids: string[]) => {
       ids.map((id) => {
         const currentNotificationIndex = notifications.findIndex(
           (n) => n.id.toString() === id.toString(),
@@ -85,9 +84,9 @@ export const NotificationsProvider: INotificationsProvider = ({ children }) => {
       (currentTime: any) => {
         if (notifications.length) {
           const expiredIds = notifications.reduce((acc, n) => {
-            const isExpired = n.timestamp <= currentTime - (n.timeout || DEFAULT_TIMEOUT);
+            const isExpired = parseInt(n.timestamp) <= currentTime - (n.timeout || DEFAULT_TIMEOUT);
             return isExpired && n.timeout !== null ? acc.concat(n.id) : acc;
-          }, [] as ObjectId[]);
+          }, [] as string[]);
           if (expiredIds.length > 0) {
             removeNotifications(`/api/db/updateUserBadge`, expiredIds);
           }

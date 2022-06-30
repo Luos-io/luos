@@ -1,0 +1,12 @@
+{
+  "extends": "tsconfig/nextjs.json",
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "mongo/*": ["mongo/*"]
+    },
+    "typeRoots": ["node_modules/@types", "src/types"]
+  },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts"]
+}

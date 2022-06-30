@@ -37,7 +37,7 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
       const notNotifiedBadges = game.badges.filter((t: Badge) => !t.notified);
       addNotifications(
         notNotifiedBadges.map((b) => ({
-          id: b._id,
+          id: b._id.toString(),
           message: (
             <p>
               You have unlocked: <b>{b.name}</b> badge !
@@ -46,7 +46,7 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
             </p>
           ),
           image: b.image,
-          timestamp: new Date().getTime(),
+          timestamp: new Date().getTime().toString(),
         })),
       );
     }

@@ -1,77 +1,50 @@
-# Turborepo starter
+<p align="center">
+  <a href="https://luos.io">
+    <img src="https://www.luos.io/img/logo_luos_animated_white.gif" alt="Luos logo" title="Luos" align="center" height="100" />
+  </a>
+</p>
+<br />
+<p align="center">
+  <a aria-label="Luos Discord badge" href="https://discord.gg/luos">
+    <img src="https://img.shields.io/discord/902486791658041364?color=be99ff&label=Discord&style=flat-square">
+  </a>
+   <a aria-label="Luos Reddit follow badge" href="https://www.reddit.com/r/Luos">
+    <img src="https://img.shields.io/reddit/subreddit-subscribers/Luos?color=be99ff&label=Reddit&style=flat-square">
+  </a>
+  <a aria-label="Luos Twitter follow badge" href="https://twitter.com/intent/follow">
+    <img src="https://img.shields.io/twitter/follow/Luos_io?color=be99ff&label=Twitter&style=flat-square">
+  </a>
+  <a aria-label="Luos LinkedIn share badge" href="https://linkedin.com/company/luos">
+    <img src="https://img.shields.io/badge/LinkedIn-Share-0077B5?color=be99ff&label=LinkedIn&style=flat-square">
+  </a>
+</p>
 
-This is an official Yarn v1 starter turborepo.
+# Luos Technology
 
-## What's inside?
+## The most for the developer​
 
-This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
+Luos provides a simple way to think your hardware products as a group of independant features. You can easily manage and share your hardware products' features with your team, external developers, or with the community. Luos is an open-source lightweight library that can be used on any MCU, leading to free and fast multi-electronic-boards products development. Choosing Luos to design a product will help you to develop, debug, validate, monitor, and manage it from the cloud.
 
-### Apps and Packages
+## The most for the community​
 
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+Most of the embedded developments are made from scratch. By using Luos, you will be able to capitalize on the development you, your company, or the Luos community already did. The re-usability of features encapsulated in Luos services will fasten the time your products reach the market and reassure the robustness and the universality of your applications.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+- → Join the [Luos Discord Community](http://bit.ly/JoinLuosDiscord)
+- → Join the [Luos Reddit Community](http://bit.ly/JoinLuosReddit)
 
-### Utilities
+Need dedicated help with your project? Check out [Luos' support packages](https://discord.com/invite/luos).
 
-This turborepo has some additional tools already setup for you:
+## Good practices with Luos​
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+Luos proposes organized and effective development practices, guaranteeing development flexibility and evolutivity of your hardware product, from the idea to the maintenance of the industrialized product fleet.
 
-## Setup
+## Let's do this​
 
-This repository is used in the `npx create-turbo` command, and selected when choosing which package manager you wish to use with your monorepo (Yarn).
+This section details the features of Luos technology as an embedded development platform, following these subjects:
 
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-yarn run build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-yarn run dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching (Beta)](https://turborepo.org/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching (Beta) you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Pipelines](https://turborepo.org/docs/core-concepts/pipelines)
-- [Caching](https://turborepo.org/docs/core-concepts/caching)
-- [Remote Caching (Beta)](https://turborepo.org/docs/core-concepts/remote-caching)
-- [Scoped Tasks](https://turborepo.org/docs/core-concepts/scopes)
-- [Configuration Options](https://turborepo.org/docs/reference/configuration)
-- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
+- Let's test through the [Luos get started](https://docs.luos.io/tutorials/get-started), to build, flash, run, and control your very first Luos code.
+- The [Basics of Luos](https://docs.luos.io/docs/luos-technology/basics/), explaining the general concepts and the project organization.
+- Definition of [Nodes](https://docs.luos.io/docs/luos-technology/node/), and the relation between Luos and the physical world.
+- Definition of [Packages](https://docs.luos.io/docs/luos-technology/package/), and how to make a portable and reusable development.
+- Definition of [Services](https://docs.luos.io/docs/luos-technology/services/), how to create and declare features in your product.
+- Definition of [Messages](https://docs.luos.io/docs/luos-technology/message/), when, why, and how to handle them, explaining the more advanced features of Luos.

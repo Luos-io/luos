@@ -22,12 +22,15 @@ if (VERCEL_ENV === 'development') {
   // In development mode, use a global variable so that the value
   // is preserved across module reloads caused by HMR (Hot Module Replacement).
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   if (!global._mongoClientPromise) {
     client = new MongoClient(MONGODB_URI, options);
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     global._mongoClientPromise = client.connect();
   }
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   clientPromise = global._mongoClientPromise;
 } else {
   // In production mode, it's best to not use a global variable.

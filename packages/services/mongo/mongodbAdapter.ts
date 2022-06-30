@@ -21,10 +21,13 @@ const options: MongoClientOptions = {
 if (VERCEL_ENV === 'development') {
   // In development mode, use a global variable so that the value
   // is preserved across module reloads caused by HMR (Hot Module Replacement).
+  // @ts-ignore
   if (!global._mongoClientPromise) {
     client = new MongoClient(MONGODB_URI, options);
+    // @ts-ignore
     global._mongoClientPromise = client.connect();
   }
+  // @ts-ignore
   clientPromise = global._mongoClientPromise;
 } else {
   // In production mode, it's best to not use a global variable.

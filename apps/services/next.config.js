@@ -2,6 +2,8 @@
 const withTM = require('next-transpile-modules')(['@packages/services', '@packages/ui']);
 const result = require('dotenv').config();
 
+console.log('NEXT-CONFIG env', result.parsed);
+
 /** @type {import('next').NextConfig} */
 module.exports = withTM({
   reactStrictMode: true,

@@ -20,7 +20,7 @@ module.exports = function (context) {
     );
   }
 
-  const isProd = process.env.NODE_ENV === 'production';
+  const isProd = process.env.VERCEL_ENV === 'production';
 
   return {
     name: 'docusaurus-plugin-hotjar',

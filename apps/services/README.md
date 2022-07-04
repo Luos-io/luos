@@ -37,7 +37,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 Create a copy of the `.env.example` file and fillup variables like :
 
-- NODE_ENV: [String] 'development' | 'production'
 - DEBUG: [Boolean] Enable maximum verbosity of logs
 - GITHUB_CLIENT_ID: [String] ID of the Luos' GitHub OAuth App
 - GITHUB_CLIENT_SECRET: [String] Secret of the Luos' GitHub OAuth App

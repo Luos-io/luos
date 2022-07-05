@@ -10,31 +10,16 @@ import mongoClient from '@packages/services/mongo/mongodbAdapter';
 
 import type { Badge, UserExtended, UserBadge } from 'types/user';
 
-const {
-  DEBUG,
-  GITHUB_CLIENT_ID,
-  GITHUB_CLIENT_SECRET,
-  GOOGLE_CLIENT_ID = '',
-  GOOGLE_CLIENT_SECRET = '',
-  DISCORD_CLIENT_ID = '',
-  DISCORD_CLIENT_SECRET = '',
-  EMAIL_SERVER_HOST,
-  EMAIL_SERVER_PORT,
-  EMAIL_SERVER_USER,
-  EMAIL_SERVER_PASSWORD,
-  EMAIL_FROM,
-} = process.env;
-
 export default NextAuth({
-  debug: DEBUG ?? false,
+  debug: process.env.DEBUG ?? false,
   providers: [
     GitHubProvider({
-      clientId: GITHUB_CLIENT_ID,
-      clientSecret: GITHUB_CLIENT_SECRET,
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
     GoogleProvider({
-      clientId: GOOGLE_CLIENT_ID,
-      clientSecret: GOOGLE_CLIENT_SECRET,
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       authorization: {
         params: {
           prompt: 'consent',
@@ -44,19 +29,19 @@ export default NextAuth({
       },
     }),
     DiscordProvider({
-      clientId: DISCORD_CLIENT_ID,
-      clientSecret: DISCORD_CLIENT_SECRET,
+      clientId: process.env.DISCORD_CLIENT_ID,
+      clientSecret: process.env.DISCORD_CLIENT_SECRET,
     }),
     EmailProvider({
       server: {
-        host: EMAIL_SERVER_HOST,
-        port: EMAIL_SERVER_PORT,
+        host: process.env.EMAIL_SERVER_HOST,
+        port: process.env.EMAIL_SERVER_PORT,
         auth: {
-          user: EMAIL_SERVER_USER,
-          pass: EMAIL_SERVER_PASSWORD,
+          user: process.env.EMAIL_SERVER_USER,
+          pass: process.env.EMAIL_SERVER_PASSWORD,
         },
       },
-      from: EMAIL_FROM,
+      from: process.env.EMAIL_FROM,
     }),
   ],
   adapter: MongoDBAdapter(mongoClient),

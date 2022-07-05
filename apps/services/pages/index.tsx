@@ -28,12 +28,8 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
   const { addNotifications } = useContext(NotificationsContext);
   const { data: session } = useSession();
 
-  const { NEXT_PUBLIC_EMAILJS_SERVICE_ID, EMAIL_FROM } = process.env;
-  console.log('pages/index - TEST', process.env);
   console.log('pages/index - TEST1-1 (should display)', process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
-  console.log('pages/index - TEST1-1 (should not display)', NEXT_PUBLIC_EMAILJS_SERVICE_ID);
   console.log('pages/index - TEST2-1 (should not display)', process.env.EMAIL_FROM);
-  console.log('pages/index - TEST2-1 (should not display)', EMAIL_FROM);
 
   useEffect(() => {
     const origin = window.location.origin;

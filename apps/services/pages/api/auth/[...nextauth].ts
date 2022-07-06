@@ -12,6 +12,7 @@ import type { Badge, UserExtended, UserBadge } from 'types/user';
 
 export default NextAuth({
   debug: process.env.DEBUG ?? false,
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     GitHubProvider({
       clientId: process.env.GITHUB_CLIENT_ID,

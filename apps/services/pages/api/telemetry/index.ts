@@ -5,7 +5,7 @@ import { TelemetrySystemObject } from 'types/telemetry';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { TelemetryType, TelemetryLuosEngine, TelemetryPyluos } from 'types/telemetry';
+import { Telemetry, TelemetryType, TelemetryLuosEngine, TelemetryPyluos } from 'types/telemetry';
 import { InsertOneResult } from 'mongodb';
 
 export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -28,10 +28,16 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
       if (telemetry_type && system && mac && unix_time) {
         const db = (await mongoClient).db();
         const macBuffer = Buffer.from(mac.substring(2), 'hex');
-        const defaultData = {
+        let ip = req.socket.remoteAddress;
+        if (req.headers['x-forwarded-for']) {
+          ip = (req.headers['x-forwarded-for'] as string).split(',')[0];
+        }
+
+        const defaultData: Telemetry = {
           type: telemetry_type,
           system,
           mac: macBuffer,
+          ip,
           date: new Date(),
           duration: new Date().getTime() - unix_time * 1000,
         };

@@ -25,38 +25,20 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
         routing_table,
       } = req.body;
 
-      console.log(
-        'ENTRYPOINT',
-        telemetry_type,
-        system,
-        mac,
-        unix_time,
-        pyluos,
-        hal,
-        framework,
-        platform,
-        mcu,
-        f_cpu,
-        routing_table,
-      );
       if (telemetry_type && system && mac && unix_time) {
         const db = (await mongoClient).db();
         const macBuffer = Buffer.from(mac.substring(2), 'hex');
+        const defaultData = {
+          type: telemetry_type,
+          system,
+          mac: macBuffer,
+          date: new Date(),
+          duration: new Date().getTime() - unix_time * 1000,
+        };
+
         let insertOneResult: InsertOneResult | null = null;
         switch (telemetry_type) {
           case TelemetryType.luos_engine_build:
-            console.log(
-              'luos_engine_build',
-              pyluos,
-              hal,
-              framework,
-              platform,
-              mcu,
-              f_cpu,
-              valid(pyluos),
-              system.toUpperCase(),
-              macBuffer.length,
-            );
             if (
               pyluos &&
               hal &&
@@ -69,10 +51,7 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
               macBuffer.length === 6
             ) {
               insertOneResult = await db.collection<TelemetryLuosEngine>('telemetry').insertOne({
-                type: telemetry_type,
-                system,
-                mac: macBuffer,
-                duration: new Date().getTime() - unix_time,
+                ...defaultData,
                 pyluos,
                 hal,
                 framework,
@@ -83,20 +62,15 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
             }
             break;
           case TelemetryType.pyluos:
-            console.log('pyluos', routing_table, macBuffer.length);
             if (routing_table && macBuffer.length === 6) {
               insertOneResult = await db.collection<TelemetryPyluos>('telemetry').insertOne({
-                type: telemetry_type,
-                system,
-                mac: macBuffer,
-                duration: new Date().getTime() - unix_time,
+                ...defaultData,
                 routing_table,
               });
             }
             break;
         }
 
-        console.log('RESULT', insertOneResult);
         if (insertOneResult) {
           if (process.env.DEBUG && insertOneResult.acknowledged && insertOneResult.insertedId) {
             console.log(

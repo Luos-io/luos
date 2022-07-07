@@ -11,7 +11,7 @@ module.exports = withTM({
   reactStrictMode: true,
   webpack5: true,
   env: result.parsed,
-  compiler: {
-    removeConsole: true,
-  },
+  // compiler: {
+  //   removeConsole: true,
+  // },
 });

@@ -30,10 +30,10 @@
     "@types/react": "17.0.43"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-beta.21",
-    "@docusaurus/plugin-client-redirects": "^2.0.0-beta.21",
-    "@docusaurus/plugin-google-analytics": "^2.0.0-beta.21",
-    "@docusaurus/preset-classic": "^2.0.0-beta.21",
+    "@docusaurus/core": "^2.0.0-rc.1",
+    "@docusaurus/plugin-client-redirects": "^2.0.0-rc.1",
+    "@docusaurus/plugin-google-analytics": "^2.0.0-rc.1",
+    "@docusaurus/preset-classic": "^2.0.0-rc.1",
     "@emailjs/browser": "^3.6.2",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
@@ -53,10 +53,10 @@
     "react-material-ui-carousel": "^3.4.2"
   },
   "devDependencies": {
-    "@docusaurus/eslint-plugin": "^2.0.0-beta.21",
-    "@docusaurus/module-type-aliases": "^2.0.0-beta.21",
+    "@docusaurus/eslint-plugin": "^2.0.0-rc.1",
+    "@docusaurus/module-type-aliases": "^2.0.0-rc.1",
     "@tsconfig/docusaurus": "^1.0.6",
-    "@types/react": "^17.0.45",
+    "@types/react": "^17.0.43",
     "@types/react-helmet": "^6.1.5",
     "@types/react-router-dom": "^5.3.3",
     "dotenv-vault": "^1.9.1",

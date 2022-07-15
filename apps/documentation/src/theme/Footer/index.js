@@ -4,7 +4,6 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-/*eslint-env browser*/
 import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
@@ -19,9 +18,15 @@ import dataTuto from '../../components/school/index/data/dataIntro.json';
 function Footer() {
   const { isDarkTheme } = useColorMode();
   const { footer } = useThemeConfig();
-  const { copyright } = footer || {};
+  const { copyright, links = [], logo = {} } = footer || {};
+
+  if (!footer) {
+    return null;
+  }
+
   const lastBlogPosts = recentPosts.items.slice(0, 2);
   const lastTuto = dataTuto.tuto.slice(-2);
+
   const [lastCommits, setLastCommits] = useState([]);
 
   useEffect(() => {
@@ -32,18 +37,15 @@ function Footer() {
       });
   }, []);
 
-  if (!footer) {
-    return null;
-  }
-
   return (
     <footer className={clsx('footer')} style={{ padding: '50px' }}>
       <Grid container style={{ marginBottom: '30px' }}>
         <Grid item xs={12} md={4} lg={4} xl={4}>
           {' '}
           <img
-            src={isDarkTheme ? 'img/index/powered/luos.svg' : 'img/index/powered/luos-dark.svg'}
+            src={isDarkTheme ? '/img/index/powered/luos.svg' : '/img/index/powered/luos-dark.svg'}
             style={{ verticalAlign: 'middle', width: '150px' }}
+            alt="luos-dark"
           />
         </Grid>
         <Grid item xs={12} md={4} lg={4} xl={4}>
@@ -58,7 +60,7 @@ function Footer() {
             </GitHubButton>
 
             <GitHubButton
-              href="https://github.com/luos-io/Luos"
+              href="https://github.com/luos-io/luos_engine"
               data-icon="octicon-star"
               aria-label="Star luos-io/documentation on GitHub"
               data-size="large"
@@ -72,19 +74,19 @@ function Footer() {
           <h1 className={styles.titleCommunity}>Join our community</h1>
           <div className={styles.joinUsContainer}>
             <a href="https://discord.gg/luos" rel="nofollow">
-              <img src="/img/discord.png" className="rsLogo"></img>
+              <img src="/img/discord.png" className="rsLogo" alt="discord logo"></img>
             </a>
             <a href="https://www.reddit.com/r/Luos/" rel="nofollow">
-              <img src="/img/reddit.png" className="rsLogo"></img>
+              <img src="/img/reddit.png" className="rsLogo" alt="reddit logo"></img>
             </a>
             <a href="https://twitter.com/Luos_io" rel="nofollow">
-              <img src="/img/twitter.png" className="rsLogo"></img>
+              <img src="/img/twitter.png" className="rsLogo" alt="twitter logo"></img>
             </a>
             <a href="https://www.linkedin.com/company/luos" rel="nofollow">
-              <img src="/img/linkedin.png" className="rsLogo"></img>
+              <img src="/img/linkedin.png" className="rsLogo" alt="linkedin logo"></img>
             </a>
             <a href="https://www.youtube.com/channel/UCWeIoHVY9Z-04kdwXNtv2FA" rel="nofollow">
-              <img src="/img/youtube.png" className="rsLogo"></img>
+              <img src="/img/youtube.png" className="rsLogo" alt="youtube logo"></img>
             </a>
           </div>
         </Grid>
@@ -118,7 +120,7 @@ function Footer() {
         <Grid item xs={12} md={4} lg={4} xl={4} pr={4}>
           <h2 className={styles.subtitle}>Latest commits on Luos repository</h2>
           {lastCommits.map((element, index) => (
-            <Link key={index} href={element.commit.url} className={styles.link} rel="nofollow">
+            <Link key={index} href={element.html_url} className={styles.link} rel="nofollow">
               {element.commit.message}
             </Link>
           ))}

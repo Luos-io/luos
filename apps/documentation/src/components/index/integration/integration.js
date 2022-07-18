@@ -17,7 +17,7 @@ import SearchIcon from '@mui/icons-material/Search';
 // DO NOT REMOVE WIP INTEGRATION BLOCK
 
 const Integration = (props) => {
-  const { isDarkTheme } = useColorMode();
+  const { colorMode } = useColorMode();
 
   const img = {
     mcu: [
@@ -131,7 +131,7 @@ const Integration = (props) => {
             <Grid item md={1} lg={1} className={styles.docs}>
               <FileCopyIcon fontSize="large" className={styles.icons} />
               <SearchIcon fontSize="large" className={styles.icons} />
-              {isDarkTheme ? (
+              {colorMode === 'dark' ? (
                 <>
                   {' '}
                   <img src="img/index/header/luos.svg" alt="luos" />{' '}
@@ -192,7 +192,7 @@ const Integration = (props) => {
                     <ImageListItem key={index} alignitems="center">
                       <img
                         src={
-                          isDarkTheme
+                          colorMode === 'dark'
                             ? element[2]
                               ? `img/index/integration/icons/${element[2]}.svg`
                               : `img/index/integration/icons/${element[0]}.svg`

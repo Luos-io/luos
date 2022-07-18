@@ -19,7 +19,7 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import Link from '@mui/material/Link';
 
 const Powered = (props) => {
-  const { isDarkTheme } = useColorMode();
+  const { colorMode } = useColorMode();
   return (
     <div className={styles.container}>
       <div className={styles.containerTitle}>
@@ -27,7 +27,11 @@ const Powered = (props) => {
         <h2 className={`${styles.title}`}>
           More features powered by{' '}
           <img
-            src={isDarkTheme ? 'img/index/powered/luos.svg' : 'img/index/powered/luos-dark.svg'}
+            src={
+              colorMode === 'dark'
+                ? 'img/index/powered/luos.svg'
+                : 'img/index/powered/luos-dark.svg'
+            }
             style={{ verticalAlign: 'middle', width: '100px' }}
             alt="luos-dark"
           />

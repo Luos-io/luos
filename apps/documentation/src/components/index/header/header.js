@@ -15,7 +15,7 @@ import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
 const Header = (props) => {
-  const { isDarkTheme } = useColorMode();
+  const { colorMode } = useColorMode();
   return (
     <div className={styles.container}>
       <Grid container>
@@ -32,7 +32,7 @@ const Header = (props) => {
             <Grid item xs={2} md={1} lg={1} className={styles.docs}>
               <FileCopyIcon fontSize="large" className={styles.icons} />
               <SearchIcon fontSize="large" className={styles.icons} />
-              {isDarkTheme ? (
+              {colorMode === 'dark' ? (
                 <>
                   {' '}
                   <img src="img/index/header/luos.svg" alt="luos" />{' '}
@@ -131,7 +131,7 @@ const Header = (props) => {
               <Grid item md={1} lg={1} className={styles.docs}>
                 <FileCopyIcon fontSize="large" className={styles.icons} />
                 <SearchIcon fontSize="large" className={styles.icons} />
-                {isDarkTheme ? (
+                {colorMode === 'dark' ? (
                   <>
                     {' '}
                     <img src="img/index/header/luos.svg" alt="luos" />{' '}

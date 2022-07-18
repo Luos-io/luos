@@ -20,7 +20,7 @@ import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 const Anatomy = (props) => {
-  const { isDarkTheme } = useColorMode();
+  const { colorMode } = useColorMode();
   const img = {
     topo: 'topology',
     micro: 'microservice',
@@ -174,7 +174,7 @@ const Anatomy = (props) => {
             <Grid item xs={2} md={2} lg={1} className={styles.docs}>
               <FileCopyIcon fontSize="large" className={styles.icons} />
               <SearchIcon fontSize="large" className={styles.icons} />
-              {isDarkTheme ? (
+              {colorMode === 'dark' ? (
                 <>
                   {' '}
                   <img src="img/index/header/luos.svg" alt="luos" />{' '}

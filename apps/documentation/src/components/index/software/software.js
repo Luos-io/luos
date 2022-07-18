@@ -10,7 +10,7 @@ import FileCopyIcon from '@mui/icons-material/FileCopy';
 import SearchIcon from '@mui/icons-material/Search';
 
 const Software = (props) => {
-  const { isDarkTheme } = useColorMode();
+  const { colorMode } = useColorMode();
 
   let items = [
     {
@@ -118,7 +118,7 @@ const Software = (props) => {
               <Grid item md={1} lg={1} xl={1} className={styles.docs}>
                 <FileCopyIcon fontSize="large" className={styles.icons} />
                 <SearchIcon fontSize="large" className={styles.icons} />
-                {isDarkTheme ? (
+                {colorMode === 'dark' ? (
                   <>
                     {' '}
                     <img src="img/index/header/luos.svg" alt="luos" />{' '}
@@ -139,7 +139,7 @@ const Software = (props) => {
                     </div>
                     <img
                       src={
-                        isDarkTheme
+                        colorMode === 'dark'
                           ? `img/index/software/step1.svg`
                           : `img/index/software/step1-dark.svg`
                       }
@@ -158,7 +158,7 @@ const Software = (props) => {
                     </div>
                     <img
                       src={
-                        isDarkTheme
+                        colorMode === 'dark'
                           ? `img/index/software/step2.svg`
                           : `img/index/software/step2-dark.svg`
                       }
@@ -177,7 +177,7 @@ const Software = (props) => {
                     </div>
                     <img
                       src={
-                        isDarkTheme
+                        colorMode === 'dark'
                           ? `img/index/software/step3.svg`
                           : `img/index/software/step3-dark.svg`
                       }
@@ -229,7 +229,7 @@ const Software = (props) => {
               <Grid item xs={2} className={styles.docs}>
                 <FileCopyIcon fontSize="large" className={styles.icons} />
                 <SearchIcon fontSize="large" className={styles.icons} />
-                {isDarkTheme ? (
+                {colorMode === 'dark' ? (
                   <>
                     {' '}
                     <img src="img/index/header/luos.svg" alt="luos" />{' '}
@@ -274,7 +274,7 @@ const Software = (props) => {
 };
 
 function Item(props) {
-  const { isDarkTheme } = useColorMode();
+  const { colorMode } = useColorMode();
   return (
     <Paper className={styles.caroussel}>
       <div className={styles.file}>
@@ -282,7 +282,7 @@ function Item(props) {
       </div>
       <img
         src={
-          isDarkTheme
+          colorMode === 'dark'
             ? `img/index/software/${props.item.img}.svg`
             : `img/index/software/${props.item.img}-dark.svg`
         }

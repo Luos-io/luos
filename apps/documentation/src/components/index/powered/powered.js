@@ -176,7 +176,7 @@ const Powered = (props) => {
             <Grid item md={1} lg={1} className={styles.docs}>
               <FileCopyIcon fontSize="large" className={styles.icons} />
               <SearchIcon fontSize="large" className={styles.icons} />
-              {isDarkTheme ? (
+              {colorMode === 'dark' ? (
                 <>
                   {' '}
                   <img src="img/index/header/luos.svg" alt="luos" />{' '}

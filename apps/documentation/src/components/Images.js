@@ -5,12 +5,9 @@ import 'react-image-lightbox/style.css';
 
 const Image = (props) => {
   const [isOpen, setIsOpen] = useState();
-  const { isDarkTheme } = useColorMode();
-  const source = isDarkTheme
-    ? props.darkSrc === undefined
-      ? props.src
-      : props.darkSrc
-    : props.src;
+  const { colorMode } = useColorMode();
+  const source =
+    colorMode === 'dark' ? (props.darkSrc === undefined ? props.src : props.darkSrc) : props.src;
   const height = props.height === undefined ? '100%' : props.height;
   return (
     <div style={{ display: 'inline', marginRight: '15px' }}>

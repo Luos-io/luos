@@ -5,11 +5,15 @@ export default function DocItemMetadata() {
   const { metadata, frontMatter, assets } = useDoc();
   return (
     <PageMetadata
-      title={metadata.version === 'current' ? title : `${title} for version ${metadata.verison}`}
+      title={
+        metadata.version === 'current'
+          ? metadata.title
+          : `${metadata.title} for version ${metadata.version}`
+      }
       description={
         metadata.version === 'current'
-          ? description
-          : `${description} for version ${metadata.verison}`
+          ? metadata.description
+          : `${metadata.description} for version ${metadata.version}`
       }
       keywords={frontMatter.keywords}
       image={assets.image ?? frontMatter.image}

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import { useColorMode } from '@docusaurus/theme-common';

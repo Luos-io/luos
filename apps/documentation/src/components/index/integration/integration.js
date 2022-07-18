@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import styles from './integration.module.css';
 import Grid from '@mui/material/Grid';
-import Link from '@docusaurus/Link';
-import Button from '@mui/material/Button';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -186,6 +184,7 @@ const Integration = (props) => {
               <ImageList cols={4} style={{ padding: '15px' }}>
                 {currentImageTmp.map((element, index) => (
                   <a
+                    key={`integration-vscode-menu-link-${index}`}
                     href={links[element[0]]}
                     className={links[element[0]] !== '' ? styles.imgLink : styles.imgLinkDesible}
                   >
@@ -230,7 +229,6 @@ const Integration = (props) => {
         </Grid>
         <Grid item md={1} lg={1} xl={1}></Grid>
       </Grid>
-
       <Grid container>
         <Grid item xs={0.5}></Grid>
         <Grid
@@ -292,7 +290,11 @@ const Integration = (props) => {
             <Grid item xs={8} lg={9} className={styles.player}>
               <ImageList cols={2} style={{ padding: '10px' }}>
                 {currentImageTmp.map((element, index) => (
-                  <a href={links[element[0]]} className={styles.imgLink}>
+                  <a
+                    key={`integration-vscode-content-link-${index}`}
+                    href={links[element[0]]}
+                    className={styles.imgLink}
+                  >
                     <ImageListItem key={index}>
                       <img
                         src={`img/index/integration/icons/${element[0]}.svg`}
@@ -326,7 +328,6 @@ const Integration = (props) => {
         </Grid>
         <Grid item xs={0.5}></Grid>
       </Grid>
-
       <Grid container spacing={3}>
         <Grid item xs={2} md={4} lg={4}></Grid>
         <Grid item xs={4} md={4} lg={4}></Grid>

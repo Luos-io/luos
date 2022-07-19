@@ -1,10 +1,12 @@
 import React from 'react';
-import { Paper } from '@mui/material';
-import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
-import styles from './article.module.css';
+import Image from '@site/src/components/Image';
 import Requirement from './requirement';
+
+import styles from './article.module.css';
 
 export const Introduction = (props) => {
   const keyword = props.tags;
@@ -18,7 +20,7 @@ export const Introduction = (props) => {
           <Grid item md={5} xs={12}>
             <div className={styles.navigation}>
               <span>
-                <img
+                <Image
                   className={styles.categoryIcons}
                   src="/img/school/category.svg"
                   alt="category"
@@ -26,7 +28,7 @@ export const Introduction = (props) => {
               </span>
               <span className={styles.counter}>{props.category}</span>
               <span>
-                <img className={styles.materialIcons} src="/img/school/clock.svg" alt="clock" />
+                <Image className={styles.materialIcons} src="/img/school/clock.svg" alt="clock" />
               </span>
               <span className={styles.lastCounter}>{props.time}</span>
             </div>

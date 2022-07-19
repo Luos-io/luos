@@ -168,8 +168,9 @@ const Anatomy = (props) => {
             {' '}
             <Image
               src="img/index/header/buttons.svg"
+              width="100"
               alt="buttons"
-              style={{ padding: '15px', width: '100px' }}
+              style={{ padding: '15px' }}
             />
           </div>
           <Grid container style={{ height: '87%' }}>
@@ -179,12 +180,20 @@ const Anatomy = (props) => {
               {colorMode === 'dark' ? (
                 <>
                   {' '}
-                  <Image src="img/index/header/luos.svg" alt="luos" />{' '}
+                  <Image
+                    src="img/index/header/luos.svg"
+                    width="30"
+                    alt="luos"
+                  />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <Image src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
+                  <Image
+                    src="img/index/header/luos-white.svg"
+                    width="30"
+                    alt="luos-white"
+                  />{' '}
                 </>
               )}
             </Grid>

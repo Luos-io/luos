@@ -190,7 +190,7 @@ const Integration = (props) => {
                     href={links[element[0]]}
                     className={links[element[0]] !== '' ? styles.imgLink : styles.imgLinkDesible}
                   >
-                    <ImageListItem key={index} alignitems="center">
+                    <ImageListItem key={index}>
                       <Image
                         src={
                           colorMode === 'dark'
@@ -199,26 +199,24 @@ const Integration = (props) => {
                               : `img/index/integration/icons/${element[0]}.svg`
                             : `img/index/integration/icons/${element[0]}.svg`
                         }
+                        width="48"
                         alt={element[1]}
                         loading="lazy"
                         style={{
-                          width: '64px',
+                          display: 'block',
                           objectFit: 'initial',
                           margin: '0 auto',
                         }}
                       />
-                      <div>
-                        <ImageListItemBar
-                          title={element[1]}
-                          subtitle={soon.indexOf(element[0]) != -1 ? '(soon)' : ''}
-                          position="below"
-                          style={{
-                            width: '150px',
-                            margin: '0 auto',
-                            textAlign: 'center',
-                          }}
-                        />
-                      </div>
+                      <ImageListItemBar
+                        title={element[1]}
+                        subtitle={soon.indexOf(element[0]) != -1 ? '(soon)' : ''}
+                        position="below"
+                        style={{
+                          margin: '0 auto',
+                          textAlign: 'center',
+                        }}
+                      />
                     </ImageListItem>
                   </a>
                 ))}
@@ -300,10 +298,11 @@ const Integration = (props) => {
                     <ImageListItem key={index}>
                       <Image
                         src={`img/index/integration/icons/${element[0]}.svg`}
+                        width="48"
                         alt={element[1]}
                         loading="lazy"
                         style={{
-                          width: '48px',
+                          display: 'block',
                           objectFit: 'initial',
                           margin: '0 auto',
                         }}
@@ -313,7 +312,6 @@ const Integration = (props) => {
                         subtitle={soon.indexOf(element[0]) != -1 ? '(soon)' : ''}
                         position="below"
                         style={{
-                          width: '150px',
                           margin: '0 auto',
                           textAlign: 'center',
                         }}

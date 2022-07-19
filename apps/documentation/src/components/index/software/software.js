@@ -145,6 +145,8 @@ const Software = () => {
                           ? `img/index/software/step1.svg`
                           : `img/index/software/step1-dark.svg`
                       }
+                      width="130"
+                      height="130"
                       alt="step one"
                       className={styles.carousselImgDesktop}
                       loading="lazy"
@@ -164,6 +166,8 @@ const Software = () => {
                           ? `img/index/software/step2.svg`
                           : `img/index/software/step2-dark.svg`
                       }
+                      width="130"
+                      height="130"
                       alt="step two"
                       className={styles.carousselImgDesktop}
                       loading="lazy"
@@ -183,6 +187,8 @@ const Software = () => {
                           ? `img/index/software/step3.svg`
                           : `img/index/software/step3-dark.svg`
                       }
+                      width="130"
+                      height="130"
                       alt="step three"
                       className={styles.carousselImgDesktop}
                       loading="lazy"

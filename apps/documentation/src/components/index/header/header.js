@@ -26,7 +26,8 @@ const Header = (props) => {
             <Image
               src="img/index/header/buttons.svg"
               alt="buttons"
-              style={{ padding: '15px', width: '100px' }}
+              width="100"
+              style={{ padding: '15px' }}
             />
           </div>
           <Grid container>
@@ -125,7 +126,8 @@ const Header = (props) => {
               <Image
                 src="img/index/header/buttons.svg"
                 alt="buttons"
-                style={{ padding: '15px', width: '100px' }}
+                width="100"
+                style={{ padding: '15px' }}
               />
             </div>
             <Grid container>

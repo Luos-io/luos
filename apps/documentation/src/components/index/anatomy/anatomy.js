@@ -19,6 +19,8 @@ import ComputerIcon from '@mui/icons-material/Computer';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
+import Image from '@site/src/components/Image';
+
 const Anatomy = (props) => {
   const { colorMode } = useColorMode();
   const img = {
@@ -164,7 +166,7 @@ const Anatomy = (props) => {
         <Grid item xs={12} md={6} lg={6} xl={3} className={styles.vscode}>
           <div className={styles.head}>
             {' '}
-            <img
+            <Image
               src="img/index/header/buttons.svg"
               alt="buttons"
               style={{ padding: '15px', width: '100px' }}
@@ -177,12 +179,12 @@ const Anatomy = (props) => {
               {colorMode === 'dark' ? (
                 <>
                   {' '}
-                  <img src="img/index/header/luos.svg" alt="luos" />{' '}
+                  <Image src="img/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
+                  <Image src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>
@@ -254,7 +256,7 @@ const Anatomy = (props) => {
       </Grid>
       <Grid container>
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
-          <img
+          <Image
             src="img/index/integration/line-right.svg"
             alt="line-right"
             style={{ transform: 'rotateY(180deg)' }}
@@ -263,7 +265,7 @@ const Anatomy = (props) => {
         </Grid>
         <Grid item xs={4} md={4} lg={4} xl={4}></Grid>
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
-          <img
+          <Image
             src="img/index/integration/line-right.svg"
             alt="line-right"
             style={{ float: 'right' }}

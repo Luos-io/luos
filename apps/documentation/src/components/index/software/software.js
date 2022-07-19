@@ -1,15 +1,17 @@
 import React from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
-import styles from './software.module.css';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
-import { useColorMode } from '@docusaurus/theme-common';
 import Carousel from 'react-material-ui-carousel';
-import Paper from '@mui/material/Paper';
+import { useColorMode } from '@docusaurus/theme-common';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import SearchIcon from '@mui/icons-material/Search';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Image from '@site/src/components/Image';
 
-const Software = (props) => {
+import styles from './software.module.css';
+
+const Software = () => {
   const { colorMode } = useColorMode();
 
   let items = [
@@ -35,9 +37,9 @@ const Software = (props) => {
   ];
 
   const anArrayOfNumbers = [
-    <img src="img/index/software/icons/step1.svg" />,
-    <img src="img/index/software/icons/step2.svg" />,
-    <img src="img/index/software/icons/step3.svg" />,
+    <Image src="img/index/software/icons/step1.svg" alt="Step 1" />,
+    <Image src="img/index/software/icons/step2.svg" alt="Step 2" />,
+    <Image src="img/index/software/icons/step3.svg" alt="Step 3" />,
   ];
 
   return (
@@ -101,7 +103,7 @@ const Software = (props) => {
               <Grid container>
                 <Grid item md={4} lg={4} xl={4}>
                   {' '}
-                  <img
+                  <Image
                     src="img/index/header/buttons.svg"
                     style={{ padding: '15px', width: '100px' }}
                     alt="buttons"
@@ -121,12 +123,12 @@ const Software = (props) => {
                 {colorMode === 'dark' ? (
                   <>
                     {' '}
-                    <img src="img/index/header/luos.svg" alt="luos" />{' '}
+                    <Image src="img/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
+                    <Image src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>
@@ -137,7 +139,7 @@ const Software = (props) => {
                     <div className={styles.file}>
                       <div className={styles.fileName}>step_1.c</div>
                     </div>
-                    <img
+                    <Image
                       src={
                         colorMode === 'dark'
                           ? `img/index/software/step1.svg`
@@ -156,7 +158,7 @@ const Software = (props) => {
                     <div className={styles.file}>
                       <div className={styles.fileName}>step_2.py</div>
                     </div>
-                    <img
+                    <Image
                       src={
                         colorMode === 'dark'
                           ? `img/index/software/step2.svg`
@@ -175,7 +177,7 @@ const Software = (props) => {
                     <div className={styles.file}>
                       <div className={styles.fileName}>step_3.js</div>
                     </div>
-                    <img
+                    <Image
                       src={
                         colorMode === 'dark'
                           ? `img/index/software/step3.svg`
@@ -208,7 +210,7 @@ const Software = (props) => {
               <Grid container>
                 <Grid item xs={4}>
                   {' '}
-                  <img
+                  <Image
                     src="img/index/header/buttons.svg"
                     style={{ padding: '15px', width: '100px' }}
                     alt="buttons"
@@ -232,12 +234,12 @@ const Software = (props) => {
                 {colorMode === 'dark' ? (
                   <>
                     {' '}
-                    <img src="img/index/header/luos.svg" alt="luos" />{' '}
+                    <Image src="img/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
+                    <Image src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>
@@ -280,7 +282,7 @@ function Item(props) {
       <div className={styles.file}>
         <div className={styles.fileName}>{props.item.file}</div>
       </div>
-      <img
+      <Image
         src={
           colorMode === 'dark'
             ? `img/index/software/${props.item.img}.svg`

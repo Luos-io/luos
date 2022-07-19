@@ -1,18 +1,19 @@
 import React from 'react';
 import { BrowserView } from 'react-device-detect';
-import styles from './header.module.css';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
-import Writer from '@site/src/components/writer';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import { useColorMode } from '@docusaurus/theme-common';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { useColorMode } from '@docusaurus/theme-common';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
-import SearchIcon from '@mui/icons-material/Search';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import SearchIcon from '@mui/icons-material/Search';
+import Image from '@site/src/components/Image';
+import Writer from '@site/src/components/writer';
 
-import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
+import styles from './header.module.css';
 
 const Header = (props) => {
   const { colorMode } = useColorMode();
@@ -22,7 +23,7 @@ const Header = (props) => {
         <Grid item md={7} className={styles.left}>
           <div className={styles.head}>
             {' '}
-            <img
+            <Image
               src="img/index/header/buttons.svg"
               alt="buttons"
               style={{ padding: '15px', width: '100px' }}
@@ -35,12 +36,12 @@ const Header = (props) => {
               {colorMode === 'dark' ? (
                 <>
                   {' '}
-                  <img src="img/index/header/luos.svg" alt="luos" />{' '}
+                  <Image src="img/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
+                  <Image src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>
@@ -121,7 +122,7 @@ const Header = (props) => {
           >
             <div className={styles.head}>
               {' '}
-              <img
+              <Image
                 src="img/index/header/buttons.svg"
                 alt="buttons"
                 style={{ padding: '15px', width: '100px' }}
@@ -134,12 +135,12 @@ const Header = (props) => {
                 {colorMode === 'dark' ? (
                   <>
                     {' '}
-                    <img src="img/index/header/luos.svg" alt="luos" />{' '}
+                    <Image src="img/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
+                    <Image src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>

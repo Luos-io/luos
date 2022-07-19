@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import styles from './integration.module.css';
-import Grid from '@mui/material/Grid';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useColorMode } from '@docusaurus/theme-common';
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import SearchIcon from '@mui/icons-material/Search';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Grid from '@mui/material/Grid';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import FileCopyIcon from '@mui/icons-material/FileCopy';
-import SearchIcon from '@mui/icons-material/Search';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import Image from '@site/src/components/Image';
+
+import styles from './integration.module.css';
 
 // DO NOT REMOVE WIP INTEGRATION BLOCK
 
@@ -86,7 +88,7 @@ const Integration = (props) => {
       <Grid container spacing={3}>
         <Grid item xs={6} md={4} lg={4}>
           {' '}
-          <img
+          <Image
             src="img/index/integration/line-right.svg"
             alt="line-right"
             className={styles.imgLeft}
@@ -112,7 +114,7 @@ const Integration = (props) => {
             <Grid container>
               <Grid item md={4} lg={4} xl={4}>
                 {' '}
-                <img
+                <Image
                   src="img/index/header/buttons.svg"
                   style={{ padding: '15px', width: '100px' }}
                   alt="buttons"
@@ -132,12 +134,12 @@ const Integration = (props) => {
               {colorMode === 'dark' ? (
                 <>
                   {' '}
-                  <img src="img/index/header/luos.svg" alt="luos" />{' '}
+                  <Image src="img/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
+                  <Image src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>
@@ -189,7 +191,7 @@ const Integration = (props) => {
                     className={links[element[0]] !== '' ? styles.imgLink : styles.imgLinkDesible}
                   >
                     <ImageListItem key={index} alignitems="center">
-                      <img
+                      <Image
                         src={
                           colorMode === 'dark'
                             ? element[2]
@@ -241,7 +243,7 @@ const Integration = (props) => {
         >
           <div className={styles.head}>
             {' '}
-            <img
+            <Image
               src="img/index/header/buttons.svg"
               alt="buttons"
               style={{ padding: '15px', width: '100px' }}
@@ -296,7 +298,7 @@ const Integration = (props) => {
                     className={styles.imgLink}
                   >
                     <ImageListItem key={index}>
-                      <img
+                      <Image
                         src={`img/index/integration/icons/${element[0]}.svg`}
                         alt={element[1]}
                         loading="lazy"
@@ -332,7 +334,7 @@ const Integration = (props) => {
         <Grid item xs={2} md={4} lg={4}></Grid>
         <Grid item xs={4} md={4} lg={4}></Grid>
         <Grid item xs={6} md={4} lg={4}>
-          <img
+          <Image
             src="img/index/integration/line-right.svg"
             alt="line-right"
             className={styles.imgRight}

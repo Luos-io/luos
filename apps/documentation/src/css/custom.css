@@ -542,9 +542,6 @@ html[data-theme='dark'] .header-github-link:hover:before {
   line-height: normal !important;
 }
 
-.imgPreview {
-  cursor: pointer;
-}
 .navbar {
   min-height: 70px !important;
 }

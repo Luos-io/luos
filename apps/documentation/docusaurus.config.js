@@ -17,6 +17,7 @@ module.exports = {
   favicon: 'img/favicon.png',
   organizationName: 'Luos-io', // Usually your GitHub org/user name.
   projectName: 'Documentation', // Usually your repo name.
+  trailingSlash: false,
 
   customFields: {
     node_def:
@@ -278,6 +279,15 @@ module.exports = {
       '@docusaurus/plugin-client-redirects',
       {
         fromExtensions: ['html'],
+      },
+    ],
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        max: 1080, // max resized image's size.
+        min: 640, // min resized image's size. if original is lower, use that size.
+        steps: 2, // the max number of images generated between min and max (inclusive)
+        disableInDev: false,
       },
     ],
     ['./plugins/dotenv', {}],

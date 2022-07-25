@@ -1,3 +1,5 @@
+[![dotenv-vault](https://badge.dotenv.org/works-with.svg?r=1)](https://www.dotenv.org/r/github.com/dotenv-org/dotenv-vault?r=1)
+
 <p align="center">
   <a href="https://luos.io">
     <img src="https://www.luos.io/img/logo_luos_animated_white.gif" alt="Luos logo" title="Luos" align="center" height="100" />

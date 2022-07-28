@@ -37,7 +37,7 @@ const Integration = (props) => {
     ],
     api: [
       ['simplefoc', 'SimpleFOC'],
-      ['zappier', 'Zappier '],
+      ['zapier', 'Zapier '],
       ['ifttt', 'IFTTT ', 'ifttt-white'],
       ['freedom', 'Freedom Robotics '],
     ],
@@ -49,7 +49,7 @@ const Integration = (props) => {
     ],
   };
 
-  const soon = ['zappier', 'ifttt', 'freedom', 'microros'];
+  const soon = ['zapier', 'ifttt', 'freedom', 'microros'];
 
   const links = {
     esp: '',
@@ -64,7 +64,7 @@ const Integration = (props) => {
     freertos: '/docs/tools/ros',
     microros: '',
     simplefoc: '',
-    zappier: '',
+    zapier: '',
     ifttt: '',
     freedom: '',
     c: '',

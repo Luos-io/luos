@@ -175,18 +175,23 @@ module.exports = {
         },
         {
           type: 'doc',
-          label: 'Inspector',
-          id: 'tools/inspector',
-        },
-        {
-          type: 'doc',
           label: 'Bootloader',
           id: 'tools/boot',
         },
         {
           type: 'doc',
+          label: 'Inspector',
+          id: 'tools/inspector',
+        },
+        {
+          type: 'doc',
           label: 'Monitoring',
           id: 'tools/monitoring',
+        },
+        {
+          type: 'link',
+          label: 'Network display',
+          href: 'https://app.luos.io/network',
         },
       ],
     },
@@ -207,6 +212,16 @@ module.exports = {
           type: 'doc',
           label: 'SDK Python: Pyluos',
           id: 'tools/pyluos',
+        },
+        {
+          type: 'link',
+          label: 'SDK Typescript',
+          href: 'https://github.com/Luos-io/sdk-ts',
+        },
+        {
+          type: 'link',
+          label: 'Plateform IO',
+          href: 'https://www.luos.io/tutorials/pio',
         },
         {
           type: 'doc',

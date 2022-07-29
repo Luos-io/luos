@@ -96,11 +96,6 @@ module.exports = {
           position: 'right',
         },
         {
-          to: 'https://app.luos.io',
-          label: 'Tools',
-          position: 'right',
-        },
-        {
           type: 'dropdown',
           label: 'Resources',
           position: 'right',
@@ -114,7 +109,7 @@ module.exports = {
               label: 'Tutorials',
             },
             {
-              to: '/docs/luos-technology',
+              to: 'https://www.luos.io/docs',
               label: 'Documentation',
             },
             {

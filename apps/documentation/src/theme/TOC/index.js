@@ -62,7 +62,7 @@ function TOC({ className, ...props }) {
               <Grid item md={3}>
                 <Avatar
                   alt={author.name !== 'nicoR' ? author.name : 'N'}
-                  src={`/img/school/authors/${author.img}`}
+                  src={`/img/tutorials/school/authors/${author.img}`}
                   sx={{ width: 56, height: 56, float: 'right' }}
                 />
               </Grid>

@@ -2,7 +2,7 @@ module.exports = {
   documentation: [
     {
       type: 'category',
-      label: 'Luos engine',
+      label: 'Luos technology',
       link: {
         type: 'doc',
         id: 'luos-technology/index',
@@ -43,7 +43,7 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'Luos engine HAL',
+              label: 'Hardware abstraction layer',
               id: 'luos-technology/node/luos-hal',
             },
             {
@@ -175,18 +175,13 @@ module.exports = {
         },
         {
           type: 'doc',
-          label: 'Inspector',
-          id: 'tools/inspector',
-        },
-        {
-          type: 'doc',
-          label: 'Pyluos',
-          id: 'tools/pyluos',
-        },
-        {
-          type: 'doc',
           label: 'Bootloader',
           id: 'tools/boot',
+        },
+        {
+          type: 'doc',
+          label: 'Inspector',
+          id: 'tools/inspector',
         },
         {
           type: 'doc',
@@ -194,15 +189,15 @@ module.exports = {
           id: 'tools/monitoring',
         },
         {
-          type: 'doc',
-          label: 'ROS',
-          id: 'tools/ros',
+          type: 'link',
+          label: 'Network display',
+          href: 'https://app.luos.io/network',
         },
       ],
     },
     {
       type: 'category',
-      label: 'API',
+      label: 'Integration',
       link: {
         type: 'doc',
         id: 'api/index',
@@ -212,6 +207,26 @@ module.exports = {
           type: 'doc',
           label: 'JSON API',
           id: 'api/api-json',
+        },
+        {
+          type: 'doc',
+          label: 'SDK Python: Pyluos',
+          id: 'tools/pyluos',
+        },
+        {
+          type: 'link',
+          label: 'SDK Typescript',
+          href: 'https://github.com/Luos-io/sdk-ts',
+        },
+        {
+          type: 'link',
+          label: 'Plateform IO',
+          href: 'https://www.luos.io/tutorials/pio',
+        },
+        {
+          type: 'doc',
+          label: 'ROS',
+          id: 'tools/ros',
         },
       ],
     },

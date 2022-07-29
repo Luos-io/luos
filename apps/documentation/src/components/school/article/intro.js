@@ -20,13 +20,13 @@ export const Introduction = (props) => {
               <span>
                 <img
                   className={styles.categoryIcons}
-                  src="/img/school/category.svg"
+                  src="/img/tutorials/school/category.svg"
                   alt="category"
                 />
               </span>
               <span className={styles.counter}>{props.category}</span>
               <span>
-                <img className={styles.materialIcons} src="/img/school/clock.svg" alt="clock" />
+                <img className={styles.materialIcons} src="/img/tutorials/school/clock.svg" alt="clock" />
               </span>
               <span className={styles.lastCounter}>{props.time}</span>
             </div>

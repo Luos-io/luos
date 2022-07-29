@@ -58,12 +58,12 @@ export const Introduction = (props) => {
             />
           </Grid>
         </Grid>
-      </Paper>
       <Grid container mt={3}>
         <Grid item xs={12}>
-          <Requirement title="Summary" color="#FFFFFF" list={props.summary} />
+          <Requirement title="Let's begin!" color="#FFFFFF" list={props.summary} />
         </Grid>
       </Grid>
+      </Paper>
     </div>
   );
 };

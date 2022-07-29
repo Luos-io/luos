@@ -2,7 +2,7 @@ module.exports = {
   documentation: [
     {
       type: 'category',
-      label: 'Luos engine',
+      label: 'Luos technology',
       link: {
         type: 'doc',
         id: 'luos-technology/index',
@@ -43,7 +43,7 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'Luos engine HAL',
+              label: 'Hardware abstraction layer',
               id: 'luos-technology/node/luos-hal',
             },
             {
@@ -180,11 +180,6 @@ module.exports = {
         },
         {
           type: 'doc',
-          label: 'Pyluos',
-          id: 'tools/pyluos',
-        },
-        {
-          type: 'doc',
           label: 'Bootloader',
           id: 'tools/boot',
         },
@@ -193,16 +188,11 @@ module.exports = {
           label: 'Monitoring',
           id: 'tools/monitoring',
         },
-        {
-          type: 'doc',
-          label: 'ROS',
-          id: 'tools/ros',
-        },
       ],
     },
     {
       type: 'category',
-      label: 'API',
+      label: 'Integration',
       link: {
         type: 'doc',
         id: 'api/index',
@@ -212,6 +202,16 @@ module.exports = {
           type: 'doc',
           label: 'JSON API',
           id: 'api/api-json',
+        },
+        {
+          type: 'doc',
+          label: 'SDK Python: Pyluos',
+          id: 'tools/pyluos',
+        },
+        {
+          type: 'doc',
+          label: 'ROS',
+          id: 'tools/ros',
         },
       ],
     },

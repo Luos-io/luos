@@ -18,12 +18,6 @@ const cardGrid = (props) => {
         switch (key) {
           case 'category':
             return el[key] === filters[key];
-          case 'toc':
-            if (filters[key] === 361) {
-              return el[key] >= filters[key];
-            }
-            return el[key] <= filters[key];
-
           case 'level':
             return el[key] === parseInt(filters[key]);
           case 'tags':

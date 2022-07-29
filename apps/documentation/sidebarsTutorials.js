@@ -93,25 +93,13 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Arduino',
-          link: { type: 'doc', id: 'arduino/intro' },
+          label: 'Alias',
+          link: { type: 'doc', id: 'resilient-alias/intro' },
           items: [
             {
               type: 'doc',
-              label: 'Use Luos with Arduino IDE',
-              id: 'arduino/arduino',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'RTOS',
-          link: { type: 'doc', id: 'freertos/intro' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Use Luos with an RTOS',
-              id: 'freertos/freertos',
+              label: 'Use resilient aliases',
+              id: 'resilient-alias/resilient-alias',
             },
           ],
         },
@@ -146,18 +134,6 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Alias',
-          link: { type: 'doc', id: 'resilient-alias/intro' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Use resilient aliases',
-              id: 'resilient-alias/resilient-alias',
-            },
-          ],
-        },
-        {
-          type: 'category',
           label: 'Morse encoder',
           link: { type: 'doc', id: 'morse/morse' },
           items: [
@@ -180,7 +156,31 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Luos with ESP32',
+          label: 'Arduino',
+          link: { type: 'doc', id: 'arduino/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Use Luos with Arduino IDE',
+              id: 'arduino/arduino',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'RTOS',
+          link: { type: 'doc', id: 'freertos/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Use Luos with an RTOS',
+              id: 'freertos/freertos',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'ESP32',
           link: { type: 'doc', id: 'esp/esp' },
           items: [
             {
@@ -197,7 +197,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Luos integration',
+          label: 'Integrations',
           link: {
             type: 'doc',
             id: 'luos-integration/list',

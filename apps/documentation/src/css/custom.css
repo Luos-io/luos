@@ -717,3 +717,7 @@ html[data-theme='dark'] .DocSearch-Button {
 .dropdown-separator {
   margin: 10px 0px;
 }
+
+.pagination-nav__link {
+  background: #ffffff;
+}

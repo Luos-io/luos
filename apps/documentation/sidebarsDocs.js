@@ -162,7 +162,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Tools',
+      label: 'Buil-in Tools',
       link: {
         type: 'doc',
         id: 'tools/index',
@@ -197,7 +197,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Integration',
+      label: 'Integrations',
       link: {
         type: 'doc',
         id: 'api/index',

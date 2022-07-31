@@ -9,7 +9,7 @@ export const ContactUs = (props) => {
   return (
     <div className="contactUs">
       <a href="/feedbacks/send" target="_blank">
-        You can't find what your're looking for? »
+        You can't find what you're looking for? »
       </a>
     </div>
   );

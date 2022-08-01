@@ -2,169 +2,60 @@ module.exports = {
   documentation: [
     {
       type: 'category',
-      label: 'Tutorials',
+      label: 'Trainings',
       link: { type: 'doc', id: 'index' },
       items: [
         {
-          type: 'category',
-          label: 'Get Started',
-          link: { type: 'doc', id: 'get-started/get-started' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Part 1: Your first Luos service',
-              id: 'get-started/get-started1',
-            },
-            {
-              type: 'doc',
-              label: 'Part 2: Take the control',
-              id: 'get-started/get-started2',
-            },
-            {
-              type: 'doc',
-              label: 'Part 3: Unleash your code',
-              id: 'get-started/get-started3',
-            },
-            {
-              type: 'doc',
-              label: 'Part 4: Connect to a web app',
-              id: 'get-started/get-started4',
-            },
-          ],
+          type: 'doc',
+          label: 'Get started',
+          id: 'get-started/get-started',
         },
         {
-          type: 'category',
-          label: 'Your first service',
-          link: { type: 'doc', id: 'your-first-service/your-first-service' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Luos service',
-              id: 'your-first-service/luos-service',
-            },
-            {
-              type: 'doc',
-              label: 'Create a package',
-              id: 'your-first-service/create-a-package',
-            },
-          ],
+          type: 'doc',
+          label: 'First service',
+          id: 'your-first-service/your-first-service',
         },
         {
-          type: 'category',
-          label: 'Your first message',
-          link: { type: 'doc', id: 'your-first-message/your-first-message' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Receiving a message',
-              id: 'your-first-message/receiving-message',
-            },
-            {
-              type: 'doc',
-              label: 'Send a message from button service',
-              id: 'your-first-message/send-message',
-            },
-          ],
+          type: 'doc',
+          label: 'First message',
+          id: 'your-first-message/your-first-message',
         },
         {
-          type: 'category',
-          label: 'Your first topology detection',
-          link: {
-            type: 'doc',
-            id: 'your-first-detection/your-first-detection',
-          },
-          items: [
-            {
-              type: 'doc',
-              label: 'The topology of your system',
-              id: 'your-first-detection/topology',
-            },
-            {
-              type: 'doc',
-              label: 'How to use the routing table',
-              id: 'your-first-detection/routing-table',
-            },
-            {
-              type: 'doc',
-              label: 'Full embedded application',
-              id: 'your-first-detection/embedded-app',
-            },
-          ],
+          type: 'doc',
+          label: 'First detection',
+          id: 'your-first-detection/your-first-detection',
         },
         {
-          type: 'category',
-          label: 'Alias',
-          link: { type: 'doc', id: 'resilient-alias/intro' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Use resilient aliases',
-              id: 'resilient-alias/resilient-alias',
-            },
-          ],
+          type: 'doc',
+          label: 'Aliases',
+          id: 'resilient-alias/intro',
         },
         {
-          type: 'category',
+          type: 'doc',
           label: 'Bootloader',
-          link: { type: 'doc', id: 'bootloader/intro' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Use Luos bootloader',
-              id: 'bootloader/bootloader',
-            },
-          ],
+          id: 'bootloader/intro',
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Integrations',
+      link: { type: 'doc', id: 'index' },
+      items: [
+        {
+          type: 'doc',
+          label: 'PlatformIO',
+          id: 'pio/pio',
         },
         {
-          type: 'category',
-          label: 'PlatformIo',
-          link: { type: 'doc', id: 'pio/pio' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Project creation',
-              id: 'pio/creation',
-            },
-            {
-              type: 'doc',
-              label: 'Include Luos to your project',
-              id: 'pio/include',
-            },
-          ],
+          type: 'doc',
+          label: 'Arduino IDE',
+          id: 'arduino/intro',
         },
         {
-          type: 'category',
-          label: 'Morse encoder',
-          link: { type: 'doc', id: 'morse/morse' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Algorithm',
-              id: 'morse/algorithm',
-            },
-            {
-              type: 'doc',
-              label: 'Output',
-              id: 'morse/output',
-            },
-            {
-              type: 'doc',
-              label: 'Add service',
-              id: 'morse/add-service',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Arduino',
-          link: { type: 'doc', id: 'arduino/intro' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Use Luos with Arduino IDE',
-              id: 'arduino/arduino',
-            },
-          ],
+          type: 'doc',
+          label: 'Espressif IDE',
+          id: 'esp/esp',
         },
         {
           type: 'category',
@@ -180,24 +71,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'ESP32',
-          link: { type: 'doc', id: 'esp/esp' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Environment',
-              id: 'esp/env',
-            },
-            {
-              type: 'doc',
-              label: 'Connect to the network',
-              id: 'esp/connect',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Integrations',
+          label: 'ROS 1&2',
           link: {
             type: 'doc',
             id: 'luos-integration/list',
@@ -222,5 +96,22 @@ module.exports = {
         },
       ],
     },
+    {
+      type: 'category',
+      label: 'Use cases',
+      link: { type: 'doc', id: 'index' },
+      items: [
+        {
+          type: 'doc',
+          label: 'Morse encoder',
+          id: 'morse/morse',
+        },
+        {
+          type: 'doc',
+          label: 'Connected bike alarm',
+          id: 'bike-alarm/bike-alarm',
+        },
+      ],
+    }
   ],
 };

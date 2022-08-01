@@ -24,7 +24,7 @@ module.exports = {
             {
               type: 'doc',
               label: 'Code organization',
-              id: 'luos-technology/basics/orga',
+              id: 'luos-technology/basics/organization',
             },
           ],
         },
@@ -68,18 +68,18 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Initialization',
-              id: 'luos-technology/services/service-api',
+              label: 'Create services',
+              id: 'luos-technology/services/create-services',
             },
             {
               type: 'doc',
               label: 'Types',
-              id: 'luos-technology/services/service-type',
+              id: 'luos-technology/services/types',
             },
             {
               type: 'doc',
               label: 'Profiles',
-              id: 'luos-technology/services/profile',
+              id: 'luos-technology/services/profiles',
             },
             {
               type: 'doc',

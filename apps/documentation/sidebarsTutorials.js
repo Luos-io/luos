@@ -58,16 +58,9 @@ module.exports = {
           id: 'esp/esp',
         },
         {
-          type: 'category',
+          type: 'doc',
           label: 'RTOS',
-          link: { type: 'doc', id: 'freertos/intro' },
-          items: [
-            {
-              type: 'doc',
-              label: 'Use Luos with an RTOS',
-              id: 'freertos/freertos',
-            },
-          ],
+          id: 'freertos/intro',
         },
         {
           type: 'category',

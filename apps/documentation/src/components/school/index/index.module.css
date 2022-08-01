@@ -26,7 +26,7 @@ html[data-theme='dark'] .lvlBtn button {
 }
 
 .introText {
-  font-size: 12px;
+  font-size: 18px;
   line-height: 18px;
 }
 
@@ -76,7 +76,7 @@ html[data-theme='dark'] .card {
 }
 
 .cardDesc {
-  font-size: 12px !important;
+  font-size: 14px !important;
   line-height: 18px;
   margin: 15px 0px;
 }

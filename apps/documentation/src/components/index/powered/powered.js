@@ -100,7 +100,7 @@ const Powered = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/docs/luos-technology/message/object-dictionary"
+              href="/docs/luos-technology/messages/object-dictionary"
               className={styles.listLink}
             >
               <ListItemAvatar>

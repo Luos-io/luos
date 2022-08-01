@@ -19,7 +19,7 @@ module.exports = {
             {
               type: 'doc',
               label: 'Concept',
-              id: 'luos-technology/basics/concept',
+              id: 'luos-technology/basics/concepts',
             },
             {
               type: 'doc',
@@ -55,8 +55,8 @@ module.exports = {
         },
         {
           type: 'doc',
-          label: 'Package',
-          id: 'luos-technology/package/index',
+          label: 'Packages',
+          id: 'luos-technology/packages/index',
         },
         {
           type: 'category',
@@ -95,36 +95,36 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Message',
+          label: 'Messages',
           link: {
             type: 'doc',
-            id: 'luos-technology/message/message',
+            id: 'luos-technology/messages/index',
           },
           items: [
             {
               type: 'doc',
               label: 'Send message',
-              id: 'luos-technology/message/basic-message',
+              id: 'luos-technology/messages/basic-message',
             },
             {
               type: 'doc',
               label: 'Receive message',
-              id: 'luos-technology/message/handling-message',
+              id: 'luos-technology/messages/handling-message',
             },
             {
               type: 'doc',
               label: 'Commands',
-              id: 'luos-technology/message/command',
+              id: 'luos-technology/messages/command',
             },
             {
               type: 'doc',
               label: 'Object dictionnary',
-              id: 'luos-technology/message/object-dictionary',
+              id: 'luos-technology/messages/object-dictionary',
             },
             {
               type: 'doc',
               label: 'Advanced message',
-              id: 'luos-technology/message/advanced-message',
+              id: 'luos-technology/messages/advanced-message',
             },
           ],
         },
@@ -140,8 +140,8 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          label: 'Minimum requirement',
-          id: 'hardware-consideration/minimum-requirement',
+          label: 'Minimum requirements',
+          id: 'hardware-consideration/minimum-requirements',
         },
         {
           type: 'doc',

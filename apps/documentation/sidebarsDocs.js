@@ -83,7 +83,7 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'Routing Table',
+              label: 'Routing table',
               id: 'luos-technology/services/routing-table',
             },
             {
@@ -103,12 +103,12 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Send Message',
+              label: 'Send message',
               id: 'luos-technology/message/basic-message',
             },
             {
               type: 'doc',
-              label: 'Receive Message',
+              label: 'Receive message',
               id: 'luos-technology/message/handling-message',
             },
             {
@@ -132,7 +132,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Hardware Consideration',
+      label: 'Hardware consideration',
       link: {
         type: 'doc',
         id: 'hardware-consideration/index',
@@ -140,7 +140,7 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          label: 'Minimum Requirement',
+          label: 'Minimum requirement',
           id: 'hardware-consideration/minimum-requirement',
         },
         {
@@ -150,19 +150,19 @@ module.exports = {
         },
         {
           type: 'doc',
-          label: 'Electronic Design',
+          label: 'Electronic design',
           id: 'hardware-consideration/electronics',
         },
         {
           type: 'doc',
-          label: 'Test your Robus Configuration',
+          label: 'Test your Robus configuration',
           id: 'hardware-consideration/test-your-configuration',
         },
       ],
     },
     {
       type: 'category',
-      label: 'Buil-in Tools',
+      label: 'Built-in tools',
       link: {
         type: 'doc',
         id: 'tools/index',
@@ -172,6 +172,11 @@ module.exports = {
           type: 'doc',
           label: 'Gate',
           id: 'tools/gate',
+        },
+        {
+          type: 'doc',
+          label: 'JSON API',
+          id: 'api/api-json',
         },
         {
           type: 'doc',
@@ -197,7 +202,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Integrations',
+      label: 'Software Integrations',
       link: {
         type: 'doc',
         id: 'api/index',
@@ -205,23 +210,33 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          label: 'JSON API',
-          id: 'api/api-json',
-        },
-        {
-          type: 'doc',
-          label: 'SDK Python: Pyluos',
+          label: 'SDK python: Pyluos',
           id: 'tools/pyluos',
         },
         {
           type: 'link',
-          label: 'SDK Typescript',
+          label: 'SDK typescript',
           href: 'https://github.com/Luos-io/sdk-ts',
         },
         {
           type: 'link',
-          label: 'Plateform IO',
+          label: 'PlateformIO',
           href: 'https://www.luos.io/tutorials/pio',
+        },
+        {
+          type: 'link',
+          label: 'Arduino IDE',
+          href: 'https://www.luos.io/tutorials/arduino',
+        },
+        {
+          type: 'link',
+          label: 'Espressif IDE',
+          href: 'https://www.luos.io/tutorials/esp',
+        },
+        {
+          type: 'link',
+          label: 'RTOS',
+          href: 'https://www.luos.io/tutorials/freertos',
         },
         {
           type: 'doc',

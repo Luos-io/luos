@@ -176,12 +176,12 @@ module.exports = {
         {
           type: 'doc',
           label: 'JSON API',
-          id: 'api/api-json',
+          id: 'tools/api-json',
         },
         {
           type: 'doc',
           label: 'Bootloader',
-          id: 'tools/boot',
+          id: 'tools/bootloader',
         },
         {
           type: 'doc',
@@ -205,13 +205,13 @@ module.exports = {
       label: 'Software Integrations',
       link: {
         type: 'doc',
-        id: 'api/index',
+        id: 'integrations/index',
       },
       items: [
         {
           type: 'doc',
           label: 'SDK python: Pyluos',
-          id: 'tools/pyluos',
+          id: 'integrations/pyluos',
         },
         {
           type: 'link',
@@ -241,7 +241,7 @@ module.exports = {
         {
           type: 'doc',
           label: 'ROS',
-          id: 'tools/ros',
+          id: 'integrations/ros',
         },
       ],
     },

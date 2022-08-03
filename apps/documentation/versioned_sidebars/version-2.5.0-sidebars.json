@@ -19,12 +19,12 @@
             {
               "type": "doc",
               "label": "Concept",
-              "id": "luos-technology/basics/concept"
+              "id": "luos-technology/basics/concepts"
             },
             {
               "type": "doc",
               "label": "Code organization",
-              "id": "luos-technology/basics/orga"
+              "id": "luos-technology/basics/organization"
             }
           ]
         },
@@ -56,7 +56,7 @@
         {
           "type": "doc",
           "label": "Package",
-          "id": "luos-technology/package/index"
+          "id": "luos-technology/packages/index"
         },
         {
           "type": "category",
@@ -69,17 +69,17 @@
             {
               "type": "doc",
               "label": "Initialization",
-              "id": "luos-technology/services/service-api"
+              "id": "luos-technology/services/create-services"
             },
             {
               "type": "doc",
               "label": "Types",
-              "id": "luos-technology/services/service-type"
+              "id": "luos-technology/services/types"
             },
             {
               "type": "doc",
               "label": "Profiles",
-              "id": "luos-technology/services/profile"
+              "id": "luos-technology/services/profiles"
             },
             {
               "type": "doc",
@@ -98,33 +98,33 @@
           "label": "Message",
           "link": {
             "type": "doc",
-            "id": "luos-technology/message/message"
+            "id": "luos-technology/messages/index"
           },
           "items": [
             {
               "type": "doc",
               "label": "Send Message",
-              "id": "luos-technology/message/basic-message"
+              "id": "luos-technology/messages/basic-message"
             },
             {
               "type": "doc",
               "label": "Receive Message",
-              "id": "luos-technology/message/handling-message"
+              "id": "luos-technology/messages/handling-message"
             },
             {
               "type": "doc",
               "label": "Commands",
-              "id": "luos-technology/message/command"
+              "id": "luos-technology/messages/command"
             },
             {
               "type": "doc",
               "label": "Object dictionnary",
-              "id": "luos-technology/message/object-dictionary"
+              "id": "luos-technology/messages/object-dictionary"
             },
             {
               "type": "doc",
               "label": "Advanced message",
-              "id": "luos-technology/message/advanced-message"
+              "id": "luos-technology/messages/advanced-message"
             }
           ]
         }
@@ -141,7 +141,7 @@
         {
           "type": "doc",
           "label": "Minimum Requirement",
-          "id": "hardware-consideration/minimum-requirement"
+          "id": "hardware-consideration/minimum-requirements"
         },
         {
           "type": "doc",
@@ -181,12 +181,12 @@
         {
           "type": "doc",
           "label": "Pyluos",
-          "id": "tools/pyluos"
+          "id": "integrations/pyluos"
         },
         {
           "type": "doc",
           "label": "Bootloader",
-          "id": "tools/boot"
+          "id": "tools/bootloader"
         },
         {
           "type": "doc",
@@ -196,7 +196,7 @@
         {
           "type": "doc",
           "label": "ROS",
-          "id": "tools/ros"
+          "id": "integrations/ros"
         }
       ]
     },
@@ -205,13 +205,13 @@
       "label": "API",
       "link": {
         "type": "doc",
-        "id": "api/index"
+        "id": "integrations/index"
       },
       "items": [
         {
           "type": "doc",
           "label": "JSON API",
-          "id": "api/api-json"
+          "id": "integrations/api-json"
         }
       ]
     },

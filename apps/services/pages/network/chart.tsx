@@ -106,16 +106,14 @@ const Chart = (rtbData: RTBData) => {
     const pies = nodes.map((node) =>
       d3
         .pie()
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // @typescript-eslint/no-explicit-any
         .value((d: any) => d.value)
         .sort(null)
         .sortValues(null)
         .startAngle(0)
         .endAngle(360)
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error
         .endAngle(360)([{ value: node.value }, { value: 1 - node.value }])
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error
         .map((d) => defaultArcParams(d)),
     );
@@ -504,7 +502,8 @@ const Chart = (rtbData: RTBData) => {
   return (
     <div id="content">
       <Alert severity="info" style={{ margin: '30px 60px 0' }}>
-      This browser application demonstrate how Luos natively allows direct access and control of any hardware specific product.{' '}
+        This browser application demonstrate how Luos natively allows direct access and control of
+        any hardware specific product.{' '}
         <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=feature&template=feature-request.md&title=%5BNEW+FEATURE%5D+">
           💡 You can ask for new feature here. 💡
         </a>

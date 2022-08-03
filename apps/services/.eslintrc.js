@@ -1,5 +1,6 @@
+console.log('[Apps/Services] Loading configurations from eslint-config-custom package...');
+
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
-  extends: ['custom', 'plugin:@typescript-eslint/recommended', 'next/core-web-vitals'],
-  plugins: ['@typescript-eslint'],
+  extends: ['custom', 'next/core-web-vitals'],
 };

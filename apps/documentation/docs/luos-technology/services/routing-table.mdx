@@ -9,7 +9,7 @@ import { customFields } from '/docusaurus.config.js';
 import Tooltip from '/src/components/Tooltip.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import Image from '/src/components/Images.js';
+import Image from '/src/components/Image.js';
 
 # Routing Table
 
@@ -48,13 +48,14 @@ Luos_IsNodeDetected();
 
 It returns `true` or `false` depending on whether this node is detected or not.
 
-:::caution 
+:::caution
 Warnings:
+
 1. Be careful that a service's ID can change during a detection depending on the service running this detection.
 2. Do not consider your service's ID fixed.
 3. Be aware that every service removes its auto-update configuration during the detection to prevent any ID movement.
 4. Make sure that by the creation of your services you specified a callback pointer for each of them, so that the messages arriving to them concerning the detection do not stay stored in your node's memory.
-:::
+   :::
 
 ## Modes
 

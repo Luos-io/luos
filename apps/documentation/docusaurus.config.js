@@ -109,7 +109,7 @@ module.exports = {
               label: 'Tutorials',
             },
             {
-              to: 'https://www.luos.io/docs',
+              to: '/docs/luos-technology',
               label: 'Documentation',
             },
             {

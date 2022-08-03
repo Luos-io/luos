@@ -120,24 +120,62 @@ module.exports = {
       link: { type: 'doc', id: 'index' },
       items: [
         {
-          type: 'doc',
+          type: 'category',
           label: 'PlatformIO',
-          id: 'pio/pio',
+          link: { type: 'doc', id: 'pio/pio' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Create your project',
+              id: 'pio/creation',
+            },
+            {
+              type: 'doc',
+              label: 'Include Luos',
+              id: 'pio/include',
+            },
+          ],
         },
         {
-          type: 'doc',
+          type: 'category',
           label: 'Arduino IDE',
-          id: 'arduino/intro',
+          link: { type: 'doc', id: 'arduino/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Luos with Arduino IDE',
+              id: 'arduino/arduino',
+            },
+          ],
         },
         {
-          type: 'doc',
+          type: 'category',
           label: 'Espressif IDE',
-          id: 'esp/esp',
+          link: { type: 'doc', id: 'esp/esp' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Set the environnement',
+              id: 'esp/env',
+            },
+            {
+              type: 'doc',
+              label: 'Conect ESP to network',
+              id: 'esp/connect',
+            },
+          ],
         },
         {
-          type: 'doc',
+          type: 'category',
           label: 'RTOS',
-          id: 'freertos/intro',
+          link: { type: 'doc', id: 'freertos/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'RTOS with Luos engine',
+              id: 'freertos/freertos',
+            },
+          ],
         },
         {
           type: 'category',

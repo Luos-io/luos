@@ -371,12 +371,14 @@ export const Network = (): JSX.Element => {
                         variant="contained"
                         className={styles.detectionBtn}
                         onClick={async () => {
-                          setShowDisplayBtn(true);
-                          setIsLoaded(true);
-                          await sdk.init();
-                          const ports = await sdk.getPorts();
-                          const rtbData = await sdk.getRoutingTable(ports[0], { debug: true });
-                          setRoutingTable(rtbData[0]);
+                          // setShowDisplayBtn(true);
+                          // setIsLoaded(true);
+                          // await sdk.init();
+
+                          sdk.connectWS('localhost', 9342);
+                          // const ports = await sdk.getPorts();
+                          // const rtbData = await sdk.getRoutingTable(ports[0], { debug: true });
+                          // setRoutingTable(rtbData[0]);
                         }}
                       >
                         Launch detection

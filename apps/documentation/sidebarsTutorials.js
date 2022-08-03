@@ -210,16 +210,60 @@ module.exports = {
       link: { type: 'doc', id: 'index' },
       items: [
         {
-          type: 'doc',
+          type: 'category',
           label: 'Morse encoder',
-          id: 'morse/morse',
+          link: { type: 'doc', id: 'morse/morse' },
+          items: [
+            {
+              type: 'doc',
+              label: 'The algorithm',
+              id: 'morse/algorithm',
+            },
+            {
+              type: 'doc',
+              label: 'Display encoder output',
+              id: 'morse/output',
+            },
+            {
+              type: 'doc',
+              label: 'Add an input service',
+              id: 'morse/add-service',
+            },
+          ],
         },
         {
-          type: 'doc',
+          type: 'category',
           label: 'Connected bike alarm',
-          id: 'bike-alarm/bike-alarm',
+          link: { type: 'doc', id: 'bike-alarm/bike-alarm' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Make a basic alarm',
+              id: 'bike-alarm/basic-alarm',
+            },
+            {
+              type: 'doc',
+              label: 'Make this alarm modular',
+              id: 'bike-alarm/adaptable-alarm',
+            },
+            {
+              type: 'doc',
+              label: 'Add a control app',
+              id: 'bike-alarm/control-alarm',
+            },
+            {
+              type: 'doc',
+              label: 'Make the alarm evolve',
+              id: 'bike-alarm/evolve-alarm',
+            },
+            {
+              type: 'doc',
+              label: 'Connect it to the Cloud',
+              id: 'bike-alarm/cloud-alarm',
+            },
+          ],
         },
       ],
-    }
+    },
   ],
 };

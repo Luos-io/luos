@@ -13,7 +13,7 @@ import Image from "@site/src/components/Images.js";
 
 Luos engine is the engine provided by Luos that will manage your services on all your nodes.
 
-Technically, this engine is an embedded lightwheight and realtime C code library that you can include and use in your firmware. This library provides a simple API to create, manage, and interact with services.
+Technically, this engine is an embedded lightwheight and realtime C code library that you can include and use in your firmware. This library provides a simple [API](../../tools/api-json) to create, manage, and interact with services.
 
 :::tip
 As Luos engine is not an operating system, you can use it with or without any operating system.
@@ -27,6 +27,9 @@ A node is a physical component (hardware) running Luos engine and hosting one or
 
 In other words, **a node is a microcontroller** connected to other microcontrollers running Luos.
 In the Luos philosophy, each node has to carry the necessary programs (services), allowing it to manage its boards and features.
+<a href="../node" target ="_blank" class="pagination-nav__link" style={{ display: 'inline-block' }}>
+  Know more about nodes
+</a>
 
 <div align="center">
   <Image
@@ -36,9 +39,12 @@ In the Luos philosophy, each node has to carry the necessary programs (services)
   />
 </div>
 
-## Package
+## Packages
 
 A package is a folder of code containing a pack of features in your project. A package can be composed of one or several services, but services in the same package share the same physical resources. For example, a dual DCmotor driver is developed into one package but exposes two services (one for each motor). The purpose of this package is to be simply copied and pasted across projects or shared as ready-to-use apps.
+<a href="../packages" target ="_blank" class="pagination-nav__link" style={{ display: 'inline-block' }}>
+  Know more about packages
+</a>
 
 ## Service
 

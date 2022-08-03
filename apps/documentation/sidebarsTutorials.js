@@ -6,34 +6,111 @@ module.exports = {
       link: { type: 'doc', id: 'index' },
       items: [
         {
-          type: 'doc',
+          type: 'category',
           label: 'Get started',
-          id: 'get-started/get-started',
+          link: { type: 'doc', id: 'get-started/get-started' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Your first project',
+              id: 'get-started/get-started1',
+            },
+            {
+              type: 'doc',
+              label: 'Take the control',
+              id: 'get-started/get-started2',
+            },
+            {
+              type: 'doc',
+              label: 'Unleash your code',
+              id: 'get-started/get-started3',
+            },
+            {
+              type: 'doc',
+              label: 'Display your network',
+              id: 'get-started/get-started4',
+            },
+          ],
         },
         {
-          type: 'doc',
+          type: 'category',
           label: 'First service',
-          id: 'your-first-service/your-first-service',
+          link: { type: 'doc', id: 'your-first-service/your-first-service' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Create a service',
+              id: 'your-first-service/luos-service',
+            },
+            {
+              type: 'doc',
+              label: 'Create a package',
+              id: 'your-first-service/create-a-package',
+            },
+          ],
         },
         {
-          type: 'doc',
+          type: 'category',
           label: 'First message',
-          id: 'your-first-message/your-first-message',
+          link: { type: 'doc', id: 'your-first-message/your-first-message' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Receive a message',
+              id: 'your-first-message/receiving-message',
+            },
+            {
+              type: 'doc',
+              label: 'Send a message',
+              id: 'your-first-message/send-message',
+            },
+          ],
         },
         {
-          type: 'doc',
+          type: 'category',
           label: 'First detection',
-          id: 'your-first-detection/your-first-detection',
+          link: { type: 'doc', id: 'your-first-detection/your-first-detection' },
+          items: [
+            {
+              type: 'doc',
+              label: 'The topology',
+              id: 'your-first-detection/topology',
+            },
+            {
+              type: 'doc',
+              label: 'The routing table',
+              id: 'your-first-detection/routing-table',
+            },
+            {
+              type: 'doc',
+              label: 'Full application',
+              id: 'your-first-detection/embedded-app',
+            },
+          ],
         },
         {
-          type: 'doc',
+          type: 'category',
           label: 'Aliases',
-          id: 'resilient-alias/intro',
+          link: { type: 'doc', id: 'resilient-alias/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Resilient aliases management',
+              id: 'resilient-alias/resilient-alias',
+            },
+          ],
         },
         {
-          type: 'doc',
+          type: 'category',
           label: 'Bootloader',
-          id: 'bootloader/intro',
+          link: { type: 'doc', id: 'bootloader/intro' },
+          items: [
+            {
+              type: 'doc',
+              label: 'Set and use a bootloader',
+              id: 'bootloader/bootloader',
+            },
+          ],
         },
       ],
     },

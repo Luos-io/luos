@@ -13,12 +13,9 @@ import CardGrid from './cardGrid';
 import styles from './index.module.css';
 import data from './data/dataIntro.json';
 
-const Intro = () => {
+const Intro = (Props) => {
   const [filters, setfilters] = useState({
-    toc: '',
-    tags: [],
-    hardware: '',
-    category: '',
+    category: Props.category ? Props.category : '',
     level: '',
   });
 

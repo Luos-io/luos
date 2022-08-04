@@ -2,13 +2,6 @@
   "title": "Tutorials",
   "introText": "Here you can find all of our trainings and tutorials.",
   "filters": {
-    "toc": [
-      { "id": 1, "label": "Less than 1 hours", "duration": 60 },
-      { "id": 2, "label": "Less than 3 hours", "duration": 180 },
-      { "id": 3, "label": "Less than 6 hours", "duration": 360 },
-      { "id": 4, "label": "More than 6 hours", "duration": 361 }
-    ],
-    "hardware": ["arduino", "l0", "nucleo"],
     "category": ["Trainings", "Integrations", "Use cases"]
   },
   "tuto": [

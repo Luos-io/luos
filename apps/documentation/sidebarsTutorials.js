@@ -1,6 +1,5 @@
 module.exports = {
   documentation: [
-    
     {
       type: 'category',
       label: 'Tutorials',
@@ -9,7 +8,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Trainings',
-          link: { type: 'doc', id: 'index' },
+          link: { type: 'doc', id: 'trainings' },
           collapsed: true,
           items: [
             {
@@ -124,7 +123,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Integrations',
-          link: { type: 'doc', id: 'index' },
+          link: { type: 'doc', id: 'integrations' },
           collapsed: true,
           items: [
             {
@@ -215,7 +214,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Use cases',
-          link: { type: 'doc', id: 'index' },
+          link: { type: 'doc', id: 'usecases' },
           collapsed: true,
           items: [
             {

@@ -19,8 +19,10 @@ import ComputerIcon from '@mui/icons-material/Computer';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
+import Image from '@site/src/components/Image';
+
 const Anatomy = (props) => {
-  const { isDarkTheme } = useColorMode();
+  const { colorMode } = useColorMode();
   const img = {
     topo: 'topology',
     micro: 'microservice',
@@ -41,13 +43,10 @@ const Anatomy = (props) => {
       <Grid container>
         <Grid item xs={12} md={6} lg={6} xl={6}>
           {' '}
-          <h2 className={`${styles.title} ${styles.underline}`}>
-            Anatomy of Luos
-          </h2>
+          <h2 className={`${styles.title} ${styles.underline}`}>Anatomy of Luos</h2>
           <p className={styles.text}>
-            Luos gives you access to multiple features created by developers for
-            developers. Many of these features are based on the needs of the
-            community.
+            Luos gives you access to multiple features created by developers for developers. Many of
+            these features are based on the needs of the community.
           </p>
         </Grid>
       </Grid>
@@ -137,10 +136,7 @@ const Anatomy = (props) => {
               className={styles.listLink}
             >
               <ListItemAvatar>
-                <CalendarMonthIcon
-                  fontSize="large"
-                  className={styles.listIcon}
-                />
+                <CalendarMonthIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 primary="Timestamp"
@@ -156,10 +152,7 @@ const Anatomy = (props) => {
               className={styles.listLink}
             >
               <ListItemAvatar>
-                <MiscellaneousServicesIcon
-                  fontSize="large"
-                  className={styles.listIcon}
-                />
+                <MiscellaneousServicesIcon fontSize="large" className={styles.listIcon} />
               </ListItemAvatar>
               <ListItemText
                 primary="Microservice architecture"
@@ -173,24 +166,34 @@ const Anatomy = (props) => {
         <Grid item xs={12} md={6} lg={6} xl={3} className={styles.vscode}>
           <div className={styles.head}>
             {' '}
-            <img
+            <Image
               src="img/index/header/buttons.svg"
-              style={{ padding: '15px', width: '100px' }}
+              width="100"
+              alt="buttons"
+              style={{ padding: '15px' }}
             />
           </div>
           <Grid container style={{ height: '87%' }}>
             <Grid item xs={2} md={2} lg={1} className={styles.docs}>
               <FileCopyIcon fontSize="large" className={styles.icons} />
               <SearchIcon fontSize="large" className={styles.icons} />
-              {isDarkTheme ? (
+              {colorMode === 'dark' ? (
                 <>
                   {' '}
-                  <img src="img/index/header/luos.svg" />{' '}
+                  <Image
+                    src="img/index/header/luos.svg"
+                    width="30"
+                    alt="luos"
+                  />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/luos-white.svg" />{' '}
+                  <Image
+                    src="img/index/header/luos-white.svg"
+                    width="30"
+                    alt="luos-white"
+                  />{' '}
                 </>
               )}
             </Grid>
@@ -207,55 +210,37 @@ const Anatomy = (props) => {
               >
                 <FormControlLabel
                   value="topo"
-                  className={
-                    currentInt == 'topo' ? styles.engineActive : styles.engine
-                  }
+                  className={currentInt == 'topo' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="Topology"
                 />
                 <FormControlLabel
                   value="micro"
-                  className={
-                    currentInt == 'micro' ? styles.engineActive : styles.engine
-                  }
+                  className={currentInt == 'micro' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="Microservices"
                 />
                 <FormControlLabel
                   value="remote"
-                  className={
-                    currentInt == 'remote' ? styles.engineActive : styles.engine
-                  }
+                  className={currentInt == 'remote' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="Remote control"
                 />
                 <FormControlLabel
                   value="bootloader"
-                  className={
-                    currentInt == 'bootloader'
-                      ? styles.engineActive
-                      : styles.engine
-                  }
+                  className={currentInt == 'bootloader' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="Bootloader"
                 />
                 <FormControlLabel
                   value="timestamp"
-                  className={
-                    currentInt == 'timestamp'
-                      ? styles.engineActive
-                      : styles.engine
-                  }
+                  className={currentInt == 'timestamp' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="Timestamp"
                 />
                 <FormControlLabel
                   value="monitoring"
-                  className={
-                    currentInt == 'monitoring'
-                      ? styles.engineActive
-                      : styles.engine
-                  }
+                  className={currentInt == 'monitoring' ? styles.engineActive : styles.engine}
                   control={<Radio />}
                   label="Monitoring"
                 />
@@ -280,16 +265,18 @@ const Anatomy = (props) => {
       </Grid>
       <Grid container>
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
-          <img
+          <Image
             src="img/index/integration/line-right.svg"
+            alt="line-right"
             style={{ transform: 'rotateY(180deg)' }}
             className={styles.linesImg}
           />
         </Grid>
         <Grid item xs={4} md={4} lg={4} xl={4}></Grid>
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
-          <img
+          <Image
             src="img/index/integration/line-right.svg"
+            alt="line-right"
             style={{ float: 'right' }}
             className={styles.linesImg}
           />

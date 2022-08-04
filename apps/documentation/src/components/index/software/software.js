@@ -1,16 +1,18 @@
 import React from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
-import styles from './software.module.css';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
-import { useColorMode } from '@docusaurus/theme-common';
 import Carousel from 'react-material-ui-carousel';
-import Paper from '@mui/material/Paper';
+import { useColorMode } from '@docusaurus/theme-common';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import SearchIcon from '@mui/icons-material/Search';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Image from '@site/src/components/Image';
 
-const Software = (props) => {
-  const { isDarkTheme } = useColorMode();
+import styles from './software.module.css';
+
+const Software = () => {
+  const { colorMode } = useColorMode();
 
   let items = [
     {
@@ -35,16 +37,14 @@ const Software = (props) => {
   ];
 
   const anArrayOfNumbers = [
-    <img src="img/index/software/icons/step1.svg" />,
-    <img src="img/index/software/icons/step2.svg" />,
-    <img src="img/index/software/icons/step3.svg" />,
+    <Image src="img/index/software/icons/step1.svg" alt="Step 1" />,
+    <Image src="img/index/software/icons/step2.svg" alt="Step 2" />,
+    <Image src="img/index/software/icons/step3.svg" alt="Step 3" />,
   ];
 
   return (
     <div className={styles.container}>
-      <h4 style={{ textAlign: 'center', marginTop: '30px' }}>
-        Split the monolith:{' '}
-      </h4>
+      <h4 style={{ textAlign: 'center', marginTop: '30px' }}>Split the monolith: </h4>
       <h2 className={`${styles.title} ${styles.underline}`}>
         Develop scalable edge and embedded distributed software
       </h2>
@@ -58,8 +58,8 @@ const Software = (props) => {
                 Network agnostic data format
               </h3>
               <p style={{ textAlign: 'justify' }}>
-                Luos engine provides a network agnostic multimaster data format.
-                No matter how specific your network is.
+                Luos engine provides a network agnostic multimaster data format. No matter how
+                specific your network is.
               </p>
             </Grid>
             <Grid item md={1} lg={1}></Grid>
@@ -68,9 +68,8 @@ const Software = (props) => {
                 Portable and scalable code
               </h3>
               <p style={{ textAlign: 'justify' }}>
-                Luos engine allows you to create packages and make them portable
-                and scalable. You can share them with your team or the
-                community.
+                Luos engine allows you to create packages and make them portable and scalable. You
+                can share them with your team or the community.
               </p>
             </Grid>
             <Grid item md={1} lg={1}></Grid>
@@ -79,8 +78,8 @@ const Software = (props) => {
                 Encapsulate features into services
               </h3>
               <p style={{ textAlign: 'justify' }}>
-                Luos engine encapsulates embedded features in services with
-                APIs. This allows you to have direct access to the hardware.
+                Luos engine encapsulates embedded features in services with APIs. This allows you to
+                have direct access to the hardware.
               </p>
             </Grid>
           </Grid>
@@ -104,16 +103,15 @@ const Software = (props) => {
               <Grid container>
                 <Grid item md={4} lg={4} xl={4}>
                   {' '}
-                  <img
+                  <Image
                     src="img/index/header/buttons.svg"
                     style={{ padding: '15px', width: '100px' }}
+                    alt="buttons"
                   />
                 </Grid>
                 <Grid item md={4} lg={4} xl={4} style={{ textAlign: 'center' }}>
                   {' '}
-                  <h2 className={`${styles.hiwTitle} ${styles.underline}`}>
-                    /How it works
-                  </h2>
+                  <h2 className={`${styles.hiwTitle} ${styles.underline}`}>/How it works</h2>
                 </Grid>
                 <Grid item md={4} lg={4} xl={4}></Grid>
               </Grid>
@@ -122,15 +120,15 @@ const Software = (props) => {
               <Grid item md={1} lg={1} xl={1} className={styles.docs}>
                 <FileCopyIcon fontSize="large" className={styles.icons} />
                 <SearchIcon fontSize="large" className={styles.icons} />
-                {isDarkTheme ? (
+                {colorMode === 'dark' ? (
                   <>
                     {' '}
-                    <img src="img/index/header/luos.svg" />{' '}
+                    <Image src="img/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <img src="img/index/header/luos-white.svg" />{' '}
+                    <Image src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>
@@ -141,12 +139,15 @@ const Software = (props) => {
                     <div className={styles.file}>
                       <div className={styles.fileName}>step_1.c</div>
                     </div>
-                    <img
+                    <Image
                       src={
-                        isDarkTheme
+                        colorMode === 'dark'
                           ? `img/index/software/step1.svg`
                           : `img/index/software/step1-dark.svg`
                       }
+                      width="130"
+                      height="130"
+                      alt="step one"
                       className={styles.carousselImgDesktop}
                       loading="lazy"
                     />
@@ -159,12 +160,15 @@ const Software = (props) => {
                     <div className={styles.file}>
                       <div className={styles.fileName}>step_2.py</div>
                     </div>
-                    <img
+                    <Image
                       src={
-                        isDarkTheme
+                        colorMode === 'dark'
                           ? `img/index/software/step2.svg`
                           : `img/index/software/step2-dark.svg`
                       }
+                      width="130"
+                      height="130"
+                      alt="step two"
                       className={styles.carousselImgDesktop}
                       loading="lazy"
                     />
@@ -177,19 +181,22 @@ const Software = (props) => {
                     <div className={styles.file}>
                       <div className={styles.fileName}>step_3.js</div>
                     </div>
-                    <img
+                    <Image
                       src={
-                        isDarkTheme
+                        colorMode === 'dark'
                           ? `img/index/software/step3.svg`
                           : `img/index/software/step3-dark.svg`
                       }
+                      width="130"
+                      height="130"
+                      alt="step three"
                       className={styles.carousselImgDesktop}
                       loading="lazy"
                     />
                     <h3 className={styles.carousselTitle}>3. EXPLOITATION</h3>
                     <p className={styles.carousselText}>
-                      Luos provides you with integrations and tools to design
-                      the software architectures of your dreams.
+                      Luos provides you with integrations and tools to design the software
+                      architectures of your dreams.
                     </p>
                   </Grid>
                 </Grid>
@@ -209,9 +216,10 @@ const Software = (props) => {
               <Grid container>
                 <Grid item xs={4}>
                   {' '}
-                  <img
+                  <Image
                     src="img/index/header/buttons.svg"
                     style={{ padding: '15px', width: '100px' }}
+                    alt="buttons"
                   />
                 </Grid>
                 <Grid item xs={8} style={{}}>
@@ -229,15 +237,15 @@ const Software = (props) => {
               <Grid item xs={2} className={styles.docs}>
                 <FileCopyIcon fontSize="large" className={styles.icons} />
                 <SearchIcon fontSize="large" className={styles.icons} />
-                {isDarkTheme ? (
+                {colorMode === 'dark' ? (
                   <>
                     {' '}
-                    <img src="img/index/header/luos.svg" />{' '}
+                    <Image src="img/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <img src="img/index/header/luos-white.svg" />{' '}
+                    <Image src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>
@@ -274,15 +282,15 @@ const Software = (props) => {
 };
 
 function Item(props) {
-  const { isDarkTheme } = useColorMode();
+  const { colorMode } = useColorMode();
   return (
     <Paper className={styles.caroussel}>
       <div className={styles.file}>
         <div className={styles.fileName}>{props.item.file}</div>
       </div>
-      <img
+      <Image
         src={
-          isDarkTheme
+          colorMode === 'dark'
             ? `img/index/software/${props.item.img}.svg`
             : `img/index/software/${props.item.img}-dark.svg`
         }

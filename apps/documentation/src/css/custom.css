@@ -542,9 +542,6 @@ html[data-theme='dark'] .header-github-link:hover:before {
   line-height: normal !important;
 }
 
-.imgPreview {
-  cursor: pointer;
-}
 .navbar {
   min-height: 70px !important;
 }
@@ -702,4 +699,18 @@ html[data-theme='dark'] .footer__title {
 
 html[data-theme='dark'] .DocSearch-Button {
   background: #565758 !important;
+}
+
+.arrayWithImg table {
+  display: inline-block !important;
+  margin-right: 15px;
+}
+
+.dropdown-archived-versions {
+  font-size: 0.875rem;
+  padding: 0;
+}
+
+.dropdown-separator {
+  margin: 10px 0px;
 }

@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
-import styles from './integration.module.css';
-import Grid from '@mui/material/Grid';
-import Link from '@docusaurus/Link';
-import Button from '@mui/material/Button';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useColorMode } from '@docusaurus/theme-common';
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import SearchIcon from '@mui/icons-material/Search';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Grid from '@mui/material/Grid';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import FileCopyIcon from '@mui/icons-material/FileCopy';
-import SearchIcon from '@mui/icons-material/Search';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import Image from '@site/src/components/Image';
+
+import styles from './integration.module.css';
 
 // DO NOT REMOVE WIP INTEGRATION BLOCK
 
 const Integration = (props) => {
-  const { isDarkTheme } = useColorMode();
+  const { colorMode } = useColorMode();
 
   const img = {
     mcu: [
@@ -37,7 +37,7 @@ const Integration = (props) => {
     ],
     api: [
       ['simplefoc', 'SimpleFOC'],
-      ['zappier', 'Zappier '],
+      ['zapier', 'Zapier '],
       ['ifttt', 'IFTTT ', 'ifttt-white'],
       ['freedom', 'Freedom Robotics '],
     ],
@@ -49,7 +49,7 @@ const Integration = (props) => {
     ],
   };
 
-  const soon = ['zappier', 'ifttt', 'freedom', 'microros'];
+  const soon = ['zapier', 'ifttt', 'freedom', 'microros'];
 
   const links = {
     esp: '',
@@ -64,7 +64,7 @@ const Integration = (props) => {
     freertos: '/docs/tools/ros',
     microros: '',
     simplefoc: '',
-    zappier: '',
+    zapier: '',
     ifttt: '',
     freedom: '',
     c: '',
@@ -88,7 +88,11 @@ const Integration = (props) => {
       <Grid container spacing={3}>
         <Grid item xs={6} md={4} lg={4}>
           {' '}
-          <img src="img/index/integration/line-right.svg" className={styles.imgLeft} />
+          <Image
+            src="img/index/integration/line-right.svg"
+            alt="line-right"
+            className={styles.imgLeft}
+          />
         </Grid>
         <Grid item xs={12} md={4} lg={4}>
           <h2 className={`${styles.title} ${styles.underline}`}>Integrations</h2>
@@ -110,9 +114,10 @@ const Integration = (props) => {
             <Grid container>
               <Grid item md={4} lg={4} xl={4}>
                 {' '}
-                <img
+                <Image
                   src="img/index/header/buttons.svg"
                   style={{ padding: '15px', width: '100px' }}
+                  alt="buttons"
                 />
               </Grid>
               <Grid item md={4} lg={4} xl={4} style={{ textAlign: 'center' }}>
@@ -126,15 +131,15 @@ const Integration = (props) => {
             <Grid item md={1} lg={1} className={styles.docs}>
               <FileCopyIcon fontSize="large" className={styles.icons} />
               <SearchIcon fontSize="large" className={styles.icons} />
-              {isDarkTheme ? (
+              {colorMode === 'dark' ? (
                 <>
                   {' '}
-                  <img src="img/index/header/luos.svg" />{' '}
+                  <Image src="img/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/luos-white.svg" />{' '}
+                  <Image src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>
@@ -181,38 +186,37 @@ const Integration = (props) => {
               <ImageList cols={4} style={{ padding: '15px' }}>
                 {currentImageTmp.map((element, index) => (
                   <a
+                    key={`integration-vscode-menu-link-${index}`}
                     href={links[element[0]]}
                     className={links[element[0]] !== '' ? styles.imgLink : styles.imgLinkDesible}
                   >
-                    <ImageListItem key={index} alignitems="center">
-                      <img
+                    <ImageListItem key={index}>
+                      <Image
                         src={
-                          isDarkTheme
+                          colorMode === 'dark'
                             ? element[2]
                               ? `img/index/integration/icons/${element[2]}.svg`
                               : `img/index/integration/icons/${element[0]}.svg`
                             : `img/index/integration/icons/${element[0]}.svg`
                         }
+                        width="48"
                         alt={element[1]}
                         loading="lazy"
                         style={{
-                          width: '64px',
+                          display: 'block',
                           objectFit: 'initial',
                           margin: '0 auto',
                         }}
                       />
-                      <div>
-                        <ImageListItemBar
-                          title={element[1]}
-                          subtitle={soon.indexOf(element[0]) != -1 ? '(soon)' : ''}
-                          position="below"
-                          style={{
-                            width: '150px',
-                            margin: '0 auto',
-                            textAlign: 'center',
-                          }}
-                        />
-                      </div>
+                      <ImageListItemBar
+                        title={element[1]}
+                        subtitle={soon.indexOf(element[0]) != -1 ? '(soon)' : ''}
+                        position="below"
+                        style={{
+                          margin: '0 auto',
+                          textAlign: 'center',
+                        }}
+                      />
                     </ImageListItem>
                   </a>
                 ))}
@@ -225,7 +229,6 @@ const Integration = (props) => {
         </Grid>
         <Grid item md={1} lg={1} xl={1}></Grid>
       </Grid>
-
       <Grid container>
         <Grid item xs={0.5}></Grid>
         <Grid
@@ -238,7 +241,11 @@ const Integration = (props) => {
         >
           <div className={styles.head}>
             {' '}
-            <img src="img/index/header/buttons.svg" style={{ padding: '15px', width: '100px' }} />
+            <Image
+              src="img/index/header/buttons.svg"
+              alt="buttons"
+              style={{ padding: '15px', width: '100px' }}
+            />
           </div>
           <Grid container style={{ height: '87%' }}>
             <Grid item xs={4} className={styles.video} style={{ borderLeft: '2px solid black' }}>
@@ -283,14 +290,19 @@ const Integration = (props) => {
             <Grid item xs={8} lg={9} className={styles.player}>
               <ImageList cols={2} style={{ padding: '10px' }}>
                 {currentImageTmp.map((element, index) => (
-                  <a href={links[element[0]]} className={styles.imgLink}>
+                  <a
+                    key={`integration-vscode-content-link-${index}`}
+                    href={links[element[0]]}
+                    className={styles.imgLink}
+                  >
                     <ImageListItem key={index}>
-                      <img
+                      <Image
                         src={`img/index/integration/icons/${element[0]}.svg`}
+                        width="48"
                         alt={element[1]}
                         loading="lazy"
                         style={{
-                          width: '48px',
+                          display: 'block',
                           objectFit: 'initial',
                           margin: '0 auto',
                         }}
@@ -300,7 +312,6 @@ const Integration = (props) => {
                         subtitle={soon.indexOf(element[0]) != -1 ? '(soon)' : ''}
                         position="below"
                         style={{
-                          width: '150px',
                           margin: '0 auto',
                           textAlign: 'center',
                         }}
@@ -317,12 +328,15 @@ const Integration = (props) => {
         </Grid>
         <Grid item xs={0.5}></Grid>
       </Grid>
-
       <Grid container spacing={3}>
         <Grid item xs={2} md={4} lg={4}></Grid>
         <Grid item xs={4} md={4} lg={4}></Grid>
         <Grid item xs={6} md={4} lg={4}>
-          <img src="img/index/integration/line-right.svg" className={styles.imgRight} />
+          <Image
+            src="img/index/integration/line-right.svg"
+            alt="line-right"
+            className={styles.imgRight}
+          />
         </Grid>
       </Grid>
     </div>

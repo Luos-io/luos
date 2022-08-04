@@ -13,12 +13,12 @@ import TextBLock from 'pages/typeform/components/TextBlock';
 import styles from 'pages/typeform/form.module.scss';
 
 const Result = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // @typescript-eslint/no-explicit-any
   const Responses: { [key: string]: any } = ResponsesJson;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // @typescript-eslint/no-explicit-any
   const Titles: { [key: string]: any } = TitlesJson;
   const { responses } = props;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // @typescript-eslint/no-explicit-any
   const parsedResponses = responses.filter((response: any) => {
     return (
       (response.type === 'choice' && Responses[response.field.id][response.choice.id]) ||

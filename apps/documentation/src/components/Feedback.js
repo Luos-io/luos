@@ -5,6 +5,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
+import Image from '@site/src/components/Image';
+
 export default function ContactUs() {
   const isBrowser = useIsBrowser();
   const [sending, isSending] = useState(false);
@@ -51,7 +53,7 @@ export default function ContactUs() {
           </p>
         </div>
         <div className="col-info__img__container">
-          <img className="col-info__img" src="/img/letter.png" />
+          <Image className="col-info__img" src="/img/letter.png" alt="letter" />
         </div>
       </div>
       <div className="col-form">

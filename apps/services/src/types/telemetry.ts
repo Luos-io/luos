@@ -17,7 +17,9 @@ export type Telemetry = {
   type: TelemetryType;
   system: TelemetrySystem | string;
   mac: Buffer;
+  ip?: string;
   duration: number;
+  date: Date;
 };
 
 export interface TelemetryLuosEngine extends Telemetry {

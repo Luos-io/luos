@@ -1,6 +1,10 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const VersionsArchived = require('./versionsArchived.json');
+
+const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(0, 5);
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Luos',
@@ -13,6 +17,7 @@ module.exports = {
   favicon: 'img/favicon.png',
   organizationName: 'Luos-io', // Usually your GitHub org/user name.
   projectName: 'Documentation', // Usually your repo name.
+  trailingSlash: false,
 
   customFields: {
     node_def:
@@ -31,6 +36,15 @@ module.exports = {
   },
 
   themeConfig: {
+    i18n: {
+      defaultLocale: 'en',
+      locales: ['en'],
+      localeConfigs: {
+        en: {
+          htmlLang: 'en-GB',
+        },
+      },
+    },
     metadata: [
       {
         name: 'description',
@@ -61,6 +75,21 @@ module.exports = {
           type: 'docsVersionDropdown',
           position: 'left',
           dropdownActiveClassDisabled: true,
+          dropdownItemsAfter: [
+            {
+              type: 'html',
+              value: '<hr class="dropdown-separator">',
+            },
+            {
+              type: 'html',
+              className: 'dropdown-archived-versions',
+              value: '<b>Archived versions</b>',
+            },
+            ...ArchivedVersionsDropdownItems.map(([versionName, versionUrl]) => ({
+              label: versionName,
+              href: versionUrl,
+            })),
+          ],
         },
         {
           to: '/',
@@ -196,7 +225,7 @@ module.exports = {
           editUrl: 'https://github.com/luos-io/Documentation',
           versions: {
             current: {
-              label: '2.5.0-beta 🚧',
+              label: '2.6.0-beta 🚧',
             },
           },
         },
@@ -250,6 +279,15 @@ module.exports = {
       '@docusaurus/plugin-client-redirects',
       {
         fromExtensions: ['html'],
+      },
+    ],
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        max: 1080, // max resized image's size.
+        min: 640, // min resized image's size. if original is lower, use that size.
+        steps: 2, // the max number of images generated between min and max (inclusive)
+        disableInDev: false,
       },
     ],
     ['./plugins/dotenv', {}],

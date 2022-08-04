@@ -1,3 +1,7 @@
+console.log(
+  '[Packages/Eslint-Config-Custom] Loading configurations from eslint-config-custom package...',
+);
+
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   extends: [

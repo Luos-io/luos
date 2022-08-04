@@ -16,6 +16,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
+import SvgIcon from '@mui/material/SvgIcon';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
@@ -31,7 +32,7 @@ import withUserBadges, { WithUserBadgesResult } from 'utils/services/mongo/withU
 
 import { getRoleValue } from 'utils/user';
 
-import type { SvgIconTypeMap } from '@mui/material';
+import type { SvgIconProps, SvgIconTypeMap } from '@mui/material';
 import type { OverridableComponent } from '@mui/types';
 import type { GetServerSidePropsContext } from 'next';
 import type { SyntheticEvent } from 'react';
@@ -85,9 +86,7 @@ export const Profile = ({
     children,
   }: {
     name: string;
-    Icon: OverridableComponent<SvgIconTypeMap<Record<string, unknown>, 'svg'>> & {
-      muiName: string;
-    };
+    Icon: React.ReactElement<SvgIconProps>;
     children: React.ReactNode;
   }) => (
     <Accordion
@@ -110,12 +109,7 @@ export const Profile = ({
               height: '24px',
             }}
           >
-            <Icon
-              sx={{
-                width: '24px',
-                height: '24px',
-              }}
-            />
+            {Icon}
           </Grid>
           <Grid item xs={11}>
             <Typography variant="h3" className={Styles.sectionTitle}>
@@ -129,7 +123,7 @@ export const Profile = ({
   );
 
   const Account = () => (
-    <ProfileSection name="profile" Icon={ManageAccountsIcon}>
+    <ProfileSection name="profile" Icon={<ManageAccountsIcon />}>
       <AccordionDetails className={Styles.sectionContent}>
         <Grid container alignItems={'center'} className={Styles.sectionContentRow}>
           <Grid item md={4} xs={12}>
@@ -154,7 +148,7 @@ export const Profile = ({
     const isAccountLinked = (providerName: string) =>
       user?.accounts.some((account: string) => account === providerName.toLowerCase());
     return (
-      <ProfileSection name="integrations" Icon={LinkIcon}>
+      <ProfileSection name="integrations" Icon={<LinkIcon />}>
         <AccordionDetails className={Styles.sectionContent}>
           <List className={Styles.sectionContentList}>
             {providers &&
@@ -200,7 +194,7 @@ export const Profile = ({
   };
 
   const Organizations = ({ teams }: { teams: { name: string; image: string; role: Role }[] }) => (
-    <ProfileSection name="organizations" Icon={BusinessIcon}>
+    <ProfileSection name="organizations" Icon={<BusinessIcon />}>
       <AccordionDetails className={Styles.sectionContent}>
         <List className={Styles.sectionContentList}>
           {teams.map(({ name, image, role }) => (
@@ -232,7 +226,7 @@ export const Profile = ({
     // const endLevelXP = 1000 * Math.pow(level, 3);
     // const currentXP = Math.round((experience / endLevelXP) * 100);
     return (
-      <ProfileSection name="badges" Icon={EmojiEventsIcon}>
+      <ProfileSection name="badges" Icon={<EmojiEventsIcon />}>
         <AccordionDetails className={Styles.sectionContent}>
           {/* <Grid
             container

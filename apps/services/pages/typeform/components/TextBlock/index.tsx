@@ -14,7 +14,7 @@ interface ItemProps {
 }
 
 interface dataProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // @typescript-eslint/no-explicit-any
   data: any;
   title: string;
 }

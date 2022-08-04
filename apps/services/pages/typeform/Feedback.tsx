@@ -38,7 +38,7 @@ const ContactUs = () => {
             isSending(false);
             setIsSuccess(true);
           },
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          // @typescript-eslint/no-explicit-any
           (error: any) => {
             isSending(false);
             setIsError(true);

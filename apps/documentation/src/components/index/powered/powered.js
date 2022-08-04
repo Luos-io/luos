@@ -1,33 +1,40 @@
 import React from 'react';
-import styles from './powered.module.css';
+import { useColorMode } from '@docusaurus/theme-common';
+import AbcIcon from '@mui/icons-material/Abc';
+import CachedIcon from '@mui/icons-material/Cached';
+import EventNoteIcon from '@mui/icons-material/EventNote';
+import ExploreIcon from '@mui/icons-material/Explore';
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import SearchIcon from '@mui/icons-material/Search';
+import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Button from '@mui/material/Button';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import { useColorMode } from '@docusaurus/theme-common';
-import FileCopyIcon from '@mui/icons-material/FileCopy';
-import SearchIcon from '@mui/icons-material/Search';
-import ExploreIcon from '@mui/icons-material/Explore';
-import CachedIcon from '@mui/icons-material/Cached';
-import AbcIcon from '@mui/icons-material/Abc';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
-import EventNoteIcon from '@mui/icons-material/EventNote';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import Link from '@mui/material/Link';
+import ListItemText from '@mui/material/ListItemText';
+
+import Image from '@site/src/components/Image';
+
+import styles from './powered.module.css';
 
 const Powered = (props) => {
-  const { isDarkTheme } = useColorMode();
+  const { colorMode } = useColorMode();
   return (
     <div className={styles.container}>
       <div className={styles.containerTitle}>
         {' '}
         <h2 className={`${styles.title}`}>
           More features powered by{' '}
-          <img
-            src={isDarkTheme ? 'img/index/powered/luos.svg' : 'img/index/powered/luos-dark.svg'}
+          <Image
+            src={
+              colorMode === 'dark'
+                ? 'img/index/powered/luos.svg'
+                : 'img/index/powered/luos-dark.svg'
+            }
             style={{ verticalAlign: 'middle', width: '100px' }}
             alt="luos-dark"
           />
@@ -162,7 +169,7 @@ const Powered = (props) => {
         <Grid item md={6} lg={6} style={{ marginTop: '-50px' }} className={styles.mobileNone}>
           <div className={styles.head}>
             {' '}
-            <img
+            <Image
               src="img/index/header/buttons.svg"
               style={{ padding: '15px', width: '100px' }}
               alt="buttons"
@@ -172,15 +179,15 @@ const Powered = (props) => {
             <Grid item md={1} lg={1} className={styles.docs}>
               <FileCopyIcon fontSize="large" className={styles.icons} />
               <SearchIcon fontSize="large" className={styles.icons} />
-              {isDarkTheme ? (
+              {colorMode === 'dark' ? (
                 <>
                   {' '}
-                  <img src="img/index/header/luos.svg" alt="luos" />{' '}
+                  <Image src="img/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
+                  <Image src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>

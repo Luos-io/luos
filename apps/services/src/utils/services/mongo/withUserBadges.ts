@@ -24,7 +24,6 @@ export const withUserBadges =
     WithUserBadgesResult & InferGetServerSidePropsType<typeof getServerSidePropsFC>
   > =>
   async (context: GetServerSidePropsContext) => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const { props: withAuthProps } = await withAuth()(context);
     let game = null;

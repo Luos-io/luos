@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "dotenv-cli": "^5.1.0",
-    "dotenv-vault": "^1.8.0"
+    "dotenv-vault": "^1.11.1"
   },
   "packageManager": "yarn@1.22.19"
 }

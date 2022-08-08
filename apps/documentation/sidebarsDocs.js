@@ -231,5 +231,8 @@ module.exports = {
         },
       ],
     },
+      {type: 'doc',
+      label: '🖊️ Contribute',
+      id: 'contribute',}
   ],
 };

@@ -44,7 +44,7 @@
     "react-hook-form": "^7.32.2",
     "react-lottie": "^1.2.3",
     "react-material-ui-carousel": "^3.4.2",
-    "sass": "^1.52.3",
+    "sass": "^1.54.3",
     "semver": "^7.3.7",
     "yup": "^0.32.11"
   },

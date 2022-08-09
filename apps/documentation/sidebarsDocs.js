@@ -231,8 +231,10 @@ module.exports = {
         },
       ],
     },
-      {type: 'doc',
+    {
+      type: 'doc',
       label: '🖊️ Contribute',
-      id: 'contribute-to-luos',}
+      id: 'contribute-to-luos',
+    },
   ],
 };

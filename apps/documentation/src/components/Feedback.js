@@ -53,7 +53,11 @@ export default function ContactUs() {
           </p>
         </div>
         <div className="col-info__img__container">
-          <Image className="col-info__img" src="/assets/images/letter.png" alt="letter" />
+          <Image
+            className="col-info__img"
+            src="/documentation-assets/images/letter.png"
+            alt="letter"
+          />
         </div>
       </div>
       <div className="col-form">

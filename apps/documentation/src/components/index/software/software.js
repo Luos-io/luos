@@ -37,9 +37,9 @@ const Software = () => {
   ];
 
   const anArrayOfNumbers = [
-    <Image src="assets/images/index/software/icons/step1.svg" alt="Step 1" />,
-    <Image src="assets/images/index/software/icons/step2.svg" alt="Step 2" />,
-    <Image src="assets/images/index/software/icons/step3.svg" alt="Step 3" />,
+    <Image src="documentation-assets/images/index/software/icons/step1.svg" alt="Step 1" />,
+    <Image src="documentation-assets/images/index/software/icons/step2.svg" alt="Step 2" />,
+    <Image src="documentation-assets/images/index/software/icons/step3.svg" alt="Step 3" />,
   ];
 
   return (
@@ -104,7 +104,7 @@ const Software = () => {
                 <Grid item md={4} lg={4} xl={4}>
                   {' '}
                   <Image
-                    src="assets/images/index/header/buttons.svg"
+                    src="documentation-assets/images/index/header/buttons.svg"
                     style={{ padding: '15px', width: '100px' }}
                     alt="buttons"
                   />
@@ -123,12 +123,18 @@ const Software = () => {
                 {colorMode === 'dark' ? (
                   <>
                     {' '}
-                    <Image src="assets/images/index/header/luos.svg" alt="luos" />{' '}
+                    <Image
+                      src="documentation-assets/images/index/header/luos.svg"
+                      alt="luos"
+                    />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <Image src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
+                    <Image
+                      src="documentation-assets/images/index/header/luos-white.svg"
+                      alt="luos-white"
+                    />{' '}
                   </>
                 )}
               </Grid>
@@ -142,8 +148,8 @@ const Software = () => {
                     <Image
                       src={
                         colorMode === 'dark'
-                          ? `assets/images/index/software/step1.svg`
-                          : `assets/images/index/software/step1-dark.svg`
+                          ? `documentation-assets/images/index/software/step1.svg`
+                          : `documentation-assets/images/index/software/step1-dark.svg`
                       }
                       width="130"
                       height="130"
@@ -163,8 +169,8 @@ const Software = () => {
                     <Image
                       src={
                         colorMode === 'dark'
-                          ? `assets/images/index/software/step2.svg`
-                          : `assets/images/index/software/step2-dark.svg`
+                          ? `documentation-assets/images/index/software/step2.svg`
+                          : `documentation-assets/images/index/software/step2-dark.svg`
                       }
                       width="130"
                       height="130"
@@ -184,8 +190,8 @@ const Software = () => {
                     <Image
                       src={
                         colorMode === 'dark'
-                          ? `assets/images/index/software/step3.svg`
-                          : `assets/images/index/software/step3-dark.svg`
+                          ? `documentation-assets/images/index/software/step3.svg`
+                          : `documentation-assets/images/index/software/step3-dark.svg`
                       }
                       width="130"
                       height="130"
@@ -217,7 +223,7 @@ const Software = () => {
                 <Grid item xs={4}>
                   {' '}
                   <Image
-                    src="assets/images/index/header/buttons.svg"
+                    src="documentation-assets/images/index/header/buttons.svg"
                     style={{ padding: '15px', width: '100px' }}
                     alt="buttons"
                   />
@@ -240,12 +246,18 @@ const Software = () => {
                 {colorMode === 'dark' ? (
                   <>
                     {' '}
-                    <Image src="assets/images/index/header/luos.svg" alt="luos" />{' '}
+                    <Image
+                      src="documentation-assets/images/index/header/luos.svg"
+                      alt="luos"
+                    />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <Image src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
+                    <Image
+                      src="documentation-assets/images/index/header/luos-white.svg"
+                      alt="luos-white"
+                    />{' '}
                   </>
                 )}
               </Grid>
@@ -291,8 +303,8 @@ function Item(props) {
       <Image
         src={
           colorMode === 'dark'
-            ? `assets/images/index/software/${props.item.img}.svg`
-            : `assets/images/index/software/${props.item.img}-dark.svg`
+            ? `documentation-assets/images/index/software/${props.item.img}.svg`
+            : `documentation-assets/images/index/software/${props.item.img}-dark.svg`
         }
         className={styles.carousselImg}
         loading="lazy"

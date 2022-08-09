@@ -22,7 +22,7 @@ export const Introduction = (props) => {
               <span>
                 <Image
                   className={styles.categoryIcons}
-                  src="/assets/images/school/category.svg"
+                  src="/documentation-assets/images/school/category.svg"
                   alt="category"
                 />
               </span>
@@ -30,7 +30,7 @@ export const Introduction = (props) => {
               <span>
                 <Image
                   className={styles.materialIcons}
-                  src="/assets/images/school/clock.svg"
+                  src="/documentation-assets/images/school/clock.svg"
                   alt="clock"
                 />
               </span>

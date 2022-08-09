@@ -43,7 +43,7 @@ const cardGrid = (props) => {
           <a href={x.link} className={styles.link} style={{ textDecoration: 'none' }}>
             <Paper className={styles.card} elevation={1}>
               <Image
-                src={`/assets/images/school/${x.img}.svg`}
+                src={`/documentation-assets/images/school/${x.img}.svg`}
                 style={{ borderRadius: '4px' }}
                 alt={x.title}
               />
@@ -56,7 +56,7 @@ const cardGrid = (props) => {
                       {' '}
                       <Image
                         className={styles.cardIcons}
-                        src="/assets/images/school/category.svg"
+                        src="/documentation-assets/images/school/category.svg"
                         alt="category"
                       />
                     </span>
@@ -67,7 +67,7 @@ const cardGrid = (props) => {
                       {' '}
                       <Image
                         className={styles.cardIcons}
-                        src="/assets/images/school/clock.svg"
+                        src="/documentation-assets/images/school/clock.svg"
                         alt="clock"
                       />
                     </span>

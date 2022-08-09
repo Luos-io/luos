@@ -233,6 +233,6 @@ module.exports = {
     },
       {type: 'doc',
       label: '🖊️ Contribute',
-      id: 'contribute',}
+      id: 'contribute-to-luos',}
   ],
 };

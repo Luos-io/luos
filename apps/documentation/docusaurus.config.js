@@ -14,7 +14,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
-  favicon: 'img/favicon.png',
+  favicon: 'assets/images/favicon.png',
   organizationName: 'Luos-io', // Usually your GitHub org/user name.
   projectName: 'Documentation', // Usually your repo name.
   trailingSlash: false,
@@ -52,7 +52,7 @@ module.exports = {
           'Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source.',
       },
     ],
-    image: 'img/thumbnail-luos.png',
+    image: 'assets/images/thumbnail-luos.png',
     colorMode: {
       defaultMode: 'light',
     },
@@ -67,8 +67,8 @@ module.exports = {
     navbar: {
       logo: {
         alt: 'Luos Logo',
-        src: 'img/logo_luos_animated_black.gif',
-        srcDark: 'img/logo_luos_animated_white.gif',
+        src: 'assets/images/logo_luos_animated_black.gif',
+        srcDark: 'assets/images/logo_luos_animated_white.gif',
       },
       items: [
         {

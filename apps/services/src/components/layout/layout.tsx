@@ -70,7 +70,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
     <>
       <Head>
         <title>Luos Dashboard</title>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/assets/images/favicon.png" />
       </Head>
       <ThemeProvider theme={darkMode ? themeDark : theme}>
         <CssBaseline />
@@ -111,7 +111,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
                     }}
                   >
                     <Image
-                      src={`/assets/images/user/badges/${displayNotification.image}`}
+                      src={`/assets-services/images/user/badges/${displayNotification.image}`}
                       alt="notification"
                       width={64}
                       height={64}

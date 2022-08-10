@@ -32,8 +32,8 @@ const Powered = (props) => {
           <Image
             src={
               colorMode === 'dark'
-                ? 'documentation-assets/images/index/powered/luos.svg'
-                : 'documentation-assets/images/index/powered/luos-dark.svg'
+                ? 'assets/images/index/powered/luos.svg'
+                : 'assets/images/index/powered/luos-dark.svg'
             }
             style={{ verticalAlign: 'middle', width: '100px' }}
             alt="luos-dark"
@@ -170,7 +170,7 @@ const Powered = (props) => {
           <div className={styles.head}>
             {' '}
             <Image
-              src="documentation-assets/images/index/header/buttons.svg"
+              src="assets/images/index/header/buttons.svg"
               style={{ padding: '15px', width: '100px' }}
               alt="buttons"
             />
@@ -182,15 +182,12 @@ const Powered = (props) => {
               {colorMode === 'dark' ? (
                 <>
                   {' '}
-                  <Image src="documentation-assets/images/index/header/luos.svg" alt="luos" />{' '}
+                  <Image src="assets/images/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <Image
-                    src="documentation-assets/images/index/header/luos-white.svg"
-                    alt="luos-white"
-                  />{' '}
+                  <Image src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>

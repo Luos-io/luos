@@ -167,7 +167,7 @@ const Anatomy = (props) => {
           <div className={styles.head}>
             {' '}
             <Image
-              src="documentation-assets/images/index/header/buttons.svg"
+              src="assets/images/index/header/buttons.svg"
               width="100"
               alt="buttons"
               style={{ padding: '15px' }}
@@ -180,17 +180,13 @@ const Anatomy = (props) => {
               {colorMode === 'dark' ? (
                 <>
                   {' '}
-                  <Image
-                    src="documentation-assets/images/index/header/luos.svg"
-                    width="30"
-                    alt="luos"
-                  />{' '}
+                  <Image src="assets/images/index/header/luos.svg" width="30" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
                   <Image
-                    src="documentation-assets/images/index/header/luos-white.svg"
+                    src="assets/images/index/header/luos-white.svg"
                     width="30"
                     alt="luos-white"
                   />{' '}
@@ -254,7 +250,7 @@ const Anatomy = (props) => {
               xl={8}
               className={styles.player}
               style={{
-                backgroundImage: `url('/documentation-assets/images/index/anatomy/illu/${currentImageTmp}.svg')`,
+                backgroundImage: `url('/assets/images/index/anatomy/illu/${currentImageTmp}.svg')`,
               }}
             ></Grid>
           </Grid>
@@ -266,7 +262,7 @@ const Anatomy = (props) => {
       <Grid container>
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
           <Image
-            src="documentation-assets/images/index/integration/line-right.svg"
+            src="assets/images/index/integration/line-right.svg"
             alt="line-right"
             style={{ transform: 'rotateY(180deg)' }}
             className={styles.linesImg}
@@ -275,7 +271,7 @@ const Anatomy = (props) => {
         <Grid item xs={4} md={4} lg={4} xl={4}></Grid>
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
           <Image
-            src="documentation-assets/images/index/integration/line-right.svg"
+            src="assets/images/index/integration/line-right.svg"
             alt="line-right"
             style={{ float: 'right' }}
             className={styles.linesImg}

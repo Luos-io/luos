@@ -3,10 +3,10 @@ hide_title: true
 hide_table_of_contents: true
 custom_edit_url: null
 title: 'Your First Message'
-image: /documentation-assets/images/Your-first-message-banner-luos.png
+image: /assets/images/Your-first-message-banner-luos.png
 ---
 
-import Introduction from '/src/components/school/article/intro.js';
+import Introduction from '@site/src/components/school/article/intro.js';
 
 #
 
@@ -25,11 +25,11 @@ import Introduction from '/src/components/school/article/intro.js';
     },
     {
       label: 'Luos Basics',
-      link: '/docs/luos-technology/basics',
+      link: useBaseUrl('/docs/luos-technology/basics'),
     },
     {
       label: 'Your first service tutorial',
-      link: '/tutorials/your-first-service',
+      link: useBaseUrl('/tutorials/your-first-service'),
     },
   ]}
   shortList="true"
@@ -72,12 +72,12 @@ import Introduction from '/src/components/school/article/intro.js';
     {
       label: 'Part 1: Receiving a message',
       desc: 'How to receive your first message with Luos engine',
-      link: '/tutorials/your-first-message/receiving-message',
+      link: useBaseUrl('/tutorials/your-first-message/receiving-message'),
     },
     {
       label: 'Part 2: Send a message from a button service',
       desc: 'How to send a message',
-      link: '/tutorials/your-first-message/send-message',
+      link: useBaseUrl('/tutorials/your-first-message/send-message'),
     },
   ]}
 />

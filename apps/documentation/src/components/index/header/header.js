@@ -24,7 +24,7 @@ const Header = (props) => {
           <div className={styles.head}>
             {' '}
             <Image
-              src="documentation-assets/images/index/header/buttons.svg"
+              src="assets/images/index/header/buttons.svg"
               alt="buttons"
               width="100"
               style={{ padding: '15px' }}
@@ -37,15 +37,12 @@ const Header = (props) => {
               {colorMode === 'dark' ? (
                 <>
                   {' '}
-                  <Image src="documentation-assets/images/index/header/luos.svg" alt="luos" />{' '}
+                  <Image src="assets/images/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <Image
-                    src="documentation-assets/images/index/header/luos-white.svg"
-                    alt="luos-white"
-                  />{' '}
+                  <Image src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>
@@ -127,7 +124,7 @@ const Header = (props) => {
             <div className={styles.head}>
               {' '}
               <Image
-                src="documentation-assets/images/index/header/buttons.svg"
+                src="assets/images/index/header/buttons.svg"
                 alt="buttons"
                 width="100"
                 style={{ padding: '15px' }}
@@ -140,18 +137,12 @@ const Header = (props) => {
                 {colorMode === 'dark' ? (
                   <>
                     {' '}
-                    <Image
-                      src="documentation-assets/images/index/header/luos.svg"
-                      alt="luos"
-                    />{' '}
+                    <Image src="assets/images/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <Image
-                      src="documentation-assets/images/index/header/luos-white.svg"
-                      alt="luos-white"
-                    />{' '}
+                    <Image src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>

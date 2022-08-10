@@ -2,10 +2,10 @@
 hide_table_of_contents: true
 custom_edit_url: null
 title: ''
-image: /documentation-assets/images/Bike-alarm-Luos.png
+image: /assets/images/Bike-alarm-Luos.png
 ---
 
-import Introduction from '/src/components/school/article/intro.js';
+import Introduction from '@site/src/components/school/article/intro.js';
 
 <Introduction
   title="Create a Luos project with PlatformIo"
@@ -22,7 +22,7 @@ import Introduction from '/src/components/school/article/intro.js';
     },
     {
       label: 'Complete Training tutorials',
-      link: '/tutorials',
+      link: useBaseUrl('/tutorials'),
     },
   ]}
   ressources={[
@@ -36,11 +36,11 @@ import Introduction from '/src/components/school/article/intro.js';
   summary={[
     {
       label: 'Part 1: Project creation',
-      link: '/tutorials/pio/creation',
+      link: useBaseUrl('/tutorials/pio/creation'),
     },
     {
       label: 'Part 2: Include Luos to your project',
-      link: '/tutorials/pio/include',
+      link: useBaseUrl('/tutorials/pio/include'),
     },
   ]}
 />

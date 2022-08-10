@@ -8,12 +8,12 @@ authors:
     url: https://github.com/jlangbridge
     image_url: https://github.com/jlangbridge.png
 tags: [embedded, edge]
-image: /documentation-assets/images/blog/Embedded-Services-how-to-get-the-most-out-of-it-banner-luos.png
+image: /assets/images/blog/Embedded-Services-how-to-get-the-most-out-of-it-banner-luos.png
 hide_table_of_contents: false
 date: 2021-07-13T10:00
 ---
 
-![img alt](/documentation-assets/images/blog/embedded-services-luos.png)
+![img alt](/assets/images/blog/embedded-services-luos.png)
 
 Let's talk about Embedded Services.
 
@@ -25,7 +25,7 @@ Developing for such a scenario was difficult, but the world of web development c
 
 Embedded systems haven't yet caught up, but we're getting there.
 
-![Embedded services with Luos](/documentation-assets/images/blog/embedded-services-2-luos.jpeg)
+![Embedded services with Luos](/assets/images/blog/embedded-services-2-luos.jpeg)
 
 <h2> Simple ideas, complicated solutions </h2>
 
@@ -39,7 +39,7 @@ The program used to control this situation is pretty simple: program the primary
 
 Your hugely complex machine will be running much more code than just a temperature sensor. It might be an industrial 3D printer, or maybe even something to help send the next space probe to Mars. However, deep inside this code, there will still be the temperature sensor routine, something that electronically checks the temperature component to get that information. Since one microcontroller will be busy with other important tasks, maybe this task can be offloaded to another microcontroller? There is an advantage; the code on this microcontroller is nice and lightweight. Disadvantage? Now you have to write code to communicate (remember that the "main" microcontroller is also going to need the temperature to display on that fancy LCD screen so that the operator knows what is going on).
 
-![Splitting up code with Luos](/documentation-assets/images/blog/complex-machine-luos.jpeg)
+![Splitting up code with Luos](/assets/images/blog/complex-machine-luos.jpeg)
 
 <h2> Simplifying code </h2>{' '}
 
@@ -47,7 +47,7 @@ So what is the best thing to do? Who gets the temperature sensor? Even worse, is
 
 By creating one single program that controls not only the fans and heater, but also the laser engraver, hydraulic press, or some other complex system, we make the code more and more complex. The more code becomes complex, the more errors can hide inside, and the bigger the board. When does complex become too complex? By separating the code, we make it easier to maintain, but we also need to add in communication code to be able to communicate with other boards. Win some, lose some.
 
-![Simplifying code with Luos](/documentation-assets/images/blog/agility-service-luos.jpeg)
+![Simplifying code with Luos](/assets/images/blog/agility-service-luos.jpeg)
 
 Don't hesitate to bookmark our blog and <a rel="external nofollow" href="https://www.reddit.com/r/Luos/" target="_blank">follow us on Reddit</a> if you like these topics!
 

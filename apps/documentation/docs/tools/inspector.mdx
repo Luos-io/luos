@@ -53,7 +53,7 @@ int main(void)
 
 ## The inspector configurations
 
-The default process described above can be changed using different configurations that you can use in [the file _node_config.h_](/docs/luos-technology/basics/orga#configuration).
+The default process described above can be changed using different configurations that you can use in [the file _node_config.h_](/documentation/luos-technology/basics/orga#configuration).
 
 You could need to change it if you have apps on you Luos embedded system.
 
@@ -65,7 +65,7 @@ If you have an app service on your device managing detection, you should define 
 
 ## Inspector vs. gate
 
-As for the gate, the inspector needs a pipe to transfer information outside the Luos network. The pipe and inspector can be hosted into the same node or on different nodes in the network. It is recommended to have an inspector and a pipe on the same node to avoid overloading the Luos network with messages that can be handled locally on the node (see the [gate page](/docs/tools/gate) for more information).
+As for the gate, the inspector needs a pipe to transfer information outside the Luos network. The pipe and inspector can be hosted into the same node or on different nodes in the network. It is recommended to have an inspector and a pipe on the same node to avoid overloading the Luos network with messages that can be handled locally on the node (see the [gate page](/documentation/tools/gate) for more information).
 
 The inspector can be used with the gate in a network, the gate taking control of the sensors and the inspector displaying all the information, for example.
 

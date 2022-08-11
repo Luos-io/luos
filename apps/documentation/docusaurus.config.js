@@ -11,7 +11,7 @@ module.exports = {
   tagline:
     'Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source.',
   url: 'https://www.luos.io',
-  baseUrl: '/docs/',
+  baseUrl: '/documentation/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'assets/images/favicon.png',
@@ -115,7 +115,7 @@ module.exports = {
               label: 'Tutorials',
             },
             {
-              to: '/docs/luos-technology',
+              to: '/documentation/luos-technology',
               label: 'Documentation',
             },
             {
@@ -164,7 +164,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: '/docs/luos-technology',
+              to: '/documentation/luos-technology',
             },
             {
               label: 'Contact us',
@@ -220,7 +220,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          routeBasePath: '/test',
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebarsDocs.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/luos-io/luos',

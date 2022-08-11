@@ -61,7 +61,7 @@ const Powered = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/docs/luos-technology/services#service-properties"
+              href="/documentation/luos-technology/services#service-properties"
               className={styles.listLink}
             >
               <ListItemAvatar>
@@ -107,7 +107,7 @@ const Powered = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/docs/luos-technology/message/object-dictionary"
+              href="/documentation/luos-technology/message/object-dictionary"
               className={styles.listLink}
             >
               <ListItemAvatar>
@@ -125,7 +125,7 @@ const Powered = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/docs/luos-technology/services/routing-table#detection"
+              href="/documentation/luos-technology/services/routing-table#detection"
               className={styles.listLink}
             >
               <ListItemAvatar>

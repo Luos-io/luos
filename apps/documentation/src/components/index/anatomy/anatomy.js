@@ -57,7 +57,7 @@ const Anatomy = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/docs/luos-technology/basics#introduction-to-luos"
+              href="/documentation/luos-technology/basics#introduction-to-luos"
               className={styles.listLink}
             >
               <ListItemAvatar>
@@ -132,7 +132,7 @@ const Anatomy = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/docs/luos-technology/services/timestamp"
+              href="/documentation/luos-technology/services/timestamp"
               className={styles.listLink}
             >
               <ListItemAvatar>
@@ -148,7 +148,7 @@ const Anatomy = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/docs/luos-technology/basics#introduction-to-luos"
+              href="/documentation/luos-technology/basics#introduction-to-luos"
               className={styles.listLink}
             >
               <ListItemAvatar>

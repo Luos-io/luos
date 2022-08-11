@@ -11,7 +11,7 @@ module.exports = {
   tagline:
     'Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source.',
   url: 'https://www.luos.io',
-  baseUrl: '/',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'assets/images/favicon.png',
@@ -220,7 +220,8 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          routeBasePath: '/docs',
+          path: 'TEST',
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebarsDocs.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/luos-io/luos',

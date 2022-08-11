@@ -220,8 +220,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: 'TEST',
-          routeBasePath: '/',
+          routeBasePath: '/test',
           sidebarPath: require.resolve('./sidebarsDocs.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/luos-io/luos',

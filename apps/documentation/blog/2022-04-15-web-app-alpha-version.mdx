@@ -35,7 +35,7 @@ With our first try to connect embedded systems with a Javascript app, we based o
 
 This normative-like document is near the _Web Bluetooth API_ and _Web USB API_, among other things. This promises us great compatibility if it works fine!
 
-On the other side, we developed an application service called [Gate](/docs/test/tools/gate), which was intended to convert the Luos “generic software representation” into a JSON format.
+On the other side, we developed an application service called [Gate](/docs/tools/gate), which was intended to convert the Luos “generic software representation” into a JSON format.
 
 The main advantages of the Gate were:
 
@@ -51,7 +51,7 @@ But it came with drawbacks. Here are some of them:
 
 In the second iteration of our connectivity between a Javascript app and an embedded system, we worked on the way to gather all the messages emitted into a Luos network and then transmit them to our app.
 
-To do that, we created a tool called [Sniffer](/docs/test/tools/monitoring#sniffer). The Sniffer tool came with a new communication protocol closer to the embedded one but also with drawbacks, and one of them was the design itself; a Sniffer can’t act on the embedded system!
+To do that, we created a tool called [Sniffer](/docs/tools/monitoring#sniffer). The Sniffer tool came with a new communication protocol closer to the embedded one but also with drawbacks, and one of them was the design itself; a Sniffer can’t act on the embedded system!
 
 <h2> The solution 📐 </h2>
 
@@ -89,7 +89,7 @@ As you can see in figure 1, the data is encapsulated in a “Luos Frame” descr
 
 Now that we have set up this new way to communicate with the embedded world, the next step will be to give our users all the features implemented all over the years in <a rel="external nofollow" href="https://github.com/Luos-io/luos_engine" target="_blank">Luos engine</a> from a web perspective.
 
-The first feature we decided to implement is the network topology. This feature is a graphical representation of the Luos [routing table](/docs/test/luos-technology/services/routing-table).
+The first feature we decided to implement is the network topology. This feature is a graphical representation of the Luos [routing table](/docs/luos-technology/services/routing-table).
 
 We first get the list of the nodes and services in our network. Then we query each service of each node to get their properties like their type (Motor, Led, Gate, ...), their firmware revision, and their memory statistics.
 

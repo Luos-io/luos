@@ -5,13 +5,15 @@ const VersionsArchived = require('./versionsArchived.json');
 
 const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(0, 5);
 
+const isProd = process.env.VERCEL_ENV === 'production';
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Luos',
   tagline:
     'Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source.',
   url: 'https://www.luos.io',
-  baseUrl: '/documentation/',
+  baseUrl: isProd ? '/documentation/' : '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'assets/images/favicon.png',
@@ -115,7 +117,7 @@ module.exports = {
               label: 'Tutorials',
             },
             {
-              to: '/documentation/luos-technology',
+              to: `${isProd ? '/documentation/' : '/'}luos-technology`,
               label: 'Documentation',
             },
             {
@@ -164,7 +166,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: '/documentation/luos-technology',
+              to: `${isProd ? '/documentation/' : '/'}luos-technology`,
             },
             {
               label: 'Contact us',

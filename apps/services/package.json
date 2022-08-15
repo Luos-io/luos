@@ -63,7 +63,7 @@
     "prettier": "^2.7.1",
     "tsconfig": "*",
     "typescript": "4.7.4",
-    "vercel": "^25.1.0",
+    "vercel": "^28.0.1",
     "web-serial-polyfill": "^1.0.13"
   }
 }

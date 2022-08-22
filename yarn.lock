@@ -440,6 +440,11 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.18.10.tgz#94b5f8522356e69e8277276adf67ed280c90ecc1"
   integrity sha512-TYk3OA0HKL6qNryUayb5UUEhM/rkOQozIBEA5ITXh5DWrSp0TlUQXMyZmnWxG/DizSWBeeQ0Zbc5z8UGaaqoeg==
 
+"@babel/parser@^7.18.8":
+  version "7.18.11"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.18.11.tgz#68bb07ab3d380affa9a3f96728df07969645d2d9"
+  integrity sha512-9JKn5vN+hDt0Hdqn1PiJ2guflwP+B6Ga8qbDuoF0PzzVhrzsKIJo8yGqVk6CmMHiMei9w1C1Bp9IMJSIK+HPIQ==
+
 "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@^7.18.6":
   version "7.18.6"
   resolved "https://registry.yarnpkg.com/@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression/-/plugin-bugfix-safari-id-destructuring-collision-in-function-expression-7.18.6.tgz#da5b8f9a580acdfbe53494dba45ea389fb09a4d2"
@@ -5477,10 +5482,10 @@ dotenv-expand@^8.0.1:
   resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-8.0.3.tgz#29016757455bcc748469c83a19b36aaf2b83dd6e"
   integrity sha512-SErOMvge0ZUyWd5B0NXMQlDkN+8r+HhVUsxgOO7IoPDOdDRD2JjExpN6y3KnFR66jsJMwSn1pqIivhU5rcJiNg==
 
-dotenv-vault@^1.8.0, dotenv-vault@^1.9.1:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/dotenv-vault/-/dotenv-vault-1.11.0.tgz#5d5466c122bddbbae9c53e3666fc0f90b30473f7"
-  integrity sha512-knmArYgCizH8UHqZQVfoworZIeCSt66QRxk0rNYrJLKDMMuhIRZWRCYlrVbHqpUSGpz0tzc4ZQKJYSX+b24BFQ==
+dotenv-vault@^1.11.2:
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/dotenv-vault/-/dotenv-vault-1.11.2.tgz#63069b81ac879b49089a4daabbfeb9871868c6e5"
+  integrity sha512-/IYP+fi82kgQWdoCcKuBJNocCJOcFfUvJG5Ht9mmo4s+6oKuCc0BNz8+tZwX+k0OBR6ORsUMjsskRM7ePbZ8KQ==
   dependencies:
     "@oclif/core" "^1"
     "@oclif/plugin-help" "^5.1.12"

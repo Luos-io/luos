@@ -43,7 +43,7 @@ const cardGrid = (props) => {
           <a href={x.link} className={styles.link} style={{ textDecoration: 'none' }}>
             <Paper className={styles.card} elevation={1}>
               <Image
-                src={`/img/school/${x.img}.svg`}
+                src={`/assets/images/school/${x.img}.svg`}
                 style={{ borderRadius: '4px' }}
                 alt={x.title}
               />
@@ -56,7 +56,7 @@ const cardGrid = (props) => {
                       {' '}
                       <Image
                         className={styles.cardIcons}
-                        src="/img/school/category.svg"
+                        src="/assets/images/school/category.svg"
                         alt="category"
                       />
                     </span>
@@ -65,7 +65,11 @@ const cardGrid = (props) => {
                   <div>
                     <span>
                       {' '}
-                      <Image className={styles.cardIcons} src="/img/school/clock.svg" alt="clock" />
+                      <Image
+                        className={styles.cardIcons}
+                        src="/assets/images/school/clock.svg"
+                        alt="clock"
+                      />
                     </span>
                     <span className={styles.levelTxt}>{Math.round(x.toc)} Minutes</span>
                   </div>

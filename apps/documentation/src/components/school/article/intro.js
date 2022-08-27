@@ -22,13 +22,17 @@ export const Introduction = (props) => {
               <span>
                 <Image
                   className={styles.categoryIcons}
-                  src="/img/school/category.svg"
+                  src={'/assets/images/school/category.svg'}
                   alt="category"
                 />
               </span>
               <span className={styles.counter}>{props.category}</span>
               <span>
-                <Image className={styles.materialIcons} src="/img/school/clock.svg" alt="clock" />
+                <Image
+                  className={styles.materialIcons}
+                  src={'/assets/images/school/clock.svg'}
+                  alt="clock"
+                />
               </span>
               <span className={styles.lastCounter}>{props.time}</span>
             </div>

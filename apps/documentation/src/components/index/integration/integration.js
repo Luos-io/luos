@@ -53,22 +53,22 @@ const Integration = (props) => {
 
   const links = {
     esp: '',
-    stm: '/docs/compatibility/mcu_demoboard#st',
-    microship: '/docs/compatibility/mcu_demoboard',
+    stm: '/documentation/compatibility/mcu_demoboard#st',
+    microship: '/documentation/compatibility/mcu_demoboard',
     raspberry: '',
     arduino: '/tutorials/arduino/intro',
     pio: '/tutorials/get-started/get-started1#2-set-up-your-development-environment',
-    eclipse: '/docs/luos-technology/basics/orga#luos-engines-levels',
-    vscodeico: '/docs/luos-technology/basics/orga#luos-engines-levels',
-    ros: '/docs/tools/ros',
-    freertos: '/docs/tools/ros',
+    eclipse: '/documentation/luos-technology/basics/orga#luos-engines-levels',
+    vscodeico: '/documentation/luos-technology/basics/orga#luos-engines-levels',
+    ros: '/documentation/tools/ros',
+    freertos: '/documentation/tools/ros',
     microros: '',
     simplefoc: '',
     zapier: '',
     ifttt: '',
     freedom: '',
     c: '',
-    python: '/docs/tools/pyluos#required-installing-python-and-pip',
+    python: '/documentation/tools/pyluos#required-installing-python-and-pip',
     js: '',
     ts: '',
   };
@@ -89,7 +89,7 @@ const Integration = (props) => {
         <Grid item xs={6} md={4} lg={4}>
           {' '}
           <Image
-            src="img/index/integration/line-right.svg"
+            src="assets/images/index/integration/line-right.svg"
             alt="line-right"
             className={styles.imgLeft}
           />
@@ -115,7 +115,7 @@ const Integration = (props) => {
               <Grid item md={4} lg={4} xl={4}>
                 {' '}
                 <Image
-                  src="img/index/header/buttons.svg"
+                  src="assets/images/index/header/buttons.svg"
                   style={{ padding: '15px', width: '100px' }}
                   alt="buttons"
                 />
@@ -134,12 +134,12 @@ const Integration = (props) => {
               {colorMode === 'dark' ? (
                 <>
                   {' '}
-                  <Image src="img/index/header/luos.svg" alt="luos" />{' '}
+                  <Image src="assets/images/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <Image src="img/index/header/luos-white.svg" alt="luos-white" />{' '}
+                  <Image src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>
@@ -195,9 +195,9 @@ const Integration = (props) => {
                         src={
                           colorMode === 'dark'
                             ? element[2]
-                              ? `img/index/integration/icons/${element[2]}.svg`
-                              : `img/index/integration/icons/${element[0]}.svg`
-                            : `img/index/integration/icons/${element[0]}.svg`
+                              ? `assets/images/index/integration/icons/${element[2]}.svg`
+                              : `assets/images/index/integration/icons/${element[0]}.svg`
+                            : `assets/images/index/integration/icons/${element[0]}.svg`
                         }
                         width="48"
                         alt={element[1]}
@@ -242,7 +242,7 @@ const Integration = (props) => {
           <div className={styles.head}>
             {' '}
             <Image
-              src="img/index/header/buttons.svg"
+              src="assets/images/index/header/buttons.svg"
               alt="buttons"
               style={{ padding: '15px', width: '100px' }}
             />
@@ -297,7 +297,7 @@ const Integration = (props) => {
                   >
                     <ImageListItem key={index}>
                       <Image
-                        src={`img/index/integration/icons/${element[0]}.svg`}
+                        src={`assets/images/index/integration/icons/${element[0]}.svg`}
                         width="48"
                         alt={element[1]}
                         loading="lazy"
@@ -333,7 +333,7 @@ const Integration = (props) => {
         <Grid item xs={4} md={4} lg={4}></Grid>
         <Grid item xs={6} md={4} lg={4}>
           <Image
-            src="img/index/integration/line-right.svg"
+            src="assets/images/index/integration/line-right.svg"
             alt="line-right"
             className={styles.imgRight}
           />

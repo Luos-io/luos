@@ -57,7 +57,7 @@ const Anatomy = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/docs/luos-technology/basics#introduction-to-luos"
+              href="/documentation/luos-technology/basics#introduction-to-luos"
               className={styles.listLink}
             >
               <ListItemAvatar>
@@ -132,7 +132,7 @@ const Anatomy = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/docs/luos-technology/services/timestamp"
+              href="/documentation/luos-technology/services/timestamp"
               className={styles.listLink}
             >
               <ListItemAvatar>
@@ -148,7 +148,7 @@ const Anatomy = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/docs/luos-technology/basics#introduction-to-luos"
+              href="/documentation/luos-technology/basics#introduction-to-luos"
               className={styles.listLink}
             >
               <ListItemAvatar>
@@ -167,7 +167,7 @@ const Anatomy = (props) => {
           <div className={styles.head}>
             {' '}
             <Image
-              src="img/index/header/buttons.svg"
+              src="assets/images/index/header/buttons.svg"
               width="100"
               alt="buttons"
               style={{ padding: '15px' }}
@@ -180,17 +180,13 @@ const Anatomy = (props) => {
               {colorMode === 'dark' ? (
                 <>
                   {' '}
-                  <Image
-                    src="img/index/header/luos.svg"
-                    width="30"
-                    alt="luos"
-                  />{' '}
+                  <Image src="assets/images/index/header/luos.svg" width="30" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
                   <Image
-                    src="img/index/header/luos-white.svg"
+                    src="assets/images/index/header/luos-white.svg"
                     width="30"
                     alt="luos-white"
                   />{' '}
@@ -254,7 +250,7 @@ const Anatomy = (props) => {
               xl={8}
               className={styles.player}
               style={{
-                backgroundImage: `url('/img/index/anatomy/illu/${currentImageTmp}.svg')`,
+                backgroundImage: `url('/assets/images/index/anatomy/illu/${currentImageTmp}.svg')`,
               }}
             ></Grid>
           </Grid>
@@ -266,7 +262,7 @@ const Anatomy = (props) => {
       <Grid container>
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
           <Image
-            src="img/index/integration/line-right.svg"
+            src="assets/images/index/integration/line-right.svg"
             alt="line-right"
             style={{ transform: 'rotateY(180deg)' }}
             className={styles.linesImg}
@@ -275,7 +271,7 @@ const Anatomy = (props) => {
         <Grid item xs={4} md={4} lg={4} xl={4}></Grid>
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
           <Image
-            src="img/index/integration/line-right.svg"
+            src="assets/images/index/integration/line-right.svg"
             alt="line-right"
             style={{ float: 'right' }}
             className={styles.linesImg}

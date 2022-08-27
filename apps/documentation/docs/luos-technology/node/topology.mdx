@@ -1,6 +1,6 @@
 ---
 custom_edit_url: null
-image: /img/Network_Luos_1.png
+image: /assets/images/Network_Luos_1.png
 ---
 
 import { customFields } from '/docusaurus.config.js';
@@ -13,14 +13,14 @@ The nodes can access the position of every other node in the network at any time
 
 This routing table allows any service to find, locate, and use any other service on the entire network.
 
-## [Routing Table](/docs/luos-technology/services/routing-table)
+## [Routing Table](/documentation/luos-technology/services/routing-table)
 
-The [Routing Table](/docs/luos-technology/services/routing-table) is a feature of Luos allowing every <Tooltip def={customFields.node_def}>node</Tooltip> to own a "map" (or topology) of the entire network of your device. This map allows nodes to know their physical position and different functionalities, as well as to easily search and interact with the other nodes.
+The [Routing Table](/documentation/luos-technology/services/routing-table) is a feature of Luos allowing every <Tooltip def={customFields.node_def}>node</Tooltip> to own a "map" (or topology) of the entire network of your device. This map allows nodes to know their physical position and different functionalities, as well as to easily search and interact with the other nodes.
 
-The [Routing Table](/docs/luos-technology/services/routing-table) is designed and shared among all the nodes after a process that is called [detection](/docs/luos-technology/services/routing-table).
+The [Routing Table](/documentation/luos-technology/services/routing-table) is designed and shared among all the nodes after a process that is called [detection](/documentation/luos-technology/services/routing-table).
 
 :::info
-More details about routing table on the [dedicated page](/docs/luos-technology/services/routing-table).
+More details about routing table on the [dedicated page](/documentation/luos-technology/services/routing-table).
 :::
 
 ## PTP Network
@@ -32,7 +32,7 @@ PTP is the Point-To-Point connection between nodes used for topology detection b
 With two PTP pins per board, you must chained your device as below:
 
 <div align="center">
-  <Image src="/img/daisy_chain.svg" darkSrc="/img/daisy_chain_white.svg" />
+  <Image src="/assets/images/daisy_chain.svg" darkSrc="/assets/images/daisy_chain_white.svg" />
 </div>
 
 ### Star Mounting
@@ -40,5 +40,5 @@ With two PTP pins per board, you must chained your device as below:
 With at least three PTP pins per board, you can create a star mounting configuration:
 
 <div align="center">
-  <Image src="/img/star_mounting.svg" darkSrc="/img/star_mounting_white.svg" />
+  <Image src="/assets/images/star_mounting.svg" darkSrc="/assets/images/star_mounting_white.svg" />
 </div>

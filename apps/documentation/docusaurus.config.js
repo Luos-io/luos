@@ -5,16 +5,18 @@ const VersionsArchived = require('./versionsArchived.json');
 
 const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(0, 5);
 
+const isProd = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Luos',
   tagline:
     'Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source.',
   url: 'https://www.luos.io',
-  baseUrl: '/',
+  baseUrl: isProd ? '/documentation/' : '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
-  favicon: 'img/favicon.png',
+  favicon: 'assets/images/favicon.png',
   organizationName: 'Luos-io', // Usually your GitHub org/user name.
   projectName: 'Documentation', // Usually your repo name.
   trailingSlash: false,
@@ -52,7 +54,7 @@ module.exports = {
           'Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source.',
       },
     ],
-    image: 'img/thumbnail-luos.png',
+    image: 'assets/images/thumbnail-luos.png',
     colorMode: {
       defaultMode: 'light',
     },
@@ -67,8 +69,8 @@ module.exports = {
     navbar: {
       logo: {
         alt: 'Luos Logo',
-        src: 'img/logo_luos_animated_black.gif',
-        srcDark: 'img/logo_luos_animated_white.gif',
+        src: 'assets/images/logo_luos_animated_black.gif',
+        srcDark: 'assets/images/logo_luos_animated_white.gif',
       },
       items: [
         {
@@ -115,7 +117,7 @@ module.exports = {
               label: 'Tutorials',
             },
             {
-              to: '/docs/luos-technology',
+              to: `${isProd ? '/documentation/' : '/'}luos-technology`,
               label: 'Documentation',
             },
             {
@@ -164,7 +166,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: '/docs/luos-technology',
+              to: `${isProd ? '/documentation/' : '/'}luos-technology`,
             },
             {
               label: 'Contact us',
@@ -220,9 +222,10 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebarsDocs.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/luos-io/Documentation',
+          editUrl: 'https://github.com/luos-io/luos',
           versions: {
             current: {
               label: '2.6.0-beta 🚧',

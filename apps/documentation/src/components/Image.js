@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useColorMode } from '@docusaurus/theme-common';
 import IdealImage from '@theme/IdealImage';
 
@@ -19,7 +20,7 @@ const Image = ({
 }) => {
   const [isOpen, setIsOpen] = useState();
   const { colorMode } = useColorMode();
-  const source = colorMode === 'dark' ? (darkSrc === undefined ? src : darkSrc) : src;
+  const source = useBaseUrl(colorMode === 'dark' ? (darkSrc === undefined ? src : darkSrc) : src);
   return (
     <div>
       <IdealImage
@@ -36,7 +37,7 @@ const Image = ({
         }}
       />
       {withLightBox && isOpen && (
-        <Lightbox mainSrc={darkSrc ? darkSrc : source} onCloseRequest={() => setIsOpen(false)} />
+        <Lightbox mainSrc={source} onCloseRequest={() => setIsOpen(false)} />
       )}
     </div>
   );

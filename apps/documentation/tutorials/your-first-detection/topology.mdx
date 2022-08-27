@@ -1,6 +1,6 @@
 ---
 custom_edit_url: null
-image: /img/Your-first-topology-detection-banner-luos.png
+image: /assets/images/Your-first-topology-detection-banner-luos.png
 ---
 
 import Tabs from '@theme/Tabs';
@@ -53,7 +53,7 @@ To be able to use other services, we need to list them, define their position, a
 In the previous tutorials, the gate application was making the detection for you. Now it is time to emancipate from the gate and make the detection by yourself.
 
 :::info
-More details about detections and topology are on [the related Luos documentation page](/docs/luos-technology/node/topology).
+More details about detections and topology are on [the related Luos documentation page](/documentation/luos-technology/node/topology).
 :::
 
 To make a detection, Luos engine needs to know which service is requesting it. So we will need to pass the switcher service to the detection function.
@@ -90,7 +90,7 @@ void Switcher_Init(void)
 ```
 
 :::info
-After using this API, Luos engine will assign a unique ID to each service in the system and create a routing table containing all the services' information present in the network: [ID, Alias](/docs/luos-technology/services), and [topology](/docs/luos-technology/node/topology). This routing table created by the service starting the detection is shared to the others. More details about the routing table can be found on the [dedicated Luos documentation page](/docs/luos-technology/services/routing-table).
+After using this API, Luos engine will assign a unique ID to each service in the system and create a routing table containing all the services' information present in the network: [ID, Alias](/documentation/luos-technology/services), and [topology](/documentation/luos-technology/node/topology). This routing table created by the service starting the detection is shared to the others. More details about the routing table can be found on the [dedicated Luos documentation page](/documentation/luos-technology/services/routing-table).
 :::
 
 If you check your main files, you will see a switcher package and a led package. All those packages create only one service. The service performing the detection always has the ID 1 because this service will be the “root” of your system. So in our case, the switcher app will receive ID 1. Then, the other services will get the next ID following the creation order, so the led service will receive ID 2.

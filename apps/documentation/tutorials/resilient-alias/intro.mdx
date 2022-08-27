@@ -3,10 +3,11 @@ hide_title: true
 hide_table_of_contents: true
 custom_edit_url: null
 title: 'How to have flexible and resilient aliases'
-image: /img/Alias-Luos.png
+image: /assets/images/Alias-Luos.png
 ---
 
-import Introduction from '/src/components/school/article/intro.js';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Introduction from '@site/src/components/school/article/intro.js';
 
 #
 
@@ -24,7 +25,7 @@ import Introduction from '/src/components/school/article/intro.js';
     },
     {
       label: 'Luos Basics',
-      link: '/docs/luos-technology/basics',
+      link: useBaseUrl('/documentation/luos-technology/basics'),
     },
   ]}
   ressources={[
@@ -36,7 +37,7 @@ import Introduction from '/src/components/school/article/intro.js';
   summary={[
     {
       label: 'Resilient aliases management',
-      link: '/tutorials/resilient-alias',
+      link: useBaseUrl('/tutorials/resilient-alias'),
     },
   ]}
 />

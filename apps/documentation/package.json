@@ -43,6 +43,7 @@
     "@mdx-js/react": "^1.6.22",
     "@mui/icons-material": "^5.10.2",
     "@mui/material": "^5.10.2",
+    "@packages/ui": "*",
     "@svgr/webpack": "^6.2.1",
     "@typeform/embed-react": "^1.19.0",
     "clsx": "^1.2.1",

@@ -1,0 +1,8 @@
+#terminal {
+  background: #323334;
+}
+
+#terminal-container {
+  width: 100%;
+  border: 1px solid red;
+}

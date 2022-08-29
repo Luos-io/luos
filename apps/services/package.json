@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.6.8",
-    "@babel/core": "^7.18.5",
+    "@babel/core": "^7.18.13",
     "@emailjs/browser": "^3.6.2",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
@@ -28,7 +28,7 @@
     "@packages/services": "*",
     "@packages/ui": "*",
     "@typeform/embed": "^1.37.0",
-    "@typeform/embed-react": "^1.17.0",
+    "@typeform/embed-react": "^1.19.0",
     "chroma-js": "^2.4.2",
     "d3": "^7.4.4",
     "d3-force": "^3.0.0",

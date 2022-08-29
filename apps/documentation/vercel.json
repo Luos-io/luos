@@ -5,7 +5,7 @@
   "rewrites": [
     {
       "source": "/documentation/:path*",
-      "destination": "https://vercel-git-feat-single-domain-luos.vercel.app/:path*"
+      "destination": "https://luos-documentation.vercel.app/:path*"
     },
     {
       "source": "/(.*)",

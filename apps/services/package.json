@@ -55,7 +55,7 @@
     "@types/prettier": "^2.6.3",
     "@types/react": "17.0.43",
     "@types/react-lottie": "^1.2.6",
-    "@types/semver": "^7.3.10",
+    "@types/semver": "^7.3.12",
     "@types/w3c-web-serial": "^1.0.2",
     "eslint": "8.18.0",
     "eslint-config-custom": "*",

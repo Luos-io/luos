@@ -9,7 +9,7 @@
     },
     {
       "source": "/",
-      "destination": "https://luos-documentation.vercel.app/"
+      "destination": "https://luos-documentation.vercel.app/documentation"
     },
     {
       "source": "/(.*)",

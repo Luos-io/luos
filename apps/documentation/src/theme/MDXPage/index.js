@@ -1,3 +1,4 @@
+//I swizzled the component to be able to style it full width (lines 26-28)
 import React from 'react';
 import clsx from 'clsx';
 import { PageMetadata, HtmlClassNameProvider, ThemeClassNames } from '@docusaurus/theme-common';

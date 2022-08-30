@@ -43,7 +43,7 @@ Instead of having defined IDs on your system, you can dynamically find them to m
 To find information on this routing table, Luos engine provides some filtering functions allowing you to extract the services depending on various criteria. You can cumulate those filtering functions to create complex searches and find the perfect resource fitting your needs.
 
 :::info
-To learn more about routing table filters, feel free to check out [the related documentation page](/documentation/luos-technology/services/routing-table).
+To learn more about routing table filters, feel free to check out [the related documentation page](luos-technology/services/routing-table).
 :::
 
 Instead of directly writing the ID of the led service at the end of the detection, let's find it and see how we can scale it easily!
@@ -97,7 +97,7 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 ```
 
 :::info
-A field `result_nbr` (see **[search_result_t](/documentation/luos-technology/services/routing-table)** structure) gives you the number matching your search.
+A field `result_nbr` (see **[search_result_t](luos-technology/services/routing-table)** structure) gives you the number matching your search.
 For example, only one service have an alias “led” in our system, so `filter_result.result_nbr = 1;` returns the filtering (ID of led service) and is placed in the first case of a tab: `filter_result.result_table[0]`.
 Using this filtering, we can easily adapt our switcher code to be able to control as many led services we have on the network by sending the message in a loop until the **result_nbr** matches.
 :::

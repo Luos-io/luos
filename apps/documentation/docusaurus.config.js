@@ -4,6 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const VersionsArchived = require('./versionsArchived.json');
 
 const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(0, 5);
+const isProd = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -11,7 +12,7 @@ module.exports = {
   tagline:
     'Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source.',
   url: 'https://www.luos.io',
-  baseUrl: '/',
+  baseUrl: isProd ? '/documentation/' : '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'assets/images/favicon.png',
@@ -109,7 +110,7 @@ module.exports = {
               label: 'Tutorials',
             },
             {
-              to: '/documentation/luos-technology',
+              to: `${isProd ? '/documentation/' : '/'}luos-technology`,
               label: 'Documentation',
             },
             {
@@ -158,7 +159,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: '/documentation/luos-technology',
+              to: `${isProd ? '/documentation/' : '/'}luos-technology`,
             },
             {
               label: 'Contact us',
@@ -214,9 +215,10 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebarsDocs.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/luos-io/Documentation',
+          editUrl: 'https://github.com/luos-io/luos',
           versions: {
             current: {
               label: '2.6.0-beta 🚧',

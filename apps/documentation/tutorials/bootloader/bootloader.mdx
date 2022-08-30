@@ -9,7 +9,7 @@ import Image from '@site/src/components/Images.js';
 
 ## 1. Acquire and set up your equipment
 
-To flash one or multiple boards using the Luos engine's bootloader, you need a master board that will manage the link between your computer and the Luos network. So the minimal setup needed to use the bootloader is composed of two boards supported by Luos engine connected together with a Luos network. We will use one of these nodes as a "master" with a [gate](/documentation/tools/gate) and the other will be able to be updated through the Luos network by hosting a bootloader.
+To flash one or multiple boards using the Luos engine's bootloader, you need a master board that will manage the link between your computer and the Luos network. So the minimal setup needed to use the bootloader is composed of two boards supported by Luos engine connected together with a Luos network. We will use one of these nodes as a "master" with a [gate](tools/gate) and the other will be able to be updated through the Luos network by hosting a bootloader.
 
 <div align="center">
   <Image
@@ -117,7 +117,7 @@ pyluos-bootloader flash COM6 -t 2 -b firmware.bin
 ```
 
 :::info
-For further information on the options used with the CLI, please read the dedicated [documentation page](/documentation/tools/bootloader), or type the following command:
+For further information on the options used with the CLI, please read the dedicated [documentation page](tools/bootloader), or type the following command:
 
 ```bash
 pyluos-bootloader --help
@@ -132,7 +132,7 @@ The following lines should appear after typing the command:
 </div>
 
 :::warning
-If any problem occurs during the loading process, please reboot your system and retry typing the command (you can also find information [here](/documentation/tools/bootloader)).
+If any problem occurs during the loading process, please reboot your system and retry typing the command (you can also find information [here](tools/bootloader)).
 :::
 
 Then relaunch a detection (as done in **Step 3**):
@@ -154,4 +154,4 @@ You should see your updated service running in your node:
   <Image src="assets/images/tutorials/bootloader/detect_new_app.png" />
 </div>
 
-You have reached the end of this tutorial. You are now able to use the bootloader's feature included in Luos engine. You know the basics, but you can find some more helpful information on the dedicated [documentation page](/documentation/tools/bootloader).
+You have reached the end of this tutorial. You are now able to use the bootloader's feature included in Luos engine. You know the basics, but you can find some more helpful information on the dedicated [documentation page](tools/bootloader).

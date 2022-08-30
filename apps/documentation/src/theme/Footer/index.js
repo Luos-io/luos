@@ -129,7 +129,7 @@ function Footer() {
           <h2 className={styles.subtitle}>Learn more about us</h2>
           <Link
             className={`${styles.link} ${styles.blog} ${styles.mbTen}`}
-            to="/docs/luos-technology"
+            to="/documentation/luos-technology"
           >
             Technology
           </Link>
@@ -139,7 +139,7 @@ function Footer() {
           >
             Tools
           </Link>
-          <span className={` ${styles.span} ${styles.ressources}`} to="/docs/luos-technology">
+          <span className={` ${styles.span} ${styles.ressources}`} to="/documentation/luos-technology">
             Resources
           </span>
           <ul className={styles.list}>
@@ -165,7 +165,7 @@ function Footer() {
               {' '}
               <Link
                 className={`${styles.link} ${styles.ressourcesLink} ${styles.mbZero}`}
-                to="/docs/luos-technology"
+                to="/documentation/luos-technology"
               >
                 Documentation
               </Link>
@@ -189,7 +189,7 @@ function Footer() {
               </Link>
             </li>
           </ul>
-          <span className={` ${styles.span} ${styles.community}`} to="/docs/luos-technology">
+          <span className={` ${styles.span} ${styles.community}`} to="/documentation/luos-technology">
             Community
           </span>
           <ul className={styles.list}>

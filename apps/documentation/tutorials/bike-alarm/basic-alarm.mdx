@@ -1,6 +1,6 @@
 ---
 custom_edit_url: null
-image: /img/Bike-alarm-Luos.png
+image: /assets/images/Bike-alarm-Luos.png
 ---
 
 import Image from '@site/src/components/Images.js';
@@ -9,7 +9,7 @@ import Image from '@site/src/components/Images.js';
 
 <div align="center">
   <iframe
-    width="650" 
+    width="650"
     height="363"
     src="https://www.youtube.com/embed/kTr-pwIrRqw?feature=oembed"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"
@@ -21,7 +21,7 @@ The purpose of the bike alarm is to create an alarm that constantly measures a b
 To make it work, we will use an IMU board to measure the bike's motions and, for now, an RGB LED board to display an alarm using a red blinky LED.
 For this tutorial, we are going to use <a href="https://github.com/Luos-io/luos_engine/tree/main/examples/projects/l0" target="_blank" rel="external nofollow">L0 board examples available in Luos examples</a>.
 We are going to use IMU and LED drivers examples without any modifications and just add an embedded app to control them.
-This embedded app service will control the behavior of the alarm. This app can work on any node. 
+This embedded app service will control the behavior of the alarm. This app can work on any node.
 
 :::tip
 We chose the LED node because there is plenty of memory space in it.
@@ -103,7 +103,7 @@ typedef enum
 } alarm_t;
 ```
 
-For now, there is only one custom type dedicated to our app, but later on this tutorial we will have to add another one. 
+For now, there is only one custom type dedicated to our app, but later on this tutorial we will have to add another one.
 
 In order to measure bike's motion, our app will need to receive gyroscopic data from IMU and put an alarm flag if motion is detected. To manage it, we created a message reception callback `AlarmController_MsgHandler`.
 Here is how we made this function:
@@ -173,7 +173,6 @@ void AlarmController_Init(void)
     }
 }
 ```
-
 
 Now the IMU service will automatically send gyroscopic data to your app each 10ms.
 

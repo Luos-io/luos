@@ -1,7 +1,7 @@
 ---
 custom_edit_url: null
 hide_table_of_contents: true
-image: /img/Routing-table-banner-Luos.png
+image: /assets/images/Routing-table-banner-Luos.png
 description: The routing table is a feature of Luos allowing every services to own a "map" (or topology) of the entire network of your device.
 ---
 
@@ -48,13 +48,14 @@ Luos_IsNodeDetected();
 
 It returns `true` or `false` depending on whether this node is detected or not.
 
-:::caution 
+:::caution
 Warnings:
+
 1. Be careful that a service's ID can change during a detection depending on the service running this detection.
 2. Do not consider your service's ID fixed.
 3. Be aware that every service removes its auto-update configuration during the detection to prevent any ID movement.
 4. Make sure that by the creation of your services you specified a callback pointer for each of them, so that the messages arriving to them concerning the detection do not stay stored in your node's memory.
-:::
+   :::
 
 ## Modes
 
@@ -122,7 +123,7 @@ The **port_table** allows the sharing of topological information of your network
 Here is an example:
 
 <div align="center">
-  <Image src="/img/routing-table.svg" darkSrc="/img/routing-table-dark.svg" />
+  <Image src="/assets/images/routing-table.svg" darkSrc="/assets/images/routing-table-dark.svg" />
 </div>
 
 As shown on this image, elements of the `port_table` indicate the first or last service's ID of the connected node through a given port.
@@ -156,7 +157,7 @@ First of all, we need to reset the filtering result in order to contain all the 
 Here is an example:
 
 <div align="center">
-  <Image src="/img/result-table.svg" />
+  <Image src="/assets/images/result-table.svg" />
 </div>
 <br />
 

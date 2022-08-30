@@ -62,7 +62,7 @@ function TOC({ className, ...props }) {
               <Grid item md={3}>
                 <Avatar
                   alt={author.name !== 'nicoR' ? author.name : 'N'}
-                  src={`/img/tutorials/school/authors/${author.img}`}
+                  src={`/assets/images/tutorials/school/authors/${author.img}`}
                   sx={{ width: 56, height: 56, float: 'right' }}
                 />
               </Grid>
@@ -71,16 +71,16 @@ function TOC({ className, ...props }) {
           </Paper>
           <Stack direction="row" spacing={2} sx={{ justifyContent: 'center' }}>
             <a href="https://discord.gg/luos">
-              <img src="/img/discord.png" className="rsLogo" alt="logo discord"></img>
+              <img src="/assets/images/discord.png" className="rsLogo" alt="logo discord"></img>
             </a>
             <a href="https://www.reddit.com/r/Luos/">
-              <img src="/img/reddit.png" className="rsLogo" alt="logo reddit"></img>
+              <img src="/assets/images/reddit.png" className="rsLogo" alt="logo reddit"></img>
             </a>
             <a href="https://twitter.com/Luos_io">
-              <img src="/img/twitter.png" className="rsLogo" alt="logo twitter"></img>
+              <img src="/assets/images/twitter.png" className="rsLogo" alt="logo twitter"></img>
             </a>
             <a href="https://www.linkedin.com/company/luos">
-              <img src="/img/linkedin.png" className="rsLogo" alt="logo linkedin"></img>
+              <img src="/assets/images/linkedin.png" className="rsLogo" alt="logo linkedin"></img>
             </a>
           </Stack>
           <Requirement title="Related content" color="#FFFFFF" list={list} />

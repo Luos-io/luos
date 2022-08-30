@@ -19,10 +19,10 @@ import type { Badge } from 'types/user';
 
 import styles from 'styles/Home.module.scss';
 
-import GetStarted from 'publicassets/images/index/gs.svg';
-import Network from 'publicassets/images/index/network.svg';
-import Community from 'publicassets/images/index/community.svg';
-import Soon from 'publicassets/images/index/coming_soon.svg';
+import GetStarted from 'public/assets/images/index/gs.svg';
+import Network from 'public/assets/images/index/network.svg';
+import Community from 'public/assets/images/index/community.svg';
+import Soon from 'public/assets/images/index/coming_soon.svg';
 
 export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const { addNotifications } = useContext(NotificationsContext);

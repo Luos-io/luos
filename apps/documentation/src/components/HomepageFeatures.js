@@ -5,7 +5,7 @@ import styles from './HomepageFeatures.module.css';
 const FeatureList = [
   {
     title: 'Easy to Use',
-    Svg: require('../../staticassets/images/undraw_docusaurus_mountain.svg').default,
+    Svg: require('../../static/assets/images/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
         Docusaurus was designed from the ground up to be easily installed and used to get your

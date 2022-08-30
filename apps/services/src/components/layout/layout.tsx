@@ -111,7 +111,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
                     }}
                   >
                     <Image
-                      src={`/assets/images/user/badges/${displayNotification.image}`}
+                      src={`assets/images/user/badges/${displayNotification.image}`}
                       alt="notification"
                       width={64}
                       height={64}

@@ -83,7 +83,7 @@ const SelectedNode = ({ node }: SelectedNodeProps) => {
                   <span className={styles.titleImg}>
                     {' '}
                     <Image
-                      src={`/assets/images/topology/${serviceType[node.services[0].type]}.svg`}
+                      src={`assets/images/topology/${serviceType[node.services[0].type]}.svg`}
                       width="24"
                       height="24"
                       alt="service picto"

@@ -165,7 +165,7 @@ const Chart = (rtbData: RTBData) => {
       .data(nodes)
       .join('.node')
       .append('image')
-      .attr('xlink:href', '/assets/images/topology/mcu.svg')
+      .attr('xlink:href', 'assets/images/topology/mcu.svg')
       .style('cursor', 'pointer')
       .on('click', function (d, i) {
         onClickNode(i);
@@ -375,7 +375,7 @@ const Chart = (rtbData: RTBData) => {
 
           serviceSel
             .append('image')
-            .attr('xlink:href', '/assets/images/topology/' + setviceType[service.type] + '.svg')
+            .attr('xlink:href', 'assets/images/topology/' + setviceType[service.type] + '.svg')
             .attr('x', -10)
             .attr('y', -20)
             .style('opacity', '0.7')
@@ -504,7 +504,8 @@ const Chart = (rtbData: RTBData) => {
   return (
     <div id="content">
       <Alert severity="info" style={{ margin: '30px 60px 0' }}>
-      This browser application demonstrate how Luos natively allows direct access and control of any hardware specific product.{' '}
+        This browser application demonstrate how Luos natively allows direct access and control of
+        any hardware specific product.{' '}
         <a href="https://github.com/Luos-io/Luos/issues/new?assignees=nicolas-rabault&labels=feature&template=feature-request.md&title=%5BNEW+FEATURE%5D+">
           💡 You can ask for new feature here. 💡
         </a>

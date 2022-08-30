@@ -39,7 +39,7 @@ export const ButtonAppBar = ({ toogleLight }: HeaderProps) => {
           <Grid item xs={4} display="flex" alignItems="center">
             <Link href="/">
               <Image
-                src="/assets/images/logo_luos_animated_white.gif"
+                src="assets/images/logo_luos_animated_white.gif"
                 alt="Luos Logo"
                 width="86px"
                 height="30px"

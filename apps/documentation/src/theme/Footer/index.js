@@ -45,8 +45,8 @@ function Footer() {
           <img
             src={
               isDarkTheme
-                ? '/assets/images/index/powered/luos.svg'
-                : '/assets/images/index/powered/luos-dark.svg'
+                ? 'assets/images/index/powered/luos.svg'
+                : 'assets/images/index/powered/luos-dark.svg'
             }
             style={{ verticalAlign: 'middle', width: '150px' }}
             alt="luos-dark"
@@ -78,19 +78,19 @@ function Footer() {
           <h2 className={styles.titleCommunity}>Join our community</h2>
           <div className={styles.joinUsContainer}>
             <a href="https://discord.gg/luos" rel="nofollow">
-              <img src="/assets/images/discord.png" className="rsLogo" alt="discord logo"></img>
+              <img src="assets/images/discord.png" className="rsLogo" alt="discord logo"></img>
             </a>
             <a href="https://www.reddit.com/r/Luos/" rel="nofollow">
-              <img src="/assets/images/reddit.png" className="rsLogo" alt="reddit logo"></img>
+              <img src="assets/images/reddit.png" className="rsLogo" alt="reddit logo"></img>
             </a>
             <a href="https://twitter.com/Luos_io" rel="nofollow">
-              <img src="/assets/images/twitter.png" className="rsLogo" alt="twitter logo"></img>
+              <img src="assets/images/twitter.png" className="rsLogo" alt="twitter logo"></img>
             </a>
             <a href="https://www.linkedin.com/company/luos" rel="nofollow">
-              <img src="/assets/images/linkedin.png" className="rsLogo" alt="linkedin logo"></img>
+              <img src="assets/images/linkedin.png" className="rsLogo" alt="linkedin logo"></img>
             </a>
             <a href="https://www.youtube.com/channel/UCWeIoHVY9Z-04kdwXNtv2FA" rel="nofollow">
-              <img src="/assets/images/youtube.png" className="rsLogo" alt="youtube logo"></img>
+              <img src="assets/images/youtube.png" className="rsLogo" alt="youtube logo"></img>
             </a>
           </div>
         </Grid>

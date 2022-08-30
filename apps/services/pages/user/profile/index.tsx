@@ -249,7 +249,7 @@ export const Profile = ({
               <Tooltip title={`Level ${level}`}>
                 <div>
                   <Image
-                    src={`/assets/images/user/rank/rank-${level}.svg`}
+                    src={`assets/images/user/rank/rank-${level}.svg`}
                     width="32"
                     height="38"
                     alt="actual rank"
@@ -264,7 +264,7 @@ export const Profile = ({
             </Grid>
             <Grid item xs={2}>
               <Image
-                src={`/assets/images/user/rank/rank-${level}.svg`}
+                src={`assets/images/user/rank/rank-${level}.svg`}
                 width="32"
                 height="38"
                 alt="next rank"
@@ -297,7 +297,7 @@ export const Profile = ({
                       }}
                     >
                       <Image
-                        src={`/assets/images/user/badges/${image}`}
+                        src={`assets/images/user/badges/${image}`}
                         width="72"
                         height="64"
                         alt={`badge: ${description}`}

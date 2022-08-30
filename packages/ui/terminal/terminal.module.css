@@ -1,8 +1,10 @@
-#terminal {
+.terminal {
   background: #323334;
+  border-radius: 5px !important;
 }
 
-#terminal-container {
-  width: 100%;
+.terminalContainer {
   border: 1px solid red;
+  border-radius: 5px;
+}
 }

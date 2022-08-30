@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import Grid from '@mui/material/Grid';
 import * as Xterm from 'xterm';
 import { FitAddon } from 'xterm-addon-fit';
 
@@ -21,7 +22,6 @@ export const Terminal = ({ code, readOnly = true, styles }: TerminalProps) => {
       cursorBlink: !readOnly,
       disableStdin: readOnly,
       theme: {
-        ...defaultStyles.terminal,
         ...styles,
       },
     });
@@ -56,9 +56,19 @@ export const Terminal = ({ code, readOnly = true, styles }: TerminalProps) => {
   }, [readOnly, styles]);
 
   return (
-    <div id='terminal-container'>
-      <div id='terminal' ref={terminalRef} />
-    </div>
+    <Grid container className={defaultStyles.terminalContainer}>
+      <Grid item container xs={12} alignContent={'flex-start'}>
+        <Grid item>
+          <img
+            src='https://www.luos.io/img/index/header/buttons.svg'
+            alt='window-buttons'
+            width={100}
+            height={15}
+          />
+        </Grid>
+      </Grid>
+      <Grid item xs={12} className='terminal' ref={terminalRef} />
+    </Grid>
   );
 };
 export default Terminal;

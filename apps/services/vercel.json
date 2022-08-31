@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/api/telemetry",
+      "destination": "https://monorepo-services.vercel.app/app/api/telemetry"
+    }
+  ]
+}

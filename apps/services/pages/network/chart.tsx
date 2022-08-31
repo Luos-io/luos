@@ -106,16 +106,14 @@ const Chart = (rtbData: RTBData) => {
     const pies = nodes.map((node) =>
       d3
         .pie()
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // @typescript-eslint/no-explicit-any
         .value((d: any) => d.value)
         .sort(null)
         .sortValues(null)
         .startAngle(0)
         .endAngle(360)
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error
         .endAngle(360)([{ value: node.value }, { value: 1 - node.value }])
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error
         .map((d) => defaultArcParams(d)),
     );
@@ -165,7 +163,7 @@ const Chart = (rtbData: RTBData) => {
       .data(nodes)
       .join('.node')
       .append('image')
-      .attr('xlink:href', 'assets/images/topology/mcu.svg')
+      .attr('xlink:href', '/assets/images/topology/mcu.svg')
       .style('cursor', 'pointer')
       .on('click', function (d, i) {
         onClickNode(i);
@@ -375,7 +373,7 @@ const Chart = (rtbData: RTBData) => {
 
           serviceSel
             .append('image')
-            .attr('xlink:href', 'assets/images/topology/' + setviceType[service.type] + '.svg')
+            .attr('xlink:href', '/assets/images/topology/' + setviceType[service.type] + '.svg')
             .attr('x', -10)
             .attr('y', -20)
             .style('opacity', '0.7')

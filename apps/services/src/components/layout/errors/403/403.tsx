@@ -13,7 +13,7 @@ export default function Error403(): JSX.Element {
         <Paper elevation={3} className={Styles.error}>
           <div className={Styles.container}>
             <Image
-              src="assets/images/Wait_a_minute.svg"
+              src="/assets/images/Wait_a_minute.svg"
               alt="Luos network"
               width="150"
               height="150"

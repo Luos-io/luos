@@ -135,7 +135,7 @@ module.exports = {
       label: 'Hardware consideration',
       link: {
         type: 'doc',
-        id: 'hardware-consideration/index',
+        id: 'hardware-consideration/hardware-consideration',
       },
       items: [
         {

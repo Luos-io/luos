@@ -1,7 +1,3 @@
-console.log(
-  '[Root] Loading configurations from eslint-config-custom package...',
-);
-
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   root: true,

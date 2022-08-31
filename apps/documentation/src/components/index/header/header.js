@@ -1,48 +1,46 @@
 import React from 'react';
 import { BrowserView } from 'react-device-detect';
-import LiteYouTubeEmbed from 'react-lite-youtube-embed';
-import { useColorMode } from '@docusaurus/theme-common';
+import styles from './header.module.css';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import Writer from '@site/src/components/writer';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
+import { useColorMode } from '@docusaurus/theme-common';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SearchIcon from '@mui/icons-material/Search';
-import Image from '@site/src/components/Image';
-import Writer from '@site/src/components/writer';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
-import styles from './header.module.css';
 
 const Header = (props) => {
-  const { colorMode } = useColorMode();
+  const { isDarkTheme } = useColorMode();
   return (
     <div className={styles.container}>
       <Grid container>
         <Grid item md={7} className={styles.left}>
           <div className={styles.head}>
             {' '}
-            <Image
+            <img
               src="assets/images/index/header/buttons.svg"
               alt="buttons"
-              width="100"
-              style={{ padding: '15px' }}
+              style={{ padding: '15px', width: '100px' }}
             />
           </div>
           <Grid container>
             <Grid item xs={2} md={1} lg={1} className={styles.docs}>
               <FileCopyIcon fontSize="large" className={styles.icons} />
               <SearchIcon fontSize="large" className={styles.icons} />
-              {colorMode === 'dark' ? (
+              {isDarkTheme ? (
                 <>
                   {' '}
-                  <Image src="assets/images/index/header/luos.svg" alt="luos" />{' '}
+                  <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <Image src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
+                  <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>
@@ -123,26 +121,25 @@ const Header = (props) => {
           >
             <div className={styles.head}>
               {' '}
-              <Image
+              <img
                 src="assets/images/index/header/buttons.svg"
                 alt="buttons"
-                width="100"
-                style={{ padding: '15px' }}
+                style={{ padding: '15px', width: '100px' }}
               />
             </div>
             <Grid container>
               <Grid item md={1} lg={1} className={styles.docs}>
                 <FileCopyIcon fontSize="large" className={styles.icons} />
                 <SearchIcon fontSize="large" className={styles.icons} />
-                {colorMode === 'dark' ? (
+                {isDarkTheme ? (
                   <>
                     {' '}
-                    <Image src="assets/images/index/header/luos.svg" alt="luos" />{' '}
+                    <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <Image src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
+                    <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>

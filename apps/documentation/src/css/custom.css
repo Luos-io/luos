@@ -542,6 +542,9 @@ html[data-theme='dark'] .header-github-link:hover:before {
   line-height: normal !important;
 }
 
+.imgPreview {
+  cursor: pointer;
+}
 .navbar {
   min-height: 70px !important;
 }
@@ -713,4 +716,8 @@ html[data-theme='dark'] .DocSearch-Button {
 
 .dropdown-separator {
   margin: 10px 0px;
+}
+
+.pagination-nav__link {
+  background: #ffffff;
 }

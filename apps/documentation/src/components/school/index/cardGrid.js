@@ -1,8 +1,6 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Image from '@site/src/components/Image';
-
+import { Paper } from '@mui/material';
 import styles from './index.module.css';
 
 const cardGrid = (props) => {
@@ -20,12 +18,6 @@ const cardGrid = (props) => {
         switch (key) {
           case 'category':
             return el[key] === filters[key];
-          case 'toc':
-            if (filters[key] === 361) {
-              return el[key] >= filters[key];
-            }
-            return el[key] <= filters[key];
-
           case 'level':
             return el[key] === parseInt(filters[key]);
           case 'tags':
@@ -42,8 +34,8 @@ const cardGrid = (props) => {
         <Grid className={styles.cardContainer} key={y} item xs={12} md={4}>
           <a href={x.link} className={styles.link} style={{ textDecoration: 'none' }}>
             <Paper className={styles.card} elevation={1}>
-              <Image
-                src={`/assets/images/school/${x.img}.svg`}
+              <img
+                src={`assets/images/tutorials/school/${x.img}.svg`}
                 style={{ borderRadius: '4px' }}
                 alt={x.title}
               />
@@ -54,9 +46,9 @@ const cardGrid = (props) => {
                   <div>
                     <span>
                       {' '}
-                      <Image
+                      <img
                         className={styles.cardIcons}
-                        src="/assets/images/school/category.svg"
+                        src="assets/images/tutorials/school/category.svg"
                         alt="category"
                       />
                     </span>
@@ -65,9 +57,9 @@ const cardGrid = (props) => {
                   <div>
                     <span>
                       {' '}
-                      <Image
+                      <img
                         className={styles.cardIcons}
-                        src="/assets/images/school/clock.svg"
+                        src="assets/images/tutorials/school/clock.svg"
                         alt="clock"
                       />
                     </span>

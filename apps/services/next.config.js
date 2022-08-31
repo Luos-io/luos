@@ -1,4 +1,4 @@
-/* @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const withTM = require('next-transpile-modules')(['@packages/services', '@packages/ui']);
 const result = require('dotenv').config({
   path: `../../.env`,

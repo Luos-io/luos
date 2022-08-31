@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/app(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "app.luos.io"
+        }
+      ],
+      "destination": "/pages/home"
+    }
+  ]
+}

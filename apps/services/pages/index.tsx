@@ -53,6 +53,7 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
         })),
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [game?.badges]);
 
   const getStartedButton = (

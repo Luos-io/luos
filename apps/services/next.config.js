@@ -1,4 +1,4 @@
-/* @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const withTM = require('next-transpile-modules')(['@packages/services', '@packages/ui']);
 const result = require('dotenv').config({
   path: `../../.env`,
@@ -12,4 +12,14 @@ module.exports = withTM({
   // compiler: {
   //   removeConsole: true,
   // },
+  async redirects() {
+    return [
+      {
+        basePath: false,
+        source: '/api/telemetry',
+        destination: '/app/api/telemetry',
+        permanent: true,
+      },
+    ];
+  },
 });

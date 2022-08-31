@@ -1,12 +1,12 @@
 ---
 custom_edit_url: null
-image: /assets/images/Your-first-message-banner-luos.png
+image: /assets/images/tutorials/your-first-message-banner-luos.png
 ---
 
+import Image from '/src/components/Images.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import Image from '@site/src/components/Image.js';
-import Form from '@site/src/components/typeform/index.js';
+import Form from '/src/components/typeform/index.js';
 
 # Part 2: Send a message from a button service
 
@@ -15,7 +15,7 @@ import Form from '@site/src/components/typeform/index.js';
 There are two ways to receive a message, but what about sending one?
 
 <div align="center">
-  <Image
+  <img
     src="https://c.tenor.com/GM0o1UWir1wAAAAC/i-dont-know-how-it-works-eric-cartman.gif"
     className="gif_tutorial"
     alt="gif_how_it_work"
@@ -79,8 +79,8 @@ Any message contains two main parts:
 
 <div align="center">
   <Image
-    src="/assets/images/your-first-message/your-first-message-2.png"
-    darkSrc="/assets/images/your-first-message/your-first-message-2.png"
+    src="assets/images/tutorials/your-first-message/your-first-message-2.png"
+    darkSrc="assets/images/tutorials/your-first-message/your-first-message-2.png"
   />
 </div>
 
@@ -89,7 +89,7 @@ The **Data** is the actual transmitted data.
 The **Header** contains some contextual information allowing the receiver to get the purpose of the Data.
 
 :::info
-For more information about the messages, you can refer to [the related documentation page](https://docs.luos.io/documentation/luos-technology/message).
+For more information about the messages, you can refer to [the related documentation page](https://www.luos.io/documentation/luos-technology/messages).
 :::
 
 To send a message, you will need to fill in some header information regarding the target and the data of you message:
@@ -196,7 +196,7 @@ The **STATE** button service now returns an **IO_STATE** value when a service as
 Let's see if our service reacts as expected.
 
 <div align="center">
-  <Image
+  <img
     src="https://media.giphy.com/media/DIxETbmfEdc6A/giphy-downsized-large.gif"
     className="gif_tutorial"
     alt="gif_test"
@@ -229,7 +229,7 @@ Out[1]: False
 <TabItem value="Arduino" label="Arduino">
 To simulate a press button, connect a wire between the BTN_PIN (pin 8) and GND.
 <div align="center">
-  <Image src="/assets/images/your-first-message/your-first-message-2-1.png" darkSrc="/assets/images/your-first-message/your-first-message-2-1-dark.png"/>
+  <Image src="assets/images/tutorials/your-first-message/your-first-message-2-1.png" darkSrc="assets/images/tutorials/your-first-message/your-first-message-2-1-dark.png"/>
 </div>
 
 </TabItem>
@@ -239,7 +239,7 @@ Now push on the B1 button (the blue one) on your board
 <TabItem value="Nucleo2" label="STM32G431KB Nucleo/STM32L432KC Nucleo">
 To simulate a press button, connect a wire between the BTN_PIN (pin D10) and GND.
 <div align="center">
-  <Image src="/assets/images/your-first-message/your-first-message-2-1.png" darkSrc="/assets/images/your-first-message/your-first-message-2-1-dark.png"/>
+  <Image src="assets/images/tutorials/your-first-message/your-first-message-2-1.png" darkSrc="assets/images/tutorials/your-first-message/your-first-message-2-1-dark.png"/>
 </div>
 </TabItem>
 </Tabs>
@@ -282,7 +282,7 @@ Let's try a small exercise:
 5. Run this while-loop and try to push on the button to see the LED turning on and off.
 
 <div align="center">
-  <Image
+  <img
     src="https://media.giphy.com/media/fSRs6SJH6m0c3iG2hk/giphy.gif"
     className="gif_tutorial"
     alt="gif_ligth"

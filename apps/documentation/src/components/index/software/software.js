@@ -1,18 +1,16 @@
 import React from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
-import Carousel from 'react-material-ui-carousel';
+import styles from './software.module.css';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 import { useColorMode } from '@docusaurus/theme-common';
+import Carousel from 'react-material-ui-carousel';
+import Paper from '@mui/material/Paper';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import SearchIcon from '@mui/icons-material/Search';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Image from '@site/src/components/Image';
 
-import styles from './software.module.css';
-
-const Software = () => {
-  const { colorMode } = useColorMode();
+const Software = (props) => {
+  const { isDarkTheme } = useColorMode();
 
   let items = [
     {
@@ -37,9 +35,9 @@ const Software = () => {
   ];
 
   const anArrayOfNumbers = [
-    <Image src="assets/images/index/software/icons/step1.svg" alt="Step 1" />,
-    <Image src="assets/images/index/software/icons/step2.svg" alt="Step 2" />,
-    <Image src="assets/images/index/software/icons/step3.svg" alt="Step 3" />,
+    <img src="assets/images/index/software/icons/step1.svg" />,
+    <img src="assets/images/index/software/icons/step2.svg" />,
+    <img src="assets/images/index/software/icons/step3.svg" />,
   ];
 
   return (
@@ -103,7 +101,7 @@ const Software = () => {
               <Grid container>
                 <Grid item md={4} lg={4} xl={4}>
                   {' '}
-                  <Image
+                  <img
                     src="assets/images/index/header/buttons.svg"
                     style={{ padding: '15px', width: '100px' }}
                     alt="buttons"
@@ -120,15 +118,15 @@ const Software = () => {
               <Grid item md={1} lg={1} xl={1} className={styles.docs}>
                 <FileCopyIcon fontSize="large" className={styles.icons} />
                 <SearchIcon fontSize="large" className={styles.icons} />
-                {colorMode === 'dark' ? (
+                {isDarkTheme ? (
                   <>
                     {' '}
-                    <Image src="assets/images/index/header/luos.svg" alt="luos" />{' '}
+                    <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <Image src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
+                    <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>
@@ -139,14 +137,12 @@ const Software = () => {
                     <div className={styles.file}>
                       <div className={styles.fileName}>step_1.c</div>
                     </div>
-                    <Image
+                    <img
                       src={
-                        colorMode === 'dark'
+                        isDarkTheme
                           ? `assets/images/index/software/step1.svg`
                           : `assets/images/index/software/step1-dark.svg`
                       }
-                      width="130"
-                      height="130"
                       alt="step one"
                       className={styles.carousselImgDesktop}
                       loading="lazy"
@@ -160,14 +156,12 @@ const Software = () => {
                     <div className={styles.file}>
                       <div className={styles.fileName}>step_2.py</div>
                     </div>
-                    <Image
+                    <img
                       src={
-                        colorMode === 'dark'
+                        isDarkTheme
                           ? `assets/images/index/software/step2.svg`
                           : `assets/images/index/software/step2-dark.svg`
                       }
-                      width="130"
-                      height="130"
                       alt="step two"
                       className={styles.carousselImgDesktop}
                       loading="lazy"
@@ -181,14 +175,12 @@ const Software = () => {
                     <div className={styles.file}>
                       <div className={styles.fileName}>step_3.js</div>
                     </div>
-                    <Image
+                    <img
                       src={
-                        colorMode === 'dark'
+                        isDarkTheme
                           ? `assets/images/index/software/step3.svg`
                           : `assets/images/index/software/step3-dark.svg`
                       }
-                      width="130"
-                      height="130"
                       alt="step three"
                       className={styles.carousselImgDesktop}
                       loading="lazy"
@@ -216,7 +208,7 @@ const Software = () => {
               <Grid container>
                 <Grid item xs={4}>
                   {' '}
-                  <Image
+                  <img
                     src="assets/images/index/header/buttons.svg"
                     style={{ padding: '15px', width: '100px' }}
                     alt="buttons"
@@ -237,15 +229,15 @@ const Software = () => {
               <Grid item xs={2} className={styles.docs}>
                 <FileCopyIcon fontSize="large" className={styles.icons} />
                 <SearchIcon fontSize="large" className={styles.icons} />
-                {colorMode === 'dark' ? (
+                {isDarkTheme ? (
                   <>
                     {' '}
-                    <Image src="assets/images/index/header/luos.svg" alt="luos" />{' '}
+                    <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <Image src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
+                    <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>
@@ -282,15 +274,15 @@ const Software = () => {
 };
 
 function Item(props) {
-  const { colorMode } = useColorMode();
+  const { isDarkTheme } = useColorMode();
   return (
     <Paper className={styles.caroussel}>
       <div className={styles.file}>
         <div className={styles.fileName}>{props.item.file}</div>
       </div>
-      <Image
+      <img
         src={
-          colorMode === 'dark'
+          isDarkTheme
             ? `assets/images/index/software/${props.item.img}.svg`
             : `assets/images/index/software/${props.item.img}-dark.svg`
         }

@@ -3,13 +3,10 @@ hide_title: true
 hide_table_of_contents: true
 custom_edit_url: null
 title: 'Your First Message'
-image: /assets/images/Your-first-message-banner-luos.png
+image: /assets/images/tutorials/your-first-message-banner-luos.png
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Introduction from '@site/src/components/school/article/intro.js';
-
-#
+import Introduction from '/src/components/school/article/intro.js';
 
 <Introduction
   title="Your First Message"
@@ -19,18 +16,18 @@ import Introduction from '@site/src/components/school/article/intro.js';
   desc="Luos engine aims to exchange information between services by sending messages. In this tutorial, you will learn messages' structure and how to send one to another service."
   tags={['Service', 'Luos message', 'Polling', 'Message handler']}
   requierements={[
-    { label: 'Luos Get Started', link: useBaseUrl('/tutorials/get-started') },
+    { label: 'Luos Get Started', link: '/tutorials/get-started' },
     {
       label: 'Training repository',
       link: 'https://github.com/Luos-io/Training',
     },
     {
       label: 'Luos Basics',
-      link: useBaseUrl('/documentation/luos-technology/basics'),
+      link: '/documentation/luos-technology/basics',
     },
     {
       label: 'Your first service tutorial',
-      link: useBaseUrl('/tutorials/your-first-service'),
+      link: '/tutorials/your-first-service',
     },
   ]}
   shortList="true"
@@ -73,12 +70,12 @@ import Introduction from '@site/src/components/school/article/intro.js';
     {
       label: 'Part 1: Receiving a message',
       desc: 'How to receive your first message with Luos engine',
-      link: useBaseUrl('/tutorials/your-first-message/receiving-message'),
+      link: '/tutorials/your-first-message/receiving-message',
     },
     {
       label: 'Part 2: Send a message from a button service',
       desc: 'How to send a message',
-      link: useBaseUrl('/tutorials/your-first-message/send-message'),
+      link: '/tutorials/your-first-message/send-message',
     },
   ]}
 />

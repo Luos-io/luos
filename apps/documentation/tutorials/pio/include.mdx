@@ -2,7 +2,7 @@
 custom_edit_url: null
 ---
 
-import Image from '@site/src/components/Image.js';
+import Image from '/src/components/Images.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -122,7 +122,7 @@ Each API begins with the name of the file where it is declared. A simple rule of
 
 ## 3. Include Luos PTP interruption
 
-In the case that you have a network, you need a way to detect other MCUs in this network. With the Luos network, we use two pins (see the documentation page [topology and network](/documentation/luos-technology/node/topology) for more information).
+In the case that you have a network, you need a way to detect other MCUs in this network. With the Luos network, we use two pins (see the documentation page [topology and network](luos-technology/node/topology) for more information).
 
 Those special pins, called PTP pins, are necessary for the topology detection. They need an interruption handler to work on a Luos network.
 
@@ -167,15 +167,15 @@ You have to follow the pinout declared in the file _LuosHAL_Config.h_ for ATSAMD
 As you can see in the terminal when you build your project, PlatformiIO will download the last version of the Luos library from its registry, and add it as a library to your project.
 
 <div align="center">
-  <Image src="/assets/images/tutorials/pio/pio-2-1.png" />
+  <Image src="assets/images/tutorials/pio/pio-2-1.png" />
 </div>
 
 Upload the code to your MCU by clicking on the right arrow button at the bottom of the IDE.
 
 <div align="center">
-  <Image src="/assets/images/tutorials/pio/pio-2-2.png" />
+  <Image src="assets/images/tutorials/pio/pio-2-2.png" />
 </div>
 
 You have now created a project with an ST framework or with an Arduino framework, and configured everyting to begin with Luos.
 
-Rename your project and add packages like in the trainings, in order to make great projects with Luos! [You can check the full solution here](https://github.com/Luos-io/Mooc/tree/main/Basic*Project).
+Rename your project and add packages like in the trainings, in order to make great projects with Luos! [You can check the full solution here](https://github.com/Luos-io/morse_encoder).

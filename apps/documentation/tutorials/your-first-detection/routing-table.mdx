@@ -3,9 +3,9 @@ custom_edit_url: null
 image: /assets/images/Your-first-topology-detection-banner-luos.png
 ---
 
+import Image from '/src/components/Images.js';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import Image from '@site/src/components/Image.js';
 
 # Part 2: How to use the routing Table
 
@@ -14,7 +14,7 @@ import Image from '@site/src/components/Image.js';
 You just learned how to detect a Luos engine network. But what is the point of making a detection if we have to count every service number in the network to find the ID corresponding to the service we want?
 
 <div align="center">
-  <Image
+  <img
     src="https://media.giphy.com/media/z1GQ9t8FxipnG/giphy-downsized-large.gif"
     className="gif_tutorial"
     alt="gif_why"
@@ -43,7 +43,7 @@ Instead of having defined IDs on your system, you can dynamically find them to m
 To find information on this routing table, Luos engine provides some filtering functions allowing you to extract the services depending on various criteria. You can cumulate those filtering functions to create complex searches and find the perfect resource fitting your needs.
 
 :::info
-To learn more about routing table filters, feel free to check out [the related documentation page](/documentation/luos-technology/services/routing-table).
+To learn more about routing table filters, feel free to check out [the related documentation page](luos-technology/services/routing-table).
 :::
 
 Instead of directly writing the ID of the led service at the end of the detection, let's find it and see how we can scale it easily!
@@ -97,7 +97,7 @@ void Switcher_MsgHandler(service_t *service, msg_t *msg)
 ```
 
 :::info
-A field `result_nbr` (see **[search_result_t](/documentation/luos-technology/services/routing-table)** structure) gives you the number matching your search.
+A field `result_nbr` (see **[search_result_t](luos-technology/services/routing-table)** structure) gives you the number matching your search.
 For example, only one service have an alias “led” in our system, so `filter_result.result_nbr = 1;` returns the filtering (ID of led service) and is placed in the first case of a tab: `filter_result.result_table[0]`.
 Using this filtering, we can easily adapt our switcher code to be able to control as many led services we have on the network by sending the message in a loop until the **result_nbr** matches.
 :::
@@ -105,7 +105,7 @@ Using this filtering, we can easily adapt our switcher code to be able to contro
 Compile and upload the project to the board, and watch the LED turns on at the end of the detection.
 
 <div align="center">
-  <Image
+  <img
     src="https://media.giphy.com/media/zcCGBRQshGdt6/giphy.gif"
     className="gif_tutorial"
     alt="gif_that_was_easy"

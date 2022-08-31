@@ -1,12 +1,10 @@
 import React from 'react';
-import Chip from '@mui/material/Chip';
+import { Paper } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
+import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-import Image from '@site/src/components/Image';
-import Requirement from './requirement';
-
 import styles from './article.module.css';
+import Requirement from './requirement';
 
 export const Introduction = (props) => {
   const keyword = props.tags;
@@ -20,17 +18,17 @@ export const Introduction = (props) => {
           <Grid item md={5} xs={12}>
             <div className={styles.navigation}>
               <span>
-                <Image
+                <img
                   className={styles.categoryIcons}
-                  src={'/assets/images/school/category.svg'}
+                  src="assets/images/tutorials/school/category.svg"
                   alt="category"
                 />
               </span>
               <span className={styles.counter}>{props.category}</span>
               <span>
-                <Image
+                <img
                   className={styles.materialIcons}
-                  src={'/assets/images/school/clock.svg'}
+                  src="assets/images/tutorials/school/clock.svg"
                   alt="clock"
                 />
               </span>
@@ -64,12 +62,12 @@ export const Introduction = (props) => {
             />
           </Grid>
         </Grid>
-      </Paper>
-      <Grid container mt={3}>
-        <Grid item xs={12}>
-          <Requirement title="Summary" color="#FFFFFF" list={props.summary} />
+        <Grid container mt={3}>
+          <Grid item xs={12}>
+            <Requirement title="Let's begin!" color="#FFFFFF" list={props.summary} />
+          </Grid>
         </Grid>
-      </Grid>
+      </Paper>
     </div>
   );
 };

@@ -4,7 +4,7 @@ custom_edit_url: null
 
 import { customFields } from '/docusaurus.config.js';
 import Tooltip from '@site/src/components/Tooltip.js';
-import Image from '@site/src/components/Image.js';
+import Image from '@site/src/components/Images.js';
 import IconExternalLink from '@theme/Icon/ExternalLink';
 
 # Luos engine
@@ -51,7 +51,7 @@ int main(void)
 }
 ```
 
-Adding this code to a <Tooltip def={customFields.node_def}>node</Tooltip> makes it able to react to a Luos network. It is now ready to host your services by [running packages](../package) on your main.
+Adding this code to a <Tooltip def={customFields.node_def}>node</Tooltip> makes it able to react to a Luos network. It is now ready to host your services by [running packages](../packages) on your main.
 
 **As a developer, you will always develop your functionalities into services and never into the `main()` program.**
 
@@ -61,7 +61,7 @@ The only information that should be put on the `main()` code are MCU's setup par
 
 ## A complete software node view
 
-At the node level, communication is achieved by receiving and sending [messages](../message) with the other [services](../services) of a Luos network. The nodes can communicate with each other thanks to the network layer.
+At the node level, communication is achieved by receiving and sending [messages](../messages) with the other [services](../services/index.mdx) of a Luos network. The nodes can communicate with each other thanks to the network layer.
 
 Luos engine will be able to find the physical destination to reach a specific service and define the best way to make it (basically using localhost or using the network layer).
 
@@ -69,10 +69,10 @@ Luos engine will be able to find the physical destination to reach a specific se
 If you use Luos engine on only one board, you don't need to take care of the physical network, the engine will only use localhost. You can use it to deal with microservice developpement on IOT, for example.
 :::
 
-Robus executes a format control, and stores messages in the `msg_buffer` of your node. Depending on the specified destination and the type of each message, they are either treated automatically by Robus and Luos engine or sent to one or several [services](../services).
+Robus executes a format control, and stores messages in the `msg_buffer` of your node. Depending on the specified destination and the type of each message, they are either treated automatically by Robus and Luos engine or sent to one or several [services](../services/index.mdx).
 
 <div align="center">
-  <Image src="/assets/images/NodeFlow.svg" darkSrc="/assets/images/NodeFlow-dark.svg" />
+  <Image src="assets/images/NodeFlow.svg" darkSrc="assets/images/NodeFlow-dark.svg" />
 </div>
 
 ## Node Parameters Configuration
@@ -87,13 +87,13 @@ You can use it to set all your custom configurations:
 - for the Luos engine of your node
 - to modify HAL configurations to fit your design
 
-|     Parameters     |    Defaults value     |                                                    Description                                                     |
-| :----------------: | :-------------------: | :----------------------------------------------------------------------------------------------------------------: |
-|   NBR_NAK_RETRY    |          10           |                                  Number of retries to send after a received NAK.                                   |
-| MAX_SERVICE_NUMBER |           5           |                               Number of services in the node (memory optimization).                                |
-|  MSG_BUFFER_SIZE   |      3\*size_msg      |         Message buffer size. Max size of a message (3 \* (7 bytes header + 128 bytes data + 2 bytes CRC)).         |
-|     MAX_MSG_NB     | 2\*MAX_SERVICE_NUMBER |                               Max number of messages that can be referenced by Luos.                               |
-|      NBR_PORT      |           2           | Number of PTP (port) on the node ( max 8). See [electronic design](../../hardware-consideration/electronics) page. |
+|     Parameters     |    Defaults value     |                                                      Description                                                       |
+| :----------------: | :-------------------: | :--------------------------------------------------------------------------------------------------------------------: |
+|   NBR_NAK_RETRY    |          10           |                                    Number of retries to send after a received NAK.                                     |
+| MAX_SERVICE_NUMBER |           5           |                                 Number of services in the node (memory optimization).                                  |
+|  MSG_BUFFER_SIZE   |      3\*size_msg      |           Message buffer size. Max size of a message (3 \* (7 bytes header + 128 bytes data + 2 bytes CRC)).           |
+|     MAX_MSG_NB     | 2\*MAX_SERVICE_NUMBER |                                 Max number of messages that can be referenced by Luos.                                 |
+|      NBR_PORT      |           2           | Number of PTP (port) on the node ( max 8). See [electronic design](../../hardware-consideration/electronics.mdx) page. |
 
 You will find the default configuration for Luos engine in the file <a href="https://github.com/Luos-io/luos_engine/blob/main/network/robus/inc/config.h" target="_blank" rel="external nofollow">_config.h<IconExternalLink width="10"></IconExternalLink>_</a>.
 
@@ -107,4 +107,4 @@ Into Luos embedded code, you are given the opportunity to obtain important infor
 
 The statistics of a node can be occupied from any other node of the system, giving you the chance to explore the behavior of all your MCUs by having direct access to any of them.
 
-More details of how to access the statistics are given in the [Monitoring tools page](../../tools/monitoring).
+More details of how to access the statistics are given in the [Monitoring tools page](../../tools/monitoring.mdx).

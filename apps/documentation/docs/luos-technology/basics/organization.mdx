@@ -73,11 +73,11 @@ Different levels on the embedded code are defined, corresponding to the differen
 
   _node_config.h_: This file describes the configuration of the board's pinout, USART for communication, timer, and DMA. It also configures the buffer size for Luos communication and the number of tasks.
 
-  _main.c/.h_: The main files for the node that calls _luos.h_, initializes and calls the package (all the different Service_Init, Service_Loop).
+  _main.c/.h_: The main files for the node that calls _luos.h_, initializes and calls the package (all the different `Service_Init`, `Service_Loop`).
 
 - **Package level**
 
-  _package.c/.h_: Contains the Service_Init, Service_Loop, and Service_Msg_Handler. In these files, you can create services dedicated to your functions with Luos API.
+  _package.c/.h_: Contains the `Service_Init`, `Service_Loop`, and `Service_Msg_Handler`. In these files, you can create services dedicated to your functions with Luos API.
 
 - **Service level**
 

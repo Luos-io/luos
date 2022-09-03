@@ -293,6 +293,5 @@ module.exports = {
       },
     ],
     ['./plugins/dotenv', {}],
-    ['./plugins/hotjar', {}],
   ],
 };

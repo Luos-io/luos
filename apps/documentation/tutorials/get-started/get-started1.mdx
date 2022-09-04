@@ -78,7 +78,8 @@ If VS Code displays the message “Do you trust the authors of the files in the 
 The project folder should now be opened in the PlatformIO explorer. 👍
 
 :::info
-**For Arduino users**, you have to select the board you use on the _platformio.ini_ file by modifying the `board = zero` line.
+**For Arduino users**, you have to select the board you use in the file _platformio.ini_. Find `board` and set it to `board = zero`.
+For the Seeeduino XIAO board, also set `default_envs` to `default_envs = seed`.
 
 <div align="center">
   <Image
@@ -127,14 +128,20 @@ Once the board is flashed, it means the compiled binary you created have been co
   />
 </div>
 
+:::caution
+Some boards in this Get started may not have a built-in LED, so you must connect an external LED between the specified pin and the GND pin.
+
+E.g. for an ESP32-DevKit, you must connect a LED and a resistor between IO18 and GND (check the schematics from the table in the [Get started Part 3](/tutorials/get-started/get-started3) for hardware specification).
+:::
+
 :::tip
-In order to make this step to work, you may need to install the USB driver related to your board on your computer.
+In order to make this step work, you may need to install the USB driver related to your board on your computer.
 Note: Linux users should give USB access to their boards by modifying the `udev rules` access rights. To give such rights to PlatformIO, please follow this <a href="https://docs.platformio.org/en/latest/faq.html#platformio-udev-rules" target="_blank" rel="external nofollow">tutorial</a> on PlatformIO FAQ section.
 
 :::
 
 :::warning
-If you have any trouble with your board's USB driver, you can consult **[our related troubleshooting page](/faq/dfu)**. Also, Make sure your USB cable is not faulty (it happens... 🤗).
+If you have any trouble with your board's USB driver, you can consult **[our related troubleshooting page](/faq/dfu)**. Also, make sure your USB cable is not faulty (it happens... 🤗).
 
 :::
 
@@ -152,10 +159,10 @@ On top of it, we also added two other services allowing you to take control of y
 - **Pipe**, managing a serial interface.<br /> ╰ The code folder of this service is located in the cloud (because it is a common cross-platform's Luos tool), PlatformIO just downloaded it for you.
 - **Gate**, an app that translates Luos engine's messages to JSON and sends it through the _Pipe_.<br /> ╰ The code folder of this service is located in the cloud (because it is a common cross-platform's Luos tool), PlatformIO just downloaded it for you.
 
-## Test your skills
-
-<Form id="uAfY4YhI" />
-
-## Next step
+## 7. Next step
 
 Your development environment is now configured, and the Get started project is installed in a local folder of your choice. The [next part](/tutorials/get-started/get-started2) of this section will teach you how to run Luos on your MCU and take the control with high level API!
+
+## 8. Test your skills
+
+<Form id="uAfY4YhI" />

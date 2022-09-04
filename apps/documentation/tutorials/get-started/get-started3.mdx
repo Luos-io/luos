@@ -60,11 +60,11 @@ To prevent any mistakes, unplug the USB cables from the boards before wiring.
 
 To create your network, you have to identify the pins used to perform Luos communication:
 
-| Function name | Arduino pin | STM32L432KC pin | STM32F072RB pin | STM32F401RE pin | STM32F410RB pin | STM32G431KB pin |
-| ------------- | ----------- | --------------- | --------------- | --------------- | --------------- | --------------- |
-| TX            | Tx          | PA9 (D0)        | PA9 (D8)        | PB7(21)         | PB7 (21)        | PA9 (D0)        |
-| RX            | Rx          | PA10 (D1)       | PA10 (D2)       | PB6 (D10)       | PB6 (D10)       | PA10 (D1)       |
-| PTP           | D6          | PB5 (D12)       | PA8 (D7)        | PB5 (D5)        | PB5 (D5)        | PB5 (D12)       |
+| Function name | Arduino pin | STM32L432KC pin | STM32F072RB pin | STM32F401RE pin | STM32F410RB pin | STM32G431KB pin | Seeeduino XIAO pin | ESP32 WROOM 32 Dev Kit |
+| ------------- | ----------- | --------------- | --------------- | --------------- | --------------- | --------------- | ------------------ | ---------------------- |
+| TX            | Tx          | PA9 (D0)        | PA9 (D8)        | PB7(21)         | PB7 (21)        | PA9 (D0)        | D6                 | Tx (SD2)               |
+| RX            | Rx          | PA10 (D1)       | PA10 (D2)       | PB6 (D10)       | PB6 (D10)       | PA10 (D1)       | D7                 | Rx (SD3)               |
+| PTP           | D6          | PB5 (D12)       | PA8 (D7)        | PB5 (D5)        | PB5 (D5)        | PB5 (D12)       | D1                 | IO26                   |
 
 Below are the schematics of various boards and how to wire them:
 
@@ -82,6 +82,14 @@ Below are the schematics of various boards and how to wire them:
       <Image
         src="assets/images/tutorials/get-started/get-started-3-2.png"
         darkSrc="assets/images/tutorials/get-started/get-started-3-2-dark.png"
+      />
+    </div>
+  </TabItem>
+  <TabItem value="Seeeduino Xiao">
+    <div align="center">
+      <Image
+        src="assets/images/tutorials/get-started/get-started-3-6_light.png"
+        darkSrc="assets/images/tutorials/get-started/get-started-3-6-dark.png"
       />
     </div>
   </TabItem>
@@ -112,6 +120,11 @@ Below are the schematics of various boards and how to wire them:
         </div>
       </TabItem>
     </Tabs>
+  </TabItem>
+  <TabItem value="ESP32 WROOM-32 DevKit">
+    <div align="center">
+      <Image src="assets/images/tutorials/get-started/get-started-3-8.png" />
+    </div>
   </TabItem>
 </Tabs>
 
@@ -158,8 +171,6 @@ These lines trigger the initialization and looping execution of all the packages
 :::
 
 4. Check whether the proper board environnement is selected depending on your board:
-
-{" "}
 
 <div align="center">
   <Image
@@ -283,14 +294,11 @@ device.led.state=False
 device.blinker.play()
 ```
 
-## Next steps
+## 5. Next steps
 
-:::info
 In this Get started tutorial, we used the default network used by Luos engine called Robus. The customization of your physical interface will be addressed in a future tutorial. The default hardware interface used by Robus is defined on the <a href="https://github.com/Luos-io/luos_engine/tree/main/network/robus/HAL" target="_blank" rel="external nofollow">Robus HAL</a> folder corresponding to your device.
 
-:::
-
-## Test your skills
+## 6. Test your skills
 
 <Form id="FV0qhGbo" />
 

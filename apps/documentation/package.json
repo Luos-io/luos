@@ -30,7 +30,7 @@
     "@types/react": "17.0.43"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.1",
+    "@docusaurus/core": "^2.1.0",
     "@docusaurus/eslint-plugin": "^2.0.1",
     "@docusaurus/module-type-aliases": "^2.0.1",
     "@docusaurus/plugin-client-redirects": "^2.0.1",

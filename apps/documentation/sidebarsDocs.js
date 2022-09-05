@@ -194,6 +194,11 @@ module.exports = {
           id: 'tools/monitoring',
         },
         {
+          type: 'doc',
+          label: 'PlatformIO',
+          id: 'tools/platformio',
+        },
+        {
           type: 'link',
           label: 'Network display',
           href: 'https://app.luos.io/network',
@@ -260,6 +265,11 @@ module.exports = {
           id: 'compatibility/mcu_demoboard',
         },
       ],
+    },
+    {
+      type: 'doc',
+      label: '🖊️ Contribute',
+      id: 'contribute-to-luos',
     },
   ],
 };

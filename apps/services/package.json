@@ -34,6 +34,7 @@
     "d3-force": "^3.0.0",
     "dotenv": "^16.0.1",
     "graphql": "^16.6.0",
+    "ip-range-check": "^0.2.0",
     "material-ui-popup-state": "^4.0.2",
     "mongodb": "^4.9.1",
     "next": "^12.2.5",

@@ -23,6 +23,7 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
         mcu,
         f_cpu,
         routing_table,
+        project_path,
       } = req.body;
 
       if (telemetry_type && system && mac && unix_time) {
@@ -54,7 +55,8 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
               f_cpu &&
               valid(pyluos) &&
               TelemetrySystemObject.includes(system.toUpperCase()) &&
-              macBuffer.length === 6
+              macBuffer.length === 6 &&
+              project_path
             ) {
               insertOneResult = await db.collection<TelemetryLuosEngine>('telemetry').insertOne({
                 ...defaultData,
@@ -64,6 +66,7 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
                 platform,
                 mcu,
                 f_cpu,
+                project_path,
               });
             }
             break;

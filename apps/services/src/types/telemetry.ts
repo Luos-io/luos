@@ -29,6 +29,7 @@ export interface TelemetryLuosEngine extends Telemetry {
   platform: string;
   mcu: string;
   f_cpu: string;
+  project_path: string;
 }
 
 export interface TelemetryPyluos extends Telemetry {

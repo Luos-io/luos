@@ -4,6 +4,7 @@ import { useVersions, useActiveDocContext } from '@docusaurus/plugin-content-doc
 import { useDocsPreferredVersion } from '@docusaurus/theme-common';
 import { useDocsVersionCandidates } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 const getVersionMainDoc = (version) => version.docs.find((doc) => doc.id === version.mainDocId);
@@ -15,6 +16,9 @@ export default function DocsVersionDropdownNavbarItem({
   dropdownItemsAfter,
   ...props
 }) {
+  const {
+    siteConfig: { customFields },
+  } = useDocusaurusContext();
   const activeDocContext = useActiveDocContext(docsPluginId);
   const versions = useVersions(docsPluginId);
   const { savePreferredVersionName } = useDocsPreferredVersion(docsPluginId);
@@ -46,7 +50,10 @@ export default function DocsVersionDropdownNavbarItem({
 
   // Luos - Add location check to see if we are on a doc page
   const location = useLocation();
-  if (!location.pathname.match(/documentation/g)) {
+  if (
+    (customFields.environment === 'production' || customFields.environment === 'preview') &&
+    !location.pathname.match(/documentation/g)
+  ) {
     return null;
   }
   // Luos - End

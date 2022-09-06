@@ -34,6 +34,7 @@ module.exports = {
     last_version_pyluos: '2.0.0',
     last_version_luos: ' 2.0.1',
     gh_path: 'github.com/Luos-io/doc/tree/master/src',
+    environment: isProd,
   },
 
   themeConfig: {
@@ -227,7 +228,7 @@ module.exports = {
           editUrl: 'https://github.com/luos-io/luos',
           versions: {
             current: {
-              label: '2.6.0-beta 🚧',
+              label: '2.7.0-beta 🚧',
             },
           },
         },

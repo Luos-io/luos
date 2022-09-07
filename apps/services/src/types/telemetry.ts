@@ -1,5 +1,19 @@
 import type { SemVer } from 'semver';
 
+export enum TelemetryFilterType {
+  GITHUB_CIDR = 'github-cidr',
+}
+
+export type TelemetryFilterGitHub = {
+  actions: string[];
+};
+
+export type TelemetryFilter = {
+  type: TelemetryFilterType;
+  lastRefreshDate: Date;
+  data: TelemetryFilterGitHub;
+};
+
 export enum TelemetryType {
   luos_engine_build = 'luos_engine_build',
   pyluos = 'pyluos',
@@ -20,6 +34,8 @@ export type Telemetry = {
   ip?: string;
   duration: number;
   date: Date;
+  isGitHubActions: Boolean;
+  isHemerra: Boolean;
 };
 
 export interface TelemetryLuosEngine extends Telemetry {
@@ -29,6 +45,7 @@ export interface TelemetryLuosEngine extends Telemetry {
   platform: string;
   mcu: string;
   f_cpu: string;
+  project_path: string;
 }
 
 export interface TelemetryPyluos extends Telemetry {

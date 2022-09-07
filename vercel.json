@@ -8,12 +8,12 @@
       "destination": "https://luos-documentation.vercel.app/:path*"
     },
     {
-      "source": "/",
-      "destination": "https://luos-documentation.vercel.app/documentation"
+      "source": "/tutorials/:path*",
+      "destination": "https://luos-documentation.vercel.app/documentation/tutorials/:path*"
     },
     {
-      "source": "/(.*)",
-      "destination": "/"
+      "source": "/",
+      "destination": "https://luos-documentation.vercel.app/documentation"
     }
   ]
 }

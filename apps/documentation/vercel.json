@@ -4,12 +4,16 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/",
-      "destination": "https://luos-documentation.vercel.app/documentation"
-    },
-    {
       "source": "/documentation/:path*",
       "destination": "https://luos-documentation.vercel.app/:path*"
+    },
+    {
+      "source": "/app/:path*",
+      "destination": "https://luos-services.vercel.app/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
     }
   ]
 }

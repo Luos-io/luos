@@ -4,8 +4,12 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/documentation/:path*",
-      "destination": "https://luos-documentation.vercel.app/:path*"
+      "source": "/(blog|docs|documentation|faq)/:path*",
+      "destination": "https://luos-documentation.vercel.app/$1/:path*"
+    },
+    {
+      "source": "/tutorials/:path*",
+      "destination": "https://luos-documentation.vercel.app/documentation/tutorials/:path*"
     },
     {
       "source": "/app/:path*",

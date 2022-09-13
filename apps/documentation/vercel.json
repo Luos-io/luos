@@ -6,10 +6,6 @@
     {
       "source": "/",
       "destination": "https://luos-documentation.vercel.app/documentation"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/"
     }
   ]
 }

@@ -10,6 +10,10 @@
     {
       "source": "/assets/:path*",
       "destination": "https://luos-documentation.vercel.app/assets/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
     }
   ]
 }

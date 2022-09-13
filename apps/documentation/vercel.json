@@ -4,7 +4,7 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/assets/:path*",
+      "source": "/documentation/assets/:path*",
       "destination": "https://luos-documentation.vercel.app/assets/:path*"
     }
   ]

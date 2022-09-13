@@ -4,10 +4,6 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/",
-      "destination": "https://luos-documentation.vercel.app/documentation"
-    },
-    {
       "source": "/assets/:path*",
       "destination": "https://luos-documentation.vercel.app/assets/:path*"
     },

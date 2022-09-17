@@ -50,10 +50,7 @@ export default function DocsVersionDropdownNavbarItem({
 
   // Luos - Add location check to see if we are on a doc page
   const location = useLocation();
-  if (
-    (customFields.environment === 'production' || customFields.environment === 'preview') &&
-    !location.pathname.match(/documentation/g)
-  ) {
+  if (customFields.isProd === true && !location.pathname.match(/documentation/g)) {
     return null;
   }
   // Luos - End

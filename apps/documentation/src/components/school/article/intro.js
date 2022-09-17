@@ -18,17 +18,17 @@ export const Introduction = (props) => {
           <Grid item md={5} xs={12}>
             <div className={styles.navigation}>
               <span>
-                <img
+                <Image
                   className={styles.categoryIcons}
-                  src="assets/images/tutorials/school/category.svg"
+                  src="/assets/images/tutorials/school/category.svg"
                   alt="category"
                 />
               </span>
               <span className={styles.counter}>{props.category}</span>
               <span>
-                <img
+                <Image
                   className={styles.materialIcons}
-                  src="assets/images/tutorials/school/clock.svg"
+                  src="/assets/images/tutorials/school/clock.svg"
                   alt="clock"
                 />
               </span>

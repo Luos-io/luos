@@ -22,8 +22,8 @@ const Header = (props) => {
         <Grid item md={7} className={styles.left}>
           <div className={styles.head}>
             {' '}
-            <img
-              src="assets/images/index/header/buttons.svg"
+            <Image
+              src="/assets/images/index/header/buttons.svg"
               alt="buttons"
               style={{ padding: '15px', width: '100px' }}
             />
@@ -35,12 +35,12 @@ const Header = (props) => {
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
+                  <Image src="/assets/images/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
+                  <Image src="/assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>
@@ -121,8 +121,8 @@ const Header = (props) => {
           >
             <div className={styles.head}>
               {' '}
-              <img
-                src="assets/images/index/header/buttons.svg"
+              <Image
+                src="/assets/images/index/header/buttons.svg"
                 alt="buttons"
                 style={{ padding: '15px', width: '100px' }}
               />
@@ -134,12 +134,12 @@ const Header = (props) => {
                 {isDarkTheme ? (
                   <>
                     {' '}
-                    <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
+                    <Image src="/assets/images/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
+                    <Image src="/assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>

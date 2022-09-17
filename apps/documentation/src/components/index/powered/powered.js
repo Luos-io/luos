@@ -26,7 +26,7 @@ const Powered = (props) => {
         {' '}
         <h2 className={`${styles.title}`}>
           More features powered by{' '}
-          <img
+          <Image
             src={
               isDarkTheme
                 ? 'assets/images/index/powered/luos.svg'
@@ -166,8 +166,8 @@ const Powered = (props) => {
         <Grid item md={6} lg={6} style={{ marginTop: '-50px' }} className={styles.mobileNone}>
           <div className={styles.head}>
             {' '}
-            <img
-              src="assets/images/index/header/buttons.svg"
+            <Image
+              src="/assets/images/index/header/buttons.svg"
               style={{ padding: '15px', width: '100px' }}
               alt="buttons"
             />
@@ -179,12 +179,12 @@ const Powered = (props) => {
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
+                  <Image src="/assets/images/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
+                  <Image src="/assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>

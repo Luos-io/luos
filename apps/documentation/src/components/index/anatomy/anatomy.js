@@ -164,8 +164,8 @@ const Anatomy = (props) => {
         <Grid item xs={12} md={6} lg={6} xl={3} className={styles.vscode}>
           <div className={styles.head}>
             {' '}
-            <img
-              src="assets/images/index/header/buttons.svg"
+            <Image
+              src="/assets/images/index/header/buttons.svg"
               alt="buttons"
               style={{ padding: '15px', width: '100px' }}
             />
@@ -177,12 +177,12 @@ const Anatomy = (props) => {
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
+                  <Image src="/assets/images/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
+                  <Image src="/assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>
@@ -254,8 +254,8 @@ const Anatomy = (props) => {
       </Grid>
       <Grid container>
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
-          <img
-            src="assets/images/index/integration/line-right.svg"
+          <Image
+            src="/assets/images/index/integration/line-right.svg"
             alt="line-right"
             style={{ transform: 'rotateY(180deg)' }}
             className={styles.linesImg}
@@ -263,8 +263,8 @@ const Anatomy = (props) => {
         </Grid>
         <Grid item xs={4} md={4} lg={4} xl={4}></Grid>
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
-          <img
-            src="assets/images/index/integration/line-right.svg"
+          <Image
+            src="/assets/images/index/integration/line-right.svg"
             alt="line-right"
             style={{ float: 'right' }}
             className={styles.linesImg}

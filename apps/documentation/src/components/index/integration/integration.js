@@ -88,8 +88,8 @@ const Integration = (props) => {
       <Grid container spacing={3}>
         <Grid item xs={6} md={4} lg={4}>
           {' '}
-          <img
-            src="assets/images/index/integration/line-right.svg"
+          <Image
+            src="/assets/images/index/integration/line-right.svg"
             alt="line-right"
             className={styles.imgLeft}
           />
@@ -114,8 +114,8 @@ const Integration = (props) => {
             <Grid container>
               <Grid item md={4} lg={4} xl={4}>
                 {' '}
-                <img
-                  src="assets/images/index/header/buttons.svg"
+                <Image
+                  src="/assets/images/index/header/buttons.svg"
                   style={{ padding: '15px', width: '100px' }}
                   alt="buttons"
                 />
@@ -134,12 +134,12 @@ const Integration = (props) => {
               {isDarkTheme ? (
                 <>
                   {' '}
-                  <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
+                  <Image src="/assets/images/index/header/luos.svg" alt="luos" />{' '}
                 </>
               ) : (
                 <>
                   {' '}
-                  <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
+                  <Image src="/assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                 </>
               )}
             </Grid>
@@ -190,7 +190,7 @@ const Integration = (props) => {
                     className={links[element[0]] !== '' ? styles.imgLink : styles.imgLinkDesible}
                   >
                     <ImageListItem key={index} alignitems="center">
-                      <img
+                      <Image
                         src={
                           isDarkTheme
                             ? element[2]
@@ -243,8 +243,8 @@ const Integration = (props) => {
         >
           <div className={styles.head}>
             {' '}
-            <img
-              src="assets/images/index/header/buttons.svg"
+            <Image
+              src="/assets/images/index/header/buttons.svg"
               alt="buttons"
               style={{ padding: '15px', width: '100px' }}
             />
@@ -294,7 +294,7 @@ const Integration = (props) => {
                 {currentImageTmp.map((element, index) => (
                   <a href={links[element[0]]} className={styles.imgLink}>
                     <ImageListItem key={index}>
-                      <img
+                      <Image
                         src={`assets/images/index/integration/icons/${element[0]}.svg`}
                         alt={element[1]}
                         loading="lazy"
@@ -331,8 +331,8 @@ const Integration = (props) => {
         <Grid item xs={2} md={4} lg={4}></Grid>
         <Grid item xs={4} md={4} lg={4}></Grid>
         <Grid item xs={6} md={4} lg={4}>
-          <img
-            src="assets/images/index/integration/line-right.svg"
+          <Image
+            src="/assets/images/index/integration/line-right.svg"
             alt="line-right"
             className={styles.imgRight}
           />

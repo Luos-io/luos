@@ -34,7 +34,7 @@ const cardGrid = (props) => {
         <Grid className={styles.cardContainer} key={y} item xs={12} md={4}>
           <a href={x.link} className={styles.link} style={{ textDecoration: 'none' }}>
             <Paper className={styles.card} elevation={1}>
-              <img
+              <Image
                 src={`assets/images/tutorials/school/${x.img}.svg`}
                 style={{ borderRadius: '4px' }}
                 alt={x.title}
@@ -46,9 +46,9 @@ const cardGrid = (props) => {
                   <div>
                     <span>
                       {' '}
-                      <img
+                      <Image
                         className={styles.cardIcons}
-                        src="assets/images/tutorials/school/category.svg"
+                        src="/assets/images/tutorials/school/category.svg"
                         alt="category"
                       />
                     </span>
@@ -57,9 +57,9 @@ const cardGrid = (props) => {
                   <div>
                     <span>
                       {' '}
-                      <img
+                      <Image
                         className={styles.cardIcons}
-                        src="assets/images/tutorials/school/clock.svg"
+                        src="/assets/images/tutorials/school/clock.svg"
                         alt="clock"
                       />
                     </span>

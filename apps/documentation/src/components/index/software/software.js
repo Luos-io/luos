@@ -35,9 +35,9 @@ const Software = (props) => {
   ];
 
   const anArrayOfNumbers = [
-    <img src="assets/images/index/software/icons/step1.svg" />,
-    <img src="assets/images/index/software/icons/step2.svg" />,
-    <img src="assets/images/index/software/icons/step3.svg" />,
+    <Image src="/assets/images/index/software/icons/step1.svg" />,
+    <Image src="/assets/images/index/software/icons/step2.svg" />,
+    <Image src="/assets/images/index/software/icons/step3.svg" />,
   ];
 
   return (
@@ -101,8 +101,8 @@ const Software = (props) => {
               <Grid container>
                 <Grid item md={4} lg={4} xl={4}>
                   {' '}
-                  <img
-                    src="assets/images/index/header/buttons.svg"
+                  <Image
+                    src="/assets/images/index/header/buttons.svg"
                     style={{ padding: '15px', width: '100px' }}
                     alt="buttons"
                   />
@@ -121,12 +121,12 @@ const Software = (props) => {
                 {isDarkTheme ? (
                   <>
                     {' '}
-                    <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
+                    <Image src="/assets/images/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
+                    <Image src="/assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>
@@ -137,7 +137,7 @@ const Software = (props) => {
                     <div className={styles.file}>
                       <div className={styles.fileName}>step_1.c</div>
                     </div>
-                    <img
+                    <Image
                       src={
                         isDarkTheme
                           ? `assets/images/index/software/step1.svg`
@@ -156,7 +156,7 @@ const Software = (props) => {
                     <div className={styles.file}>
                       <div className={styles.fileName}>step_2.py</div>
                     </div>
-                    <img
+                    <Image
                       src={
                         isDarkTheme
                           ? `assets/images/index/software/step2.svg`
@@ -175,7 +175,7 @@ const Software = (props) => {
                     <div className={styles.file}>
                       <div className={styles.fileName}>step_3.js</div>
                     </div>
-                    <img
+                    <Image
                       src={
                         isDarkTheme
                           ? `assets/images/index/software/step3.svg`
@@ -208,8 +208,8 @@ const Software = (props) => {
               <Grid container>
                 <Grid item xs={4}>
                   {' '}
-                  <img
-                    src="assets/images/index/header/buttons.svg"
+                  <Image
+                    src="/assets/images/index/header/buttons.svg"
                     style={{ padding: '15px', width: '100px' }}
                     alt="buttons"
                   />
@@ -232,12 +232,12 @@ const Software = (props) => {
                 {isDarkTheme ? (
                   <>
                     {' '}
-                    <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
+                    <Image src="/assets/images/index/header/luos.svg" alt="luos" />{' '}
                   </>
                 ) : (
                   <>
                     {' '}
-                    <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
+                    <Image src="/assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
                   </>
                 )}
               </Grid>
@@ -280,7 +280,7 @@ function Item(props) {
       <div className={styles.file}>
         <div className={styles.fileName}>{props.item.file}</div>
       </div>
-      <img
+      <Image
         src={
           isDarkTheme
             ? `assets/images/index/software/${props.item.img}.svg`

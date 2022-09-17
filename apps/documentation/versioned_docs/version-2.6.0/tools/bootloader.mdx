@@ -23,8 +23,8 @@ The bootloader feature consists of three elements:
 
 <div align="center">
   <Image
-    src="assets/images/bootloader_archi.svg"
-    darkSrc="assets/images/bootloader_archi-dark.svg"
+    src="/assets/images/bootloader_archi.svg"
+    darkSrc="/assets/images/bootloader_archi-dark.svg"
   />
 </div>
 
@@ -60,7 +60,7 @@ pyluos-bootloader detect COM3
 This leads to the following result:
 
 <div align="center">
-  <Image src="assets/images/boot_detect.png" />
+  <Image src="/assets/images/boot_detect.png" />
 </div>
 
 We can see two nodes in our network:
@@ -87,7 +87,7 @@ In the example above, `2` is the node's ID of _node 2_, not to be confused with 
 Let's type this command, then you should see the following text on your screen:
 
 <div align="center">
-  <Image src="assets/images/bl_flash_new.png" />
+  <Image src="/assets/images/bl_flash_new.png" />
 </div>
 
 You can see the four steps described in the previous section, plus a few log information.
@@ -112,7 +112,7 @@ pyluos-bootloader flash --help
 After the CLI launches the programming process, you can notice that the CLI checks if the node is ready (or alive) before programming it. Once the process is finished, you can re-run the network detection and see the following:
 
 <div align="center">
-  <Image src="assets/images/bl_detect_new.png" />
+  <Image src="/assets/images/bl_detect_new.png" />
 </div>
 
 You can program more than one node by giving an ID list with the option -t :
@@ -128,13 +128,13 @@ Here we will program nodes with ID n°2, 3, 4.
 If, for some reason, you lost the connection with the network or a node during the update, the bootloader allows you to re-run the process without the need to use specific programming tools (such as a JTAG debugger). Let's see what happens if you lost the connection during the update:
 
 <div align="center">
-  <Image src="assets/images/bl_flash_error.png" />
+  <Image src="/assets/images/bl_flash_error.png" />
 </div>
 
 The CLI tells you that you have lost the connection. Now by powering off and on your network and re-running a detection, you should see the following:
 
 <div align="center">
-  <Image src="assets/images/bl_detect_boot_service.png" />
+  <Image src="/assets/images/bl_detect_boot_service.png" />
 </div>
 
 The **boot_service** tells the node is in bootloader mode. You just have to re-run the flashing process with the CLI:
@@ -208,13 +208,13 @@ Luos engine will now run the bootloader application. Be careful not to initializ
 Now you have to adjust your linker settings: the bootloader has to reserve a portion of the flash, and the remaining memory will be dedicated to the Luos engine's applications. You can find the memory layout of the flash resumed in the following picture:
 
 <div align="center">
-  <Image src="assets/images/memory_layout.svg" darkSrc="assets/images/memory_layout-dark.svg" />
+  <Image src="/assets/images/memory_layout.svg" darkSrc="/assets/images/memory_layout-dark.svg" />
 </div>
 
 This figure shows a third section called **shared_flash**, which exchanges information between the bootloader and the application. When you want to port the bootloader on a specific target, you have to specify this layout (e.g. the amount of flash you reserve for the bootloader, the shared section, and the application). Here is an example for the STM32L432: We choose to dedicate 48 kB for the bootloader, 2 kB (one flash page) for the shared section, and all remaining memory for the application. The translation in the linker file can be seen here:
 
 <div align="center">
-  <Image src="assets/images/linker_bootloader.png" />
+  <Image src="/assets/images/linker_bootloader.png" />
 </div>
 
 ### Flash memory remapping
@@ -236,7 +236,7 @@ In each different Luos compatible board, we propose a default configuration of t
 As for the bootloader, you have to modify your linker file in the application if you want to make it compatible with this feature. Now that we defined the memory layout, the modification is straightforward:
 
 <div align="center">
-  <Image src="assets/images/linker_app.png" />
+  <Image src="/assets/images/linker_app.png" />
 </div>
 
 You also have to add the precompilation flag `-D WITH_BOOTLOADER` to the file _platformio.ini_ in your application. Your application is now ready to be flashed using a bootloader.

@@ -3,6 +3,7 @@ custom_edit_url: null
 ---
 
 import Image from '@site/src/components/Image';
+import IconExternalLink from '@theme/Icon/ExternalLink';
 
 # Test your Robus configuration
 
@@ -18,8 +19,10 @@ You must also connect the PTP pins together.
 
 <div align="center">
   <Image
-    src="/assets/images/selftest_connection.svg"
-    darkSrc="/assets/images/selftest_connection-dark.svg"
+    sources={{
+      light: '/assets/images/selftest_connection.svg',
+      dark: '/assets/images/selftest_connection-dark.svg',
+    }}
   />
 </div>
 

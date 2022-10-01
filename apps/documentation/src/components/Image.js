@@ -1,46 +1,35 @@
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
-import { useColorMode } from '@docusaurus/theme-common';
+import ThemedImage from '@theme/ThemedImage';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import 'react-image-lightbox/style.css';
 
 const Image = (props) => {
   const { siteConfig } = useDocusaurusContext();
   const [isOpen, setIsOpen] = useState();
-  const { isDarkTheme } = useColorMode();
-  const getSource = () => {
-    const { customFields } = siteConfig;
-    let source = props.src;
 
-    if (isDarkTheme && props.darkSrc !== undefined) {
-      source = props.darkSrc;
-    }
-    if (customFields.isProd === true && source.indexOf('/documentation') === -1) {
-      return `/documentation${source}`;
-    }
-
-    return source;
+  const baseSourcePath =
+    siteConfig.customFields.isProd === true && source.indexOf('/documentation') === -1
+      ? '/documentation'
+      : '';
+  const sources = {
+    light: `${baseSourcePath}${props.sources.light}`,
+    dark: `${baseSourcePath}${props.sources.dark ? props.sources.dark : props.sources.light}`,
   };
-
   const height = props.height === undefined ? '100%' : props.height;
   const width = props.width === undefined ? null : props.width;
 
   return (
     <div style={{ display: 'inline', marginRight: '15px' }}>
-      <Image
+      <ThemedImage
         className="imgPreview"
-        src={getSource()}
+        sources={sources}
         onClick={() => setIsOpen(true)}
         height={height}
         width={width}
         alt={props.alt ? props.alt : 'luos_img'}
       />
-      {isOpen && (
-        <Lightbox
-          mainSrc={props.darkSrc ? props.darkSrc : getSource()}
-          onCloseRequest={() => setIsOpen(false)}
-        />
-      )}
+      {isOpen && <Lightbox mainSrc={sources.dark} onCloseRequest={() => setIsOpen(false)} />}
     </div>
   );
 };

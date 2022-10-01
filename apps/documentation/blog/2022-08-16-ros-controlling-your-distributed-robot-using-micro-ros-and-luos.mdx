@@ -5,7 +5,7 @@ slug: ros-controlling-your-distributed-robot-using-micro-ros-and-luos
 authors:
   - name: Viktoria
     title: Embedded Systems Engineer @ Luos
-    image_url: https://www.luos.io/assets/images/school/authors/viktoria.png
+    image_url: /assets/images/tutorials/school/authors/viktoria.png
 tags: [ros, micro-ros, embedded, edge]
 image: /assets/images/blog/Micro-ros-and-luos-article.jpg
 hide_table_of_contents: false
@@ -26,13 +26,13 @@ Lately, the need to use resource-constrained electronic boards like microcontrol
 At Luos, we are exploring how to integrate micro-ROS into distributed systems. With this article, we aim to guide you through the integration of a Luos custom middleware used for the communication between multiple micro-ROS nodes. Although this method is not implemented, you can develop your Luos middleware by following the process explained in this article, checking out a dummy GitHub repository, and previewing the Luos APIs you will need to use. Check this out here: <a rel="external nofollow" href="https://github.com/Luos-io/rmw_luos" target="_blank">https://github.com/Luos-io/rmw_luos</a>
 
 <div align="center">
-  <iframe
-    src="https://giphy.com/embed/xGPy9LFlMi5X1Iarfh"
+  <Image
+    sources={{ light: 'https://media.giphy.com/media/xGPy9LFlMi5X1Iarfh/giphy.gif' }}
     width="380"
     height="380"
     frameBorder="0"
     class="giphy-embed"
-  ></iframe>
+  />
 </div>
 
 <h2>Why use Luos?</h2>
@@ -44,7 +44,7 @@ But what if we need a distributed system that takes multiple microcontrollers wi
 <div align="center">
   <Image
     desc="Micro-ROS-without-luos"
-    src="/assets/images/blog/micro-ROS-without-luos.svg"
+    sources={{ light: '/assets/images/blog/micro-ROS-without-luos.svg' }}
     width="300px"
   />
 </div>
@@ -56,7 +56,11 @@ Get started and code your own project using Luos by following our [Get started t
 Among others, Luos includes a communication protocol and a way to send and receive messages among different microcontrollers. By adding Luos in the middleware of a micro-ROS node, you could easily increment the number of boards in your setup and transfer the ROS messages from and to the ROS node to every board of your embedded network.
 
 <div align="center">
-  <Image desc="Micro-ROS" src="/assets/images/blog/micro-ROS-with-luos.svg" width="300px" />
+  <Image
+    desc="Micro-ROS"
+    sources={{ light: '/assets/images/blog/micro-ROS-with-luos.svg' }}
+    width="300px"
+  />
 </div>
 
 <h2>How is it possible?</h2>
@@ -81,7 +85,7 @@ ROS messages are sent and received following the publisher/subscriber method. In
 
 > <Image
 >   desc="Pub/sub method - multicast"
->   src="/assets/images/blog/pub-sub-method-multicast.png"
+>   sources={{ light: '/assets/images/blog/pub-sub-method-multicast.png' }}
 >   width="500px"
 > />
 
@@ -96,7 +100,7 @@ In a micro-ROS x Luos network, we need to have two different types of behavior. 
 So in a schematical way, the position of middlewares depending on the position of MCUs should be like that:
 
 <div align="center">
-  <Image desc="Luos middleware" src="/assets/images/blog/Luos-middleware.png" />
+  <Image desc="Luos middleware" sources={{ light: '/assets/images/blog/Luos-middleware.png' }} />
 </div>
 
 So let's see analytically how each MCU should work.
@@ -106,7 +110,7 @@ First, we will examine the simple case concerning the MCUs that do not directly 
 <div align="center">
   <Image
     desc="Luos middleware not connected to ROS2"
-    src="/assets/images/blog/Luos-middleware-not-directly-connected-to-ros2.png"
+    sources={{ light: '/assets/images/blog/Luos-middleware-not-directly-connected-to-ros2.png' }}
   />
 </div>
 
@@ -125,7 +129,7 @@ First, we will examine the simple case concerning the MCUs that do not directly 
 <div align="center">
   <Image
     desc="Micro-ROS and Luos architecture"
-    src="/assets/images/blog/micro-ros-and-luos-architecture.png"
+    sources={{ light: '/assets/images/blog/micro-ros-and-luos-architecture.png' }}
   />
 </div>
 
@@ -134,7 +138,7 @@ The second behavior involves the MCU that directly connects to the ROS2 interfac
 <div align="center">
   <Image
     desc="Luos middleware connected to ROS2"
-    src="/assets/images/blog/Luos-middleware-directly-to-ros2.png"
+    sources={{ light: '/assets/images/blog/Luos-middleware-directly-to-ros2.png' }}
   />
 </div>
 
@@ -150,7 +154,7 @@ This MCU should follow the same process as any other MCU, with the addition of s
 <div align="center">
   <Image
     desc="Particular behavior of MCU connected to PC"
-    src="/assets/images/blog/particular-behavior-of-mcu-connected-to-pc-luos.png"
+    sources={{ light: '/assets/images/blog/particular-behavior-of-mcu-connected-to-pc-luos.png' }}
   />
 </div>
 

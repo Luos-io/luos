@@ -125,7 +125,12 @@ The **port_table** allows the sharing of topological information of your network
 Here is an example:
 
 <div align="center">
-  <Image src="/assets/images/routing-table.svg" darkSrc="/assets/images/routing-table-dark.svg" />
+  <Image
+    sources={{
+      light: '/assets/images/routing-table.svg',
+      dark: '/assets/images/routing-table-dark.svg',
+    }}
+  />
 </div>
 
 As shown on this image, elements of the `port_table` indicate the first or last service's ID of the connected node through a given port.
@@ -159,7 +164,7 @@ First of all, we need to reset the filtering result in order to contain all the 
 Here is an example:
 
 <div align="center">
-  <Image src="/assets/images/result-table.svg" />
+  <Image sources={{ light: '/assets/images/result-table.svg' }} />
 </div>
 <br />
 

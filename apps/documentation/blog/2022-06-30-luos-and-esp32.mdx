@@ -6,12 +6,14 @@ authors:
   - name: Thomas Salembier
     title: CTO at Luos
     url: https://github.com/Salem-Luos
-    image_url: /assets/images/school/authors/thomas.png
+    image_url: /assets/images/tutorials/school/authors/thomas.png
 tags: [esp32, iot, embedded, edge, systems]
 image: /assets/images/blog/ESP32-and-Luos.png
 hide_table_of_contents: false
 date: 2022-06-30T11:00
 ---
+
+import Image from '@site/src/components/Image';
 
 ![Luos and ESP32](/assets/images/blog/ESP32-and-Luos.png)
 
@@ -57,8 +59,10 @@ It closes the loop by connecting the project between boards and makes it easy to
 
 <div align="center">
   <Image
-    src="/assets/images/blog/communication_esp32_arduino_and_luos_engine_white.svg"
-    darkSrc="/assets/images/blog/communication_esp32_arduino_and_luos_engine_dark.svg"
+    sources={{
+      light: '/assets/images/blog/communication_esp32_arduino_and_luos_engine_white.svg',
+      dark: '/assets/images/blog/communication_esp32_arduino_and_luos_engine_dark.svg',
+    }}
     alt="Communication principle between Luos engine, Arduino and ESP32"
   />
 </div>
@@ -155,8 +159,10 @@ Luos HAL is compatible with many MCU developed by Espressif:
 
 <div align="center">
   <Image
-    src="/assets/images/feature-service-package-node-board.png"
-    darkSrc="/assets/images/luos-layers-white.png"
+    sources={{
+      light: '/assets/images/feature-service-package-node-board.png',
+      dark: '/assets/images/luos-layers-white.png',
+    }}
     alt="Luos Concept explaination"
   />
 </div>
@@ -181,8 +187,7 @@ It is a simple and powerful way to control and manage your embedded systems by c
 
 <div align="center">
   <Image
-    src="/assets/images/gate_pipe.svg"
-    darkSrc="/assets/images/gate_pipe_dark.svg"
+    sources={{ light: '/assets/images/gate_pipe.svg', dark: '/assets/images/gate_pipe_dark.svg' }}
     alt="A Gate and a pipe on the same node"
   />
 </div>

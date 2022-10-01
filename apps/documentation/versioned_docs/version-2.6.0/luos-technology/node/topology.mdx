@@ -23,7 +23,7 @@ The routing table is not necessary for a node, especially if there are only driv
 <a
   href="../services/routing-table"
   target="_blank"
-  class="pagination-nav__link"
+  className="pagination-nav__link"
   style={{ display: 'inline-block' }}
 >
   Know more about the routing table
@@ -38,7 +38,12 @@ PTP is the Point-To-Point connection between nodes used for topology detection b
 With two PTP pins per board, you must chained your device as below:
 
 <div align="center">
-  <Image src="/assets/images/daisy_chain.svg" darkSrc="/assets/images/daisy_chain_white.svg" />
+  <Image
+    sources={{
+      light: '/assets/images/daisy_chain.svg',
+      dark: '/assets/images/daisy_chain_white.svg',
+    }}
+  />
 </div>
 
 ### Star Mounting
@@ -46,5 +51,10 @@ With two PTP pins per board, you must chained your device as below:
 With at least three PTP pins per board, you can create a star mounting configuration:
 
 <div align="center">
-  <Image src="/assets/images/star_mounting.svg" darkSrc="/assets/images/star_mounting_white.svg" />
+  <Image
+    sources={{
+      light: '/assets/images/star_mounting.svg',
+      dark: '/assets/images/star_mounting_white.svg',
+    }}
+  />
 </div>

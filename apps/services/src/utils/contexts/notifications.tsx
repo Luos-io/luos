@@ -55,7 +55,7 @@ export const NotificationsProvider: INotificationsProvider = ({ children }) => {
     [notifications, setNotifications],
   );
   const removeNotifications = useCallback(
-    (url, ids: string[]) => {
+    (url: string, ids: string[]) => {
       ids.map((id) => {
         const currentNotificationIndex = notifications.findIndex(
           (n) => n.id.toString() === id.toString(),

@@ -17,7 +17,7 @@ interface ISDKProvider {
 export const SDKProvider: ISDKProvider = ({ children }) => {
   const [sdk, setSDK] = useState(new SDK());
 
-  useCallback((sdk) => setSDK(sdk), []);
+  useCallback((sdk: SDK) => setSDK(sdk), []);
 
   return <SDKContext.Provider value={{ sdk }}>{children}</SDKContext.Provider>;
 };

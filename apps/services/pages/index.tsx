@@ -7,8 +7,8 @@ import Router from 'next/router';
 import { useSession } from 'next-auth/react';
 import { useContext, useEffect } from 'react';
 
-import MDBox from 'components/MDBox';
-import MDTypography from 'components/MDTypography';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import { withUserBadges } from 'utils/services/mongo/withUserBadges';
 import { NotificationsContext } from 'utils/contexts/notifications';
 
@@ -59,14 +59,14 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
   const getStartedButton = (
     <>
       <Tooltip title="Begin with the get started!" placement="bottom">
-        <MDTypography
+        <Typography
           variant="body1"
           color="primary"
           lineHeight={1}
           sx={{ cursor: 'pointer', mx: 3 }}
         >
           <PlayCircleIcon fontSize="large" style={{ color: '#BD99FF' }} />
-        </MDTypography>
+        </Typography>
       </Tooltip>
     </>
   );
@@ -74,14 +74,14 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
   const networkButton = (
     <>
       <Tooltip title="Display your embedded network in your web browser!" placement="bottom">
-        <MDTypography
+        <Typography
           variant="body1"
           color="primary"
           lineHeight={1}
           sx={{ cursor: 'pointer', mx: 3 }}
         >
           <PlayCircleIcon fontSize="large" style={{ color: '#BD99FF' }} />
-        </MDTypography>
+        </Typography>
       </Tooltip>
     </>
   );
@@ -89,14 +89,14 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
   const communityButton = (
     <>
       <Tooltip title="Join the Luos developers Community!" placement="bottom">
-        <MDTypography
+        <Typography
           variant="body1"
           color="primary"
           lineHeight={1}
           sx={{ cursor: 'pointer', mx: 3 }}
         >
           <PlayCircleIcon fontSize="large" style={{ color: '#BD99FF' }} />
-        </MDTypography>
+        </Typography>
       </Tooltip>
     </>
   );
@@ -104,9 +104,9 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
   const soonButton = (
     <>
       <Tooltip title="Sign-up to stayed informed!" placement="bottom">
-        <MDTypography variant="body1" lineHeight={1} sx={{ cursor: 'pointer', mx: 3 }}>
+        <Typography variant="body1" lineHeight={1} sx={{ cursor: 'pointer', mx: 3 }}>
           <CircleNotificationsIcon fontSize="large" style={{ color: '#BD99FF' }} />
-        </MDTypography>
+        </Typography>
       </Tooltip>
     </>
   );
@@ -114,9 +114,9 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
   const soonButtonLog = (
     <>
       <Tooltip title="You will be notified when the feature is ready!" placement="bottom">
-        <MDTypography variant="body1" lineHeight={1} sx={{ mx: 3 }}>
+        <Typography variant="body1" lineHeight={1} sx={{ mx: 3 }}>
           <CircleNotificationsIcon fontSize="large" style={{ color: '#cccccc' }} />
-        </MDTypography>
+        </Typography>
       </Tooltip>
     </>
   );
@@ -138,10 +138,10 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
           💡 You can ask for new feature here. 💡
         </a>
       </Alert>
-      <MDBox mt={2}>
+      <Box mt={2}>
         <Grid container spacing={3} mb={5} justifyContent="center" alignItems="center">
           <Grid item xs={12} md={4}>
-            <MDBox mt={3}>
+            <Box mt={3}>
               <BookingCard
                 image={GetStarted}
                 title="Get started"
@@ -150,10 +150,10 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
                 blank={true}
                 action={getStartedButton}
               />
-            </MDBox>
+            </Box>
           </Grid>
           <Grid item xs={12} md={4}>
-            <MDBox mt={3}>
+            <Box mt={3}>
               <BookingCard
                 image={Network}
                 title="Network Display"
@@ -162,10 +162,10 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
                 blank={false}
                 action={networkButton}
               />
-            </MDBox>
+            </Box>
           </Grid>
           <Grid item xs={12} md={4}>
-            <MDBox mt={3}>
+            <Box mt={3}>
               <BookingCard
                 image={Community}
                 title="Community"
@@ -174,15 +174,15 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
                 blank={true}
                 action={communityButton}
               />
-            </MDBox>
+            </Box>
           </Grid>
         </Grid>
-      </MDBox>
+      </Box>
 
-      <MDBox mt={2}>
+      <Box mt={2}>
         <Grid container spacing={3} mb={10}>
           <Grid item xs={12} md={4}>
-            <MDBox mt={3}>
+            <Box mt={3}>
               <BookingCard
                 image={Soon}
                 title="Registry and projects"
@@ -191,10 +191,10 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
                 blank={undefined}
                 action={session ? soonButtonLog : soonButton}
               />
-            </MDBox>
+            </Box>
           </Grid>
           <Grid item xs={12} md={4}>
-            <MDBox mt={3}>
+            <Box mt={3}>
               <BookingCard
                 image={Soon}
                 title="Monitor and debug"
@@ -203,10 +203,10 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
                 blank={undefined}
                 action={session ? soonButtonLog : soonButton}
               />
-            </MDBox>
+            </Box>
           </Grid>
           <Grid item xs={12} md={4}>
-            <MDBox mt={3}>
+            <Box mt={3}>
               <BookingCard
                 image={Soon}
                 title="Rewards and gamification"
@@ -215,10 +215,10 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
                 blank={undefined}
                 action={session ? soonButtonLog : soonButton}
               />
-            </MDBox>
+            </Box>
           </Grid>
         </Grid>
-      </MDBox>
+      </Box>
     </main>
   );
 };

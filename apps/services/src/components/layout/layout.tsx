@@ -8,25 +8,21 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { ReactNode, useContext, useEffect } from 'react';
+import { ReactElement, useContext, useEffect } from 'react';
 
 import Header from 'components/layout/header/header';
 import Footer from 'components/layout/footer/footer';
-import theme from 'styles/theme';
-import themeDark from 'styles/theme-dark';
-import { NotificationsContext, useMaterialUIController } from 'utils/contexts';
+import { NotificationsContext } from 'utils/contexts';
+import lightTheme from 'utils/themes/light';
 
 import styles from 'components/layout/layout.module.scss';
 
 interface LayoutProps {
-  children?: ReactNode;
+  children?: ReactElement;
 }
 
 export const Layout = ({ children }: LayoutProps): JSX.Element => {
   const router = useRouter();
-  const [controller] = useMaterialUIController();
-  const { darkMode } = controller;
-
   const { notifications, removeNotifications } = useContext(NotificationsContext);
   const displayNotification =
     notifications && notifications.length > 1
@@ -58,7 +54,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
     };
   }, [router, notifications]);
 
-  const LinkNotification = ({ children }: { children: ReactNode }): JSX.Element => {
+  const LinkNotification = ({ children }: { children: ReactElement }): JSX.Element => {
     if (window.location.pathname !== '/user/profile') {
       return <Link href="/user/profile">{children}</Link>;
     }
@@ -72,11 +68,11 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
         <title>Luos Dashboard</title>
         <link rel="icon" href="/assets/images/favicon.png" />
       </Head>
-      <ThemeProvider theme={darkMode ? themeDark : theme}>
+      <ThemeProvider theme={lightTheme}>
         <CssBaseline />
         <Paper
           sx={{
-            bgcolor: theme.palette.background.default,
+            bgcolor: lightTheme.palette.background.default,
             borderRadius: 0,
             minHeight: '100vh',
           }}
@@ -104,10 +100,10 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
                     alignItems={'center'}
                     style={{
                       borderColor:
-                        theme.palette[
+                        lightTheme.palette[
                           displayNotification.variant ? displayNotification.variant : 'info'
                         ].main,
-                      boxShadow: theme.shadows[5],
+                      boxShadow: lightTheme.shadows[5],
                     }}
                   >
                     <Image

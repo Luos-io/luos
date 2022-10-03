@@ -2,17 +2,25 @@ import type { SemVer } from 'semver';
 
 export enum TelemetryFilterType {
   GITHUB_CIDR = 'github-cidr',
+  LUOS = 'luos',
 }
-
-export type TelemetryFilterGitHub = {
-  actions: string[];
-};
 
 export type TelemetryFilter = {
   type: TelemetryFilterType;
   lastRefreshDate: Date;
-  data: TelemetryFilterGitHub;
 };
+
+export interface TelemetryFilterGitHub extends TelemetryFilter {
+  data: {
+    actions: string[];
+  };
+}
+
+export interface TelemetryFilterLuos extends TelemetryFilter {
+  data: {
+    ips: string[];
+  };
+}
 
 export enum TelemetryType {
   luos_engine_build = 'luos_engine_build',
@@ -36,6 +44,7 @@ export type Telemetry = {
   date: Date;
   isGitHubActions: Boolean;
   isHemerra: Boolean;
+  isLuos: Boolean;
 };
 
 export interface TelemetryLuosEngine extends Telemetry {

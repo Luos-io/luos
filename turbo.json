@@ -15,6 +15,10 @@
       ],
       "outputs": [".docusaurus/**"]
     },
+    "landing#build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**"]
+    },
     "services#build": {
       "dependsOn": [
         "^build",

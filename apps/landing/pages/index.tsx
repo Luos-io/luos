@@ -1,4 +1,3 @@
-import * as React from 'react';
 import type { NextPage } from 'next';
 
 import Introduction from 'components/introduction/introduction';

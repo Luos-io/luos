@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { ThemeProvider } from '@mui/material/styles';
+import { Experimental_CssVarsProvider as CssVarsProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 
@@ -23,12 +23,12 @@ export default function App(props: AppProps<{ emotionCache: EmotionCache }>) {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <ThemeProvider theme={theme}>
+      <CssVarsProvider defaultMode="system" theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         {/* @ts-ignore */}
         <Component {...pageProps} />
-      </ThemeProvider>
+      </CssVarsProvider>
     </CacheProvider>
   );
 }

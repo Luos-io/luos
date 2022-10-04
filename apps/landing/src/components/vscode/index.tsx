@@ -17,7 +17,7 @@ type VSCodeProps = {
 
 export const VSCode = ({ title, style, children, xs, md, lg }: VSCodeProps) => {
   return (
-    <Grid className={styles.vscodeContainer} style={style} container xs={xs} md={md} lg={lg}>
+    <Grid className={styles.vscodeContainer} style={style} item xs={xs} md={md} lg={lg}>
       <Grid container className={styles.vscodeHeader}>
         <div className={styles.vscodeHeaderButtons}>
           <Image

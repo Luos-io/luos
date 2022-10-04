@@ -1,6 +1,6 @@
 .vscodeHeader {
   position: relative;
-  background-color: #323334;
+  background-color: var(--mui-palette-background-default);
   height: 50px;
   line-height: 50px;
   border: 2px solid black;
@@ -13,7 +13,7 @@
   left: 15px;
 }
 .vscodeHeaderTitle {
-  color: white;
+  color: var(--mui-palette-text-primary);
   font-family: 'Roboto Mono', sans-serif;
   font-size: 1rem;
   font-weight: bold;
@@ -21,14 +21,14 @@
 }
 .vscodeHeaderTitle::after {
   content: '_';
-  color: #be99ff;
+  color: var(--mui-palette-primary-main);
 }
 
 .vscodeContentLeft {
   flex-direction: column;
   align-content: center;
 
-  background-color: #323334;
+  background-color: var(--mui-palette-background-default);
   border-right: 2px solid black;
   border-left: 2px solid black;
 }
@@ -39,13 +39,14 @@
 }
 
 .vscodeContentRight {
-  background-color: #1e1e1e;
+  color: var(--mui-palette-text-primary);
+  background-color: var(--mui-palette-background-paper);
   border-right: 2px solid black;
 }
 
 .vscodeFooter {
   height: 15px;
-  background-color: #81c8be;
+  background-color: var(--mui-palette-secondary-main);
   border-bottom: 2px solid black;
   border-left: 2px solid black;
   border-right: 2px solid black;

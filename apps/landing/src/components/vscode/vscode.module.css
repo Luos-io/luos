@@ -1,0 +1,52 @@
+.vscodeHeader {
+  position: relative;
+  background-color: #323334;
+  height: 50px;
+  line-height: 50px;
+  border: 2px solid black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.vscodeHeaderButtons {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+}
+.vscodeHeaderTitle {
+  color: white;
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+.vscodeHeaderTitle::after {
+  content: '_';
+  color: #be99ff;
+}
+
+.vscodeContentLeft {
+  flex-direction: column;
+  align-content: center;
+
+  background-color: #323334;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+}
+.vscodeContentLeft > span,
+.vscodeContentLeftIcons {
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+}
+
+.vscodeContentRight {
+  background-color: #1e1e1e;
+  border-right: 2px solid black;
+}
+
+.vscodeFooter {
+  height: 15px;
+  background-color: #81c8be;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}

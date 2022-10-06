@@ -78,7 +78,7 @@ const Introduction = () => (
             <span>
               <KeyboardArrowDownIcon className={styles.cardIcons} /> Video
             </span>
-            <div>What is Luos engine?</div>
+            <div className={styles.engine}>What is Luos engine?</div>
           </Grid>
           <Grid item md={9} lg={9}>
             <LiteYouTubeEmbed id="ujh0xNE3TZ8" title="What is Luos" />

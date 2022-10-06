@@ -1,30 +1,42 @@
 import Image from 'next/image';
-import { CSSProperties, ReactNode } from 'react';
-import Grid, { GridSize } from '@mui/material/Grid';
+import { ReactNode } from 'react';
+import Grid from '@mui/material/Grid';
+import { useColorScheme } from '@mui/material/styles';
+
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import SearchIcon from '@mui/icons-material/Search';
 
 import styles from './vscode.module.css';
 
-type VSCodeProps = {
+import type { CommonProps } from '@mui/material/OverridableComponent';
+import type { GridSize } from '@mui/material/Grid';
+
+interface VSCodeProps extends CommonProps {
   title?: string;
-  style?: CSSProperties | undefined;
   children: ReactNode;
   xs?: boolean | GridSize;
   md?: boolean | GridSize;
   lg?: boolean | GridSize;
-};
+}
 
-export const VSCode = ({ title, style, children, xs, md, lg }: VSCodeProps) => {
+export const VSCode = ({ title, children, xs, md, lg, style, className }: VSCodeProps) => {
+  const { mode } = useColorScheme();
   return (
-    <Grid className={styles.vscodeContainer} style={style} item xs={xs} md={md} lg={lg}>
+    <Grid
+      className={`${styles.vscodeContainer} ${className}`}
+      style={style}
+      item
+      xs={xs}
+      md={md}
+      lg={lg}
+    >
       <Grid container className={styles.vscodeHeader}>
         <div className={styles.vscodeHeaderButtons}>
           <Image
             src="/assets/images/index/introduction/buttons.svg"
             alt="buttons"
             width={100}
-            height={24}
+            height={18}
           />
         </div>
         {title && (
@@ -38,7 +50,7 @@ export const VSCode = ({ title, style, children, xs, md, lg }: VSCodeProps) => {
           <FileCopyIcon className={styles.vscodeContentLeftIcons} fontSize="large" />
           <SearchIcon className={styles.vscodeContentLeftIcons} fontSize="large" />
           <Image
-            src="/assets/images/index/introduction/luos.svg"
+            src={`/assets/images/index/introduction/luos${mode === 'light' ? '-white' : ''}.svg`}
             alt="luos"
             width={35}
             height={25}

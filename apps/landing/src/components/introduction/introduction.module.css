@@ -26,7 +26,7 @@ html[data-theme='light'] .container {
 
 @media screen and (min-width: 1024px) {
   .mobileNone {
-    display: flex !important;
+    display: initial !important;
   }
 
   .playerLeft {

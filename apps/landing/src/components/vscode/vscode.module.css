@@ -9,8 +9,8 @@
 }
 .vscodeHeaderButtons {
   position: absolute;
-  top: 5px;
-  left: 15px;
+  top: 2px;
+  left: 5px;
 }
 .vscodeHeaderTitle {
   color: var(--mui-palette-text-primary);

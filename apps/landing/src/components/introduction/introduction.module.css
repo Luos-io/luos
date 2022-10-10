@@ -4,7 +4,7 @@
   background-image: url('/assets/images/index/powered/nebula.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 30px 15px;
+  padding: 30px 90px;
 }
 
 html[data-theme='light'] .container {
@@ -16,7 +16,7 @@ html[data-theme='light'] .container {
   font-size: 18px;
   line-height: 20px;
   margin-bottom: 30px;
-  color: white;
+  color: black;
   padding-right: 60px;
 }
 
@@ -24,18 +24,14 @@ html[data-theme='light'] .text {
   color: black !important;
 }
 
-.btnContainer {
-  width: 100%;
-  margin-bottom: 50px;
-}
-
 .pinkBtn {
-  margin-right: 30px !important;
-  background-color: #be99ff !important;
-  color: white !important;
-  border-radius: 2px !important;
-  width: 200px;
+  width: 100%;
   height: 40px;
+  border-radius: 2px !important;
+  background-color: #be99ff !important;
+  line-height: 0.8rem;
+  font-size: 0.8rem;
+  color: white !important;
   text-transform: uppercase;
 }
 
@@ -45,12 +41,13 @@ html[data-theme='light'] .text {
 }
 
 .whiteBtn {
-  margin-right: 30px !important;
-  background-color: white !important;
-  color: #be99ff !important;
-  border-radius: 2px !important;
-  width: 220px;
+  width: 100%;
   height: 40px;
+  border-radius: 2px !important;
+  background-color: white !important;
+  line-height: 0.8rem;
+  font-size: 0.8rem;
+  color: #be99ff !important;
   text-transform: uppercase;
 }
 .whiteBtn:hover {
@@ -69,12 +66,12 @@ html[data-theme='light'] .text {
 }
 
 .videoBtn {
+  width: 100%;
+  height: 40px;
   border: 2px solid #be99ff !important;
+  border-radius: 2px !important;
   background-color: transparent !important;
   color: #be99ff !important;
-  border-radius: 2px !important;
-  width: 90%;
-  height: 40px;
   text-transform: uppercase;
 }
 
@@ -95,17 +92,15 @@ html[data-theme='light'] .text {
 
 @media screen and (max-width: 1023px) {
   .container {
-    padding: 90px 15px;
+    padding: 90px;
   }
 
   .pinkBtn {
     margin-bottom: 15px !important;
-    width: 90% !important;
   }
 
   .whiteBtn {
     margin-bottom: 15px !important;
-    width: 90% !important;
     font-size: 12px !important;
   }
 

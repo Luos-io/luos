@@ -31,7 +31,7 @@ export const TelemetryTypeObject = Object.keys(TelemetryType);
 export enum TelemetrySystem {
   DARWIN,
   LINUX,
-  WINDOWS,
+  WIN32,
 }
 export const TelemetrySystemObject = Object.keys(TelemetrySystem);
 

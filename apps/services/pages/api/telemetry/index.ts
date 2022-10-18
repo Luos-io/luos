@@ -87,7 +87,7 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
                 f_cpu &&
                 valid(pyluos) &&
                 TelemetrySystemObject.includes(system.toUpperCase()) &&
-                macBuffer.length === 6 &&
+                macBuffer.length !== 0 &&
                 project_path
               ) {
                 insertOneResult = await db.collection<TelemetryLuosEngine>('telemetry').insertOne({

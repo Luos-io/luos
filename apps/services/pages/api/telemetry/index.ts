@@ -6,7 +6,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 import {
   Telemetry,
-  TelemetryFilter,
+  TelemetryFilterGitHub,
+  TelemetryFilterLuos,
   TelemetryFilterType,
   TelemetryLuosEngine,
   TelemetryPyluos,
@@ -35,11 +36,16 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
 
       if (telemetry_type && system && mac && unix_time) {
         const db = (await mongoClient).db();
-        const gitHubCIDRFilter = await db.collection<TelemetryFilter>('telemetry-filters').findOne({
-          type: TelemetryFilterType.GITHUB_CIDR,
+        const gitHubCIDRFilter = await db
+          .collection<TelemetryFilterGitHub>('telemetry-filters')
+          .findOne({
+            type: TelemetryFilterType.GITHUB_CIDR,
+          });
+        const luosFilter = await db.collection<TelemetryFilterLuos>('telemetry-filters').findOne({
+          type: TelemetryFilterType.LUOS,
         });
 
-        if (gitHubCIDRFilter) {
+        if (gitHubCIDRFilter && luosFilter) {
           const dayBeforeTimestamp = new Date().getTime() - 8640000;
           const lastRefreshTimestamp = new Date(gitHubCIDRFilter.lastRefreshDate).getTime();
 
@@ -54,6 +60,7 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
           }
           const isGitHubActions = ipRangeCheck(ip, gitHubCIDR);
           const isHemerra = ip === '77.199.117.170';
+          const isLuos = luosFilter.data.ips.includes(ip);
           const macBuffer = Buffer.from(mac.substring(2), 'hex');
 
           const defaultData: Telemetry = {
@@ -65,6 +72,7 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
             duration: new Date().getTime() - unix_time * 1000,
             isGitHubActions,
             isHemerra,
+            isLuos,
           };
 
           let insertOneResult: InsertOneResult | null = null;
@@ -79,7 +87,7 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
                 f_cpu &&
                 valid(pyluos) &&
                 TelemetrySystemObject.includes(system.toUpperCase()) &&
-                macBuffer.length === 6 &&
+                macBuffer.length !== 0 &&
                 project_path
               ) {
                 insertOneResult = await db.collection<TelemetryLuosEngine>('telemetry').insertOne({

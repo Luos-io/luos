@@ -41,7 +41,7 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
           .findOne({
             type: TelemetryFilterType.GITHUB_CIDR,
           });
-        const luosFilter = await db.collection<TelemetryFilterLuos>('telemetry-filter').findOne({
+        const luosFilter = await db.collection<TelemetryFilterLuos>('telemetry-filters').findOne({
           type: TelemetryFilterType.LUOS,
         });
 

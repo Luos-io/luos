@@ -103,7 +103,7 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
               }
               break;
             case TelemetryType.pyluos:
-              if (routing_table && macBuffer.length === 6) {
+              if (routing_table && macBuffer.length !== 0) {
                 insertOneResult = await db.collection<TelemetryPyluos>('telemetry').insertOne({
                   ...defaultData,
                   routing_table,

@@ -23,7 +23,7 @@ export default function App(props: AppProps<{ emotionCache: EmotionCache }>) {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <CssVarsProvider defaultMode="system" theme={theme}>
+      <CssVarsProvider defaultMode="light" theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         {/* @ts-ignore */}

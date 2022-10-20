@@ -65,7 +65,7 @@ const Services = ({
         `,
         }}
       />
-      <SessionProvider session={session}>
+      <SessionProvider session={session} basePath="/app/api/auth">
         <ApolloProvider client={client}>
           <ThemeProvider theme={theme}>
             <NotificationsProvider>

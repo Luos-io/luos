@@ -172,7 +172,7 @@ export const getServerSideProps = async ({ query }: GetServerSidePropsContext) =
     props: {
       providers,
       callbackUrl: query.callbackUrl || '/',
-      error: query.error as SignInErrorTypes,
+      error: (query.error as SignInErrorTypes) || null,
     },
   };
 };

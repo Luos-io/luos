@@ -2,32 +2,38 @@
   "name": "luos",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/react",
+      "**/react/**",
+      "**/react-dom",
+      "**/react-dom/**"
+    ]
+  },
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx}\""
   },
-  "resolutions": {
-    "@types/react": "17.0.43"
-  },
   "devDependencies": {
-    "eslint": "latest",
+    "eslint": "^8.23.1",
     "eslint-config-custom": "latest",
-    "prettier": "latest",
-    "turbo": "latest"
+    "prettier": "^2.7.1",
+    "turbo": "^1.4.7",
+    "typescript": "^4.8.3"
   },
   "engines": {
-    "yarn": ">=1.0.0",
+    "pnpm": ">=7.0.0",
     "node": ">=16.0.0"
   },
   "dependencies": {
     "dotenv-cli": "^6.0.0",
     "dotenv-vault": "^1.11.2"
   },
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "pnpm@7.13.5"
 }

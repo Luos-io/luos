@@ -1,6 +1,9 @@
 import React from 'react';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+
+import Image from '@site/src/components/Image';
+
 import Styles from './error.module.css';
 
 export default function Error403() {
@@ -10,8 +13,8 @@ export default function Error403() {
       <Grid item xs={8} sx={{ paddingTop: '10px !important' }}>
         <Paper elevation={3} className={Styles.error}>
           <div className={Styles.container}>
-            <img
-              src="assets/images/tutorials/school/close.svg"
+            <Image
+              sources={{ light: '/assets/images/tutorials/school/close.svg' }}
               alt="Luos network"
               width="150"
               height="150"

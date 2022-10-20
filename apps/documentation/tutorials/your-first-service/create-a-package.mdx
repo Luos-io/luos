@@ -3,7 +3,7 @@ custom_edit_url: null
 image: /assets/images/tutorials/your-first-service-banner-luos.png
 ---
 
-import Image from '/src/components/Images.js';
+import Image from '@site/src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Form from '/src/components/typeform/index.js';
@@ -26,8 +26,10 @@ First, you will have to create a dedicated folder on your _lib_ folder and call 
 
 <div align="center">
   <Image
-    src="assets/images/tutorials/your-first-service/luos-service-2.png"
-    darkSrc="assets/images/tutorials/your-first-service/luos-service-2.png"
+    sources={{
+      light: '/assets/images/tutorials/your-first-service/luos-service-2.png',
+      dark: '/assets/images/tutorials/your-first-service/luos-service-2.png',
+    }}
   />
 </div>
 
@@ -35,8 +37,10 @@ Then in this folder create 2 files, _led.h_ (header file) and _led.c_ (main file
 
 <div align="center">
   <Image
-    src="assets/images/tutorials/your-first-service/luos-service-2-1.png"
-    darkSrc="assets/images/tutorials/your-first-service/luos-service-2-1.png"
+    sources={{
+      light: '/assets/images/tutorials/your-first-service/luos-service-2-1.png',
+      dark: '/assets/images/tutorials/your-first-service/luos-service-2-1.png',
+    }}
   />
 </div>
 
@@ -282,6 +286,6 @@ Then, use `pyluos-shell` to make a detection and you should see the following ro
 
 Now try to move your led package on another board. Keep only the led package on this second board, and keep the pipe, the gate, and the blinker into the first one. Then wire a OneWire network as you learned in [Part 3 in the _Get started_](/tutorials/get-started/get-started3).
 
-## Test your skills
+## 6. Test your skills
 
 <Form id="G0c9xCMX" />

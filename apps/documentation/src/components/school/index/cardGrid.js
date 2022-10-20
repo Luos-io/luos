@@ -1,6 +1,9 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import { Paper } from '@mui/material';
+
+import Image from '@site/src/components/Image';
+
 import styles from './index.module.css';
 
 const cardGrid = (props) => {
@@ -34,8 +37,11 @@ const cardGrid = (props) => {
         <Grid className={styles.cardContainer} key={y} item xs={12} md={4}>
           <a href={x.link} className={styles.link} style={{ textDecoration: 'none' }}>
             <Paper className={styles.card} elevation={1}>
-              <img
-                src={`assets/images/tutorials/school/${x.img}.svg`}
+              <Image
+                sources={{
+                  light: `/assets/images/tutorials/school/${x.img}.svg`,
+                  dark: `/assets/images/tutorials/school/${x.img}.svg`,
+                }}
                 style={{ borderRadius: '4px' }}
                 alt={x.title}
               />
@@ -46,9 +52,12 @@ const cardGrid = (props) => {
                   <div>
                     <span>
                       {' '}
-                      <img
+                      <Image
                         className={styles.cardIcons}
-                        src="assets/images/tutorials/school/category.svg"
+                        sources={{
+                          light: `/assets/images/tutorials/school/category.svg`,
+                          dark: `/assets/images/tutorials/school/category.svg`,
+                        }}
                         alt="category"
                       />
                     </span>
@@ -57,9 +66,12 @@ const cardGrid = (props) => {
                   <div>
                     <span>
                       {' '}
-                      <img
+                      <Image
                         className={styles.cardIcons}
-                        src="assets/images/tutorials/school/clock.svg"
+                        sources={{
+                          light: `/assets/images/tutorials/school/clock.svg`,
+                          dark: `/assets/images/tutorials/school/clock.svg`,
+                        }}
                         alt="clock"
                       />
                     </span>

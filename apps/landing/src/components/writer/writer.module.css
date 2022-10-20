@@ -1,0 +1,32 @@
+.react-typewriter-pointer {
+  display: inline;
+  padding: 0 1px;
+  background-color: black;
+}
+
+.add-cursor-animate {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.hide-typing-cursor {
+  padding: 0;
+}
+
+.react-typewriter-text-wrap {
+  margin-top: 40px !important;
+}
+
+.reactTypewriterTextLuos {
+  color: black;
+  font-size: 30px;
+}

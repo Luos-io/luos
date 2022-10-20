@@ -1,0 +1,169 @@
+.container {
+  width: 100%;
+  background-color: #323334;
+}
+
+.title {
+  font-family: 'Roboto Mono', sans-serif;
+  padding: 60px 0 5px 55px;
+  font-size: 30px;
+  margin: 0;
+  color: white;
+  width: 100%;
+  text-align: left;
+}
+
+.underline:after {
+  content: '_';
+  color: #be99ff;
+}
+
+.text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  padding-left: 55px;
+  line-height: 20px;
+  text-align: left;
+  color: white;
+}
+
+.list {
+  width: 100%;
+}
+
+/* ListItemText primary props */
+.list span {
+  font-size: 20px;
+  color: white;
+}
+
+/* ListItemText secondary props */
+.list p {
+  text-align: justify;
+  font-size: 18px;
+  color: white;
+}
+
+.listLink {
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.listLink:hover * {
+  color: #be99ff;
+  fill: #be99ff;
+}
+
+.listIcon {
+  min-width: initial;
+}
+
+.listText {
+  margin: 0 16px 0 16px;
+}
+
+.video {
+  background-color: #1e1e1e;
+  color: white;
+  border-right: 2px inset black;
+}
+
+.videoTitle {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.cardIcons {
+  float: left;
+  width: 24px;
+  margin-top: 3px;
+  padding-right: 5px;
+}
+
+.engine {
+  color: white;
+  padding: 7px;
+  font-size: 12px;
+  font-family: 'Roboto Mono', sans-serif;
+  width: 100%;
+  margin-left: 0;
+  word-break: break-word;
+}
+
+.engine span {
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 13px;
+}
+
+.engineActive span {
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 13px;
+}
+
+.engineActive {
+  color: black;
+  background-color: #81c8be;
+  padding: 7px;
+  font-size: 12px;
+  font-family: 'Roboto Mono', sans-serif;
+  width: 100%;
+  margin-left: 0;
+  word-break: break-word;
+}
+
+.player {
+  background-size: cover;
+}
+
+.lines {
+  margin-bottom: -120px;
+}
+
+.linesImg {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+@media screen and (max-width: 1023px) {
+  .title {
+    padding-left: 20px;
+  }
+
+  .text {
+    padding-left: 20px;
+  }
+
+  .vscode {
+    padding: 0 30px;
+  }
+
+  .head {
+    border-top-right-radius: 10px;
+    border-right: 2px solid black;
+  }
+
+  .player {
+    border-right: 2px solid black;
+  }
+  .secondList {
+    margin-top: -20px;
+  }
+
+  .linesImg {
+    margin-top: -20px;
+  }
+
+  .mobileNone {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mobileNone {
+    display: initial;
+  }
+}

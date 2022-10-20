@@ -3,7 +3,7 @@ custom_edit_url: null
 image: /assets/images/Your-first-topology-detection-banner-luos.png
 ---
 
-import Image from '/src/components/Images.js';
+import Image from '@site/src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Form from '/src/components/typeform/index.js';
@@ -384,8 +384,10 @@ To simulate a press button, connect a wire between the BTN_PIN (Pin 8) and GND.
 
 <div align="center">
   <Image
-    src="assets/images/tutorials/your-first-message/your-first-message-2-1.png"
-    darkSrc="assets/images/tutorials/your-first-message/your-first-message-2-1-dark.png"
+    sources={{
+      light: '/assets/images/tutorials/your-first-message/your-first-message-2-1.png',
+      dark: '/assets/images/tutorials/your-first-message/your-first-message-2-1-dark.png',
+    }}
   />
 </div>
 
@@ -400,7 +402,7 @@ For this board, only push the B1 button (the blue button) on your board.
 To simulate a press button, connect a wire between the BTN_PIN (Pin D10) and GND.
 
 <div align="center">
-  <Image src="assets/images/tutorials/your-first-message/your-first-message-2-1.png" darkSrc="assets/images/tutorials/your-first-message/your-first-message-2-1-dark.png"/>
+  <Image sources={{ light: "/assets/images/tutorials/your-first-message/your-first-message-2-1.png", dark: "/assets/images/tutorials/your-first-message/your-first-message-2-1-dark.png" }}/>
 </div>
 </TabItem>
 </Tabs>
@@ -408,8 +410,8 @@ To simulate a press button, connect a wire between the BTN_PIN (Pin D10) and GND
 Congratulation, You created your first full embedded application!
 
 <div align="center">
-  <img
-    src="https://media.giphy.com/media/l4q8cJzGdR9J8w3hS/giphy.gif"
+  <Image
+    sources={{ light: 'https://media.giphy.com/media/l4q8cJzGdR9J8w3hS/giphy.gif' }}
     className="gif_tutorial"
     alt="gif_congrat"
   />
@@ -423,6 +425,6 @@ Now try to move your switcher package on another board, and keep the button and 
 
 Asking the value of the button every 10ms represents a not negligible portion of code. Luos engine provides an `update_time` command to simplify it, check the [documentation associated page](luos-technology/messages/advanced-message) to learn more about it.
 
-## Test your skills
+## 8. Test your skills
 
 <Form id="RafOVrdv" />

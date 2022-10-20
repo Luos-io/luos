@@ -1,0 +1,167 @@
+.container {
+  width: 100%;
+  background-color: #1e1e1e;
+  font-family: 'Roboto Mono', sans-serif;
+  color: white;
+}
+
+.containerTitle {
+  width: 100%;
+}
+
+.title {
+  margin: 0 15px;
+  padding-top: 30px;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.title > span {
+  vertical-align: middle;
+}
+
+/* ListItemText primary props */
+.list span {
+  font-size: 20px;
+  color: white;
+}
+
+/* ListItemText secondary props */
+.list p {
+  text-align: justify;
+  font-size: 18px;
+  color: white;
+}
+
+.listItem,
+.listLink {
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.listLink:hover * {
+  color: #be99ff;
+  fill: #be99ff;
+}
+
+.listIcon {
+  min-width: initial;
+}
+
+.listText {
+  margin: 0 16px 0 16px;
+}
+
+.nebula {
+  background-image: url('/assets/images/index/powered/nebula.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.titleFooter {
+  padding-top: 50px;
+  font-size: 30px;
+  text-align: left;
+  padding-left: 40px;
+  margin-bottom: 15px;
+}
+
+.underline:after {
+  content: '_';
+  color: #be99ff;
+}
+
+.textGs {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  margin-bottom: 30px;
+  padding: 15px 40px;
+  text-align: justify;
+}
+
+.btnContainer {
+  width: 100%;
+  padding-left: 40px;
+  margin-bottom: 50px;
+}
+
+.pinkBtn {
+  margin-right: 30px;
+  background-color: #be99ff;
+  color: white;
+  border-radius: 2px;
+  width: 200px;
+  height: 40px;
+  text-transform: uppercase;
+}
+
+.pinkBtn:hover {
+  background-color: white;
+  color: #be99ff;
+}
+
+.whiteBtn {
+  margin-right: 30px;
+  background-color: white;
+  color: #be99ff;
+  border-radius: 2px;
+  width: 220px;
+  height: 40px;
+  text-transform: uppercase;
+}
+
+.whiteBtn:hover {
+  background-color: #be99ff;
+  color: white;
+}
+
+.whiteBtn::after {
+  content: url('/static/assets/images/index/powered/discord.svg');
+  margin-top: 3px;
+  margin-left: 10px;
+}
+
+.whiteBtn:hover::after {
+  content: url('/static/assets/images/index/powered/discord-white.svg');
+  margin-top: 3px;
+  margin-left: 10px;
+}
+
+.player {
+  width: 100%;
+  background-image: url('/assets/images/index/powered/lines.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 15px 15px;
+}
+
+@media screen and (max-width: 1023px) {
+  .mobileNone {
+    display: none;
+  }
+  .pinkBtn {
+    margin-bottom: 15px;
+    width: 90%;
+  }
+
+  .whiteBtn {
+    margin-bottom: 15px;
+    width: 90%;
+  }
+
+  .secondList {
+    margin-top: -20px;
+  }
+
+  .title {
+    padding-top: 50px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .mobileNone {
+    display: initial;
+  }
+}

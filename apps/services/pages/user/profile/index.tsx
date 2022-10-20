@@ -39,7 +39,6 @@ import type { SyntheticEvent } from 'react';
 
 import type { WithAuthResult } from 'utils/services/auth/withAuth';
 import type { SignInErrorTypes } from 'types/auth';
-import type { CustomTheme } from 'types/mui-theme';
 import type { Game, Role, Team, Badge } from 'types/user';
 
 import Styles from 'pages/user/profile/profile.module.scss';
@@ -55,7 +54,7 @@ export const Profile = ({
   WithAuthResult & {
     [key: string]: any;
   }) => {
-  const theme = useTheme<CustomTheme>();
+  const theme = useTheme();
   const [expanded, setExpanded] = useState<string | false>('badges');
 
   const { addNotifications } = useContext(NotificationsContext);

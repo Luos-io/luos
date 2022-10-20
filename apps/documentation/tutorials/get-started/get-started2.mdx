@@ -4,7 +4,7 @@ image: /assets/images/tutorials/get-started/Get-Started-Part-2-banner-Luos.png
 description: This is the remote control part of this tutorial, for you to control the Matrix.
 ---
 
-import Image from '@site/src/components/Images.js';
+import Image from '@site/src/components/Image';
 import IconExternalLink from '@theme/Icon/ExternalLink';
 import Form from '/src/components/typeform/index.js';
 
@@ -56,6 +56,10 @@ pyluos-shell
 ```
 
 This command will find the serial port of your device and mount it into a “device” object.
+
+:::caution
+When using ESP32-DevKit, the USB serial's baudrate must be 115200 by default. Use the command `pyluos-shell --baudrate 115200` to set it.
+:::
 
 For example:
 
@@ -130,8 +134,10 @@ You can always check the list of the commands available for all services using y
 
 <div align="center">
   <Image
-    src="assets/images/tutorials/get-started/get-started-2.png"
-    darkSrc="assets/images/tutorials/get-started/get-started-2.png"
+    sources={{
+      light: '/assets/images/tutorials/get-started/get-started-2.png',
+      dark: '/assets/images/tutorials/get-started/get-started-2.png',
+    }}
   />
 </div>
 
@@ -139,10 +145,10 @@ See [Pyluos](integrations/pyluos) documentation for more information.
 
 :::
 
-## Test your skills
+## 4. Next steps
+
+With your development environment installed in Part 1, you have now taken the control of a Luos app running on your MCU, with Python. The [next part](/tutorials/get-started/get-started3) of this section deals with creating your first Luos network.
+
+## 5. Test your skills
 
 <Form id="liwXPLYs" />
-
-## Next steps
-
-With your development environment installed in Part 1, you have now taken the control of a Luos app running on your MCU, with Python. The [next part](./get-started3) of this section deals with creating your first Luos network.

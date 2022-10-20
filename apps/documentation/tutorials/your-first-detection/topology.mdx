@@ -3,7 +3,7 @@ custom_edit_url: null
 image: /assets/images/Your-first-topology-detection-banner-luos.png
 ---
 
-import Image from '/src/components/Images.js';
+import Image from '@site/src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -123,8 +123,8 @@ Compile and upload the project to the board.
 The led service was detected by the switcher application. At the end of the detection, a message was sent to the led service to turn on the LED.
 
 <div align="center">
-  <img
-    src="https://media.giphy.com/media/KcQ73bfmmsy6lg2RzG/giphy.gif"
+  <Image
+    sources={{ light: 'https://media.giphy.com/media/KcQ73bfmmsy6lg2RzG/giphy.gif' }}
     className="gif_tutorial"
     alt="gif_dance"
   />

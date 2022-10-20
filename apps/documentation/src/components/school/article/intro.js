@@ -3,6 +3,8 @@ import { Paper } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
+import Image from '@site/src/components/Image';
+
 import styles from './article.module.css';
 import Requirement from './requirement';
 
@@ -18,17 +20,17 @@ export const Introduction = (props) => {
           <Grid item md={5} xs={12}>
             <div className={styles.navigation}>
               <span>
-                <img
+                <Image
                   className={styles.categoryIcons}
-                  src="assets/images/tutorials/school/category.svg"
+                  sources={{ light: '/assets/images/tutorials/school/category.svg' }}
                   alt="category"
                 />
               </span>
               <span className={styles.counter}>{props.category}</span>
               <span>
-                <img
+                <Image
                   className={styles.materialIcons}
-                  src="assets/images/tutorials/school/clock.svg"
+                  sources={{ light: '/assets/images/tutorials/school/clock.svg' }}
                   alt="clock"
                 />
               </span>

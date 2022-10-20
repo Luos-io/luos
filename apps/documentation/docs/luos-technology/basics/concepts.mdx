@@ -5,7 +5,7 @@ description: Luos engine is the engine provided by Luos that will manage your se
 
 import { customFields } from '/docusaurus.config.js';
 import Tooltip from '@site/src/components/Tooltip.js';
-import Image from '@site/src/components/Images.js';
+import Image from '@site/src/components/Image';
 
 # Concepts
 
@@ -28,14 +28,18 @@ A node is a physical component (hardware) running Luos engine and hosting one or
 In other words, **a node is a microcontroller** connected to other microcontrollers running Luos.
 In the Luos philosophy, each node has to carry the necessary programs (services), allowing it to manage its boards and features.
 
-<a href="../node" target="_blank" class="pagination-nav__link" style={{ display: 'inline-block' }}>
+<a
+  href="../node"
+  target="_blank"
+  className="pagination-nav__link"
+  style={{ display: 'inline-block' }}
+>
   Know more about nodes
 </a>
 
 <div align="center">
   <Image
-    src="assets/images/MCU-luos.svg"
-    darkSrc="assets/images/MCU-luos-white.svg"
+    sources={{ light: '/assets/images/MCU-luos.png', dark: '/assets/images/MCU-luos-white.png' }}
     height="200px"
   />
 </div>
@@ -47,7 +51,7 @@ A package is a folder of code containing a pack of features in your project. A p
 <a
   href="../packages"
   target="_blank"
-  class="pagination-nav__link"
+  className="pagination-nav__link"
   style={{ display: 'inline-block' }}
 >
   Know more about packages

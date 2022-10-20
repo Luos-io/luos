@@ -1,38 +1,32 @@
 import React, { useState } from 'react';
-import { Paper } from '@mui/material';
-import Box from '@mui/material/Box';
+import { useLocation, useHistory } from '@docusaurus/router';
 import Grid from '@mui/material/Grid';
-import Chip from '@mui/material/Chip';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
+import Paper from '@mui/material/Paper';
+import Select from '@mui/material/Select';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+
 import CardGrid from './cardGrid';
+
 import styles from './index.module.css';
 import data from './data/dataIntro.json';
 
-const Intro = (Props) => {
-  const [filters, setfilters] = useState({
-    category: Props.category ? Props.category : '',
-    level: '',
-  });
+const Intro = (props) => {
+  const { search } = useLocation();
+  const { replace } = useHistory();
+  let defaultFilters = {
+      toc: '',
+      tags: [],
+      category: props.category || '',
+      level: '',
+    },
+    countTutos = 0,
+    countHours = 0,
+    tagList = [];
 
-  const handleFilter = (newLevel, filterName) => {
-    if (newLevel === filters[filterName]) {
-      newLevel = '';
-    }
-    setfilters({
-      ...filters,
-      [filterName]: newLevel,
-    });
-  };
-
-  let countTutos = 0,
-    countHours = 0;
-
-  let tagList = [];
   data.tuto.forEach((tuto) => {
     countTutos++;
     countHours += tuto.toc;
@@ -40,6 +34,43 @@ const Intro = (Props) => {
       tagList.indexOf(tag) === -1 ? tagList.push(tag) : null;
     });
   });
+
+  new URLSearchParams(search).forEach((value, key) => {
+    if (key === 'tags') {
+      defaultFilters[key] = value
+        .split(',')
+        .filter((tag) => tag !== '')
+        .map((tag) => {
+          const result = tagList.findIndex((t) => t.toLowerCase() === tag);
+          return result !== -1 ? tagList[result] : null;
+        });
+    } else {
+      defaultFilters[key] = value;
+    }
+  });
+  const [filters, setfilters] = useState(defaultFilters);
+
+  const handleFilter = (newLevel, filterName) => {
+    if (newLevel === filters[filterName]) {
+      newLevel = '';
+    }
+
+    const newState = {
+      ...filters,
+      [filterName]: newLevel,
+    };
+    setfilters(newState);
+
+    const newPath = new URLSearchParams(
+      Object.fromEntries(
+        Object.entries(newState).filter(
+          ([_key, val]) =>
+            (!Array.isArray(val) && val !== '') || (Array.isArray(val) && val.length > 0),
+        ),
+      ),
+    );
+    replace(`?${newPath.toString().toLowerCase()}`);
+  };
 
   return (
     <div>
@@ -77,7 +108,7 @@ const Intro = (Props) => {
                 <MenuItem value="">All</MenuItem>
                 {data.filters.category.map((label, index) => (
                   <MenuItem value={label} key={index}>
-                    {label}
+                    {label.charAt(0).toUpperCase() + label.slice(1)}
                   </MenuItem>
                 ))}
               </Select>
@@ -85,7 +116,7 @@ const Intro = (Props) => {
           </Grid>
         </Grid>
         <Grid container spacing={2}>
-          <Grid item sx={12}>
+          <Grid item xs={12}>
             <ToggleButtonGroup
               className={styles.lvlBtn}
               color="success"

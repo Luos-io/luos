@@ -1,0 +1,158 @@
+.container {
+  width: 100%;
+  background-image: url('/assets/images/index/NEBULA.svg');
+  background-size: cover;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.intro {
+  padding: 30px;
+  font-size: 18px;
+  color: white;
+}
+
+.intro > h4 {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.title {
+  margin: 0 auto;
+  margin-bottom: 60px;
+  padding: 0 10rem;
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.underline:after {
+  content: '_';
+  color: #be99ff;
+}
+
+.subtitle {
+  font-size: 18px;
+  padding: 0 12px 0 24px;
+}
+
+.content {
+  text-align: justify;
+  padding: 0 12px 0 24px;
+}
+
+.green {
+  border-left: 5px solid #75dbc7;
+  padding-right: 24px;
+}
+
+.purple {
+  border-left: 5px solid #be99ff;
+  padding-right: 24px;
+}
+
+.orange {
+  border-left: 5px solid #ff5200;
+  padding-right: 24px;
+}
+
+.btnContainer {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 24px;
+}
+
+.pinkBtn {
+  background-color: #be99ff;
+  color: white;
+  border-radius: 2px;
+
+  height: 40px;
+  text-transform: uppercase;
+}
+
+.pinkBtn:hover {
+  background-color: white;
+  color: #be99ff;
+}
+
+.step {
+  border-right: 2px solid #fafafa;
+}
+
+.step > span {
+  margin: 15px;
+  display: block;
+}
+
+.file {
+  width: 100%;
+  background-color: #323334;
+  border-bottom: 2px solid black;
+}
+
+.fileName {
+  width: 40%;
+  height: 100%;
+  padding: 0 15px;
+  border-right: 2px solid black;
+  background-color: #1e1e1e;
+  color: white;
+  font-size: 0.85rem;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.carousselContainer {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.caroussel {
+  width: 100%;
+  border-radius: 0;
+  background-color: #1e1e1e;
+  color: white;
+  height: 350px;
+}
+
+.carousselImgDesktop {
+  width: 130px;
+}
+
+.carousselTitle {
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 15px;
+}
+
+.carousselText {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  padding: 15px;
+  text-align: justify;
+  line-height: normal;
+}
+
+@media screen and (max-width: 1023px) {
+  .mobileNone {
+    display: none;
+  }
+
+  .howitsworkMobile {
+    display: initial;
+  }
+
+  .title {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mobileNone {
+    display: flex;
+  }
+  .howitsworkMobile {
+    display: none;
+  }
+}

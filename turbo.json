@@ -15,6 +15,10 @@
       ],
       "outputs": [".docusaurus/**"]
     },
+    "landing#build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**"]
+    },
     "services#build": {
       "dependsOn": [
         "^build",
@@ -31,6 +35,7 @@
         "$GOOGLE_CLIENT_SECRET",
         "$MONGODB_URI",
         "$NEXTAUTH_SECRET",
+        "$NEXTAUTH_URL",
         "$NEXT_PUBLIC_DEBUG",
         "$NEXT_PUBLIC_EMAILJS_SERVICE_ID",
         "$NEXT_PUBLIC_EMAILJS_TEMPLATE_ID",

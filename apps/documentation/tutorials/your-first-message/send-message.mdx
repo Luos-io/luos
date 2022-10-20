@@ -3,7 +3,7 @@ custom_edit_url: null
 image: /assets/images/tutorials/your-first-message-banner-luos.png
 ---
 
-import Image from '/src/components/Images.js';
+import Image from '@site/src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Form from '/src/components/typeform/index.js';
@@ -15,8 +15,10 @@ import Form from '/src/components/typeform/index.js';
 There are two ways to receive a message, but what about sending one?
 
 <div align="center">
-  <img
-    src="https://c.tenor.com/GM0o1UWir1wAAAAC/i-dont-know-how-it-works-eric-cartman.gif"
+  <Image
+    sources={{
+      light: 'https://c.tenor.com/GM0o1UWir1wAAAAC/i-dont-know-how-it-works-eric-cartman.gif',
+    }}
     className="gif_tutorial"
     alt="gif_how_it_work"
   />
@@ -79,8 +81,10 @@ Any message contains two main parts:
 
 <div align="center">
   <Image
-    src="assets/images/tutorials/your-first-message/your-first-message-2.png"
-    darkSrc="assets/images/tutorials/your-first-message/your-first-message-2.png"
+    sources={{
+      light: '/assets/images/tutorials/your-first-message/your-first-message-2.png',
+      dark: '/assets/images/tutorials/your-first-message/your-first-message-2.png',
+    }}
   />
 </div>
 
@@ -196,8 +200,8 @@ The **STATE** button service now returns an **IO_STATE** value when a service as
 Let's see if our service reacts as expected.
 
 <div align="center">
-  <img
-    src="https://media.giphy.com/media/DIxETbmfEdc6A/giphy-downsized-large.gif"
+  <Image
+    sources={{ light: 'https://media.giphy.com/media/DIxETbmfEdc6A/giphy-downsized-large.gif' }}
     className="gif_tutorial"
     alt="gif_test"
   />
@@ -229,7 +233,7 @@ Out[1]: False
 <TabItem value="Arduino" label="Arduino">
 To simulate a press button, connect a wire between the BTN_PIN (pin 8) and GND.
 <div align="center">
-  <Image src="assets/images/tutorials/your-first-message/your-first-message-2-1.png" darkSrc="assets/images/tutorials/your-first-message/your-first-message-2-1-dark.png"/>
+  <Image sources={{ light: "/assets/images/tutorials/your-first-message/your-first-message-2-1.png", dark: "/assets/images/tutorials/your-first-message/your-first-message-2-1-dark.png" }}/>
 </div>
 
 </TabItem>
@@ -239,7 +243,7 @@ Now push on the B1 button (the blue one) on your board
 <TabItem value="Nucleo2" label="STM32G431KB Nucleo/STM32L432KC Nucleo">
 To simulate a press button, connect a wire between the BTN_PIN (pin D10) and GND.
 <div align="center">
-  <Image src="assets/images/tutorials/your-first-message/your-first-message-2-1.png" darkSrc="assets/images/tutorials/your-first-message/your-first-message-2-1-dark.png"/>
+  <Image sources={{ light: "/assets/images/tutorials/your-first-message/your-first-message-2-1.png", dark: "/assets/images/tutorials/your-first-message/your-first-message-2-1-dark.png" }}/>
 </div>
 </TabItem>
 </Tabs>
@@ -282,13 +286,13 @@ Let's try a small exercise:
 5. Run this while-loop and try to push on the button to see the LED turning on and off.
 
 <div align="center">
-  <img
-    src="https://media.giphy.com/media/fSRs6SJH6m0c3iG2hk/giphy.gif"
+  <Image
+    sources={{ light: 'https://media.giphy.com/media/fSRs6SJH6m0c3iG2hk/giphy.gif' }}
     className="gif_tutorial"
     alt="gif_ligth"
   />
 </div>
 
-## Test your skills
+## 7. Test your skills
 
 <Form id="E28leTg2" />

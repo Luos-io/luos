@@ -10,7 +10,6 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { useColorMode } from '@docusaurus/theme-common';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import SearchIcon from '@mui/icons-material/Search';
 import MemoryIcon from '@mui/icons-material/Memory';
@@ -19,8 +18,9 @@ import ComputerIcon from '@mui/icons-material/Computer';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
-const Anatomy = (props) => {
-  const { isDarkTheme } = useColorMode();
+import Image from '@site/src/components/Image';
+
+const Anatomy = () => {
   const img = {
     topo: 'topology',
     micro: 'microservice',
@@ -89,7 +89,7 @@ const Anatomy = (props) => {
             <ListItem
               alignitems="flex-start"
               component={Link}
-              href="/tutorials/your-first-detection/"
+              href="/tutorials/your-first-detection"
               className={styles.listLink}
             >
               <ListItemAvatar>
@@ -164,8 +164,8 @@ const Anatomy = (props) => {
         <Grid item xs={12} md={6} lg={6} xl={3} className={styles.vscode}>
           <div className={styles.head}>
             {' '}
-            <img
-              src="assets/images/index/header/buttons.svg"
+            <Image
+              sources={{ light: '/assets/images/index/header/buttons.svg' }}
               alt="buttons"
               style={{ padding: '15px', width: '100px' }}
             />
@@ -174,17 +174,16 @@ const Anatomy = (props) => {
             <Grid item xs={2} md={2} lg={1} className={styles.docs}>
               <FileCopyIcon fontSize="large" className={styles.icons} />
               <SearchIcon fontSize="large" className={styles.icons} />
-              {isDarkTheme ? (
-                <>
-                  {' '}
-                  <img src="assets/images/index/header/luos.svg" alt="luos" />{' '}
-                </>
-              ) : (
-                <>
-                  {' '}
-                  <img src="assets/images/index/header/luos-white.svg" alt="luos-white" />{' '}
-                </>
-              )}
+              <>
+                {' '}
+                <Image
+                  sources={{
+                    light: '/assets/images/index/header/luos.svg',
+                    dark: '/assets/images/index/header/luos-white.svg',
+                  }}
+                  alt="luos"
+                />{' '}
+              </>
             </Grid>
             <Grid item xs={4} md={4} lg={3} xl={3} className={styles.video}>
               <span>
@@ -254,8 +253,8 @@ const Anatomy = (props) => {
       </Grid>
       <Grid container>
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
-          <img
-            src="assets/images/index/integration/line-right.svg"
+          <Image
+            sources={{ light: '/assets/images/index/integration/line-right.svg' }}
             alt="line-right"
             style={{ transform: 'rotateY(180deg)' }}
             className={styles.linesImg}
@@ -263,8 +262,8 @@ const Anatomy = (props) => {
         </Grid>
         <Grid item xs={4} md={4} lg={4} xl={4}></Grid>
         <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
-          <img
-            src="assets/images/index/integration/line-right.svg"
+          <Image
+            sources={{ light: '/assets/images/index/integration/line-right.svg' }}
             alt="line-right"
             style={{ float: 'right' }}
             className={styles.linesImg}

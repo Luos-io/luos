@@ -24,8 +24,8 @@ import Card from '@mui/material/Card';
 import Link from '@mui/material/Link';
 
 // NextJS Material Dashboard 2 PRO components
-import MDBox from 'components/MDBox';
-import MDTypography from 'components/MDTypography';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 function BookingCard({ image, title, description, action, link, blank }) {
   return (
@@ -57,7 +57,7 @@ function BookingCard({ image, title, description, action, link, blank }) {
           overflow: 'visible',
         }}
       >
-        <MDBox
+        <Box
           position="relative"
           borderRadius="lg"
           className="card-header"
@@ -74,7 +74,7 @@ function BookingCard({ image, title, description, action, link, blank }) {
             transition: 'transform 300ms cubic-bezier(0.34, 1.61, 0.7, 1) 0s',
           }}
         >
-          <MDBox
+          <Box
             borderRadius="lg"
             shadow="md"
             width="100%"
@@ -105,8 +105,8 @@ function BookingCard({ image, title, description, action, link, blank }) {
             ) : (
               image
             )}
-          </MDBox>
-          <MDBox
+          </Box>
+          <Box
             borderRadius="lg"
             shadow="md"
             width="100%"
@@ -121,23 +121,18 @@ function BookingCard({ image, title, description, action, link, blank }) {
               backgroundSize: 'cover',
             }}
           />
-        </MDBox>
-        <MDBox textAlign="center" pt={3} px={3}>
-          <MDBox
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            mt={action ? -8 : -4.25}
-          >
+        </Box>
+        <Box textAlign="center" pt={3} px={3}>
+          <Box display="flex" justifyContent="center" alignItems="center" mt={action ? -8 : -4.25}>
             {action}
-          </MDBox>
-          <MDTypography variant="h5" fontWeight="regular" sx={{ mt: 2 }}>
+          </Box>
+          <Typography variant="h5" fontWeight="regular" sx={{ mt: 2 }}>
             {title}
-          </MDTypography>
-          <MDTypography variant="body2" color="text" sx={{ mt: 1.5, mb: 1 }}>
+          </Typography>
+          <Typography variant="body2" color="text" sx={{ mt: 1.5, mb: 1 }}>
             {description}
-          </MDTypography>
-        </MDBox>
+          </Typography>
+        </Box>
       </Card>
     </Link>
   );

@@ -1,4 +1,5 @@
 import { ApolloProvider } from '@apollo/client';
+import { ThemeProvider } from '@mui/styles';
 import { SessionProvider } from 'next-auth/react';
 import Script from 'next/script';
 import { useRouter } from 'next/router';
@@ -7,13 +8,18 @@ import { useEffect } from 'react';
 import client from '../apollo-client';
 import { Layout } from 'components/layout/layout';
 import { pageview } from 'utils/analytics';
-import { MaterialUIControllerProvider, NotificationsProvider } from 'utils/contexts';
+import { NotificationsProvider } from 'utils/contexts';
+import theme from 'utils/themes/light';
 
 import type { AppProps } from 'next/app';
+import type { Session } from 'next-auth';
 
-import 'styles/globals.scss';
+import 'src/styles/globals.scss';
 
-const Services = ({ Component, pageProps }: AppProps) => {
+const Services = ({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps<{ session: Session }>) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -59,15 +65,16 @@ const Services = ({ Component, pageProps }: AppProps) => {
         `,
         }}
       />
-      <SessionProvider session={pageProps.session}>
+      <SessionProvider session={session} basePath="/app/api/auth">
         <ApolloProvider client={client}>
-          <MaterialUIControllerProvider>
+          <ThemeProvider theme={theme}>
             <NotificationsProvider>
               <Layout>
+                {/* @ts-ignore */}
                 <Component {...pageProps} />
               </Layout>
             </NotificationsProvider>
-          </MaterialUIControllerProvider>
+          </ThemeProvider>
         </ApolloProvider>
       </SessionProvider>
     </>

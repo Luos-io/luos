@@ -21,7 +21,7 @@ export default function Error403(): JSX.Element {
             <h1>Wait a minute</h1>
             <p>You must be logged in or have an account to access this page.</p>
             <Button
-              href="/auth/signin?callbackUrl=http://localhost:3000/"
+              href="/auth/signin?callbackUrl=http://localhost:3000/app"
               className={Styles.button}
               variant="contained"
             >

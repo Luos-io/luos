@@ -1,0 +1,159 @@
+.container {
+  width: 100%;
+  background-color: #323334 !important;
+}
+
+.title {
+  font-family: 'Roboto Mono', sans-serif;
+  padding: 60px 0 5px 55px !important;
+  font-size: 30px !important;
+  margin: 0 !important;
+  color: white;
+  width: 100%;
+  text-align: left;
+}
+
+.underline:after {
+  content: '_';
+  color: #be99ff;
+}
+
+.text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  padding-left: 55px;
+  line-height: 20px;
+  text-align: left;
+  color: white;
+}
+
+.list {
+  width: 100%;
+}
+
+/* ListItemText primary props */
+.list span {
+  font-size: 20px;
+  color: white;
+}
+
+/* ListItemText secondary props */
+.list p {
+  text-align: justify;
+  font-size: 18px;
+  color: white;
+}
+
+.listLink {
+  align-items: center;
+  color: white;
+  text-decoration: none !important;
+}
+
+.listLink:hover * {
+  color: #be99ff !important;
+  fill: #be99ff !important;
+}
+
+.listIcon {
+  min-width: initial;
+}
+
+.listText {
+  margin: 0 16px 0 16px;
+}
+
+.video {
+  background-color: #1e1e1e;
+  color: white !important;
+  border-right: 2px inset black;
+}
+
+.videoTitle {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.cardIcons {
+  float: left !important;
+  width: 24px;
+  margin-top: 3px;
+  padding-right: 5px;
+}
+
+.engine {
+  color: white;
+  padding: 7px;
+  font-size: 12px;
+  font-family: 'Roboto Mono', sans-serif;
+  width: 100%;
+  margin-left: 0;
+  word-break: break-word;
+}
+
+.engine span {
+  font-family: 'Roboto Mono', sans-serif !important;
+  font-size: 13px !important;
+}
+
+.engineActive span {
+  font-family: 'Roboto Mono', sans-serif !important;
+  font-size: 13px !important;
+}
+
+.engineActive {
+  color: black;
+  background-color: #81c8be;
+  padding: 7px;
+  font-size: 12px;
+  font-family: 'Roboto Mono', sans-serif !important;
+  width: 100%;
+  margin-left: 0 !important;
+  word-break: break-word;
+}
+
+.player {
+  background-size: cover;
+}
+
+.lines {
+  margin-bottom: -120px !important;
+}
+
+.linesImg {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+@media screen and (max-width: 1023px) {
+  .title {
+    padding-left: 20px !important;
+  }
+
+  .text {
+    padding-left: 20px !important;
+  }
+
+  .vscode {
+    padding: 0 30px !important;
+  }
+
+  .head {
+    border-top-right-radius: 10px !important;
+    border-right: 2px solid black !important;
+  }
+
+  .player {
+    border-right: 2px solid black !important;
+  }
+  .secondList {
+    margin-top: -20px !important;
+  }
+
+  .linesImg {
+    margin-top: -20px;
+  }
+}

@@ -178,6 +178,7 @@ importers:
       eslint: 8.23.0
       eslint-config-custom: '*'
       graphql: ^16.6.0
+      ip-range-check: ^0.2.0
       material-ui-popup-state: ^4.0.2
       mongodb: ^4.9.1
       next: ^12.2.5
@@ -220,6 +221,7 @@ importers:
       d3-force: 3.0.0
       dotenv: 16.0.3
       graphql: 16.6.0
+      ip-range-check: 0.2.0
       material-ui-popup-state: 4.1.0_ikcgkdnp4bn3rgptamntbhbo7e
       mongodb: 4.10.0
       next: 12.3.1_ru2bdujs5wv7zrmz55pdteej2m
@@ -2593,7 +2595,7 @@ packages:
     peerDependencies:
       react: '*'
     dependencies:
-      '@types/react': 17.0.50
+      '@types/react': 18.0.21
       prop-types: 15.8.1
       react: 17.0.2
     dev: false
@@ -4832,7 +4834,7 @@ packages:
   /@types/react-transition-group/4.4.5:
     resolution: {integrity: sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA==}
     dependencies:
-      '@types/react': 17.0.50
+      '@types/react': 18.0.21
     dev: false
 
   /@types/react/17.0.43:
@@ -9345,6 +9347,12 @@ packages:
     resolution: {integrity: sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==}
     dependencies:
       loose-envify: 1.4.0
+    dev: false
+
+  /ip-range-check/0.2.0:
+    resolution: {integrity: sha512-oaM3l/3gHbLlt/tCWLvt0mj1qUaI+STuRFnUvARGCujK9vvU61+2JsDpmkMzR4VsJhuFXWWgeKKVnwwoFfzCqw==}
+    dependencies:
+      ipaddr.js: 1.9.1
     dev: false
 
   /ip/2.0.0:

@@ -32,7 +32,7 @@
 }
 
 .subtitle {
-  font-size: 18px !important;
+  font-size: 18px;
   padding: 0 12px 0 24px;
 }
 
@@ -63,17 +63,17 @@
 }
 
 .pinkBtn {
-  background-color: #be99ff !important;
-  color: white !important;
-  border-radius: 2px !important;
+  background-color: #be99ff;
+  color: white;
+  border-radius: 2px;
 
   height: 40px;
   text-transform: uppercase;
 }
 
 .pinkBtn:hover {
-  background-color: white !important;
-  color: #be99ff !important;
+  background-color: white;
+  color: #be99ff;
 }
 
 .step {
@@ -81,8 +81,8 @@
 }
 
 .step > span {
-  margin: 15px !important;
-  display: block !important;
+  margin: 15px;
+  display: block;
 }
 
 .file {
@@ -136,11 +136,11 @@
 
 @media screen and (max-width: 1023px) {
   .mobileNone {
-    display: none !important;
+    display: none;
   }
 
   .howitsworkMobile {
-    display: initial !important;
+    display: initial;
   }
 
   .title {
@@ -150,9 +150,9 @@
 
 @media screen and (min-width: 1024px) {
   .mobileNone {
-    display: flex !important;
+    display: flex;
   }
   .howitsworkMobile {
-    display: none !important;
+    display: none;
   }
 }

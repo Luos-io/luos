@@ -19,32 +19,32 @@
 .pinkBtn {
   width: 100%;
   height: 40px;
-  border-radius: 2px !important;
-  background-color: #be99ff !important;
+  border-radius: 2px;
+  background-color: #be99ff;
   line-height: 0.8rem;
   font-size: 0.8rem;
-  color: white !important;
+  color: white;
   text-transform: uppercase;
 }
 
 .pinkBtn:hover {
-  background-color: white !important;
-  color: #be99ff !important;
+  background-color: white;
+  color: #be99ff;
 }
 
 .whiteBtn {
   width: 100%;
   height: 40px;
-  border-radius: 2px !important;
-  background-color: white !important;
+  border-radius: 2px;
+  background-color: white;
   line-height: 0.8rem;
   font-size: 0.8rem;
-  color: #be99ff !important;
+  color: #be99ff;
   text-transform: uppercase;
 }
 .whiteBtn:hover {
-  background-color: #be99ff !important;
-  color: white !important;
+  background-color: #be99ff;
+  color: white;
 }
 .whiteBtn::after {
   content: url('/assets/images/index/powered/discord.svg');
@@ -60,15 +60,15 @@
 .videoBtn {
   width: 100%;
   height: 40px;
-  border: 2px solid #be99ff !important;
-  border-radius: 2px !important;
-  background-color: transparent !important;
-  color: #be99ff !important;
+  border: 2px solid #be99ff;
+  border-radius: 2px;
+  background-color: transparent;
+  color: #be99ff;
   text-transform: uppercase;
 }
 
 .cardIcons {
-  float: left !important;
+  float: left;
   width: 24px;
   margin-top: 3px;
   padding-right: 5px;
@@ -88,16 +88,16 @@
   }
 
   .pinkBtn {
-    margin-bottom: 15px !important;
+    margin-bottom: 15px;
   }
 
   .whiteBtn {
-    margin-bottom: 15px !important;
-    font-size: 12px !important;
+    margin-bottom: 15px;
+    font-size: 12px;
   }
 
   .mobileNone {
-    display: none !important;
+    display: none;
   }
 
   .text {
@@ -107,10 +107,10 @@
 
 @media screen and (min-width: 1024px) {
   .mobileNone {
-    display: initial !important;
+    display: initial;
   }
 
   .videoBtn {
-    display: none !important;
+    display: none;
   }
 }

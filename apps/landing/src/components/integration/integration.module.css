@@ -5,55 +5,55 @@
 
 .title {
   font-family: 'Roboto Mono', sans-serif;
-  margin: 30px auto !important;
-  font-size: 30px !important;
+  margin: 30px auto;
+  font-size: 30px;
   text-align: center;
-  color: white !important;
+  color: white;
 }
 
 @media screen and (max-width: 1023px) {
   .vscode {
-    display: none !important;
+    display: none;
   }
   .vscodeMobile {
-    display: initial !important;
+    display: initial;
   }
   .mobileNone {
-    display: none !important;
+    display: none;
   }
 
   .btnContainer {
-    display: none !important;
+    display: none;
   }
 
   .btnContainerMobile {
-    display: initial !important;
+    display: initial;
   }
 
   .title {
-    margin-bottom: 0 !important;
-    margin-top: -60px !important;
+    margin-bottom: 0;
+    margin-top: -60px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .vscode {
-    display: initial !important;
+    display: initial;
   }
 
   .mobileNone {
-    display: flex !important;
+    display: flex;
   }
 
   .vscodeMobile {
-    display: none !important;
+    display: none;
   }
   .btnContainer {
-    display: flex !important;
+    display: flex;
   }
 
   .btnContainerMobile {
-    display: none !important;
+    display: none;
   }
 }
 
@@ -78,7 +78,7 @@
 }
 
 html[data-theme='dark'] .title {
-  color: white !important;
+  color: white;
 }
 
 .img {
@@ -97,24 +97,24 @@ html[data-theme='dark'] .title {
 }
 
 .pinkBtn {
-  background-color: #be99ff !important;
-  color: white !important;
-  border-radius: 2px !important;
+  background-color: #be99ff;
+  color: white;
+  border-radius: 2px;
   text-transform: uppercase;
   height: 40px;
   width: 90%;
-  padding: 8px !important;
-  display: block !important;
-  margin: 0 auto !important;
+  padding: 8px;
+  display: block;
+  margin: 0 auto;
 }
 
 .pinkBtn:hover {
-  background-color: white !important;
-  color: #be99ff !important;
+  background-color: white;
+  color: #be99ff;
 }
 
 .gridBtn {
-  padding-top: 0 !important;
+  padding-top: 0;
 }
 .btnContainer {
   width: 100%;
@@ -130,12 +130,12 @@ html[data-theme='dark'] .title {
 }
 
 .imgLeftContainer > span {
-  overflow: visible !important;
-  margin-left: -40px !important;
+  overflow: visible;
+  margin-left: -40px;
 }
 
 .imgLeft {
-  margin-top: -50px !important;
+  margin-top: -50px;
   transform: rotate(180deg);
   -webkit-user-drag: none;
   user-select: none;
@@ -145,7 +145,7 @@ html[data-theme='dark'] .title {
 }
 
 .imgRight {
-  margin-bottom: -30px !important;
+  margin-bottom: -30px;
   float: right;
   -webkit-user-drag: none;
   user-select: none;
@@ -164,20 +164,20 @@ html[data-theme='dark'] .title {
 }
 
 .head > span {
-  margin-left: 15px !important;
+  margin-left: 15px;
 }
 
 .hiwTitle {
   color: white;
   font-family: 'Roboto Mono', sans-serif;
-  font-size: 18px !important;
+  font-size: 18px;
   font-weight: bold;
   display: block;
 }
 
 .player {
   background-color: #1e1e1e;
-  color: white !important;
+  color: white;
 }
 
 .docs {
@@ -187,17 +187,17 @@ html[data-theme='dark'] .title {
 }
 
 .headButton > span {
-  margin-left: 15px !important;
+  margin-left: 15px;
 }
 
 .icons {
-  margin: 15px auto !important;
-  display: block !important;
+  margin: 15px auto;
+  display: block;
 }
 
 .video {
   background-color: #1e1e1e;
-  color: white !important;
+  color: white;
   border-right: 2px inset black;
 }
 
@@ -207,29 +207,29 @@ html[data-theme='dark'] .title {
 }
 
 .cardIcons {
-  float: left !important;
+  float: left;
   width: 24px;
   margin-top: 3px;
   padding-right: 5px;
 }
 
 .engine {
-  color: white !important;
+  color: white;
   padding: 7px;
   font-size: 12px;
-  font-family: 'Roboto Mono', sans-serif !important;
+  font-family: 'Roboto Mono', sans-serif;
   width: 100%;
-  margin-left: 0 !important;
+  margin-left: 0;
 }
 
 .engine span {
-  font-family: 'Roboto Mono', sans-serif !important;
-  font-size: 13px !important;
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 13px;
 }
 
 .engineActive span {
-  font-family: 'Roboto Mono', sans-serif !important;
-  font-size: 13px !important;
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 13px;
 }
 
 .engineActive {
@@ -237,43 +237,43 @@ html[data-theme='dark'] .title {
   background-color: #81c8be;
   padding: 7px;
   font-size: 12px;
-  font-family: 'Roboto Mono', sans-serif !important;
+  font-family: 'Roboto Mono', sans-serif;
   width: 100%;
-  margin-left: 0 !important;
+  margin-left: 0;
 }
 
 .vscode {
-  padding: 0 !important;
+  padding: 0;
 }
 
 .vscodeMobile {
-  padding: 0 !important;
+  padding: 0;
 }
 
 .icoText {
-  font-family: 'Roboto Mono', sans-serif !important;
+  font-family: 'Roboto Mono', sans-serif;
 }
 
 html[data-theme='dark'] .head {
-  background-color: #323334 !important;
+  background-color: #323334;
 }
 
 html[data-theme='dark'] .docs {
-  background-color: #323334 !important;
+  background-color: #323334;
 }
 
 html[data-theme='dark'] .video {
-  background-color: #1e1e1e !important;
-  color: white !important;
+  background-color: #1e1e1e;
+  color: white;
 }
 
 html[data-theme='dark'] .engine {
-  color: white !important;
+  color: white;
 }
 
 html[data-theme='dark'] .player {
-  background-color: #1e1e1e !important;
-  color: white !important;
+  background-color: #1e1e1e;
+  color: white;
 }
 
 .imgLink {

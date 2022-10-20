@@ -83,8 +83,6 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
                 hal &&
                 framework &&
                 platform &&
-                mcu &&
-                f_cpu &&
                 valid(pyluos) &&
                 TelemetrySystemObject.includes(system.toUpperCase()) &&
                 macBuffer.length !== 0 &&

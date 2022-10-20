@@ -28,7 +28,6 @@ export const Anatomy = () => {
     AnatomyTypeKey.TOPOLOGY,
   );
 
-  console.log('TEST render', currentAnatomyType);
   return (
     <div className={styles.container}>
       <Grid container item xs={12} md={6} lg={6} xl={6}>
@@ -38,9 +37,8 @@ export const Anatomy = () => {
           these features are based on the needs of the community.
         </p>
       </Grid>
-
-      <Grid container mt={5} mb={5} style={{ position: 'relative' }}>
-        <Grid item xs={6} md={3} lg={3} xl={4}>
+      <Grid container justifyContent={'center'} style={{ position: 'relative' }}>
+        <Grid item xs={6} md={6} lg={3} xl={4}>
           <List className={styles.list}>
             <ListItem
               className={styles.listLink}
@@ -95,7 +93,7 @@ export const Anatomy = () => {
             </ListItem>
           </List>
         </Grid>
-        <Grid item xs={6} md={3} lg={3} xl={4}>
+        <Grid item xs={6} md={6} lg={3} xl={4}>
           <List className={`${styles.list} ${styles.secondList}`}>
             <ListItem
               className={styles.listLink}
@@ -151,10 +149,11 @@ export const Anatomy = () => {
           </List>
         </Grid>
         <VSCode
+          className={styles.mobileNone}
           title="Anatomy"
           height={632}
-          xs={12}
-          md={6}
+          xs={10}
+          md={10}
           lg={6}
           xl={4}
           style={{ alignContent: 'flex-start' }}
@@ -192,26 +191,25 @@ export const Anatomy = () => {
           ></Grid>
         </VSCode>
       </Grid>
-      <Grid container>
-        <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
+      <Grid container justifyContent={'space-between'}>
+        <Grid className={styles.lines} item xs={4} md={4} lg={4} xl={4}>
           <Image
+            className={styles.linesImg}
             src={'/assets/images/index/integration/line-right.svg'}
-            width={30}
-            height={30}
+            width={420}
+            height={150}
             alt="line-right"
             style={{ transform: 'rotateY(180deg)' }}
-            className={styles.linesImg}
           />
         </Grid>
-        <Grid item xs={4} md={4} lg={4} xl={4}></Grid>
-        <Grid item xs={4} md={4} lg={4} xl={4} className={styles.lines}>
+        <Grid className={styles.lines} item xs={4} md={4} lg={4} xl={4} alignSelf={'flex-end'}>
           <Image
+            className={styles.linesImg}
             src={'/assets/images/index/integration/line-right.svg'}
-            width={30}
-            height={30}
+            width={420}
+            height={150}
             alt="line-right"
             style={{ float: 'right' }}
-            className={styles.linesImg}
           />
         </Grid>
       </Grid>

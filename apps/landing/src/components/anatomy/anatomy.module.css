@@ -156,4 +156,14 @@
   .linesImg {
     margin-top: -20px;
   }
+
+  .mobileNone {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mobileNone {
+    display: initial;
+  }
 }

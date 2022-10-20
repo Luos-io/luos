@@ -13,10 +13,9 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 import VSCode from 'components/vscode';
 import integrationsData from 'components/integration/data';
+import { IntegrationTypeKey } from 'components/integration/types';
 
 import styles from 'components/integration/integration.module.css';
-
-import { IntegrationTypeKey } from 'components/integration/types';
 
 const Integration = () => {
   const [currentIntegrationType, setCurrentIntegrationType] = React.useState<IntegrationTypeKey>(
@@ -53,7 +52,9 @@ const Integration = () => {
             aria-labelledby="demo-controlled-radio-buttons-group"
             name="controlled-radio-buttons-group"
             value={currentIntegrationType}
-            onChange={(event) => setCurrentIntegrationType(+event.target.value)}
+            onChange={(event) =>
+              setCurrentIntegrationType(event.target.value as IntegrationTypeKey)
+            }
           >
             {integrationsData.map((integrationType) => (
               <FormControlLabel

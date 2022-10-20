@@ -12,10 +12,18 @@ import type { RegularBreakpoints } from '@mui/material/Grid';
 
 interface VSCodeProps extends CommonProps, RegularBreakpoints {
   title?: string;
+  height?: number;
   children: ReactNode;
 }
 
-export const VSCode = ({ title, children, style, className, ...otherProps }: VSCodeProps) => {
+export const VSCode = ({
+  title,
+  height,
+  children,
+  style,
+  className,
+  ...otherProps
+}: VSCodeProps) => {
   const { mode } = useColorScheme();
   return (
     <Grid className={className} style={style} item container {...otherProps}>
@@ -34,7 +42,7 @@ export const VSCode = ({ title, children, style, className, ...otherProps }: VSC
           </Grid>
         )}
       </Grid>
-      <Grid container className={styles.vscodeContent}>
+      <Grid container className={styles.vscodeContent} style={{ height }}>
         <Grid item container xs={1} className={styles.vscodeContentLeft}>
           <FileCopyIcon className={styles.vscodeContentLeftIcons} fontSize="large" />
           <SearchIcon className={styles.vscodeContentLeftIcons} fontSize="large" />

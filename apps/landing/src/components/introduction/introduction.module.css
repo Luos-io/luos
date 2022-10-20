@@ -7,10 +7,6 @@
   padding: 30px 90px;
 }
 
-html[data-theme='light'] .container {
-  background-image: url('/assets/images/index/introduction/nebula-light.svg');
-}
-
 .text {
   font-family: 'Roboto';
   font-size: 18px;
@@ -18,10 +14,6 @@ html[data-theme='light'] .container {
   margin-bottom: 30px;
   color: black;
   padding-right: 60px;
-}
-
-html[data-theme='light'] .text {
-  color: black !important;
 }
 
 .pinkBtn {

@@ -1,7 +1,7 @@
 .react-typewriter-pointer {
-  background-color: black;
   display: inline;
   padding: 0 1px;
+  background-color: black;
 }
 
 .add-cursor-animate {
@@ -24,4 +24,9 @@
 
 .react-typewriter-text-wrap {
   margin-top: 40px !important;
+}
+
+.reactTypewriterTextLuos {
+  color: black;
+  font-size: 30px;
 }

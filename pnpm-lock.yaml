@@ -150,6 +150,7 @@ importers:
       '@emailjs/browser': ^3.6.2
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
+      '@hookform/error-message': 2.0.0
       '@hookform/resolvers': ^2.9.1
       '@luos-io/sdk-web': ^1.0.4
       '@mui/icons-material': ^5.10.6
@@ -172,6 +173,7 @@ importers:
       '@types/semver': ^7.3.12
       '@types/w3c-web-serial': ^1.0.2
       chroma-js: ^2.4.2
+      clsx: ^1.2.1
       d3: ^7.4.4
       d3-force: ^3.0.0
       dotenv: ^16.0.1
@@ -204,6 +206,7 @@ importers:
       '@emailjs/browser': 3.7.0_2hzqwhlq2dh4yaoivoistg7jzi
       '@emotion/react': 11.10.4_bjroym7kxlcs2vvwnej4p3gzwu
       '@emotion/styled': 11.10.4_ogudqqhlstsi7uge4lir7ff3ty
+      '@hookform/error-message': 2.0.0_dzekpqzszvy7xf4sex3hsdhnba
       '@hookform/resolvers': 2.9.9_react-hook-form@7.38.0
       '@luos-io/sdk-web': 1.0.5
       '@mui/icons-material': 5.10.9_z3olqqf34i6isisqzfodoltscq
@@ -217,6 +220,7 @@ importers:
       '@typeform/embed': 1.38.0
       '@typeform/embed-react': 1.21.0_react@18.2.0
       chroma-js: 2.4.2
+      clsx: 1.2.1
       d3: 7.6.1
       d3-force: 3.0.0
       dotenv: 16.0.3
@@ -3284,6 +3288,18 @@ packages:
       '@hapi/hoek': 9.3.0
     dev: false
 
+  /@hookform/error-message/2.0.0_dzekpqzszvy7xf4sex3hsdhnba:
+    resolution: {integrity: sha512-Y90nHzjgL2MP7GFy75kscdvxrCTjtyxGmOLLxX14nd08OXRIh9lMH/y9Kpdo0p1IPowJBiZMHyueg7p+yrqynQ==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+      react-hook-form: ^7.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-hook-form: 7.38.0_react@18.2.0
+    dev: false
+
   /@hookform/resolvers/2.9.9_react-hook-form@7.38.0:
     resolution: {integrity: sha512-WMKO5HbNoGMdQNmf6kcjHmBKPd3voKvDdzr+IQGn1Rtb7dIQbTE33zf5dptZnv8dF4K0NvnzpTgz3bLdeAPc9w==}
     peerDependencies:
@@ -4829,7 +4845,7 @@ packages:
     resolution: {integrity: sha512-Fv/5kb2STAEMT3wHzdKQK2z8xKq38EDIGVrutYLmQVVLe+4orDFquU52hQrULnEHinMKv9FSA6lf9+uNT1ITtA==}
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 17.0.50
+      '@types/react': 18.0.21
 
   /@types/react-transition-group/4.4.5:
     resolution: {integrity: sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA==}

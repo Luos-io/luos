@@ -11,6 +11,7 @@ import Alert from '@mui/material/Alert';
 import Typography from '@mui/material/Typography';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { ErrorMessage } from '@hookform/error-message';
 import * as Yup from 'yup';
 
 import Carousel from 'components/carousel/carousel';
@@ -149,7 +150,7 @@ export const SignIn = ({
               onChange={handleChange('email')}
             />
             <Typography variant="inherit" color="textSecondary" className={Styles.typo}>
-              {errors.email?.message}
+              <ErrorMessage errors={errors} name="singleErrorInput" as="p" />
             </Typography>
             <Button
               onClick={handleLogin('email', values)}

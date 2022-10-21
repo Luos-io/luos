@@ -81,7 +81,6 @@ export const saveTelemetry = async (req: NextApiRequest, res: NextApiResponse) =
               if (
                 pyluos &&
                 hal &&
-                framework &&
                 platform &&
                 valid(pyluos) &&
                 TelemetrySystemObject.includes(system.toUpperCase()) &&

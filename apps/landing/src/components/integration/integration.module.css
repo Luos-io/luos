@@ -130,8 +130,7 @@ html[data-theme='dark'] .title {
 }
 
 .imgLeftContainer > span {
-  overflow: visible;
-  margin-left: -40px;
+  margin: -36px 0 0 -10px !important;
 }
 
 .imgLeft {
@@ -142,6 +141,11 @@ html[data-theme='dark'] .title {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+}
+
+.imgRightContainer > span {
+  float: right;
+  margin: -20px 0 -12px 54px !important;
 }
 
 .imgRight {

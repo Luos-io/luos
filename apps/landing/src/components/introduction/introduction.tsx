@@ -13,7 +13,6 @@ import VSCode from 'components/vscode';
 import Writer from 'components/writer';
 
 import styles from './introduction.module.css';
-import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
 const Introduction = () => {
   const theme = useTheme();
@@ -51,7 +50,7 @@ const Introduction = () => {
               It's open source.
             </p>
             <Grid container spacing={2}>
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} lg={5}>
                 <Button
                   variant="contained"
                   className={styles.pinkBtn}
@@ -60,7 +59,7 @@ const Introduction = () => {
                   Get started <RocketLaunchIcon style={{ marginLeft: '10px' }} />
                 </Button>
               </Grid>
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} lg={5}>
                 <Button
                   variant="contained"
                   className={styles.whiteBtn}

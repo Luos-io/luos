@@ -116,8 +116,17 @@
   background-size: cover;
 }
 
-.lines {
-  margin-bottom: -120px;
+.linesLeft > span {
+  float: left;
+  transform: rotateY(180deg);
+}
+
+.linesLeft,
+.linesRight > span {
+  margin-bottom: -128px !important;
+}
+.linesRight > span {
+  float: right;
 }
 
 .linesImg {

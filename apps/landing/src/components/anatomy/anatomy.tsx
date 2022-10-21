@@ -192,24 +192,22 @@ export const Anatomy = () => {
         </VSCode>
       </Grid>
       <Grid container justifyContent={'space-between'}>
-        <Grid className={styles.lines} item xs={4} md={4} lg={4} xl={4}>
+        <Grid className={styles.linesLeft} item xs={4} md={4} lg={4} xl={4}>
           <Image
             className={styles.linesImg}
             src={'/assets/images/index/integration/line-right.svg'}
             width={420}
             height={150}
-            alt="line-right"
-            style={{ transform: 'rotateY(180deg)' }}
+            alt="line-left"
           />
         </Grid>
-        <Grid className={styles.lines} item xs={4} md={4} lg={4} xl={4} alignSelf={'flex-end'}>
+        <Grid className={styles.linesRight} item xs={4} md={4} lg={4} xl={4} alignSelf={'flex-end'}>
           <Image
             className={styles.linesImg}
             src={'/assets/images/index/integration/line-right.svg'}
             width={420}
             height={150}
             alt="line-right"
-            style={{ float: 'right' }}
           />
         </Grid>
       </Grid>

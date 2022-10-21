@@ -114,3 +114,9 @@
     display: none;
   }
 }
+
+/* Overrides some react-lite-youtube-embed rules */
+.yt-lite:before {
+  height: 100%;
+  background-repeat: initial;
+}

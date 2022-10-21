@@ -34,11 +34,11 @@ const Integration = () => {
             src="/assets/images/index/integration/line-right.svg"
             alt="line-right"
             width={353}
-            height={98}
+            height={120}
             className={styles.imgLeft}
           />
         </Grid>
-        <Grid item xs={12} md={4} lg={4}>
+        <Grid item xs={12} md={4} lg={4} style={{ paddingTop: 0 }}>
           <h2 className={`${styles.title} ${styles.underline}`}>Integrations</h2>
         </Grid>
       </Grid>
@@ -111,10 +111,8 @@ const Integration = () => {
           </ImageList>
         </Grid>
       </VSCode>
-      <Grid container spacing={3}>
-        <Grid item xs={2} md={4} lg={4}></Grid>
-        <Grid item xs={4} md={4} lg={4}></Grid>
-        <Grid item xs={6} md={4} lg={4}>
+      <Grid container justifyContent={'flex-end'}>
+        <Grid item xs={6} md={4} lg={4} className={styles.imgRightContainer}>
           <Image
             src="/assets/images/index/integration/line-right.svg"
             alt="line-right"

@@ -1,4 +1,6 @@
 import { ApolloProvider } from '@apollo/client';
+import { CacheProvider } from '@emotion/react';
+import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/styles';
 import { SessionProvider } from 'next-auth/react';
 import Script from 'next/script';
@@ -9,17 +11,21 @@ import client from '../apollo-client';
 import { Layout } from 'components/layout/layout';
 import { pageview } from 'utils/analytics';
 import { NotificationsProvider } from 'utils/contexts';
+import createEmotionCache from 'utils/createEmotionCache';
 import theme from 'utils/themes/light';
 
+import type { EmotionCache } from '@emotion/cache';
 import type { AppProps } from 'next/app';
 import type { Session } from 'next-auth';
 
 import 'src/styles/globals.scss';
 
+const clientSideEmotionCache = createEmotionCache();
+
 const Services = ({
   Component,
-  pageProps: { session, ...pageProps },
-}: AppProps<{ session: Session }>) => {
+  pageProps: { session, emotionCache = clientSideEmotionCache, ...pageProps },
+}: AppProps<{ session: Session; emotionCache: EmotionCache }>) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -29,7 +35,7 @@ const Services = ({
   }, [router.events]);
 
   return (
-    <>
+    <CacheProvider value={emotionCache}>
       {/* Global Site Tag (gtag.js) - Google Analytics */}
       <Script
         strategy="afterInteractive"
@@ -65,6 +71,8 @@ const Services = ({
         `,
         }}
       />
+      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+      <CssBaseline />
       <SessionProvider session={session} basePath="/app/api/auth">
         <ApolloProvider client={client}>
           <ThemeProvider theme={theme}>
@@ -77,7 +85,7 @@ const Services = ({
           </ThemeProvider>
         </ApolloProvider>
       </SessionProvider>
-    </>
+    </CacheProvider>
   );
 };
 

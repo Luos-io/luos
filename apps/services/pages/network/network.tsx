@@ -10,7 +10,7 @@ import Alert from '@mui/material/Alert';
 import CircularProgress from '@mui/material/CircularProgress';
 import ReplayIcon from '@mui/icons-material/Replay';
 import dynamic from 'next/dynamic';
-import { useState, useEffect, useContext, SyntheticEvent } from 'react';
+import { useState, useEffect, useContext, Suspense, SyntheticEvent } from 'react';
 
 import { clientLogger as cLog } from 'utils/logger';
 import { SDKContext } from 'utils/contexts/sdk';
@@ -232,7 +232,7 @@ export const Network = (): JSX.Element => {
     setValue(newValue);
   };
 
-  const ChartComponent = dynamic(() => import('./chart'), { ssr: false });
+  const ChartComponent = dynamic(() => import('./chart'), { ssr: false, suspense: true });
 
   useEffect(() => {
     // async function fetchFirmware() {
@@ -475,8 +475,9 @@ export const Network = (): JSX.Element => {
                 <ReplayIcon />
               </Button>
             ) : null}
-
-            <ChartComponent {...routingTable} />
+            <Suspense fallback={null}>
+              <ChartComponent {...routingTable} />
+            </Suspense>
           </div>
         ) : (
           ''

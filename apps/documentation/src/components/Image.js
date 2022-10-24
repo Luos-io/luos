@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import ThemedImage from '@theme/ThemedImage';
+import { useLocation, matchPath } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import 'react-image-lightbox/style.css';
 
 const Image = (props) => {
   const { siteConfig } = useDocusaurusContext();
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState();
 
   const baseSourcePath =
-    siteConfig.customFields.isProd === true && source.indexOf('/documentation') === -1
+    siteConfig.customFields.isProd === true && location.pathname.indexOf('/documentation') !== -1
       ? '/documentation'
       : '';
   const sources = {

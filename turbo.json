@@ -1,52 +1,71 @@
 {
   "$schema": "https://turborepo.org/schema.json",
-  "globalDependencies": [".eslintrc.js"],
+  "globalDependencies": [
+    ".eslintrc.js"
+  ],
   "pipeline": {
     "build": {
-      "dependsOn": ["^build", "$DEBUG"]
+      "dependsOn": [
+        "^build"
+      ],
+      "env": [
+        "DEBUG"
+      ]
     },
     "documentation#build": {
       "dependsOn": [
-        "^build",
-        "$REACT_APP_EMAIL_JS_SERVICE_ID",
-        "$REACT_APP_EMAIL_JS_TEMPLATE_ID",
-        "$REACT_APP_EMAIL_JS_USER_ID",
-        "$REACT_APP_TYPEFORM_ID"
+        "^build"
       ],
-      "outputs": [".docusaurus/**"]
+      "outputs": [
+        ".docusaurus/**"
+      ],
+      "env": [
+        "REACT_APP_EMAIL_JS_SERVICE_ID",
+        "REACT_APP_EMAIL_JS_TEMPLATE_ID",
+        "REACT_APP_EMAIL_JS_USER_ID",
+        "REACT_APP_TYPEFORM_ID"
+      ]
     },
     "landing#build": {
-      "dependsOn": ["^build"],
-      "outputs": [".next/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        ".next/**"
+      ]
     },
     "services#build": {
       "dependsOn": [
-        "^build",
-        "$DISCORD_CLIENT_ID",
-        "$DISCORD_CLIENT_SECRET",
-        "$EMAIL_FROM",
-        "$EMAIL_SERVER_HOST",
-        "$EMAIL_SERVER_PASSWORD",
-        "$EMAIL_SERVER_PORT",
-        "$EMAIL_SERVER_USER",
-        "$GITHUB_CLIENT_ID",
-        "$GITHUB_CLIENT_SECRET",
-        "$GOOGLE_CLIENT_ID",
-        "$GOOGLE_CLIENT_SECRET",
-        "$MONGODB_URI",
-        "$NEXTAUTH_SECRET",
-        "$NEXTAUTH_URL",
-        "$NEXT_PUBLIC_DEBUG",
-        "$NEXT_PUBLIC_EMAILJS_SERVICE_ID",
-        "$NEXT_PUBLIC_EMAILJS_TEMPLATE_ID",
-        "$NEXT_PUBLIC_EMAILJS_USER_ID",
-        "$NEXT_PUBLIC_GOOGLE_ANALYTICS",
-        "$NEXT_PUBLIC_HOTJAR_ID",
-        "$SERVICE_ENCRYPTION_IV",
-        "$SERVICE_ENCRYPTION_KEY",
-        "$TYPEFORM_ACCESS_TOKEN"
+        "^build"
       ],
-      "outputs": [".next/**"]
+      "outputs": [
+        ".next/**"
+      ],
+      "env": [
+        "DISCORD_CLIENT_ID",
+        "DISCORD_CLIENT_SECRET",
+        "EMAIL_FROM",
+        "EMAIL_SERVER_HOST",
+        "EMAIL_SERVER_PASSWORD",
+        "EMAIL_SERVER_PORT",
+        "EMAIL_SERVER_USER",
+        "GITHUB_CLIENT_ID",
+        "GITHUB_CLIENT_SECRET",
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "MONGODB_URI",
+        "NEXTAUTH_SECRET",
+        "NEXTAUTH_URL",
+        "NEXT_PUBLIC_DEBUG",
+        "NEXT_PUBLIC_EMAILJS_SERVICE_ID",
+        "NEXT_PUBLIC_EMAILJS_TEMPLATE_ID",
+        "NEXT_PUBLIC_EMAILJS_USER_ID",
+        "NEXT_PUBLIC_GOOGLE_ANALYTICS",
+        "NEXT_PUBLIC_HOTJAR_ID",
+        "SERVICE_ENCRYPTION_IV",
+        "SERVICE_ENCRYPTION_KEY",
+        "TYPEFORM_ACCESS_TOKEN"
+      ]
     },
     "lint": {
       "outputs": []
@@ -54,33 +73,35 @@
     "dev": {
       "cache": false,
       "dependsOn": [
-        "^dev",
-        "$REACT_APP_EMAIL_JS_SERVICE_ID",
-        "$REACT_APP_EMAIL_JS_TEMPLATE_ID",
-        "$REACT_APP_EMAIL_JS_USER_ID",
-        "$REACT_APP_TYPEFORM_ID",
-        "$DISCORD_CLIENT_ID",
-        "$DISCORD_CLIENT_SECRET",
-        "$EMAIL_FROM",
-        "$EMAIL_SERVER_HOST",
-        "$EMAIL_SERVER_PASSWORD",
-        "$EMAIL_SERVER_PORT",
-        "$EMAIL_SERVER_USER",
-        "$GITHUB_CLIENT_ID",
-        "$GITHUB_CLIENT_SECRET",
-        "$GOOGLE_CLIENT_ID",
-        "$GOOGLE_CLIENT_SECRET",
-        "$MONGODB_URI",
-        "$NEXTAUTH_SECRET",
-        "$NEXT_PUBLIC_DEBUG",
-        "$NEXT_PUBLIC_EMAILJS_SERVICE_ID",
-        "$NEXT_PUBLIC_EMAILJS_TEMPLATE_ID",
-        "$NEXT_PUBLIC_EMAILJS_USER_ID",
-        "$NEXT_PUBLIC_GOOGLE_ANALYTICS",
-        "$NEXT_PUBLIC_HOTJAR_ID",
-        "$SERVICE_ENCRYPTION_IV",
-        "$SERVICE_ENCRYPTION_KEY",
-        "$TYPEFORM_ACCESS_TOKEN"
+        "^dev"
+      ],
+      "env": [
+        "REACT_APP_EMAIL_JS_SERVICE_ID",
+        "REACT_APP_EMAIL_JS_TEMPLATE_ID",
+        "REACT_APP_EMAIL_JS_USER_ID",
+        "REACT_APP_TYPEFORM_ID",
+        "DISCORD_CLIENT_ID",
+        "DISCORD_CLIENT_SECRET",
+        "EMAIL_FROM",
+        "EMAIL_SERVER_HOST",
+        "EMAIL_SERVER_PASSWORD",
+        "EMAIL_SERVER_PORT",
+        "EMAIL_SERVER_USER",
+        "GITHUB_CLIENT_ID",
+        "GITHUB_CLIENT_SECRET",
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "MONGODB_URI",
+        "NEXTAUTH_SECRET",
+        "NEXT_PUBLIC_DEBUG",
+        "NEXT_PUBLIC_EMAILJS_SERVICE_ID",
+        "NEXT_PUBLIC_EMAILJS_TEMPLATE_ID",
+        "NEXT_PUBLIC_EMAILJS_USER_ID",
+        "NEXT_PUBLIC_GOOGLE_ANALYTICS",
+        "NEXT_PUBLIC_HOTJAR_ID",
+        "SERVICE_ENCRYPTION_IV",
+        "SERVICE_ENCRYPTION_KEY",
+        "TYPEFORM_ACCESS_TOKEN"
       ]
     }
   }

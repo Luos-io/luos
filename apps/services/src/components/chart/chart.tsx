@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import * as d3 from 'd3';
+import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
-import SelectedNode from './selectedNode';
 import Alert from '@mui/material/Alert';
+
+import SelectedNode from 'components/chart/selectedNode';
 
 import type { RTBData } from '@luos-io/sdk-web';
 import type { Node } from 'pages/network/interfaces';
@@ -41,7 +42,7 @@ const setviceType = [
 ];
 const canvasHeight = typeof window !== 'undefined' ? window.innerHeight - 50 : 0;
 
-const Chart = (rtbData: RTBData) => {
+const Chart = (rtbData: RTBData): JSX.Element => {
   // const svgRef = useRef(null);
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [canvasWidth, setCanvasWidth] = useState(initialCanvasWidth);

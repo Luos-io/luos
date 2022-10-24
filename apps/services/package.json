@@ -30,7 +30,7 @@
     "@mui/icons-material": "^5.10.6",
     "@mui/lab": "^5.0.0-alpha.100",
     "@mui/material": "^5.10.3",
-    "@mui/styles": "^5.10.3",
+    "@mui/styles": "^5.10.10",
     "@mui/types": "^7.1.4",
     "@next-auth/mongodb-adapter": "^1.0.3",
     "@packages/services": "*",

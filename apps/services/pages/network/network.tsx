@@ -1,6 +1,8 @@
+import * as React from 'react';
 import { ServiceType } from '@luos-io/sdk-web';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
@@ -9,16 +11,15 @@ import TabPanel from '@mui/lab/TabPanel';
 import Alert from '@mui/material/Alert';
 import CircularProgress from '@mui/material/CircularProgress';
 import ReplayIcon from '@mui/icons-material/Replay';
-import dynamic from 'next/dynamic';
-import { useState, useEffect, useContext, Suspense, SyntheticEvent } from 'react';
+import { useState, useEffect, useContext, SyntheticEvent } from 'react';
 
+import Chart from 'components/chart/chart';
 import { clientLogger as cLog } from 'utils/logger';
 import { SDKContext } from 'utils/contexts/sdk';
 
 import type { RTBData, ServiceStatistics, RTBNode } from '@luos-io/sdk-web';
 
 import styles from './network.module.scss';
-import { Grid } from '@mui/material';
 
 const { NEXT_PUBLIC_DEBUG } = process.env;
 
@@ -232,7 +233,7 @@ export const Network = (): JSX.Element => {
     setValue(newValue);
   };
 
-  const ChartComponent = dynamic(() => import('./chart'), { ssr: false, suspense: true });
+  // const ChartComponent = dynamic(() => import('./chart'), { ssr: false, suspense: true });
 
   useEffect(() => {
     // async function fetchFirmware() {
@@ -475,9 +476,7 @@ export const Network = (): JSX.Element => {
                 <ReplayIcon />
               </Button>
             ) : null}
-            <Suspense fallback={null}>
-              <ChartComponent {...routingTable} />
-            </Suspense>
+            <Chart {...routingTable} />
           </div>
         ) : (
           ''

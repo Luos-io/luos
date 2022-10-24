@@ -6,12 +6,6 @@
     "packages": [
       "apps/*",
       "packages/*"
-    ],
-    "nohoist": [
-      "**/react",
-      "**/react/**",
-      "**/react-dom",
-      "**/react-dom/**"
     ]
   },
   "scripts": {

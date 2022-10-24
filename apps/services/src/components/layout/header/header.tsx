@@ -57,6 +57,7 @@ export const ButtonAppBar = ({ toogleLight }: HeaderProps) => {
               Ressources <KeyboardArrowDownIcon />
             </Button>
 
+            {/* @ts-ignore */}
             <HoverMenu
               {...bindMenu(popupState)}
               anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
@@ -115,6 +116,7 @@ export const ButtonAppBar = ({ toogleLight }: HeaderProps) => {
               Community <KeyboardArrowDownIcon />
             </Button>
 
+            {/* @ts-ignore */}
             <HoverMenu
               {...bindMenu(popupStateCom)}
               anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}

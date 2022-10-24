@@ -8,19 +8,20 @@
     "lint": "eslint *.ts*"
   },
   "resolutions": {
-    "@types/react": "17.0.43",
-    "@types/react-dom": "17.0.17",
-    "react": "17.0.2"
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6",
+    "**/react": "18.2.0",
+    "**/react-dom": "18.2.0"
   },
   "dependencies": {
     "mongodb": "^4.9.1",
-    "react": "17.0.2",
+    "react": "18.2.0",
     "@packages/ui": "*"
   },
   "devDependencies": {
     "@types/prettier": "^2.7.0",
-    "@types/react": "17.0.43",
-    "@types/react-dom": "17.0.17",
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.36.0",
     "eslint": "^8.23.0",
     "eslint-config-custom": "*",

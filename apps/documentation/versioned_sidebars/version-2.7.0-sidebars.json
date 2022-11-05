@@ -270,6 +270,11 @@
       "type": "doc",
       "label": "🖊️ Contribute",
       "id": "contribute-to-luos"
+    },
+    {
+      "type": "doc",
+      "label": "Test Label",
+      "id": "test"
     }
   ]
 }

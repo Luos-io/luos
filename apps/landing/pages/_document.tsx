@@ -3,7 +3,6 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import { getInitColorSchemeScript } from '@mui/material/styles';
 
-// import theme from '../src/utils/theme';
 import createEmotionCache from '../src/utils/createEmotionCache';
 
 export default class MyDocument extends Document {

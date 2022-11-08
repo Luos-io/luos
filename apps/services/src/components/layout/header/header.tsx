@@ -41,8 +41,8 @@ export const ButtonAppBar = ({ toogleLight }: HeaderProps) => {
               <Image
                 src="/assets/images/logo_luos_animated_white.gif"
                 alt="Luos Logo"
-                width="86px"
-                height="30px"
+                width="86"
+                height="30"
               />
             </Link>
             <span style={{ fontSize: '10px', color: 'white' }}>Toolkit Alpha {pjson.version}</span>

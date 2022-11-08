@@ -13,7 +13,7 @@ const HeaderMobile = () => {
     <div className={styles.desktopNone}>
       <div className={styles.navBar}>
         <a href="https://luos.io" className={styles.brand}>
-          <Image src="/logo_luos.gif" alt="logo luos" width="75px" height="25px" />
+          <Image src="/logo_luos.gif" alt="logo luos" width="75" height="25" />
         </a>
         {active ? (
           <CloseIcon className={styles.menu} onClick={() => handleclick()} />

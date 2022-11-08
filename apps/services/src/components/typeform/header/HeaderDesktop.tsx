@@ -6,7 +6,7 @@ const HeaderDesktop = () => {
   return (
     <div className={`${styles.navBar} ${styles.mobileNone}`}>
       <a href="https://luos.io" className={styles.brand}>
-        <Image src="/logo_luos.gif" alt="logo luos" width="75px" height="25px" />
+        <Image src="/logo_luos.gif" alt="logo luos" width="75" height="25" />
       </a>
       <nav className={styles.nav}>
         <a href="https://www.luos.io/#technology" className={styles.navLink}>

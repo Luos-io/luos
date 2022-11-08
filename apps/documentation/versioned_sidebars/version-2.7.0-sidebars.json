@@ -273,8 +273,8 @@
     },
     {
       "type": "doc",
-      "label": "Test Label",
-      "id": "test"
+      "label": "Changelog",
+      "id": "changelog"
     }
   ]
 }

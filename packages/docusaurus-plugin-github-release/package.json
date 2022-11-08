@@ -33,6 +33,8 @@
     "@docusaurus/utils-validation": "^2.1.0",
     "clsx": "^1.2.1",
     "node-fetch": "^3.2.10",
+    "remark-gfm": "^3.0.1",
+    "react-markdown": "^8.0.3",
     "semver": "^7.3.8",
     "tslib": "^2.4.0"
   },

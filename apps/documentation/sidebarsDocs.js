@@ -271,5 +271,10 @@ module.exports = {
       label: '🖊️ Contribute',
       id: 'contribute-to-luos',
     },
+    {
+      type: 'doc',
+      label: 'Changelog',
+      id: 'changelog',
+    },
   ],
 };

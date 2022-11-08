@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import { useVersions } from '@docusaurus/plugin-content-docs/client';
 import { useLocation } from '@docusaurus/router';
 import { useDocsPreferredVersion } from '@docusaurus/theme-common';
+import React, { useEffect, useState } from 'react';
+import remarkGfm from 'remark-gfm';
+import ReactMarkdown from 'react-markdown';
 import { major, minor } from 'semver';
 
 export default function ReleaseComponent() {
@@ -9,8 +11,6 @@ export default function ReleaseComponent() {
   const allVersions = useVersions();
   const location = useLocation();
   const [releases, setReleases] = useState([]);
-
-  console.log('ReleaseComponent, routectx', plugin, data);
 
   useEffect(() => {
     if (preferredVersion?.label) {
@@ -21,7 +21,6 @@ export default function ReleaseComponent() {
       const foundCurrentVersion = allVersions.find(
         (version) => version.name !== 'current' && location.pathname.indexOf(version.path) !== -1,
       );
-      console.log('ReleaseComponent, foundCurrentVersion', foundCurrentVersion);
       if (foundCurrentVersion) {
         import(
           `@github/release-${major(foundCurrentVersion.label)}.${minor(
@@ -32,11 +31,7 @@ export default function ReleaseComponent() {
     }
   }, [preferredVersion]);
 
-  console.log('ReleaseComponent, releases', releases);
-
   return releases.map((release, i) => (
-    <div className="release" key={`release-${i}`}>
-      Changelog for version : <span>{release.tag_name}</span>
-    </div>
+    <ReactMarkdown key={`release-${i}`} children={release.body} remarkPlugins={[remarkGfm]} />
   ));
 }

@@ -12,23 +12,29 @@ export default function ReleaseComponent() {
   const location = useLocation();
   const [releases, setReleases] = useState([]);
 
-  useEffect(() => {
+  useEffect(async () => {
+    let isSubscribed = true;
+    const loadReleases = async (versionLabel) => {
+      const { default: loadedReleases } = await import(
+        `@github/release-${major(versionLabel)}.${minor(versionLabel)}.x.json`
+      );
+      if (isSubscribed && loadedReleases) {
+        setReleases(loadedReleases);
+      }
+    };
+
     if (preferredVersion?.label) {
-      import(
-        `@github/release-${major(preferredVersion.label)}.${minor(preferredVersion.label)}.x.json`
-      ).then(({ default: releases }) => setReleases(releases));
+      await loadReleases(preferredVersion.label);
     } else {
       const foundCurrentVersion = allVersions.find(
         (version) => version.name !== 'current' && location.pathname.indexOf(version.path) !== -1,
       );
       if (foundCurrentVersion) {
-        import(
-          `@github/release-${major(foundCurrentVersion.label)}.${minor(
-            foundCurrentVersion.label,
-          )}.x.json`
-        ).then(({ default: releases }) => setReleases(releases));
+        await loadReleases(foundCurrentVersion.label);
       }
     }
+
+    return () => (isSubscribed = false);
   }, [preferredVersion]);
 
   return releases.map((release, i) => (

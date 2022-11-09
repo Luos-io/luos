@@ -1,49 +1,38 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import Link from '@docusaurus/Link';
 import { Button, Grid } from '@mui/material';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import { useState } from 'react';
+
+import Image from '@site/src/components/Image';
+
 import styles from './index.module.css';
-import Image from '../Image';
-import Link from '@docusaurus/Link';
 
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+const TabPanel = ({ children, value, index, ...other }) => (
+  <div
+    role="tabpanel"
+    hidden={value !== index}
+    id={`simple-tabpanel-${index}`}
+    aria-labelledby={`simple-tab-${index}`}
+    {...other}
+  >
+    {value === index && (
+      <Box sx={{ p: 3 }}>
+        <Typography className={styles.tab}>{children}</Typography>
+      </Box>
+    )}
+  </div>
+);
 
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography className={styles.tab}>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
+const a11yProps = (index) => ({
+  id: `simple-tab-${index}`,
+  'aria-controls': `simple-tabpanel-${index}`,
+});
 
 const Roadmap = () => {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -71,7 +60,7 @@ const Roadmap = () => {
               contribution’s guidelines on GitHub
             </Link>{' '}
             and{' '}
-            <Link href="https://www.luos.io/docs/contribute-to-luos" target="_blank">
+            <Link href="https://www.luos.io/documentation/contribute-to-luos" target="_blank">
               how to contribute on Luos Documentation
             </Link>
             .

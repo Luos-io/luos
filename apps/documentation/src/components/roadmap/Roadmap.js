@@ -4,7 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import Image from '@site/src/components/Image';
 
@@ -20,7 +20,7 @@ const TabPanel = ({ children, value, index, ...other }) => (
   >
     {value === index && (
       <Box sx={{ p: 3 }}>
-        <Typography className={styles.tab}>{children}</Typography>
+        <div className={styles.tab}>{children}</div>
       </Box>
     )}
   </div>
@@ -78,9 +78,11 @@ export const Roadmap = () => {
         </Grid>
         <Grid item md={8} mb={5}>
           <Image
-            src="assets/images/roadmap/Luos-roadmap-light.svg"
-            darkSrc="assets/images/roadmap/Luos-roadmap-dark.svg"
-            minWidth="370px"
+            sources={{
+              light: 'assets/images/roadmap/Luos-roadmap-light.svg',
+              dark: 'assets/images/roadmap/Luos-roadmap-dark.svg',
+            }}
+            minWidth="370"
           />
         </Grid>
         <Grid item md={8} mb={5}>

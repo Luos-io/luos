@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import ThemedImage from '@theme/ThemedImage';
-import { useLocation, matchPath } from '@docusaurus/router';
+import { useLocation } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import 'react-image-lightbox/style.css';
 
-const Image = (props) => {
+export const Image = (props) => {
   const { siteConfig } = useDocusaurusContext();
   const location = useLocation();
   const [isOpen, setIsOpen] = useState();

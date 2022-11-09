@@ -31,7 +31,7 @@ const a11yProps = (index) => ({
   'aria-controls': `simple-tabpanel-${index}`,
 });
 
-const Roadmap = () => {
+export const Roadmap = () => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {

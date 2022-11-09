@@ -21,7 +21,7 @@ _« Python is a programming language that lets you work more quickly and integra
 
 _« <a href="https://pip.pypa.io/en/stable/" target="_blank">Pip<IconExternalLink width="10"></IconExternalLink></a> is the standard package manager for Python. It allows you to install and manage additional packages that are not part of the Python standard library. » (<small><a href="https://realpython.com/what-is-pip/#getting-started-with-pip" target="_blank">Source<IconExternalLink width="10"></IconExternalLink></a></small>)_
 
-If Python is not installed on your computer, download and run the last release according to your computer's OS: <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/<IconExternalLink width="10"></IconExternalLink></a>.
+If Python is not installed on your computer, download and run the last release according to your computer's OS directly on <a href="https://www.python.org/downloads/" target="_blank">the official Python website<IconExternalLink width="10"></IconExternalLink></a>.
 
 To install Pip, type the following commands in a console:
 
@@ -34,7 +34,7 @@ python get-pip.py
 
 The tool _Jupyter Notebook_ is needed for this tutorial. Jupyter Notebook will allow you to type Python commands in an internet browser to communicate with a Luos system, via Pyluos.
 
-_« The Jupyter Notebook App is a server-client application that allows editing and running notebook documents via a web browser. The Jupyter Notebook App can be executed on a local desktop requiring no internet access (...) or can be installed on a remote server and accessed through the internet. » (<small><a href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html" target="_blank">Source<IconExternalLink width="10"></IconExternalLink></a></small>)_
+_« The Jupyter Notebook App is a server-client application that allows editing and running notebook documents via a web browser. The Jupyter Notebook App can be executed on a local desktop requiring no internet access (...) or can be installed on a remote server and accessed through the internet. » (<small><a href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html" target="_blank">Source<IconExternalLink width="10" /></a></small>)_
 
 Type the following command in the console to install Jupyter:
 
@@ -43,7 +43,7 @@ pip install jupyter
 ```
 
 :::note
-Feel free to consult <a href="https://jupyter.readthedocs.io/en/latest/content-quickstart.html" target="_blank">_Jupyter Notebook_'s<IconExternalLink width="10"></IconExternalLink></a> documentation.
+Feel free to consult <a href="https://jupyter.readthedocs.io/en/latest/content-quickstart.html" target="_blank">_Jupyter Notebook_'s<IconExternalLink width="10" /></a> documentation.
 :::
 
 ### Installing or updating Pyluos library
@@ -79,7 +79,7 @@ jupyter notebook
 In the browser page that opened, the `New` button creates a new Python file:
 
 <div align="center">
-  <Image src="/assets/images/pyluos-1.png" />
+  <Image sources={{ light: '/assets/images/pyluos-1.png' }} />
 </div>
 
 :::info
@@ -87,7 +87,7 @@ In the previous picture, _Jupyter_ uses _Python 3_, but you also can use _Python
 :::
 
 <div align="center">
-  <Image src="/assets/images/pyluos-2.png" />
+  <Image sources={{ light: '/assets/images/pyluos-2.png' }} />
 </div>
 
 The Jupyter work space looks like the following image. On the keyboard, `Shift+Enter` executes any selected part of the code.
@@ -119,19 +119,19 @@ Some devices may not work correctly with the default USB transfer sizes and late
 To access to these parameters, open the Device Manager in Windows, right-click on the _USB Serial Port (COMX)_ where your device is connected, and click on _Properties_.
 
 <div align="center">
-  <Image src="/assets/images/device-manager.png" />
+  <Image sources={{ light: '/assets/images/device-manager.png' }} />
 </div>
 
 Click on _Port Settings_ tab and click on _Advanced..._ button.
 
 <div align="center">
-  <Image src="/assets/images/serial-properties.png" />
+  <Image sources={{ light: '/assets/images/serial-properties.png' }} />
 </div>
 
 Change the desired values.
 
 <div align="center">
-  <Image src="/assets/images/com-port-adv-settings.png" />
+  <Image sources={{ light: '/assets/images/com-port-adv-settings.png' }} />
 </div>
 
 These values can give you better results, for example if your device has motors to control.
@@ -274,7 +274,7 @@ device.button_mod.robus_revision # Returns the version of Robus
 If you use _IPython_ or _Jupyter Notebook_, you can use auto-completion using the `Tab` key to find every available object and variable.
 
 <div align="center">
-  <Image src="/assets/images/pyluos-3.png" />
+  <Image sources={{ light: '/assets/images/pyluos-3.png' }} />
 </div>
 
 ### Change a service name

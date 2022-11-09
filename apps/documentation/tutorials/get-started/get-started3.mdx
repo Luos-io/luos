@@ -21,28 +21,28 @@ import TabItem from '@theme/TabItem';
 
 ## 1. Introduction
 
-The first two parts of the [Get started tutorial](/tutorials/get-started/) are now done. Good work! 💪
+The first two parts of the [Get started tutorial](/tutorials/get-started) are now done. Good work! 💪
 
 In this part, we will learn how to configure Luos engine to access to multiple boards in your physical network. Then, we will run our first example into these boards.
 
 :::info
-We will use the same board from the first two parts, but **you also need a second board to create a network**. Supported boards are listed [here](/tutorials/get-started/get-started1#setup-development-environment).
+We will use the same board from the first two parts, but **you also need a second board to create a network**. Supported boards are listed [here](/tutorials/get-started#setup-development-environment).
 
 :::
 
 ## 2. Create a physical network
 
-As we saw in Part 1, Luos engine allows you to define services and use them together on one MCU. What really sets Luos apart and make it special is that you can also make services work together on separated MCUs.
+As we saw in Part 1, Luos engine allows you to define services and use them together on one MCU. What really sets Luos apart and makes it special is that you can also make services work together on separated MCUs.
 
 Let's make a network with two boards!
 
-In this part, we will use the “default wiring” defined by Luos to create a network of two MCUs. We will use a [OneWire network](hardware-consideration/electronics), limiting the circuit to simple wires and pins:
+In this part, we will use the “default wiring” defined by Luos to create a network of two MCUs. We will use a [OneWire network](/docs/hardware-consideration/electronics), limiting the circuit to simple wires and pins:
 
 - Tx and Rx pins, which are connected together and wired to the Tx and Rx pins of the other board (see the next image).
 - One PTP wire.
 
 :::tip
-💡 Luos Point-To-Point (PTP) connection allows to find your board's [physical position](luos-technology/node/topology). Luos engine can deal with up to 8 PTP lines on each board to connect as many boards as you want.
+💡 Luos Point-To-Point (PTP) connection allows you to find your board's [physical position](/docs/luos-technology/node/topology). Luos engine can deal with up to 8 PTP lines on each board to connect as many boards as you want.
 
 :::
 
@@ -53,10 +53,8 @@ To prevent any mistakes, unplug the USB cables from the boards before wiring.
 
 <div align="center">
   <Image
-    sources={{
-      light: '/assets/images/tutorials/get-started/get-started-3.png',
-      dark: '/assets/images/tutorials/get-started/get-started-3-dark.png',
-    }}
+    src="/assets/images/tutorials/get-started/get-started-3.png"
+    darkSrc="/assets/images/tutorials/get-started/get-started-3-dark.png"
   />
 </div>
 
@@ -74,39 +72,32 @@ Below are the schematics of various boards and how to wire them:
   <TabItem value="Arduino MKR" label="Arduino MKR">
     <div align="center">
       <Image
-        sources={{
-          light: '/assets/images/tutorials/get-started/get-started-3-1.png',
-          dark: '/assets/images/tutorials/get-started/get-started-3-1-dark.png',
-        }}
+        src="/assets/images/tutorials/get-started/get-started-3-1.png"
+        darkSrc="/assets/images/tutorials/get-started/get-started-3-1-dark.png"
       />
     </div>
   </TabItem>
   <TabItem value="Arduino Classic" label="Arduino Classic">
     <div align="center">
       <Image
-        sources={{
-          light: '/assets/images/tutorials/get-started/get-started-3-2.png',
-          dark: '/assets/images/tutorials/get-started/get-started-3-2-dark.png',
-        }}
+        src="/assets/images/tutorials/get-started/get-started-3-2.png"
+        darkSrc="/assets/images/tutorials/get-started/get-started-3-2-dark.png"
       />
     </div>
   </TabItem>
   <TabItem value="Seeeduino Xiao">
     <div align="center">
       <Image
-        sources={{
-          light: '/assets/images/tutorials/get-started/get-started-3-6_light.png',
-        }}
+        src="/assets/images/tutorials/get-started/get-started-3-6_light.png"
+        darkSrc="/assets/images/tutorials/get-started/get-started-3-6-dark.png"
       />
     </div>
   </TabItem>
   <TabItem value="NUCLEO 32" label="NUCLEO 32">
     <div align="center">
       <Image
-        sources={{
-          light: '/assets/images/tutorials/get-started/get-started-3-3.png',
-          dark: '/assets/images/tutorials/get-started/get-started-3-3-dark.png',
-        }}
+        src="/assets/images/tutorials/get-started/get-started-3-3.png"
+        darkSrc="/assets/images/tutorials/get-started/get-started-3-3-dark.png"
       />
     </div>
   </TabItem>
@@ -114,19 +105,25 @@ Below are the schematics of various boards and how to wire them:
     <Tabs>
       <TabItem value="STM32F072RB" label="STM32F072RB">
         <div align="center">
-          <Image sources={{ light: '/assets/images/tutorials/get-started/get-started-3-4.png' }} />
+          <Image
+            src="/assets/images/tutorials/get-started/get-started-3-4.png"
+            darkSrc="/assets/images/tutorials/get-started/get-started-3-4-dark.png"
+          />
         </div>
       </TabItem>
       <TabItem value="STM32F401RE/STM32F410RB" label="STM32F401RE/STM32F410RB">
         <div align="center">
-          <Image sources={{ light: '/assets/images/tutorials/get-started/get-started-3-5.png' }} />
+          <Image
+            src="/assets/images/tutorials/get-started/get-started-3-5.png"
+            darkSrc="/assets/images/tutorials/get-started/get-started-3-5-dark.png"
+          />
         </div>
       </TabItem>
     </Tabs>
   </TabItem>
   <TabItem value="ESP32 WROOM-32 DevKit">
     <div align="center">
-      <Image sources={{ light: '/assets/images/tutorials/get-started/get-started-3-8.png' }} />
+      <Image src="/assets/images/tutorials/get-started/get-started-3-8.png" />
     </div>
   </TabItem>
 </Tabs>
@@ -138,9 +135,9 @@ After wiring the boards together, you will have to power both of them for the ne
 
 :::
 
-## 3. Build Luos distributed system
+## 3. Build a Luos distributed system
 
-In Part 1, you have downloaded or cloned the Get started code folder in your computer. We will use this code to demonstrate how Luos engine works using a network. We will begin by moving the blinker app service from _board 1_ to _board 2_ and see what is happening next.
+In Part 1, you have downloaded or cloned the Get started code folder in your computer. We will use this code to demonstrate how Luos engine works using a network. We will begin by moving the blinker app service from _board 1_ to _board 2_ and see what happens next.
 
 ### Flash _board 1_
 
@@ -149,9 +146,9 @@ Connect the USB cable of _board 1_ and leave the USB cable of _board 2_ disconne
 
 :::
 
-1. In VS Code, open the folder _Get_started_ project corresponding to your _board 1_: `file/open folder`.
-2. From the left panel, locate and open the file _src/main.c_ or _src/Arduino.ino_ file.
-3. Comment the two lines to remove the blinker service from this board: `Blinker_Init();` and `Blinker_Loop();`
+1. In VS Code, open the folder _Get_started_ that corresponds to your _board 1_: `file/open folder`.
+2. From the left panel, locate and open the file _src/main.c_ or _src/Arduino.ino_.
+3. Comment the following two lines to remove the blinker service from this board: `Blinker_Init();` and `Blinker_Loop();`
 
    ```c
    ...
@@ -177,13 +174,12 @@ These lines trigger the initialization and looping execution of all the packages
 
 <div align="center">
   <Image
-    sources={{
-      light: '/assets/images/tutorials/get-started/get-started-3-6.png',
-      dark: '/assets/images/tutorials/get-started/get-started-3-6.png',
-    }}
+    src="/assets/images/tutorials/get-started/get-started-3-6_light.png"
+    darkSrc="/assets/images/tutorials/get-started/get-started-3-6-dark.png"
   />
 </div>
-5. Build and flash _board 1_ by clicking on the right arrow button in the bottom left in VS Code.
+5. Build and flash _board 1_ by clicking on the arrow pointing to the right on the bottom left in VS
+Code.
 
 ### Flash _board 2_
 
@@ -192,9 +188,9 @@ You should now unplug the USB cable of _board 1_ and connect the USB cable of _b
 
 :::
 
-1. In VS Code, open the folder _Get_started_ project corresponding to your _board 2_, `file/open folder`. (If you have twice the same board, you will open the same folder.)
+1. In VS Code, open the folder _Get_started_ project corresponding to your _board 2_, `file/open folder`. (If you have the same boards twice, you can open the same folder.)
 2. From the left panel, find and open the file _src/main.c_ (or _src/Arduino.ino_ for Arduino users).
-3. This time, comment the six lines to remove all the services except the blinker: `Led_Init();`, `Pipe_Init();`, `Gate_Init();`, `Led_Loop();`, `Pipe_Loop();`, and `Gate_Loop();`
+3. This time, comment the following six lines to remove all of the services except the blinker: `Led_Init();`, `Pipe_Init();`, `Gate_Init();`, `Led_Loop();`, `Pipe_Loop();`, and `Gate_Loop();`
 
    ```c
    ...
@@ -212,21 +208,20 @@ You should now unplug the USB cable of _board 1_ and connect the USB cable of _b
    ```
 
 :::tip
-In order to keep using Luos engine in your MCU, `Luos_init()` and `Luos_Loop()` must not be commented.
+In order to keep using Luos engine in your MCU, don't comment `Luos_init()` nor `Luos_Loop()`.
 
 :::
 
-4. Check if the proper board environment is selected depending on your board:
+4. Check if the right board environment is selected depending on your board:
 
 <div align="center">
   <Image
-    sources={{
-      light: '/assets/images/tutorials/get-started/get-started-3-7.png',
-      dark: '/assets/images/tutorials/get-started/get-started-3-7.png',
-    }}
+    src="/assets/images/tutorials/get-started/get-started-3-7.png"
+    darkSrc="/assets/images/tutorials/get-started/get-started-3-7.png"
   />
 </div>
-5. Build and flash _board 2_ by clicking on the right arrow button in the bottom left in VS Code.
+5. Build and flash _board 2_ by clicking on the arrow pointing to the right on the bottom left in VS
+Code.
 
 We are done!
 
@@ -234,7 +229,7 @@ To check if everything is OK, plug a USB cable into _board 1,_ and power _board 
 
 The LED of _board 1_ should blink thanks to the blinker app in _board 2_.
 
-**Congratulation, you just created your first Luos distributed system where a service from one board is used in another board to perform an action on this second board.**
+**Congratulation, you've just created your first Luos distributed system. The objective of this part of our Get started was to use a service located in your first board, in another board to perform an action on it.**
 
 ## 4. Use Pyluos to control your network
 
@@ -303,7 +298,7 @@ device.blinker.play()
 
 ## 5. Next steps
 
-In this Get started tutorial, we used the default network used by Luos engine called Robus. The customization of your physical interface will be addressed in a future tutorial. The default hardware interface used by Robus is defined on the <a href="https://github.com/Luos-io/luos_engine/tree/main/network/robus/HAL" target="_blank" rel="external nofollow">Robus HAL</a> folder corresponding to your device.
+In the next part of the Get started tutorial, we'll use the default network used by the Luos engine called Robus. The customization of your physical interface will be addressed in a future tutorial. The default hardware interface used by Robus is defined on the <a href="https://github.com/Luos-io/luos_engine/tree/main/network/robus/HAL" target="_blank" rel="external nofollow">Robus HAL</a> folder corresponding to your device.
 
 ## 6. Test your skills
 
@@ -313,6 +308,6 @@ In this Get started tutorial, we used the default network used by Luos engine ca
 
 The next step will show you how to visualize your network online through the Luos Network Display tool.
 
-You can check out our [tutorials](/tutorials) to learn more about Luos and understand how to use the features of Luos engine. We also invite you to check out our [documentation](luos-technology) to learn more about the core concepts of Luos engine.
+You can check out our [tutorials](/tutorials) to learn more about Luos and understand how to use the features of Luos engine. We also invite you to check out our [documentation](/docs/luos-technology) to learn more about the core concepts of Luos engine.
 
 ⭐ If you liked this tutorial, feel free to star our <a href="https://github.com/Luos-io/luos_engine" target="_blank" rel="external nofollow">Luos engine repository</a>⭐

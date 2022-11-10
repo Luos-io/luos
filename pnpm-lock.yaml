@@ -37,6 +37,7 @@ importers:
       '@mdx-js/react': ^1.6.22
       '@mui/icons-material': ^5.10.3
       '@mui/material': ^5.10.3
+      '@packages/tsconfig': workspace:*
       '@svgr/webpack': ^6.2.1
       '@tsconfig/docusaurus': ^1.0.6
       '@typeform/embed-react': ^1.19.0
@@ -56,7 +57,6 @@ importers:
       react-image-lightbox: ^5.1.4
       react-lite-youtube-embed: ^2.2.2
       react-material-ui-carousel: ^3.4.2
-      tsconfig: workspace:*
       typescript: ^4.8.2
       vercel: ^28.2.0
     dependencies:
@@ -86,8 +86,8 @@ importers:
       react-image-lightbox: 5.1.4_sfoxds7t5ydpegc3knd667wn6m
       react-lite-youtube-embed: 2.3.1_sfoxds7t5ydpegc3knd667wn6m
       react-material-ui-carousel: 3.4.2_o7uuppqyj4njksbpd4jlta62my
-      tsconfig: link:../../packages/tsconfig
     devDependencies:
+      '@packages/tsconfig': link:../../packages/tsconfig
       '@tsconfig/docusaurus': 1.0.6
       '@types/react': 17.0.50
       '@types/react-helmet': 6.1.5
@@ -106,6 +106,7 @@ importers:
       '@emotion/styled': ^11.10.4
       '@mui/icons-material': ^5.10.6
       '@mui/material': ^5.10.8
+      '@packages/tsconfig': workspace:*
       '@types/node': ^17.0.45
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
@@ -119,7 +120,6 @@ importers:
       react-lite-youtube-embed: ^2.3.1
       react-material-ui-carousel: ^3.4.2
       sass: ^1.55.0
-      tsconfig: workspace:0.0.0
       typescript: ^4.8.4
     dependencies:
       '@emotion/cache': 11.10.3
@@ -136,8 +136,8 @@ importers:
       react-lite-youtube-embed: 2.3.1_biqbaboplfbrettd7655fr4n2y
       react-material-ui-carousel: 3.4.2_7fr6ndijfobiamrhr3f2bzpyke
       sass: 1.55.0
-      tsconfig: link:../../packages/tsconfig
     devDependencies:
+      '@packages/tsconfig': link:../../packages/tsconfig
       '@types/node': 17.0.45
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
@@ -165,6 +165,7 @@ importers:
       '@mui/types': ^7.1.4
       '@next-auth/mongodb-adapter': ^1.0.3
       '@packages/services': '*'
+      '@packages/tsconfig': workspace:*
       '@packages/ui': '*'
       '@typeform/embed': ^1.37.0
       '@typeform/embed-react': ^1.19.0
@@ -200,7 +201,6 @@ importers:
       react-material-ui-carousel: ^3.4.2
       sass: ^1.54.6
       semver: ^7.3.7
-      tsconfig: workspace:*
       typescript: ^4.8.3
       vercel: ^28.2.0
       web-serial-polyfill: ^1.0.13
@@ -246,9 +246,9 @@ importers:
       react-material-ui-carousel: 3.4.2_7fr6ndijfobiamrhr3f2bzpyke
       sass: 1.55.0
       semver: 7.3.8
-      tsconfig: link:../../packages/tsconfig
       yup: 0.32.11
     devDependencies:
+      '@packages/tsconfig': link:../../packages/tsconfig
       '@types/chroma-js': 2.1.4
       '@types/d3': 7.4.0
       '@types/node': 17.0.45
@@ -2857,6 +2857,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typescript
+    dev: false
 
   /@docusaurus/logger/2.2.0:
     resolution: {integrity: sha512-DF3j1cA5y2nNsu/vk8AG7xwpZu6f5MKkPPMaaIbgXLnWGfm6+wkOeW7kNrxnM95YOhKUkJUophX69nGUnLsm0A==}

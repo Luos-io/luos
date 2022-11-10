@@ -168,10 +168,6 @@ module.exports = {
               label: 'Documentation',
               to: `${isProd ? '/documentation/' : '/'}luos-technology`,
             },
-            {
-              label: 'Contact us',
-              to: '/feedbacks/send',
-            },
           ],
         },
         {

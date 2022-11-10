@@ -74,7 +74,7 @@ When I was looking for an internship, one of the Luos maintainers talked to me a
 
 Luos allows to create a [network](/tutorials/get-started/get-started3#2-create-a-physical-network) with the possibility of using multiple boards, in which the code is divided into services (parts of code dedicated to one property, for example a service can be used to communicate with a component or manage communication between several components).
 
-The services can communicate, no matter where they are in the network, using [messages](/docs/luos-technology/messages#message-structure) standardized by Luos.
+The services can communicate, no matter where they are in the network, using [messages]/luos-technology/messages#message-structure) standardized by Luos.
 
 Moreover, these messages can be easily moved inside the network and reused in another Luos system. Therefore, this property answers our need for agility and reusability as shown below:
 
@@ -205,7 +205,7 @@ It only needs to be turned on or off. This service permits to activate or deacti
 
 <h3>Validation of the POC</h3>
 
-I will use [Pyluos](/docs/integrations/pyluos) to test my POC. I made this choice because my system reacts to pressure variations, with pressures between 101,325 Pa (ground pressure) and 850 Pa (high-altitude pressure). These kinds of variations are difficult and expansive to simulate without launching the rocket. This is why I had to find another way to simulate the changes of pressure.
+I will use [Pyluos]/integrations/pyluos) to test my POC. I made this choice because my system reacts to pressure variations, with pressures between 101,325 Pa (ground pressure) and 850 Pa (high-altitude pressure). These kinds of variations are difficult and expansive to simulate without launching the rocket. This is why I had to find another way to simulate the changes of pressure.
 
 Pyluos allows to send values to the system's services, so replacing the barometer's data with simulated values is possible.
 

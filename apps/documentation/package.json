@@ -70,7 +70,7 @@
     "@types/react-router-dom": "^5.3.3",
     "dotenv-vault": "^1.11.2",
     "dotenv-webpack": "^8.0.1",
-    "eslint-config-custom": "*",
+    "eslint-config-custom": "workspace:*",
     "typescript": "^4.8.2",
     "vercel": "^28.2.0"
   }

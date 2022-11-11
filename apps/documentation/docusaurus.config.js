@@ -113,7 +113,7 @@ module.exports = {
               label: 'Tutorials',
             },
             {
-              to: `${isProd ? '/documentation/' : '/'}luos-technology`,
+              to: `${isProd ? '/documentation/' : '/'}`,
               label: 'Documentation',
             },
             {
@@ -166,7 +166,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: `${isProd ? '/documentation/' : '/'}luos-technology`,
+              to: `${isProd ? '/documentation/' : '/'}`,
             },
           ],
         },

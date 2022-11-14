@@ -4,8 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const VersionsArchived = require('./versionsArchived.json');
 
 const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(0, 5);
-// const isProd = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
-const isProd = false;
+const isProd = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -113,7 +112,7 @@ module.exports = {
               label: 'Tutorials',
             },
             {
-              to: `${isProd ? '/documentation/' : '/'}`,
+              to: `${isProd ? '/documentation' : ''}/luos-technology`,
               label: 'Documentation',
             },
             {
@@ -166,7 +165,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: `${isProd ? '/documentation/' : '/'}`,
+              to: `${isProd ? '/documentation' : ''}/luos-technology`,
             },
           ],
         },

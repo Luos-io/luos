@@ -71,6 +71,8 @@ module.exports = {
         alt: 'Luos Logo',
         src: 'assets/images/logo_luos_animated_black.gif',
         srcDark: 'assets/images/logo_luos_animated_white.gif',
+        href: 'https://www.luos.io',
+        target: '_self',
       },
       items: [
         {
@@ -94,7 +96,7 @@ module.exports = {
           ],
         },
         {
-          to: '/',
+          to: `${isProd ? '/documentation' : ''}/luos-technology`,
           label: 'Technology',
           position: 'right',
         },
@@ -263,14 +265,6 @@ module.exports = {
         id: 'faq',
         path: 'faq',
         routeBasePath: 'faq',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-pages',
-      {
-        id: 'feedbacks',
-        path: 'feedbacks',
-        routeBasePath: 'feedbacks',
       },
     ],
     [

@@ -35,7 +35,7 @@
     "@next-auth/mongodb-adapter": "^1.0.3",
     "@packages/services": "*",
     "@packages/ui": "*",
-    "@typeform/embed": "^1.37.0",
+    "@typeform/embed": "^2.2.0",
     "@typeform/embed-react": "^1.19.0",
     "chroma-js": "^2.4.2",
     "clsx": "^1.2.1",

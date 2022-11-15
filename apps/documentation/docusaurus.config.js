@@ -4,8 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const VersionsArchived = require('./versionsArchived.json');
 
 const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(0, 5);
-// const isProd = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
-const isProd = false;
+const isProd = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -72,6 +71,8 @@ module.exports = {
         alt: 'Luos Logo',
         src: 'assets/images/logo_luos_animated_black.gif',
         srcDark: 'assets/images/logo_luos_animated_white.gif',
+        href: 'https://www.luos.io',
+        target: '_self',
       },
       items: [
         {
@@ -95,7 +96,7 @@ module.exports = {
           ],
         },
         {
-          to: '/',
+          to: `${isProd ? '/documentation' : ''}/luos-technology`,
           label: 'Technology',
           position: 'right',
         },
@@ -113,7 +114,7 @@ module.exports = {
               label: 'Tutorials',
             },
             {
-              to: `${isProd ? '/documentation/' : '/'}luos-technology`,
+              to: `${isProd ? '/documentation' : ''}/luos-technology`,
               label: 'Documentation',
             },
             {
@@ -123,6 +124,10 @@ module.exports = {
             {
               to: '/blog',
               label: 'Blog',
+            },
+            {
+              to: '/roadmap',
+              label: 'Roadmap',
             },
           ],
         },
@@ -162,11 +167,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: `${isProd ? '/documentation/' : '/'}luos-technology`,
-            },
-            {
-              label: 'Contact us',
-              to: '/feedbacks/send',
+              to: `${isProd ? '/documentation' : ''}/luos-technology`,
             },
           ],
         },
@@ -224,7 +225,7 @@ module.exports = {
           editUrl: 'https://github.com/luos-io/luos',
           versions: {
             current: {
-              label: '2.7.0-beta 🚧',
+              label: '2.8.0-beta 🚧',
             },
           },
         },
@@ -264,14 +265,6 @@ module.exports = {
         id: 'faq',
         path: 'faq',
         routeBasePath: 'faq',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-pages',
-      {
-        id: 'feedbacks',
-        path: 'feedbacks',
-        routeBasePath: 'feedbacks',
       },
     ],
     [

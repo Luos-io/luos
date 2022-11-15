@@ -180,6 +180,11 @@ module.exports = {
         },
         {
           type: 'doc',
+          label: 'Luos engine api',
+          id: 'tools/luos-engine-api',
+        },
+        {
+          type: 'doc',
           label: 'Bootloader',
           id: 'tools/bootloader',
         },
@@ -225,7 +230,7 @@ module.exports = {
         },
         {
           type: 'link',
-          label: 'PlateformIO',
+          label: 'PlatformIO',
           href: 'https://www.luos.io/tutorials/pio',
         },
         {
@@ -248,6 +253,11 @@ module.exports = {
           label: 'ROS',
           id: 'integrations/ros',
         },
+        {
+          type: 'doc',
+          label: 'SimpleFOC',
+          id: 'integrations/simplefoc',
+        },
       ],
     },
     {
@@ -263,6 +273,46 @@ module.exports = {
           type: 'doc',
           label: 'Boards compatibility',
           id: 'compatibility/mcu_demoboard',
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Advanced documentation',
+      link: {
+        type: 'doc',
+        id: 'advanced-documentation/index',
+      },
+      items: [
+        {
+          type: 'category',
+          label: 'Robus',
+          link: {
+            type: 'doc',
+            id: 'advanced-documentation/robus/index',
+          },
+          items: [
+            {
+              type: 'doc',
+              label: 'The transmission, and reception management',
+              id: 'advanced-documentation/robus/transmission',
+            },
+            {
+              type: 'doc',
+              label: 'The topology management',
+              id: 'advanced-documentation/robus/topology',
+            },
+            {
+              type: 'doc',
+              label: 'The protocol definition',
+              id: 'advanced-documentation/robus/protocol',
+            },
+            {
+              type: 'doc',
+              label: 'The physical driver interface',
+              id: 'advanced-documentation/robus/physical-driver-interface',
+            },
+          ],
         },
       ],
     },

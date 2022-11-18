@@ -8,5 +8,8 @@
     "docusaurus.json",
     "nextjs.json",
     "react-library.json"
-  ]
+  ],
+  "devDependencies": {
+    "@docusaurus/theme-classic": "^2.2.0"
+  }
 }

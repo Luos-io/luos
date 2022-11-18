@@ -1,6 +1,9 @@
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles';
 
 export const theme = extendTheme({
+  shape: {
+    borderRadius: 4,
+  },
   colorSchemes: {
     light: {
       palette: {

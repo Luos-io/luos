@@ -4,7 +4,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const VersionsArchived = require('./versionsArchived.json');
 
 const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(0, 5);
-const isProd = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
+// const isProd = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
+const isProd = false;
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {

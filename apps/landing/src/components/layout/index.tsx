@@ -37,7 +37,7 @@ export const Layout = ({ children }: LayoutProps) => {
               {
                 name: 'Get started',
                 type: NavbarItemTypes.LINK,
-                href: '/tutorials/get-started',
+                href: '/documentation/tutorials/get-started',
               },
             ],
           },

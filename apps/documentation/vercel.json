@@ -1,11 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/documentation/assets/:path*",
-      "destination": "https://luos-documentation.vercel.app/assets/:path*"
-    }
-  ]
+  "trailingSlash": false
 }

@@ -39,6 +39,52 @@ export const Layout = ({ children }: LayoutProps) => {
                 type: NavbarItemTypes.LINK,
                 href: '/documentation/tutorials/get-started',
               },
+              {
+                name: 'Tutorials',
+                type: NavbarItemTypes.LINK,
+                href: '/documentation/tutorials',
+              },
+              {
+                name: 'Documentation',
+                type: NavbarItemTypes.LINK,
+                href: '/documentation/luos-technology',
+              },
+              {
+                name: 'Troubleshooting',
+                type: NavbarItemTypes.LINK,
+                href: '/documentation/faq',
+              },
+              {
+                name: 'Blog',
+                type: NavbarItemTypes.LINK,
+                href: '/documentation/blog',
+              },
+              {
+                name: 'Roadmap',
+                type: NavbarItemTypes.LINK,
+                href: '/documentation/roadmap',
+              },
+            ],
+          },
+          {
+            name: 'Community',
+            type: NavbarItemTypes.DROPDOWN,
+            items: [
+              {
+                name: 'Discord',
+                type: NavbarItemTypes.LINK,
+                href: 'https://discord.gg/luos',
+              },
+              {
+                name: 'Reddit',
+                type: NavbarItemTypes.LINK,
+                href: 'https://www.reddit.com/r/Luos/',
+              },
+              {
+                name: 'GitHub',
+                type: NavbarItemTypes.LINK,
+                href: 'https://github.com/luos-io',
+              },
             ],
           },
         ]}

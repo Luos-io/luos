@@ -1,6 +1,3 @@
-import { LinkBaseProps } from '@mui/material';
-import React from 'react';
-
 export enum NavbarItemTypes {
   LINK,
   DROPDOWN,
@@ -21,12 +18,6 @@ export type NavbarItem<T extends NavbarItemLink | NavbarItemDropdown> = {
 
 export interface HeaderProps {
   logo: JSX.Element;
-  Link: (props: {
-    href: string;
-    target?: React.HTMLAttributeAnchorTarget;
-    className?: string;
-    children: React.ReactNode;
-  }) => JSX.Element;
   navbar: NavbarItem<NavbarItemLink | NavbarItemDropdown>[];
   enableLightingButton: boolean;
 }

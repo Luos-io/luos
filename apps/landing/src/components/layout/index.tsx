@@ -56,7 +56,7 @@ export const Layout = ({ children }: LayoutProps) => {
               {
                 name: 'Roadmap',
                 type: NavbarItemTypes.LINK,
-                href: '/documentation/roadmap',
+                href: './roadmap',
               },
             ],
           },

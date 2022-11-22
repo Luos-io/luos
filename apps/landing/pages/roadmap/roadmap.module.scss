@@ -1,0 +1,29 @@
+.roadmap {
+  background-color: var(--mui-palette-background-paper);
+
+  .title {
+    text-align: center;
+    font-size: 28px;
+    margin: 0;
+    padding: 20px 0px;
+  }
+
+  .image {
+    position: relative;
+    height: 250px;
+  }
+
+  .tabLabel {
+    text-transform: capitalize;
+    color: var(--mui-palette-text-primary);
+  }
+
+  .subtitle {
+    margin-bottom: 0;
+  }
+
+  .btn {
+    color: var(--mui-palette-primary-main);
+    border-color: var(--mui-palette-primary-main);
+  }
+}

@@ -1,5 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/documentation/(luos-technology|tutorials|faq|blog)(.*)",
+      "destination": "https://luos-documentation.vercel.app/$1$2"
+    }
+  ]
 }

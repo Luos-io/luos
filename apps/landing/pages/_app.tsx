@@ -5,8 +5,9 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 
 import Layout from 'components/layout';
+import theme from 'utils/theme';
 
-import { createEmotionCache, theme } from '@packages/ui';
+import { createEmotionCache } from '@packages/ui';
 
 import 'styles/globals.css';
 
@@ -26,7 +27,7 @@ export default function App(props: AppProps<{ emotionCache: EmotionCache }>) {
       {/*
         @property defaultMode - Correspond to localStorage key 'mui-mode'.
       */}
-      <CssVarsProvider defaultMode="dark" theme={theme}>
+      <CssVarsProvider defaultMode="system" theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Layout>

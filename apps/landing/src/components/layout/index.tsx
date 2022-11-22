@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { Header, NavbarItemTypes } from '@packages/ui';
-
-import { Link, NextLinkComposed } from 'components/link';
+import React from 'react';
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -19,11 +18,6 @@ export const Layout = ({ children }: LayoutProps) => {
             style={{ objectFit: 'contain' }}
           />
         }
-        Link={({ href, target, className, children, ...other }) => (
-          <NextLinkComposed to={href} target={target} className={className} {...other}>
-            {children}
-          </NextLinkComposed>
-        )}
         navbar={[
           {
             type: NavbarItemTypes.LINK,

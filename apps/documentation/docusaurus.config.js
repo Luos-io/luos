@@ -126,7 +126,7 @@ module.exports = {
               label: 'Blog',
             },
             {
-              to: '/roadmap',
+              to: 'https://luos.io/roadmap',
               label: 'Roadmap',
             },
           ],

@@ -7,6 +7,10 @@ export const theme = extendTheme({
   colorSchemes: {
     light: {
       palette: {
+        background: {
+          default: '#f5f8fa',
+          paper: '#fafafa',
+        },
         primary: {
           main: '#bd99ff',
           dark: '#a370ff',
@@ -15,14 +19,17 @@ export const theme = extendTheme({
         secondary: {
           main: '#81c8be',
         },
-        background: {
-          default: '#f5f8fa',
-          paper: '#fafafa',
+        text: {
+          primary: '#000',
         },
       },
     },
     dark: {
       palette: {
+        background: {
+          default: '#323334',
+          paper: '#1e1e1e',
+        },
         primary: {
           main: '#bd99ff',
           dark: '#a370ff',
@@ -31,9 +38,8 @@ export const theme = extendTheme({
         secondary: {
           main: '#81c8be',
         },
-        background: {
-          default: '#323334',
-          paper: '#1e1e1e',
+        text: {
+          primary: '#fff',
         },
       },
     },

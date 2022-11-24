@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -15,10 +15,10 @@ import VSCode from 'components/vscode';
 import integrationsData from 'components/integration/data';
 import { IntegrationTypeKey } from 'components/integration/types';
 
-import styles from 'components/integration/integration.module.css';
+import styles from 'components/integration/integration.module.scss';
 
 const Integration = () => {
-  const [currentIntegrationType, setCurrentIntegrationType] = React.useState<IntegrationTypeKey>(
+  const [currentIntegrationType, setCurrentIntegrationType] = useState<IntegrationTypeKey>(
     IntegrationTypeKey.MCU,
   );
   const theme = useTheme();

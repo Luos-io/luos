@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ComputerIcon from '@mui/icons-material/Computer';
@@ -21,10 +21,10 @@ import VSCode from 'components/vscode';
 import anatomyData from 'components/anatomy/data';
 import { AnatomyTypeKey } from 'components/anatomy/types';
 
-import styles from './anatomy.module.css';
+import styles from './anatomy.module.scss';
 
 export const Anatomy = () => {
-  const [currentAnatomyType, setCurrentAnatomyType] = React.useState<AnatomyTypeKey>(
+  const [currentAnatomyType, setCurrentAnatomyType] = useState<AnatomyTypeKey>(
     AnatomyTypeKey.TOPOLOGY,
   );
 

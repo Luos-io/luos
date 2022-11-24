@@ -1,21 +1,22 @@
-import styles from './powered.module.css';
+import AbcIcon from '@mui/icons-material/Abc';
+import CachedIcon from '@mui/icons-material/Cached';
+import EventNoteIcon from '@mui/icons-material/EventNote';
+import ExploreIcon from '@mui/icons-material/Explore';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Button from '@mui/material/Button';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import ExploreIcon from '@mui/icons-material/Explore';
-import CachedIcon from '@mui/icons-material/Cached';
-import AbcIcon from '@mui/icons-material/Abc';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
-import EventNoteIcon from '@mui/icons-material/EventNote';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import Link from '@mui/material/Link';
-
+import ListItemText from '@mui/material/ListItemText';
 import Image from 'next/image';
+
+import Link from 'components/link';
 import VSCode from 'components/vscode';
+
+import styles from './powered.module.scss';
 
 const Powered = () => (
   <div className={styles.container}>

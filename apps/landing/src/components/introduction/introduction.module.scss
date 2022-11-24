@@ -12,7 +12,7 @@
   font-size: 18px;
   line-height: 20px;
   margin-bottom: 30px;
-  color: black;
+  color: var(--mui-palette-text-primary);
   padding-right: 60px;
 }
 
@@ -113,10 +113,4 @@
   .videoBtn {
     display: none;
   }
-}
-
-/* Overrides some react-lite-youtube-embed rules */
-.yt-lite:before {
-  height: 100%;
-  background-repeat: initial;
 }

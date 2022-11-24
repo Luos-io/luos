@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import { ReactNode } from 'react';
-import Grid from '@mui/material/Grid';
-import { useColorScheme } from '@mui/material/styles';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import SearchIcon from '@mui/icons-material/Search';
+import Grid from '@mui/material/Grid';
+import { useColorScheme } from '@mui/material/styles';
+import Image from 'next/image';
+import { ReactNode } from 'react';
 
-import styles from './vscode.module.css';
+import styles from './vscode.module.scss';
 
 import type { CommonProps } from '@mui/material/OverridableComponent';
 import type { RegularBreakpoints } from '@mui/material/Grid';

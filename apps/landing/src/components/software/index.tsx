@@ -1,13 +1,14 @@
-import Image from 'next/image';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Carousel from 'react-material-ui-carousel';
+import Image from 'next/image';
 import { isBrowser } from 'react-device-detect';
+import Carousel from 'react-material-ui-carousel';
 
 import VSCode from 'components/vscode';
 
-import styles from './software.module.css';
+import styles from './software.module.scss';
+
 const Software = () => {
   let items = [
     {

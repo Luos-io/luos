@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react';
+import { Component, createRef } from 'react';
 import { delay, propTypeValidation, contentInView } from './utils';
 
 import styles from './writer.module.css';

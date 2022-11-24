@@ -12,7 +12,7 @@ import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import VSCode from 'components/vscode';
 import Writer from 'components/writer';
 
-import styles from './introduction.module.css';
+import styles from './introduction.module.scss';
 
 const Introduction = () => {
   const theme = useTheme();
@@ -24,12 +24,12 @@ const Introduction = () => {
           <div style={{ margin: '0 25px 50px 25px' }}>
             <Writer
               textStyle={{
-                color: '#BD99FF',
+                color: theme.palette.primary.main,
                 height: '70px',
                 marginTop: '15px',
               }}
               startDelay={0}
-              cursorColor="#BD99FF"
+              cursorColor={theme.palette.primary.main}
               multiTextLoop={true}
               multiText={[
                 'is an open-source project_',

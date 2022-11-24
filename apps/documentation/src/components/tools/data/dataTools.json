@@ -20,7 +20,7 @@
   {
     "title": "Bootloader",
     "desc": "The bootloader feature allows updating the firmware of any node in a Luos network.",
-    "link": "/docs/next/tools/bootloader",
+    "link": "/docs/next/documentation/tools/bootloader",
     "img": "/assets/images/tools/LUOS-BOOTLOADER.svg"
   },
   {

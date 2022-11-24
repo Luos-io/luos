@@ -67,7 +67,7 @@ Among others, Luos includes a communication protocol and a way to send and recei
 
 In Luos, the exchange of messages among the MCUs is achieved using the notion of services. A normal Luos MCU can have multiple services that send and receive messages depending on the functionality that we want them to have.
 
-> 💡 For more information regarding the exchange of messages using Luos, you can check out this documentation page: [https://www.luos.io/docs/luos-technology/message](/luos-technology/messages)
+> 💡 For more information regarding the exchange of messages using Luos, you can check out this documentation page: [https://www.luos.io/docs/documentation/luos-technology/message](/documentation/luos-technology/messages)
 
 The services can be drivers or applications. Here, the goal is to transfer the messages received from a ROS2 interface to every microcontroller in the embedded network, and every message published in an MCU to the computer.
 
@@ -81,7 +81,7 @@ To accomplish this exchange of messages, we need at least one service in each mi
 
 ROS messages are sent and received following the publisher/subscriber method. In other words, each node that wants to send a message creates a publisher that publishes a message of a specific topic. Depending on the topic names, the user creates subscribers to be able to receive the wanted messages. The Luos service in each MCU needs to follow the same principle. This can be achieved because of the Luos topic feature.
 
-> 💡 Using the [Topic feature](/luos-technology/messages), we can require a service to subscribe to a specific topic and to publish data of a topic by sending Luos messages of mode TOPIC.
+> 💡 Using the [Topic feature](/documentation/luos-technology/messages), we can require a service to subscribe to a specific topic and to publish data of a topic by sending Luos messages of mode TOPIC.
 
 > <Image
 >   desc="Pub/sub method - multicast"
@@ -118,7 +118,7 @@ First, we will examine the simple case concerning the MCUs that do not directly 
   - When the `rwm_init` function is called, we create one Luos service. This service will be responsible for sending all the messages on specific topics to the network that the micro-ROS publishers want to transmit. In addition it is responsible to receive all the messages for each subscription of the node.
 - `rmw_create_publisher()`: Each time this function is called, we only have to launch a detection if it is not yet launched, to be able to publish messages.
 
-> 💡 The topology detection is necessary for constructing a [Luos routing table](/luos-technology/services/routing-table) containing all the necessary information for the communication between the Luos services.
+> 💡 The topology detection is necessary for constructing a [Luos routing table](/documentation/luos-technology/services/routing-table) containing all the necessary information for the communication between the Luos services.
 
 - `rmw_create_subscription()`: Each time this function is called, we add a new reception topic to this service's topics list. Again, if needed, we launch a detection.
 - `rmw_publish()`: A publisher is required to publish a ROS message. The Luos service needs to take this message, transform the data into a Luos message containing the topic's information, and send it to the rest of the nodes.

@@ -4,7 +4,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const VersionsArchived = require('./versionsArchived.json');
 
 const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(0, 5);
-const isProd = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
+// const isProd = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
+const isProd = false;
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -71,7 +72,7 @@ module.exports = {
         alt: 'Luos Logo',
         src: 'assets/images/logo_luos_animated_black.gif',
         srcDark: 'assets/images/logo_luos_animated_white.gif',
-        href: 'https://www.luos.io',
+        href: '/documentation/luos-technology',
         target: '_self',
       },
       items: [
@@ -96,7 +97,7 @@ module.exports = {
           ],
         },
         {
-          to: `${isProd ? '/documentation' : ''}/luos-technology`,
+          to: '/documentation/luos-technology',
           label: 'Technology',
           position: 'right',
         },
@@ -114,7 +115,7 @@ module.exports = {
               label: 'Tutorials',
             },
             {
-              to: `${isProd ? '/documentation' : ''}/luos-technology`,
+              to: '/documentation/luos-technology',
               label: 'Documentation',
             },
             {
@@ -167,7 +168,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: `${isProd ? '/documentation' : ''}/luos-technology`,
+              to: '/documentation/luos-technology',
             },
           ],
         },
@@ -219,7 +220,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          routeBasePath: '/',
+          routeBasePath: '/documentation',
           sidebarPath: require.resolve('./sidebarsDocs.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/luos-io/luos',
@@ -231,7 +232,7 @@ module.exports = {
         },
 
         blog: {
-          //sidebarPath: require.resolve('./sidebarsBlog.js'),
+          routeBasePath: '/blog',
           blogTitle: 'Luos Blog',
           blogDescription: 'A blog about microservices and CI/CD in Edge and Embedded systems',
           postsPerPage: 'ALL',
@@ -255,7 +256,7 @@ module.exports = {
       {
         id: 'tutorials',
         path: 'tutorials',
-        routeBasePath: 'tutorials',
+        routeBasePath: '/tutorials',
         sidebarPath: require.resolve('./sidebarsTutorials.js'),
       },
     ],
@@ -264,7 +265,7 @@ module.exports = {
       {
         id: 'faq',
         path: 'faq',
-        routeBasePath: 'faq',
+        routeBasePath: '/faq',
       },
     ],
     [

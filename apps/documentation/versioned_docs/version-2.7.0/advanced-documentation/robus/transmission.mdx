@@ -12,9 +12,9 @@ The role of Robus is to transmit and receive messages to and from other nodes, t
 
 ## Transmission
 
-When `Luos_send` API is called, the message to transmit is stored in the Luos engine's [message]/next/luos-technology/messages) allocator _msg_alloc.c_.
+When `Luos_send` API is called, the message to transmit is stored in the Luos engine's [message]/next/documentation/luos-technology/messages) allocator _msg_alloc.c_.
 
-Depending on the target of this message, Luos engine will pass it to a local service ([localhost](http://localhost) network) or to a [network layer]/next/luos-technology/node/luos-hal), in this case, Robus.
+Depending on the target of this message, Luos engine will pass it to a local service ([localhost](http://localhost) network) or to a [network layer]/next/documentation/luos-technology/node/luos-hal), in this case, Robus.
 
 Depending on the state of the network, Luos will be able to ask the Luos engine's [message allocator](https://github.com/Luos-io/luos_engine/blob/main/network/robus/src/msg_alloc.c) if a Tx message is available, and send it if there is one.
 
@@ -28,7 +28,7 @@ Check the file [_transmission.c_](https://github.com/Luos-io/luos_engine/blob/ma
 
 Robus reuses the format of the Luos engine's messages as the base of its protocol. Robus uses a multipoint network, so any transmitted messages will be broadcasted to any nodes in the network.
 
-During message reception, Robus will use the message [header]/next/luos-technology/messages#header) and the information of the node it's running on to know whether it needs to keep this message or not.
+During message reception, Robus will use the message [header]/next/documentation/luos-technology/messages#header) and the information of the node it's running on to know whether it needs to keep this message or not.
 
 Eventually, at the end of the message, Robus will check the integrity, send back an ACK if needed, and store the message into the Luos engine's allocator.
 

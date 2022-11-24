@@ -4,8 +4,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const VersionsArchived = require('./versionsArchived.json');
 
 const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(0, 5);
-// const isProd = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
-const isProd = false;
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -13,7 +11,7 @@ module.exports = {
   tagline:
     'Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source.',
   url: 'https://www.luos.io',
-  baseUrl: isProd ? '/documentation/' : '/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'assets/images/favicon.png',
@@ -32,10 +30,6 @@ module.exports = {
       'Microservices are a software development technique that arranges an application as a collection of loosely coupled services.',
     robus_def: 'Bus communication protocol used by Luos.',
     luoshal_def: 'Hardware Abstraction Layer used to fit Luos with various hardware designs.',
-    last_version_pyluos: '2.0.0',
-    last_version_luos: ' 2.0.1',
-    gh_path: 'github.com/Luos-io/doc/tree/master/src',
-    isProd,
   },
 
   themeConfig: {

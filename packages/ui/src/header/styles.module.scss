@@ -22,10 +22,14 @@
     }
 
     .navbarButton {
+      color: var(--mui-palette-text-primary);
       font-family: Roboto Mono, sans-serif;
       font-size: 16px;
       font-weight: 400;
       text-transform: initial;
+    }
+    .navbarButtonActive {
+      color: var(--mui-palette-primary-main);
     }
     .navbarButtonDropdown::after {
       content: '';

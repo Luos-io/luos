@@ -1,24 +1,43 @@
+import { useColorScheme } from '@mui/material/styles';
 import Image from 'next/image';
-import { Header, NavbarItemTypes } from '@packages/ui';
+import { useRouter } from 'next/router';
 import React from 'react';
+
+import { Header, NavbarItemTypes } from '@packages/ui';
+
+import type { NavbarItem, NavbarItemLink, NavbarItemDropdown } from '@packages/ui';
 
 export interface LayoutProps {
   children: React.ReactNode;
 }
 export const Layout = ({ children }: LayoutProps) => {
+  const { mode, systemMode } = useColorScheme();
+  const { pathname } = useRouter();
+
+  const withActiveLink = (navbar: NavbarItem<NavbarItemLink | NavbarItemDropdown>[]) =>
+    navbar.map((el) => {
+      if (el.type === NavbarItemTypes.LINK && el.href === pathname) {
+        el.active = true;
+      } else if (el.type === NavbarItemTypes.DROPDOWN) {
+        withActiveLink(el.items);
+      }
+
+      return el;
+    });
+
   return (
     <div className="layout">
       <Header
         logo={
           <Image
-            src="/assets/images/logo.webp"
+            src={`/assets/images/logo-${mode === 'system' ? systemMode : mode ?? 'light'}.webp`}
             alt="Luos logo"
             width={200}
             height={37}
             style={{ objectFit: 'contain' }}
           />
         }
-        navbar={[
+        navbar={withActiveLink([
           {
             type: NavbarItemTypes.LINK,
             name: 'Technology',
@@ -56,7 +75,7 @@ export const Layout = ({ children }: LayoutProps) => {
               {
                 name: 'Roadmap',
                 type: NavbarItemTypes.LINK,
-                href: './roadmap',
+                href: '/roadmap',
               },
             ],
           },
@@ -81,7 +100,7 @@ export const Layout = ({ children }: LayoutProps) => {
               },
             ],
           },
-        ]}
+        ])}
         enableLightingButton
       />
       {children}

@@ -89,6 +89,7 @@ const Integration = () => {
                         height={64}
                         alt={`integration-image-${integration.label}`}
                         loading="lazy"
+                        style={{ display: 'block', margin: '0 auto' }}
                       />
                       <div>
                         <ImageListItemBar
@@ -96,7 +97,6 @@ const Integration = () => {
                           subtitle={integration.available ? '' : '(soon)'}
                           position="below"
                           style={{
-                            width: '150px',
                             margin: '0 auto',
                             textAlign: 'center',
                           }}

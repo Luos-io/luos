@@ -5,6 +5,8 @@ import { useColorScheme } from '@mui/material/styles';
 import Image from 'next/image';
 import { ReactNode } from 'react';
 
+import theme from 'utils/theme';
+
 import styles from './vscode.module.scss';
 
 import type { CommonProps } from '@mui/material/OverridableComponent';
@@ -24,17 +26,12 @@ export const VSCode = ({
   className,
   ...otherProps
 }: VSCodeProps) => {
-  const { mode } = useColorScheme();
+  const { mode, systemMode } = useColorScheme();
   return (
     <Grid className={className} style={style} item container {...otherProps}>
       <Grid container className={styles.vscodeHeader}>
         <div className={styles.vscodeHeaderButtons}>
-          <Image
-            src="/assets/images/index/introduction/buttons.svg"
-            alt="buttons"
-            width={100}
-            height={18}
-          />
+          <Image src="/assets/images/vscode/buttons.svg" alt="buttons" width={100} height={18} />
         </div>
         {title && (
           <Grid item xs={12} className={styles.vscodeHeaderTitle}>
@@ -47,10 +44,13 @@ export const VSCode = ({
           <FileCopyIcon className={styles.vscodeContentLeftIcons} fontSize="large" />
           <SearchIcon className={styles.vscodeContentLeftIcons} fontSize="large" />
           <Image
-            src={`/assets/images/index/introduction/luos${mode === 'light' ? '-white' : ''}.svg`}
+            src={`/assets/images/vscode/luos-${
+              mode === 'system' ? systemMode : mode ?? 'light'
+            }.svg`}
             alt="luos"
             width={35}
             height={25}
+            style={{ margin: theme.spacing(2, 0) }}
           />
         </Grid>
         <Grid item container xs={11} className={styles.vscodeContentRight}>

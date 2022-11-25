@@ -29,7 +29,7 @@ export const Header = ({ logo, navbar, enableLightingButton }: HeaderProps) => {
 
   return (
     <nav className={styles.header}>
-      {logo}
+      <Button href={'/'}>{logo}</Button>
       <div className={clsx(styles.headerItemsRight, styles.navbar)}>
         {navbar.map((navbarItem, i) => {
           const { name: navbarItemName, type } = navbarItem;
@@ -48,6 +48,9 @@ export const Header = ({ logo, navbar, enableLightingButton }: HeaderProps) => {
                   type === NavbarItemTypes.DROPDOWN
                     ? styles.navbarButtonDropdown
                     : styles.navbarButtonLink,
+                  type === NavbarItemTypes.LINK && navbarItem.active
+                    ? styles.navbarButtonActive
+                    : null,
                 )}
                 href={href}
               >
@@ -55,9 +58,15 @@ export const Header = ({ logo, navbar, enableLightingButton }: HeaderProps) => {
               </Button>
               {type === NavbarItemTypes.DROPDOWN && (
                 <ul className={clsx(styles.navbarDropdown)}>
-                  {dropdownItems.map(({ name, href }, i) => (
+                  {dropdownItems.map(({ name, href, active }, i) => (
                     <li key={`${navbarItemName}-dropdown-item-${i}`}>
-                      <Button className={clsx(styles.navbarButton)} href={href}>
+                      <Button
+                        className={clsx(
+                          styles.navbarButton,
+                          active ? styles.navbarButtonActive : null,
+                        )}
+                        href={href}
+                      >
                         {name}
                       </Button>
                     </li>

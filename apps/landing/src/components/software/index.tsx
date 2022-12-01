@@ -34,21 +34,21 @@ const Software = () => {
 
   const anArrayOfNumbers = [
     <Image
-      src={'assets/images/index/software/icons/step1.svg'}
+      src={'/assets/images/index/software/icons/step1.svg'}
       width={150}
       height={150}
       alt="software-step1"
       loading="lazy"
     />,
     <Image
-      src={'assets/images/index/software/icons/step2.svg'}
+      src={'/assets/images/index/software/icons/step2.svg'}
       width={150}
       height={150}
       alt="software-step2"
       loading="lazy"
     />,
     <Image
-      src={'assets/images/index/software/icons/step3.svg'}
+      src={'/assets/images/index/software/icons/step3.svg'}
       width={150}
       height={150}
       alt="software-step3"
@@ -186,7 +186,9 @@ const Software = () => {
                 </div>
                 <Image
                   className={styles.carousselImg}
-                  src={`assets/images/index/software/${item.img}.svg`}
+                  src={`/assets/images/index/software/${item.img}.svg`}
+                  width={150}
+                  height={150}
                   alt={`software-carousel-${item.img}`}
                   loading="lazy"
                 />

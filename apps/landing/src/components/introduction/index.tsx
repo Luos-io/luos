@@ -6,7 +6,7 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
-import { isBrowser } from 'react-device-detect';
+import { isDesktop } from 'react-device-detect';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 
 import VSCode from 'components/vscode';
@@ -18,9 +18,12 @@ const Introduction = () => {
   const theme = useTheme();
   const mdMatches = useMediaQuery(theme.breakpoints.up('md'));
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{ padding: isDesktop ? theme.spacing(4, 11) : theme.spacing(3, 1) }}
+    >
       <Grid container flexDirection={'column'}>
-        <VSCode xs={11} md={7} style={{ margin: mdMatches ? 'initial' : '0 auto' }}>
+        <VSCode xs={12} md={12} lg={7} style={{ margin: mdMatches ? 'initial' : '0 auto' }}>
           <div style={{ margin: '0 25px 50px 25px' }}>
             <Writer
               textStyle={{
@@ -82,9 +85,10 @@ const Introduction = () => {
             </Grid>
           </div>
         </VSCode>
-        {isBrowser && (
+        {isDesktop && (
           <VSCode
             md={6}
+            lg={6}
             className={styles.mobileNone}
             style={{ alignSelf: 'flex-end', width: '100%', marginTop: '-100px', zIndex: 2 }}
           >

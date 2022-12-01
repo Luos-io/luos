@@ -7,7 +7,7 @@ import { CacheProvider, EmotionCache } from '@emotion/react';
 import Layout from 'components/layout';
 import theme from 'utils/theme';
 
-import { createEmotionCache } from '@packages/ui';
+import { contexts, createEmotionCache } from '@packages/ui';
 
 import 'styles/globals.css';
 
@@ -19,6 +19,8 @@ export default function App(props: AppProps<{ emotionCache: EmotionCache }>) {
     Component,
     pageProps: { emotionCache = clientSideEmotionCache, ...pageProps },
   } = props;
+  const { SidebarProvider } = contexts;
+
   return (
     <CacheProvider value={emotionCache}>
       <Head>
@@ -30,10 +32,12 @@ export default function App(props: AppProps<{ emotionCache: EmotionCache }>) {
       <CssVarsProvider defaultMode="system" theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Layout>
-          {/* @ts-ignore */}
-          <Component {...pageProps} />
-        </Layout>
+        <SidebarProvider>
+          <Layout>
+            {/* @ts-ignore */}
+            <Component {...pageProps} />
+          </Layout>
+        </SidebarProvider>
       </CssVarsProvider>
     </CacheProvider>
   );

@@ -3,7 +3,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import Grid from '@mui/material/Grid';
 import { useColorScheme } from '@mui/material/styles';
 import Image from 'next/image';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import theme from 'utils/theme';
 
@@ -27,6 +27,18 @@ export const VSCode = ({
   ...otherProps
 }: VSCodeProps) => {
   const { mode, systemMode } = useColorScheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    // for server-side rendering
+    // learn more at https://github.com/pacocoursey/next-themes#avoid-hydration-mismatch
+    return null;
+  }
+
   return (
     <Grid className={className} style={style} item container {...otherProps}>
       <Grid container className={styles.vscodeHeader}>

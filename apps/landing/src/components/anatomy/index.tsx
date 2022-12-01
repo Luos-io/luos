@@ -38,7 +38,7 @@ export const Anatomy = () => {
         </p>
       </Grid>
       <Grid container justifyContent={'center'} style={{ position: 'relative' }}>
-        <Grid item xs={6} md={6} lg={3} xl={4}>
+        <Grid item xs={12} md={6} lg={3} xl={4}>
           <List className={styles.list}>
             <ListItem
               className={styles.listLink}
@@ -93,7 +93,7 @@ export const Anatomy = () => {
             </ListItem>
           </List>
         </Grid>
-        <Grid item xs={6} md={6} lg={3} xl={4}>
+        <Grid item xs={12} md={6} lg={3} xl={4}>
           <List className={`${styles.list} ${styles.secondList}`}>
             <ListItem
               className={styles.listLink}

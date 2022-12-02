@@ -278,6 +278,13 @@ module.exports = {
         disableInDev: false,
       },
     ],
-    ['./plugins/dotenv', {}],
+    [
+      '@packages/docusaurus-plugin-github-release',
+      {
+        dotenv: {
+          path: '../../.env',
+        },
+      },
+    ],
   ],
 };

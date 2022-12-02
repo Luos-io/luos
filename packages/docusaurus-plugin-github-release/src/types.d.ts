@@ -12,6 +12,15 @@
 export * from './theme-github-release';
 
 declare module '@packages/docusaurus-plugin-github-release' {
+  import { PluginConfig } from '@docusaurus/types';
+  export interface IPluginConfig extends PluginConfig {
+    apiKey: string;
+    appService: string;
+    debug?: boolean;
+    dotenv?: {
+      path: string;
+    };
+  }
   export type GitHubReleaseData = {
     version: string;
   };

@@ -14,14 +14,21 @@ export default function ReleaseComponent() {
 
   useEffect(async () => {
     let isSubscribed = true;
-    const loadReleases = async (versionLabel) => {
-      const { default: loadedReleases } = await import(
-        `@github/release-${major(versionLabel)}.${minor(versionLabel)}.x.json`
-      );
-      if (isSubscribed && loadedReleases) {
-        setReleases(loadedReleases);
-      }
-    };
+    const loadReleases = async (versionLabel) =>
+      await import(`@github/release-${major(versionLabel)}.${minor(versionLabel)}.x.json`)
+        .then(({ default: loadedReleases }) => {
+          if (isSubscribed && loadedReleases) {
+            setReleases(loadedReleases);
+          }
+        })
+        .catch((err) => {
+          console.warn(
+            `Error while loading: '@github/release-${major(versionLabel)}.${minor(
+              versionLabel,
+            )}.x.json' file`,
+            err,
+          );
+        });
 
     if (preferredVersion?.label) {
       await loadReleases(preferredVersion.label);

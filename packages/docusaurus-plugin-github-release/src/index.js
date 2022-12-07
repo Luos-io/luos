@@ -78,13 +78,27 @@ async function pluginGithubRelease(_context, options) {
   };
 }
 
-pluginGithubRelease.validateOptions = ({ options, validate }) =>
-  validate(
+pluginGithubRelease.validateOptions = ({ options, validate }) => {
+  require('dotenv-vault-core').config({
+    debug: options?.debug ?? false,
+    path: options?.dotenv?.path ?? '.env',
+  });
+
+  const defaultOptions = {
+    appService: options.appService || process.env.MONGODB_APP_SERVICE,
+    apiKey: options.apiKey || process.env.MONGODB_API_KEY,
+  };
+  return validate(
     Joi.object({
-      appService: Joi.string().required(),
       apiKey: Joi.string().required(),
+      appService: Joi.string().required(),
+      debug: Joi.boolean().optional(),
+      dotenv: Joi.object({
+        path: Joi.string().required(),
+      }).optional(),
     }),
-    options,
+    defaultOptions,
   );
+};
 
 module.exports = pluginGithubRelease;

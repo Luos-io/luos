@@ -114,6 +114,7 @@ importers:
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.8
       clsx: ^1.2.1
+      dotenv-vault-core: ^0.6.1
       eslint: ^8.24.0
       eslint-config-next: ^13.0.2
       next: ^13.0.2
@@ -134,6 +135,7 @@ importers:
       '@mui/material': 5.10.17_rrrb7hooev7eucxoqykubwnawy
       '@packages/ui': link:../../packages/ui
       clsx: 1.2.1
+      dotenv-vault-core: 0.6.1
       next: 13.0.6_kzvotn2zipzqwaptii5a7wxu3y
       next-transpile-modules: 10.0.0
       react: 18.2.0
@@ -188,7 +190,7 @@ importers:
       clsx: ^1.2.1
       d3: ^7.4.4
       d3-force: ^3.0.0
-      dotenv: ^16.0.1
+      dotenv-vault-core: ^0.6.1
       eslint: 8.27.0
       eslint-config-custom: '*'
       graphql: ^16.6.0
@@ -237,7 +239,7 @@ importers:
       clsx: 1.2.1
       d3: 7.7.0
       d3-force: 3.0.0
-      dotenv: 16.0.3
+      dotenv-vault-core: 0.6.1
       graphql: 16.6.0
       ip-range-check: 0.2.0
       material-ui-popup-state: 4.1.0_rrrb7hooev7eucxoqykubwnawy

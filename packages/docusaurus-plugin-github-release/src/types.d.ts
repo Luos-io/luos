@@ -21,7 +21,6 @@ declare module '@packages/docusaurus-plugin-github-release' {
       path: string;
     };
   }
-
   export type GitHubReleaseData = {
     version: string;
   };

@@ -8,11 +8,18 @@
 @media screen and (max-width: 600px) {
 }
 
-.text {
+.text1,
+.text2 {
   font-family: 'Roboto';
+  color: var(--mui-palette-text-primary);
+}
+.text1 {
+  font-size: 22px;
+  line-height: 22px;
+}
+.text2 {
   font-size: 18px;
   line-height: 20px;
-  color: var(--mui-palette-text-primary);
 }
 
 .buttons {

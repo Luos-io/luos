@@ -26,32 +26,31 @@ const Introduction = () => {
       <Grid container flexDirection={'column'}>
         <VSCode xs={12} lg={7} style={{ margin: mdMatches ? 'initial' : '0 auto' }}>
           <Box padding={theme.spacing(0, 3)}>
+            <p className={styles.text1}>
+              The devtool dedicated to cyber-physical systems making hardware as modular as
+              software.
+            </p>
             <Writer
               textStyle={{
+                fontSize: '20px',
                 color: theme.palette.primary.main,
-                height: '70px',
-                marginTop: '15px',
+                marginTop: theme.spacing(2),
               }}
               startDelay={0}
               cursorColor={theme.palette.primary.main}
               multiTextLoop={true}
               multiText={[
                 'is an open-source project_',
-                'is an embedded microservice orchestrator_',
+                'is an embedded microservices orchestrator_',
                 'is an embedded library_',
-                'is a distributed IPC_',
-                'is a message broker_',
-                'is an ecosystem_',
-                'is an SDK_',
-                'is a project toolset_',
-                'is a community_',
               ]}
               multiTextDelay={2000}
               typeSpeed={100}
             />
-            <p className={styles.text}>
-              Luos makes it easy to develop and scale your edge and embedded distributed software.
-              It's open source.
+            <p className={styles.text2}>
+              Don't waste time to create complex software architectures anymore. Luos allows you to
+              easily develop and scale your cyber-physical systems. Our engine is free and open
+              source.
             </p>
             <Grid
               className={styles.buttons}

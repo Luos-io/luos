@@ -1,12 +1,12 @@
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-
-import { isDesktop } from 'react-device-detect';
+import { isBrowser } from 'react-device-detect';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 
 import VSCode from 'components/vscode';
@@ -17,14 +17,15 @@ import styles from './introduction.module.scss';
 const Introduction = () => {
   const theme = useTheme();
   const mdMatches = useMediaQuery(theme.breakpoints.up('md'));
+  const lgMatches = useMediaQuery(theme.breakpoints.up('lg'));
   return (
     <div
       className={styles.container}
-      style={{ padding: isDesktop ? theme.spacing(4, 11) : theme.spacing(3, 1) }}
+      style={{ padding: mdMatches ? theme.spacing(4, 11) : theme.spacing(3, 1) }}
     >
       <Grid container flexDirection={'column'}>
-        <VSCode xs={12} md={12} lg={7} style={{ margin: mdMatches ? 'initial' : '0 auto' }}>
-          <div style={{ margin: '0 25px 50px 25px' }}>
+        <VSCode xs={12} lg={7} style={{ margin: mdMatches ? 'initial' : '0 auto' }}>
+          <Box padding={theme.spacing(0, 3)}>
             <Writer
               textStyle={{
                 color: theme.palette.primary.main,
@@ -47,12 +48,19 @@ const Introduction = () => {
               ]}
               multiTextDelay={2000}
               typeSpeed={100}
-            />{' '}
+            />
             <p className={styles.text}>
               Luos makes it easy to develop and scale your edge and embedded distributed software.
               It's open source.
             </p>
-            <Grid container spacing={2}>
+            <Grid
+              className={styles.buttons}
+              container
+              {...{
+                justifyContent: lgMatches ? 'initial' : 'center',
+                spacing: lgMatches ? theme.spacing(2) : '0',
+              }}
+            >
               <Grid item xs={12} lg={5}>
                 <Button
                   variant="contained"
@@ -83,9 +91,9 @@ const Introduction = () => {
                 </Button>
               </Grid>
             </Grid>
-          </div>
+          </Box>
         </VSCode>
-        {isDesktop && (
+        {isBrowser && (
           <VSCode
             md={6}
             lg={6}

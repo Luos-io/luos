@@ -26,6 +26,12 @@
       font-size: 16px;
       font-weight: 400;
       text-transform: initial;
+      color: var(--mui-palette-primary-default);
+    }
+
+    .navbarButton:hover {
+      color: #bd99ff;
+      background-color: transparent;
     }
     .navbarButtonDropdown::after {
       content: '';

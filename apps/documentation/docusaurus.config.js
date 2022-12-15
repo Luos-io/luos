@@ -282,6 +282,6 @@ module.exports = {
         disableInDev: false,
       },
     ],
-    ['./plugins/dotenv', {}],
+    ['docusaurus-plugin-sass', {}],
   ],
 };

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Header, NavbarItemTypes } from '@packages/ui';
+import { Header, NavbarItemTypes, Footer } from '@packages/ui';
 import React from 'react';
 
 export interface LayoutProps {
@@ -85,6 +85,7 @@ export const Layout = ({ children }: LayoutProps) => {
         enableLightingButton
       />
       {children}
+      <Footer />
     </div>
   );
 };

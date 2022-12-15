@@ -7,3 +7,8 @@ export interface BlogPost {
   title: string;
   permalink: string;
 }
+
+export interface FooterProps {
+  tutorials: Tutorial[];
+  lastBlogPosts: BlogPost[];
+}

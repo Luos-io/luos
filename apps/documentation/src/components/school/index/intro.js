@@ -8,8 +8,8 @@ import Paper from '@mui/material/Paper';
 import Select from '@mui/material/Select';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-
 import CardGrid from './cardGrid';
+import { Footer } from '@packages/ui';
 
 import styles from './index.module.css';
 import data from './data/dataIntro.json';
@@ -74,6 +74,7 @@ const Intro = (props) => {
 
   return (
     <div>
+      <Footer />
       <Paper className={styles.introContainer} elevation={1}>
         {/* Title & Text container */}
         <Grid container spacing={2}>

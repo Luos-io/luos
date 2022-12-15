@@ -6,7 +6,8 @@
     "baseUrl": ".",
     "paths": {
       "header/*": ["src/header/*"],
-      "footer/*": ["src/footer/*"]
+      "footer/*": ["src/footer/*"],
+      "utils/*": ["src/utils/*"]
     }
   },
   "include": ["."],

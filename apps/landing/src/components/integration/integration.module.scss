@@ -32,7 +32,6 @@
 
   .title {
     margin-bottom: 0;
-    margin-top: -60px;
   }
 }
 
@@ -180,6 +179,7 @@ html[data-theme='dark'] .title {
 }
 
 .player {
+  min-height: 300px;
   background-color: #1e1e1e;
   color: white;
 }
@@ -281,18 +281,14 @@ html[data-theme='dark'] .player {
 }
 
 .imgLink {
-  color: white;
+  color: var(--mui-palette-theme-primary);
 }
 .imgLink:hover {
   text-decoration: none;
 }
 
-html[data-theme='dark'] .imgLink {
-  color: white;
-}
-
 .imgLinkDesible {
-  color: white;
+  color: var(--mui-palette-theme-primary);
   cursor: default;
   pointer-events: none;
 }

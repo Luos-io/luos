@@ -1,8 +1,8 @@
 {
   "name": "@packages/services",
   "version": "0.0.0",
-  "main": "./index.tsx",
-  "types": "./index.tsx",
+  "main": "./index.ts",
+  "types": "./index.ts",
   "license": "MIT",
   "scripts": {
     "lint": "eslint *.ts*"
@@ -14,11 +14,10 @@
     "**/react-dom": "18.2.0"
   },
   "dependencies": {
-    "mongodb": "^4.9.1",
-    "react": "18.2.0",
-    "@packages/ui": "*"
+    "mongodb": "^4.9.1"
   },
   "devDependencies": {
+    "@packages/tsconfig": "*",
     "@types/prettier": "^2.7.0",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.8",
@@ -26,7 +25,6 @@
     "eslint": "^8.23.0",
     "eslint-config-custom": "*",
     "prettier": "^2.7.1",
-    "tsconfig": "*",
     "typescript": "^4.8.2"
   }
 }

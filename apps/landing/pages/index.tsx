@@ -1,10 +1,10 @@
-import type { NextPage } from 'next';
-
-import Introduction from 'components/introduction/introduction';
+import Introduction from 'components/introduction';
 import Integration from 'components/integration';
-import Software from 'components/software/software';
-import Anatomy from 'components/anatomy/anatomy';
-import Powered from 'components/powered/powered';
+import Software from 'components/software';
+import Anatomy from 'components/anatomy';
+import Powered from 'components/powered';
+
+import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (

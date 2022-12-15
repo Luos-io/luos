@@ -27,6 +27,6 @@
 }
 
 .reactTypewriterTextLuos {
-  color: black;
-  font-size: 30px;
+  color: var(--mui-palette-text-primary);
+  font-size: 20px;
 }

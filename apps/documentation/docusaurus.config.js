@@ -4,7 +4,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const VersionsArchived = require('./versionsArchived.json');
 
 const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(0, 5);
-const isProd = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -12,7 +11,7 @@ module.exports = {
   tagline:
     'Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source.',
   url: 'https://www.luos.io',
-  baseUrl: isProd ? '/documentation/' : '/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'assets/images/favicon.png',
@@ -31,10 +30,6 @@ module.exports = {
       'Microservices are a software development technique that arranges an application as a collection of loosely coupled services.',
     robus_def: 'Bus communication protocol used by Luos.',
     luoshal_def: 'Hardware Abstraction Layer used to fit Luos with various hardware designs.',
-    last_version_pyluos: '2.0.0',
-    last_version_luos: ' 2.0.1',
-    gh_path: 'github.com/Luos-io/doc/tree/master/src',
-    isProd,
   },
 
   themeConfig: {
@@ -71,7 +66,7 @@ module.exports = {
         alt: 'Luos Logo',
         src: 'assets/images/logo_luos_animated_black.gif',
         srcDark: 'assets/images/logo_luos_animated_white.gif',
-        href: 'https://www.luos.io',
+        href: '/documentation/luos-technology',
         target: '_self',
       },
       items: [
@@ -96,7 +91,7 @@ module.exports = {
           ],
         },
         {
-          to: `${isProd ? '/documentation' : ''}/luos-technology`,
+          to: '/documentation/luos-technology',
           label: 'Technology',
           position: 'right',
         },
@@ -114,7 +109,7 @@ module.exports = {
               label: 'Tutorials',
             },
             {
-              to: `${isProd ? '/documentation' : ''}/luos-technology`,
+              to: '/documentation/luos-technology',
               label: 'Documentation',
             },
             {
@@ -167,7 +162,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: `${isProd ? '/documentation' : ''}/luos-technology`,
+              to: '/documentation/luos-technology',
             },
           ],
         },
@@ -219,19 +214,20 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          routeBasePath: '/',
+          routeBasePath: '/documentation',
           sidebarPath: require.resolve('./sidebarsDocs.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/luos-io/luos',
           versions: {
             current: {
-              label: '2.8.0-beta 🚧',
+              label: '2.8.0',
+              banner: 'unreleased',
             },
           },
         },
 
         blog: {
-          //sidebarPath: require.resolve('./sidebarsBlog.js'),
+          routeBasePath: '/blog',
           blogTitle: 'Luos Blog',
           blogDescription: 'A blog about microservices and CI/CD in Edge and Embedded systems',
           postsPerPage: 'ALL',
@@ -255,7 +251,7 @@ module.exports = {
       {
         id: 'tutorials',
         path: 'tutorials',
-        routeBasePath: 'tutorials',
+        routeBasePath: '/tutorials',
         sidebarPath: require.resolve('./sidebarsTutorials.js'),
       },
     ],
@@ -264,7 +260,7 @@ module.exports = {
       {
         id: 'faq',
         path: 'faq',
-        routeBasePath: 'faq',
+        routeBasePath: '/faq',
       },
     ],
     [
@@ -283,5 +279,13 @@ module.exports = {
       },
     ],
     ['docusaurus-plugin-sass', {}],
+    [
+      '@packages/docusaurus-plugin-github-release',
+      {
+        dotenv: {
+          path: '../../.env',
+        },
+      },
+    ],
   ],
 };

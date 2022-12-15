@@ -48,6 +48,7 @@
     "@mdx-js/react": "^1.6.22",
     "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.3",
+    "@packages/docusaurus-plugin-github-release": "workspace:*",
     "@packages/ui": "workspace:*",
     "@svgr/webpack": "^6.2.1",
     "@typeform/embed-react": "^1.19.0",
@@ -67,15 +68,13 @@
     "sass-loader": "^13.2.0"
   },
   "devDependencies": {
-    "@docusaurus/eslint-plugin": "^2.0.1",
-    "@docusaurus/module-type-aliases": "^2.0.1",
+    "@docusaurus/eslint-plugin": "^2.2.0",
+    "@docusaurus/module-type-aliases": "^2.2.0",
     "@packages/tsconfig": "workspace:*",
     "@tsconfig/docusaurus": "^1.0.6",
     "@types/react": "^17.0.43",
     "@types/react-helmet": "^6.1.5",
     "@types/react-router-dom": "^5.3.3",
-    "dotenv-vault": "^1.11.2",
-    "dotenv-webpack": "^8.0.1",
     "eslint-config-custom": "workspace:*",
     "typescript": "^4.8.2",
     "vercel": "^28.2.0"

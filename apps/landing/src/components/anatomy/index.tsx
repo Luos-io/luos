@@ -1,9 +1,8 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ComputerIcon from '@mui/icons-material/Computer';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import MemoryIcon from '@mui/icons-material/Memory';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 import SearchIcon from '@mui/icons-material/Search';
@@ -21,10 +20,10 @@ import VSCode from 'components/vscode';
 import anatomyData from 'components/anatomy/data';
 import { AnatomyTypeKey } from 'components/anatomy/types';
 
-import styles from './anatomy.module.css';
+import styles from './anatomy.module.scss';
 
 export const Anatomy = () => {
-  const [currentAnatomyType, setCurrentAnatomyType] = React.useState<AnatomyTypeKey>(
+  const [currentAnatomyType, setCurrentAnatomyType] = useState<AnatomyTypeKey>(
     AnatomyTypeKey.TOPOLOGY,
   );
 
@@ -38,7 +37,7 @@ export const Anatomy = () => {
         </p>
       </Grid>
       <Grid container justifyContent={'center'} style={{ position: 'relative' }}>
-        <Grid item xs={6} md={6} lg={3} xl={4}>
+        <Grid item xs={12} md={6} lg={3} xl={4}>
           <List className={styles.list}>
             <ListItem
               className={styles.listLink}
@@ -93,7 +92,7 @@ export const Anatomy = () => {
             </ListItem>
           </List>
         </Grid>
-        <Grid item xs={6} md={6} lg={3} xl={4}>
+        <Grid item xs={12} md={6} lg={3} xl={4}>
           <List className={`${styles.list} ${styles.secondList}`}>
             <ListItem
               className={styles.listLink}
@@ -152,16 +151,36 @@ export const Anatomy = () => {
           className={styles.mobileNone}
           title="Anatomy"
           height={632}
+          carousel={anatomyData.reduce(
+            (acc, anatomyType, i) => {
+              acc.push({
+                name: anatomyType.label,
+                content: (
+                  <Grid>
+                    TEST #{i}
+                    <Image
+                      className={''}
+                      src={`/assets/images/index/anatomy/illu/${anatomyType.key}.svg`}
+                      width={420}
+                      height={150}
+                      alt="line-left"
+                    />
+                  </Grid>
+                ),
+              });
+              return acc;
+            },
+            [] as {
+              name: string;
+              content: JSX.Element;
+            }[],
+          )}
           xs={10}
-          md={10}
           lg={6}
           xl={4}
           style={{ alignContent: 'flex-start' }}
         >
           <Grid item xs={3} className={styles.video}>
-            <span className={styles.videoTitle}>
-              <KeyboardArrowDownIcon className={styles.cardIcons} /> Anatomy
-            </span>
             <RadioGroup
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
@@ -192,7 +211,7 @@ export const Anatomy = () => {
         </VSCode>
       </Grid>
       <Grid container justifyContent={'space-between'}>
-        <Grid className={styles.linesLeft} item xs={4} md={4} lg={4} xl={4}>
+        <Grid className={styles.linesLeft} item xs={4}>
           <Image
             className={styles.linesImg}
             src={'/assets/images/index/integration/line-right.svg'}
@@ -201,7 +220,7 @@ export const Anatomy = () => {
             alt="line-left"
           />
         </Grid>
-        <Grid className={styles.linesRight} item xs={4} md={4} lg={4} xl={4} alignSelf={'flex-end'}>
+        <Grid className={styles.linesRight} item xs={4} alignSelf={'flex-end'}>
           <Image
             className={styles.linesImg}
             src={'/assets/images/index/integration/line-right.svg'}

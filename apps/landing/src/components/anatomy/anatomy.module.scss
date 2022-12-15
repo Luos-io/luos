@@ -116,16 +116,16 @@
   background-size: cover;
 }
 
-.linesLeft > span {
+.linesLeft > img {
   float: left;
   transform: rotateY(180deg);
 }
 
 .linesLeft,
-.linesRight > span {
+.linesRight > img {
   margin-bottom: -128px !important;
 }
-.linesRight > span {
+.linesRight > img {
   float: right;
 }
 

@@ -6,6 +6,7 @@ export enum NavbarItemTypes {
 export type NavbarItemLink = {
   readonly type: NavbarItemTypes.LINK;
   href: string;
+  active?: boolean;
 };
 export type NavbarItemDropdown = {
   readonly type: NavbarItemTypes.DROPDOWN;

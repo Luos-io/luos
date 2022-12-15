@@ -94,21 +94,36 @@ const Introduction = () => {
         </VSCode>
         {isBrowser && (
           <VSCode
-            md={6}
-            lg={6}
             className={styles.mobileNone}
+            md={6}
+            carousel={[
+              {
+                name: 'What is Luos',
+                content: (
+                  <Grid item md={12}>
+                    <LiteYouTubeEmbed id="ujh0xNE3TZ8" title="What is Luos" />
+                  </Grid>
+                ),
+              },
+              {
+                name: 'Bike alarm',
+                content: (
+                  <Grid item md={12}>
+                    <LiteYouTubeEmbed id="kTr-pwIrRqw" title="Bike alarm" />
+                  </Grid>
+                ),
+              },
+              {
+                name: 'Demonstration',
+                content: (
+                  <Grid item md={12}>
+                    <LiteYouTubeEmbed id="KHHB_jfBDEY" title="Demonstration" />
+                  </Grid>
+                ),
+              },
+            ]}
             style={{ alignSelf: 'flex-end', width: '100%', marginTop: '-100px', zIndex: 2 }}
-          >
-            <Grid item md={3} lg={3}>
-              <span>
-                <KeyboardArrowDownIcon className={styles.cardIcons} /> Video
-              </span>
-              <div className={styles.engine}>What is Luos engine?</div>
-            </Grid>
-            <Grid item md={9} lg={9}>
-              <LiteYouTubeEmbed id="ujh0xNE3TZ8" title="What is Luos" />
-            </Grid>
-          </VSCode>
+          />
         )}
       </Grid>
     </div>

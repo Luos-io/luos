@@ -23,7 +23,7 @@ interface VSCodeProps extends CommonProps, RegularBreakpoints {
     name: string;
     content: JSX.Element;
   }[];
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export const VSCode = ({

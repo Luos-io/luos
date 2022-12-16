@@ -82,7 +82,7 @@ export const VSCode = ({
           />
         </Grid>
         {carousel.length > 1 && (
-          <Grid item container xs={2} className={styles.vscodeContentLeft}>
+          <Grid item container xs={3} className={styles.vscodeContentLeft}>
             <RadioGroup
               className={styles.vscodeContentLeftGroup}
               aria-labelledby="vscode-controlled-radio-buttons-group"
@@ -105,6 +105,7 @@ export const VSCode = ({
                       ? styles.carouselValueActive
                       : null,
                   )}
+                  disableTypography
                   control={<Radio style={{ display: 'none' }} />}
                 />
               ))}

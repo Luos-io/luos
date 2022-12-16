@@ -46,8 +46,11 @@
     width: 100%;
 
     .carouselValue {
+      width: 100%;
       margin: 0;
-      padding: 8px;
+      padding: 1vh 0.5vw;
+      font-size: 0.9vw;
+      line-height: 1vw;
     }
     .carouselValueActive {
       position: relative;

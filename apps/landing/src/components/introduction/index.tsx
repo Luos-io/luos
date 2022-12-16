@@ -26,10 +26,10 @@ const Introduction = () => {
       <Grid container flexDirection={'column'}>
         <VSCode xs={12} lg={7} style={{ margin: mdMatches ? 'initial' : '0 auto' }}>
           <Box padding={theme.spacing(0, 3)}>
-            <p className={styles.text1}>
+            <h1 className={styles.text1}>
               The devtool dedicated to cyber-physical systems making hardware as modular as
               software.
-            </p>
+            </h1>
             <Writer
               textStyle={{
                 fontSize: '20px',
@@ -106,18 +106,18 @@ const Introduction = () => {
                 ),
               },
               {
-                name: 'Bike alarm',
+                name: 'Usecase: Bike alarm',
                 content: (
                   <Grid item md={12}>
-                    <LiteYouTubeEmbed id="kTr-pwIrRqw" title="Bike alarm" />
+                    <LiteYouTubeEmbed id="kTr-pwIrRqw" title="Usecase: Bike alarm" />
                   </Grid>
                 ),
               },
               {
-                name: 'Demonstration',
+                name: 'A quick Luos demo',
                 content: (
                   <Grid item md={12}>
-                    <LiteYouTubeEmbed id="KHHB_jfBDEY" title="Demonstration" />
+                    <LiteYouTubeEmbed id="KHHB_jfBDEY" title="A quick Luos demo" />
                   </Grid>
                 ),
               },

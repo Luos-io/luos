@@ -88,7 +88,7 @@ const Software = () => {
                 />
                 <h3 className={styles.carouselTitle}>1. ENCAPSULATION</h3>
                 <p className={styles.carouselText}>
-                  Luos engine translates your embedded features into APIs.
+                  Luos engine reference all your features as services by providing APIs.
                 </p>
               </Grid>
               <Grid item md={4} lg={4} xl={4} className={styles.step}>
@@ -105,7 +105,8 @@ const Software = () => {
                 />
                 <h3 className={styles.carouselTitle}>2. EXPOSITION</h3>
                 <p className={styles.carouselText}>
-                  Luos makes these APIs accessible from anywhere.
+                  Detect and use any service API accessible from anywhere, no matter how specific
+                  your network is.
                 </p>
               </Grid>
               <Grid item md={4} lg={4} xl={4} className={styles.step}>
@@ -122,8 +123,7 @@ const Software = () => {
                 />
                 <h3 className={styles.carouselTitle}>3. EXPLOITATION</h3>
                 <p className={styles.carouselText}>
-                  Luos provides you with integrations and tools to design the software architectures
-                  of your dreams.
+                  Compose your product step by step and make it evolutive and future-proof easily.
                 </p>
               </Grid>
             </Grid>

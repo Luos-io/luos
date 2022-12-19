@@ -278,6 +278,7 @@ module.exports = {
         disableInDev: false,
       },
     ],
+    ['docusaurus-plugin-sass', {}],
     [
       '@packages/docusaurus-plugin-github-release',
       {

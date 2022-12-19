@@ -1,0 +1,135 @@
+.footerLogoLink {
+  opacity: 0.5;
+  transition: opacity var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
+}
+
+.footerLogoLink:hover {
+  opacity: 1;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Roboto Mono';
+  margin-bottom: 20px;
+}
+
+.titleCommunity {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Roboto Mono';
+  margin-bottom: 0px;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-family: 'Roboto Mono';
+  margin-bottom: 15px;
+  color: #7e7f80;
+}
+
+.joinUsContainer {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link {
+  font-size: 14px;
+  word-break: break-word;
+  display: block;
+  font-family: 'Roboto Mono';
+  color: var(--mui-palette-primary-default);
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #bd99ff;
+  text-decoration: none;
+}
+
+.blog {
+  text-decoration: underline #81c8be;
+  text-underline-offset: 5px;
+  margin-bottom: 30px;
+}
+
+.blog:hover {
+  color: #81c8be;
+  text-decoration: underline #81c8be;
+  text-underline-offset: 5px;
+}
+
+.tuto {
+  text-decoration: underline #bd99ff;
+  text-underline-offset: 5px;
+  margin-bottom: 30px;
+}
+
+.tuto:hover {
+  color: #bd99ff;
+  text-decoration: underline #bd99ff;
+  text-underline-offset: 5px;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.span {
+  font-size: 14px;
+  word-break: break-word;
+  display: block;
+  font-family: 'Roboto Mono';
+  color: var(--mui-palette-primary-default);
+  margin-bottom: 10px;
+}
+.list {
+  list-style: none;
+}
+
+.mbZero {
+  margin-bottom: 0px;
+}
+
+.mbTen {
+  margin-bottom: 10px;
+}
+
+.ressources {
+  text-decoration: underline #ff5200;
+  text-underline-offset: 5px;
+  margin-bottom: 0;
+  color: var(--mui-palette-primary-default);
+}
+
+.ressourcesLink:hover {
+  color: #ff5200;
+  text-decoration: none;
+}
+
+.community {
+  text-decoration: underline #edf568;
+  text-underline-offset: 5px;
+  margin-bottom: 0;
+  color: var(--mui-palette-primary-default);
+}
+
+.communityLink:hover {
+  color: #edf568;
+  text-decoration: none;
+}
+
+.blogArticle {
+  text-decoration: none;
+}
+
+.blogArticle:hover {
+  color: #81c8be;
+}
+
+.rsLogo {
+  margin: 15px 10px;
+}

@@ -1,6 +1,7 @@
 {
   "extends": "@packages/tsconfig/react-library.json",
   "compilerOptions": {
+    "resolveJsonModule": true,
     "lib": ["DOM", "ES2022"],
     "baseUrl": ".",
     "paths": {

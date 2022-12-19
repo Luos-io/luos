@@ -1,19 +1,10 @@
-import clsx from 'clsx';
 import { useColorScheme } from '@mui/material/styles';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React, { useContext } from 'react';
+import { Header, NavbarItemTypes, Footer } from '@packages/ui';
+import React from 'react';
 
-import {
-  Header,
-  NavbarItemTypes,
-  NavbarItem,
-  NavbarItemLink,
-  NavbarItemDropdown,
-  contexts,
-} from '@packages/ui';
-
-import styles from './styles.module.scss';
+import type { NavbarItem, NavbarItemLink, NavbarItemDropdown } from '@packages/ui';
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -21,7 +12,6 @@ export interface LayoutProps {
 export const Layout = ({ children }: LayoutProps) => {
   const { mode, systemMode } = useColorScheme();
   const { pathname } = useRouter();
-  const { isSidebarOpen } = useContext(contexts.SidebarContext);
 
   const withActiveLink = (navbar: NavbarItem<NavbarItemLink | NavbarItemDropdown>[]) =>
     navbar.map((el) => {
@@ -112,7 +102,8 @@ export const Layout = ({ children }: LayoutProps) => {
         ])}
         enableLightingButton
       />
-      <div className={clsx(isSidebarOpen ? styles.sidebarOpen : null)}>{children}</div>
+      {children}
+      <Footer />
     </div>
   );
 };

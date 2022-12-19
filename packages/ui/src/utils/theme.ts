@@ -21,6 +21,7 @@ export const theme = extendTheme({
         },
         text: {
           primary: '#000',
+          secondary: '#fff',
         },
       },
     },
@@ -40,6 +41,7 @@ export const theme = extendTheme({
         },
         text: {
           primary: '#fff',
+          secondary: '#000',
         },
       },
     },

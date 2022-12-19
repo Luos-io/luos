@@ -3,7 +3,6 @@ import { useState } from 'react';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ComputerIcon from '@mui/icons-material/Computer';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import MemoryIcon from '@mui/icons-material/Memory';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 import SearchIcon from '@mui/icons-material/Search';
@@ -152,16 +151,36 @@ export const Anatomy = () => {
           className={styles.mobileNone}
           title="Anatomy"
           height={632}
+          carousel={anatomyData.reduce(
+            (acc, anatomyType, i) => {
+              acc.push({
+                name: anatomyType.label,
+                content: (
+                  <Grid>
+                    TEST #{i}
+                    <Image
+                      className={''}
+                      src={`/assets/images/index/anatomy/illu/${anatomyType.key}.svg`}
+                      width={420}
+                      height={150}
+                      alt="line-left"
+                    />
+                  </Grid>
+                ),
+              });
+              return acc;
+            },
+            [] as {
+              name: string;
+              content: JSX.Element;
+            }[],
+          )}
           xs={10}
-          md={10}
           lg={6}
           xl={4}
           style={{ alignContent: 'flex-start' }}
         >
           <Grid item xs={3} className={styles.video}>
-            <span className={styles.videoTitle}>
-              <KeyboardArrowDownIcon className={styles.cardIcons} /> Anatomy
-            </span>
             <RadioGroup
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"

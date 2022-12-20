@@ -1,4 +1,4 @@
-export enum AnatomyTypeKey {
+export enum BenefitsTypeKey {
   TOPOLOGY = 'topology',
   MICROSERVICE = 'microservice',
   REMOTE = 'remote',
@@ -7,15 +7,14 @@ export enum AnatomyTypeKey {
   MONITORING = 'monitoring',
 }
 
-export type Anatomy = {
+export type Benefits = {
   name: string;
   label: string;
   link: string;
-  available: boolean;
 };
 
-export type AnatomyType = {
-  key: AnatomyTypeKey;
+export type BenefitsType = {
+  key: BenefitsTypeKey;
   label: string;
 };
-export type AnatomyTypeList = AnatomyType[];
+export type BenefitsTypeList = BenefitsType[];

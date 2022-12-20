@@ -1,17 +1,11 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Grid from '@mui/material/Grid';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { isBrowser } from 'react-device-detect';
-import Carousel from 'react-material-ui-carousel';
 
 import VSCode from 'components/vscode';
 import integrationsData from 'components/integration/data';
@@ -20,53 +14,11 @@ import { IntegrationTypeKey } from 'components/integration/types';
 import styles from 'components/integration/integration.module.scss';
 
 const Integration = () => {
-  const [currentIntegrationType, setCurrentIntegrationType] = useState<IntegrationTypeKey>(
-    IntegrationTypeKey.MCU,
-  );
+  const [currentIntegrationType] = useState<IntegrationTypeKey>(IntegrationTypeKey.MCU);
   const theme = useTheme();
   const lgMatches = useMediaQuery(theme.breakpoints.up('lg'));
   const smMatches = useMediaQuery(theme.breakpoints.up('sm'));
   const cols = lgMatches ? 4 : smMatches ? 3 : 2;
-
-  const IntegrationsLists = (
-    <ImageList cols={cols}>
-      {integrationsData.map((integrationType, i) => {
-        const integrations = currentIntegrationType === integrationType.key;
-        if (integrations) {
-          return integrationType.integrations.map((integration) => (
-            <a
-              href={integration.link}
-              className={integration.link !== '' ? styles.imgLink : styles.imgLinkDesible}
-              key={`integration-link-${integration.label}`}
-            >
-              <ImageListItem key={i}>
-                <Image
-                  src={`/assets/images/index/integration/icons/${integration.name}.svg`}
-                  width={64}
-                  height={64}
-                  alt={`integration-image-${integration.label}`}
-                  loading="lazy"
-                  style={{ display: 'block', margin: '0 auto' }}
-                />
-                <div>
-                  <ImageListItemBar
-                    title={integration.label}
-                    subtitle={integration.available ? '' : '(soon)'}
-                    position="below"
-                    style={{
-                      margin: '0 auto',
-                      textAlign: 'center',
-                    }}
-                  />
-                </div>
-              </ImageListItem>
-            </a>
-          ));
-        }
-        return null;
-      })}
-    </ImageList>
-  );
 
   return (
     <div className={styles.container}>
@@ -111,7 +63,6 @@ const Integration = () => {
                           <div>
                             <ImageListItemBar
                               title={integration.label}
-                              subtitle={integration.available ? '' : '(soon)'}
                               position="below"
                               style={{
                                 margin: '0 auto',

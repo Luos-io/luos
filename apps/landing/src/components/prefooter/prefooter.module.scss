@@ -55,7 +55,7 @@
 }
 
 .nebula {
-  background-image: url('/assets/images/index/powered/nebula.svg');
+  background-image: url('/assets/images/index/prefooter/nebula.svg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -119,20 +119,20 @@
 }
 
 .whiteBtn::after {
-  content: url('/static/assets/images/index/powered/discord.svg');
+  content: url('/static/assets/images/socials/discord.svg');
   margin-top: 3px;
   margin-left: 10px;
 }
 
 .whiteBtn:hover::after {
-  content: url('/static/assets/images/index/powered/discord-white.svg');
+  content: url('/static/assets/images/socials/discord-white.svg');
   margin-top: 3px;
   margin-left: 10px;
 }
 
 .player {
   width: 100%;
-  background-image: url('/assets/images/index/powered/lines.svg');
+  background-image: url('/assets/images/index/prefooter/lines.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 15px 15px;

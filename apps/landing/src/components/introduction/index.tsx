@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { isBrowser } from 'react-device-detect';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
@@ -40,9 +39,9 @@ const Introduction = () => {
               cursorColor={theme.palette.primary.main}
               multiTextLoop={true}
               multiText={[
-                'is an open-source project_',
-                'is an embedded microservices orchestrator_',
-                'is an embedded library_',
+                'an open-source project_',
+                'an embedded microservices orchestrator_',
+                'an embedded library_',
               ]}
               multiTextDelay={2000}
               typeSpeed={100}

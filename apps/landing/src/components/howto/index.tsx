@@ -7,10 +7,10 @@ import Carousel from 'react-material-ui-carousel';
 
 import VSCode from 'components/vscode';
 
-import styles from './software.module.scss';
+import styles from './howto.module.scss';
 import { useTheme } from '@mui/material';
 
-const Software = () => {
+const Howto = () => {
   const theme = useTheme();
 
   let items = [
@@ -37,24 +37,24 @@ const Software = () => {
 
   const IndicatorIcons = [
     <Image
-      src={'/assets/images/index/software/icons/step1.svg'}
+      src={'/assets/images/index/howto/icons/step1.svg'}
       width={54}
       height={4}
-      alt="software-step1"
+      alt="howto-step1"
       loading="lazy"
     />,
     <Image
-      src={'/assets/images/index/software/icons/step2.svg'}
+      src={'/assets/images/index/howto/icons/step2.svg'}
       width={54}
       height={4}
-      alt="software-step2"
+      alt="howto-step2"
       loading="lazy"
     />,
     <Image
-      src={'/assets/images/index/software/icons/step3.svg'}
+      src={'/assets/images/index/howto/icons/step3.svg'}
       width={54}
       height={4}
-      alt="software-step3"
+      alt="howto-step3"
       loading="lazy"
     />,
   ];
@@ -66,7 +66,7 @@ const Software = () => {
           Develop scalable cyber-physical systems
         </h2>
         <VSCode
-          title="How it works"
+          title="How Luos engine works"
           xs={11}
           md={10}
           xl={9}
@@ -79,7 +79,7 @@ const Software = () => {
                   <div className={styles.fileName}>step_1.c</div>
                 </div>
                 <Image
-                  src={'/assets/images/index/software/step1.svg'}
+                  src={'/assets/images/index/howto/step1.svg'}
                   alt="step one"
                   className={styles.carouselImgDesktop}
                   width={130}
@@ -96,7 +96,7 @@ const Software = () => {
                   <div className={styles.fileName}>step_2.py</div>
                 </div>
                 <Image
-                  src={'/assets/images/index/software/step2.svg'}
+                  src={'/assets/images/index/howto/step2.svg'}
                   alt="step two"
                   className={styles.carouselImgDesktop}
                   width={130}
@@ -114,7 +114,7 @@ const Software = () => {
                   <div className={styles.fileName}>step_3.js</div>
                 </div>
                 <Image
-                  src={'/assets/images/index/software/step3.svg'}
+                  src={'/assets/images/index/howto/step3.svg'}
                   alt="step three"
                   className={styles.carouselImgDesktop}
                   width={130}
@@ -144,16 +144,16 @@ const Software = () => {
               }}
             >
               {items.map((item, i) => (
-                <Paper className={styles.carousel} key={`software-carousel-item-${i}`}>
+                <Paper className={styles.carousel} key={`howto-carousel-item-${i}`}>
                   <div className={styles.file}>
                     <div className={styles.fileName}>{item.file}</div>
                   </div>
                   <Image
                     className={styles.carouselImg}
-                    src={`/assets/images/index/software/${item.img}.svg`}
+                    src={`/assets/images/index/howto/${item.img}.svg`}
                     width={130}
                     height={130}
-                    alt={`software-carousel-${item.img}`}
+                    alt={`howto-carousel-${item.img}`}
                     loading="lazy"
                   />
                   <h3 className={styles.carouselTitle}>{item.name}</h3>
@@ -176,4 +176,4 @@ const Software = () => {
     </div>
   );
 };
-export default Software;
+export default Howto;

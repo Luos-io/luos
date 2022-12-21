@@ -1,7 +1,6 @@
 import Grid from '@mui/material/Grid';
 import Image from 'next/image';
-
-import UIFooter from '@packages/ui/footer';
+import { Footer as UiFooter } from '@packages/ui';
 
 import styles from 'components/layout/footer/footer.module.scss';
 
@@ -118,7 +117,7 @@ export const Footer = () => {
             ))}
           </Grid>
         )}
-        <UIFooter />
+        <UiFooter />
         <div
           className={styles.footer__copyright}
           dangerouslySetInnerHTML={{

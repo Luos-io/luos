@@ -97,6 +97,7 @@ export const Benefits = () => {
               alignItems="flex-start"
               component={Link}
               href="https://discord.gg/luos"
+              rel="external nofollow"
             >
               <ListItemAvatar className={styles.listIcon}>
                 <Image

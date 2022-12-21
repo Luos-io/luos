@@ -102,12 +102,13 @@
   font-family: 'Roboto Mono', sans-serif;
 }
 
-.carousselContainer {
+.carouselContainer {
+  width: 100%;
   background-color: #1e1e1e;
   color: white;
 }
 
-.caroussel {
+.carousel {
   width: 100%;
   border-radius: 0;
   background-color: #1e1e1e;
@@ -115,18 +116,23 @@
   height: 350px;
 }
 
-.carousselImgDesktop {
+.carouselImg {
+  display: block;
+  margin: 8px auto;
+}
+
+.carouselImgDesktop {
   width: 130px;
 }
 
-.carousselTitle {
+.carouselTitle {
   font-family: 'Roboto Mono', sans-serif;
   font-size: 18px;
   font-weight: bold;
   padding-left: 15px;
 }
 
-.carousselText {
+.carouselText {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   padding: 15px;

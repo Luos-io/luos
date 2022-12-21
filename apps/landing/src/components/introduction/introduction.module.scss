@@ -4,16 +4,26 @@
   background-image: url('/assets/images/index/powered/nebula.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 30px 90px;
+}
+@media screen and (max-width: 600px) {
 }
 
-.text {
+.text1,
+.text2 {
   font-family: 'Roboto';
+  color: var(--mui-palette-text-primary);
+}
+.text1 {
+  font-size: 22px;
+  line-height: 22px;
+}
+.text2 {
   font-size: 18px;
   line-height: 20px;
-  margin-bottom: 30px;
-  color: black;
-  padding-right: 60px;
+}
+
+.buttons {
+  padding: 24px 0;
 }
 
 .pinkBtn {
@@ -82,11 +92,7 @@
   font-family: 'Roboto Mono';
 }
 
-@media screen and (max-width: 1023px) {
-  .container {
-    padding: 90px;
-  }
-
+@media screen and (max-width: 1199px) {
   .pinkBtn {
     margin-bottom: 15px;
   }
@@ -99,13 +105,9 @@
   .mobileNone {
     display: none;
   }
-
-  .text {
-    margin-top: 100px;
-  }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   .mobileNone {
     display: initial;
   }
@@ -113,10 +115,4 @@
   .videoBtn {
     display: none;
   }
-}
-
-/* Overrides some react-lite-youtube-embed rules */
-.yt-lite:before {
-  height: 100%;
-  background-repeat: initial;
 }

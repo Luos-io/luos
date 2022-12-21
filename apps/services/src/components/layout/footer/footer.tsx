@@ -117,7 +117,10 @@ export const Footer = () => {
             ))}
           </Grid>
         )}
+<<<<<<< HEAD
         <UiFooter />
+=======
+>>>>>>> 9746d9a51a4f87bead200b5804cb60d210474fa5
         <div
           className={styles.footer__copyright}
           dangerouslySetInnerHTML={{

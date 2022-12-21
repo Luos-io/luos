@@ -1,0 +1,60 @@
+{
+  "name": "@packages/docusaurus-plugin-github-release",
+  "version": "1.0.0",
+  "description": "Github release pages for Docusaurus.",
+  "main": "src/index.js",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/types.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "types": "src/types.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luos-io/luos.git",
+    "directory": "packages/docusaurus-plugin-github-release"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@docusaurus/core": "^2.1.0",
+    "@docusaurus/logger": "^2.1.0",
+    "@docusaurus/module-type-aliases": "^2.1.0",
+    "@docusaurus/plugin-content-docs": "^2.1.0",
+    "@docusaurus/theme-common": "^2.1.0",
+    "@docusaurus/theme-translations": "^2.1.0",
+    "@docusaurus/utils": "^2.1.0",
+    "@docusaurus/utils-validation": "^2.1.0",
+    "clsx": "^1.2.1",
+    "dotenv-vault-core": "^0.6.1",
+    "node-fetch": "^3.2.10",
+    "remark-gfm": "^3.0.1",
+    "react-markdown": "^8.0.3",
+    "semver": "^7.3.8",
+    "tslib": "^2.4.0"
+  },
+  "devDependencies": {
+    "@docusaurus/types": "^2.1.0",
+    "@packages/tsconfig": "workspace:*",
+    "dotenv-vault-core": "^0.6.1",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.4 || ^17.0.0",
+    "react-dom": "^16.8.4 || ^17.0.0"
+  },
+  "engines": {
+    "node": ">=16.14"
+  }
+}

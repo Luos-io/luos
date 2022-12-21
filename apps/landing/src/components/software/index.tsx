@@ -1,14 +1,18 @@
-import Image from 'next/image';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Carousel from 'react-material-ui-carousel';
+import Image from 'next/image';
 import { isBrowser } from 'react-device-detect';
+import Carousel from 'react-material-ui-carousel';
 
 import VSCode from 'components/vscode';
 
-import styles from './software.module.css';
+import styles from './software.module.scss';
+import { useTheme } from '@mui/material';
+
 const Software = () => {
+  const theme = useTheme();
+
   let items = [
     {
       name: '1. ENCAPSULATION',
@@ -31,25 +35,25 @@ const Software = () => {
     },
   ];
 
-  const anArrayOfNumbers = [
+  const IndicatorIcons = [
     <Image
-      src={'assets/images/index/software/icons/step1.svg'}
-      width={150}
-      height={150}
+      src={'/assets/images/index/software/icons/step1.svg'}
+      width={54}
+      height={4}
       alt="software-step1"
       loading="lazy"
     />,
     <Image
-      src={'assets/images/index/software/icons/step2.svg'}
-      width={150}
-      height={150}
+      src={'/assets/images/index/software/icons/step2.svg'}
+      width={54}
+      height={4}
       alt="software-step2"
       loading="lazy"
     />,
     <Image
-      src={'assets/images/index/software/icons/step3.svg'}
-      width={150}
-      height={150}
+      src={'/assets/images/index/software/icons/step3.svg'}
+      width={54}
+      height={4}
       alt="software-step3"
       loading="lazy"
     />,
@@ -104,11 +108,10 @@ const Software = () => {
         xs={11}
         md={10}
         xl={9}
-        className={styles.mobileNone}
         style={{ margin: '0 auto', paddingBottom: 24 }}
       >
         {isBrowser ? (
-          <Grid container className={styles.carousselContainer}>
+          <Grid container className={styles.carouselContainer}>
             <Grid item md={4} lg={4} xl={4} className={styles.step}>
               <div className={styles.file}>
                 <div className={styles.fileName}>step_1.c</div>
@@ -116,13 +119,13 @@ const Software = () => {
               <Image
                 src={'/assets/images/index/software/step1.svg'}
                 alt="step one"
-                className={styles.carousselImgDesktop}
+                className={styles.carouselImgDesktop}
                 width={130}
                 height={130}
                 loading="lazy"
               />
-              <h3 className={styles.carousselTitle}>1. ENCAPSULATION</h3>
-              <p className={styles.carousselText}>
+              <h3 className={styles.carouselTitle}>1. ENCAPSULATION</h3>
+              <p className={styles.carouselText}>
                 Luos engine translates your embedded features into APIs.
               </p>
             </Grid>
@@ -133,15 +136,13 @@ const Software = () => {
               <Image
                 src={'/assets/images/index/software/step2.svg'}
                 alt="step two"
-                className={styles.carousselImgDesktop}
+                className={styles.carouselImgDesktop}
                 width={130}
                 height={130}
                 loading="lazy"
               />
-              <h3 className={styles.carousselTitle}>2. EXPOSITION</h3>
-              <p className={styles.carousselText}>
-                Luos makes these APIs accessible from anywhere.
-              </p>
+              <h3 className={styles.carouselTitle}>2. EXPOSITION</h3>
+              <p className={styles.carouselText}>Luos makes these APIs accessible from anywhere.</p>
             </Grid>
             <Grid item md={4} lg={4} xl={4} className={styles.step}>
               <div className={styles.file}>
@@ -150,13 +151,13 @@ const Software = () => {
               <Image
                 src={'/assets/images/index/software/step3.svg'}
                 alt="step three"
-                className={styles.carousselImgDesktop}
+                className={styles.carouselImgDesktop}
                 width={130}
                 height={130}
                 loading="lazy"
               />
-              <h3 className={styles.carousselTitle}>3. EXPLOITATION</h3>
-              <p className={styles.carousselText}>
+              <h3 className={styles.carouselTitle}>3. EXPLOITATION</h3>
+              <p className={styles.carouselText}>
                 Luos provides you with integrations and tools to design the software architectures
                 of your dreams.
               </p>
@@ -164,11 +165,11 @@ const Software = () => {
           </Grid>
         ) : (
           <Carousel
-            className={styles.carousselContainer}
-            IndicatorIcon={anArrayOfNumbers}
+            className={styles.carouselContainer}
+            IndicatorIcon={IndicatorIcons}
             indicatorIconButtonProps={{
               style: {
-                padding: '10px', // 1
+                padding: theme.spacing(1),
                 filter: 'brightness(50%)',
               },
             }}
@@ -179,18 +180,20 @@ const Software = () => {
             }}
           >
             {items.map((item, i) => (
-              <Paper className={styles.caroussel} key={i}>
+              <Paper className={styles.carousel} key={`software-carousel-item-${i}`}>
                 <div className={styles.file}>
                   <div className={styles.fileName}>{item.file}</div>
                 </div>
                 <Image
-                  className={styles.carousselImg}
-                  src={`assets/images/index/software/${item.img}.svg`}
+                  className={styles.carouselImg}
+                  src={`/assets/images/index/software/${item.img}.svg`}
+                  width={130}
+                  height={130}
                   alt={`software-carousel-${item.img}`}
                   loading="lazy"
                 />
-                <h3 className={styles.carousselTitle}>{item.name}</h3>
-                <p className={styles.carousselText}>{item.description}</p>
+                <h3 className={styles.carouselTitle}>{item.name}</h3>
+                <p className={styles.carouselText}>{item.description}</p>
               </Paper>
             ))}
           </Carousel>

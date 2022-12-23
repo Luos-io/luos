@@ -88,7 +88,8 @@ const Howto = () => {
                 />
                 <h3 className={styles.carouselTitle}>1. ENCAPSULATION</h3>
                 <p className={styles.carouselText}>
-                  Luos engine reference all your features as services by providing APIs.
+                  Encapsulate any of your embedded features in services, wherever they are. They
+                  remain simple and become independent and loosely coupled.
                 </p>
               </Grid>
               <Grid item md={4} lg={4} xl={4} className={styles.step}>

@@ -24,6 +24,11 @@ export default function App(props: AppProps<{ emotionCache: EmotionCache }>) {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
+        <meta
+          name="description"
+          content="The devtool dedicated to cyber-physical systems making hardware as modular as software."
+          data-rh="true"
+        />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       {/*

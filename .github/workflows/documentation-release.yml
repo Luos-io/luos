@@ -65,7 +65,10 @@ jobs:
       - name: Create new Docusaurus versioned docs
         run: |
           cd ./apps/documentation
+          npx dotenv-vault@latest pull --dotenvMe $DOTENV_ME --yes
           pnpm docusaurus docs:version ${{ steps.new_version.outputs.new_version }}
+        env:
+          DOTENV_ME: ${{ secrets.DOTENV_ME }}
 
       - name: Get last production URL
         id: production_url

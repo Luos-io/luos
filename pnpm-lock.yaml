@@ -56,6 +56,7 @@ importers:
       react-image-lightbox: ^5.1.4
       react-lite-youtube-embed: ^2.2.2
       react-material-ui-carousel: ^3.4.2
+      semver: ^7.3.8
       typescript: ^4.8.2
       vercel: ^28.2.0
     dependencies:
@@ -86,6 +87,7 @@ importers:
       react-image-lightbox: 5.1.4_sfoxds7t5ydpegc3knd667wn6m
       react-lite-youtube-embed: 2.3.52_sfoxds7t5ydpegc3knd667wn6m
       react-material-ui-carousel: 3.4.2_lh2tn3rakgfc64ypml7e6yk4w4
+      semver: 7.3.8
     devDependencies:
       '@packages/tsconfig': link:../../packages/tsconfig
       '@tsconfig/docusaurus': 1.0.6
@@ -5841,7 +5843,7 @@ packages:
   /@types/react-is/17.0.3:
     resolution: {integrity: sha512-aBTIWg1emtu95bLTLx0cpkxwGW3ueZv71nE2YFBpL8k/z5czEW8yYpOo8Dp+UUAFAtKwNaOsh/ioSeQnWlZcfw==}
     dependencies:
-      '@types/react': 18.0.21
+      '@types/react': 18.0.26
     dev: false
 
   /@types/react-lottie/1.2.6:
@@ -5873,7 +5875,7 @@ packages:
   /@types/react-transition-group/4.4.5:
     resolution: {integrity: sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA==}
     dependencies:
-      '@types/react': 17.0.52
+      '@types/react': 18.0.26
     dev: false
 
   /@types/react/17.0.52:

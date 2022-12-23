@@ -1,8 +1,8 @@
 import Introduction from 'components/introduction';
 import Integration from 'components/integration';
-import Software from 'components/software';
-import Anatomy from 'components/anatomy';
-import Powered from 'components/powered';
+import Howto from 'components/howto';
+import Anatomy from 'components/benefits';
+import Prefooter from 'components/prefooter';
 
 import type { NextPage } from 'next';
 
@@ -11,9 +11,9 @@ const Home: NextPage = () => {
     <>
       <Introduction />
       <Integration />
-      <Software />
+      <Howto />
       <Anatomy />
-      <Powered />
+      <Prefooter />
     </>
   );
 };

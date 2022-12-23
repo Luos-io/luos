@@ -131,15 +131,15 @@ class TypeWriterEffect extends Component {
   render() {
     return (
       <div ref={this.myRef} className="react-typewriter-text-wrap">
-        <h1 style={{ ...this.props.textStyle }} className="react-typewriter-text">
-          <span className={styles.reactTypewriterTextLuos}>Luos</span> {this.state.text}
-          <div
+        <p style={{ ...this.props.textStyle }} className="react-typewriter-text">
+          <span className={styles.reactTypewriterTextLuos}>Providing</span> {this.state.text}
+          <span
             className={`react-typewriter-pointer ${this.state.blink && 'add-cursor-animate'} ${
               this.state.hideCursor ? 'hide-typing-cursor' : ''
             }`}
             style={{ backgroundColor: `${this.props.cursorColor}` }}
-          ></div>
-        </h1>
+          ></span>
+        </p>
       </div>
     );
   }

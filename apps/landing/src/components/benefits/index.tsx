@@ -1,12 +1,9 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ComputerIcon from '@mui/icons-material/Computer';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import MemoryIcon from '@mui/icons-material/Memory';
-import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
-import SearchIcon from '@mui/icons-material/Search';
+import LinkIcon from '@mui/icons-material/Link';
+import ViewTimelineIcon from '@mui/icons-material/ViewTimeline';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
@@ -16,22 +13,24 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
+import SvgIcon from '@mui/material/SvgIcon';
 
 import VSCode from 'components/vscode';
-import anatomyData from 'components/anatomy/data';
-import { AnatomyTypeKey } from 'components/anatomy/types';
+import benefitsData from 'components/benefits/data';
+import { BenefitsTypeKey } from 'components/benefits/types';
 
-import styles from './anatomy.module.scss';
+import styles from './benefits.module.scss';
+import DiscordIcon from '/static/assets/images/socials/discord.svg';
 
-export const Anatomy = () => {
-  const [currentAnatomyType, setCurrentAnatomyType] = useState<AnatomyTypeKey>(
-    AnatomyTypeKey.TOPOLOGY,
+export const Benefits = () => {
+  const [currentBenefitsType, setCurrentBenefitsType] = useState<BenefitsTypeKey>(
+    BenefitsTypeKey.TOPOLOGY,
   );
 
   return (
     <div className={styles.container}>
       <Grid container item xs={12} md={6} lg={6} xl={6}>
-        <h2 className={`${styles.title} ${styles.underline}`}>Anatomy of Luos</h2>
+        <h2 className={`${styles.title} ${styles.underline}`}>Benefits of Luos</h2>
         <p className={styles.text}>
           Luos gives you access to multiple features created by developers for developers. Many of
           these features are based on the needs of the community.
@@ -44,16 +43,16 @@ export const Anatomy = () => {
               className={styles.listLink}
               alignItems="flex-start"
               component={Link}
-              href="/documentation/luos-technology/basics#introduction-to-luos"
+              href="/documentation/integrations/pyluos"
             >
               <ListItemAvatar className={styles.listIcon}>
                 <ComputerIcon fontSize="large" />
               </ListItemAvatar>
               <ListItemText
                 className={styles.listText}
-                primary="Remote control"
+                primary="Digital Twins"
                 secondary={
-                  'You can access the topology and routing table anywhere, even on your computer, another machine, or a cloud application.'
+                  'You can natively remote-control any service anywhere on your computer, on another machine, or in a cloud application.'
                 }
               />
             </ListItem>
@@ -61,33 +60,31 @@ export const Anatomy = () => {
               className={styles.listLink}
               alignItems="flex-start"
               component={Link}
-              href="/tutorials/bootloader/intro"
+              href="/documentation/integrations"
+            >
+              <ListItemAvatar className={styles.listIcon}>
+                <LinkIcon fontSize="large" />
+              </ListItemAvatar>
+              <ListItemText
+                className={styles.listText}
+                primary="Integrations"
+                secondary={'Luos provides existing bridges with multiple other technologies.'}
+              />
+            </ListItem>
+            <ListItem
+              className={styles.listLink}
+              alignItems="flex-start"
+              component={Link}
+              href="/tutorials/bootloader"
             >
               <ListItemAvatar className={styles.listIcon}>
                 <AccountTreeIcon fontSize="large" />
               </ListItemAvatar>
               <ListItemText
                 className={styles.listText}
-                primary="Bootloader"
+                primary="Deployment"
                 secondary={
-                  'Luos engine allows you to update any firmware of your device, from anywhere.'
-                }
-              />
-            </ListItem>
-            <ListItem
-              className={styles.listLink}
-              alignItems="flex-start"
-              component={Link}
-              href="/tutorials/your-first-detection"
-            >
-              <ListItemAvatar className={styles.listIcon}>
-                <MemoryIcon fontSize="large" />
-              </ListItemAvatar>
-              <ListItemText
-                className={styles.listText}
-                primary="Topology and routing table"
-                secondary={
-                  'Luos detects all the services in your system and locates them. It allows you to access and adapt to any feature from anywhere.'
+                  'The bootloader feature allows you to update any firmware of your cyber-physical systems from anywhere.'
                 }
               />
             </ListItem>
@@ -99,16 +96,21 @@ export const Anatomy = () => {
               className={styles.listLink}
               alignItems="flex-start"
               component={Link}
-              href="/tutorials/get-started/get-started2"
+              href="https://discord.gg/luos"
             >
               <ListItemAvatar className={styles.listIcon}>
-                <SearchIcon fontSize="large" />
+                <Image
+                  src="/assets/images/socials/discord-white.svg"
+                  alt="discord icon"
+                  width={35}
+                  height={35}
+                />
               </ListItemAvatar>
               <ListItemText
                 className={styles.listText}
-                primary="Monitoring"
+                primary="Community"
                 secondary={
-                  'You can control and monitor your device with several SDKs (Python, TS, Browser app, and others - coming soon).'
+                  'Join our community to exchange with other developers and collaborate on projects.'
                 }
               />
             </ListItem>
@@ -116,65 +118,66 @@ export const Anatomy = () => {
               className={styles.listLink}
               alignItems="flex-start"
               component={Link}
-              href="/documentation/luos-technology/services/timestamp"
+              href="/roadmap"
             >
               <ListItemAvatar className={styles.listIcon}>
-                <CalendarMonthIcon fontSize="large" />
+                <ViewTimelineIcon fontSize="large" />
               </ListItemAvatar>
               <ListItemText
                 className={styles.listText}
-                primary="Timestamp"
-                secondary={
-                  'Luos engine provides you with a distributed timestamp management system.'
-                }
-              />
-            </ListItem>
-            <ListItem
-              className={styles.listLink}
-              alignItems="flex-start"
-              component={Link}
-              href="/documentation/luos-technology/basics#introduction-to-luos"
-            >
-              <ListItemAvatar className={styles.listIcon}>
-                <MiscellaneousServicesIcon fontSize="large" />
-              </ListItemAvatar>
-              <ListItemText
-                className={styles.listText}
-                primary="Microservice architecture"
-                secondary={
-                  'Luos follows the microservices philosophy. Luos engine is a library that allows you to conceptualize your features using small, independent and loosely coupled bricks.'
-                }
+                primary="Soon"
+                secondary={"We are always attentive to developers' needs to give them superpowers."}
               />
             </ListItem>
           </List>
         </Grid>
         <VSCode
           className={styles.mobileNone}
-          title="Anatomy"
+          title="Benefits"
           height={632}
+          carousel={benefitsData.reduce(
+            (acc, benefitsType, i) => {
+              acc.push({
+                name: benefitsType.label,
+                content: (
+                  <Grid>
+                    TEST #{i}
+                    <Image
+                      className={''}
+                      src={`/assets/images/index/benefits/illu/${benefitsType.key}.svg`}
+                      width={420}
+                      height={150}
+                      alt="line-left"
+                    />
+                  </Grid>
+                ),
+              });
+              return acc;
+            },
+            [] as {
+              name: string;
+              content: JSX.Element;
+            }[],
+          )}
           xs={10}
-          md={10}
           lg={6}
           xl={4}
           style={{ alignContent: 'flex-start' }}
         >
           <Grid item xs={3} className={styles.video}>
-            <span className={styles.videoTitle}>
-              <KeyboardArrowDownIcon className={styles.cardIcons} /> Anatomy
-            </span>
             <RadioGroup
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
-              value={currentAnatomyType}
-              onChange={(event) => setCurrentAnatomyType(event.target.value as AnatomyTypeKey)}
+              value={currentBenefitsType}
+              onChange={(event) => setCurrentBenefitsType(event.target.value as BenefitsTypeKey)}
             >
-              {anatomyData.map((anatomyType) => (
+              {benefitsData.map((benefitsType) => (
                 <FormControlLabel
-                  key={`integration-type-${anatomyType.label}`}
-                  value={anatomyType.key}
-                  label={anatomyType.label}
+                  key={`integration-type-${benefitsType.label}`}
+                  value={benefitsType.key}
+                  label={benefitsType.label}
                   className={
-                    currentAnatomyType === anatomyType.key ? styles.engineActive : styles.engine
+                    currentBenefitsType === benefitsType.key ? styles.engineActive : styles.engine
                   }
                   control={<Radio style={{ display: 'none' }} />}
                 />
@@ -186,7 +189,7 @@ export const Anatomy = () => {
             xs={9}
             className={styles.player}
             style={{
-              backgroundImage: `url('assets/images/index/anatomy/illu/${currentAnatomyType}.svg')`,
+              backgroundImage: `url('assets/images/index/benefits/illu/${currentBenefitsType}.svg')`,
             }}
           ></Grid>
         </VSCode>
@@ -214,4 +217,4 @@ export const Anatomy = () => {
     </div>
   );
 };
-export default Anatomy;
+export default Benefits;

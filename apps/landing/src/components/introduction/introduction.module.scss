@@ -1,18 +1,29 @@
 .container {
   width: 100%;
   margin-bottom: 10px;
-  background-image: url('/assets/images/index/powered/nebula.svg');
+  background-image: url('/assets/images/index/prefooter/nebula.svg');
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media screen and (max-width: 600px) {
+}
 
-.text {
+.text1,
+.text2 {
   font-family: 'Roboto';
+  color: var(--mui-palette-text-primary);
+}
+.text1 {
+  font-size: 22px;
+  line-height: 22px;
+}
+.text2 {
   font-size: 18px;
   line-height: 20px;
-  margin-bottom: 30px;
-  color: var(--mui-palette-text-primary);
-  padding-right: 60px;
+}
+
+.buttons {
+  padding: 24px 0;
 }
 
 .pinkBtn {
@@ -46,12 +57,12 @@
   color: white;
 }
 .whiteBtn::after {
-  content: url('/assets/images/index/powered/discord.svg');
+  content: url('/assets/images/socials/discord.svg');
   margin-top: 3px;
   margin-left: 10px;
 }
 .whiteBtn:hover::after {
-  content: url('/assets/images/index/powered/discord-white.svg');
+  content: url('/assets/images/socials/discord-white.svg');
   margin-top: 3px;
   margin-left: 10px;
 }
@@ -81,7 +92,7 @@
   font-family: 'Roboto Mono';
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1199px) {
   .pinkBtn {
     margin-bottom: 15px;
   }
@@ -94,13 +105,9 @@
   .mobileNone {
     display: none;
   }
-
-  .text {
-    margin-top: 100px;
-  }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   .mobileNone {
     display: initial;
   }

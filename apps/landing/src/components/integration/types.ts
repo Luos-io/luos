@@ -9,7 +9,6 @@ export type Integration = {
   name: string;
   label: string;
   link: string;
-  available: boolean;
 };
 
 export type IntegrationType = {

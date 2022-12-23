@@ -24,18 +24,62 @@
   color: var(--mui-palette-primary-main);
 }
 
-.vscodeContentLeft {
+.vscodeContentSidebar {
   flex-direction: column;
   align-content: center;
+  padding: 4px 8px;
 
   background-color: var(--mui-palette-background-default);
   border-right: 2px solid black;
   border-left: 2px solid black;
 }
-.vscodeContentLeft > span,
-.vscodeContentLeftIcons {
-  margin-top: 15px !important;
-  margin-bottom: 15px !important;
+.vscodeContentSidebar > span,
+.vscodeContentSidebarIcons {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+}
+
+.vscodeContentLeft {
+  background-color: var(--mui-palette-background-default);
+
+  .vscodeContentLeftGroup {
+    width: 100%;
+
+    .carouselValue {
+      width: 100%;
+      margin: 0;
+      padding: 1vh 0.5vw;
+      font-size: 0.9vw;
+      line-height: 1vw;
+    }
+    .carouselValueActive {
+      position: relative;
+      color: var(--mui-palette-text-secondary);
+      background-color: var(--mui-palette-primary-main);
+    }
+    .carouselValueActive::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      background: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%);
+      width: 100%;
+      height: 100%;
+      background-size: 200% auto;
+      background-position: 0 100%;
+      animation: gradient 4s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: -100% 0;
+      }
+    }
+  }
 }
 
 .vscodeContentRight {

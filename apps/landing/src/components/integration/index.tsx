@@ -14,7 +14,6 @@ import { IntegrationTypeKey } from 'components/integration/types';
 import styles from 'components/integration/integration.module.scss';
 
 const Integration = () => {
-  const [currentIntegrationType] = useState<IntegrationTypeKey>(IntegrationTypeKey.MCU);
   const theme = useTheme();
   const lgMatches = useMediaQuery(theme.breakpoints.up('lg'));
   const smMatches = useMediaQuery(theme.breakpoints.up('sm'));
@@ -48,7 +47,7 @@ const Integration = () => {
                     {integrations.map((integration, i) => (
                       <a
                         href={integration.link}
-                        className={integration.link !== '' ? styles.imgLink : styles.imgLinkDesible}
+                        className={integration.link !== '' ? styles.imgLink : styles.imgLinkDisable}
                         key={`integration-link-${integration.label}`}
                       >
                         <ImageListItem key={i}>
@@ -88,63 +87,7 @@ const Integration = () => {
         md={10}
         xl={9}
         style={{ margin: '0 auto' }}
-      >
-        {/* {isBrowser ? (
-          <>
-            <Grid item xs={3} className={styles.video}>
-              <span className={styles.videoTitle}>
-                <KeyboardArrowDownIcon className={styles.cardIcons} /> Integrations
-              </span>
-
-              <RadioGroup
-                aria-labelledby="demo-controlled-radio-buttons-group"
-                name="controlled-radio-buttons-group"
-                value={currentIntegrationType}
-                onChange={(event) =>
-                  setCurrentIntegrationType(event.target.value as IntegrationTypeKey)
-                }
-              >
-                {integrationsData.map((integrationType) => (
-                  <FormControlLabel
-                    key={`integration-type-${integrationType.label}`}
-                    value={integrationType.key}
-                    label={integrationType.label}
-                    className={
-                      currentIntegrationType === integrationType.key
-                        ? styles.engineActive
-                        : styles.engine
-                    }
-                    control={<Radio style={{ display: 'none' }} />}
-                  />
-                ))}
-              </RadioGroup>
-            </Grid>
-            <Grid item xs={9} className={styles.player}>
-              <IntegrationsLists />
-            </Grid>
-          </>
-        ) : (
-          <Carousel
-            className={styles.carouselContainer}
-            // IndicatorIcon={IndicatorIcons}
-            indicatorIconButtonProps={{
-              style: {
-                padding: theme.spacing(1),
-                filter: 'brightness(50%)',
-              },
-            }}
-            activeIndicatorIconButtonProps={{
-              style: {
-                filter: 'brightness(100%)',
-              },
-            }}
-          >
-            <Grid container className={styles.player}>
-              <IntegrationsLists />
-            </Grid>
-          </Carousel>
-        )} */}
-      </VSCode>
+      ></VSCode>
       <Grid container justifyContent={'flex-end'}>
         <Grid item xs={6} md={4} lg={4} className={styles.imgRightContainer}>
           <Image

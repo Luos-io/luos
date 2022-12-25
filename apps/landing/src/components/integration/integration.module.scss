@@ -258,41 +258,20 @@ html[data-theme='dark'] .title {
   font-family: 'Roboto Mono', sans-serif;
 }
 
-html[data-theme='dark'] .head {
-  background-color: #323334;
-}
-
-html[data-theme='dark'] .docs {
-  background-color: #323334;
-}
-
-html[data-theme='dark'] .video {
-  background-color: #1e1e1e;
-  color: white;
-}
-
-html[data-theme='dark'] .engine {
-  color: white;
-}
-
-html[data-theme='dark'] .player {
-  background-color: #1e1e1e;
-  color: white;
-}
-
 .imgLink {
+  text-decoration: none;
   color: var(--mui-palette-theme-primary);
 }
 .imgLink:hover {
-  text-decoration: none;
+  color: var(--mui-palette-primary-main);
 }
 
-.imgLinkDesible {
-  color: var(--mui-palette-theme-primary);
+.imgLinkDisable {
+  text-decoration: none;
+  color: var(--mui-palette-text-disabled);
   cursor: default;
   pointer-events: none;
 }
-.imgLinkDesible:hover {
+.imgLinkDisable:hover {
   color: black;
-  text-decoration: none;
 }

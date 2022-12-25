@@ -13,12 +13,12 @@ export const integrationData: IntegrationTypeList = [
       {
         name: 'stm',
         label: 'STM32',
-        link: 'https://www.luos.io/documentation/compatibility/mcu_demoboard#st',
+        link: 'https://www.luos.io/docs/compatibility/mcu_demoboard#st',
       },
       {
         name: 'microship',
         label: 'Microchip',
-        link: 'https://www.luos.io/documentation/compatibility/mcu_demoboard',
+        link: 'https://www.luos.io/docs/compatibility/mcu_demoboard',
       },
       {
         name: 'arduino',
@@ -33,17 +33,17 @@ export const integrationData: IntegrationTypeList = [
       {
         name: 'eclipse',
         label: 'Eclipse',
-        link: 'https://www.luos.io/documentation/luos-technology/basics/organization#luos-engines-levels',
+        link: 'https://www.luos.io/docs/luos-technology/basics/organization#luos-engines-levels',
       },
       {
         name: 'vscodeico',
         label: 'VS Code',
-        link: 'https://www.luos.io/documentation/luos-technology/basics/organization#luos-engines-levels',
+        link: 'https://www.luos.io/docs/luos-technology/basics/organization#luos-engines-levels',
       },
       {
         name: 'ros-white',
         label: 'ROS-1 & ROS-2',
-        link: 'https://www.luos.io/documentation/integrations/ros',
+        link: 'https://www.luos.io/docs/integrations/ros',
       },
       {
         name: 'freertos',

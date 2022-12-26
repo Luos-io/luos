@@ -59,7 +59,7 @@
 .btnContainer {
   width: 100%;
   text-align: center;
-  padding-bottom: 24px;
+  padding-bottom: 48px;
 }
 
 .pinkBtn {
@@ -78,6 +78,9 @@
 
 .step {
   border-right: 2px solid #fafafa;
+}
+.step:last-child {
+  border-right: none;
 }
 
 .step > span {
@@ -123,6 +126,8 @@
 
 .carouselImgDesktop {
   width: 130px;
+  display: block;
+  margin: 16px auto;
 }
 
 .carouselTitle {

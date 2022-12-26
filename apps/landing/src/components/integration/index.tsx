@@ -19,73 +19,8 @@ const Integration = () => {
 
   return (
     <div className={styles.container}>
-      <Grid container spacing={3}>
-        <Grid item xs={6} md={4} lg={4} className={styles.imgLeftContainer}>
-          <Image
-            src="/assets/images/index/integration/line-right.svg"
-            alt="line-right"
-            width={353}
-            height={120}
-            className={styles.imgLeft}
-          />
-        </Grid>
-        <Grid item xs={12} md={4} lg={4} style={{ paddingTop: 0 }}>
-          <h2 className={`${styles.title} ${styles.underline}`}>Integrations</h2>
-        </Grid>
-      </Grid>
-      <VSCode
-        title="Integrations"
-        // carousel={integrationsData.reduce(
-        //   (acc, { label, integrations }, i) => {
-        //     acc.push({
-        //       name: label,
-        //       content: (
-        //         <Grid item xs={12} className={styles.player}>
-        //           <ImageList cols={cols}>
-        //             {integrations.map(({ label, link, name }, i) => (
-        //               <a
-        //                 href={link}
-        //                 className={link !== '' ? styles.imgLink : styles.imgLinkDisable}
-        //                 key={`integration-link-${label}`}
-        //               >
-        //                 <ImageListItem key={i}>
-        //                   <Image
-        //                     src={`/assets/images/index/integration/icons/${name}.svg`}
-        //                     width={64}
-        //                     height={64}
-        //                     alt={`integration-image-${label}`}
-        //                     loading="lazy"
-        //                     style={{ display: 'block', margin: '0 auto' }}
-        //                   />
-        //                   <div>
-        //                     <ImageListItemBar
-        //                       title={label}
-        //                       position="below"
-        //                       style={{
-        //                         margin: '0 auto',
-        //                         textAlign: 'center',
-        //                       }}
-        //                     />
-        //                   </div>
-        //                 </ImageListItem>
-        //               </a>
-        //             ))}
-        //           </ImageList>
-        //         </Grid>
-        //       ),
-        //     });
-        //     return acc;
-        //   },
-        //   [] as {
-        //     name: string;
-        //     content: JSX.Element;
-        //   }[],
-        // )}
-        xs={11}
-        md={10}
-        xl={9}
-        style={{ margin: '0 auto' }}
-      >
+      <h2 className={`${styles.title} ${styles.underline}`}>Integrations</h2>
+      <VSCode title="Integrations" xs={11} md={10} xl={9} style={{ margin: '0 auto' }}>
         <Grid item xs={12} className={styles.player}>
           <ImageList cols={cols}>
             {integrationsData.map(({ label, link, name }, i) => {
@@ -120,14 +55,23 @@ const Integration = () => {
           </ImageList>
         </Grid>
       </VSCode>
-      <Grid container justifyContent={'flex-end'}>
-        <Grid item xs={6} md={4} lg={4} className={styles.imgRightContainer}>
+      <Grid container justifyContent={'space-between'}>
+        <Grid className={styles.linesLeft} item xs={4}>
           <Image
-            src="/assets/images/index/integration/line-right.svg"
+            className={styles.linesImg}
+            src={'/assets/images/index/integration/line-right.svg'}
+            width={420}
+            height={150}
+            alt="line-left"
+          />
+        </Grid>
+        <Grid className={styles.linesRight} item xs={4} alignSelf={'flex-end'}>
+          <Image
+            className={styles.linesImg}
+            src={'/assets/images/index/integration/line-right.svg'}
+            width={420}
+            height={150}
             alt="line-right"
-            width={353}
-            height={126}
-            className={styles.imgRight}
           />
         </Grid>
       </Grid>

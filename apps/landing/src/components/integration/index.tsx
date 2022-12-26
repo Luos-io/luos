@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Image from 'next/image';
 import Grid from '@mui/material/Grid';
 import ImageList from '@mui/material/ImageList';
@@ -9,7 +8,6 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 import VSCode from 'components/vscode';
 import integrationsData from 'components/integration/data';
-import { IntegrationTypeKey } from 'components/integration/types';
 
 import styles from 'components/integration/integration.module.scss';
 
@@ -37,57 +35,91 @@ const Integration = () => {
       </Grid>
       <VSCode
         title="Integrations"
-        carousel={integrationsData.reduce(
-          (acc, { label, integrations }, i) => {
-            acc.push({
-              name: label,
-              content: (
-                <Grid item xs={12} className={styles.player}>
-                  <ImageList cols={cols}>
-                    {integrations.map((integration, i) => (
-                      <a
-                        href={integration.link}
-                        className={integration.link !== '' ? styles.imgLink : styles.imgLinkDisable}
-                        key={`integration-link-${integration.label}`}
-                      >
-                        <ImageListItem key={i}>
-                          <Image
-                            src={`/assets/images/index/integration/icons/${integration.name}.svg`}
-                            width={64}
-                            height={64}
-                            alt={`integration-image-${integration.label}`}
-                            loading="lazy"
-                            style={{ display: 'block', margin: '0 auto' }}
-                          />
-                          <div>
-                            <ImageListItemBar
-                              title={integration.label}
-                              position="below"
-                              style={{
-                                margin: '0 auto',
-                                textAlign: 'center',
-                              }}
-                            />
-                          </div>
-                        </ImageListItem>
-                      </a>
-                    ))}
-                  </ImageList>
-                </Grid>
-              ),
-            });
-            return acc;
-          },
-          [] as {
-            name: string;
-            content: JSX.Element;
-          }[],
-        )}
+        // carousel={integrationsData.reduce(
+        //   (acc, { label, integrations }, i) => {
+        //     acc.push({
+        //       name: label,
+        //       content: (
+        //         <Grid item xs={12} className={styles.player}>
+        //           <ImageList cols={cols}>
+        //             {integrations.map(({ label, link, name }, i) => (
+        //               <a
+        //                 href={link}
+        //                 className={link !== '' ? styles.imgLink : styles.imgLinkDisable}
+        //                 key={`integration-link-${label}`}
+        //               >
+        //                 <ImageListItem key={i}>
+        //                   <Image
+        //                     src={`/assets/images/index/integration/icons/${name}.svg`}
+        //                     width={64}
+        //                     height={64}
+        //                     alt={`integration-image-${label}`}
+        //                     loading="lazy"
+        //                     style={{ display: 'block', margin: '0 auto' }}
+        //                   />
+        //                   <div>
+        //                     <ImageListItemBar
+        //                       title={label}
+        //                       position="below"
+        //                       style={{
+        //                         margin: '0 auto',
+        //                         textAlign: 'center',
+        //                       }}
+        //                     />
+        //                   </div>
+        //                 </ImageListItem>
+        //               </a>
+        //             ))}
+        //           </ImageList>
+        //         </Grid>
+        //       ),
+        //     });
+        //     return acc;
+        //   },
+        //   [] as {
+        //     name: string;
+        //     content: JSX.Element;
+        //   }[],
+        // )}
         xs={11}
         md={10}
         xl={9}
         style={{ margin: '0 auto' }}
-      ></VSCode>
+      >
+        <Grid item xs={12} className={styles.player}>
+          <ImageList cols={cols}>
+            {integrationsData.map(({ label, link, name }, i) => {
+              return (
+                <ImageListItem
+                  className={link !== '' ? styles.imgLink : styles.imgLinkDisable}
+                  component={link ? 'a' : 'div'}
+                  key={`integration-link-${label}-${i}`}
+                  href={link}
+                >
+                  <Image
+                    src={`/assets/images/index/integration/icons/${name}.svg`}
+                    width={64}
+                    height={64}
+                    alt={`integration-image-${label}`}
+                    loading="lazy"
+                    style={{ display: 'block', margin: '0 auto' }}
+                  />
+                  <div>
+                    <ImageListItemBar
+                      title={label}
+                      position="below"
+                      style={{
+                        margin: '0 auto',
+                        textAlign: 'center',
+                      }}
+                    />
+                  </div>
+                </ImageListItem>
+              );
+            })}
+          </ImageList>
+        </Grid>
+      </VSCode>
       <Grid container justifyContent={'flex-end'}>
         <Grid item xs={6} md={4} lg={4} className={styles.imgRightContainer}>
           <Image

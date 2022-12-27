@@ -37,16 +37,19 @@ export const VSCode = ({
 }: VSCodeProps) => {
   const { mode, systemMode } = useColorScheme();
   const [mounted, setMounted] = useState(false);
+  const [isCarouselRunning, setCarouselRunning] = useState(true);
   const [currentCarouselValue, setCurrentCarouselValue] = useState<number>(0);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  useInterval(() =>
-    setCurrentCarouselValue(
-      currentCarouselValue < carousel.length - 1 ? currentCarouselValue + 1 : 0,
-    ),
+  useInterval(
+    () =>
+      setCurrentCarouselValue(
+        currentCarouselValue < carousel.length - 1 ? currentCarouselValue + 1 : 0,
+      ),
+    isCarouselRunning ? 4000 : null,
   );
 
   if (!mounted) {
@@ -112,7 +115,13 @@ export const VSCode = ({
             </RadioGroup>
           </Grid>
         )}
-        <Grid item container xs={true} className={styles.vscodeContentRight}>
+        <Grid
+          item
+          container
+          xs={true}
+          className={styles.vscodeContentRight}
+          onClick={() => setCarouselRunning(false)}
+        >
           {carousel.length > 0
             ? carousel.find(({ name }) => carousel[currentCarouselValue].name === name)?.content
             : children}

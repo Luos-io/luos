@@ -5,7 +5,8 @@
 
 .title {
   font-family: 'Roboto Mono', sans-serif;
-  margin: 30px auto;
+  margin: 0 auto;
+  padding: 30px 0;
   font-size: 30px;
   text-align: center;
   color: white;
@@ -245,25 +246,4 @@ html[data-theme='dark'] .title {
 }
 .imgLinkDisable:hover {
   color: black;
-}
-
-.linesLeft > img {
-  float: left;
-  transform: rotateY(180deg);
-}
-
-.linesLeft,
-.linesRight > img {
-  margin-bottom: -68px !important;
-}
-.linesRight > img {
-  float: right;
-}
-
-.linesImg {
-  -webkit-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 }

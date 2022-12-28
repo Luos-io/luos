@@ -20,7 +20,13 @@ const Integration = () => {
   return (
     <div className={styles.container}>
       <h2 className={`${styles.title} ${styles.underline}`}>Integrations</h2>
-      <VSCode title="Integrations" xs={11} md={10} xl={9} style={{ margin: '0 auto' }}>
+      <VSCode
+        title="Integrations"
+        xs={11}
+        md={10}
+        xl={9}
+        style={{ margin: '0 auto', paddingBottom: 96 }}
+      >
         <Grid item xs={12} className={styles.player}>
           <ImageList cols={cols}>
             {integrationsData.map(({ label, link, name }, i) => {
@@ -55,26 +61,6 @@ const Integration = () => {
           </ImageList>
         </Grid>
       </VSCode>
-      <Grid container justifyContent={'space-between'}>
-        <Grid className={styles.linesLeft} item xs={4}>
-          <Image
-            className={styles.linesImg}
-            src={'/assets/images/index/integration/line-right.svg'}
-            width={420}
-            height={150}
-            alt="line-left"
-          />
-        </Grid>
-        <Grid className={styles.linesRight} item xs={4} alignSelf={'flex-end'}>
-          <Image
-            className={styles.linesImg}
-            src={'/assets/images/index/integration/line-right.svg'}
-            width={420}
-            height={150}
-            alt="line-right"
-          />
-        </Grid>
-      </Grid>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 .container {
   width: 100%;
+  padding-top: 16px;
   background-color: #323334;
 }
 
@@ -165,7 +166,7 @@
 }
 
 .imgLeft {
-  margin-top: -50px;
+  margin: -50px 0 0 -10px;
   transform: rotate(180deg);
   -webkit-user-drag: none;
   user-select: none;

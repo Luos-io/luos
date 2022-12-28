@@ -9,7 +9,17 @@ import styles from './prefooter.module.scss';
 const Prefooter = () => (
   <div className={styles.container}>
     <Grid container>
-      <Grid item xs={12} md={6} lg={6} className={styles.nebula}>
+      <Grid
+        item
+        container
+        xs={12}
+        md={6}
+        lg={6}
+        justifyContent={'center'}
+        justifyItems={'center'}
+        flexDirection={'column'}
+        className={styles.nebula}
+      >
         <h2 className={`${styles.titleFooter} ${styles.underline}`}>
           Develop and scale cyber-physical systems now
         </h2>

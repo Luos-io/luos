@@ -42,7 +42,7 @@ export const integrationData: Integration[] = [
     link: 'https://www.luos.io/docs/integrations/ros',
   },
   {
-    name: 'freertos',
+    name: 'freertos-white',
     label: 'FreeRTOS',
     link: 'https://www.luos.io/tutorials/freertos/intro',
   },

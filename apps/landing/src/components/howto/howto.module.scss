@@ -76,21 +76,26 @@
   color: #be99ff;
 }
 
-.step {
+.step-dark {
   border-right: 2px solid #fafafa;
 }
-.step:last-child {
+.step-light {
+  border-right: 2px solid #1e1e1e;
+}
+.step-dark:last-child,
+.step-light:last-child {
   border-right: none;
 }
 
-.step > span {
+.step-dark > span,
+.step-light > span {
   margin: 15px;
   display: block;
 }
 
 .file {
   width: 100%;
-  background-color: #323334;
+  background-color: var(--mui-palette-background-paper);
   border-bottom: 2px solid black;
 }
 
@@ -99,23 +104,23 @@
   height: 100%;
   padding: 0 15px;
   border-right: 2px solid black;
-  background-color: #1e1e1e;
-  color: white;
+  background-color: var(--mui-palette-background-default);
+  color: var(--mui-palette-text-primary);
   font-size: 0.85rem;
   font-family: 'Roboto Mono', sans-serif;
 }
 
 .carouselContainer {
   width: 100%;
-  background-color: #1e1e1e;
-  color: white;
+  background-color: var(--mui-palette-background-paper);
+  color: var(--mui-palette-text-primary);
 }
 
 .carousel {
   width: 100%;
   border-radius: 0;
-  background-color: #1e1e1e;
-  color: white;
+  background-color: var(--mui-palette-background-paper);
+  color: var(--mui-palette-text-primary);
   height: 350px;
 }
 
@@ -127,7 +132,7 @@
 .carouselImgDesktop {
   width: 130px;
   display: block;
-  margin: 16px auto;
+  margin: 16px 0 0 16px;
 }
 
 .carouselTitle {

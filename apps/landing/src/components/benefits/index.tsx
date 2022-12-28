@@ -26,8 +26,8 @@ export const Benefits = () => (
     <Grid item container xs={12} className={styles.titleContainer}>
       <h2 className={`${styles.title} ${styles.underline}`}>Benefits of Luos</h2>
       <Grid item className={styles.text}>
-        Luos gives you access to multiple features created by developers for developers. Many of
-        these features are based on the needs of the community.
+        Luos gives you access to multiple features created by developers for developers. <br />
+        Many of these features are based on the needs of the community.
       </Grid>
     </Grid>
     <Grid container justifyContent={'center'} style={{ position: 'relative' }}>

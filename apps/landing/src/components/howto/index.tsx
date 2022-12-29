@@ -188,7 +188,9 @@ const Howto = () => {
                   </div>
                   <Image
                     className={styles.carouselImg}
-                    src={`/assets/images/index/howto/${item.img}.svg`}
+                    src={`/assets/images/index/howto/${item.img}-${
+                      mode === 'system' ? systemMode : mode ?? 'light'
+                    }.svg`}
                     width={130}
                     height={130}
                     alt={`howto-carousel-${item.img}`}

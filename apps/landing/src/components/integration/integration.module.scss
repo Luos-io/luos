@@ -152,8 +152,8 @@ html[data-theme='dark'] .title {
 
 .player {
   min-height: 300px;
-  background-color: #1e1e1e;
-  color: white;
+  background-color: var(--mui-palette-background-paper);
+  color: var(--mui-palette-text-primary);
 }
 
 .docs {

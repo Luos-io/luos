@@ -90,8 +90,6 @@ const Howto = () => {
               <Grid
                 item
                 md={4}
-                lg={4}
-                xl={4}
                 className={styles[`step-${mode === 'system' ? systemMode : mode ?? 'light'}`]}
               >
                 <div className={styles.file}>
@@ -116,8 +114,6 @@ const Howto = () => {
               <Grid
                 item
                 md={4}
-                lg={4}
-                xl={4}
                 className={styles[`step-${mode === 'system' ? systemMode : mode ?? 'light'}`]}
               >
                 <div className={styles.file}>
@@ -142,8 +138,6 @@ const Howto = () => {
               <Grid
                 item
                 md={4}
-                lg={4}
-                xl={4}
                 className={styles[`step-${mode === 'system' ? systemMode : mode ?? 'light'}`]}
               >
                 <div className={styles.file}>

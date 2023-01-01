@@ -59,12 +59,12 @@ export const Layout = ({ children }: LayoutProps) => {
               {
                 name: 'Get started',
                 type: NavbarItemTypes.LINK,
-                href: '/documentation/tutorials/get-started',
+                href: '/tutorials/get-started',
               },
               {
                 name: 'Tutorials',
                 type: NavbarItemTypes.LINK,
-                href: '/documentation/tutorials',
+                href: '/tutorials',
               },
               {
                 name: 'Documentation',
@@ -74,12 +74,12 @@ export const Layout = ({ children }: LayoutProps) => {
               {
                 name: 'Troubleshooting',
                 type: NavbarItemTypes.LINK,
-                href: '/documentation/faq',
+                href: '/faq',
               },
               {
                 name: 'Blog',
                 type: NavbarItemTypes.LINK,
-                href: '/documentation/blog',
+                href: '/blog',
               },
               {
                 name: 'Roadmap',

@@ -4,6 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const VersionsArchived = require('./versionsArchived.json');
 
 const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(0, 5);
+const isProd = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -30,6 +31,7 @@ module.exports = {
       'Microservices are a software development technique that arranges an application as a collection of loosely coupled services.',
     robus_def: 'Bus communication protocol used by Luos.',
     luoshal_def: 'Hardware Abstraction Layer used to fit Luos with various hardware designs.',
+    isProd,
   },
 
   themeConfig: {

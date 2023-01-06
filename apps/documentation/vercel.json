@@ -4,11 +4,11 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/documentation/(luos-technology|tutorials|faq|blog)(.*)",
+      "source": "/docs/(luos-technology|tutorials|faq|blog)(.*)",
       "destination": "https://luos-documentation.vercel.app/$1$2"
     },
     {
-      "source": "/documentation/(assets/.*)",
+      "source": "/docs/(assets/.*)",
       "destination": "https://luos-documentation.vercel.app/$1"
     }
   ]

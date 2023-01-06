@@ -68,7 +68,7 @@ module.exports = {
         alt: 'Luos Logo',
         src: 'assets/images/logo_luos_animated_black.gif',
         srcDark: 'assets/images/logo_luos_animated_white.gif',
-        href: '/documentation/luos-technology',
+        href: '/docs/luos-technology',
         target: '_self',
       },
       items: [
@@ -93,7 +93,7 @@ module.exports = {
           ],
         },
         {
-          to: '/documentation/luos-technology',
+          to: '/docs/luos-technology',
           label: 'Technology',
           position: 'right',
         },
@@ -111,7 +111,7 @@ module.exports = {
               label: 'Tutorials',
             },
             {
-              to: '/documentation/luos-technology',
+              to: '/docs/luos-technology',
               label: 'Documentation',
             },
             {
@@ -164,7 +164,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: '/documentation/luos-technology',
+              to: '/docs/luos-technology',
             },
           ],
         },
@@ -216,7 +216,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          routeBasePath: '/documentation',
+          routeBasePath: '/docs',
           sidebarPath: require.resolve('./sidebarsDocs.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/luos-io/luos',

@@ -31,7 +31,7 @@ Luos was basically the student project I chose 15 years ago, and today it has be
 
 <h2>What are the differences or similarities between Luos and an embedded OS?</h2>
 
-Luos is not an operating system. Our technology allows the developers to **encapsulate any embedded system features** into something we call [services](/documentation/luos-technology/services).
+Luos is not an operating system. Our technology allows the developers to **encapsulate any embedded system features** into something we call [services](/docs/luos-technology/services).
 
 A service is a kind of a box with an API on top of it. Luos will allow you to exchange information between the different services available on your entire system using any network. The Boxes communicate with each other, making this not an operating system but a way to separate your developments into small services.
 
@@ -74,7 +74,7 @@ We also have a lot of robotics developers that just develop some drivers allowin
 
 On the other side, they are using a computer with ROS on it, and control all the sensors on the motors directly using high-level programming through ROS.
 
-So, it's easy! We already provided some frameworks, allowing you to deal with Luos using [Python](/documentation/integrations/pyluos), [ROS](/2022-08-16-ros-controlling-your-distributed-robot-using-micro-ros-and-luos.mdx), etc.
+So, it's easy! We already provided some frameworks, allowing you to deal with Luos using [Python](/docs/integrations/pyluos), [ROS](/2022-08-16-ros-controlling-your-distributed-robot-using-micro-ros-and-luos.mdx), etc.
 
 <h2>
   How do you address the fact that orchestrators in embedded systems are highly dependent on the
@@ -122,13 +122,13 @@ This will allow you to debug things more easily and have as much memory as you n
 
 You will only have to copy-paste your computer's applications directly into your embedded target when your project is ready. This will work the same way.
 
-The only difference is the path to the information, which is the [Luos network](/documentation/luos-technology/node/topology) used to transmit this information. But the information will still contain the same data.
+The only difference is the path to the information, which is the [Luos network](/docs/luos-technology/node/topology) used to transmit this information. But the information will still contain the same data.
 
 <h2>What integration/application is possible with NuttX?</h2>
 
 _From Alan C.Assis (Espressif, Brasil): "Basically, my main idea was to base it on your native initial part and get it running on the <a href="https://fr.wikipedia.org/wiki/NuttX" rel="external nofollow">Nuttx</a>. You can imagine Nuttx like a small Linux. You can run Nuttx on many boards, like any ESP32 board or the RaspberryPico board. There are more than 200 supported boards in the mainline, some very small, but there are also some big boards with powerful processors like IMX6. The idea is to run these rules like an application to serve some basic information from the board. For example, to send a temperature, accelerometer, or another sensor device. I suppose it will be possible to do that."_
 
-Luos uses something we call "HAL": [hardware attraction layer](/documentation/luos-technology/node/luos-hal). The idea is to tell Luos how to use the hardware it is running on. Luos will be able to use this interface to access the network, memory or timers for example.
+Luos uses something we call "HAL": [hardware attraction layer](/docs/luos-technology/node/luos-hal). The idea is to tell Luos how to use the hardware it is running on. Luos will be able to use this interface to access the network, memory or timers for example.
 
 Yes, Luos could use Nuttx as an HAL for Luos. We could access the physical resources available on the board using POSIX interfaces. This could allow Luos to access all the boards supported by Nuttx.
 

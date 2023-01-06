@@ -313,16 +313,16 @@ Parameters are defined by a 16-bit bitfield.
 
 Other specific messages:
 
-|   Object   |                            Definition                            |            Service(s)             |
-| :--------: | :--------------------------------------------------------------: | :-------------------------------: |
-|  register  |   Motor memory register filed with \[register_number, value\]    |          Dynamixel, void          |
-|   set_id   |                         A set id command                         |          Dynamixel, void          |
-| wheel_mode | The wheel mode parameter for Dynamixel servomotors True or False |          Dynamixel, void          |
-|   delay    |                   reduce services refresh rate                   | [Gate](/documentation/tools/gate) |
+|   Object   |                            Definition                            |        Service(s)        |
+| :--------: | :--------------------------------------------------------------: | :----------------------: |
+|  register  |   Motor memory register filed with \[register_number, value\]    |     Dynamixel, void      |
+|   set_id   |                         A set id command                         |     Dynamixel, void      |
+| wheel_mode | The wheel mode parameter for Dynamixel servomotors True or False |     Dynamixel, void      |
+|   delay    |                   reduce services refresh rate                   | [Gate](/docs/tools/gate) |
 
 ### Services exclusion messages
 
-Services can be excluded from the network if a problem occurs (see [self-healing](/documentation/tools/monitoring) for more information). In this case, the gate sends an exclusion message indicating that this service is no longer available:
+Services can be excluded from the network if a problem occurs (see [self-healing](/docs/tools/monitoring) for more information). In this case, the gate sends an exclusion message indicating that this service is no longer available:
 
 ```json
 { "dead_service": "service_alias" }
@@ -330,7 +330,7 @@ Services can be excluded from the network if a problem occurs (see [self-healing
 
 ### Node assert messages
 
-Nodes can assert if a critical issue occurs (see [self-healing](/documentation/tools/monitoring) for more information). In this case, the gate sends an assertion message indicating that this node is no longer available and some details about the crash:
+Nodes can assert if a critical issue occurs (see [self-healing](/docs/tools/monitoring) for more information). In this case, the gate sends an assertion message indicating that this node is no longer available and some details about the crash:
 
 ```json
 {

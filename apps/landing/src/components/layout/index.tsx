@@ -50,7 +50,7 @@ export const Layout = ({ children }: LayoutProps) => {
           {
             type: NavbarItemTypes.LINK,
             name: 'Technology',
-            href: '/documentation/luos-technology',
+            href: '/docs/luos-technology',
           },
           {
             name: 'Resources',
@@ -69,7 +69,7 @@ export const Layout = ({ children }: LayoutProps) => {
               {
                 name: 'Documentation',
                 type: NavbarItemTypes.LINK,
-                href: '/documentation/luos-technology',
+                href: '/docs/luos-technology',
               },
               {
                 name: 'Troubleshooting',

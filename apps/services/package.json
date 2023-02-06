@@ -35,7 +35,7 @@
     "@next-auth/mongodb-adapter": "^1.0.3",
     "@packages/services": "workspace:*",
     "@packages/ui": "workspace:*",
-    "@typeform/embed": "^1.37.0",
+    "@typeform/embed": "^2.8.0",
     "@typeform/embed-react": "^1.19.0",
     "@vercel/og": "^0.0.21",
     "chroma-js": "^2.4.2",

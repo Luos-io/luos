@@ -49,7 +49,7 @@
     "@mui/material": "^5.10.3",
     "@packages/docusaurus-plugin-github-release": "workspace:*",
     "@svgr/webpack": "^6.2.1",
-    "@typeform/embed-react": "^1.19.0",
+    "@typeform/embed-react": "^2.19.0",
     "clsx": "^1.2.1",
     "moment": "^2.29.4",
     "prism-react-renderer": "^1.3.5",

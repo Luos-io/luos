@@ -5,12 +5,12 @@
   "redirects": [
     {
       "source": "/docs/(luos-technology|tutorials|faq|blog)(.*)",
-      "destination": "https://luos-documentation.vercel.app/$1$2",
+      "destination": "https://documentation-kordan1.vercel.app/$1$2",
       "statusCode": 301
     },
     {
       "source": "/docs/(assets/.*)",
-      "destination": "https://luos-documentation.vercel.app/$1",
+      "destination": "https://documentation-kordan1.vercel.app/$1",
       "statusCode": 301
     }
   ]

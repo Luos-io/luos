@@ -2,16 +2,14 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
+  "rewrites": [
     {
       "source": "/docs/(luos-technology|tutorials|faq|blog)(.*)",
-      "destination": "https://documentation-kordan1.vercel.app/docs/$1$2",
-      "statusCode": 301
+      "destination": "https://documentation-kordan1.vercel.app/$1$2"
     },
     {
       "source": "/docs/(assets/.*)",
-      "destination": "https://documentation-kordan1.vercel.app/$1",
-      "statusCode": 301
+      "destination": "https://documentation-kordan1.vercel.app/$1"
     }
   ]
 }

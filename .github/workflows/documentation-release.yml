@@ -91,7 +91,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ github.token }}
-          commit-message: [Apps/Documentation] Tag documentation v${{ steps.new_version.outputs.new_version }}
+          commit-message: '[Apps/Documentation] Tag documentation v${{ steps.new_version.outputs.new_version }}'
           branch: feat/versions/${{ steps.new_version.outputs.new_version }}
           title: '[Apps/Documentation] Version ${{ steps.new_version.outputs.new_version }}'
           body: Automated generation of documentation

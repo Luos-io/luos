@@ -2,7 +2,7 @@ import { argv } from 'node:process';
 import { open } from 'node:fs/promises';
 import { valid } from 'semver';
 
-const validUrl = argv[2].match(/documentation-([a-z0-9])*-luos.vercel.app/g);
+const validUrl = argv[2].match(/documentation-([a-z0-9])*-kordan1.vercel.app/g);
 const newVersion = argv[3];
 if (validUrl && valid(newVersion)) {
   const versionsArchivedFilePath = new URL('../versionsArchived.json', import.meta.url);

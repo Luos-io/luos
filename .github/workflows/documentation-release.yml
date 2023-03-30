@@ -6,7 +6,7 @@ on:
       version:
         description: 'Version number'
         required: false
-        default: 'patch'
+        default: 'minor'
 
 jobs:
   create_doc_version:
@@ -79,6 +79,10 @@ jobs:
           VERCEL_TEAM_ID: ${{ secrets.VERCEL_TEAM_ID }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
+      - name: Update versions.json file
+        run: |
+          node ./apps/documentation/scripts/updateVersions.mjs ${{ steps.new_version.outputs.new_version }}
+
       - name: Update versionArchived.json file
         run: |
           node ./apps/documentation/scripts/updateArchivedVersions.mjs ${{ steps.production_url.outputs.production_url }} ${{ steps.current_version.outputs.current_version }}
@@ -87,7 +91,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ github.token }}
-          commit-message: Documentation v${{ steps.new_version.outputs.new_version }}
+          commit-message: [Apps/Documentation] Tag documentation v${{ steps.new_version.outputs.new_version }}
           branch: feat/versions/${{ steps.new_version.outputs.new_version }}
           title: '[Apps/Documentation] Version ${{ steps.new_version.outputs.new_version }}'
           body: Automated generation of documentation

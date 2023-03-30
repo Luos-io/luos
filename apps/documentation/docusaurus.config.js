@@ -1,6 +1,9 @@
+const semver = require('semver');
+
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const Versions = require('./versions.json');
 const VersionsArchived = require('./versionsArchived.json');
 
 const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(0, 5);
@@ -222,7 +225,7 @@ module.exports = {
           editUrl: 'https://github.com/luos-io/luos',
           versions: {
             current: {
-              label: '2.9.0',
+              label: semver.inc(Versions[0], 'minor'),
               banner: 'unreleased',
             },
           },

@@ -222,7 +222,7 @@ module.exports = {
           editUrl: 'https://github.com/luos-io/luos',
           versions: {
             current: {
-              label: '2.8.0',
+              label: '2.9.0',
               banner: 'unreleased',
             },
           },

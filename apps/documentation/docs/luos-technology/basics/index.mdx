@@ -5,7 +5,7 @@ title: 'Luos aims to end the dictatorship of electronics'
 description: Luos is a simple and lightweight containerization platform dedicated to embedded systems enabling a microservices architecture for electronics.
 ---
 
-import { customFields } from '/docusaurus.config.js';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Tooltip from '@site/src/components/Tooltip.js';
 import Image from '@site/src/components/Image';
 import IconExternalLink from '@theme/Icon/ExternalLink';
@@ -26,10 +26,10 @@ Luos is here to back you up and keep your projects clean and smooth to develop, 
 
 This guide contains all the basic notions you will need to use, create and understand Luos technology.
 
-Luos is a low-level software technology uploaded into every board's (<Tooltip def={customFields.node_def}>node</Tooltip>) of a device.
+Luos is a low-level software technology uploaded into every board's (<Tooltip def={useDocusaurusContext().siteConfig.customFields.node_def}>node</Tooltip>) of a device.
 You can use Luos as a **bare metal** library, or as a driver into your **embedded OS**.
 
-Luos is composed as well of **code subdivisions** called <Tooltip def={customFields.service_def}>services</Tooltip>. Services are distributed into every node in a network.
+Luos is composed as well of **code subdivisions** called <Tooltip def={useDocusaurusContext().siteConfig.customFields.service_def}>services</Tooltip>. Services are distributed into every node in a network.
 
 <div align="center">
   <Image
@@ -42,7 +42,7 @@ Luos is composed as well of **code subdivisions** called <Tooltip def={customFie
 
 ## Introduction to embedded containerized platforms
 
-Luos aims to change the way you develop by containerizing your embedded features into services on your devices. A microcontroller can host a series of services, like data acquisition from sensors, actuators, or pieces of behavior for your devices. These features are placed inside <Tooltip def={customFields.service_def}>services</Tooltip>. Prepare your services and deploy them anywhere in a Luos network, and you will be able to access them directly with your services, no matter where they are in the network. Services can be dynamically connected and disconnected and can be detected and find by your application.
+Luos aims to change the way you develop by containerizing your embedded features into services on your devices. A microcontroller can host a series of services, like data acquisition from sensors, actuators, or pieces of behavior for your devices. These features are placed inside <Tooltip def={useDocusaurusContext().siteConfig.customFields.service_def}>services</Tooltip>. Prepare your services and deploy them anywhere in a Luos network, and you will be able to access them directly with your services, no matter where they are in the network. Services can be dynamically connected and disconnected and can be detected and find by your application.
 
 :::tip Example
 Imagine an industrial device. It might contain several temperature sensors that will monitor specific parts of the system, and our system will need to know exactly what they monitor. When we read the temperature of the industrial motor, it is more convenient to get the information from the motor itself. These sensors are placed into services and clearly state which components they monitor. If the device encounters a problem, we need to notify anyone around of the incident. This could be a flashing light, a siren, or any other way of notifying people. In this case, it doesn't matter where the alarm peripherals are placed or even how many there are, Luos can notify all the services that identify as an alarm to activate them. Alarms can even be added to the Luos network while operating, and they will be recognized and used. Alarms also can be hosted or controled by computers or cloud applications.

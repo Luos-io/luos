@@ -2,7 +2,7 @@
 custom_edit_url: null
 ---
 
-import { customFields } from '/docusaurus.config.js';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Tooltip from '@site/src/components/Tooltip.js';
 import Image from '@site/src/components/Image';
 
@@ -46,7 +46,7 @@ If you have to deal with high-frequency real-time data, please read [the Streami
 
 Luos engine provides a standard command to ask a service to retrieve values from a sensor, called `ASK_PUB_CMD`. However, sometimes apps need to poll values from sensors, but the act of repeatedly retriving a value using the `ASK_PUB_CMD` command may result in the use of a lot bandwidth and take up valuable resources.
 In this kind of polling situation, **you can use the time-triggered auto-update features available from any Luos engine service**. This feature allows you to ask a service to send you an update of any value each X milliseconds.
-To use it, you have to setup targeted service with a message containing a standard time <Tooltip def={customFields.od_def}>object dictionary</Tooltip>, but with a specific command associated to it.
+To use it, you have to setup targeted service with a message containing a standard time <Tooltip def={useDocusaurusContext().siteConfig.customFields.od_def}>object dictionary</Tooltip>, but with a specific command associated to it.
 
 For example, to update a service each 10 ms:
 

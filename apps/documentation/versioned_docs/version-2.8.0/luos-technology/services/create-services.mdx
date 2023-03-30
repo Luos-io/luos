@@ -2,7 +2,7 @@
 custom_edit_url: null
 ---
 
-import { customFields } from '/docusaurus.config.js';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Tooltip from '@site/src/components/Tooltip.js';
 
 # Create Luos services
@@ -74,22 +74,22 @@ A driver is a type of service that handles hardware. Motors, distance sensors, L
 By designing a driver, you have to keep the following rules in mind:
 
 - A driver service always uses a standard Luos type to be usable by any other services called [profiles](./profiles).
-- A driver service always uses standard <Tooltip def={customFields.od_def}>object dictionary</Tooltip> structures to be usable by any other services.
+- A driver service always uses standard <Tooltip def={useDocusaurusContext().siteConfig.customFields.od_def}>object dictionary</Tooltip> structures to be usable by any other services.
 - A driver service never depends on or uses any other services (driver or app).
 - A driver service is "dumb", as it can't do anything else than manage its hardware feature (but it does it very well).
 
-You can have multiple driver services on the same <Tooltip def={customFields.node_def}>node</Tooltip> managing different hardware functionalities of your board. It is up to you to sort them depending on your design.
+You can have multiple driver services on the same <Tooltip def={useDocusaurusContext().siteConfig.customFields.node_def}>node</Tooltip> managing different hardware functionalities of your board. It is up to you to sort them depending on your design.
 
 ## Apps guidelines
 
 An application or app is a type of service that only manages software items such as functions or algorithms. Apps use other services to make your device act, operate, and behave.
-Apps can be placed in any <Tooltip def={customFields.node_def}>node</Tooltip> on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact the global performance of the system.
+Apps can be placed in any <Tooltip def={useDocusaurusContext().siteConfig.customFields.node_def}>node</Tooltip> on a Luos network without any hardware or code modifications. However, the choice of the hosting node can impact the global performance of the system.
 
 By designing an app, you have to keep the following rules in mind:
 
 - An app can't have hardware dependencies.
 - An app can use custom service types (you can create your own [profiles](./profiles) for that).
-- An app must use standard <Tooltip def={customFields.od_def}>object dictionary</Tooltip> data structures (you can create your own object dictionary for that).
+- An app must use standard <Tooltip def={useDocusaurusContext().siteConfig.customFields.od_def}>object dictionary</Tooltip> data structures (you can create your own object dictionary for that).
 
 :::caution
 If the data structures used are not standard, the [gate](../../tools/gate) services could be completely unable to manage them.

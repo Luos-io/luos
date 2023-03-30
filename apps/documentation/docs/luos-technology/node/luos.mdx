@@ -2,7 +2,7 @@
 custom_edit_url: null
 ---
 
-import { customFields } from '/docusaurus.config.js';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Tooltip from '@site/src/components/Tooltip.js';
 import Image from '@site/src/components/Image';
 import IconExternalLink from '@theme/Icon/ExternalLink';
@@ -15,7 +15,7 @@ The node's embedded code hosts the Luos engine's embedded code and the node's fu
 
 Luos engine works as a code library running on nodes. It can use several network interfaces.
 
-To match the Luos engine's library with your hardware, it offers an _Hardware Abstraction Layer_ for various devices in the <Tooltip def={customFields.luoshal_def}>Luos engine's HAL folder</Tooltip>.
+To match the Luos engine's library with your hardware, it offers an _Hardware Abstraction Layer_ for various devices in the <Tooltip def={useDocusaurusContext().siteConfig.customFields.luoshal_def}>Luos engine's HAL folder</Tooltip>.
 There is also specific _Hardware Abstraction Layers_ for each network layer.
 
 - <a href="https://github.com/Luos-io/luos_engine" target="_blank" rel="external nofollow">
@@ -51,7 +51,7 @@ int main(void)
 }
 ```
 
-Adding this code to a <Tooltip def={customFields.node_def}>node</Tooltip> makes it able to react to a Luos network. It is now ready to host your services by [running packages](../packages/index.mdx) on your main.
+Adding this code to a <Tooltip def={useDocusaurusContext().siteConfig.customFields.node_def}>node</Tooltip> makes it able to react to a Luos network. It is now ready to host your services by [running packages](../packages/index.mdx) on your main.
 
 **As a developer, you will always develop your functionalities into services and never into the `main()` program.**
 

@@ -11,8 +11,8 @@ export const Image = (props) => {
   const [isOpen, setIsOpen] = useState();
 
   const baseSourcePath =
-    siteConfig.customFields.isProd === true && location.pathname.indexOf('/documentation') !== -1
-      ? '/documentation'
+    siteConfig.customFields.isProd === true && location.pathname.indexOf('/docs') !== -1
+      ? '/docs'
       : '';
   const sources = {
     light: `${baseSourcePath}${props.sources.light}`,
@@ -21,7 +21,7 @@ export const Image = (props) => {
   const height = props.height === undefined ? '100%' : props.height;
   const width = props.width === undefined ? null : props.width;
   return (
-    <div style={{ display: 'inline-flex', marginRight: '15px' }}>
+    <div style={{ display: 'flex' }}>
       <ThemedImage
         className="imgPreview"
         sources={sources}

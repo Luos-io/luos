@@ -3,7 +3,7 @@ custom_edit_url: null
 description: Luos engine is the engine provided by Luos that will manage your services on all your nodes.
 ---
 
-import { customFields } from '/docusaurus.config.js';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Tooltip from '@site/src/components/Tooltip.js';
 import Image from '@site/src/components/Image';
 
@@ -23,7 +23,7 @@ Luos engine is open-source under _Apache 2.0_ license and available <a href="htt
 
 ## What is a Node?
 
-A node is a physical component (hardware) running Luos engine and hosting one or several services. In a Luos network, nodes are all connected together using a network interface. You can choose or create your own communication bus, Luos provides <Tooltip def={customFields.robus_def}>Robus</Tooltip> as the default network layer.
+A node is a physical component (hardware) running Luos engine and hosting one or several services. In a Luos network, nodes are all connected together using a network interface. You can choose or create your own communication bus, Luos provides <Tooltip def={useDocusaurusContext().siteConfig.customFields.robus_def}>Robus</Tooltip> as the default network layer.
 
 In other words, **a node is a microcontroller** connected to other microcontrollers running Luos.
 In the Luos philosophy, each node has to carry the necessary programs (services), allowing it to manage its boards and features.

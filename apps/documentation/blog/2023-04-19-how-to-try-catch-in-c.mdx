@@ -1,0 +1,117 @@
+---
+title: 'How to TRY CATCH in embedded C?'
+description: Although the try-catch construct is not natively available in the C programming language, it can be emulated. In this blog article, we'll explore the usefulness of try-catch and provide a guide on how to implement it in your C code.
+slug: how-to-try-catch-in-c
+authors:
+  - name: Nicolas Rabault
+    title: CEO @ Luos
+    url: https://github.com/nicolas-rabault
+    image_url: https://github.com/nicolas-rabault.png
+tags: [embedded, test, c]
+image: /assets/images/blog/webp/how-to-try-catch-in-c.webp
+hide_table_of_contents: false
+date: 2023-04-19T12:00
+---
+
+import Image from '@site/src/components/Image';
+
+A try-catch block is a language construct used in programming that allows a programmer to handle errors or exceptions in their code. The try block contains code that may throw an exception, and the catch block catches and handles that exception if it is thrown.
+
+```c
+try
+    do_something_risky()
+catch
+    print "The risky thing just failed."
+```
+
+Many modern programming languages, including JS, Python, and C++, have built-in support for try-catch blocks. However, the C programming language does not provide this functionality out of the box.
+
+## Why should you use try-catch?
+
+The ability to handle exceptions in code is extremely useful for a number of reasons. First and foremost, it allows a program to gracefully handle errors or exceptional situations that may arise during execution. This can prevent the program from crashing or behaving unpredictably. In the case of embedded code, try-catch statements are particularly useful for writing your unit tests.
+
+In embedded code, you probably use an `assert` function to handle errors, allowing you to check some conditions and manage critical situations. Most of the time, those assert functions display a log or traces and stop the program.
+
+Let’s take a simple function as a reference:
+
+```c
+void assert(bool statement)
+{
+    if (!statement)
+    {
+        printf("This is bad\n");
+        while(1);
+    }
+}
+
+int freq(int period){
+    assert(period != 0);
+    return 1/period;
+}
+
+int main() {
+    freq(0); // divide by zero to assert
+}
+```
+
+In this example, the `main` function will properly assert in the `freq` function if the value is 0.
+
+When you create your unit test to validate the `freq` functions, you will have to check all possible values of `period`, but you don’t want your test to stop its execution by testings the limits. This is where you need a try-catch block.
+
+## How to create a try-catch bloc in C?
+
+C does not have built-in support for try-catch blocks, but it is possible to create a similar construct using macros and the standards `setjmp.h` lib. Here's an example of how to create a simple try-catch macro in C following our previous example:
+
+```c
+#include <setjmp.h>
+
+jmp_buf ex_buf;
+
+#define TRY if (setjmp(ex_buf) == 0)
+#define CATCH else
+#define THROW longjmp(ex_buf, 1)
+
+void assert(bool statement)
+{
+    if (!statement)
+    {
+        printf("This is bad\n");
+        THROW;
+        while(1);
+    }
+}
+
+int freq(int period){
+    assert(period!=0);
+    return 1/period;
+}
+
+int main() {
+    TRY {
+        // Code that may throw an exception
+        freq(0); // Divide by zero to throw an exception
+    }
+    CATCH {
+        // Handle the exception
+        printf("An exception occurred, the test just failed\n");
+    }
+
+    return 0;
+}
+```
+
+This macro defines a TRY block, using a `jmp_buf` variable to check if an exception has been thrown and to save the current context. If no exception has been thrown, the code in the TRY block is executed.
+
+If the THROW macro is called, the code will jump back to the `setjmp` function of the TRY block and restore the saved context. Then the `setjmp` function will return the integer passed to the `longjmp`(in this case, 1). So if an exception is thrown, the `if` statement of the second execution of the TRY macro will be false and the CATCH block will be executed instead.
+
+In the example above, the code in the TRY block attempts to divide by zero, which will throw an exception. This will jump back on the TRY macro and make the if statement fail. The CATCH block catches the exception and prints a message into the console.
+
+While this macro is a simplified version of a try-catch block, it demonstrates how a similar construct can be implemented in C.
+
+If you want a practical example of try catch usage, you can check out the [Luos unit tests](https://github.com/Luos-io/luos_engine/blob/main/test/tests_od/test_angular/main.c#L60-L64) and [try-catch macro](https://github.com/Luos-io/luos_engine/blob/main/test/_resources/Unity/unit_test.h#L18-L37).
+
+In conclusion, try-catch blocks are a powerful tool for handling errors and exceptions in code. While the C programming language does not provide built-in support for this functionality, it is possible to create similar behavior using macros. By using try-catch blocks, programmers can make their code more robust and easier to test.
+
+<a href="/tutorials/get-started" class="pagination-nav__link" style={{ display: 'inline-block' }}>
+  Get started with Luos
+</a>

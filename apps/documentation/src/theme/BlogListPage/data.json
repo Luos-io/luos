@@ -1,6 +1,16 @@
 {
   "articles": [
     {
+      "title": "How to TRY CATCH in embedded C?",
+      "desc": "Although the try-catch construct is not natively available in the C programming language, it can be emulated. In this blog article, we'll explore the usefulness of try-catch and provide a guide on how to implement it in your C code.",
+      "img": "/assets/images/blog/webp/how-to-try-catch-in-c.webp",
+      "date": "2023-04-19T12:00",
+      "tags": ["embedded", "test", "c"],
+      "author": "Nicolas Rabault",
+      "author_img": "https://github.com/nicolas-rabault.png",
+      "link": "/blog/how-to-try-catch-in-c"
+    },
+    {
       "title": "Simplify debugging to remove complexity from embedded system development",
       "desc": "The complexity associated with the development of embedded systems is increasing rapidly.",
       "img": "/assets/images/blog/simplify-debugging/simplify-debugging-to-remove-complexity-from-embedded-system-development.png",

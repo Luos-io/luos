@@ -108,9 +108,18 @@ In the example above, the code in the TRY block attempts to divide by zero, whic
 
 While this macro is a simplified version of a try-catch block, it demonstrates how a similar construct can be implemented in C.
 
+:::caution
+Please note that the following try-catch code is not suitable for use in a production environment. While it was designed for a specific, well-controlled unit test environment, it may cause issues with nested calls or multi-process situations.
+Therefore, we cannot guarantee its safety or reliability.
+
+**Please use this code at your own risk.**
+:::
+
 If you want a practical example of try catch usage, you can check out the [Luos unit tests](https://github.com/Luos-io/luos_engine/blob/main/test/tests_od/test_angular/main.c#L60-L64) and [try-catch macro](https://github.com/Luos-io/luos_engine/blob/main/test/_resources/Unity/unit_test.h#L18-L37).
 
-In conclusion, try-catch blocks are a powerful tool for handling errors and exceptions in code. While the C programming language does not provide built-in support for this functionality, it is possible to create similar behavior using macros. By using try-catch blocks, programmers can make their code more robust and easier to test.
+In conclusion, try-catch blocks are a powerful tool for handling errors and exceptions in code. While the C programming language does not provide built-in support for this functionality, it is possible to create a close behavior using macros. By using try-catch blocks, programmers can make their unit-test simpler.
+
+**We advise that you thoroughly consider the risks associated with using this before proceeding.**
 
 <a href="/tutorials/get-started" class="pagination-nav__link" style={{ display: 'inline-block' }}>
   Get started with Luos

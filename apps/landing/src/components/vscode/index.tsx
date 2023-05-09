@@ -4,11 +4,11 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Grid from '@mui/material/Grid';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
-import { useColorScheme } from '@mui/material/styles';
+import { useColorScheme, useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import Image from 'next/image';
 import { ReactNode, useEffect, useState } from 'react';
 
-import theme from 'utils/theme';
 import useInterval from 'utils/hooks/useInterval';
 
 import styles from './vscode.module.scss';
@@ -37,16 +37,21 @@ export const VSCode = ({
 }: VSCodeProps) => {
   const { mode, systemMode } = useColorScheme();
   const [mounted, setMounted] = useState(false);
+  const [isCarouselRunning, setCarouselRunning] = useState(true);
   const [currentCarouselValue, setCurrentCarouselValue] = useState<number>(0);
+  const theme = useTheme();
+  const xsMatches = useMediaQuery(theme.breakpoints.down('sm'));
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  useInterval(() =>
-    setCurrentCarouselValue(
-      currentCarouselValue < carousel.length - 1 ? currentCarouselValue + 1 : 0,
-    ),
+  useInterval(
+    () =>
+      setCurrentCarouselValue(
+        currentCarouselValue < carousel.length - 1 ? currentCarouselValue + 1 : 0,
+      ),
+    isCarouselRunning ? 4000 : null,
   );
 
   if (!mounted) {
@@ -58,7 +63,10 @@ export const VSCode = ({
   return (
     <Grid className={className} style={style} item container {...otherProps}>
       <Grid container className={styles.vscodeHeader}>
-        <div className={styles.vscodeHeaderButtons}>
+        <div
+          className={styles.vscodeHeaderButtons}
+          style={{ display: xsMatches && title ? 'none' : 'initial' }}
+        >
           <Image src="/assets/images/vscode/buttons.svg" alt="buttons" width={100} height={18} />
         </div>
         {title && (
@@ -68,7 +76,13 @@ export const VSCode = ({
         )}
       </Grid>
       <Grid container className={styles.vscodeContent} style={{ height }}>
-        <Grid item container xs={'auto'} className={styles.vscodeContentSidebar}>
+        <Grid
+          item
+          container
+          xs={'auto'}
+          className={styles.vscodeContentSidebar}
+          display={xsMatches ? 'none' : 'flex'}
+        >
           <FileCopyIcon className={styles.vscodeContentSidebarIcons} fontSize="large" />
           <SearchIcon className={styles.vscodeContentSidebarIcons} fontSize="large" />
           <Image
@@ -112,7 +126,14 @@ export const VSCode = ({
             </RadioGroup>
           </Grid>
         )}
-        <Grid item container xs={true} className={styles.vscodeContentRight}>
+        <Grid
+          item
+          container
+          xs={true}
+          className={styles.vscodeContentRight}
+          borderLeft={xsMatches ? '2px solid black' : 'none'}
+          onClick={() => setCarouselRunning(false)}
+        >
           {carousel.length > 0
             ? carousel.find(({ name }) => carousel[currentCarouselValue].name === name)?.content
             : children}

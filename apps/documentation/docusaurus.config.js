@@ -1,9 +1,13 @@
+const semver = require('semver');
+
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const Versions = require('./versions.json');
 const VersionsArchived = require('./versionsArchived.json');
 
 const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(0, 5);
+const isProd = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -30,6 +34,7 @@ module.exports = {
       'Microservices are a software development technique that arranges an application as a collection of loosely coupled services.',
     robus_def: 'Bus communication protocol used by Luos.',
     luoshal_def: 'Hardware Abstraction Layer used to fit Luos with various hardware designs.',
+    isProd,
   },
 
   themeConfig: {
@@ -66,7 +71,7 @@ module.exports = {
         alt: 'Luos Logo',
         src: 'assets/images/logo_luos_animated_black.gif',
         srcDark: 'assets/images/logo_luos_animated_white.gif',
-        href: '/documentation/luos-technology',
+        href: '/docs/luos-technology',
         target: '_self',
       },
       items: [
@@ -91,7 +96,7 @@ module.exports = {
           ],
         },
         {
-          to: '/documentation/luos-technology',
+          to: '/docs/luos-technology',
           label: 'Technology',
           position: 'right',
         },
@@ -109,7 +114,7 @@ module.exports = {
               label: 'Tutorials',
             },
             {
-              to: '/documentation/luos-technology',
+              to: '/docs/luos-technology',
               label: 'Documentation',
             },
             {
@@ -162,7 +167,7 @@ module.exports = {
           items: [
             {
               label: 'Documentation',
-              to: '/documentation/luos-technology',
+              to: '/docs/luos-technology',
             },
           ],
         },
@@ -214,13 +219,13 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          routeBasePath: '/documentation',
+          routeBasePath: '/docs',
           sidebarPath: require.resolve('./sidebarsDocs.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/luos-io/luos',
           versions: {
             current: {
-              label: '2.8.0',
+              label: semver.inc(Versions[0], 'minor'),
               banner: 'unreleased',
             },
           },

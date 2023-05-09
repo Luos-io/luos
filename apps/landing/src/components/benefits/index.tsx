@@ -1,43 +1,42 @@
 import Image from 'next/image';
-import { useState } from 'react';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import ComputerIcon from '@mui/icons-material/Computer';
 import LinkIcon from '@mui/icons-material/Link';
 import ViewTimelineIcon from '@mui/icons-material/ViewTimeline';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import SvgIcon from '@mui/material/SvgIcon';
-
-import VSCode from 'components/vscode';
-import benefitsData from 'components/benefits/data';
-import { BenefitsTypeKey } from 'components/benefits/types';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import styles from './benefits.module.scss';
-import DiscordIcon from '/static/assets/images/socials/discord.svg';
 
 export const Benefits = () => {
-  const [currentBenefitsType, setCurrentBenefitsType] = useState<BenefitsTypeKey>(
-    BenefitsTypeKey.TOPOLOGY,
-  );
-
+  const theme = useTheme();
+  const xsMatches = useMediaQuery(theme.breakpoints.down('sm'));
   return (
-    <div className={styles.container}>
-      <Grid container item xs={12} md={6} lg={6} xl={6}>
+    <Grid container className={styles.container}>
+      <Grid item className={styles.imgLeftContainer}>
+        <Image
+          src="/assets/images/index/integration/line-right.svg"
+          alt="line-right"
+          width={xsMatches ? 176 : 353}
+          height={xsMatches ? 60 : 120}
+          className={styles.imgLeft}
+        />
+      </Grid>
+      <Grid item container xs={12} marginTop={xsMatches ? '-32px' : '-64px'}>
         <h2 className={`${styles.title} ${styles.underline}`}>Benefits of Luos</h2>
-        <p className={styles.text}>
-          Luos gives you access to multiple features created by developers for developers. Many of
-          these features are based on the needs of the community.
-        </p>
+        <Grid item className={styles.text}>
+          Luos gives you access to multiple features created by developers for developers. <br />
+          Many of these features are based on the needs of the community.
+        </Grid>
       </Grid>
       <Grid container justifyContent={'center'} style={{ position: 'relative' }}>
-        <Grid item xs={12} md={6} lg={3} xl={4}>
+        <Grid item xs={12} md={4}>
           <List className={styles.list}>
             <ListItem
               className={styles.listLink}
@@ -90,7 +89,7 @@ export const Benefits = () => {
             </ListItem>
           </List>
         </Grid>
-        <Grid item xs={12} md={6} lg={3} xl={4}>
+        <Grid item xs={12} md={4}>
           <List className={`${styles.list} ${styles.secondList}`}>
             <ListItem
               className={styles.listLink}
@@ -132,90 +131,19 @@ export const Benefits = () => {
             </ListItem>
           </List>
         </Grid>
-        <VSCode
-          className={styles.mobileNone}
-          title="Benefits"
-          height={632}
-          carousel={benefitsData.reduce(
-            (acc, benefitsType, i) => {
-              acc.push({
-                name: benefitsType.label,
-                content: (
-                  <Grid>
-                    TEST #{i}
-                    <Image
-                      className={''}
-                      src={`/assets/images/index/benefits/illu/${benefitsType.key}.svg`}
-                      width={420}
-                      height={150}
-                      alt="line-left"
-                    />
-                  </Grid>
-                ),
-              });
-              return acc;
-            },
-            [] as {
-              name: string;
-              content: JSX.Element;
-            }[],
-          )}
-          xs={10}
-          lg={6}
-          xl={4}
-          style={{ alignContent: 'flex-start' }}
-        >
-          <Grid item xs={3} className={styles.video}>
-            <RadioGroup
-              aria-labelledby="demo-controlled-radio-buttons-group"
-              name="controlled-radio-buttons-group"
-              value={currentBenefitsType}
-              onChange={(event) => setCurrentBenefitsType(event.target.value as BenefitsTypeKey)}
-            >
-              {benefitsData.map((benefitsType) => (
-                <FormControlLabel
-                  key={`integration-type-${benefitsType.label}`}
-                  value={benefitsType.key}
-                  label={benefitsType.label}
-                  className={
-                    currentBenefitsType === benefitsType.key ? styles.engineActive : styles.engine
-                  }
-                  control={<Radio style={{ display: 'none' }} />}
-                />
-              ))}
-            </RadioGroup>
-          </Grid>
-          <Grid
-            item
-            xs={9}
-            className={styles.player}
-            style={{
-              backgroundImage: `url('assets/images/index/benefits/illu/${currentBenefitsType}.svg')`,
-            }}
-          ></Grid>
-        </VSCode>
       </Grid>
-      <Grid container justifyContent={'space-between'}>
-        <Grid className={styles.linesLeft} item xs={4}>
+      <Grid container justifyContent={'flex-end'}>
+        <Grid item xs={6} md={4} lg={4} className={styles.imgRightContainer}>
           <Image
-            className={styles.linesImg}
-            src={'/assets/images/index/integration/line-right.svg'}
-            width={420}
-            height={150}
-            alt="line-left"
-          />
-        </Grid>
-        <Grid className={styles.linesRight} item xs={4} alignSelf={'flex-end'}>
-          <Image
-            className={styles.linesImg}
-            src={'/assets/images/index/integration/line-right.svg'}
-            width={420}
-            height={150}
+            src="/assets/images/index/integration/line-right.svg"
             alt="line-right"
+            width={xsMatches ? 176 : 353}
+            height={xsMatches ? 60 : 120}
+            className={styles.imgRight}
           />
         </Grid>
       </Grid>
-    </div>
+    </Grid>
   );
 };
 export default Benefits;

@@ -25,7 +25,12 @@ export default function App(props: AppProps<{ emotionCache: EmotionCache }>) {
     <CacheProvider value={emotionCache}>
       <Head>
         <meta
-          name="description"
+          property="og:title"
+          content="Luos | Luos is an embedded microservice orchestrator"
+          data-rh={true}
+        />
+        <meta
+          property="og:description"
           content="The devtool dedicated to cyber-physical systems making hardware as modular as software."
           data-rh="true"
         />

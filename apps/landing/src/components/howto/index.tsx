@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
+import { useColorScheme, useTheme } from '@mui/material/styles';
 import Image from 'next/image';
 import { isBrowser } from 'react-device-detect';
 import Carousel from 'react-material-ui-carousel';
@@ -8,32 +9,44 @@ import Carousel from 'react-material-ui-carousel';
 import VSCode from 'components/vscode';
 
 import styles from './howto.module.scss';
-import { useTheme } from '@mui/material';
+import { useEffect, useState } from 'react';
+
+const items = [
+  {
+    name: '1. ENCAPSULATION',
+    description: 'Luos engine translates your embedded features into APIs.',
+    file: 'STEP_1.c',
+    img: 'step1',
+  },
+  {
+    name: '2. EXPOSITION',
+    description: 'Luos makes these APIs accessible from anywhere.',
+    file: 'STEP_2.py',
+    img: 'step2',
+  },
+  {
+    name: '3. EXPLOITATION',
+    description:
+      'Luos provides you with integrations and tools to design the software architectures of your dreams.',
+    file: 'STEP_3.js',
+    img: 'step3',
+  },
+];
 
 const Howto = () => {
+  const { mode, systemMode } = useColorScheme();
+  const [mounted, setMounted] = useState(false);
   const theme = useTheme();
 
-  let items = [
-    {
-      name: '1. ENCAPSULATION',
-      description: 'Luos engine translates your embedded features into APIs.',
-      file: 'STEP_1.c',
-      img: 'step1',
-    },
-    {
-      name: '2. EXPOSITION',
-      description: 'Luos makes these APIs accessible from anywhere.',
-      file: 'STEP_2.py',
-      img: 'step2',
-    },
-    {
-      name: '3. EXPLOITATION',
-      description:
-        'Luos provides you with integrations and tools to design the software architectures of your dreams.',
-      file: 'STEP_3.js',
-      img: 'step3',
-    },
-  ];
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    // for server-side rendering
+    // learn more at https://github.com/pacocoursey/next-themes#avoid-hydration-mismatch
+    return null;
+  }
 
   const IndicatorIcons = [
     <Image
@@ -74,12 +87,18 @@ const Howto = () => {
         >
           {isBrowser ? (
             <Grid container className={styles.carouselContainer}>
-              <Grid item md={4} lg={4} xl={4} className={styles.step}>
+              <Grid
+                item
+                md={4}
+                className={styles[`step-${mode === 'system' ? systemMode : mode ?? 'light'}`]}
+              >
                 <div className={styles.file}>
                   <div className={styles.fileName}>step_1.c</div>
                 </div>
                 <Image
-                  src={'/assets/images/index/howto/step1.svg'}
+                  src={`/assets/images/index/howto/step1-${
+                    mode === 'system' ? systemMode : mode ?? 'light'
+                  }.svg`}
                   alt="step one"
                   className={styles.carouselImgDesktop}
                   width={130}
@@ -92,12 +111,18 @@ const Howto = () => {
                   remain simple and become independent and loosely coupled.
                 </p>
               </Grid>
-              <Grid item md={4} lg={4} xl={4} className={styles.step}>
+              <Grid
+                item
+                md={4}
+                className={styles[`step-${mode === 'system' ? systemMode : mode ?? 'light'}`]}
+              >
                 <div className={styles.file}>
                   <div className={styles.fileName}>step_2.py</div>
                 </div>
                 <Image
-                  src={'/assets/images/index/howto/step2.svg'}
+                  src={`/assets/images/index/howto/step2-${
+                    mode === 'system' ? systemMode : mode ?? 'light'
+                  }.svg`}
                   alt="step two"
                   className={styles.carouselImgDesktop}
                   width={130}
@@ -110,12 +135,18 @@ const Howto = () => {
                   your network is.
                 </p>
               </Grid>
-              <Grid item md={4} lg={4} xl={4} className={styles.step}>
+              <Grid
+                item
+                md={4}
+                className={styles[`step-${mode === 'system' ? systemMode : mode ?? 'light'}`]}
+              >
                 <div className={styles.file}>
                   <div className={styles.fileName}>step_3.js</div>
                 </div>
                 <Image
-                  src={'/assets/images/index/howto/step3.svg'}
+                  src={`/assets/images/index/howto/step3-${
+                    mode === 'system' ? systemMode : mode ?? 'light'
+                  }.svg`}
                   alt="step three"
                   className={styles.carouselImgDesktop}
                   width={130}
@@ -151,7 +182,9 @@ const Howto = () => {
                   </div>
                   <Image
                     className={styles.carouselImg}
-                    src={`/assets/images/index/howto/${item.img}.svg`}
+                    src={`/assets/images/index/howto/${item.img}-${
+                      mode === 'system' ? systemMode : mode ?? 'light'
+                    }.svg`}
                     width={130}
                     height={130}
                     alt={`howto-carousel-${item.img}`}

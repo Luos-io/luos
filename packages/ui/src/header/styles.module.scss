@@ -11,11 +11,11 @@
       min-width: auto;
       color: var(--mui-palette-text-primary);
     }
-    @media (max-width: 996px) {
-      .burgerButton {
-        display: inline-flex;
-      }
-    }
+    // @media (max-width: 996px) {
+    //   .burgerButton {
+    //     display: inline-flex;
+    //   }
+    // }
   }
   .headerItemsRight {
     justify-content: flex-end;

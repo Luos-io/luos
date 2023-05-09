@@ -1,0 +1,80 @@
+---
+title: 'A flexible embedded bootloader: updating becomes easier'
+description: Updating multiple boards from different brands without having to be physically connected to each one can help an embedded and edge developer.
+slug: a-flexible-embedded-bootloader
+authors:
+  - name: Thomas Salembier
+    title: CTO at Luos
+    url: https://github.com/Salem-Tho
+    image_url: /assets/images/tutorials/school/authors/thomas.png
+tags: [bootloader, embedded, edge]
+image: /assets/images/blog/webp/a-flexible-embedded-bootloader-luos.webp
+hide_table_of_contents: false
+date: 2022-11-08T12:00
+---
+
+import Image from '@site/src/components/Image';
+
+Updating multiple boards from different brands without having to be physically connected to each one can help an embedded and edge developer.
+
+<!--truncate-->
+
+<h2>Part 1: Introduction</h2>
+
+Developing an embedded system can often present constraints that many of us are used to, such as updating your system without having physical access to the board.
+
+Any embedded developer may have to develop or use a bootloader to update their project. In most cases, the bootloader is developed with regard to the boards present in the system, and this bootloader could often only be used for one board, not being compatible with other MCU brands.
+
+Each company develops its own [bootloader](/docs/tools/bootloader), the current operation is that to flash an MCU, it is necessary to connect to the card physically, use an IDE to launch the command, and update the firmware. The update is more complex in the case of several cards of different brands.
+
+<h2>Part 2: Bootloaders in embedded systems: how does it work?</h2>
+
+In conventional **embedded systems**, the uploading of a firmware on an MCU is done using several programmers (like _stlink_, _ftdi_, _dfu_, etc.). This process is PIN-dependent, that is to say the programming of the binary firmware is done using specific PIN entries (JTAG or SWD) for each board.
+
+Generally, a **bootloader** is a piece of code that is responsible for loading and launching the main application. The bootloader is usually stored in read-only memory, and is typically the first code that is executed when the system is powered on.
+
+The bootloader typically performs some basic initialization tasks, such as setting up the **clock frequency** and initializing the peripherals, before jumping to the main application. In some cases, the bootloader may also provide a mechanism for updating the main application, either through a serial interface or over a network.
+
+![Bootloader: How does it work](/assets/images/blog/bootloader-how-does-it-work-luos.svg)
+
+<h3>A "classical" bootloader principles</h3>
+
+A conventional bootloader works simply like this: the computer sends command lines to a board.
+
+<div align="center">
+  <Image
+    sources={{
+      light: '/assets/images/blog/a-classical-bootloader-principles-white-luos.png',
+      dark: '/assets/images/blog/a-classical-bootloader-principles-dark-luos.png',
+    }}
+  />
+</div>
+
+<h3>The limits of this method</h3>
+
+The main disadvantage of this method is that each board that needs to be flashed should have a **physical access** to a computer. Conventional bootloaders are designed to accept commands directly from a computer. Imagine a distributed robot which boards are not all accessible for a physical connection to the computer.
+
+<h4>How could we update their firmware?</h4>
+
+Also, it requires the system to be booted from a specific bootloader image. This can be problematic if the bootloader image is corrupted, or if the system needs to be booted from a different image (how can I update a bootloader's firmware?)
+
+This method often requires the bootloader to be located in a specific location in memory. This can be problematic if the system's memory map is changed, or if the system is upgraded to a new processor that has a different memory map.
+
+Finally, in some cases, this method requires developing a specific bootloader for each board you use in your system. It can be complex to update boards one by one with a specific configuration.
+
+<h2>
+  Part 3: A new bootloader that can update all boards, without the need to have physical access to
+  each of them
+</h2>
+
+Luos has developed a specific bootloader based on their different experiences and which meet all the <a href="https://discord.gg/luos" rel="external nofollow">community needs</a>.
+
+But what exactly does the embedded community need?
+
+The principal constraint that we needed to resolve is the fact that we cannot always have physical access (through JTAG or SWD) to a board, or in case of multiple boards in a product, having a serial access to each board to update the firmware of a board.
+
+Often, only one access point is available for all a network of boards. This becomes even more difficult if we consider that we need to create a different bootloader, depending on the brand of the MCU or on the physical access characteristics of each board.
+
+Luos library gives the opportunity to have a complete network orchestrator for a multiple-board system with a build-in bootloader that works the same way for each MCU that is covert by Luos library. The bootloader can be placed everywhere in the flash of an MCU and allows to update application of a system composed by one or several boards.
+
+Updating time of full system should be a variable to consider. Also, after the first version of a bootloader, there was a need of speed. When users have a distributed system with numerous boards that have the same firmware and when they are in the prototyping phase of their project, it is necessary to update their boards in the minimum duration.

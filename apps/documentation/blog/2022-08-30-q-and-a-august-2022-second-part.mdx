@@ -8,12 +8,10 @@ authors:
     url: https://github.com/nicolas-rabault
     image_url: https://github.com/nicolas-rabault.png
 tags: [Q&A, embedded, edge]
-image: /assets/images/blog/q-and-a-session-Luos-august-2022-second-part.jpg
+image: /assets/images/blog/webp/q-and-a-session-Luos-august-2022-second-part.webp
 hide_table_of_contents: false
 date: 2022-08-30T12:00
 ---
-
-![Are microservices optimized for edge and embedded systems? Q&A live](/assets/images/blog/q-and-a-session-Luos-august-2022-second-part.jpg)
 
 This is the second part of our article concerning our latest Q&A live session on Discord. [Please read the first part before the following.](/2022-08-30-q-and-a-august-2022-first-part.mdx)
 
@@ -21,7 +19,7 @@ This is the second part of our article concerning our latest Q&A live session on
 
 <h2>Do you plan to develop something to share the drivers with others?</h2>
 
-Let's talk about applications first. I previously explained the differences between a [driver service](/documentation/luos-technology/services/create-services#drivers-guidelines) and an [application service](/documentation/luos-technology/services/create-services#apps-guidelines).
+Let's talk about applications first. I previously explained the differences between a [driver service](/docs/luos-technology/services/create-services#drivers-guidelines) and an [application service](/docs/luos-technology/services/create-services#apps-guidelines).
 
 The idea is that an application service doesn't rely on any hardware so that you can move it anywhere; you can copy-paste someone else's project, which will work the same way on yours. This application will look for some resources available on the device and use them if they are available.
 
@@ -29,7 +27,7 @@ You can discover the bike alarm demonstration on <a href="https://www.youtube.co
 
 However, when you develop your drivers, you will have some hardware specificities, and your drivers will only work on **one specific electronic board** or **one specific configuration** of a given board. It is not so easy to share a **driver**, but it is easy to share an **application**.
 
-But you can share a driver on an application. We call it a [Luos package](/documentation/luos-technology/packages).
+But you can share a driver on an application. We call it a [Luos package](/docs/luos-technology/packages).
 
 **The Luos package** is a folder with some code on it, and this code will have one or multiple services. You will be able to copy-paste this folder from one project to another one.
 
@@ -59,7 +57,7 @@ You will have some ideas about optimizing it in terms of memory consumption and 
 
 > Luos mostly runs code when some information is transmitted, and if you don't transmit any information, Luos doesn't do anything.
 
-Many behaviors start directly from an interrupt. When you receive a [message](/documentation/luos-technology/messages), there will be an interruption, and Luos will create some jobs. These will be in the Luos loop you are running on your system.
+Many behaviors start directly from an interrupt. When you receive a [message](/docs/luos-technology/messages), there will be an interruption, and Luos will create some jobs. These will be in the Luos loop you are running on your system.
 
 If you don't have any interruption, you don't have any Luos tasks, and Luos doesn't do anything. This is the main idea.
 
@@ -69,18 +67,18 @@ The idea is to have a program that uses the **minimum CPU time possible** and de
 
 We are working on releasing the new revision, **Luos 2.5.3**, which will be released in a few hours. This new release is nothing game-changing because this is like a bug-fix release. We just improved the workflow on <a href="https://github.com/Luos-io/luos_engine" rel="external nofollow">GitHub</a>, allowing us to accelerate the process extremely. We also have bug fixes that some of you from the community reported to us.
 
-We have added some examples for [ESP32](/tutorials/esp), some of the [gate](/documentation/tools/gate) web circuit examples we are working on right now, and as we don't have something compiling already, this will be integrated into the next release which will be probably the **2.6.0**.
+We have added some examples for [ESP32](/tutorials/esp), some of the [gate](/docs/tools/gate) web circuit examples we are working on right now, and as we don't have something compiling already, this will be integrated into the next release which will be probably the **2.6.0**.
 
 <h2>
   Does Luos have another way to update nodes from any node dynamically? If the update fails, can it
   affect other nodes?
 </h2>
 
-**Luos engine** accesses to a communication way, the [network](/documentation/luos-technology/node/topology), when you have one way to communicate, which is called [ROBUS](/documentation/luos-technology/node/luos-hal#robus-hal). ROBUS uses a half-duplex serial interface to broadcast the information to all the [nodes]/documentation/luos-technology/node) available on the system.
+**Luos engine** accesses to a communication way, the [network](/docs/luos-technology/node/topology), when you have one way to communicate, which is called [ROBUS](/docs/luos-technology/node/luos-hal#robus-hal). ROBUS uses a half-duplex serial interface to broadcast the information to all the [nodes](/docs/luos-technology/node) available on the system.
 
 You can have as many sensors, motors, batteries, or drivers as you want on the boards, and all those boards will be able to communicate in a **multi-master way** with any other one.
 
-Regarding the update capabilities of Luos, because Luos accesses to the network and we also have access to the flash (basically, we need to have these two accesses to make Luos run), you can compare Luos to [a bootloader](/documentation/tools/bootloader).
+Regarding the update capabilities of Luos, because Luos accesses to the network and we also have access to the flash (basically, we need to have these two accesses to make Luos run), you can compare Luos to [a bootloader](/docs/tools/bootloader).
 
 When you do that, Luos provides you with a binary. You will be able to install it where you want on your microcontroller and when **this bootloader** starts at the boot, you will be able to update the firmware using the Luos network.
 
@@ -145,7 +143,7 @@ Eventually, our business model will rely on a SaaS model. We will provide some w
 
 Simon <a href="https://discord.gg/luos" rel="external nofollow">(Simon#2786 on Luos Discord)</a> recently opened a call for contributions, added on <a href="https://github.com/Luos-io/luos_engine/blob/main/CONTRIBUTING.md" rel="external nofollow">our GitHub page</a>. You can have a look at the <a href="https://github.com/Luos-io/luos_engine/issues" rel="external nofollow">issues</a>, where you will find the label `help wanted`. You will see all the issues we have right now, and you can have a look at them and contribute to them.
 
-We also have the `good first issue` tag. This tag applied on an issue means that any user (even those who never used Luos but just want to help this open source initiative) can start they contributing journey with this kind of issue, with easy bugs and improvements. We also have a [documentation page](https://www.luos.io/documentation/contribute-to-luos) to help you through your contributions.
+We also have the `good first issue` tag. This tag applied on an issue means that any user (even those who never used Luos but just want to help this open source initiative) can start they contributing journey with this kind of issue, with easy bugs and improvements. We also have a [documentation page](https://www.luos.io/docs/contribute-to-luos) to help you through your contributions.
 
 If you want to continue the discussion, feel free to <a href="https://discord.gg/luos" rel="external nofollow">join our Discord community</a>, where you will find a Help channel along with some others, and many developers waiting for you. Thank you for attending!
 

@@ -22,8 +22,17 @@
     margin-bottom: 0;
   }
 
+  .releaseDate {
+    margin-top: 0;
+  }
+
   .btn {
     color: var(--mui-palette-primary-main);
     border-color: var(--mui-palette-primary-main);
+  }
+
+  hr {
+    margin-bottom: 24px;
+    border: 1px solid var(--mui-palette-divider);
   }
 }

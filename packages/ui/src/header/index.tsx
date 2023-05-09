@@ -28,7 +28,7 @@ export const Header = (props: HeaderProps) => {
   const [mounted, setMounted] = useState(false);
   const { isSidebarOpen, setIsSidebarOpen } = useContext(SidebarContext);
   const theme = useTheme();
-  const gtSM = useMediaQuery(theme.breakpoints.up('sm'));
+  const gtMD = useMediaQuery(theme.breakpoints.up('md'));
 
   useEffect(() => {
     setMounted(true);
@@ -141,7 +141,7 @@ export const Header = (props: HeaderProps) => {
       );
     };
 
-    return gtSM ? desktopElement() : mobileElement();
+    return gtMD ? desktopElement() : mobileElement();
   });
 
   return (
@@ -151,19 +151,16 @@ export const Header = (props: HeaderProps) => {
           <div className={clsx(styles.headerItemsLeft)}>
             <Button
               className={styles.burgerButton}
-              onClick={() => {
-                console.log('CLICK');
-                setIsSidebarOpen(!isSidebarOpen);
-              }}
-              sx={{
-                display: { xs: 'initial', sm: 'none' },
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              style={{
+                display: gtMD ? 'none' : 'inline-flex',
               }}
             >
               {isSidebarOpen ? <MenuOpenIcon /> : <MenuIcon />}
             </Button>
             <Button href={'/'}>{props.logo}</Button>
           </div>
-          {gtSM == true && (
+          {gtMD == true && (
             <Box
               component={'nav'}
               className={clsx(styles.headerItemsRight, styles.navbar)}
@@ -190,7 +187,7 @@ export const Header = (props: HeaderProps) => {
           )}
         </Toolbar>
       </AppBar>
-      {gtSM == false && (
+      {gtMD == false && (
         <Drawer
           variant='temporary'
           open={isSidebarOpen}
@@ -198,8 +195,10 @@ export const Header = (props: HeaderProps) => {
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}
+          style={{
+            display: gtMD ? 'none' : 'block',
+          }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '80%' },
           }}
         >

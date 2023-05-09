@@ -50,7 +50,7 @@ export const Layout = ({ children }: LayoutProps) => {
           {
             type: NavbarItemTypes.LINK,
             name: 'Technology',
-            href: '/documentation/luos-technology',
+            href: '/docs/luos-technology',
           },
           {
             name: 'Resources',
@@ -59,27 +59,27 @@ export const Layout = ({ children }: LayoutProps) => {
               {
                 name: 'Get started',
                 type: NavbarItemTypes.LINK,
-                href: '/documentation/tutorials/get-started',
+                href: '/tutorials/get-started',
               },
               {
                 name: 'Tutorials',
                 type: NavbarItemTypes.LINK,
-                href: '/documentation/tutorials',
+                href: '/tutorials',
               },
               {
                 name: 'Documentation',
                 type: NavbarItemTypes.LINK,
-                href: '/documentation/luos-technology',
+                href: '/docs/luos-technology',
               },
               {
                 name: 'Troubleshooting',
                 type: NavbarItemTypes.LINK,
-                href: '/documentation/faq',
+                href: '/faq',
               },
               {
                 name: 'Blog',
                 type: NavbarItemTypes.LINK,
-                href: '/documentation/blog',
+                href: '/blog',
               },
               {
                 name: 'Roadmap',

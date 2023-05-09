@@ -7,6 +7,9 @@ export const theme = extendTheme({
   colorSchemes: {
     light: {
       palette: {
+        AppBar: {
+          darkBg: '#fafafa',
+        },
         background: {
           default: '#f5f8fa',
           paper: '#fafafa',

@@ -54,11 +54,11 @@ export const Roadmap = () => {
 
   return (
     <div className={styles.roadmap}>
-      <Typography variant={'h1'} fontSize={'3rem'} textAlign={'center'} padding={2}>
+      <Typography variant={'h1'} fontSize={'3rem'} textAlign={'center'} padding={'32px 16px 0'}>
         Luos Roadmap
       </Typography>
       <Grid container justifyContent="center" padding={2}>
-        <Grid item xs={10} md={8} marginBottom={1} padding={0} textAlign={'justify'}>
+        <Grid item xs={10} md={8} marginBottom={1} padding={0} textAlign={'justify'} fontSize={18}>
           <p>
             This page is a preview of Luos’s product roadmap. The following graphic shows the next
             technical developments our team is and will be working on with the help of the
@@ -125,16 +125,22 @@ export const Roadmap = () => {
               </Tabs>
             </Box>
             <TabPanel value={tabValue} index={0}>
-              <h2 className={styles.subtitle}>Luos engine v3</h2>
-              <h5>Q1 2023</h5>
+              <Typography variant="h4" className={styles.subtitle}>
+                Luos engine v3
+              </Typography>
+              <Typography variant="h6" className={styles.releaseDate}>
+                Q1 2023
+              </Typography>
               <p>
                 The main goal of Luos engine v3 is to drastically simplify the addition of various
                 networks’ support into the Luos engine library. Luos engine will not be limited to
                 the Robus network layer anymore, and will be able to deal with any kind of network.
               </p>
-
-              <h2 className={styles.subtitle}>Multi-phy</h2>
-              <h5>Q3 2023</h5>
+              <hr />
+              <Typography variant="h4" className={styles.subtitle}>
+                Multi-phy
+              </Typography>
+              <Typography variant="h5">Q3 2023</Typography>
               <p>
                 Based on Luos engine v3, the multi-phy feature will allow Luos engine to deal with
                 multiple and different networks at the same time (WiFi, CAN, Robus, …), acting like
@@ -142,8 +148,11 @@ export const Roadmap = () => {
                 multiply data bandwidth, and break the frontier between your embedded networks and
                 your cloud or computer applications.
               </p>
-              <h2 className={styles.subtitle}>Luos web assembly</h2>
-              <h5>Q1 2024</h5>
+              <hr />
+              <Typography variant="h4" className={styles.subtitle}>
+                Luos web assembly
+              </Typography>
+              <Typography variant="h5">Q1 2024</Typography>
               <p>
                 Thanks to multi-phy, you can now run Luos engine services everywhere, even on the
                 cloud, on your computer, or on a mobile phone. To make it even more flexible, we
@@ -151,31 +160,42 @@ export const Roadmap = () => {
                 your web browser. This web browser application will be visible by any embedded
                 services and usable from anywhere.
               </p>
-              <h2 className={styles.subtitle}>Luos certification</h2>
-              <h5>Q3 2024</h5>
+              <hr />
+              <Typography variant="h4" className={styles.subtitle}>
+                Luos certification
+              </Typography>
+              <Typography variant="h5">Q3 2024</Typography>
               <p>
                 Luos engine certification will add connectivity rules to your nodes, allowing you to
                 create white-lists, black-lists, or any conditional rules based on encrypted
                 information on all your nodes. Your product, your rules.
               </p>
+              <hr />
             </TabPanel>
             <TabPanel value={tabValue} index={1}>
-              <h2 className={styles.subtitle}>Luos hub</h2>
-              <h5>Q3 2023</h5>
+              <Typography variant="h4" className={styles.subtitle}>
+                Luos hub
+              </Typography>
+              <Typography variant="h5">Q3 2023</Typography>
               <p>
                 Luos hub is a registry allowing you to deal with your Luos packages revision as you
                 want, and to easily reuse and share the services with other users.
               </p>
-
-              <h2 className={styles.subtitle}>Luos inspector</h2>
-              <h5>Q1 2024</h5>
+              <hr />
+              <Typography variant="h4" className={styles.subtitle}>
+                Luos inspector
+              </Typography>
+              <Typography variant="h5">Q1 2024</Typography>
               <p>
                 Luos inspector will be a web application allowing you to inspect any event happening
                 on your whole product at a nanosecond scale. You can use it to deeply understand and
                 debug your entire product.
               </p>
-              <h2 className={styles.subtitle}>Luos manager</h2>
-              <h5>Q3 2024</h5>
+              <hr />
+              <Typography variant="h4" className={styles.subtitle}>
+                Luos manager
+              </Typography>
+              <Typography variant="h5">Q3 2024</Typography>
               <p>
                 Luos manager will provide a complete CI/CD interface allowing you to manage your
                 product during the development phases and on post-production. This tool will allow
@@ -183,6 +203,7 @@ export const Roadmap = () => {
                 link bugs with inspection cession, or deploy a specific configuration to specific
                 targets.
               </p>
+              <hr />
             </TabPanel>
           </Box>
           <Box textAlign="center">

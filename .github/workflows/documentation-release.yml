@@ -1,0 +1,95 @@
+name: Create a new Doc version
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number'
+        required: false
+        default: 'minor'
+
+jobs:
+  create_doc_version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install PNPM
+        uses: pnpm/action-setup@v2
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Save current version
+        id: current_version
+        run: |
+          cd ./apps/documentation
+          current_version=$(node -p "require('./package.json').version")
+          echo "::set-output name=current_version::$current_version"
+
+      - name: Get last production URL
+        id: production_url
+        run: |
+          vercel_response=$(curl --location --request GET "https://api.vercel.com/v13/deployments/documentation-git-main-kordan1.vercel.app" --header "Authorization: Bearer $VERCEL_TOKEN" | jq -r ".url") 
+          echo "::set-output name=production_url::$vercel_response"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Update versionArchived.json file
+        run: |
+          node ./apps/documentation/scripts/updateArchivedVersions.mjs ${{ steps.production_url.outputs.production_url }} ${{ steps.current_version.outputs.current_version }}
+
+      - name: Get new package version
+        id: new_version
+        run: |
+          cd ./apps/documentation
+          new_version=$(npx --yes semver@latest -- $(node -p "require('./package.json').version") -i $VERSION)
+          echo "::set-output name=new_version::$new_version"
+        env:
+          VERSION: ${{ github.event.inputs.version }}
+
+      - name: Create new Docusaurus versioned docs
+        run: |
+          npx dotenv-vault@latest pull --dotenvMe $DOTENV_ME --yes
+          cd ./apps/documentation
+          pnpm docusaurus docs:version ${{ steps.new_version.outputs.new_version }}
+        env:
+          DOTENV_ME: ${{ secrets.DOTENV_ME }}
+
+      - name: Update package version
+        run: |
+          cd ./apps/documentation
+          pnpm version $VERSION --no-workspaces-update
+        env:
+          VERSION: ${{ github.event.inputs.version }}
+
+      - name: Delete old versioned_docs directory
+        run: |
+          cd ./apps/documentation
+          rm -rf ./versioned_docs/version-${{ steps.current_version.outputs.current_version }}
+
+      - name: Delete old versioned_sidebars directory
+        run: |
+          cd ./apps/documentation
+          rm -rf ./versioned_sidebars/version-${{ steps.current_version.outputs.current_version }}-sidebars.json
+
+      - name: Update versions.json file
+        run: |
+          node ./apps/documentation/scripts/updateVersions.mjs ${{ steps.new_version.outputs.new_version }}
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ github.token }}
+          commit-message: '[Apps/Documentation] Tag documentation v${{ steps.new_version.outputs.new_version }}'
+          branch: feat/versions/${{ steps.new_version.outputs.new_version }}
+          title: '[Apps/Documentation] Version ${{ steps.new_version.outputs.new_version }}'
+          body: Automated generation of documentation
+          assignees: K0rdan
+          reviewers: K0rdan

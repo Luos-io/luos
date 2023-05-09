@@ -33,38 +33,26 @@ jobs:
           current_version=$(node -p "require('./package.json').version")
           echo "::set-output name=current_version::$current_version"
 
-      - name: Update package version
+      - name: Get last production URL
+        id: production_url
         run: |
-          cd ./apps/documentation
-          pnpm version $VERSION --no-workspaces-update
+          vercel_response=$(curl --location --request GET "https://api.vercel.com/v13/deployments/documentation-git-main-kordan1.vercel.app" --header "Authorization: Bearer $VERCEL_TOKEN" | jq -r ".url") 
+          echo "::set-output name=production_url::$vercel_response"
         env:
-          VERSION: ${{ github.event.inputs.version }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
-      - name: Save new version
+      - name: Update versionArchived.json file
+        run: |
+          node ./apps/documentation/scripts/updateArchivedVersions.mjs ${{ steps.production_url.outputs.production_url }} ${{ steps.current_version.outputs.current_version }}
+
+      - name: Get new package version
         id: new_version
         run: |
           cd ./apps/documentation
-          new_version=$(node -p "require('./package.json').version")
+          new_version=$(npx --yes semver@latest -- $(node -p "require('./package.json').version") -i $VERSION)
           echo "::set-output name=new_version::$new_version"
-
-      - name: Delete old versions.json file
-        run: |
-          cd ./apps/documentation
-          rm -f ./versions.json
-
-      - name: Delete old versioned_docs directory
-        run: |
-          cd ./apps/documentation
-          rm -rf ./versioned_docs/*
-
-      - name: Delete old versioned_sidebars directory
-        run: |
-          cd ./apps/documentation
-          rm -rf ./versioned_sidebars/*
-
-      - name: Update versions.json file
-        run: |
-          node ./apps/documentation/scripts/updateVersions.mjs ${{ steps.new_version.outputs.new_version }}
+        env:
+          VERSION: ${{ github.event.inputs.version }}
 
       - name: Create new Docusaurus versioned docs
         run: |
@@ -74,18 +62,26 @@ jobs:
         env:
           DOTENV_ME: ${{ secrets.DOTENV_ME }}
 
-      - name: Get last production URL
-        id: production_url
+      - name: Update package version
         run: |
-          vercel_response=$(curl --location --request GET "https://api.vercel.com/v13/deployments/luos.io?teamId=$VERCEL_TEAM_ID" --header "Authorization: Bearer $VERCEL_TOKEN" | jq -r ".url") 
-          echo "::set-output name=production_url::$vercel_response"
+          cd ./apps/documentation
+          pnpm version $VERSION --no-workspaces-update
         env:
-          VERCEL_TEAM_ID: ${{ secrets.VERCEL_TEAM_ID }}
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERSION: ${{ github.event.inputs.version }}
 
-      - name: Update versionArchived.json file
+      - name: Delete old versioned_docs directory
         run: |
-          node ./apps/documentation/scripts/updateArchivedVersions.mjs ${{ steps.production_url.outputs.production_url }} ${{ steps.current_version.outputs.current_version }}
+          cd ./apps/documentation
+          rm -rf ./versioned_docs/version-${{ steps.current_version.outputs.current_version }}
+
+      - name: Delete old versioned_sidebars directory
+        run: |
+          cd ./apps/documentation
+          rm -rf ./versioned_sidebars/version-${{ steps.current_version.outputs.current_version }}-sidebars.json
+
+      - name: Update versions.json file
+        run: |
+          node ./apps/documentation/scripts/updateVersions.mjs ${{ steps.new_version.outputs.new_version }}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4

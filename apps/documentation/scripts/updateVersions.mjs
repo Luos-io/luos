@@ -5,8 +5,8 @@ import { valid } from 'semver';
 const newVersion = argv[2];
 if (valid(newVersion)) {
   const versionsFilePath = new URL('../versions.json', import.meta.url);
-  const versionsFile = await open(versionsFilePath, 'r+');
-  await versionsFile.writeFile(JSON.stringify([`${newVersion}`], null, 2));
+  const versionsFile = await open(versionsFilePath, 'w+');
+  await versionsFile.writeFile(JSON.stringify([`${newVersion}`], null, 0));
   await versionsFile.close();
   console.log(`Script finished !`);
 } else {

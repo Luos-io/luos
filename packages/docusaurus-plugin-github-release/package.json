@@ -32,7 +32,7 @@
     "@docusaurus/utils": "^2.1.0",
     "@docusaurus/utils-validation": "^2.1.0",
     "clsx": "^1.2.1",
-    "dotenv-vault-core": "^0.6.1",
+    "dotenv": "^16.1.0",
     "node-fetch": "^3.2.10",
     "remark-gfm": "^3.0.1",
     "react-markdown": "^8.0.3",
@@ -42,7 +42,7 @@
   "devDependencies": {
     "@docusaurus/types": "^2.1.0",
     "@packages/tsconfig": "workspace:*",
-    "dotenv-vault-core": "^0.6.1",
+    "dotenv": "^16.1.0",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",

@@ -7,12 +7,6 @@
   "scripts": {
     "lint": "eslint *.ts*"
   },
-  "resolutions": {
-    "@types/react": "18.0.21",
-    "@types/react-dom": "18.0.8",
-    "**/react": "18.2.0",
-    "**/react-dom": "18.2.0"
-  },
   "dependencies": {
     "mongodb": "^4.9.1"
   },

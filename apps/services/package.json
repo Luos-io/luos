@@ -9,12 +9,6 @@
     "start": "dotenv -e \"../../.env\" -- next start",
     "lint": "dotenv -e \"../../.env\" -- next lint"
   },
-  "resolutions": {
-    "@types/react": "18.0.21",
-    "@types/react-dom": "18.0.8",
-    "**/react": "18.2.0",
-    "**/react-dom": "18.2.0"
-  },
   "dependencies": {
     "@apollo/client": "^3.6.8",
     "@babel/core": "^7.18.13",

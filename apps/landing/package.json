@@ -8,12 +8,6 @@
     "start": "dotenv -e \"../../.env\" -- next start",
     "lint": "dotenv -e \"../../.env\" -- next lint"
   },
-  "resolutions": {
-    "@types/react": "18.0.21",
-    "@types/react-dom": "18.0.8",
-    "**/react": "18.2.0",
-    "**/react-dom": "18.2.0"
-  },
   "dependencies": {
     "@emotion/cache": "^11.10.3",
     "@emotion/react": "^11.10.4",

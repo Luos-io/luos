@@ -41,7 +41,7 @@ importers:
       '@packages/tsconfig': workspace:*
       '@svgr/webpack': ^6.2.1
       '@tsconfig/docusaurus': ^1.0.6
-      '@typeform/embed-react': ^1.19.0
+      '@typeform/embed-react': ^2.27.0
       '@types/react': ^17.0.43
       '@types/react-helmet': ^6.1.5
       '@types/react-router-dom': ^5.3.3
@@ -76,7 +76,7 @@ importers:
       '@mui/material': 5.11.0_2mete2oe2kozaocyy47tavsz2y
       '@packages/docusaurus-plugin-github-release': link:../../packages/docusaurus-plugin-github-release
       '@svgr/webpack': 6.5.1
-      '@typeform/embed-react': 1.21.0_react@17.0.2
+      '@typeform/embed-react': 2.27.0_react@17.0.2
       clsx: 1.2.1
       moment: 2.29.4
       prism-react-renderer: 1.3.5_react@17.0.2
@@ -174,7 +174,7 @@ importers:
       '@packages/tsconfig': workspace:*
       '@packages/ui': workspace:*
       '@typeform/embed': ^1.37.0
-      '@typeform/embed-react': ^1.19.0
+      '@typeform/embed-react': ^2.27.0
       '@types/chroma-js': ^2.1.3
       '@types/d3': ^7.4.0
       '@types/node': ^17.0.23
@@ -233,7 +233,7 @@ importers:
       '@packages/services': link:../../packages/services
       '@packages/ui': link:../../packages/ui
       '@typeform/embed': 1.38.0
-      '@typeform/embed-react': 1.21.0_react@18.2.0
+      '@typeform/embed-react': 2.27.0_react@18.2.0
       '@vercel/og': 0.0.21
       chroma-js: 2.4.2
       clsx: 1.2.1
@@ -5471,30 +5471,35 @@ packages:
     resolution: {integrity: sha512-1QxDaP54hpzM6bq9E+yFEo4F9WbWHhsDe4vktZXF/iDlc9FqGr9qlg+3X/nuKQXx8QxHV7ue8NXFazzajsxFBA==}
     dev: true
 
-  /@typeform/embed-react/1.21.0_react@17.0.2:
-    resolution: {integrity: sha512-nZi7OD5mxZUKQjkzxAll05JU6QNWuHuCE+L/S1Vagy7fgb/rdx4iEIfvqFogTcrVw61bCS6TaAJ+ateD7vR7sw==}
+  /@typeform/embed-react/2.27.0_react@17.0.2:
+    resolution: {integrity: sha512-yMZYg2xKg+olojke6V4ExEqgvWc3h7wR4RkYVtAL6sqPirxn+4inK+JQ25A135Wrn95sG0BADhcTB5iBbGw7Dg==}
     engines: {node: '>=10'}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
-      '@typeform/embed': 1.38.0
+      '@typeform/embed': 2.14.0
       fast-deep-equal: 3.1.3
       react: 17.0.2
     dev: false
 
-  /@typeform/embed-react/1.21.0_react@18.2.0:
-    resolution: {integrity: sha512-nZi7OD5mxZUKQjkzxAll05JU6QNWuHuCE+L/S1Vagy7fgb/rdx4iEIfvqFogTcrVw61bCS6TaAJ+ateD7vR7sw==}
+  /@typeform/embed-react/2.27.0_react@18.2.0:
+    resolution: {integrity: sha512-yMZYg2xKg+olojke6V4ExEqgvWc3h7wR4RkYVtAL6sqPirxn+4inK+JQ25A135Wrn95sG0BADhcTB5iBbGw7Dg==}
     engines: {node: '>=10'}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
-      '@typeform/embed': 1.38.0
+      '@typeform/embed': 2.14.0
       fast-deep-equal: 3.1.3
       react: 18.2.0
     dev: false
 
   /@typeform/embed/1.38.0:
     resolution: {integrity: sha512-qYxtwckEcRt++F1sUeILb/qmUFQ3PwcUxKedCBSseC8lFo1ukD1wmsBf+Il8YSRPKPqhTrGUG5WPaJg83n1xuw==}
+    engines: {node: '>=10'}
+    dev: false
+
+  /@typeform/embed/2.14.0:
+    resolution: {integrity: sha512-mRPHSeId5wvvdfK58YYmjnZgeHuUyIUk5Uyj15mYvmOTEvduzpUH2MwNMbur/5aElIau3oyPc1EgeNLFPRZz1A==}
     engines: {node: '>=10'}
     dev: false
 

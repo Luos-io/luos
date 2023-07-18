@@ -152,31 +152,72 @@ module.exports = {
         },
         {
             type: 'category',
-            label: 'Hardware consideration',
+            label: 'Networks',
             link: {
                 type: 'doc',
-                id: 'hardware-consideration/hardware-consideration',
+                id: 'networks/networks',
             },
             items: [
                 {
-                    type: 'doc',
-                    label: 'Minimum requirements',
-                    id: 'hardware-consideration/minimum-requirements',
-                },
-                {
-                    type: 'doc',
-                    label: 'Luos engine configuration',
-                    id: 'hardware-consideration/mcu',
-                },
-                {
-                    type: 'doc',
-                    label: 'Electronic design',
-                    id: 'hardware-consideration/electronics',
-                },
-                {
-                    type: 'doc',
-                    label: 'Test your Robus configuration',
-                    id: 'hardware-consideration/test-your-configuration',
+                    type: 'category',
+                    label: 'Robus',
+                    link: {
+                        type: 'doc',
+                        id: 'networks/robus/robus',
+                    },
+                    items: [
+                        {
+                            type: 'doc',
+                            label: 'Minimum requirements',
+                            id: 'networks/robus/minimum-requirements',
+                        },
+                        {
+                            type: 'doc',
+                            label: 'Luos engine configuration',
+                            id: 'networks/robus/mcu',
+                        },
+                        {
+                            type: 'doc',
+                            label: 'Electronic design',
+                            id: 'networks/robus/electronics',
+                        },
+                        {
+                            type: 'doc',
+                            label: 'Test your Robus configuration',
+                            id: 'networks/robus/test-your-configuration',
+                        },
+                        {
+
+                            type: 'category',
+                            label: 'Advanced',
+                            link: {
+                                type: 'doc',
+                                id: 'networks/robus/advanced/index',
+                            },
+                            items: [
+                                {
+                                    type: 'doc',
+                                    label: 'The transmission, and reception management',
+                                    id: 'networks/robus/advanced/transmission',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'The topology management',
+                                    id: 'networks/robus/advanced/topology',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'The protocol definition',
+                                    id: 'networks/robus/advanced/protocol',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'The physical driver interface',
+                                    id: 'networks/robus/advanced/physical-driver-interface',
+                                },
+                            ],
+                        },
+                    ],
                 },
             ],
         },
@@ -293,46 +334,6 @@ module.exports = {
                     type: 'doc',
                     label: 'Boards compatibility',
                     id: 'compatibility/mcu_demoboard',
-                },
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Advanced documentation',
-            link: {
-                type: 'doc',
-                id: 'advanced-documentation/index',
-            },
-            items: [
-                {
-                    type: 'category',
-                    label: 'Robus',
-                    link: {
-                        type: 'doc',
-                        id: 'advanced-documentation/robus/index',
-                    },
-                    items: [
-                        {
-                            type: 'doc',
-                            label: 'The transmission, and reception management',
-                            id: 'advanced-documentation/robus/transmission',
-                        },
-                        {
-                            type: 'doc',
-                            label: 'The topology management',
-                            id: 'advanced-documentation/robus/topology',
-                        },
-                        {
-                            type: 'doc',
-                            label: 'The protocol definition',
-                            id: 'advanced-documentation/robus/protocol',
-                        },
-                        {
-                            type: 'doc',
-                            label: 'The physical driver interface',
-                            id: 'advanced-documentation/robus/physical-driver-interface',
-                        },
-                    ],
                 },
             ],
         },

@@ -6,69 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Tooltip from '@site/src/components/Tooltip.js';
 import Image from '@site/src/components/Image';
 
-# Receive and Send Advanced messages
-
-There are some types of messages, that do not follow the basic messages format of Luos. For this reason Luos provides sending and receiving mechanisms for the types of complex messages, analyzed below.
-
-## Large data
-
-You will sometimes have to deal with large data that could be larger than the maximum 128-byte data on a Luos message. Fortunately, Luos is able to automatically fragment and de-fragment the data above this side. To do that, you will have to use another send function that will take care of setting the messages' size, and the data fields.
-
-For example, here is how to send a picture:
-
-```c
-// fill the large message info
-msg_t msg;
-color_t picture[300*300] = {/*Your favorite cat picture data*/};
-msg.header.target_mode = SERVICEIDACK;
-msg.header.target = 12;
-msg.header.cmd = COLOR;
-Luos_SendData(service, &msg, picture, sizeof(color_t)*300*300);
-return;
-```
-
-In the reception callback, here is the code for retrieve the message with the receiving service (the one with ID 12):
-
-```c
-color_t picture[300*300];
-void services_MsgHandler(service_t *service, msg_t *msg) {
-    if (msg->header.cmd == COLOR) {
-        Luos_ReceiveData(service, msg, (void*)picture);
-    }
-}
-```
-
-:::note
-If you have to deal with high-frequency real-time data, please read [the Streaming page].
-:::
-
-## Time-triggered update messages
-
-Luos engine provides a standard command to ask a service to retrieve values from a sensor, called `ASK_PUB_CMD`. However, sometimes apps need to poll values from sensors, but the act of repeatedly retriving a value using the `ASK_PUB_CMD` command may result in the use of a lot bandwidth and take up valuable resources.
-In this kind of polling situation, **you can use the time-triggered auto-update features available from any Luos engine service**. This feature allows you to ask a service to send you an update of any value each X milliseconds.
-To use it, you have to setup targeted service with a message containing a standard time <Tooltip def={useDocusaurusContext().siteConfig.customFields.od_def}>object dictionary</Tooltip>, but with a specific command associated to it.
-
-For example, to update a service each 10 ms:
-
-```c
-time_luos_t time = TimeOD_TimeFrom_ms(10);
-msg_t msg;
-msg.header.target = id;
-msg.header.target_mode = SERVICEIDACK;
-TimeOD_TimeToMsg(&time, &msg);
-msg.header.cmd = UPDATE_PUB;
-Luos_SendMsg(app, &msg);
-```
-
-:::info
-Services can handle only one time-triggered target, 2 services of the same network can't ask a time-triggered value from the same service.
-:::
-
-:::caution
-To prevent any ID movement, auto-update configuration is reset on all services on each detection (see [Routing table page](../node/topology) for more information).
-:::
-
-## Streaming
+# Streaming
 
 On occasion, you will have to deal with high-frequency small data with strong time constraints.
 

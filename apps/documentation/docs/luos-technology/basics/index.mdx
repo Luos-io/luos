@@ -10,26 +10,25 @@ import Tooltip from '@site/src/components/Tooltip.js';
 import Image from '@site/src/components/Image';
 import IconExternalLink from '@theme/Icon/ExternalLink';
 
-# Luos aims to end the dictatorship of electronics
+# Luos: Empowering Software to Overcome Hardware Limitations
 
-Take most embedded systems software, you will find the same hardware oriented organization —**the dictatorship of electronics 😈**.
+When it comes to most embedded systems software, you'll often encounter a dominant paradigm known as the **"dictatorship of hardware"** 😈.
 
-Sensors, actuators, and other hardware resources will be mixed into the application managing the behavior of the product into a unique and monolithic software. Modifying, adding, or reusing something into such an architecture forces you to rethink the entire project.
+Sensors, actuators, and other hardware resources will be mixed into the application managing the behavior of the product into a unique and monolithic software. Modifying, or adding, hardware into such an architecture forces you to rethink the entire software project.
 
-Sometimes, a design will have more than one microcontroller. In this case, you will need to implement an inter-device communication protocol using any bus available, and you will need to deal with instructions, messaging, error handling, collision, priority, latency, etc. In this case, the product will be even more difficult to maintain due to a significant portion of time spent on the network software development across all the boards.
+Most of the time, a device will have more than one computing unit (multiple microcontroller or a connectivity to a cloud for example). In this case, you will need to implement an inter-application communication protocol using any bus available, and you will need to deal with instructions, messaging, error handling, collision, priority, latency, etc. In this case, the product will be even more difficult to maintain due to a significant portion of time spent on the network software development across all the boards and softwares.
 
-Luos is here to back you up and keep your projects clean and smooth to develop, modify and reuse 😇.
+Luos is here to assist you in creating clean, seamless projects that can be developed, modified, and reused across a wide range of architectures.<br/>By liberating software from the dictatorship of hardware, Luos empowers developers to **overcome the limitations imposed by hardware** and facilitates efficient project management 😇.
 
 ## Introduction to Luos
 
-**Luos is a simple and lightweight containerization platform dedicated to embedded systems enabling a <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank" rel="external nofollow">microservices<IconExternalLink width="10"></IconExternalLink></a> architecture for electronics.** It is a powerful modularity tool to simplify and link any hardware component or application code together as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank" rel="external nofollow">single system image<IconExternalLink width="10"></IconExternalLink></a>.
+**Luos is a simple and lightweight <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank" rel="external nofollow">microservices<IconExternalLink width="10"></IconExternalLink></a> orchestrator dedicated to hardware products.** It is a powerful modularity tool to deploy, simplify, and link any hardware components or application codes as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank" rel="external nofollow">single system image<IconExternalLink width="10"></IconExternalLink></a>.
 
-This guide contains all the basic notions you will need to use, create and understand Luos technology.
+This documentation contains all the basic notions you will need to use, create and understand Luos technology.
 
-Luos is a low-level software technology uploaded into every board's (<Tooltip def={useDocusaurusContext().siteConfig.customFields.node_def}>node</Tooltip>) of a device.
-You can use Luos as a **bare metal** library, or as a driver into your **embedded OS**.
+Luos is a low-level ANSI C lib you can use into every **bare metal** board's (<Tooltip def={useDocusaurusContext().siteConfig.customFields.node_def}>node</Tooltip>), **RTOS**, **OS**, or **cloud** app of your complete device. Luos will make all your services communicate together, no matter where they are in the network.
 
-Luos is composed as well of **code subdivisions** called <Tooltip def={useDocusaurusContext().siteConfig.customFields.service_def}>services</Tooltip>. Services are distributed into every node in a network.
+A Luos software architecture is composed of **code subdivisions** called <Tooltip def={useDocusaurusContext().siteConfig.customFields.service_def}>services</Tooltip>. Services are distributed across all <Tooltip def={useDocusaurusContext().siteConfig.customFields.node_def}>nodes</Tooltip> over the diferent networks used by your device.
 
 <div align="center">
   <Image
@@ -40,12 +39,11 @@ Luos is composed as well of **code subdivisions** called <Tooltip def={useDocusa
   />
 </div>
 
-## Introduction to embedded containerized platforms
+## Introduction to embedded microservices
 
-Luos aims to change the way you develop by containerizing your embedded features into services on your devices. A microcontroller can host a series of services, like data acquisition from sensors, actuators, or pieces of behavior for your devices. These features are placed inside <Tooltip def={useDocusaurusContext().siteConfig.customFields.service_def}>services</Tooltip>. Prepare your services and deploy them anywhere in a Luos network, and you will be able to access them directly with your services, no matter where they are in the network. Services can be dynamically connected and disconnected and can be detected and find by your application.
+Luos empowers you with superpowers to streamline the development of your software and firmware. It achieves this by organizing your features into services and granting you the freedom to manage them as per your requirements.
 
-:::tip Example
-Imagine an industrial device. It might contain several temperature sensors that will monitor specific parts of the system, and our system will need to know exactly what they monitor. When we read the temperature of the industrial motor, it is more convenient to get the information from the motor itself. These sensors are placed into services and clearly state which components they monitor. If the device encounters a problem, we need to notify anyone around of the incident. This could be a flashing light, a siren, or any other way of notifying people. In this case, it doesn't matter where the alarm peripherals are placed or even how many there are, Luos can notify all the services that identify as an alarm to activate them. Alarms can even be added to the Luos network while operating, and they will be recognized and used. Alarms also can be hosted or controled by computers or cloud applications.
-:::
+With Luos, you gain the flexibility to deploy your services anywhere across any network supported by your Luos configuration. Regardless of their location in the architecture, you can access these services directly from anywhere. The dynamic addition and removal of services enable your applications to adapt to the available services on your device.
 
-Finally, it doesn't matter where on the Luos network sensors or actuators are placed. You can wire the different elements together as you want, each element will be detected and you will be able to use all of your services, wherever they are.
+Finally, it doesn't matter what kind or how many different networks you need to use in your device; Luos will handle them and provide you with a consistent list of detected services across all of them. You can wire the different elements together as you want without any software constraints.
+

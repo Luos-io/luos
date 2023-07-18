@@ -29,7 +29,7 @@ To setup this configuration, you have to simply setup the callback at service cr
 Here is a code example with a button:
 
 ```c
-void Button_MsgHandler(service_t *service, msg_t *msg)
+void Button_MsgHandler(service_t *service, const msg_t *msg)
 {
     if (msg->header.cmd == ASK_PUB_CMD)
     {

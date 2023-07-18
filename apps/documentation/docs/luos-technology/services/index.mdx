@@ -18,9 +18,9 @@ A service can be an [application](./create-services.mdx#apps-guidelines) or a [d
 
 Each service provides a particular set of tasks such as managing a motor, handling a laser range finder, or more complex operations like computing an inverse-kinematics.
 
-Each service is hosted in a single <Tooltip def={useDocusaurusContext().siteConfig.customFields.node_def}>node</Tooltip> (MCU), but a node can handle several services at the same time and manage communication between them and between other services hosted in other nodes, using the same network interface.
+Each service is hosted in a single <Tooltip def={useDocusaurusContext().siteConfig.customFields.node_def}>node</Tooltip>, but a node can handle several services at the same time and manage communication between them and between other services hosted in other nodes, using the same network interface.
 
-**As a developer you will always develop your functionalities into services, and never into the `main()` program.** The only information that should be put on the `main()` code are MCU setup parameters and services' run functions.
+**As a developer you will always develop your functionalities into services, and never into the `main()` program.** The only information that should be put on the `main()` code are compute unit setup parameters and services' run functions.
 
 ## Service properties
 

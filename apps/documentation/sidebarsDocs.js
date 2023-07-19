@@ -219,6 +219,26 @@ module.exports = {
                         },
                     ],
                 },
+                {
+                    type: 'category',
+                    label: 'Serial',
+                    link: {
+                        type: 'doc',
+                        id: 'networks/serial/serial',
+                    },
+                    items: [
+                        {
+                            type: 'doc',
+                            label: 'Minimum requirements',
+                            id: 'networks/serial/minimum-requirements',
+                        },
+                        {
+                            type: 'doc',
+                            label: 'Serial configuration',
+                            id: 'networks/serial/config',
+                        },
+                    ],
+                },
             ],
         },
         {

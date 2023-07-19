@@ -1,0 +1,19 @@
+---
+custom_edit_url: null
+---
+
+# Minimum requirements
+|  Hardware  |                                     Specification                                      |
+| :--------: | :------------------------------------------------------------------------------------: |
+|   Flash    |                1.3KB                                                                   |
+|    RAM     |                0.7KB                                                                   |
+|    GPIO    |                         2                                                              |
+| Ressources |                            1 USART (optionaly: DMA)                                    |
+
+## Serial network performances vs microcontroler frequency
+| MCU frequency | data bandwidth (TX + RX) | Robus Max Baudrate |
+| :-----------: | :------------: | :----------------: |
+|   >=48 MHz    |    1400 Kbps   |      > 1 Mbps      |
+|   >=32 MHz    |    700 kbps    |     > 500 Kbps     |
+|   >=16 MHz    |    350 kbps    |     > 250 Kbps     |
+|    >=8 MHz    |   175 kbps     |     > 125 Kbps     |

@@ -108,11 +108,6 @@ module.exports = {
                         },
                         {
                             type: 'doc',
-                            label: 'Object dictionnary',
-                            id: 'luos-technology/messages/object-dictionary',
-                        },
-                        {
-                            type: 'doc',
                             label: 'Send message',
                             id: 'luos-technology/messages/basic-message',
                         },
@@ -128,6 +123,16 @@ module.exports = {
                         },
                         {
                             type: 'doc',
+                            label: 'Object dictionnary',
+                            id: 'luos-technology/messages/object-dictionary',
+                        },
+                        {
+                            type: 'doc',
+                            label: 'Auto update',
+                            id: 'luos-technology/messages/auto-update',
+                        },
+                        {
+                            type: 'doc',
                             label: 'Large data',
                             id: 'luos-technology/messages/bigdata',
                         },
@@ -140,11 +145,6 @@ module.exports = {
                             type: 'doc',
                             label: 'Timestamp',
                             id: 'luos-technology/messages/timestamp',
-                        },
-                        {
-                            type: 'doc',
-                            label: 'Auto update',
-                            id: 'luos-technology/messages/auto-update',
                         },
                     ],
                 },
@@ -173,7 +173,7 @@ module.exports = {
                         },
                         {
                             type: 'doc',
-                            label: 'Luos engine configuration',
+                            label: 'Robus configuration',
                             id: 'networks/robus/mcu',
                         },
                         {

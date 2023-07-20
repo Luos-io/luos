@@ -283,13 +283,13 @@ module.exports = {
         disableInDev: false,
       },
     ],
-    [
-      '@packages/docusaurus-plugin-github-release',
-      {
-        dotenv: {
-          path: '../../.env',
-        },
-      },
-    ],
+    // [
+    //   '@packages/docusaurus-plugin-github-release',
+    //   {
+    //     dotenv: {
+    //       path: '../../.env',
+    //     },
+    //   },
+    // ],
   ],
 };

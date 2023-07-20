@@ -225,7 +225,7 @@ module.exports = {
           editUrl: 'https://github.com/luos-io/luos',
           versions: {
             current: {
-              label: semver.inc(Versions[0], 'minor'),
+              label: semver.inc(Versions[0], 'major'),
               banner: 'unreleased',
             },
           },

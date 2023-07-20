@@ -1,0 +1,79 @@
+---
+custom_edit_url: null
+---
+
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Tooltip from '@site/src/components/Tooltip.js';
+import Image from '@site/src/components/Image';
+
+# Manage your phy topology detection
+
+:::caution
+Make sure to read and understand the [Network topology](../node/topology) section before reading this page.
+:::
+
+Each phy have to handle it's own topology detection. You can choose to make a dynamical detection or a static one.
+
+**Static detection:**
+This detection is the easiest to implement. It is based on the fact that you know the number of nodes in your network and their position. You can then hardcode the detection in your firmware.
+
+**Dynamical detection:**
+This detection is more complex to implement but it is more flexible. It is based on the fact that you don't know the number of nodes in your network and their position. You will need a way to detect them in the network. This can be really dificult for some kind of network (e.g. a multi point network with a lot of nodes and potentially a lots of ports).
+
+The purpose of the topology detection is to distribute node ids to all the nodes in the network in the most deterministic way possible.
+
+- With the static detection strategy, the determinism will be masterized by the developer.
+- With the dynamical detection strategy, the determinism will be masterized by the way the network find the other nodes. The most deterministic solution is to catch them depending on their position in the network.
+
+Node Ids will be distributed in the network one by one. The first node will be the one with the lowest id. The second node will be the one with the second lowest id, etc. During this topology detection we will use a token that will be passed from node to node. The node having the token will be the one receiving the node id. This token will be passed from node to node in a deterministic way to provide all the node ids among the networks.
+
+## Topology detection flow
+
+Whatever the detection you choose, you will always have to follow the same flow:
+
+<div align="center">
+  <Image
+    sources={{
+      light: '/assets/images/topo_flow_white.svg',
+      dark: '/assets/images/topo_flow_dark.svg',
+    }}
+  />
+</div>
+
+Luos engine will manage some token scheduling and/or some broadcast messages to distribute the node ids among the network.
+
+## Token management
+
+The way you pass the token from node to node is up to you. You can use dedicated daisy chained pins (e.g. Robus use PTP pins to pass the token), you can use hardcoded network ID (e.g. CAN use the CAN ID to pass the token), you can use the order on a list of nodes (e.g. a list af websocket client connected to the server), or you can use a simple ping strategy (e.g. in a simple 2 point connection such as a USB or serial connection).
+
+The token passing mechanism between nodes is flexible and can be adapted to suit your specific requirements.<br/>
+There are various approaches to achieve this:
+
+**Dedicated Daisy Chained Pins**: One option is to use dedicated pins, such as [the PTP (Point-to-Point) pins of Robus](../../networks/robus/electronics), for passing the token. This approach involves physically connecting nodes in a daisy-chain fashion, allowing the token to circulate from one node to the next in a sequential manner.
+
+**Hardcoded Network ID**: If your network is based on protocols like CAN (Controller Area Network), you can use the unique CAN ID assigned to each node for passing the token. Nodes can listen for incoming messages and, if they receive the token message, know that it's their turn to receive a node id.
+
+**Order on a List of Nodes**: In cases where nodes are connected to a central server, such as webSocket, you can maintain a list of nodes. The token can be passed based on the order of nodes in this list. When a node receives the token, it knows that it has the opportunity to receive a node id.
+
+**Simple Ping Strategy**: For a straightforward point-to-point connection, like USB or serial communication, a simple ping strategy can be employed. The token can be passed by sending a ping message from one node to the next. When a node receives the ping, it knows that it has the opportunity to receive a node id. later it will have to ping back to give the token back.
+
+Each of these approaches has its advantages and is suitable for different network configurations. Choose the method that aligns with your hardware capabilities, network topology, and the specific requirements of your application.
+
+After receiving a token, a node will initiate the process of receiving and sending broadcast messages to automatically obtain its node ID and declare its connections to its parent node.
+
+## Port management
+
+Luos engine creates a system topology representation by gathering connections between nodes. These connections are established during the topology detection process, which is why it is essential to provide the Luos engine with a port number as part of the detection.
+
+A connection in Luos is characterized by two pieces of information: the phy (physical interface) and the port number. These two elements represent the two sides of the connection. While the port number can be chosen freely, it must be unique within the phy to ensure proper identification.
+
+By providing the unique port number during the topology detection, you enable the Luos engine to build an accurate representation of the network's structure and facilitate seamless communication between nodes. The combination of the phy and port number allows Luos to manage data routing efficiently and ensure reliable data exchange throughout the network.
+
+<div align="center">
+  <Image
+    sources={{
+      light: '/assets/images/connection_light.svg',
+      dark: '/assets/images/connection_dark.svg',
+    }}
+  />
+</div>

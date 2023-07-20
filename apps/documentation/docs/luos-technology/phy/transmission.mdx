@@ -1,0 +1,68 @@
+---
+custom_edit_url: null
+---
+
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Tooltip from '@site/src/components/Tooltip.js';
+import Image from '@site/src/components/Image';
+
+# How to transmit with your phy.
+
+The entire transmission process is efficiently managed by jobs, which are data structures containing all the necessary information to transmit a message. This approach simplifies your task as the Luos engine handles the job queue for you, relieving you of that concern. Your main responsibility is to obtain jobs and then transmit the messages when your phy is ready.
+
+Whenever a new job is added to the job queue, the Luos engine will automatically invoke the `job_cb` callback function. This function acts as a trigger, prompting your phy to take action and attempt to transmit the message contained in the job.
+<a
+  href="create_phy#job-callback"
+  className="pagination-nav__link"
+  style={{ display: 'inline-block' }}
+>
+  Learn more about the job_cb callback
+</a>
+
+## Job structure
+
+The job structure will give you all the information you need to transmit a message. You can use this structure value to determine the size of the message, the data to transmit, and whether or not you need to receive an acknowledgement or transmit a timestamp.
+
+Here a description of the job structure:
+```c
+typedef struct
+{
+    const uint8_t *data_pt; // Start pointer of the data to transmit.
+    uint16_t size;          // size of the data to transmit.
+    bool ack;               // True if we want to receive an acknoledgement of this message (you can ignore this if you don't manage acknoledgement).
+    bool timestamp;         // True if this job is timestamped.
+    void *phy_data;         // Phy developpers can use this pointer to store any data such as encapsulations.
+} phy_job_t;
+```
+
+## Job management
+
+To effectively utilize and manage jobs, you will need to employ specific functions designed for this purpose.
+
+During each transmission attempt, you can retrieve a job from the job queue using the `Phy_GetJob`` function. Importantly, the job is not automatically removed from the queue, allowing you to access it multiple times if needed.
+
+Once the transmission is successfully completed, you should use the `Phy_RmJob`` function to remove the job from the queue. This action signifies that the transmission was successful, and the job is no longer needed.
+
+In the event of a transmission failure after multiple attempts, you should utilize the `Phy_FailedJob`` function. This function removes the job from the queue and marks it as failed, providing a clear indication that the transmission could not be completed successfully.
+
+If you ever need to check the number of jobs currently present in the job queue, you can use the `Phy_GetJobNumber`` function. This allows you to monitor the job queue's status and plan your transmission actions accordingly.
+
+<a
+  href="phy_api_ref#phy-jobs-management-functions"
+  className="pagination-nav__link"
+  style={{ display: 'inline-block' }}
+>
+  Learn more about these functions
+</a>
+
+## Timestamp transmission
+
+If the `timestamp` value of your job is set to `true`, it means you must include a timestamp along with the message for it to be properly received. Computing the timestamp should be done at the beginning of the transmission process. To achieve this, utilize the `Phy_ComputeMsgTimestamp` function, which will calculate the time value for you.
+
+After obtaining the timestamp, ensure that you cast the returned time value to be placed after the data you intend to transmit. Be cautious, as you cannot directly write the timestamp into the data pointer of the job you will probably have to copy the content of the data you have to transmit in a buffer on your phy.
+
+In case you need to make multiple attempts to transmit the message, you will need to recompute the timestamp each time. This ensures that the timestamp remains accurate for each transmission attempt.
+
+If your message includes a CRC (Cyclic Redundancy Check) for error detection purposes, remember to recompute the CRC each time you add the timestamp to the message.
+
+To add extra precision to the timestamp, you can evaluate the time between the `Phy_ComputeMsgTimestamp` call and the actual transmission in the physical bus. You may be able to use this information to compesate the delay on the reception side.

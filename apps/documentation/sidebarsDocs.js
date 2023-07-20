@@ -91,62 +91,97 @@ module.exports = {
                             label: 'Routing table',
                             id: 'luos-technology/services/routing-table',
                         },
+                        {
+                            type: 'category',
+                            label: 'Messages',
+                            link: {
+                                type: 'doc',
+                                id: 'luos-technology/messages/index',
+                            },
+                            items: [
+                                {
+                                    type: 'doc',
+                                    label: 'API reference',
+                                    id: 'luos-technology/messages/msg_api_ref',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Send message',
+                                    id: 'luos-technology/messages/basic-message',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Receive message',
+                                    id: 'luos-technology/messages/handling-message',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Commands',
+                                    id: 'luos-technology/messages/command',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Object dictionnary',
+                                    id: 'luos-technology/messages/object-dictionary',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Auto update',
+                                    id: 'luos-technology/messages/auto-update',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Large data',
+                                    id: 'luos-technology/messages/bigdata',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Streaming',
+                                    id: 'luos-technology/messages/streaming',
+                                },
+                                {
+                                    type: 'doc',
+                                    label: 'Timestamp',
+                                    id: 'luos-technology/messages/timestamp',
+                                },
+                            ],
+                        },
                     ],
                 },
                 {
                     type: 'category',
-                    label: 'Messages',
+                    label: 'Phy',
                     link: {
                         type: 'doc',
-                        id: 'luos-technology/messages/index',
+                        id: 'luos-technology/phy/index',
                     },
                     items: [
                         {
                             type: 'doc',
                             label: 'API reference',
-                            id: 'luos-technology/messages/msg_api_ref',
+                            id: 'luos-technology/phy/phy_api_ref',
                         },
                         {
                             type: 'doc',
-                            label: 'Send message',
-                            id: 'luos-technology/messages/basic-message',
+                            label: 'Create phy',
+                            id: 'luos-technology/phy/create_phy',
                         },
                         {
                             type: 'doc',
-                            label: 'Receive message',
-                            id: 'luos-technology/messages/handling-message',
+                            label: 'Topology management',
+                            id: 'luos-technology/phy/topology_detec',
                         },
                         {
                             type: 'doc',
-                            label: 'Commands',
-                            id: 'luos-technology/messages/command',
+                            label: 'Transmissions',
+                            id: 'luos-technology/phy/transmission',
                         },
                         {
                             type: 'doc',
-                            label: 'Object dictionnary',
-                            id: 'luos-technology/messages/object-dictionary',
+                            label: 'Reception',
+                            id: 'luos-technology/phy/reception',
                         },
-                        {
-                            type: 'doc',
-                            label: 'Auto update',
-                            id: 'luos-technology/messages/auto-update',
-                        },
-                        {
-                            type: 'doc',
-                            label: 'Large data',
-                            id: 'luos-technology/messages/bigdata',
-                        },
-                        {
-                            type: 'doc',
-                            label: 'Streaming',
-                            id: 'luos-technology/messages/streaming',
-                        },
-                        {
-                            type: 'doc',
-                            label: 'Timestamp',
-                            id: 'luos-technology/messages/timestamp',
-                        },
-                    ],
+                    ]
                 },
             ],
         },

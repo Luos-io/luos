@@ -1,0 +1,84 @@
+---
+custom_edit_url: null
+---
+
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Tooltip from '@site/src/components/Tooltip.js';
+import Image from '@site/src/components/Image';
+
+# How to receive with your phy.
+The reception may be a pretty complex part of your phy. It depends a lot on your network, your hardware, and your real-time constraints. This section will help you to understand the different strategies you can use to receive data from the network and how to use the Luos phy API to implement them.
+
+## Reception buffering and allocation
+During message reception, Luos Engine has the capability to allocate memory space for the received message. This memory space may later be reused by other phys. Your main objective in the reception process is to provide Luos Engine with the necessary information to allocate the message and copy the received data into it.
+
+To achieve this, you must store at least 7 bytes, which represent the size of the header. These 7 bytes allow Luos Engine to evaluate the size of the message and allocate the required memory space accordingly.
+
+Keep in mind that the allocation process may take some time, so Luos Engine tries to perform this allocation outside the IRQ context to avoid delays in critical tasks. As a result, the allocation may occur at an unexpected time after the first seven bytes of reception. To ensure transparency and ease of implementation, Luos Engine will move the rx_data pointer of the `luos_phy_t` structure into the allocated space. By writing into this `rx_data` pointer, you will always write into the appropriate memory space.
+
+To prevent any buffer overflow you will need your buffer to be larger than the 7 minimum bytes required for the header allowing the allocation to be performed. At the same time you will save the number of received data in the `received_data` variable of the `luos_phy_t` structure. This variable will be used by the Luos Engine to know how many bytes have been received and how many bytes are still missing to complete the message.
+
+Additionally, Luos Engine needs to know your `rx_buffer_base` to copy the already received data into the allocated space. You will need to manually initialize this pointer to enable the copying process.
+
+By storing the necessary header information and appropriately managing the rx_data and `rx_buffer_base` pointers, you can ensure smooth message reception and memory allocation within your phy implementation. This approach facilitates efficient communication and memory usage in the Luos network.
+
+<div align="center">
+  <Image
+    sources={{ light: '/assets/images/buffer_light.gif', dark: '/assets/images/buffer_dark.gif' }}
+    height="600px"
+  />
+</div>
+
+Luos engine provide a direct access to the buffer variables allowing you to do advanced things with it. You can write directly multiple bytes in the buffer, or use a DMA then move the values manually, it's up to you. The management of these pointers is your concern.
+
+## Reception strategies
+
+Creating your own phy involves considering various constraints. The Luos Phy API empowers you to select the best strategy that fits your phy requirements. Below is a list of different strategies available to receive data from the network.<br/>
+In the following sections, we will delve into each strategy, providing detailed explanations on their implementation and usage. Let's explore these strategies to better understand and describe them.
+
+### Buffered reception
+This strategy is the easiest to implement as it involves receiving data from the network and storing it in a buffer within the phy package. Once your message is complete, you can send it to the Luos engine. This approach offers great flexibility and can be used for any kind of network. However, it may not be the most efficient in terms of CPU time (especially due to the large copy at the end of the message) and RAM consumption.<br/>
+Additionally, this strategy may not provide access to certain message information, such as message size or acknowledgment status, before its completion. Thus, it might not be suitable for scenarios requiring such information before message completion.<br/>
+Despite these considerations, the simplicity of this strategy makes it well-suited for use with DMA.
+
+### Stream reception
+This strategy involves receiving data from the network and passing it (almost) directly to the Luos engine. Although more efficient and flexible, this approach is more challenging to implement. The Luos engine can allocate your message and provide information about it on the fly. While this strategy may not be suitable for RX DMA, it enables advanced operations like collision detection or priority management. You will still need to provide a small buffer to store the message before the Luos engine allocates it, but it will be much smaller than a complete message.
+
+## Reception steps
+
+As mentioned previously, the buffer pointers management is your concern. To receive a data you need to write it in the `rx_data` pointer of the `luos_phy_t` structure and to move some values accordingly.
+Here are some examples:
+
+```c
+// Write a byte in the buffer
+*(phy->rx_data) = byte;
+// Move the buffer pointer to the next byte
+phy->rx_data++;
+// Increment the number of received data
+phy->received_data++;
+```
+
+```c
+// Write 10 byte in the buffer (bytes is a received byte array) 
+memcpy(phy->rx_data, bytes, 10); // This copy may be done with a DMA
+// Move the buffer pointer to the next byte
+phy->rx_data += 10;
+// Increment the number of received data
+phy->received_data += 10;
+```
+### 1. Reception initialization
+When you receive data, you have to compute the first byte reception date. This date is used by the Luos engine to compute the timestamp of the message. To do so, you need to call the `Phy_GetTimestamp` function to get the current timestamp. Then you need to remove the time spent to receive those data. Your result may be as close as possible to the transmission begin date computed in the transmission process.
+When you computed it, save this value in the `rx_timestamp` field of the `luos_phy_t` structure.
+
+### 2. Header reception
+Luos messages are composed of a header and a payload. The header contains information about the message, such as its size, its source, and its destination needed by the Luos engine to manage the allocation of the message. After receiving at least the first 7 bytes (the header), you need to call the `Phy_ComputeHeader` function.
+This function will directly fill up the `rx_size`, `rx_keep`, and `rx_ack` fields in the `luos_phy_t` structure. You can continue to receive the data and write them on the `rx_data` pointer of the `luos_phy_t` structure.
+
+### 3. Data reception
+After receiving the header, you can continue to receive the data and write them on the `rx_data` pointer of the `luos_phy_t` structure. You will need to move the `rx_data` pointer and increment the `received_data` variable accordingly. Because you previously ran the `Phy_ComputeHeader` function, you have the information allowing you to know how many bytes are still missing to complete the message and if an ack is needed. You can use this information to manage the end of the message.
+
+### 4. Message completion
+When the message is complete and valide, you need to call the `Phy_ValidMsg` function and move back the `rx_data` pointer to the `rx_buffer_base`. This message is now received and you are ready for a new one.
+
+### 5. Message failure
+If the message reception fail ar some point (e.g. timeout, bad CRC, bad size, bad ack, etc.), you need to call the `Phy_ResetMsg` function and move back the `rx_data` pointer to the `rx_buffer_base`. This message is now removed and you are ready for a new try.

@@ -146,10 +146,89 @@ First of all, we need to reset the filtering result in order to contain all the 
 
 Here is an example:
 
-<div align="center">
-  <Image sources={{ light: '/assets/images/result-table.svg' }} />
-</div>
-<br />
+```mermaid
+graph LR
+
+    classDef services fill:#009900;
+    classDef phy fill:#CC7722;
+    classDef engine fill:#3388CC;
+
+    subgraph RTB[bare routing table]
+        direction LR
+        subgraph NODE1[Node 1]
+            subgraph GATE[Gate]
+                ID1(ID: 1)
+            end
+        end
+        subgraph NODE2[Node 2]
+            direction LR
+            subgraph VOLTAGE1[Voltage]
+                ID2(ID: 2)
+            end
+            subgraph VOLTAGE2[Voltage]
+                ID3(ID: 3)
+            end
+            subgraph STATE1[State]
+                ID4(ID: 4)
+            end
+            subgraph STAET2[State]
+                ID5(ID: 5)
+            end
+        end
+        subgraph NODE3[Node 3]
+            subgraph STATE3[State]
+                ID2(ID: 6)
+            end
+        end
+    end
+
+    subgraph RES1[search_result_t result]
+        direction LR
+        subgraph RES1_GATE[Gate]
+            RES1_ID1(ID: 1)
+        end
+        subgraph RES1_VOLT1[Voltage]
+            RES1_ID2(ID: 2)
+        end
+        subgraph RES1_VOLT2[Voltage]
+            RES1_ID3(ID: 3)
+        end
+        subgraph RES1_STATE1[State]
+            RES1_ID4(ID: 4)
+        end
+        subgraph RES1_STATE2[State]
+            RES1_ID5(ID: 5)
+        end
+        subgraph RES1_STATE3[State]
+            RES1_ID6(ID: 6)
+        end
+    end
+
+    subgraph RES2[search_result_t result]
+        direction LR
+        subgraph RES2_STATE1[State]
+            RES2_ID4(ID: 4)
+        end
+        subgraph RES2_STATE2[State]
+            RES2_ID5(ID: 5)
+        end
+        subgraph RES2_STATE3[State]
+            RES2_ID6(ID: 6)
+        end
+    end
+
+    subgraph RES3[search_result_t result]
+        direction LR
+        subgraph RES3_STATE1[State]
+            RES3_ID4(ID: 4)
+        end
+        subgraph RES3_STATE2[State]
+            RES3_ID5(ID: 5)
+        end
+    end
+
+    RTB --"RTFilter_Reset(&result)"--> RES1 --"RTFilter_Type(&result,State)"--> RES2 --"RTFilter_Node(&result,2)"--> RES3
+```
 
 Having access to the different services' information existing in the filtering result is done with the code `result.result_table[i]->id` or `result.result_table[i]->type`, as each `result_table[]` is a routing table entry.
 

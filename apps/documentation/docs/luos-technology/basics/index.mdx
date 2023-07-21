@@ -20,6 +20,130 @@ Most of the time, a device will have more than one computing unit (multiple micr
 
 Luos is here to assist you in creating clean, seamless projects that can be developed, modified, and reused across a wide range of architectures.<br/>By liberating software from the dictatorship of hardware, Luos empowers developers to **overcome the limitations imposed by hardware** and facilitates efficient project management 😇.
 
+Experience the power of Luos, where managing even the most complex product architectures becomes a breeze! With Luos, every feature (service) in your product is seamlessly accessible, controllable, and updatable.
+
+As an example here a highly intricate architecture made possible by Luos, enabling direct access between any services:
+
+```mermaid
+graph TB
+
+    classDef services fill:#009900;
+    classDef phy fill:#CC7722;
+    classDef engine fill:#3388CC;
+
+    subgraph NODE5[Node: Arduino Zero, ID: 3]
+        NODE5_ENGINE[[Luos engine]]:::engine
+        NODE5_SERV1([Red_LED]):::services
+        NODE5_SERV2([Green_LED]):::services
+        NODE5_PHY1([Phy 1]):::phy
+
+        %% Service links
+        NODE5_SERV1 <-.-> NODE5_ENGINE
+        NODE5_SERV2 <-.-> NODE5_ENGINE
+
+        %% Phy links
+        NODE5_ENGINE <-.-> NODE5_PHY1
+    end
+
+    subgraph NODE6[Node: Cloud_server, ID: 4]
+        NODE6_ENGINE[[Luos engine]]:::engine
+        NODE6_SERV1([Fleet_manager]):::services
+        NODE6_SERV2([OpenAI]):::services
+        NODE6_SERV3([UI]):::services
+        NODE6_SERV4([Monitoring]):::services
+        NODE6_PHY1([Phy 1]):::phy
+
+        %% Service links
+        NODE6_SERV1 <-.-> NODE6_ENGINE
+        NODE6_SERV2 <-.-> NODE6_ENGINE
+        NODE6_SERV3 <-.-> NODE6_ENGINE
+        NODE6_SERV4 <-.-> NODE6_ENGINE
+
+        %% Phy links
+        NODE6_ENGINE <-.-> NODE6_PHY1
+    end
+
+    subgraph NODE1[Node: STM32G474, ID: 1]
+        NODE1_ENGINE[[Luos engine]]:::engine
+        NODE1_SERV1([Lidar]):::services
+        NODE1_SERV2([IMU]):::services
+        NODE1_PHY1([Phy 1]):::phy
+
+        %% Service links
+        NODE1_SERV1 <-.-> NODE1_ENGINE
+        NODE1_SERV2 <-.-> NODE1_ENGINE
+
+        %% Phy links
+        NODE1_ENGINE <-.-> NODE1_PHY1
+    end
+
+    subgraph NODE2[Node: Jetson Nano, ID: 2]
+        NODE2_ENGINE[[Luos engine]]:::engine
+        NODE2_SERV1([Main_behavior]):::services
+        NODE2_PHY1([Phy 1]):::phy
+        NODE2_PHY2([Phy 2]):::phy
+        NODE2_PHY3([Phy 3]):::phy
+
+        %% Service links
+        NODE2_SERV1 <-.-> NODE2_ENGINE
+
+        %% Phy links
+        NODE2_ENGINE <-.-> NODE2_PHY1
+        NODE2_ENGINE <-.-> NODE2_PHY2
+        NODE2_ENGINE <-.-> NODE2_PHY3
+    end
+
+    subgraph NODE3[Node: NXP iMX8, ID: 5]
+        NODE3_ENGINE[[Luos engine]]:::engine
+        NODE3_SERV1([Cam_1]):::services
+        NODE3_SERV2([Cam_2]):::services
+        NODE3_SERV3([Head_motor]):::services
+        NODE3_PHY1([Phy 1]):::phy
+        NODE3_PHY2([Phy 2]):::phy
+
+        %% Service links
+        NODE3_SERV1 <-.-> NODE3_ENGINE
+        NODE3_SERV2 <-.-> NODE3_ENGINE
+        NODE3_SERV3 <-.-> NODE3_ENGINE
+
+        %% Phy links
+        NODE3_ENGINE <-.-> NODE3_PHY1
+        NODE3_ENGINE <-.-> NODE3_PHY2
+    end
+
+    subgraph NODE4[Node: Linux computer, ID: 6]
+        NODE4_ENGINE[[Luos engine]]:::engine
+        NODE4_SERV1([ROS_bridge]):::services
+        NODE4_SERV2([Logger]):::services
+        NODE4_SERV3([computer_vision]):::services
+        NODE4_PHY1([Phy 1]):::phy
+
+        %% Service links
+        NODE4_SERV1 <-.-> NODE4_ENGINE
+        NODE4_SERV2 <-.-> NODE4_ENGINE
+        NODE4_SERV3 <-.-> NODE4_ENGINE
+
+        %% Phy links
+        NODE4_ENGINE <-.-> NODE4_PHY1
+    end
+
+    %% Node links
+    NODE2_PHY1 o==CAN====o NODE1_PHY1
+    NODE2_PHY1 o==CAN=======o NODE3_PHY1
+    NODE3_PHY2 o==USB====o NODE4_PHY1
+    NODE2_PHY2 o==RS485====o NODE5_PHY1
+    NODE2_PHY3 o==WIFI====o NODE6_PHY1
+
+    subgraph diagram legend
+        direction BT
+        ENGINE[[Luos engine]]:::engine
+        SERV([Service]):::services
+        PHY([phy]):::phy
+    end
+```
+
+
+
 ## Introduction to Luos
 
 **Luos is a simple and lightweight <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank" rel="external nofollow">microservices<IconExternalLink width="10"></IconExternalLink></a> orchestrator dedicated to hardware products.** It is a powerful modularity tool to deploy, simplify, and link any hardware components or application codes as a <a href="https://en.wikipedia.org/wiki/Single_system_image" target="_blank" rel="external nofollow">single system image<IconExternalLink width="10"></IconExternalLink></a>.
@@ -46,4 +170,3 @@ Luos empowers you with superpowers to streamline the development of your softwar
 With Luos, you gain the flexibility to deploy your services anywhere across any network supported by your Luos configuration. Regardless of their location in the architecture, you can access these services directly from anywhere. The dynamic addition and removal of services enable your applications to adapt to the available services on your device.
 
 Finally, it doesn't matter what kind or how many different networks you need to use in your device; Luos will handle them and provide you with a consistent list of detected services across all of them. You can wire the different elements together as you want without any software constraints.
-

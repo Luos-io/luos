@@ -15,20 +15,67 @@ Different levels on the code projects are defined, corresponding to the differen
 
 |  Level  |                                                                            Description                                                                            |
 | :-----: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| Product | This is the place where you will have the configurations and information intended for all your nodes. |
-|  Node   |                 This is the executable's code. This is your actual Eclipse, PlatformIO, IAR, or any other project.                                   |
-| Package |                       A sharable folder containing code files managing Services or Phy.                                               |
-| Service |                       A Luos services can be drivers or apps. Each service manage a specific feature of the product.                       |
-| Phy |                       A Phy is a network code allowing Luos to access other nodes and services.                       |
+| Product | This is the place where you will have the configurations and information intended for all your nodes.                                                             |
+|  Node   |                 This is the executable's code. This is your actual Eclipse, PlatformIO, IAR, or any other project.                                                |
+| Package |                       A sharable folder containing code files managing Services or Phy.                                                                           |
+| Service |                       A Luos services can be drivers or apps. Each service manage a specific feature of the product.                                              |
+| Phy     |                       A Phy is a network code allowing Luos to access other nodes and services.                                                                   |
 
-<div align="center">
-  <Image
-    sources={{
-      light: '/assets/images/architecture.svg',
-      dark: '/assets/images/architecture-dark.svg',
-    }}
-  />
-</div>
+```mermaid
+graph TB
+
+    classDef services fill:#009900;
+    classDef phy fill:#CC7722;
+    classDef engine fill:#3388CC;
+    subgraph PRODUCT[Product]
+    direction TB
+        subgraph NODE1[Node]
+            subgraph NODE1_PACKAGE1[Package]
+                direction LR
+                NODE1_SERV1([Service]):::services
+                NODE1_SERV2([Service]):::services
+            end
+            subgraph NODE1_PACKAGE2[Package]
+                direction LR
+                NODE1_SERV3([Service]):::services
+            end
+            subgraph NODE1_PACKAGE3[Package]
+                direction LR
+                NODE1_PHY1([Phy]):::phy
+            end
+        end
+
+        subgraph NODE3[Node]
+            subgraph NODE3_PACKAGE1[Package]
+                direction LR
+                NODE3_SERV1([Service]):::services
+            end
+            subgraph NODE3_PACKAGE2[Package]
+                direction LR
+                NODE3_PHY1([Phy]):::phy
+            end
+            subgraph NODE3_PACKAGE3[Package]
+                direction LR
+                NODE3_PHY2([Phy]):::phy
+            end
+        end
+
+        subgraph NODE2[Node]
+            subgraph NODE2_PACKAGE1[Package]
+                direction LR
+                NODE2_SERV1([Service]):::services
+                NODE2_SERV2([Service]):::services
+                NODE2_SERV3([Service]):::services
+                NODE2_SERV4([Service]):::services
+            end
+            subgraph NODE2_PACKAGE3[Package]
+                direction LR
+                NODE2_PHY1([Phy]):::phy
+            end
+        end
+    end
+
+```
 
 ### Product code organization with Luos
 

@@ -31,14 +31,45 @@ Node Ids will be distributed in the network one by one. The first node will be t
 
 Whatever the detection you choose, you will always have to follow the same flow:
 
-<div align="center">
-  <Image
-    sources={{
-      light: '/assets/images/topo_flow_white.svg',
-      dark: '/assets/images/topo_flow_dark.svg',
-    }}
-  />
-</div>
+```mermaid
+graph BT
+     classDef redify stroke:#AA0000;
+
+    subgraph PHY
+        %% functions
+        RUN(<b>Run_topo callback</b>:<br/>You have the token, try to pass<br/> it to the next node.)
+        NEXT(<b>Phy_TopologyNext</b>:<br/>Token will be passed back<br/>to your phytrough Run_topo.)
+        DONE(<b>Phy_TopologyDone</b>:<br/>Token will be passed to another<br/>phy or returned to the parent node.)
+        SOURCE(<b>Phy_TopologySource</b>:<br/>We just get the token, it will be passed<br/>to the next phy then yours.)
+
+        %% token moves
+        PASSED(Token passed)
+        RETURNED(Token returned)
+        RECEIVED(Token received)
+
+        %% inner links
+        RETURNED --> NEXT
+        RUN --> PASSED
+        RETURNED -- No more node<br/>to detect --> DONE
+        RECEIVED --> SOURCE
+        RUN -- No more node<br/>to detect --> DONE
+
+    end
+
+    ENGINE[Luos engine]
+
+    CHILD(Child node)
+    PARENT(Parent node)
+
+    ENGINE -.->RUN
+    DONE -.-> ENGINE
+    NEXT -.-> ENGINE
+    SOURCE -.-> ENGINE
+
+    PASSED --> CHILD
+    CHILD --> RETURNED
+    PARENT --> RECEIVED
+```
 
 Luos engine will manage some token scheduling and/or some broadcast messages to distribute the node ids among the network.
 
@@ -69,11 +100,19 @@ A connection in Luos is characterized by two pieces of information: the phy (phy
 
 By providing the unique port number during the topology detection, you enable the Luos engine to build an accurate representation of the network's structure and facilitate seamless communication between nodes. The combination of the phy and port number allows Luos to manage data routing efficiently and ensure reliable data exchange throughout the network.
 
-<div align="center">
-  <Image
-    sources={{
-      light: '/assets/images/connection_light.svg',
-      dark: '/assets/images/connection_dark.svg',
-    }}
-  />
-</div>
+```mermaid
+graph LR
+
+    classDef services fill:#009900;
+    classDef phy fill:#CC7722;
+    classDef engine fill:#3388CC;
+
+    subgraph CHILD[child node]
+        PHY1(phy: 2<br/>port: 10)
+    end
+    subgraph PARENT[parent node]
+        PHY2(phy: 3<br/>port: 4)
+    end
+    PHY1 <--"connection_t:<br/>[{phy, port}, {phy,port}]"--> PHY2
+
+```

@@ -67,11 +67,51 @@ You can use Luos engine on only one node. In this case you don't need to take ca
 
 Phy can encapsulate, control, and stores messages in the `msg_buffer` of your node. Depending on the specified destination and the type of each message, Luos will use the appropriate phy to reach the target.
 
-<div align="center">
-  <Image
-    sources={{ light: '/assets/images/NodeFlow.svg', dark: '/assets/images/NodeFlow-dark.svg' }}
-  />
-</div>
+```mermaid
+graph RL
+    subgraph Node
+
+        classDef packClass fill:#008800
+        classDef engineClass fill:#ff0000
+
+        ENGINE[[Luos engine]]:::engineClass
+        PACK1(Package 1):::packClass
+        PACK2(Package 2):::packClass
+        PACK3(Package 3):::packClass
+        PACK4(Package 4):::packClass
+        SERV1([Service 1])
+        SERV2([Service 2])
+        SERV3([Service 3])
+        PHY1([Phy 1])
+        PHY2([Phy 2])
+
+        %% Package links
+        PACK3 <--> ENGINE
+        PACK4 <--> ENGINE
+        ENGINE <--> PACK1
+        ENGINE <--> PACK2
+
+        %% Service links
+        SERV1 <-.-> PACK3
+        SERV2 <-.-> PACK4
+        SERV3 <-.-> PACK4
+
+        %% Phy links
+        PACK1 <-.-> PHY1
+        PACK2 <-.-> PHY2
+
+    end
+
+    NODE1[Node 1]
+    NODE2[Node 2]
+    NODE3[Node 3]
+
+
+    %% Node links
+    PHY1 o==o NODE1
+    PHY1 o==o NODE2
+    PHY2 o==o NODE3
+```
 
 ## Node Parameters Configuration
 

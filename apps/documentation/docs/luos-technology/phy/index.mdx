@@ -16,6 +16,51 @@ A "phy" (physical interface) is a package that enables the Luos engine to extend
 
 The flexibility of Luos allows you to integrate as many phys as needed into the engine, enabling the use of different networks within the same application. While some phys already exist and can be directly used in your application, you also have the option to create your own phy by following the [phy creation guide](phy/create_phy).
 
+```mermaid
+graph RL
+    subgraph Node[Node 2]
+
+        classDef highlight fill:#008800;
+
+        ENGINE[[Luos engine]]
+        PACK1(Package 1):::highlight
+        PACK2(Package 2):::highlight
+        PACK3(Package 3)
+        PACK4(Package 4)
+        SERV1([Service 1])
+        SERV2([Service 2])
+        SERV3([Service 3])
+        PHY1([Phy 1]):::highlight
+        PHY2([Phy 2]):::highlight
+
+        %% Package links
+        PACK3 <--> ENGINE
+        PACK4 <--> ENGINE
+        ENGINE <--> PACK1
+        ENGINE <--> PACK2
+
+        %% Service links
+        SERV1 <-.-> PACK3
+        SERV2 <-.-> PACK4
+        SERV3 <-.-> PACK4
+
+        %% Phy links
+        PACK1 <-.-> PHY1
+        PACK2 <-.-> PHY2
+
+    end
+
+    NODE1[Node 1]
+    NODE2[Node 3]
+    NODE3[Node 4]
+
+
+    %% Node links
+    PHY1 o==o NODE1
+    PHY1 o==o NODE2
+    PHY2 o==o NODE3
+```
+
 :::note
 Creating reusable phys is a community effort, and if you wish to share your phy with the Luos community, you can add it to the platformio registry. Feel free to contact us through [Discord](https://discord.gg/luos) if you have any questions and to have it included in the Luos documentation.
 :::

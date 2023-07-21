@@ -29,7 +29,7 @@ Because there is a lot of different ways to receive and send messages trough net
 ## Phy topology management functions
 |                        Description                                                                         |                Function                                                |               Return                |
 | :--------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------: | :---------------------------------: |
-| You have to call this function if you receive a topology detection request from another node               |   `Phy_Topologysource(luos_phy_t *phy_ptr, uint8_t port_id);`          |          `void`                     |
+| You have to call this function if you receive a topology detection request from another node               |   `Phy_TopologySource(luos_phy_t *phy_ptr, uint8_t port_id);`          |          `void`                     |
 | After a port detection, if you have other ports that need to be detect, ask phy about it.                  |   `Phy_TopologyNext(void);`                                            |          `void`                     |
 | After a port detection, if you don't have other ports that need to be detect, tell phy you are done.       |   `Phy_TopologyDone(luos_phy_t *phy_ptr);`                             |          `void`                     |
 

@@ -22,6 +22,9 @@ module.exports = {
   organizationName: 'Luos-io', // Usually your GitHub org/user name.
   projectName: 'Documentation', // Usually your repo name.
   trailingSlash: false,
+  markdown: {
+    mermaid: true,
+  },
 
   customFields: {
     node_def:
@@ -213,6 +216,7 @@ module.exports = {
       contextualSearch: true,
     },
   },
+  themes: ['@docusaurus/theme-mermaid'],
 
   presets: [
     [

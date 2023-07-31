@@ -15,7 +15,7 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx}\""
   },
   "devDependencies": {
-    "eslint": "^8.23.1",
+    "eslint": "^8.46.0",
     "eslint-config-custom": "latest",
     "prettier": "^2.7.1",
     "turbo": "^1.4.7",

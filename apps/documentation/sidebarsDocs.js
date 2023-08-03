@@ -296,18 +296,8 @@ module.exports = {
                 },
                 {
                     type: 'doc',
-                    label: 'Luos engine api',
-                    id: 'tools/luos-engine-api',
-                },
-                {
-                    type: 'doc',
                     label: 'Bootloader',
                     id: 'tools/bootloader',
-                },
-                {
-                    type: 'doc',
-                    label: 'Inspector',
-                    id: 'tools/inspector',
                 },
                 {
                     type: 'doc',
@@ -318,11 +308,6 @@ module.exports = {
                     type: 'doc',
                     label: 'PlatformIO',
                     id: 'tools/platformio',
-                },
-                {
-                    type: 'link',
-                    label: 'Network display',
-                    href: 'https://app.luos.io/network',
                 },
             ],
         },
@@ -338,11 +323,6 @@ module.exports = {
                     type: 'doc',
                     label: 'SDK python: Pyluos',
                     id: 'integrations/pyluos',
-                },
-                {
-                    type: 'link',
-                    label: 'SDK typescript',
-                    href: 'https://github.com/Luos-io/sdk-ts',
                 },
                 {
                     type: 'link',
@@ -373,22 +353,6 @@ module.exports = {
                     type: 'doc',
                     label: 'SimpleFOC',
                     id: 'integrations/simplefoc',
-                },
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Compatibility',
-            items: [
-                {
-                    type: 'doc',
-                    label: 'Luos ecosystem',
-                    id: 'compatibility/ecosystem',
-                },
-                {
-                    type: 'doc',
-                    label: 'Boards compatibility',
-                    id: 'compatibility/mcu_demoboard',
                 },
             ],
         },

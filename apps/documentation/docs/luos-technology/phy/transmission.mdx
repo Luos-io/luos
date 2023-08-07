@@ -39,13 +39,13 @@ typedef struct
 
 To effectively utilize and manage jobs, you will need to employ specific functions designed for this purpose.
 
-During each transmission attempt, you can retrieve a job from the job queue using the `Phy_GetJob`` function. Importantly, the job is not automatically removed from the queue, allowing you to access it multiple times if needed.
+During each transmission attempt, you can retrieve a job from the job queue using the `Phy_GetJob` function. Importantly, the job is not automatically removed from the queue, allowing you to access it multiple times if needed.
 
-Once the transmission is successfully completed, you should use the `Phy_RmJob`` function to remove the job from the queue. This action signifies that the transmission was successful, and the job is no longer needed.
+Once the transmission is successfully completed, you should use the `Phy_RmJob` function to remove the job from the queue. This action signifies that the transmission was successful, and the job is no longer needed.
 
-In the event of a transmission failure after multiple attempts, you should utilize the `Phy_FailedJob`` function. This function removes the job from the queue and marks it as failed, providing a clear indication that the transmission could not be completed successfully.
+In the event of a transmission failure after multiple attempts, you should utilize the `Phy_FailedJob` function. This function removes the job from the queue and marks it as failed, providing a clear indication that the transmission could not be completed successfully.
 
-If you ever need to check the number of jobs currently present in the job queue, you can use the `Phy_GetJobNumber`` function. This allows you to monitor the job queue's status and plan your transmission actions accordingly.
+If you ever need to check the number of jobs currently present in the job queue, you can use the `Phy_GetJobNumber` function. This allows you to monitor the job queue's status and plan your transmission actions accordingly.
 
 <a
   href="phy_api_ref#phy-jobs-management-functions"

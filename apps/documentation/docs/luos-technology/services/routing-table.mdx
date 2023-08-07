@@ -23,7 +23,7 @@ This feature is particularly used by app services to find other services they ne
 
 ## Detection
 
-The routing table is automatically generated when a service prompts the Luos engine to initiate network detection. Once the detection process concludes, the routing table is shared with other services. It's important to note that any service can request a detection, but driver services should not utilize this feature. Instead, it should be exclusively used with app services, which can include the _routingTable.h_ file and leverage the routing table API.
+The routing table is automatically generated when a service prompts Luos engine to initiate network detection. Once the detection process concludes, the routing table is shared with other services. It's important to note that any service can request a detection, but driver services should not utilize this feature. Instead, it should be exclusively used with app services, which can include the _routingTable.h_ file and leverage the routing table API.
 
 To run a detection, type:
 
@@ -42,7 +42,7 @@ In some cases, multiple services within the network may have the same alias. To 
 
 Upon completion of the detection process, each service receives a message with the `END_DETECTION` command. You can utilize this command in your code to determine the precise moment when the detection process concludes.
 
-It's important to note that during detection, the Luos engine resets the ID for each service. As a result, IDs may change, requiring you to re-initiate auto-updates of services based on their new IDs upon receiving the `END_DETECTION` command message.
+It's important to note that during detection, Luos engine resets the ID for each service. As a result, IDs may change, requiring you to re-initiate auto-updates of services based on their new IDs upon receiving the `END_DETECTION` command message.
 
 You can also check the detection status of your node, by using the dedicated Luos engine's API:
 

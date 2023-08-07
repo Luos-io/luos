@@ -61,7 +61,7 @@ In the `reset_phy` callback function, your task is to reset your phy, including 
 
 If your phy involves transmission and reception through interrupts, it may generate job movements in the Luos engine at any time. To prevent conflicts between your phy and the Luos engine, you can provide a function that allows the Luos engine to temporarily disable your IRQ (Interrupt Request) when critical tasks are being performed. This helps avoid data races and ensures proper synchronization.
 
-To achieve this, you can use the void Phy_SetIrqStateFunction(IRQ_STATE irq_state); function. This function takes a pointer to a callback function that will be called by the Luos engine whenever it needs to disable or enable your IRQ.
+To achieve this, you can use the void `Phy_SetIrqStateFunction(IRQ_STATE irq_state);` function. This function takes a pointer to a callback function that will be called by the Luos engine whenever it needs to disable or enable your IRQ.
 
 This function needs to have the specific following format:
 

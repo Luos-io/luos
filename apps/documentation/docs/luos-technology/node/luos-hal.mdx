@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Luos hardware Abstraction Layer
 To properly run on the hardware, Luos engine needs to be configured with the right HAL. The HAL is a set of functions that are used to access the hardware.
-The <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow">Luos engine HAL_</a> don't configure any network interface; the Luos engine's HAL and the phy's HAL are seperated.
+The <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow">Luos engine HAL</a> doesn't configure any network interface; the Luos engine's HAL and the phy's HAL are seperated.
 Luos engine can work on a single node using localhost communication without any phys referenced. In this case the Luos engine's HAL is the only one needed.
 By referencing phys you will enable communication between services located on different nodes. Each phys will have it's own HAL folder and you will have to configure it to fit with your computing unit.
 

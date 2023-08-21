@@ -5,7 +5,7 @@
 </p>
 <br />
 <p align="center">
-  <a aria-label="Luos Discord badge" href="https://discord.gg/luos">
+  <a aria-label="Luos Discord badge" href="https://discord.gg/luos-community-902486791658041364">
     <img src="https://img.shields.io/discord/902486791658041364?color=be99ff&label=Discord&style=flat-square">
   </a>
    <a aria-label="Luos Reddit follow badge" href="https://www.reddit.com/r/Luos">

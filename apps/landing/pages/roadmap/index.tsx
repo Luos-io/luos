@@ -87,7 +87,11 @@ export const Roadmap = () => {
           </p>
 
           <Box textAlign="center">
-            <Button href="https://discord.gg/luos" variant="outlined" className={styles.btn}>
+            <Button
+              href="https://discord.gg/luos-community-902486791658041364"
+              variant="outlined"
+              className={styles.btn}
+            >
               Join the community
             </Button>
           </Box>
@@ -207,7 +211,11 @@ export const Roadmap = () => {
             </TabPanel>
           </Box>
           <Box textAlign="center">
-            <Button href="https://discord.gg/luos" className={styles.btn} variant="outlined">
+            <Button
+              href="https://discord.gg/luos-community-902486791658041364"
+              className={styles.btn}
+              variant="outlined"
+            >
               Join the community
             </Button>
           </Box>

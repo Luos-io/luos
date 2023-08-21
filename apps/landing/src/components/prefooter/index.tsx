@@ -34,7 +34,7 @@ const Prefooter = () => (
           <Button
             variant="contained"
             className={styles.whiteBtn}
-            href="https://discord.gg/luos"
+            href="https://discord.gg/luos-community-902486791658041364"
             rel="nofollow"
           >
             Join the community

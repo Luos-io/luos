@@ -390,7 +390,7 @@
     },
     {
       "source": "/support",
-      "destination": "https://discord.gg/luos",
+      "destination": "https://discord.gg/luos-community-902486791658041364",
       "statusCode": 301
     },
     {
@@ -420,11 +420,11 @@
     },
     {
       "source": "/us/community",
-      "destination": "https://discord.gg/luos"
+      "destination": "https://discord.gg/luos-community-902486791658041364"
     },
     {
       "source": "/us/contact",
-      "destination": "https://discord.gg/luos"
+      "destination": "https://discord.gg/luos-community-902486791658041364"
     },
     {
       "source": "/us/pricing",
@@ -438,7 +438,7 @@
     },
     {
       "source": "/support",
-      "destination": "https://discord.gg/luos",
+      "destination": "https://discord.gg/luos-community-902486791658041364",
       "statusCode": 301
     },
     {

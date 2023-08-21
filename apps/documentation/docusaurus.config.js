@@ -137,7 +137,7 @@ module.exports = {
           position: 'right',
           items: [
             {
-              to: 'https://discord.gg/luos',
+              to: 'https://discord.gg/luos-community-902486791658041364',
               label: 'Discord',
             },
             {
@@ -176,7 +176,7 @@ module.exports = {
           items: [
             {
               label: 'Discord',
-              href: 'https://discord.gg/luos',
+              href: 'https://discord.gg/luos-community-902486791658041364',
             },
             {
               label: 'Reddit',

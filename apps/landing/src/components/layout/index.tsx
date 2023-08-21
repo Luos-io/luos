@@ -95,7 +95,7 @@ export const Layout = ({ children }: LayoutProps) => {
               {
                 name: 'Discord',
                 type: NavbarItemTypes.LINK,
-                href: 'https://discord.gg/luos',
+                href: 'https://discord.gg/luos-community-902486791658041364',
               },
               {
                 name: 'Reddit',

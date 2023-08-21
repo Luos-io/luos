@@ -23,7 +23,7 @@ export const Footer = () => {
       items: [
         {
           label: 'Discord',
-          to: 'https://discord.gg/luos',
+          to: 'https://discord.gg/luos-community-902486791658041364',
         },
         {
           label: 'Reddit',
@@ -52,7 +52,10 @@ export const Footer = () => {
       <div className={styles.container}>
         <div className={styles.joinUsContainer}>
           <h3>Join us on</h3>
-          <a href="https://discord.gg/luos" style={{ marginRight: '15px', marginLeft: '15px' }}>
+          <a
+            href="https://discord.gg/luos-community-902486791658041364"
+            style={{ marginRight: '15px', marginLeft: '15px' }}
+          >
             <Image
               className={styles.rsLogo}
               width={32}

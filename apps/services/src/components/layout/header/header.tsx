@@ -127,7 +127,7 @@ export const ButtonAppBar = ({ toogleLight }: HeaderProps) => {
             >
               <MenuItem onClick={popupStateCom.close} className={Styles.dropdownLink}>
                 <Link
-                  href="https://discord.gg/luos"
+                  href="https://discord.gg/luos-community-902486791658041364"
                   target={'_blank'}
                   className={Styles.dropdownLink}
                 >

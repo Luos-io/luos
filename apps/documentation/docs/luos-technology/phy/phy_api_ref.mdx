@@ -53,7 +53,7 @@ Because there is a lot of different ways to receive and send messages trough net
 | After receiving the first 7 bytes (the header) call this function to compute how you should manage the incoming message. |   `Phy_ComputeHeader(luos_phy_t *phy_ptr);`                                   |          `void`              |
 | After receiving as much valid bytes as phy_ptr.rx_size, call this function to validate the message.        |   `Phy_ValidMsg(luos_phy_t *phy_ptr);`                                 |          `void`                     |
 | After receiving as much valid bytes as phy_ptr.rx_size, call this function to validate the message.        |   `Phy_ResetMsg(luos_phy_t *phy_ptr);`                                 |          `void`                     |
-| When you receive a message you have to save the reception timetamp, use this function to get it.           |   `Phy_GetTimestamp(void);`                                            |          `time_luos_t`              |
+| When you receive a message you have to save the reception timetamp, use this function to get it. Watch out this value is an integer in nanoseconds           |   `Phy_GetTimestamp(void);`                                            |          `uint64_t`              |
 
 
 ## luos_phy_t structure public fields

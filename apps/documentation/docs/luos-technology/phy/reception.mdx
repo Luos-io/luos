@@ -67,7 +67,7 @@ phy->rx_data += 10;
 phy->received_data += 10;
 ```
 ### 1. Reception initialization
-When you receive data, you have to compute the first byte reception date. This date is used by the Luos engine to compute the timestamp of the message. To do so, you need to call the `Phy_GetTimestamp` function to get the current timestamp. Then you need to remove the time spent to receive those data. Your result may be as close as possible to the transmission begin date computed in the transmission process.
+When you receive data, you have to compute the first byte reception date. This date is used by the Luos engine to compute the timestamp of the message. To do so, you need to call the `Phy_GetTimestamp` function to get the current timestamp in nanoseconds. Then you need to remove the time spent to receive those data. Your result may be as close as possible to the transmission begin date computed in the transmission process.
 When you computed it, save this value in the `rx_timestamp` field of the `luos_phy_t` structure.
 
 ### 2. Header reception

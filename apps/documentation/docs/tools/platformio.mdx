@@ -55,22 +55,13 @@ A good configuration looks like this:
   />
 </div>
 
-During the build, a message appearing in red means a problem has occurred, except for telemetry configuration (see next ).
+During the build, a message appearing in red means a problem has occurred.
 
 ### Configuration for Luos engine Library
 
 | Definition  | Description                                                                                                                                                                                           |                                                                               Value                                                                               |             flag example              |
 | :---------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------: |
 |   LUOSHAL   | Defines the <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow">HAL family<IconExternalLink width="10" /></a> to use depending on your MCU. | <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow"> Luos engine HAL<IconExternalLink width="10" /></a> |     `-D LUOSHAL=ATSAMD21_ARDUINO`     |
-| NOTELEMETRY | Disables telemetry.                                                                                                                                                                                   |                                                                           On by default                                                                           | `-D NOTELEMETRY` to disable telemetry |
-
-:::info
-By default, the telemetry is enabled and sends anonymous information to Luos maintainers. This information is only used to improve Luos engine experience.
-
-When telemetry message is appearing in red, this means it is disabled, but compilation will run properly.
-
-For more information about telemetry, check the file <a href="https://github.com/Luos-io/luos_engine/blob/main/source_filter_script.py" target="_blank" rel="external nofollow">_source_filter_script.py_<IconExternalLink width="10" /></a>.
-:::
 
 ### Configuration for the gate
 

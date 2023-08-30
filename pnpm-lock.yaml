@@ -195,7 +195,7 @@ importers:
       graphql: ^16.6.0
       ip-range-check: ^0.2.0
       material-ui-popup-state: ^4.0.2
-      mongodb: ^4.9.1
+      mongodb: ^4.17.0
       next: ^13.0.2
       next-auth: ^4.5.0
       next-transpile-modules: 10.0.0
@@ -229,7 +229,7 @@ importers:
       '@mui/material': 5.11.0_rrrb7hooev7eucxoqykubwnawy
       '@mui/styles': 5.11.0_iapumuv4e6jcjznwuxpf4tt22e
       '@mui/types': 7.2.3_@types+react@18.0.21
-      '@next-auth/mongodb-adapter': 1.1.1_irjcqotjhiiggqja7qpbcjanma
+      '@next-auth/mongodb-adapter': 1.1.1_54ey2vfzoearx6f3aijvcqdi6a
       '@packages/services': link:../../packages/services
       '@packages/ui': link:../../packages/ui
       '@typeform/embed': 1.38.0
@@ -243,7 +243,7 @@ importers:
       graphql: 16.6.0
       ip-range-check: 0.2.0
       material-ui-popup-state: 4.1.0_rrrb7hooev7eucxoqykubwnawy
-      mongodb: 4.12.1
+      mongodb: 4.17.0
       next: 13.0.7_ysz4gko4a26lxtatclmfotxma4
       next-auth: 4.18.6_gxrb4puqhmlxj5cjmftw47fgty
       nodemailer: 6.8.0
@@ -350,11 +350,11 @@ importers:
       '@typescript-eslint/eslint-plugin': ^5.36.0
       eslint: ^8.23.0
       eslint-config-custom: '*'
-      mongodb: ^4.9.1
+      mongodb: ^4.17.0
       prettier: ^2.7.1
       typescript: ^4.8.2
     dependencies:
-      mongodb: 4.12.1
+      mongodb: 4.17.0
     devDependencies:
       '@packages/tsconfig': link:../tsconfig
       '@types/prettier': 2.7.1
@@ -4479,6 +4479,14 @@ packages:
   /@mdx-js/util/1.6.22:
     resolution: {integrity: sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==}
 
+  /@mongodb-js/saslprep/1.1.0:
+    resolution: {integrity: sha512-Xfijy7HvfzzqiOAhAepF4SGN5e9leLkMvg/OPOF97XemjfVCYN/oWa75wnkc6mltMSTwY+XlbhWgUOJmkFspSw==}
+    requiresBuild: true
+    dependencies:
+      sparse-bitfield: 3.0.3
+    dev: false
+    optional: true
+
   /@mui/base/5.0.0-alpha.110_gzv7pa6nrbev3fs6gyzn7sadkq:
     resolution: {integrity: sha512-q4TH9T3sTBknTXXTEf2zO8F3nbHg5iGgiaRx9XErTbXvHrmLrQXbQ4hmrLERocSTBFCFWkKyne/qZj0diWlPtA==}
     engines: {node: '>=12.0.0'}
@@ -4890,13 +4898,13 @@ packages:
       react-is: 18.2.0
     dev: false
 
-  /@next-auth/mongodb-adapter/1.1.1_irjcqotjhiiggqja7qpbcjanma:
+  /@next-auth/mongodb-adapter/1.1.1_54ey2vfzoearx6f3aijvcqdi6a:
     resolution: {integrity: sha512-X5O4U4l2M8nyp/B3qF5GOr/JJw2ShKgWfTZRa80Y5CUzTPPmf09ggL5v5UwCmz9l2RIv2GUxO8hK4qrcaZvDRw==}
     peerDependencies:
       mongodb: ^4.1.1
       next-auth: ^4
     dependencies:
-      mongodb: 4.12.1
+      mongodb: 4.17.0
       next-auth: 4.18.6_gxrb4puqhmlxj5cjmftw47fgty
     dev: false
 
@@ -5910,7 +5918,7 @@ packages:
   /@types/sax/1.2.4:
     resolution: {integrity: sha512-pSAff4IAxJjfAXUG6tFkO7dsSbTmf8CtUpfhhZ5VhkRpC4628tJhh3+V6H1E+/Gs9piSzYKT5yzHO5M4GG9jkw==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 18.11.16
     dev: false
 
   /@types/scheduler/0.16.2:
@@ -5949,7 +5957,7 @@ packages:
   /@types/whatwg-url/8.2.2:
     resolution: {integrity: sha512-FtQu10RWgn3D9U4aazdwIE2yzphmTJREDqNdODHrbrZmmMqI0vMheC/6NE/J1Yveaj8H+ela+YwWTjq5PGmuhA==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 18.11.16
       '@types/webidl-conversions': 7.0.0
     dev: false
 
@@ -6872,8 +6880,8 @@ packages:
       node-releases: 2.0.8
       update-browserslist-db: 1.0.10_browserslist@4.21.4
 
-  /bson/4.7.0:
-    resolution: {integrity: sha512-VrlEE4vuiO1WTpfof4VmaVolCVYkYTgB9iWgYNOrVlnifpME/06fhFRmONgBhClD5pFC1t9ZWqFUQEQAzY43bA==}
+  /bson/4.7.2:
+    resolution: {integrity: sha512-Ry9wCtIZ5kGqkJoi6aD8KjxFZEx78guTQDnpXWiNthsxzrxAK/i8E6pCHAIZTbaEFWcOCvbecMukfK7XUvyLpQ==}
     engines: {node: '>=6.9.0'}
     dependencies:
       buffer: 5.7.1
@@ -11392,16 +11400,16 @@ packages:
       whatwg-url: 11.0.0
     dev: false
 
-  /mongodb/4.12.1:
-    resolution: {integrity: sha512-koT87tecZmxPKtxRQD8hCKfn+ockEL2xBiUvx3isQGI6mFmagWt4f4AyCE9J4sKepnLhMacoCTQQA6SLAI2L6w==}
+  /mongodb/4.17.0:
+    resolution: {integrity: sha512-LZGMIPjPfWEfhPJATk1s9IvVTD18tyfKdT/0blCMih5vGagk2SwA9wFAUPMdtJpTrhXmyfGgwAaMkvneX2bn2A==}
     engines: {node: '>=12.9.0'}
     dependencies:
-      bson: 4.7.0
+      bson: 4.7.2
       mongodb-connection-string-url: 2.6.0
       socks: 2.7.1
     optionalDependencies:
       '@aws-sdk/credential-providers': 3.231.0
-      saslprep: 1.0.3
+      '@mongodb-js/saslprep': 1.1.0
     transitivePeerDependencies:
       - aws-crt
     dev: false
@@ -13413,15 +13421,6 @@ packages:
 
   /safer-buffer/2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
-
-  /saslprep/1.0.3:
-    resolution: {integrity: sha512-/MY/PEMbk2SuY5sScONwhUDsV2p77Znkb/q3nSVstq/yQzYJOH/Azh29p9oJLsl3LnQwSvZDKagDGBsBwSooag==}
-    engines: {node: '>=6'}
-    requiresBuild: true
-    dependencies:
-      sparse-bitfield: 3.0.3
-    dev: false
-    optional: true
 
   /sass/1.57.0:
     resolution: {integrity: sha512-IZNEJDTK1cF5B1cGA593TPAV/1S0ysUDxq9XHjX/+SMy0QfUny+nfUsq5ZP7wWSl4eEf7wDJcEZ8ABYFmh3m/w==}

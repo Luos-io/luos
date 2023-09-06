@@ -7,6 +7,17 @@ import TabItem from '@theme/TabItem';
 
 # Serial configuration
 
+## Protocol configuration
+
+The Serial network allows you to configure some aspects of the protocol to adapt it to your needs. To modify these options, you have to define them in your `product_config.h` file.
+Learn more about `product_config.h` on the [code organization page](../../luos-technology/basics/organization).
+
+|              Function               |                    Description                    |             Comments             |
+| :---------------------------------: | :-----------------------------------------------: | :------------------------------: |
+|          SERIAL_NETWORK_BAUDRATE    |   Define the serial baudrate used by the Luos Serial protocol        | By default the baudrate is 1000000 |
+|          SERIAL_RX_BUFFER_SIZE      |   The size of the RX buffer        | By default this buffer have 512 bytes. However  this value is very conservative and the serial rarely need more than 10 bytes. |
+
+
 ## Compatible MCUs
 
 Serial can manage any type of microcontrollers as long as they have a HAL. If your microcontroller is not supported yet, please contact us:

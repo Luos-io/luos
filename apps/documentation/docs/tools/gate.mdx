@@ -89,8 +89,20 @@ You could need to change it if you have apps on your Luos embedded system.
 | :------------: | :------------: | :----------------------------------------------------------------------: |
 | GATE_BUFF_SIZE |      1024      |                    Maximum size of 1 formatted Data.                     |
 |  GATE_POLLING  |  NOT DEFINED   | No auto-refresh, always ask for data (more intensive to Luos bandwidth). |
-|  NODETECTION   |  NOT DEFINED   |                Gate does not make detection at power up.                 |
+|  NODETECTION   |  NOT DEFINED   | Gate does not make detection at power up. Use it only if you have another app performing the detection  |
+|  INIT_TIME     |  150           | Number of millisecond allowing all node to properly start before launching a detection. |
 
 If you have an app service on your device managing detections you should define **NODETECTION** avoiding useless detection from the gate at boot.
 
 If you have an app service on your device using auto-update you should define **GATE_POLLING** avoiding the gate to take the lead on the services your App is using.
+
+## Gate custom conversion
+The Gate is allowing you to create you own custom conversion.
+If you are using Platformio, this specific configuration have to be managed on the `build_flags`. more information on the [Platformio page](platformio)
+
+To do so you have to :
+ - use [the `TinyJSON` default conversion](https://github.com/Luos-io/luos_engine/tree/main/tool_services/gate/TinyJSON) code as reference. Copy paste it on your `lib` folder
+ - Rename this folder as you want
+ - On your `platformio.ini` modify the Gate conversion format to use your custom one : `-D GATEFORMAT=custom_folder_name`
+ - Now you can add and improve the conversion code as you want in your project.
+

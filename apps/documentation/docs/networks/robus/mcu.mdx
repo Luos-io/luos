@@ -7,6 +7,17 @@ import TabItem from '@theme/TabItem';
 
 # Robus configuration
 
+## Protocol configuration
+
+Robus allows you to configure some aspects of the protocol to adapt it to your needs. To modify these options, you have to define them in your `product_config.h` file.
+Learn more about `product_config.h` on the [code organization page](../../luos-technology/basics/organization).
+
+|              Function               |                    Description                    |             Comments             |
+| :---------------------------------: | :-----------------------------------------------: | :------------------------------: |
+|          ROBUS_NETWORK_BAUDRATE     |   Define the serial baudrate used by Robus        | By default the baudrate is 1000000 |
+|          NBR_RETRY     |   Define the maximum number of transmission attempt before excluding the node from the network        | By default Robus will perform 10 retry maximum |
+|          NBR_PORT     |   The number of physical port (or PTP) you have on your setup        | By default Robus consider that you have 2 of them |
+
 ## Compatible MCUs
 
 Robus can manage any type of microcontrollers as long as they have a HAL. If your microcontroller is not supported yet, please contact us:
@@ -72,7 +83,7 @@ There are many possible configurations that you can change, not all of them bein
 |           ROBUS_COM_CLOCK_ENABLE           |      Activates clock for serial      |      Depends on serial bus      |
 | ROBUS_COM/ROBUS_COM_IRQ/ROBUS_COM_IRQHANDLER | Chooses serial bus, IRQ and callback | Adapts to the serial bus chosen |
 |           ROBUS_DMA_CLOCK_ENABLE           |       Activates clock for DMA        |      Necessary for for Tx       |
-|             ROBUS_DMA_CHANNEL              |           Chooses Channel            |             Send Tx             |
+|             ROBUS_DMA/ROBUS_DMA_CHANNEL/ROBUS_DMA_REQUEST              |           Chooses DMA Channel and peripheral            |          Message Tx on serial port            |
 
 </TabItem>
 <TabItem value="Timer" label="Timer">

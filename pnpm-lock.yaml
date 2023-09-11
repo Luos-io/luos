@@ -173,7 +173,7 @@ importers:
       '@packages/services': workspace:*
       '@packages/tsconfig': workspace:*
       '@packages/ui': workspace:*
-      '@typeform/embed': ^1.37.0
+      '@typeform/embed': ^2.16.1
       '@typeform/embed-react': ^1.19.0
       '@types/chroma-js': ^2.1.3
       '@types/d3': ^7.4.0
@@ -232,7 +232,7 @@ importers:
       '@next-auth/mongodb-adapter': 1.1.1_irjcqotjhiiggqja7qpbcjanma
       '@packages/services': link:../../packages/services
       '@packages/ui': link:../../packages/ui
-      '@typeform/embed': 1.38.0
+      '@typeform/embed': 2.16.1
       '@typeform/embed-react': 1.21.0_react@18.2.0
       '@vercel/og': 0.0.21
       chroma-js: 2.4.2
@@ -5495,6 +5495,11 @@ packages:
 
   /@typeform/embed/1.38.0:
     resolution: {integrity: sha512-qYxtwckEcRt++F1sUeILb/qmUFQ3PwcUxKedCBSseC8lFo1ukD1wmsBf+Il8YSRPKPqhTrGUG5WPaJg83n1xuw==}
+    engines: {node: '>=10'}
+    dev: false
+
+  /@typeform/embed/2.16.1:
+    resolution: {integrity: sha512-CId70qZjKs//Y/MP69U3di/HT6zUR609+QImsgm0gaFodKHAxBZ1bbeg1VkLDD2q5jPbnb+D0KBhE4B28lsOWQ==}
     engines: {node: '>=10'}
     dev: false
 

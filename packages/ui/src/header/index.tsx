@@ -166,7 +166,7 @@ export const Header = (props: HeaderProps) => {
               className={clsx(styles.headerItemsRight, styles.navbar)}
             >
               {navbarElement}
-              <IconButton>
+              <IconButton href='https://github.com/luos-io'>
                 <GitHubIcon />
               </IconButton>
               {props.enableLightingButton && (
@@ -204,7 +204,7 @@ export const Header = (props: HeaderProps) => {
         >
           <Box component={'nav'} className={clsx(styles.navbarMobile)}>
             {navbarElement}
-            <IconButton>
+            <IconButton href={'https://github.com/luos-io'}>
               <GitHubIcon />
             </IconButton>
             {props.enableLightingButton && (

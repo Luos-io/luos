@@ -43,7 +43,7 @@
     "d3": "^7.4.4",
     "d3-force": "^3.0.0",
     "dotenv-vault-core": "^0.6.1",
-    "graphql": "^16.6.0",
+    "graphql": "^16.8.1",
     "ip-range-check": "^0.2.0",
     "material-ui-popup-state": "^4.0.2",
     "mongodb": "^4.9.1",

@@ -192,7 +192,7 @@ importers:
       dotenv-vault-core: ^0.6.1
       eslint: 8.27.0
       eslint-config-custom: '*'
-      graphql: ^16.6.0
+      graphql: ^16.8.1
       ip-range-check: ^0.2.0
       material-ui-popup-state: ^4.0.2
       mongodb: ^4.9.1
@@ -213,7 +213,7 @@ importers:
       web-serial-polyfill: ^1.0.13
       yup: ^0.32.11
     dependencies:
-      '@apollo/client': 3.7.2_gdcq4dv6opitr3wbfwyjmanyra
+      '@apollo/client': 3.7.2_abfikfp5vfqhqbpqnw7vzn5gua
       '@babel/core': 7.20.5
       '@emailjs/browser': 3.10.0
       '@emotion/cache': 11.10.5
@@ -240,7 +240,7 @@ importers:
       d3: 7.7.0
       d3-force: 3.0.0
       dotenv-vault-core: 0.6.1
-      graphql: 16.6.0
+      graphql: 16.8.1
       ip-range-check: 0.2.0
       material-ui-popup-state: 4.1.0_rrrb7hooev7eucxoqykubwnawy
       mongodb: 4.12.1
@@ -539,7 +539,7 @@ packages:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.17
 
-  /@apollo/client/3.7.2_gdcq4dv6opitr3wbfwyjmanyra:
+  /@apollo/client/3.7.2_abfikfp5vfqhqbpqnw7vzn5gua:
     resolution: {integrity: sha512-ohAIpXl3mTa1Fd3GT/K37VwQJfTIuuJRp4aOlJ4q/hlx0Wxh+RqDrbn0awtVCOdhGDQN+CQQmVzIqFKn6GziXQ==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -557,12 +557,12 @@ packages:
       subscriptions-transport-ws:
         optional: true
     dependencies:
-      '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
+      '@graphql-typed-document-node/core': 3.1.1_graphql@16.8.1
       '@wry/context': 0.7.0
       '@wry/equality': 0.5.3
       '@wry/trie': 0.3.2
-      graphql: 16.6.0
-      graphql-tag: 2.12.6_graphql@16.6.0
+      graphql: 16.8.1
+      graphql-tag: 2.12.6_graphql@16.8.1
       hoist-non-react-statics: 3.3.2
       optimism: 0.16.2
       prop-types: 15.8.1
@@ -4298,12 +4298,12 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@graphql-typed-document-node/core/3.1.1_graphql@16.6.0:
+  /@graphql-typed-document-node/core/3.1.1_graphql@16.8.1:
     resolution: {integrity: sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      graphql: 16.6.0
+      graphql: 16.8.1
     dev: false
 
   /@hapi/hoek/9.3.0:
@@ -9740,18 +9740,18 @@ packages:
   /grapheme-splitter/1.0.4:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
 
-  /graphql-tag/2.12.6_graphql@16.6.0:
+  /graphql-tag/2.12.6_graphql@16.8.1:
     resolution: {integrity: sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==}
     engines: {node: '>=10'}
     peerDependencies:
       graphql: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      graphql: 16.6.0
+      graphql: 16.8.1
       tslib: 2.4.1
     dev: false
 
-  /graphql/16.6.0:
-    resolution: {integrity: sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==}
+  /graphql/16.8.1:
+    resolution: {integrity: sha512-59LZHPdGZVh695Ud9lRzPBVTtlX9ZCV150Er2W43ro37wVof0ctenSaskPPjN7lVTIN8mSZt8PHUNKZuNQUuxw==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
     dev: false
 

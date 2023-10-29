@@ -112,7 +112,7 @@ importers:
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.8
       clsx: ^1.2.1
-      dotenv-vault-core: ^0.6.1
+      dotenv: ^16.1.0
       eslint: ^8.24.0
       eslint-config-next: ^13.0.2
       next: ^13.0.2
@@ -133,7 +133,7 @@ importers:
       '@mui/material': 5.11.0_rrrb7hooev7eucxoqykubwnawy
       '@packages/ui': link:../../packages/ui
       clsx: 1.2.1
-      dotenv-vault-core: 0.6.1
+      dotenv: 16.1.0
       next: 13.0.7_ysz4gko4a26lxtatclmfotxma4
       next-transpile-modules: 10.0.0
       react: 18.2.0
@@ -189,7 +189,7 @@ importers:
       clsx: ^1.2.1
       d3: ^7.4.4
       d3-force: ^3.0.0
-      dotenv-vault-core: ^0.6.1
+      dotenv: ^16.1.0
       eslint: 8.27.0
       eslint-config-custom: '*'
       graphql: ^16.6.0
@@ -239,7 +239,7 @@ importers:
       clsx: 1.2.1
       d3: 7.7.0
       d3-force: 3.0.0
-      dotenv-vault-core: 0.6.1
+      dotenv: 16.1.0
       graphql: 16.6.0
       ip-range-check: 0.2.0
       material-ui-popup-state: 4.1.0_rrrb7hooev7eucxoqykubwnawy
@@ -287,7 +287,7 @@ importers:
       '@docusaurus/utils-validation': ^2.1.0
       '@packages/tsconfig': workspace:*
       clsx: ^1.2.1
-      dotenv-vault-core: ^0.6.1
+      dotenv: ^16.1.0
       eslint: ^8.26.0
       eslint-config-prettier: ^8.5.0
       eslint-plugin-prettier: ^4.2.1
@@ -309,7 +309,7 @@ importers:
       '@docusaurus/utils': 2.2.0_@docusaurus+types@2.2.0
       '@docusaurus/utils-validation': 2.2.0_@docusaurus+types@2.2.0
       clsx: 1.2.1
-      dotenv-vault-core: 0.6.1
+      dotenv: 16.1.0
       node-fetch: 3.3.0
       react-markdown: 8.0.4_odph5zpxnhqxi2epe2unwomxxu
       remark-gfm: 3.0.1
@@ -8146,7 +8146,7 @@ packages:
     hasBin: true
     dependencies:
       cross-spawn: 7.0.3
-      dotenv: 16.0.3
+      dotenv: 16.1.0
       dotenv-expand: 8.0.3
       minimist: 1.2.7
     dev: false
@@ -8160,7 +8160,7 @@ packages:
     resolution: {integrity: sha512-BLyzb+Y/ai4py2SF7nnfPF2nb+8QygTIVJxFvn6DyfCoajUfIjOQF3+FxQ2eF3s84kHJa8wSaPKoxIT3Vg4DHQ==}
     engines: {node: '>=12'}
     dependencies:
-      dotenv: 16.0.3
+      dotenv: 16.1.0
     dev: false
 
   /dotenv-vault/1.17.0:
@@ -8185,6 +8185,11 @@ packages:
 
   /dotenv/16.0.3:
     resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /dotenv/16.1.0:
+    resolution: {integrity: sha512-XiwP/4cqatBNLEnKe169vPZCrovUmYngyVA4DgZ3uIVLJfZaBgr4uT0EF2TrEQqgWDDlekGo0muEYme5SR78Ww==}
     engines: {node: '>=12'}
     dev: false
 

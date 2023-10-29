@@ -79,7 +79,7 @@ async function pluginGithubRelease(_context, options) {
 }
 
 pluginGithubRelease.validateOptions = ({ options, validate }) => {
-  require('dotenv-vault-core').config({
+  require('dotenv').config({
     debug: options?.debug ?? false,
     path: options?.dotenv?.path ?? '.env',
   });

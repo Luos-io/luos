@@ -18,3 +18,6 @@ Luos engine need some peripheral access to properly work:
 
 - **TIMER**: Used for the systick and for the nanosecond precision timestamping of events.
 - **FLASH**: Used to write your deployed binaries thanks to the Luos bootloader (you may omit to populate this one if you don't want to use the bootloader feature).
+:::tip
+The Luos bootloader is a feature that allows you to update your firmware without any physical access to the node. It is a very convenient feature for remote maintenance. learn more about it [here](/tutorials/bootloader).
+:::

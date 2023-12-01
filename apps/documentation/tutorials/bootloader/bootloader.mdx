@@ -21,7 +21,7 @@ import Author from '@site/src/components/school/author/author.js';
 
 ## 1. Acquire and set up your equipment
 
-To flash one or multiple boards using the Luos engine's bootloader, you need a master board that will manage the link between your computer and the Luos network. So the minimal setup needed to use the bootloader is composed of two boards supported by Luos engine connected together with a Luos network. We will use one of these nodes as a "master" with a [gate](/docs/tools/gate) and the other will be able to be updated through the Luos network by hosting a bootloader.
+To flash one or multiple boards using the Luos engine's bootloader, you need a main node that will manage the transmission of your binary trough the Luos network. So the minimal setup needed to use the bootloader is composed of the boards you want to flash, connected to a computer that will run the master node. We will make the main nodes with a [gate](/docs/tools/gate) run on the computer you are using to update your boards.
 
 <div align="center">
   <Image
@@ -37,7 +37,7 @@ If you are not comfortable with the Luos network creation and Luos engine's firm
 :::
 
 :::caution
-It is not possible to update the firmware on the master board running the gate using the bootloader feature. If you want to update it, you will have to flash it using a direct link (DFU, STLink, JTAG, ...) to the board.
+It is not possible to update the main node running the gate using the bootloader feature. If you want to update it, you will have to make it amnually or use another node as main.
 :::
 
 On this tutorial, we will use the examples available in [the Luos engine's repository](https://github.com/Luos-io/luos_engine/tree/main).
@@ -47,70 +47,67 @@ You can [download](https://github.com/Luos-io/luos_engine/archive/refs/heads/mai
 Git clone https://github.com/Luos-io/luos_engine.git
 ```
 
-## 2. Load the master board with a gate program
+## 2. Compile  the Gate on your computer
 
-Open VS Code and open the _Gate_SerialCom_ project corresponding to your master board in _Luos_engine/Examples/Projects/YOUR_BOARD_:
+:::info
+You can also make the Gate run on a board. To know how, please follow the [the Luos Get started tutorial](../get-started/get-started.mdx).
+:::
 
-<div align="center">
-  <Image sources={{ light: '/assets/images/tutorials/bootloader/Gate_project.png' }} />
-</div>
+Open VS Code and open the _gate_wscom_ project corresponding to your master board in _Luos_engine/examples/projects/native/gate_wscom_.
 
-Now connect your master node with a USB cable from your PC to the port used for programming.
-
-Click on **Upload** on the bottom left corner of the IDE. Wait for the compilation and flashing to be completed. If successful, you should see the following:
+Click on **Upload** on the bottom left corner of the IDE. Wait for the compilation to be completed. If successful, you should see the following:
 
 <div align="center">
   <Image sources={{ light: '/assets/images/tutorials/bootloader/load_gate.png' }} />
 </div>
 
 :::info
-If this step fails, check that you are properly connected to the USB port, or try to follow [the Luos Get started tutorial](../get-started/get-started.mdx).
+If this step fails, try to follow [the Luos Get started tutorial](../get-started/get-started.mdx).
 :::
 
-## 3. Detect the gate's node with the CLI
-
-Now you should be able to detect your master node with the CLI using the following command in a terminal:
+To finish, we need to run this program. To do that, you can use the following command in a terminal:
 
 ```bash
-pyluos-bootloader detect
+cd Luos_engine/Examples/Projects/native/gate_wscom
+./.pio/build/native/program
 ```
-```bash
-Luos detect subcommand on port :  COM6
-Luos detect subcommand at baudrate :  1000000
-Connected to "COM6".
-Sending detection signal.
-Waiting for routing table...
-Device setup.
-  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-  ┃  ╭────────────────── Node 1 ──────────────────   ┃
-  ┃  │  Type                Alias               ID   ┃
-  ┃  ├> Pipe                Pipe                2    ┃
-  ┃  ╰> Gate                gate                1    ┃
-╔■┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-```
+You should see the code running and asking you to select the serial port to use:
 
-:::info
-COM6 is the identifier of the serial port used. It is unique for each shield; you can check yours with the Device Manager in Windows or `ls -l /dev/ | grep ttyUSB` on Linux. If you do not provide it, pyluos-bootloader will try to find an available gate in your system.
-:::
 
-## 4. Load the bootloader
+## 3. Load the bootloader on your board
 
-Now, you will load the bootloader in the second node. Follow the same process as described in **Step 2**, but this time open the Bootloader example in _Luos_engine/Examples/Projects/YOUR_BOARD_.
+Now, you will load the bootloader in the board. Following the same process as described in **Step 2**, but this time open the Bootloader example in _Luos_engine/Examples/Projects/YOUR_BOARD/bootloader_.
 
-Connect the second node with the USB programming port and click on **Upload**; you should see the following:
+Luos engine example use *Robus* as default network, you will have to use *Serial* instead allowing you to communicate with the node on the computer. To do that you have to :
+ - Replace `robus_network` by `serial_network` in the `platformio.ini` file. Make sure to also replace the `-DROBUSHAL=BOARD` by `-DSERIALHAL=BOARD` in the `build_flags` section.
+ - Replace `#include "robus_network.h"` and `LUOS_ADD_PACKAGE(Robus)` by `#include "serial_network.h"` and `LUOS_ADD_PACKAGE(Serial)` in the `main.c` file.
+
+Connect the board with the USB programming port and click on **Upload**; you should see the following:
 
 <div align="center">
   <Image sources={{ light: '/assets/images/tutorials/bootloader/load_bootloader.png' }} />
 </div>
 
-## 5. Detection
+## 4. Detection
 
-Connect your two nodes through the Luos network and connect your master board USB serial interface to your PC. Type the same command used on **Step 3**, and you should see the following:
+Connect your your board USB serial interface to your PC. Now we can start the Gate node on the computer. Open a terminal and type the following command:
 
 ```bash
-Luos detect subcommand on port :  COM6
+cd Luos_engine/Examples/Projects/native/gate_wscom
+./.pio/build/native/program
+```
+You should see the code running and asking you to select the serial port to use. Write its name and press enter:
+``` bash
+Please enter the serial port name (ex: /dev/ttyUSB0): /dev/cu.usbserial-D308N897
+Connection on serial port /dev/cu.usbserial-D308N897 at 1000000 baud
+Starting WS listener on ws://localhost:9342/ws
+```
+As you can see the gate opened a websocket server on port 9342. We will use this to communicate with the gate from Pyluos :
+```bash
+$ pyluos-bootloader detect localhost
+Luos detect subcommand on port :  localhost
 Luos detect subcommand at baudrate :  1000000
-Connected to "COM6".
+Connected to "localhost".
 Sending detection signal.
 Waiting for routing table...
 Device setup.
@@ -123,19 +120,16 @@ Device setup.
 ║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ╚════■┫  ╭────────────────── Node 2 ──────────────────   ┃
       ┃  │  Type                Alias               ID   ┃
-      ┃  ╰> State               boot_service        3    ┃
-    ╔■┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+      ┃  ╰> Void                boot_service        3    ┃
+      ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
-<div align="center">
-  <Image sources={{ light: '/assets/images/tutorials/bootloader/detect_bootloader.png' }} />
-</div>
 
 `boot_service` indicates there is a bootloader running on your node. You are now able to communicate with it through the gate and load any application.
 
-## 6. Compile an app compatible with the bootloader
+## 6. Compile a code on bootloader mode
 
 Most of the examples available in Luos engine's folder are already compatible with the bootloader's feature. You will be able to use them as templates for your future applications.
-Follow the same process described in **Step 2** and **Step 4**, but this time open the Button example in _Luos_engine/Examples/Projects/YOUR_BOARD_.
+Follow the same process described in **Step 3**, but this time open the Button example in _Luos_engine/Examples/Projects/YOUR_BOARD_.
 
 PlatformIO is able to manage multiple build configurations. By default, Luos engine's examples are compiling a firmware that can be loaded using the standard flash system. If you want your application to be bootloader-compatible, you need to compile it in `with_bootloader` mode.
 To do that, when your button project is open you can click on the `Switch PlatformIO Project Environment` button at the bottom of the window, then select the `with_bootloader` option on the list of choice appearing on the top of your screen.
@@ -144,7 +138,7 @@ To do that, when your button project is open you can click on the `Switch Platfo
   <Image sources={{ light: '/assets/images/tutorials/bootloader/select_env.png' }} />
 </div>
 
-Then, click on **Build**.
+Don't forget to switch your button program to use `Serial` instead of `Robus`, then, click on **Build**.
 
 :::caution
 If you click on the **Upload** button, PlatformIO will use the Luos bootloader CLI to load your firmware. For now, please be sure to do it in command line instead, like explained below.
@@ -156,7 +150,7 @@ Now, you can use the bootloader's command line to load it, for example:
 
 ```bash
 cd Luos_engine/Examples/Projects/l0/Button/.pio/build/l0_with_bootloader
-pyluos-bootloader flash COM6 -t 2 -b firmware.bin
+pyluos-bootloader flash -t 2 -b firmware.bin localhost
 ```
 
 :::info
@@ -169,20 +163,41 @@ pyluos-bootloader --help
 :::
 
 The following lines should appear after typing the command:
-
-<div align="center">
-  <Image sources={{ light: '/assets/images/tutorials/bootloader/application_load.png' }} />
-</div>
+```bash
+Rebooting all nodes in bootloader mode.
+Programming nodes:
+─> Erasing flash memory.
+   ╰> All flash erased
+─> Sending binary data.
+   ╰> Loading : 100.0 %          
+Rebooting all nodes in application mode.
+Programming succeed in 74.165 s.
+```
 
 :::warning
 If any problem occurs during the loading process, please reboot your system and retry typing the command (you can also find information [here](/docs/tools/bootloader)).
 :::
 
-Then relaunch a detection (as done in **Step 3**):
-
-<div align="center">
-  <Image sources={{ light: '/assets/images/tutorials/bootloader/detect_old_app.png' }} />
-</div>
+Then relaunch a detection (as done in **Step 4**):
+``` bash
+$ pyluos-bootloader detect localhost
+Luos detect subcommand on port :  localhost
+Connected to "localhost".
+Sending detection signal.
+Waiting for routing table...
+Device setup.
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭────────────────── Node 1 ──────────────────   ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> Pipe                Pipe                2    ┃
+  ┃  ╰> Gate                gate                1    ┃
+╔■┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚════■┫  ╭────────────────── Node 2 ──────────────────   ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ╰> ServoMotor          button              3    ┃
+      ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
 
 You can see that `boot_service` has been replaced by another alias such as **button**, which is the name of the service running in your app: the bootloader switched to application mode and launched your freshly written app.
 
@@ -190,12 +205,100 @@ You can see that `boot_service` has been replaced by another alias such as **but
 
 You can also update your app and reload it in the node.
 As an example, select a `Led` project and follow the previous steps with the Button example.
-Compile it using the `with_bootloader` environment, then use the bootloader command to flash it.
+Compile it using the `with_bootloader` environment and by replacing `Robus` by `Serial`, then use the bootloader command to flash it.
 You should see your updated service running in your node:
 
-<div align="center">
-  <Image sources={{ light: '/assets/images/tutorials/bootloader/detect_new_app.png' }} />
-</div>
+``` bash
+$ pyluos-bootloader detect localhost
+Luos detect subcommand on port :  localhost
+Connected to "localhost".
+Sending detection signal.
+Waiting for routing table...
+Device setup.
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭────────────────── Node 1 ──────────────────   ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> Pipe                Pipe                2    ┃
+  ┃  ╰> Gate                gate                1    ┃
+╔■┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚════■┫  ╭────────────────── Node 2 ──────────────────   ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ╰> ServoMotor          led                 3    ┃
+      ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
+
+## 8. Update your bootloader trough the bootloader
+
+Luos-engine also allow you to update your bootloader using the bootloader feature. This process use the application space of your microcontroler to store a bootloader able to overwrite the actual bootloader on the bootloader space.
+
+:::warning
+This process overwrite your app and your bootloader. If there is a failure during the process, you will have to use a programmer to recover your board.
+:::
+
+### Compile your bootloader updater app
+Following the same process as described in **Step 3**, but this time open the Bootloader example in _Luos_engine/Examples/Projects/YOUR_BOARD/bootloader_ in _YOUR_BOARD_updater_ mode.
+This compilation mode will create a binary file acting like a bootloader that can be loaded using the bootloader feature in the application space.
+
+### Load your bootloader updater app
+Now you can use the bootloader command to flash it.
+
+```bash
+cd Luos_engine/Examples/Projects/YOUR_BOARD/bootloader/.pio/build/YOUR_BOARD_updater
+pyluos-bootloader flash -t 2 -b firmware.bin localhost
+```
+After the flash complete you can detect your board again and see that their is now a `boot_updater` instead of your `led` app.
+
+``` bash
+$ pyluos-bootloader detect localhost
+Luos detect subcommand on port :  localhost
+Connected to "localhost".
+Sending detection signal.
+Waiting for routing table...
+Device setup.
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭────────────────── Node 1 ──────────────────   ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> Pipe                Pipe                2    ┃
+  ┃  ╰> Gate                gate                1    ┃
+╔■┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚════■┫  ╭────────────────── Node 2 ──────────────────   ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ╰> ServoMotor          boot_updater        3    ┃
+      ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
+
+### Update your bootloader
+Now you can compile your updated bootloader and load it using the bootloader feature. To make it you can follow the step 3 by compiling your bootloader with the default environnement. Then you can load it using the bootloader feature, this time the bootloader on the application space will update thee bootloader on the bootloader space.
+
+```bash
+cd Luos_engine/Examples/Projects/YOUR_BOARD/bootloader/.pio/build/YOUR_BOARD
+pyluos-bootloader flash -t 2 -b firmware.bin localhost
+```
+After the flash complete you can detect your board again and see that their is now a `boot_service` intead of your `boot_updater` app.
+
+``` bash
+$ pyluos-bootloader detect localhost
+Luos detect subcommand on port :  localhost
+Connected to "localhost".
+Sending detection signal.
+Waiting for routing table...
+Device setup.
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭────────────────── Node 1 ──────────────────   ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> Pipe                Pipe                2    ┃
+  ┃  ╰> Gate                gate                1    ┃
+╔■┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚════■┫  ╭────────────────── Node 2 ──────────────────   ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ╰> ServoMotor          boot_service        3    ┃
+      ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
+
+Now you can use this updated bootloader to flash your `led` app back.
 
 You have reached the end of this tutorial. You are now able to use the bootloader's feature included in Luos engine. You know the basics, but you can find some more helpful information on the dedicated [documentation page](/docs/tools/bootloader).
 

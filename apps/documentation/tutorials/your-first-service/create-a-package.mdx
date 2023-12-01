@@ -110,7 +110,7 @@ To finish, you have to move the code you created in _Arduino.ino_ or _main.c_ di
 #include "Arduino.h"
 
 // the new line to copy and paste
-void Led_MsgHandler(service_t *service, msg_t *msg);
+void Led_MsgHandler(service_t *service, const msg_t *msg);
 
 void Led_Init(void)
 {
@@ -126,7 +126,7 @@ void Led_Loop(void)
 }
 
 // the new block to copy and paste
-void Led_MsgHandler(service_t *service, msg_t *msg)
+void Led_MsgHandler(service_t *service, const msg_t *msg)
 {
     if (msg->header.cmd == IO_STATE)
     {
@@ -150,7 +150,7 @@ void Led_MsgHandler(service_t *service, msg_t *msg)
 #include "gpio.h"
 
 // the new line to copy and paste
-static void Led_MsgHandler(service_t *service, msg_t *msg);
+static void Led_MsgHandler(service_t *service, const msg_t *msg);
 
 void Led_Init(void)
 {
@@ -162,7 +162,7 @@ void Led_Init(void)
 void Led_Loop(void) {}
 
 // the new block to copy and paste
-static void Led_MsgHandler(service_t *service, msg_t *msg)
+static void Led_MsgHandler(service_t *service, const msg_t *msg)
 {
     if (msg->header.cmd == IO_STATE)
     {
@@ -275,7 +275,7 @@ Then, use `pyluos-shell` to make a detection and you should see the following ro
 
 ```bash
     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-    ┃  ╭node 1            /!\ Not certified            ┃
+    ┃  ╭────────────────── Node 1 ──────────────────   ┃
     ┃  │  Type                Alias               ID   ┃
     ┃  ├> State               led                 2    ┃
     ┃  ├> Pipe                Pipe                3    ┃

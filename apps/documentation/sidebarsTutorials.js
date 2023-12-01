@@ -35,9 +35,14 @@ module.exports = {
                     items: [
                         {
                             type: 'category',
-                            label: 'First service',
-                            link: { type: 'doc', id: 'your-first-service/your-first-service' },
+                            label: 'Your First service',
+                            link: { type: 'doc', id: 'your-first-service/index' },
                             items: [
+                                {
+                                    type: 'doc',
+                                    label: 'First service',
+                                    id: 'your-first-service/first-service',
+                                },
                                 {
                                     type: 'doc',
                                     label: 'Create a package',
@@ -47,9 +52,14 @@ module.exports = {
                         },
                         {
                             type: 'category',
-                            label: 'First message',
-                            link: { type: 'doc', id: 'your-first-message/your-first-message' },
+                            label: 'Your First message',
+                            link: { type: 'doc', id: 'your-first-message/index' },
                             items: [
+                                {
+                                    type: 'doc',
+                                    label: 'Receive a message',
+                                    id: 'your-first-message/first-message',
+                                },
                                 {
                                     type: 'doc',
                                     label: 'Send a message',
@@ -59,9 +69,14 @@ module.exports = {
                         },
                         {
                             type: 'category',
-                            label: 'First detection',
-                            link: { type: 'doc', id: 'your-first-detection/your-first-detection' },
+                            label: 'Your first detection',
+                            link: { type: 'doc', id: 'your-first-detection/index' },
                             items: [
+                                {
+                                    type: 'doc',
+                                    label: 'First detection',
+                                    id: 'your-first-detection/first-detection',
+                                },
                                 {
                                     type: 'doc',
                                     label: 'The routing table',

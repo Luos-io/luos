@@ -1,49 +1,18 @@
 ---
-title: Your First Service
-hide_title: true
 custom_edit_url: null
 image: /assets/images/tutorials/your-first-service-banner-luos.png
-description: In the Get started tutorial, we learned to perform the following essential actions
+description: Let's create our very first service!
 ---
 
 import Image from '@site/src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-import Introduction from '@site/src/components/school/article/intro.js';
-
-<Introduction
-  title="Your First Service"
-  time="1 hour"
-  level="Confirmed"
-  category="Trainings"
-  desc="You just finished the Get started and you want to go further with Luos? This tutorial is made for you!"
-  tags={['Package', 'Handler', 'Gate', 'Pipe']}
-/>
+import Form from '/src/components/typeform/index.js';
+import Author from '@site/src/components/school/author/author.js';
 
 # Part 1: Luos service
 
-## 1. Introduction
-
-In the Get started tutorial, we learned to perform the following essential actions:
-
-1. Set up the embedded environment to make a basic Luos-LED-blinking project.
-2. Control of your microservices with high-level API and set up the Python environment.
-3. How to spread microservices across multiple boards on a network while keeping the exact same behavior with Luos engine.
-
-Upon finishing the _Get started_, you can grab what a microservice represents into an embedded system. However, Luos still remains black magic to you.
-
-Let us demystify it by helping you to make first service code!
-
-<div align="center">
-  <Image
-    sources={{ light: 'https://media.giphy.com/media/unQ3IJU2RG7DO/giphy.gif' }}
-    className="gif_tutorial"
-    alt="gif_cat"
-  />
-</div>
-
-## 2. Environment
+## 1. Environment
 
 Clone or download the [training repository](https://github.com/Luos-io/Training).
 
@@ -53,18 +22,18 @@ In PlatformIO IDE, open the folder corresponding to your board in _Training/1_Fi
 2. Using a terminal and the `pyluos-shell` command, you should see:
 
 ```bash
-	  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-	  ┃  ╭node 1            /!\ Not certified            ┃
-	  ┃  │  Type                Alias               ID   ┃
-	  ┃  ├> Pipe                Pipe                2    ┃
-	  ┃  ├> Gate                gate                1    ┃
-	  ┃  ╰> Unknown             blinker             3    ┃
-	╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+      ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+      ┃  ╭────────────────── Node 1 ──────────────────   ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ├> Pipe                Pipe                2    ┃
+      ┃  ├> Gate                gate                1    ┃
+      ┃  ╰> Unknown             blinker             3    ┃
+    ╔>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 
 You are ready to go!
 
-## 3. Create your first service
+## 2. Create your first service
 
 Now, let's learn how to create your own service. To understand how to do it, we will create a simple LED service that you will be able to use the same way you were using it in the Get started.
 
@@ -103,7 +72,7 @@ Throughout this tutorial, you will have to locate the right lines where to copy/
 #include "gate.h"
 
 // the new line to copy and paste
-void Led_MsgHandler(service_t *service, msg_t *msg){}
+void Led_MsgHandler(service_t *service, const msg_t *msg){}
 
 ```
 
@@ -172,7 +141,7 @@ By adding these few lines to your code, you just created your first service. For
 
 ```bash
     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-    ┃  ╭node 1            /!\ Not certified            ┃
+    ┃  ╭────────────────── Node 1 ──────────────────   ┃
     ┃  │  Type                Alias               ID   ┃
     ┃  ├> State               led                 2    ┃
     ┃  ├> Pipe                Pipe                3    ┃
@@ -193,7 +162,7 @@ By adding these few lines to your code, you just created your first service. For
 The blinker service will be able to find your LED service thanks to the description information you provided. But for now, your LED doesn't react yet to the blinker service commands.
 :::
 
-## 4. Manage the LED on your service
+## 3. Manage the LED on your service
 
 To control the LED, we now need to configure the LED's GPIO pin. To set a value to a GPIO pin on a MCU, you must configurate it as an output; this way we can switch a LED on or off.
 
@@ -265,7 +234,7 @@ To control the LED depending on the message data, you can fill the content of th
 <TabItem value="Arduino" label="Arduino">
 
 ```c
-void Led_MsgHandler(service_t *service, msg_t *msg)
+void Led_MsgHandler(service_t *service, const msg_t *msg)
 {
      // the block to copy and paste:
       if (msg->data[0] == 0)
@@ -283,7 +252,7 @@ void Led_MsgHandler(service_t *service, msg_t *msg)
 <TabItem value="Nucleo" label="Nucleo">
 
 ```c
-void Led_MsgHandler(service_t *service, msg_t *msg)
+void Led_MsgHandler(service_t *service, const msg_t *msg)
 {
     // the block to copy and paste:
     if (msg->data[0] == true)
@@ -315,7 +284,7 @@ The blinker service will send a message at the blink frequency you want the LED 
   />
 </div>
 
-## 5. Secure your input data
+## 4. Secure your input data
 
 Thank's to our callback function `Led_MsgHandler`, our service is now able to react to any input message. However, we don't want it to react to _any_ message, but only to IO state messages. To make sure we use the data appropriately, it is better to use message types that are specific to the data in the command field of the message.
 
@@ -325,7 +294,7 @@ To do that, let's add a filter on the message command:
 <TabItem value="Arduino" label="Arduino">
 
 ```c
-void Led_MsgHandler(service_t *service, msg_t *msg)
+void Led_MsgHandler(service_t *service, const msg_t *msg)
 {
     // the new line to copy and paste:
     if (msg->header.cmd == IO_STATE)
@@ -346,7 +315,7 @@ void Led_MsgHandler(service_t *service, msg_t *msg)
 <TabItem value="Nucleo" label="Nucleo">
 
 ```c
-void Led_MsgHandler(service_t *service, msg_t *msg)
+void Led_MsgHandler(service_t *service, const msg_t *msg)
 {
     // the new line to copy and paste:
 	if (msg->header.cmd == IO_STATE)
@@ -368,7 +337,7 @@ void Led_MsgHandler(service_t *service, msg_t *msg)
 
 Using conditional statements, you will also be able to manage multiple types of input messages so that the services react differently depending on the command they receive.
 
-## 6. Luos Package
+## 5. Luos Package
 
 We successfully created a simple service in our main file. But this service doesn't look like the other one already present on your project yet.
 

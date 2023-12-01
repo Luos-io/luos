@@ -74,10 +74,20 @@ Now you should be able to detect your master node with the CLI using the followi
 ```bash
 pyluos-bootloader detect
 ```
-
-<div align="center">
-  <Image sources={{ light: '/assets/images/tutorials/bootloader/gate_detect.png' }} />
-</div>
+```bash
+Luos detect subcommand on port :  COM6
+Luos detect subcommand at baudrate :  1000000
+Connected to "COM6".
+Sending detection signal.
+Waiting for routing table...
+Device setup.
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭────────────────── Node 1 ──────────────────   ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> Pipe                Pipe                2    ┃
+  ┃  ╰> Gate                gate                1    ┃
+╔■┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
 
 :::info
 COM6 is the identifier of the serial port used. It is unique for each shield; you can check yours with the Device Manager in Windows or `ls -l /dev/ | grep ttyUSB` on Linux. If you do not provide it, pyluos-bootloader will try to find an available gate in your system.
@@ -97,6 +107,25 @@ Connect the second node with the USB programming port and click on **Upload**; y
 
 Connect your two nodes through the Luos network and connect your master board USB serial interface to your PC. Type the same command used on **Step 3**, and you should see the following:
 
+```bash
+Luos detect subcommand on port :  COM6
+Luos detect subcommand at baudrate :  1000000
+Connected to "COM6".
+Sending detection signal.
+Waiting for routing table...
+Device setup.
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  ╭────────────────── Node 1 ──────────────────   ┃
+  ┃  │  Type                Alias               ID   ┃
+  ┃  ├> Pipe                Pipe                2    ┃
+  ┃  ╰> Gate                gate                1    ┃
+╔■┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+║     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+╚════■┫  ╭────────────────── Node 2 ──────────────────   ┃
+      ┃  │  Type                Alias               ID   ┃
+      ┃  ╰> State               boot_service        3    ┃
+    ╔■┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+```
 <div align="center">
   <Image sources={{ light: '/assets/images/tutorials/bootloader/detect_bootloader.png' }} />
 </div>

@@ -14,23 +14,31 @@ import Author from '@site/src/components/school/author/author.js';
 
 The file _platformio.ini_ in your project describes the precompiler variables and the library depencies of your project.
 
-In our case, we want to use Luos as a library. Writing "Luos" and "LuosHAL" in the section `lib_deps` will download the Luos library from PIO registry and will build and link Luos to your project.
+In our case, we want to use Luos-engine as a library. Writing `luos_engine` and the needed networks libs in the section `lib_deps` will download the Luos-engine library from PIO registry and will build and link everything needed by your project.
+
+:::info
+Since version 3.0.0 luos-engine is network independent. You can choose the network you want to use by adding the corresponding network library in the section `lib_deps`.
+:::
 
 Fill in the file _platformio.ini_ accordingly:
 
 <Tabs>
 <TabItem value="ST" label="ST">
 
-```c
+```ini
 build_unflags = -Os
 build_flags =
-		-O1
+    -O1
     -include node_config.h
     -DUSE_HAL_DRIVER
     -DUSE_FULL_LL_DRIVER
     -DLUOSHAL=STM32F0
+    -DROBUSHAL=STM32F0  ;Optional: Luos-engine will try to use the same HAL as LuosHAL if not defined
+    -DSERIALHAL=STM32F0 ;Optional: Luos-engine will try to use the same HAL as LuosHAL if not defined
 lib_deps =
     luos_engine
+    serial_network
+    robus_network
 debug_tool = stlink
 upload_protocol = stlink
 ```
@@ -40,16 +48,16 @@ At the line `LUOSHAL=STM32F0`, we selected Luos HAL for the chosen MCU family (a
 </TabItem>
 <TabItem value="Arduino" label="Arduino">
 
-```c
-build_unflags = -Os
+```ini
 build_flags =
-		-O1
     -include node_config.h
-    -DUSE_HAL_DRIVER
-    -DUSE_FULL_LL_DRIVER
     -DLUOSHAL=ATSAMD21_ARDUINO
+    -DROBUSHAL=ATSAMD21_ARDUINO ;Optional: Luos-engine will try to use the same HAL as LuosHAL if not defined
+    -DSERIALHAL=ARDUINO         ;Not optional: Luos-engine will try to use the same HAL as LuosHAL but here HAL don't have the same name.
 lib_deps =
     luos_engine
+    serial_network
+    robus_network
 ```
 
 At the line `LUOSHAL=ATSAMD21_ARDUINO`, we selected Luos HAL for the chosen MCU family (as we use the board Arduino MKRZero, it means it is the ATSAMD21_ARDUINO family).
@@ -59,8 +67,7 @@ At the line `LUOSHAL=ATSAMD21_ARDUINO`, we selected Luos HAL for the chosen MCU 
 
 :::info
 You can choose a minimal version that you want for your Library:
-`Luos@^X.Y.Z` → Minimal version of Luos (writing nothing here will download the last version).
-`LuosHAL@^X.Y.Z` → Minimal version of LuosHAL (writing nothing here will download the last version).
+`luos_engine@^X.Y.Z` → Minimal version of Luos-engine (writing nothing here will download the last version).
 :::
 
 ## 2. Include Luos in your main file

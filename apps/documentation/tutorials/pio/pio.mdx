@@ -62,8 +62,6 @@ In this tutorial, we will use a ST NUCLEO F072RB board for a project creation wi
 Choose the default location of your projet on your computer.
 :::
 
-We will use the STM32 Framework HAL for this project.
-
 At this step, PlatformIO creates for you a complete project:
 
 - Folder _include_: where you put the project's header files.
@@ -100,7 +98,9 @@ Luos project uses a file, placed at the root of the folder, called _node_config.
 
 #endif /* _NODE_CONFIG_H_ */
 ```
-
+:::info
+If you don't know what `node_config.h` is, please read the [Luos documentation](/docs/luos-technology/basics/organization).
+:::
 :::info
 In this example, we will use the default configuration of Luos HAL for ST and Arduino, so nothing to change right now 😅.
 :::

@@ -260,3 +260,17 @@ You also have to add the precompilation flag `-D WITH_BOOTLOADER` to the file _p
 :::info
 You can find application examples in [the Luos engine's repository](https://github.com/Luos-io/luos_engine/tree/main/examples).
 :::
+
+### Bootloader updater
+You can also update the bootloader of your node, by using the same method as for the application. This procedure need a few more steps : 
+
+1. Compile the bootloader in "updater mode" by adding the precompilation flag `-D BOOTLOADER_UPDATER` to the file _platformio.ini_ in your bootloader project.
+2. Flash the bootloader updater in your node through the bootloader command.
+3. Compile the new bootloader in "default mode" by adding the precompilation flag `-D BOOTLOADER` to the file _platformio.ini_ in your bootloader project.
+4. Flash the new bootloader in your node through the bootloader command.
+
+Then you have an updated bootloader in your node, and you can use it to update your application.
+
+:::info
+For more details about the bootloader updater, you can check the [bootloader tutorial](/tutorials/bootloader).
+:::

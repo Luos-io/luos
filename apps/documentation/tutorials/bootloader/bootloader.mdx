@@ -233,7 +233,7 @@ Device setup.
 Luos-engine also allow you to update your bootloader using the bootloader feature. This process use the application space of your microcontroler to store a bootloader able to overwrite the actual bootloader on the bootloader space.
 
 :::warning
-This process overwrite your app and your bootloader. If there is a failure during the process, you will have to use a programmer to recover your board.
+This process overwrite your app and your bootloader. If there is a failure during the bootloader update, you may have to use a programmer to recover your board.
 :::
 
 ### Compile your bootloader updater app
@@ -269,6 +269,10 @@ Device setup.
       ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 
+:::warning
+The bootloader updater app is not resilient, if you reboot your board you will fall into you original bootloader again. Make sure to not reboot your board before the end of the process.
+:::
+
 ### Update your bootloader
 Now you can compile your updated bootloader and load it using the bootloader feature. To make it you can follow the step 3 by compiling your bootloader with the default environnement. Then you can load it using the bootloader feature, this time the bootloader on the application space will update thee bootloader on the bootloader space.
 
@@ -299,5 +303,9 @@ Device setup.
 ```
 
 Now you can use this updated bootloader to flash your `led` app back.
+
+:::info
+Depending on your MCU (ARM M0+ for example) your bootloader may not be visible after the bootloader update. Reboot your board to see it again.
+:::
 
 You have reached the end of this tutorial. You are now able to use the bootloader's feature included in Luos engine. You know the basics, but you can find some more helpful information on the dedicated [documentation page](/docs/tools/bootloader).

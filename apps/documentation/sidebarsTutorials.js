@@ -103,6 +103,11 @@ module.exports = {
                     collapsed: true,
                     items: [
                         {
+                            type: 'doc',
+                            label: 'How to compile',
+                            id: 'compile/compile'
+                        },
+                        {
                             type: 'category',
                             label: 'PlatformIO',
                             link: { type: 'doc', id: 'pio/pio' },

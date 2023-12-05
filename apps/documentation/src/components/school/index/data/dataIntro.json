@@ -294,6 +294,26 @@
             ],
             "link": "/tutorials/luos-integration/install-ros2",
             "author": "thomas"
+        },
+        {
+            "title": "How to compile Luos-engine",
+            "id": "compile",
+            "category": "integrations",
+            "toc": 30,
+            "level": 2,
+            "img": "compile-luos-banner",
+            "desc": "In this tutorial you will learn how to use and compile Luos-engine on your favorite build system.",
+            "tags": [
+                "compilation",
+                "IDE",
+                "makefile",
+                "CMake",
+                "build system",
+                "eclipse",
+                "build"
+            ],
+            "link": "/tutorials/compile",
+            "author": "nicoR"
         }
     ]
 }

@@ -192,5 +192,8 @@
   },
   "bike-alarm": {
     "hardware": [{ "label": "Multiple L0 Boards" }]
+  },
+  "compile": {
+    "hardware": [{ "label": "Any" }]
   }
 }

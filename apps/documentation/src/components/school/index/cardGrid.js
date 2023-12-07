@@ -39,8 +39,8 @@ const cardGrid = (props) => {
             <Paper className={styles.card} elevation={1}>
               <Image
                 sources={{
-                  light: `/assets/images/tutorials/school/${x.img}.svg`,
-                  dark: `/assets/images/tutorials/school/${x.img}.svg`,
+                  light: `/assets/images/tutorials/school/${x.img}`,
+                  dark: `/assets/images/tutorials/school/${x.img}`,
                 }}
                 style={{ borderRadius: '4px' }}
                 alt={x.title}

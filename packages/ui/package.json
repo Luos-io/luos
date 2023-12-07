@@ -8,12 +8,6 @@
   "scripts": {
     "lint": "TIMING=1 eslint \"**/*.ts*\""
   },
-  "resolutions": {
-    "@types/react": "18.0.21",
-    "@types/react-dom": "18.0.8",
-    "**/react": "18.2.0",
-    "**/react-dom": "18.2.0"
-  },
   "dependencies": {
     "@emotion/cache": "^11.10.3",
     "@emotion/react": "^11.10.4",
@@ -28,13 +22,13 @@
   "devDependencies": {
     "@packages/tsconfig": "workspace:*",
     "@types/prettier": "^2.7.0",
-    "@types/react": "18.0.21",
-    "@types/react-dom": "18.0.8",
+    "@types/react": "18.2.42",
+    "@types/react-dom": "18.2.17",
     "@typescript-eslint/eslint-plugin": "^5.36.0",
     "eslint": "^8.23.0",
     "eslint-config-custom": "*",
     "prettier": "^2.7.1",
     "sass": "^1.56.1",
-    "typescript": "^4.8.3"
+    "typescript": "^5.3.3"
   }
 }

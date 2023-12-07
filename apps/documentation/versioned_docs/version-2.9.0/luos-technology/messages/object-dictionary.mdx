@@ -85,22 +85,22 @@ void LinearOD_PositionToMsg(linear_position_t* linear_position, msg_t* msg);
 
 Here are listed the existing types:
 
-|       Type       |               Available prefix and other units                |
-| :--------------: | :-----------------------------------------------------------: |
-| linear_position  |             nm, &mu;m, mm, cm, m, km, in, ft, mi              |
-|   linear_speed   |                  mm/s, m/s, km/h, in/s, mi/h                  |
-| angular_position |                     deg, revolution, rad                      |
-|  angular_speed   |          deg/s, revolution/s, revolution/min, rad/s           |
-|      force       |                       N, kgf, ozf, lbf                        |
-|      moment      |    N.mm, N.cm, N.m, kgf.mm, kgf.cm, kgf.m, ozf.in, lbf.in     |
-|     voltage      |                             mV, V                             |
-|     current      |                             mA, A                             |
-|      power       |                             mW, W                             |
-|      ratio       |                          percentage                           |
-|   temperature    |                      deg_c, deg_f, deg_k                      |
-|      color       |                 8bit_RGB unsigned char \[3\]                  |
-|     control      |             control_t (play, pause, stop, record)             |
-|       pid        | asserv_pid_t float \[3\] {proportional, integral, derivative} |
+|       Type       |                Available prefix and other units                 |
+| :--------------: | :-------------------------------------------------------------: |
+| linear_position  |              nm, &mu;m, mm, cm, m, km, in, ft, mi               |
+|   linear_speed   |                   mm/s, m/s, km/h, in/s, mi/h                   |
+| angular_position |                      deg, revolution, rad                       |
+|  angular_speed   |           deg/s, revolution/s, revolution/min, rad/s            |
+|      force       |                        N, kgf, ozf, lbf                         |
+|      moment      |     N.mm, N.cm, N.m, kgf.mm, kgf.cm, kgf.m, ozf.in, lbf.in      |
+|     voltage      |                              mV, V                              |
+|     current      |                              mA, A                              |
+|      power       |                              mW, W                              |
+|      ratio       |                           percentage                            |
+|   temperature    |                       deg_c, deg_f, deg_k                       |
+|      color       |                  8bit_RGB unsigned char \[3\]                   |
+|     control      |              control_t (play, pause, stop, record)              |
+|       pid        | `asserv_pid_t float \[3\] {proportional, integral, derivative}` |
 
 :::tip
 To find out what conversion function to use if you don't know it, replace the characters `/` or `.` in the units by the character `_`. The character `µ` is replaced by `u`, and `revolution` is replaced by `rev`.

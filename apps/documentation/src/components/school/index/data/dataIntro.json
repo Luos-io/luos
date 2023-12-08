@@ -1,231 +1,319 @@
 {
-  "title": "Tutorials",
-  "introText": "Here you can find all of our trainings and tutorials.",
-  "filters": {
-    "toc": [
-      {
-        "id": 1,
-        "label": "Less than 1 hours",
-        "duration": 60
-      },
-      {
-        "id": 2,
-        "label": "Less than 3 hours",
-        "duration": 180
-      },
-      {
-        "id": 3,
-        "label": "Less than 6 hours",
-        "duration": 360
-      },
-      {
-        "id": 4,
-        "label": "More than 6 hours",
-        "duration": 361
-      }
-    ],
-    "category": ["get started", "trainings", "use cases", "integrations"]
-  },
-  "tuto": [
-    {
-      "title": "Part 1: Set up your project",
-      "id": "get-started",
-      "category": "get started",
-      "toc": 30,
-      "level": 1,
-      "img": "Get_Started_Luos.svg",
-      "desc": "This part will guide you through the basic essential tools' installation and how to use them.",
-      "tags": ["Board", "MCU", "Service", "Network", "Distributed system"],
-      "link": "/tutorials/get-started",
-      "author": "nicoR"
+    "title": "Tutorials",
+    "introText": "Here you can find all of our trainings and tutorials.",
+    "filters": {
+        "toc": [
+            {
+                "id": 1,
+                "label": "Less than 1 hours",
+                "duration": 60
+            },
+            {
+                "id": 2,
+                "label": "Less than 3 hours",
+                "duration": 180
+            },
+            {
+                "id": 3,
+                "label": "Less than 6 hours",
+                "duration": 360
+            },
+            {
+                "id": 4,
+                "label": "More than 6 hours",
+                "duration": 361
+            }
+        ],
+        "category": [
+            "get started",
+            "trainings",
+            "use cases",
+            "integrations"
+        ]
     },
-    {
-      "title": "Part 2: Take the control",
-      "id": "get-started2",
-      "category": "get started",
-      "toc": 15,
-      "level": 1,
-      "img": "Get_Started_Luos.svg",
-      "desc": "This is the remote control part of this tutorial, for you to control the Matrix 💊: The service gate running on your board allows you to take control through a computer of any service loaded on your device.",
-      "tags": ["Board", "MCU", "Service", "Network", "Distributed system"],
-      "link": "/tutorials/get-started2",
-      "author": "nicoR"
-    },
-    {
-      "title": "Part 3: Unleash your code",
-      "id": "get-started3",
-      "category": "get started",
-      "toc": 15,
-      "level": 1,
-      "img": "Get_Started_Luos.svg",
-      "desc": "In this part, we will learn how to configure Luos engine to access to multiple boards in your physical network. Then, we will run our first example into these boards.",
-      "tags": ["Board", "MCU", "Service", "Network", "Distributed system"],
-      "link": "/tutorials/get-started3",
-      "author": "nicoR"
-    },
-    {
-      "title": "Your First Service",
-      "id": "your-first-service",
-      "category": "trainings",
-      "toc": 60,
-      "level": 2,
-      "img": "Your_first_service_Luos.svg",
-      "desc": "You just finished Luos get started and you want to go further with Luos: this tutorial is for you!",
-      "tags": ["Service", "Package", "Handler", "Gate", "Pipe"],
-      "link": "/tutorials/your-first-service",
-      "author": "thomas"
-    },
-    {
-      "title": "Your First Message",
-      "id": "your-first-message",
-      "category": "trainings",
-      "toc": 60,
-      "level": 2,
-      "img": "Your_first_message_Luos.svg",
-      "desc": "Luos aim to exchange information between services by sending messages. In this tutorial we will learn the message structure and how to send it to another services.",
-      "tags": ["Luos Message", "Service", "Polling", "Message Handler"],
-      "link": "/tutorials/your-first-message",
-      "author": "nicoC"
-    },
-    {
-      "title": "Your First Topology detection",
-      "id": "your-first-detection",
-      "category": "trainings",
-      "toc": 60,
-      "level": 3,
-      "img": "Your_First_Topology_detection_Luos.svg",
-      "desc": "Since the beginning of this training, we discover how to create services, deal with messages and control them using Pyluos. But we never create any embedded application service using other services.",
-      "tags": ["Service", "Topology", "Detection", "Application"],
-      "link": "/tutorials/your-first-detection",
-      "author": "viktoria"
-    },
-    {
-      "title": "Luos with Arduino IDE",
-      "id": "arduino",
-      "category": "integrations",
-      "toc": 30,
-      "level": 2,
-      "img": "Luos_and_Arduino.svg",
-      "desc": "In this tutorial, you will how to set up a Luos-Arduino project on Arduino IDE.",
-      "tags": ["Board", "MCU", "Service", "Network", "Distributed System"],
-      "link": "/tutorials/arduino",
-      "author": "nicoR"
-    },
-    {
-      "title": "Bootloader",
-      "id": "bootloader",
-      "category": "trainings",
-      "toc": 30,
-      "level": 2,
-      "img": "Bootloader_Luos.svg",
-      "desc": "In this tutorial, you will learn to use the bootloader feature offered by Luos technology.",
-      "tags": ["Board", "MCU", "Service", "Network", "Distributed System"],
-      "link": "/tutorials/bootloader",
-      "author": "thomas"
-    },
-    {
-      "title": "How to use Luos with FreeRTOS",
-      "id": "freertos",
-      "category": "integrations",
-      "toc": 30,
-      "level": 2,
-      "img": "Luos_and_FreeRTOS.svg",
-      "desc": "If you're used to develop your embedded system with FreeRTOS, you can leverage Luos features without changing the way you design your system. Indeed, Luos fits well with FreeRTOS and this tutorial aims to help you setup your project.",
-      "tags": ["RTOS", "Distributed System"],
-      "link": "/tutorials/freertos",
-      "author": "nicoC"
-    },
-    {
-      "title": "How to have flexible and resilient aliases",
-      "id": "resilient-alias",
-      "category": "use cases",
-      "toc": 30,
-      "level": 2,
-      "img": "Alias-Luos.svg",
-      "desc": "Luos provides a flexible way to deal with aliases. In this tutorial, we discover how to configure aliases and how to make the configuration resilient to boot and flash.",
-      "tags": ["Alias", "Distributed System", "Flash", "ROM", "EEPROM"],
-      "link": "/tutorials/resilient-alias",
-      "author": "nicoR"
-    },
-    {
-      "title": "Develop a connected bike alarm",
-      "id": "bike-alarm",
-      "category": "use cases",
-      "toc": 120,
-      "level": 3,
-      "img": "Bike_Alarm.svg",
-      "desc": "In this tutorial series I’m going to show you how to make your own Luos app using a fully modular bike alarm as example.",
-      "tags": [
-        "Board",
-        "Application",
-        "Detection",
-        "Product",
-        "Service",
-        "Network",
-        "Distributed System"
-      ],
-      "link": "/tutorials/bike-alarm",
-      "author": "nicoR"
-    },
-    {
-      "title": "Create Luos project with PlatformIo",
-      "id": "pio",
-      "category": "integrations",
-      "toc": 30,
-      "level": 1,
-      "img": "Luos_and_PlatformIO.svg",
-      "desc": "You heard about Luos, or you have just finished Luos get started and you want to go further with Luos: this tutorial is for you!",
-      "tags": ["Project", "Creation", "ST", "Arduino", "Service"],
-      "link": "/tutorials/pio",
-      "author": "thomas"
-    },
-    {
-      "title": "How to make a Morse Encoder",
-      "id": "morse",
-      "category": "use cases",
-      "toc": 60,
-      "level": 2,
-      "img": "Morse_encoder_Luos.svg",
-      "desc": "After the Luos Get started and Trainings, the Luos Morse encoder tutorial is a concrete and fun application of Luos technology.",
-      "tags": ["Service", "Topology", "Morse Encoder", "Led", "Pipe"],
-      "link": "/tutorials/morse",
-      "author": "thomas"
-    },
-    {
-      "title": "Luos with ESP32: ESP IDF and Espressif IDE Setup",
-      "id": "esp",
-      "category": "integrations",
-      "toc": 60,
-      "level": 2,
-      "img": "Luos_and_ESP32.svg",
-      "desc": "You want to use luos_engine and take advantage of luos network on an ESP32 MCU. In this tutorial, you will learn how to use a simple package button with ESP32 Family.",
-      "tags": ["Service", "Package", "ESP32"],
-      "link": "/tutorials/esp",
-      "author": "thomas"
-    },
-    {
-      "title": "Luos with ROS: get started with packages",
-      "id": "ros",
-      "category": "integrations",
-      "toc": 60,
-      "level": 2,
-      "img": "Luos_and_ROS.svg",
-      "desc": "Install ROS 2 and get started with packages in a Luos project.",
-      "tags": ["Service", "Package", "ROS"],
-      "link": "/tutorials/luos-integration/install-ros2",
-      "author": "thomas"
-    },
-    {
-      "title": "How to compile Luos-engine",
-      "id": "compile",
-      "category": "tutorial",
-      "toc": 30,
-      "level": 2,
-      "img": "compile-luos-banner.png",
-      "desc": "In this tutorial you will learn how to use and compile Luos-engine on your favorite build system.",
-      "tags": ["compilation", "IDE", "makefile", "CMake", "build system", "eclipse", "build"],
-      "link": "/tutorials/compile",
-      "author": "nicoR"
-    }
-  ]
+    "tuto": [
+        {
+            "title": "Part 1: Set up your project",
+            "id": "get-started",
+            "category": "get started",
+            "toc": 30,
+            "level": 1,
+            "img": "Get_Started_Luos.svg",
+            "desc": "This part will guide you through the basic essential tools' installation and how to use them.",
+            "tags": [
+                "Board",
+                "MCU",
+                "Service",
+                "Network",
+                "Distributed system"
+            ],
+            "link": "/tutorials/get-started",
+            "author": "nicoR"
+        },
+        {
+            "title": "Part 2: Take the control",
+            "id": "get-started2",
+            "category": "get started",
+            "toc": 15,
+            "level": 1,
+            "img": "Get_Started_Luos.svg",
+            "desc": "This is the remote control part of this tutorial, for you to control the Matrix 💊: The service gate running on your board allows you to take control through a computer of any service loaded on your device.",
+            "tags": [
+                "Board",
+                "MCU",
+                "Service",
+                "Network",
+                "Distributed system"
+            ],
+            "link": "/tutorials/get-started2",
+            "author": "nicoR"
+        },
+        {
+            "title": "Part 3: Unleash your code",
+            "id": "get-started3",
+            "category": "get started",
+            "toc": 15,
+            "level": 1,
+            "img": "Get_Started_Luos.svg",
+            "desc": "In this part, we will learn how to configure Luos engine to access to multiple boards in your physical network. Then, we will run our first example into these boards.",
+            "tags": [
+                "Board",
+                "MCU",
+                "Service",
+                "Network",
+                "Distributed system"
+            ],
+            "link": "/tutorials/get-started3",
+            "author": "nicoR"
+        },
+        {
+            "title": "Your First Service",
+            "id": "your-first-service",
+            "category": "trainings",
+            "toc": 60,
+            "level": 2,
+            "img": "Your_first_service_Luos.svg",
+            "desc": "You just finished Luos get started and you want to go further with Luos: this tutorial is for you!",
+            "tags": [
+                "Service",
+                "Package",
+                "Handler",
+                "Gate",
+                "Pipe"
+            ],
+            "link": "/tutorials/your-first-service",
+            "author": "thomas"
+        },
+        {
+            "title": "Your First Message",
+            "id": "your-first-message",
+            "category": "trainings",
+            "toc": 60,
+            "level": 2,
+            "img": "Your_first_message_Luos.svg",
+            "desc": "Luos aim to exchange information between services by sending messages. In this tutorial we will learn the message structure and how to send it to another services.",
+            "tags": [
+                "Luos Message",
+                "Service",
+                "Polling",
+                "Message Handler"
+            ],
+            "link": "/tutorials/your-first-message",
+            "author": "nicoC"
+        },
+        {
+            "title": "Your First Topology detection",
+            "id": "your-first-detection",
+            "category": "trainings",
+            "toc": 60,
+            "level": 3,
+            "img": "Your_First_Topology_detection_Luos.svg",
+            "desc": "Since the beginning of this training, we discover how to create services, deal with messages and control them using Pyluos. But we never create any embedded application service using other services.",
+            "tags": [
+                "Service",
+                "Topology",
+                "Detection",
+                "Application"
+            ],
+            "link": "/tutorials/your-first-detection",
+            "author": "viktoria"
+        },
+        {
+            "title": "Luos with Arduino IDE",
+            "id": "arduino",
+            "category": "integrations",
+            "toc": 30,
+            "level": 2,
+            "img": "Luos_and_Arduino.svg",
+            "desc": "In this tutorial, you will how to set up a Luos-Arduino project on Arduino IDE.",
+            "tags": [
+                "Board",
+                "MCU",
+                "Service",
+                "Network",
+                "Distributed System"
+            ],
+            "link": "/tutorials/arduino",
+            "author": "nicoR"
+        },
+        {
+            "title": "Bootloader",
+            "id": "bootloader",
+            "category": "trainings",
+            "toc": 30,
+            "level": 2,
+            "img": "Bootloader_Luos.svg",
+            "desc": "In this tutorial, you will learn to use the bootloader feature offered by Luos technology.",
+            "tags": [
+                "Board",
+                "MCU",
+                "Service",
+                "Network",
+                "Distributed System"
+            ],
+            "link": "/tutorials/bootloader",
+            "author": "thomas"
+        },
+        {
+            "title": "How to use Luos with FreeRTOS",
+            "id": "freertos",
+            "category": "integrations",
+            "toc": 30,
+            "level": 2,
+            "img": "Luos_and_FreeRTOS.svg",
+            "desc": "If you're used to develop your embedded system with FreeRTOS, you can leverage Luos features without changing the way you design your system. Indeed, Luos fits well with FreeRTOS and this tutorial aims to help you setup your project.",
+            "tags": [
+                "RTOS",
+                "Distributed System"
+            ],
+            "link": "/tutorials/freertos",
+            "author": "nicoC"
+        },
+        {
+            "title": "How to have flexible and resilient aliases",
+            "id": "resilient-alias",
+            "category": "use cases",
+            "toc": 30,
+            "level": 2,
+            "img": "Alias-Luos.svg",
+            "desc": "Luos provides a flexible way to deal with aliases. In this tutorial, we discover how to configure aliases and how to make the configuration resilient to boot and flash.",
+            "tags": [
+                "Alias",
+                "Distributed System",
+                "Flash",
+                "ROM",
+                "EEPROM"
+            ],
+            "link": "/tutorials/resilient-alias",
+            "author": "nicoR"
+        },
+        {
+            "title": "Develop a connected bike alarm",
+            "id": "bike-alarm",
+            "category": "use cases",
+            "toc": 120,
+            "level": 3,
+            "img": "Bike_Alarm.svg",
+            "desc": "In this tutorial series I’m going to show you how to make your own Luos app using a fully modular bike alarm as example.",
+            "tags": [
+                "Board",
+                "Application",
+                "Detection",
+                "Product",
+                "Service",
+                "Network",
+                "Distributed System"
+            ],
+            "link": "/tutorials/bike-alarm",
+            "author": "nicoR"
+        },
+        {
+            "title": "Create Luos project with PlatformIo",
+            "id": "pio",
+            "category": "integrations",
+            "toc": 30,
+            "level": 1,
+            "img": "Luos_and_PlatformIO.svg",
+            "desc": "You heard about Luos, or you have just finished Luos get started and you want to go further with Luos: this tutorial is for you!",
+            "tags": [
+                "Project",
+                "Creation",
+                "ST",
+                "Arduino",
+                "Service"
+            ],
+            "link": "/tutorials/pio",
+            "author": "thomas"
+        },
+        {
+            "title": "How to make a Morse Encoder",
+            "id": "morse",
+            "category": "use cases",
+            "toc": 60,
+            "level": 2,
+            "img": "Morse_encoder_Luos.svg",
+            "desc": "After the Luos Get started and Trainings, the Luos Morse encoder tutorial is a concrete and fun application of Luos technology.",
+            "tags": [
+                "Service",
+                "Topology",
+                "Morse Encoder",
+                "Led",
+                "Pipe"
+            ],
+            "link": "/tutorials/morse",
+            "author": "thomas"
+        },
+        {
+            "title": "Luos with ESP32: ESP IDF and Espressif IDE Setup",
+            "id": "esp",
+            "category": "integrations",
+            "toc": 60,
+            "level": 2,
+            "img": "Luos_and_ESP32.svg",
+            "desc": "You want to use luos_engine and take advantage of luos network on an ESP32 MCU. In this tutorial, you will learn how to use a simple package button with ESP32 Family.",
+            "tags": [
+                "Service",
+                "Package",
+                "ESP32"
+            ],
+            "link": "/tutorials/esp",
+            "author": "thomas"
+        },
+        {
+            "title": "Luos with ROS: get started with packages",
+            "id": "ros",
+            "category": "integrations",
+            "toc": 60,
+            "level": 2,
+            "img": "Luos_and_ROS.svg",
+            "desc": "Install ROS 2 and get started with packages in a Luos project.",
+            "tags": [
+                "Service",
+                "Package",
+                "ROS"
+            ],
+            "link": "/tutorials/luos-integration/install-ros2",
+            "author": "thomas"
+        },
+        {
+            "title": "How to compile Luos-engine",
+            "id": "compile",
+            "category": "integrations",
+            "toc": 30,
+            "level": 2,
+            "img": "compile-luos-banner.png",
+            "desc": "In this tutorial you will learn how to use and compile Luos-engine on your favorite build system.",
+            "tags": [
+                "compilation",
+                "IDE",
+                "makefile",
+                "CMake",
+                "build system",
+                "eclipse",
+                "build"
+            ],
+            "link": "/tutorials/compile",
+            "author": "nicoR"
+        }
+    ]
 }

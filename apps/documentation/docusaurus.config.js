@@ -11,285 +11,285 @@ const isProd = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-    title: 'Luos',
-    tagline:
-        'Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source.',
-    url: 'https://www.luos.io',
-    baseUrl: '/',
-    onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'throw',
-    favicon: 'assets/images/favicon.png',
-    organizationName: 'Luos-io', // Usually your GitHub org/user name.
-    projectName: 'Documentation', // Usually your repo name.
-    trailingSlash: false,
-    markdown: {
-        mermaid: true,
-    },
+  title: 'Luos',
+  tagline:
+    'Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source.',
+  url: 'https://www.luos.io',
+  baseUrl: '/',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
+  favicon: 'assets/images/favicon.png',
+  organizationName: 'Luos-io', // Usually your GitHub org/user name.
+  projectName: 'Documentation', // Usually your repo name.
+  trailingSlash: false,
 
-    customFields: {
-        node_def:
-            'Hardware element (MCU) hosting and running Luos and hosting one or several services.',
-        service_def:
-            'Software element run by Luos that can communicate with other services. It can be a driver or an app.',
-        od_def:
-            'Set of objects based on SI metric system that can be transmitted through Luos messages. Any object can easily be converted in other units.',
-        microservices_def:
-            'Microservices are a software development technique that arranges an application as a collection of loosely coupled services.',
-        robus_def: 'Bus communication protocol used by Luos.',
-        luoshal_def: 'Hardware Abstraction Layer used to fit Luos with various hardware designs.',
-        isProd,
-    },
+  customFields: {
+    node_def:
+      'Hardware element (MCU) hosting and running Luos and hosting one or several services.',
+    service_def:
+      'Software element run by Luos that can communicate with other services. It can be a driver or an app.',
+    od_def:
+      'Set of objects based on SI metric system that can be transmitted through Luos messages. Any object can easily be converted in other units.',
+    microservices_def:
+      'Microservices are a software development technique that arranges an application as a collection of loosely coupled services.',
+    robus_def: 'Bus communication protocol used by Luos.',
+    luoshal_def: 'Hardware Abstraction Layer used to fit Luos with various hardware designs.',
+    isProd,
+  },
 
-    themeConfig: {
-        i18n: {
-            defaultLocale: 'en',
-            locales: ['en'],
-            localeConfigs: {
-                en: {
-                    htmlLang: 'en-GB',
-                },
-            },
+  themeConfig: {
+    i18n: {
+      defaultLocale: 'en',
+      locales: ['en'],
+      localeConfigs: {
+        en: {
+          htmlLang: 'en-GB',
         },
-        metadata: [
+      },
+    },
+    metadata: [
+      {
+        name: 'description',
+        content:
+          'Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source.',
+      },
+    ],
+    image: 'assets/images/thumbnail-luos.png',
+    colorMode: {
+      defaultMode: 'light',
+    },
+    hotjar: {
+      applicationId: '2480203',
+    },
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
+    navbar: {
+      logo: {
+        alt: 'Luos Logo',
+        src: 'assets/images/logo_luos_animated_black.gif',
+        srcDark: 'assets/images/logo_luos_animated_white.gif',
+        href: '/docs/luos-technology',
+        target: '_self',
+      },
+      items: [
+        {
+          type: 'docsVersionDropdown',
+          position: 'left',
+          dropdownActiveClassDisabled: true,
+          dropdownItemsAfter: [
             {
-                name: 'description',
-                content:
-                    'Luos makes it easy to develop and scale your edge and embedded distributed software. It is open source.',
+              type: 'html',
+              value: '<hr class="dropdown-separator">',
             },
-        ],
-        image: 'assets/images/thumbnail-luos.png',
-        colorMode: {
-            defaultMode: 'light',
+            {
+              type: 'html',
+              className: 'dropdown-archived-versions',
+              value: '<b>Archived versions</b>',
+            },
+            ...ArchivedVersionsDropdownItems.map(([versionName, versionUrl]) => ({
+              label: versionName,
+              href: versionUrl,
+            })),
+          ],
         },
-        hotjar: {
-            applicationId: '2480203',
+        {
+          to: '/docs/luos-technology',
+          label: 'Technology',
+          position: 'right',
         },
+        {
+          type: 'dropdown',
+          label: 'Resources',
+          position: 'right',
+          items: [
+            {
+              to: '/tutorials/get-started',
+              label: 'Get started',
+            },
+            {
+              to: '/tutorials',
+              label: 'Tutorials',
+            },
+            {
+              to: '/docs/luos-technology',
+              label: 'Documentation',
+            },
+            {
+              to: '/faq',
+              label: 'Troubleshooting',
+            },
+            {
+              to: '/blog',
+              label: 'Blog',
+            },
+            {
+              to: 'https://luos.io/roadmap',
+              label: 'Roadmap',
+            },
+          ],
+        },
+        {
+          type: 'dropdown',
+          label: 'Community',
+          position: 'right',
+          items: [
+            {
+              to: 'https://discord.gg/luos-community-902486791658041364',
+              label: 'Discord',
+            },
+            {
+              to: 'https://www.reddit.com/r/Luos/',
+              label: 'Reddit',
+            },
+            {
+              to: 'https://github.com/luos-io',
+              label: 'Github',
+            },
+          ],
+        },
+        {
+          href: 'https://github.com/luos-io',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
+          position: 'right',
+        },
+      ],
+    },
+
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: 'Documentation',
+              to: '/docs/luos-technology',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Discord',
+              href: 'https://discord.gg/luos-community-902486791658041364',
+            },
+            {
+              label: 'Reddit',
+              href: 'https://www.reddit.com/r/Luos/',
+            },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/luos-io',
+            },
+            {
+              label: 'Youtube',
+              href: 'https://www.youtube.com/channel/UCWeIoHVY9Z-04kdwXNtv2FA',
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Luos, built with Docusaurus.`,
+    },
+
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
+    },
+
+    algolia: {
+      appId: 'K3VMDT0LOA',
+      apiKey: '9394b39227bc70e30ff8a34bc6489a3f',
+      indexName: 'docs-luos',
+      contextualSearch: true,
+    },
+  },
+
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
         docs: {
-            sidebar: {
-                hideable: true,
+          routeBasePath: '/docs',
+          sidebarPath: require.resolve('./sidebarsDocs.js'),
+          // Please change this to your repo.
+          editUrl: 'https://github.com/luos-io/luos',
+          versions: {
+            current: {
+              label: semver.inc(Versions[0], 'minor'),
+              banner: 'unreleased',
             },
-        },
-        navbar: {
-            logo: {
-                alt: 'Luos Logo',
-                src: 'assets/images/logo_luos_animated_black.gif',
-                srcDark: 'assets/images/logo_luos_animated_white.gif',
-                href: '/docs/luos-technology',
-                target: '_self',
-            },
-            items: [
-                {
-                    type: 'docsVersionDropdown',
-                    position: 'left',
-                    dropdownActiveClassDisabled: true,
-                    dropdownItemsAfter: [
-                        {
-                            type: 'html',
-                            value: '<hr class="dropdown-separator">',
-                        },
-                        {
-                            type: 'html',
-                            className: 'dropdown-archived-versions',
-                            value: '<b>Archived versions</b>',
-                        },
-                        ...ArchivedVersionsDropdownItems.map(([versionName, versionUrl]) => ({
-                            label: versionName,
-                            href: versionUrl,
-                        })),
-                    ],
-                },
-                {
-                    to: '/docs/luos-technology',
-                    label: 'Technology',
-                    position: 'right',
-                },
-                {
-                    type: 'dropdown',
-                    label: 'Resources',
-                    position: 'right',
-                    items: [
-                        {
-                            to: '/tutorials/get-started',
-                            label: 'Get started',
-                        },
-                        {
-                            to: '/tutorials',
-                            label: 'Tutorials',
-                        },
-                        {
-                            to: '/docs/luos-technology',
-                            label: 'Documentation',
-                        },
-                        {
-                            to: '/faq',
-                            label: 'Troubleshooting',
-                        },
-                        {
-                            to: '/blog',
-                            label: 'Blog',
-                        },
-                    ],
-                },
-                {
-                    type: 'dropdown',
-                    label: 'Community',
-                    position: 'right',
-                    items: [
-                        {
-                            to: 'https://discord.gg/luos',
-                            label: 'Discord',
-                        },
-                        {
-                            to: 'https://www.reddit.com/r/Luos/',
-                            label: 'Reddit',
-                        },
-                        {
-                            to: 'https://github.com/luos-io',
-                            label: 'Github',
-                        },
-                    ],
-                },
-                {
-                    href: 'https://github.com/luos-io',
-                    className: 'header-github-link',
-                    'aria-label': 'GitHub repository',
-                    position: 'right',
-                },
-            ],
+          },
         },
 
-        footer: {
-            style: 'dark',
-            links: [
-                {
-                    title: 'Docs',
-                    items: [
-                        {
-                            label: 'Documentation',
-                            to: '/docs/luos-technology',
-                        },
-                    ],
-                },
-                {
-                    title: 'Community',
-                    items: [
-                        {
-                            label: 'Discord',
-                            href: 'https://discord.gg/luos',
-                        },
-                        {
-                            label: 'Reddit',
-                            href: 'https://www.reddit.com/r/Luos/',
-                        },
-                    ],
-                },
-                {
-                    title: 'More',
-                    items: [
-                        {
-                            label: 'GitHub',
-                            href: 'https://github.com/luos-io',
-                        },
-                        {
-                            label: 'Youtube',
-                            href: 'https://www.youtube.com/channel/UCWeIoHVY9Z-04kdwXNtv2FA',
-                        },
-                    ],
-                },
-            ],
-            copyright: `Copyright © ${new Date().getFullYear()} Luos, built with Docusaurus.`,
+        blog: {
+          routeBasePath: '/blog',
+          blogTitle: 'Luos Blog',
+          blogDescription: 'A blog about microservices and CI/CD in Edge and Embedded systems',
+          postsPerPage: 'ALL',
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
+          showReadingTime: true, // When set to false, the "x min read" won't be shown
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
         },
 
-        prism: {
-            theme: lightCodeTheme,
-            darkTheme: darkCodeTheme,
-        },
-
-        algolia: {
-            appId: 'K3VMDT0LOA',
-            apiKey: '9394b39227bc70e30ff8a34bc6489a3f',
-            indexName: 'docs-luos',
-            contextualSearch: true,
-        },
-    },
-    themes: ['@docusaurus/theme-mermaid'],
-
-    presets: [
-        [
-            '@docusaurus/preset-classic',
-            {
-                docs: {
-                    routeBasePath: '/docs',
-                    sidebarPath: require.resolve('./sidebarsDocs.js'),
-                    // Please change this to your repo.
-                    editUrl: 'https://github.com/luos-io/luos',
-                    versions: {
-                        current: {
-                            label: semver.inc(Versions[0], 'major'),
-                            banner: 'unreleased',
-                        },
-                    },
-                },
-
-                blog: {
-                    routeBasePath: '/blog',
-                    blogTitle: 'Luos Blog',
-                    blogDescription: 'A blog about microservices and CI/CD in Edge and Embedded systems',
-                    postsPerPage: 'ALL',
-                    blogSidebarTitle: 'All posts',
-                    blogSidebarCount: 'ALL',
-                    showReadingTime: true, // When set to false, the "x min read" won't be shown
-                    readingTime: ({ content, frontMatter, defaultReadingTime }) =>
-                        defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
-                },
-
-                theme: { customCss: require.resolve('./src/css/custom.css') },
-                gtag: { trackingID: 'GTM-M73ZRR4' },
-                googleAnalytics: { trackingID: 'UA-153509818-3' },
-            },
-        ],
+        theme: { customCss: require.resolve('./src/css/custom.css') },
+        gtag: { trackingID: 'GTM-M73ZRR4' },
+        googleAnalytics: { trackingID: 'UA-153509818-3' },
+      },
     ],
+  ],
 
-    plugins: [
-        [
-            '@docusaurus/plugin-content-docs',
-            {
-                id: 'tutorials',
-                path: 'tutorials',
-                routeBasePath: '/tutorials',
-                sidebarPath: require.resolve('./sidebarsTutorials.js'),
-            },
-        ],
-        [
-            '@docusaurus/plugin-content-docs',
-            {
-                id: 'faq',
-                path: 'faq',
-                routeBasePath: '/faq',
-            },
-        ],
-        [
-            '@docusaurus/plugin-client-redirects',
-            {
-                fromExtensions: ['html'],
-            },
-        ],
-        [
-            '@docusaurus/plugin-ideal-image',
-            {
-                max: 1080, // max resized image's size.
-                min: 640, // min resized image's size. if original is lower, use that size.
-                steps: 2, // the max number of images generated between min and max (inclusive)
-                disableInDev: false,
-            },
-        ],
-        // [
-        //   '@packages/docusaurus-plugin-github-release',
-        //   {
-        //     dotenv: {
-        //       path: '../../.env',
-        //     },
-        //   },
-        // ],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'tutorials',
+        path: 'tutorials',
+        routeBasePath: '/tutorials',
+        sidebarPath: require.resolve('./sidebarsTutorials.js'),
+      },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'faq',
+        path: 'faq',
+        routeBasePath: '/faq',
+      },
+    ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        fromExtensions: ['html'],
+      },
+    ],
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        max: 1080, // max resized image's size.
+        min: 640, // min resized image's size. if original is lower, use that size.
+        steps: 2, // the max number of images generated between min and max (inclusive)
+        disableInDev: false,
+      },
+    ],
+    // [
+    //   '@packages/docusaurus-plugin-github-release',
+    //   {
+    //     dotenv: {
+    //       path: '../../.env',
+    //     },
+    //   },
+    // ],
+  ],
 };

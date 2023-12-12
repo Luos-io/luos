@@ -9,7 +9,7 @@ export const ContactUs = (props) => {
   return (
     <div className="contactUs">
       A feedback? Let's discuss on&nbsp;
-      <a href="https://discord.gg/luos" target="_blank">
+      <a href="https://discord.gg/luos-community-902486791658041364" target="_blank">
         Discord
       </a>
       &nbsp;|&nbsp;

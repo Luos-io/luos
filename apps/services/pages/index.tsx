@@ -170,7 +170,7 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
                 image={Community}
                 title="Community"
                 description="Join a community of developers, project managers, and makers revolving around Luos."
-                link="https://discord.gg/luos"
+                link="https://discord.gg/luos-community-902486791658041364"
                 blank={true}
                 action={communityButton}
               />

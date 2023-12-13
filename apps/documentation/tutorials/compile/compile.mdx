@@ -32,31 +32,35 @@ On this tutorial we will consider that you already know how to use your build sy
 We will also consider that the project you want to compile follow the [Luos project structure](/docs/luos-technology/basics/organization).
 
 ## 2. Files organization
+
 Before compiling anything you need to get the source code of Luos-engine. You can get it from the [Luos repository](https://github.com/Luos-io/luos_engine).
 In this repository you will find the source code of Luos-engine, the source code of some networks, some usefull tool services examples, and test scripts.
 For your project you may only need to compile Luos-engine and the networks you want to use. You can also use the tool services on your project and compile it the same way you will do it for your own services.
 
 ## 3. Compiling Luos-engine
+
 The Luos-engine code contain the ANSI C code used to deal with the services and messages. You will always need to compile it to use Luos. Luos need to get some information from the hardware you are using, mostly a systick, a potential way to disable IRQ and potentially an access to the flash memory. This is why you will need to adapt the compilation of Luos-engine to your hardware.
 
 ### Includes
+
 Here is the list of the include folders you need to add to your project to compile Luos-engine:
 
 - luos_engine/engine/OD
 - luos_engine/engine/bootloader
 - luos_engine/engine/profiles
 - luos_engine/engine/core/inc
-- luos_engine/engine/HAL/_BOARD_ (This is replacing the -D LUOS_HAL flag you may see on some tutorials based on platformio)
+- luos*engine/engine/HAL/\_BOARD* (This is replacing the -D LUOS_HAL flag you may see on some tutorials based on platformio)
 
 You have to include the corresponding _BOARD_ folder to your project. For example if you are using a STM32L4 you will have to include the folder _STM32L4_.
 
 ### Source files
+
 Here is the list of the source files you need to add to your project to compile Luos-engine:
 
- - luos_engine/engine/bootloader
- - luos_engine/engine/profiles
- - luos_engine/engine/core/src
- - luos_engine/engine/HAL/_BOARD_ (This is replacing the -D LUOS_HAL flag you may see on some tutorials based on platformio)
+- luos_engine/engine/bootloader
+- luos_engine/engine/profiles
+- luos_engine/engine/core/src
+- luos*engine/engine/HAL/\_BOARD* (This is replacing the -D LUOS_HAL flag you may see on some tutorials based on platformio)
 
 The same way you have to include the corresponding _BOARD_ folder to your project, you have to do the same with the sources. For example if you are using a STM32L4 you will have to include the folder _STM32L4_.
 
@@ -67,27 +71,29 @@ Alternatively you can also choose to group them all on your own [node_config.h f
 You can find the complete list of the avalable flags on the [node parameters configuration page](/docs/luos-technology/node/luos#node-parameters-configuration)
 
 ### 4. Compiling one or multiple networks
+
 Since Luos-engine v3.X.X you can choose to compile and use as many networks as you want. To do so you will have to include the corresponding network folder to your project.
 The network folders should provide a pretty similar strucutre from each other. You will find the following folders:
 
- - inc
- - src
- - HAL/_BOARD_
+- inc
+- src
+- HAL/_BOARD_
 
+### Includes
 
- ### Includes
 Here is the list of the include folders you need to add to your project to compile a network:
 
- - luos_engine/network/_NETWORK_/inc
- - luos_engine/network/_NETWORK_/HAL/_BOARD_
+- luos*engine/network/\_NETWORK*/inc
+- luos*engine/network/\_NETWORK*/HAL/_BOARD_
 
 The same way you are choosing the _BOARD_ folder to include with Luos_engine, you have to do the same with the network folder. For example if you are using a STM32L4 and the robus network you will have to include the folder `luos_engine/network/robu_network/HAL/STM32L4`.
 
 ### Source files
+
 Here is the list of the source files you need to add to your project to compile a network:
 
- - luos_engine/network/_NETWORK_/src
- - luos_engine/network/_NETWORK_/HAL/_BOARD_
+- luos*engine/network/\_NETWORK*/src
+- luos*engine/network/\_NETWORK*/HAL/_BOARD_
 
 The same way you are choosing the _BOARD_ folder to include with Luos_engine, you have to do the same with the network folder. For example if you are using a STM32L4 and the robus network you will have to include the folder `luos_engine/network/robu_network/HAL/STM32L4`
 

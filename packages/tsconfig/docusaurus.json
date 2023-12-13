@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Docusaurus",
   "extends": "./base.json",
-  "docs": "https://v2.docusaurus.io/docs/typescript-support",
+  "docs": "https://v3.docusaurus.io/docs/typescript-support",
   "compilerOptions": {
     "allowJs": true,
     "esModuleInterop": true,
@@ -12,7 +12,7 @@
     "types": [
       "node",
       "@docusaurus/module-type-aliases",
-      "@docusaurus/theme-classic"
+      "@docusaurus/preset-classic"
     ],
     "baseUrl": ".",
     "paths": {

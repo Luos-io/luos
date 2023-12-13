@@ -1,0 +1,66 @@
+---
+hide_title: true
+hide_table_of_contents: true
+custom_edit_url: null
+title: 'Robus network'
+---
+
+import IconExternalLink from '@theme/Icon/ExternalLink';
+import Image from '@site/src/components/Image';
+
+# Network capabilities
+
+|              Feature               |                     Status                     |
+| :--------------------------------: | :--------------------------------------------: |
+|             Multipoint             |                       ✅                       |
+| Deterministc topological detection |                       ✅                       |
+|      Messages acknoledgement       |                       ✅                       |
+|        Messages timestamps         |                       ✅                       |
+|              Protocol              |                     Robus                      |
+|                Bus                 |  Raw half-duplex (OneWire, RS485, MLVDS, ...)  |
+|      Overhead on top of Luos       |                  4 or 5 bytes                  |
+|  Package performances indications  | 700 kb/s on a 45Mhz MCU (3.8K FLASH, 0.3K RAM) |
+
+# Robus
+
+Robus is a network layer specifically designed for Luos engine. It is used by most of the Luos examples. Historically this phy layer was directly integrated into the Luos engine and the only compatible network. Since the version 3.0.0 of Luos engine it is a separated package and Luos engine can be used with any other network.
+
+This network layer is designed to be highly deterministic, real-time, and usable with a low-cost and compact network. You can use it with most of the half duplex physical buses. Robus can manage concurency, collisions, acknoledgement, Timestamping, need a very small amount of RAM, have a very small overhead on data, and have a deterministc topological detection.
+
+Here is a list of all the hardware peripherals used to drive the physical bus:
+
+- **PORT**: Defines necessary pins, PTP lines, Rx/Tx, enable/disable.
+- **TIMER**: Defines timeouts for communication.
+- **COM**: Serial bus.
+- **CRC**: Optionaly used to optimize the messages validation. CRC can be generated through hardware or software.
+- **DMA**: Optionaly used to optimize the communication.
+
+## PTP Network
+
+PTP is the Point-To-Point connection between nodes used for topology detection by some networks (specially [Robus](../../luos-technology/node//luos-hal.mdx#robus-hal)). Every node should have between two to eight PTP connections representing ports. At this time, these wires are mandatory with a Robus network.
+
+### Daisy-chain
+
+With two PTP pins per board, you must chained your device as below:
+
+<div align="center">
+  <Image
+    sources={{
+      light: '/assets/images/daisy_chain.svg',
+      dark: '/assets/images/daisy_chain_white.svg',
+    }}
+  />
+</div>
+
+### Star Mounting
+
+With at least three PTP pins per board, you can create a star mounting configuration:
+
+<div align="center">
+  <Image
+    sources={{
+      light: '/assets/images/star_mounting.svg',
+      dark: '/assets/images/star_mounting_white.svg',
+    }}
+  />
+</div>

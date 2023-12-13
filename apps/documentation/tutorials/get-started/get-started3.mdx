@@ -39,7 +39,7 @@ As we saw in Part 1, Luos engine allows you to define services and use them toge
 
 Let's make a network with two boards!
 
-In this part, we will use the “default wiring” defined by Luos to create a network of two MCUs. We will use a [OneWire network](/docs/hardware-consideration/electronics), limiting the circuit to simple wires and pins:
+In this part, we will use the “default wiring” defined by Luos to create a network of two MCUs. We will use a OneWire network, limiting the circuit to simple wires and pins:
 
 - Tx and Rx pins, which are connected together and wired to the Tx and Rx pins of the other board (see the next image).
 - One PTP wire.
@@ -464,11 +464,8 @@ device.led.state=False
 device.blinker.play()
 ```
 
-## 5. Next steps
 
-In the next part of the Get started tutorial, we'll use the default network used by the Luos engine called Robus. The customization of your physical interface will be addressed in a future tutorial. The default hardware interface used by Robus is defined on the <a href="https://github.com/Luos-io/luos_engine/tree/main/network/robus/HAL" target="_blank" rel="external nofollow">Robus HAL</a> folder corresponding to your device.
-
-## 6. Test your skills
+## 5. Test your skills
 
 <Form id="FV0qhGbo" />
 

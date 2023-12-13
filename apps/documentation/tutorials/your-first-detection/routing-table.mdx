@@ -71,7 +71,7 @@ uint16_t ID_Led;
 - Apply your filter.
 
 ```c
-void Switcher_MsgHandler(service_t *service, msg_t *msg)
+void Switcher_MsgHandler(service_t *service, const msg_t *msg)
 {
     if (msg->header.cmd == END_DETECTION)
     {

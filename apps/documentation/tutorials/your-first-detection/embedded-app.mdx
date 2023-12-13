@@ -8,7 +8,7 @@ import Image from '@site/src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Form from '/src/components/typeform/index.js';
-import Author from '@site/src/components/school/author/author.js';
+
 
 # Part 3: Full embedded application
 
@@ -129,7 +129,7 @@ uint16_t ID_Button;
 2. Filter the button service alias in the routing table and ask it about it:
 
 ```c
-void Switcher_MsgHandler(service_t *service, msg_t *msg)
+void Switcher_MsgHandler(service_t *service, const msg_t *msg)
 {
     if (msg->header.cmd == END_DETECTION)
     {
@@ -273,7 +273,7 @@ In the `Switcher_Loop()` function, we asked the button to send us an update ever
 #### 1. Let's add a new condition in our message handler allowing us to deal with the button's messages:
 
 ```c
-void Switcher_MsgHandler(service_t *service, msg_t *msg)
+void Switcher_MsgHandler(service_t *service, const msg_t *msg)
 {
     if (msg->header.cmd == END_DETECTION)
     {
@@ -311,7 +311,7 @@ To properly switch the LED, we have to deal with this button's message and send 
 #### 2. Type the code that sends a message to turn on the LED at the end of the detection, inside the button's reception message condition:
 
 ```c
-void Switcher_MsgHandler(service_t *service, msg_t *msg)
+void Switcher_MsgHandler(service_t *service, const msg_t *msg)
 {
     if (msg->header.cmd == END_DETECTION)
     {
@@ -425,9 +425,8 @@ You can now detect all the services in your project and command them through an 
 
 Now try to move your switcher package on another board, and keep the button and led packages on the first one: everything should work the same way!
 
-Asking the value of the button every 10ms represents a not negligible portion of code. Luos engine provides an `update_time` command to simplify it, check the [documentation associated page](/docs/luos-technology/messages/advanced-message) to learn more about it.
+Asking the value of the button every 10ms represents a not negligible portion of code. Luos engine provides an `update_time` command to simplify it.
 
 ## 8. Test your skills
 
 <Form id="RafOVrdv" />
-<Author name="viktoria" />

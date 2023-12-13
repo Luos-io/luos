@@ -1,0 +1,45 @@
+---
+hide_table_of_contents: true
+custom_edit_url: null
+image: /assets/images/Timestamp-banner-Luos.png
+description: Timestamp is a feature that enables you to track the date at which an event occurs.
+---
+
+# Timestamp
+
+**Timestamp** is a feature that enables you to track the date at which an event occurs.
+
+For example with a button driver: each time we read the button's state, we want to timestamp this event. To do that, we have to save a time information representing our timestamp.
+
+```C
+time_luos_t button_timestamp;
+```
+
+Then we can save our timestamp's date when we read the state of the button:
+
+```C
+ll_button_read(&button.state);
+button_timestamp = Luos_Timestamp();
+```
+
+After retrieving the timestamp's value, you can do some calculation on it. For example, you can include a constant delay before measurement, or add a specific amount of time to manage future timestamp's date.
+
+Then you can send a message with your button's value using `Luos_SendTimestampMsg`:
+
+```C
+Luos_SendTimestampMsg(button_service, button_msg, button_timestamp);
+```
+
+You can find [examples](https://github.com/Luos-io/Examples/blob/master/Projects/) that are using this timestamp feature:
+
+- [distance](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Distance),
+- [light sensor](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Light_sensor),
+- [potentiometer](https://github.com/Luos-io/Examples/blob/master/Projects/l0/Potentiometer).
+
+<a
+  href="../messages/msg_api_ref#luos-timestamp-management-functions"
+  className="pagination-nav__link"
+  style={{ display: 'inline-block' }}
+>
+  See all timestamp functions APIs
+</a>

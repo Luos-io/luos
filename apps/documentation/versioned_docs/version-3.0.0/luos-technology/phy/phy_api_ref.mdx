@@ -1,0 +1,68 @@
+---
+custom_edit_url: null
+---
+
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Tooltip from '@site/src/components/Tooltip.js';
+
+# phy's APIs
+
+By writing phy code you will have the opportunity to use the Luos engine's APIs. These APIs are designed to help you to manage your messages receptions an transmission to the Luos engine.
+
+Because there is a lot of different ways to receive and send messages trough networks, you will also have the possibility to use some luos_phy_t values to interact with the Luos engine depending on the strategy you choose.
+
+## Phy basic creation functions
+|                        Description                                                                         |                Function                                                |               Return                |
+| :--------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------: | :---------------------------------: |
+| Declare your phy to Luos engine and provide all the needed callbacks                                       | `Phy_Create(JOB_CB job_cb, RUN_TOPO run_topo, RESET_PHY reset_phy);`   |          `luos_phy_t *`             |
+| This callback will be called by Luos engine when a job is allocated to this phy                            |         `(*JOB_CB)(luos_phy_t *phy_ptr, phy_job_t *job);`              |          `void`                     |
+| This callback will be called by Luos engine when a topology detection need to be done                      |           `(*RUN_TOPO)(luos_phy_t *phy_ptr, uint8_t *portId);`         |          `error_return_t`           |
+| This callback will be called by Luos engine when the system is reseted (mostly at detection start)         |           `(*RESET_PHY)(luos_phy_t *phy_ptr);`                         |          `void`                     |
+
+## Phy IRQ management functions
+|                        Description                                                                         |                Function                                                |               Return                |
+| :--------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------: | :---------------------------------: |
+| Use this function to reference an optional IRQ_STATE manager to Luos ()                                    |           `Phy_SetIrqStateFunciton(IRQ_STATE irq_state);`              |          `void`                     |
+| This callback will be called by Luos engine when your phy IRQ needs to be disabled or enabled              |           `(*IRQ_STATE)(bool state);`                                  |          `void`                     |
+| This funciton allow you to enable or disable IRQs of all the other phys                                    |           `Phy_SetIrqState(bool state);`                               |          `void`                     |
+
+## Phy topology management functions
+|                        Description                                                                         |                Function                                                |               Return                |
+| :--------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------: | :---------------------------------: |
+| You have to call this function if you receive a topology detection request from another node               |   `Phy_TopologySource(luos_phy_t *phy_ptr, uint8_t port_id);`          |          `void`                     |
+| After a port detection, if you have other ports that need to be detect, ask phy about it.                  |   `Phy_TopologyNext(void);`                                            |          `void`                     |
+| After a port detection, if you don't have other ports that need to be detect, tell phy you are done.       |   `Phy_TopologyDone(luos_phy_t *phy_ptr);`                             |          `void`                     |
+
+## Phy jobs management functions
+|                        Description                                                                         |                Function                                                |               Return                |
+| :--------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------: | :---------------------------------: |
+| Use this fucntion to get the next job containing the message to send.                                      |   `Phy_GetJob(luos_phy_t *phy_ptr);`                                   |          `phy_job_t *`              |
+| When a job is done, you have to tell phy to remove it.                                                     |   `Phy_RmJob(luos_phy_t *phy_ptr, phy_job_t *job);`                    |          `void`                     |
+| When a job transmission failed, you have to tell phy about it.                                             |   `Phy_FailedJob(luos_phy_t *phy_ptr, phy_job_t *job);`                |          `void`                     |
+| When a job transmission failed, you have to tell phy about it.                                             |   `Phy_GetJobNumber(luos_phy_t *phy_ptr);`                             |          `uint16_t`                 |
+
+## Phy transmission management functions
+|                        Description                                                                         |                Function                                                |               Return                |
+| :--------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------: | :---------------------------------: |
+| When you need to transmit a timestamped message, use this to get the timestamp value to send               |   `Phy_ComputeMsgTimestamp(phy_job_t *job);`                           |          `time_luos_t`              |
+| Use it to get your current node id. (This can be used to compute priority or controled latency avoiding infinite collision condition) |   `Phy_GetNodeId(void);`                              |          `uint16_t`              |
+
+## Phy reception management functions
+|                        Description                                                                         |                Function                                                |               Return                |
+| :--------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------: | :---------------------------------: |
+| After receiving the first 7 bytes (the header) call this function to compute how you should manage the incoming message. |   `Phy_ComputeHeader(luos_phy_t *phy_ptr);`                                   |          `void`              |
+| After receiving as much valid bytes as phy_ptr.rx_size, call this function to validate the message.        |   `Phy_ValidMsg(luos_phy_t *phy_ptr);`                                 |          `void`                     |
+| After receiving as much valid bytes as phy_ptr.rx_size, call this function to validate the message.        |   `Phy_ResetMsg(luos_phy_t *phy_ptr);`                                 |          `void`                     |
+| When you receive a message you have to save the reception timetamp, use this function to get it. Watch out this value is an integer in nanoseconds           |   `Phy_GetTimestamp(void);`                                            |          `uint64_t`              |
+
+
+## luos_phy_t structure public fields
+|Direction|                        Description                                                                                                                                     |    Field           |   type           |
+| :-----: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------: | :--------------: |
+| Write   | When you receive a message save the timestamp of the first received byte. You may need to compute the bytes transmission time to get the exact value.                  |   `rx_timestamp`   | `time_luos_t`    |
+| Write   | Your phy base RX msg buffer pointer.                                                                                                                                   |   `rx_buffer_base` |   `uint8_t *`    |
+| Write   | Your phy curent RX byte pointer in the RX msg buffer. Each received byte will be written in this pointer then the pointer will be increased.                           |   `rx_data`        |   `uint8_t *`    |
+| Write   | The number of received byte in this message.                                                                                                                           |   `received_data`  |   `uint16_t`     |
+| Read    | The number of bytes needed for this message to be complete.                                                                                                            |   `rx_size`        |   `uint16_t`     |
+| Read    | True if you should keep this message, False if not.                                                                                                                    |   `rx_keep`        |   `bool`         |
+| Read    | True if you should acknoledge this message, False if not.                                                                                                              |   `rx_ack`         |   `bool`         |

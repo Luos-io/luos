@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Robus",
+        "desc": "This protocol has been developed specifically for the needs of Luos engine.",
+        "link": "/docs/next/networks/robus",
+        "img": "/assets/images/advanced-doc/robus/card/LUOS-ROBUS.svg"
+    },
+    {
+        "title": "Serial",
+        "desc": "This network aim to be as simple and flexible as possible. Use it to extend your boards network to a computer.",
+        "link": "/docs/next/networks/serial",
+        "img": "/assets/images/advanced-doc/robus/card/LUOS-ROBUS.svg"
+    }
+]

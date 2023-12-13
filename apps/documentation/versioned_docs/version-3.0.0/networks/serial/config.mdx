@@ -1,0 +1,90 @@
+---
+custom_edit_url: null
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Serial configuration
+
+## Protocol configuration
+
+The Serial network allows you to configure some aspects of the protocol to adapt it to your needs. To modify these options, you have to define them in your `product_config.h` file.
+Learn more about `product_config.h` on the [code organization page](../../luos-technology/basics/organization).
+
+|              Function               |                    Description                    |             Comments             |
+| :---------------------------------: | :-----------------------------------------------: | :------------------------------: |
+|          SERIAL_NETWORK_BAUDRATE    |   Define the serial baudrate used by the Luos Serial protocol        | By default the baudrate is 1000000 |
+|          SERIAL_RX_BUFFER_SIZE      |   The size of the RX buffer        | By default this buffer have 512 bytes. However  this value is very conservative and the serial rarely need more than 10 bytes. |
+
+
+## Compatible MCUs
+
+Serial can manage any type of microcontrollers as long as they have a HAL. If your microcontroller is not supported yet, please contact us:
+
+- on <a href="https://discord.gg/luos" target="_blank" rel="external nofollow">Discord</a>
+- on <a href="https://github.com/Luos-io/ROBUS_engine/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
+
+Check the list of MCU families Serial cover:<a href="https://github.com/Luos-io/ROBUS_engine/tree/main/network/serial/HAL" target="_blank">Hardware Abstraction Layers for MCU families</a>,
+
+## Default Configurations
+Serial can run on absolutely any kind of micocontroller or computer. This is the most maintream communication bus. The peripheral configuration is described in the _serial_hal_config.h_ files, and can be redefined in the _node_config.h_ file of your project to fit with your design.
+
+<a
+  href="../../luos-technology/basics/organization"
+  className="pagination-nav__link"
+  style={{ display: 'inline-block' }}
+>
+  Learn more about project organization
+</a>
+
+## Serial's HAL configuration
+
+To tailor the pinout and functionality according to your design requirements, you can either create or utilize the file _node_config.h_ (refer to [Luos examples](https://github.com/Luos-io/ROBUS_engine/tree/main/examples)).
+In the "SERIAL HAL LIBRARY DEFINITION" section of the _node_config.h_ file of compatible examples, you can define pinout, USART settings, and optionally DMA, building upon the default configuration defined in _serial_hal_config.h_.
+
+:::info 
+Each example provided by Luos has a _node_config.h_ file and includes the file _platformio.ini_.
+:::
+
+<Tabs>
+    <TabItem value="Pinout" label="Pinout">
+
+|              Function               |                    Description                             |             Comments             |
+| :---------------------------------: | :--------------------------------------------------------: | :------------------------------: |
+| SERIAL_TX_CLK/SERIAL_RX_CLK         |             Activates clock for GPIO                       |         Depends on port          |
+|        SERIAL_TX_PIN/SERIAL_RX_PIN  |          Chooses pinout for Rx/Tx comms                    | Adapts to the chosen serial bus  |
+|        SERIAL_TX_PORT/SERIAL_RX_PORT|          Chooses Rx/Tx pin ports                           |     Depends on selected pins     |
+|         SERIAL_TX_AF/SERIAL_RX_AF   | Chooses pins atlternate functions to activate Rx/Tx comms  | Necessary to enable the serial on these pins |
+
+</TabItem>
+<TabItem value="Communication" label="Communication">
+
+|                 Function                  |             Description              |            Comments             |
+| :---------------------------------------: | :----------------------------------: | :-----------------------------: |
+|           SERIAL_COM_CLOCK_ENABLE           |      Activates clock for serial      |      Depends on serial bus      |
+| SERIAL_COM/SERIAL_COM_IRQ/SERIAL_COM_IRQHANDLER | Chooses serial bus, IRQ and callback | Adapts to the serial bus chosen |
+
+</TabItem>
+<TabItem value="RX DMA" label="RX DMA(optional)">
+
+|                    Function                     |           Description           |       Comments        |
+| :---------------------------------------------: | :-----------------------------: | :-------------------: |
+|             SERIAL_RX_DMA_CLOCK_ENABLE             |   Activates clock for DMA   | Necessary for DMA |
+| SERIAL_RX_DMA/SERIAL_RX_DMA_CHANNEL/SERIAL_RX_DMA_REQUEST | Chooses The DMA and the link with Serial | Necessary for DMA |
+| SERIAL_RX_DMA_TC/SERIAL_RX_DMA_CLEAR_TC | Indicate the transfert complete interface | Necessary for transfert complete event |
+
+</TabItem>
+
+<TabItem value="TX DMA" label="TX DMA(optional)">
+
+|                    Function                     |           Description           |       Comments        |
+| :---------------------------------------------: | :-----------------------------: | :-------------------: |
+|             SERIAL_TX_DMA_CLOCK_ENABLE             |   Activates clock for DMA   | Necessary for DMA |
+| SERIAL_TX_DMA/SERIAL_TX_DMA_CHANNEL/SERIAL_TX_DMA_REQUEST | Chooses The DMA and the link with Serial | Necessary for DMA |
+| SERIAL_TX_DMA_TC/SERIAL_TX_DMA_CLEAR_TC | Indicate the transfert complete interface | Necessary for transfert complete event |
+| SERIAL_TX_DMA_IRQ/SERIAL_TX_DMA_IRQHANDLER | Manage the IRQ callback | Necessary for transfert complete event |
+
+</TabItem>
+
+</Tabs>

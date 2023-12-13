@@ -1,0 +1,19 @@
+---
+custom_edit_url: null
+---
+
+# Minimum requirements
+|  Hardware  |                                     Specification                                      |
+| :--------: | :------------------------------------------------------------------------------------: |
+|   Flash    |                3.8KB                                                                   |
+|    RAM     |                0.3KB                                                                   |
+|    GPIO    |                         4 in one wire / 5 to enable an external driver                 |
+| Ressources |                            1 USART, 1 Timer (optionaly: DMA and CRC)                   |
+
+## Robus network performances vs microcontroller frequency
+| MCU frequency | data bandwidth | Robus Max Baudrate |
+| :-----------: | :------------: | :----------------: |
+|   >=48 MHz    |    700 Kbps    |      > 1 Mbps      |
+|   >=32 MHz    |    350 kbps    |     > 500 Kbps     |
+|   >=16 MHz    |    175 kbps    |     > 250 Kbps     |
+|    >=8 MHz    |   87.5 kbps    |     > 125 Kbps     |

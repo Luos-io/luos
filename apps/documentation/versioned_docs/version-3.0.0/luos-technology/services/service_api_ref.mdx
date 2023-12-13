@@ -1,0 +1,44 @@
+---
+custom_edit_url: null
+---
+
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Tooltip from '@site/src/components/Tooltip.js';
+
+# Luos engine's APIs
+
+By writing services code you will have the opportunity to use the Luos engine's APIs. These APIs are designed to help you to manage your messages and services.
+
+## Luos basic functions
+
+|                        Description                                        |                Function                        |               Return                |
+| :-----------------------------------------------------------------------: | :--------------------------------------------: | :---------------------------------: |
+|                    Reset luos Statistics                                  |       `Luos_ResetStatistic(void);`             |          `void`                     |
+|                    Get the Luos_engine revision                           |         `Luos_GetVersion(void);`               |          `const revision_t *`       |
+| Use it to enable or disable Luos IRQ. Dedicated to real time applications |           `Luos_SetIrqState(bool state);`      |          `const state_t *`          |
+
+## Luos node management functions
+
+|                        Description                                 |                                       Function                                               |               Return                |
+| :--------------------------------------------------------:         | :------------------------------------------------------------------------------------------: | :---------------------------------: |
+|    Get the total ticks number since the initialization             |                               `Luos_GetSystick(void);`                                       |             `uint32_t`              |
+|    Indicate if the node have been detected or not                  |                               `Luos_IsDetected(void);`                                       |             `bool`                  |
+
+## Luos service management functions
+|                        Description                |                                       Function                                                       |               Return                |
+| :-----------------------------------------------: | :------------------------------------------------------------------------------------------:         | :---------------------------------: |
+|    Reference your service to Luos engine          | `Luos_CreateService(SERVICE_CB service_cb, uint8_t type, const char *alias, revision_t revision);`   |             `service_t *`           |
+|    Update a service alias                         | `Luos_UpdateAlias(service_t *service, const char *alias, uint16_t size);`                            |             `error_return_t`        |
+|    Will start a detection                         | `Luos_Detect(service_t *service);`                                                                   |             `void`                  |
+|    Remove all services referenced in the node     | `Luos_ServicesClear(void);`                                                                          |             `void`                  |
+
+## Luos routing table filtering functions
+|                  Description                   |                             Function                             |       Return       |
+| :--------------------------------------------: | :--------------------------------------------------------------: | :----------------: |
+|  Check if the result is at it's initial state  |            `RTFilter_InitCheck(search_result_t *result);`        | `error_return_t`   |
+|            Reset the results table             |            `RTFilter_Reset(search_result_t *result);`            | `search_result_t*` |
+|      Find a the service of a specific id       |       `RTFilter_ID(search_result_t *result, uint16_t id);`       | `search_result_t*` |
+|      Find the services of a specific type      |   `RTFilter_Type(search_result_t *result, luos_type_t type);`    | `search_result_t*` |
+|      Find the services of a specific node      |   `RTFilter_Node(search_result_t *result, uint16_t node_id);`    | `search_result_t*` |
+|     Find the services of a specific alias      |     `RTFilter_Alias(search_result_t *result, char* alias);`      | `search_result_t*` |
+| Find the service of a specific service pointer | `RTFilter_Service(search_result_t *result, service_t *service);` | `search_result_t*` |

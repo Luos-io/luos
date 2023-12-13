@@ -1,0 +1,29 @@
+---
+custom_edit_url: null
+image: /assets/images/Network_Luos_1.png
+---
+
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Tooltip from '@site/src/components/Tooltip.js';
+import Image from '@site/src/components/Image';
+
+# Network topology
+
+The nodes can access the position of every other node in the network at any time, by accessing a specific structure called routing table. The routing table is designed and shared among the nodes after the execution of a devoted process called detection.
+
+This routing table allows any service to find, locate, and use any other service on the entire network.
+
+## [Routing table](../services/routing-table)
+
+The [Routing table](../services/routing-table) is a feature of Luos that enables each <Tooltip def={useDocusaurusContext().siteConfig.customFields.node_def}>node</Tooltip> to possess a "map" (or topology) representing the entire network of your device. This map empowers nodes to understand their physical position, diverse functionalities, and facilitates seamless search and interaction with other nodes.
+
+The [Routing table](../services/routing-table) is created and shared among all nodes through a process known as [detection](../services/routing-table). During detection, each node generates a local routing table that contains a list of its services and connections to their parent node. The node initiating the topology detection consolidates all the local routing tables from other nodes to form a global routing table. By default, the routing table is shared with all nodes.<br/>
+However, the routing table is not essential for every node, especially if it only includes driver services. In such cases, you can define `NO_RTB` in the `_node_config.h_` file within your project to save memory.
+
+<a
+  href="../services/routing-table"
+  className="pagination-nav__link"
+  style={{ display: 'inline-block' }}
+>
+  Know more about the routing table
+</a>

@@ -1,0 +1,108 @@
+---
+hide_title: true
+custom_edit_url: null
+title: 'Packages: what are Luos packages for?'
+description: Packages represent blocks of code. They contain independent functionalities which will be run by Luos engine.
+---
+
+import IconExternalLink from '@theme/Icon/ExternalLink';
+
+# Packages
+
+## What are packages used for
+
+The traditional approach to writing code for hardware products is still [monolithic](/blog/a-way-to-unleash-embedded-systems), where all functionalities are tightly coupled within a single `main()` function. As the codebase grows larger, this leads to complex development, debugging, and maintenance requirements. Collaborating with other developers also becomes challenging.<br/>
+Luos aims to address these issues by transforming the monolithic architecture into independent and <a href="https://en.wikipedia.org/wiki/Loose_coupling" rel="external nofollow" target="_blank">loosely coupled</a> code blocks. It achieves this by providing developers with high-level APIs to create these blocks and enable inter-communication.
+
+**This methodological approach is widely recognized as [microservices](https://en.wikipedia.org/wiki/Microservices) in the software world.**
+
+**Packages** represent these blocks of code. They contain independent functionalities which will be used by Luos engine.
+
+## Phy package
+
+The phy packages are used to give to Luos engine the ability to communicate with other nodes of the system. They use a specific set of API provided by Luos engine in the _phy.h_ file. This file is the only one that is shared between the Luos engine and the phy packages.
+
+## Services package
+
+From a logical standpoint, a service package manages one or a group of functionalities that are independent of the rest of the system. Services are regular code and can be implemented as a single task or designed to be highly concurrent based on your specific requirements. The key aspects of services are their declaration of capabilities to the Luos engine and their management of message exchanges with other services. A package can initialize as many services as necessary to fulfill its functionalities.
+
+> **Note:** It is important to emphasize that each service package must run at least one service.
+
+## How to properly organize your Luos projects
+
+### How to add packages in your project
+
+A Luos [node](../node/node.mdx) can host multiple packages, and a package has to be as portable as possible. In order to do that, packages have to be independent code folders that can be easily copied and pasted in another project.
+
+> You can find a view of complete product on [Code organization page](../basics/organization.mdx).
+
+When we are designing a projects at Luos, we always use the same way to organize our code: we put the packages into a `packages` folder (sometimes called `lib`) on a node project, and every packages have their own folder allowing them to be easily copied and pasted into any other node project:
+
+```AsciiDoc
+ Node
+    │
+    ├─── Packages
+    │    ├─── Package_1
+    │    │    ├─── package_1.c
+    │    │    └─── package_1.h
+    │    └─── Package_2
+    │         ├─── package_2.c
+    │         └─── package_2.h
+    │
+    └─── main.c
+```
+
+### Basic packages functions
+
+Packages are pieces of code that need to be run regularly. We choose to use the exact same strategy as presented for [Luos engine's](../node/luos.mdx) functions by providing a `Package_Init()` and a `Package_Loop()`: services or phys are referenced in `Package_Init()`, and the code is executed in loop in `Package_Loop()` (see [service creation page](../services/create-services.mdx) for more information).
+
+Then packages are initialized and run in the `main()` function:
+
+```c
+#include "luos_engine.h"
+#include "package1.h"
+#include "package2.h"
+
+int main(void)
+{
+    Luos_Init();
+    Package1_Init();
+    Package2_Init();
+    while(1)
+    {
+        Luos_Loop();
+        Package1_Loop();
+        Package2_Loop();
+    }
+    return 0;
+}
+```
+
+This way, it is easy to manage all packages and add as many of them you want into `main()`.
+
+### Simplified packages execution
+
+Luos engine provide specific macros allowing to simplify the package inclusion on the main file.
+You can use `LUOS_ADD_PACKAGE(Package1)` instead of `Package1_Init()`and call `LUOS_RUN()` instead of all `Package_Loop()`.
+
+|                        Description                                 |                                       Function                                               |               Return                |
+| :--------------------------------------------------------:         | :------------------------------------------------------------------------------------------: | :---------------------------------: |
+|    Reference a package using the package name                      |                               `LUOS_ADD_PACKAGE(_name);`                                     |             `void`                  |
+|    Run Luos and packages loop                                      |                               `LUOS_RUN(void);`                                              |             `void`                  |
+
+```c
+#include "luos_engine.h"
+#include "package1.h"
+#include "package2.h"
+
+int main(void)
+{
+    LUOS_ADD_PACKAGE(Package1);
+    LUOS_ADD_PACKAGE(Package2);
+    while(1)
+    {
+        LUOS_RUN()
+    }
+    return 0;
+}
+```

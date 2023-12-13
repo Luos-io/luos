@@ -1,0 +1,50 @@
+---
+custom_edit_url: null
+---
+
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Tooltip from '@site/src/components/Tooltip.js';
+import Image from '@site/src/components/Image';
+import IconExternalLink from '@theme/Icon/ExternalLink';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Integrating Robus into your electronic design
+
+A Robus-friendly electronic board must contain **At least two connectors**. They allow to link boards together into a Robus network and link them as a daisy-chain or star mounting. Through PTP pins, the nodes know if there is another node connected to the connector. This is used when the user wants to make a topology detection of the system.
+
+# Robus reference designs
+
+<Tabs>
+    <TabItem value="One-wire" label="One-wire">
+<div align="center">
+  <Image
+    sources={{
+      light: '/assets/images/Luos_Network_Interface_OW.svg',
+      dark: '/assets/images/Luos_Network_Interface_OW-dark.svg',
+    }}
+  />
+</div>
+
+Robus' One-wire official connector is <a href="https://www.hirose.com/en/product/p/CL0543-0533-1-52#" target="_blank" rel="external nofollow">_DF11-4DP-2DS<IconExternalLink width="10"></IconExternalLink>_</a>.
+
+</TabItem>
+
+<TabItem value="RS485" label="RS485">
+
+<div align="center">
+  <Image
+    sources={{
+      light: '/assets/images/Luos_Network_Interface_485.svg',
+      dark: '/assets/images/Luos_Network_Interface_485-dark.svg',
+    }}
+  />
+</div>
+
+Robus' RS485 official connector is <a href="https://www.hirose.com/en/product/p/CL0543-0535-7-52" target="_blank" rel="external nofollow">_DF11-8DP-2DS<IconExternalLink width="10"></IconExternalLink>_</a>.
+
+</TabItem>
+
+</Tabs>
+
+See the default pinout configuration in the <a href="https://github.com/Luos-io/luos_engine/tree/main/network/robus/HAL" target="_blank" rel="external nofollow">_luos_hal_config.h<IconExternalLink width="10"></IconExternalLink>_</a> file, situated in the folder associated to the chosen MCU family.

@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+custom_edit_url: null
+---
+
+# Luos hardware Abstraction Layer
+To properly run on the hardware, Luos engine needs to be configured with the right HAL. The HAL is a set of functions that are used to access the hardware.
+The <a href="https://github.com/Luos-io/luos_engine/tree/main/engine/HAL" target="_blank" rel="external nofollow">Luos engine HAL</a> doesn't configure any network interface; the Luos engine's HAL and the phy's HAL are seperated.
+Luos engine can work on a single node using localhost communication without any phys referenced. In this case the Luos engine's HAL is the only one needed.
+By referencing phys you will enable communication between services located on different nodes. Each phys will have it's own HAL folder and you will have to configure it to fit with your computing unit.
+
+The files _luos_hal.c_ and _luos_hal.h_ define all the functions needed by Luos engine to properly run.
+The file _luos_hal_config.h_ contains a default configuration for an MCU family and can be redefined in a configuration file to fit your design.
+
+## Luos engine's HAL
+
+Luos engine need some peripheral access to properly work:
+
+- **TIMER**: Used for the systick and for the nanosecond precision timestamping of events.
+- **FLASH**: Used to write your deployed binaries thanks to the Luos bootloader (you may omit to populate this one if you don't want to use the bootloader feature).
+:::tip
+The Luos bootloader is a feature that allows you to update your firmware without any physical access to the node. It is a very convenient feature for remote maintenance. learn more about it [here](/tutorials/bootloader).
+:::

@@ -6,16 +6,16 @@ export const integrationData: Integration[] = [
     label: 'ESP32',
     link: 'https://www.luos.io/tutorials/esp',
   },
-  {
-    name: 'stm',
-    label: 'STM32',
-    link: 'https://www.luos.io/docs/compatibility/mcu_demoboard#st',
-  },
-  {
-    name: 'microship',
-    label: 'Microchip',
-    link: 'https://www.luos.io/docs/compatibility/mcu_demoboard',
-  },
+  // {
+  //   name: 'stm',
+  //   label: 'STM32',
+  //   link: 'https://www.luos.io/docs/compatibility/mcu_demoboard#st',
+  // },
+  // {
+  //   name: 'microship',
+  //   label: 'Microchip',
+  //   link: 'https://www.luos.io/docs/compatibility/mcu_demoboard',
+  // },
   {
     name: 'arduino',
     label: 'Arduino',

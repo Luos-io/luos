@@ -1,7 +1,7 @@
 const semver = require('semver');
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer').themes.github;
+const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 
 const Versions = require('./versions.json');
 const VersionsArchived = require('./versionsArchived.json');

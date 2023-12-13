@@ -1,0 +1,73 @@
+---
+custom_edit_url: null
+---
+
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Tooltip from '@site/src/components/Tooltip.js';
+
+# Create Luos phy
+
+**As a developer, you will always develop your network interface as phy into packages and never into the `main()` program.**
+
+:::caution
+Make sure to read and understand the [package](../packages) section before reading this page.
+:::
+
+## How to create and initialize a phy
+
+To create a phy, you have to call this function:
+
+```c
+luos_phy_t *Phy_Create(JOB_CB job_cb, RUN_TOPO run_topo, RESET_PHY reset_phy);
+```
+Upon successful initialization, the returned luos_phy_t* is a pointer to the phy structure. This pointer will play a key role in interacting with the Luos engine, enabling seamless communication between your network interface and the Luos network.
+After this initialization, Luos engine will be able to extend the product architecture to your network interface.
+
+### Job callback
+The **job_cb** is a pointer to a callback function called by the Luos engine when a message needs to be transmitted by the phy. In Luos engine, messages are managed through jobs. Your phy, `luos_phy_t`, has a job queue used to store jobs to be transmitted. When a job is added to this queue, the Luos engine calls this callback function to ask your phy to transmit the message.
+This function needs to have the specific following format:
+
+```c
+void (*JOB_CB)(luos_phy_t *phy_ptr, phy_job_t *job);
+```
+
+In the `job_cb` callback function, your task is to attempt to send the message contained in the job. If a transmission is already in progress, you will need to retrieve the job later when your phy can transmit it. The Luos engine handles the job storage for you, so you don't have to worry about it.
+
+You can also use this callback to pre-compute some encapsulation data, such as CRC, before the transmission. Simply store the pre-computed data in the `phy_data` pointer of the job structure. This way, you can easily access it when you pull the job again for transmission.
+
+```c
+job->phy_data = (void *)&encaps[encaps_index];
+```
+
+### Topology callback
+The run_topo is a pointer to a callback function that is invoked by the Luos engine when a topology detection is required.
+This function needs to have the specific following format:
+
+```c
+ error_return_t (*RUN_TOPO)(luos_phy_t *phy_ptr, uint8_t *portId);
+```
+In the run_topo callback function, your task is to detect the other nodes within your network. When you find another node, you should write the portId value with the port ID used to detect that particular node, and then return SUCCEED. However, if no node is detected or all the nodes have already been detected, you should declare your topology as done using the void Phy_TopologyDone(luos_phy_t *phy_ptr) function and then return FAILED. This process ensures that the Luos engine can effectively perform the network topology detection on all the phy in an appropriate order.
+
+### Reset callback
+The reset_phy is a pointer to a callback function called by the Luos engine when a reset of your phy is needed. This reset is required when the Luos engine itself is reset during detection.
+This function needs to have the specific following format:
+
+```c
+void (*RESET_PHY)(luos_phy_t *phy_ptr);
+```
+In the `reset_phy` callback function, your task is to reset your phy, including the topology, the reception and the transmission. This involves resetting the detection state and clearing any ongoing or pending messages. By performing a complete reset, you ensure that no older message transmission or topology detection is attempted after this reset. The purpose of this callback is to provide a clean slate for your phy, allowing it to start fresh and function properly within the Luos network.
+
+## Additional initialization functions
+
+If your phy involves transmission and reception through interrupts, it may generate job movements in the Luos engine at any time. To prevent conflicts between your phy and the Luos engine, you can provide a function that allows the Luos engine to temporarily disable your IRQ (Interrupt Request) when critical tasks are being performed. This helps avoid data races and ensures proper synchronization.
+
+To achieve this, you can use the void `Phy_SetIrqStateFunction(IRQ_STATE irq_state);` function. This function takes a pointer to a callback function that will be called by the Luos engine whenever it needs to disable or enable your IRQ.
+
+This function needs to have the specific following format:
+
+```c
+void (*IRQ_STATE)(bool state);
+```
+In the irq_state callback function, your task is to manage the state of your IRQ (Interrupt Request) based on the value passed as an argument. When the state value is false, it indicates that the Luos engine requires your IRQ to be disabled. Conversely, when the state value is true, it indicates that your IRQ should be enabled.
+
+By implementing this callback function, your phy can work in harmony with the Luos engine, ensuring smooth and reliable data transmission and reception without interference during critical operations. It promotes better integration and stability within the Luos network.

@@ -1,0 +1,241 @@
+---
+custom_edit_url: null
+hide_table_of_contents: true
+image: /assets/images/Routing-table-banner-Luos.png
+description: The routing table is a feature of Luos allowing every services to own a "map" (or topology) of the entire network of your device.
+---
+
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Tooltip from '/src/components/Tooltip.js';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Image from '@site/src/components/Image';
+
+# Routing Table
+
+:::caution
+Make sure you have read and understood the [network topoly section](../node/topology) before reading this page.
+:::
+
+The routing table is a feature of Luos allowing every <Tooltip def={useDocusaurusContext().siteConfig.customFields.service_def}>services</Tooltip> to access a "map" (or topology) of the entire network of your device. This map enables services to know their physical position and to search and interact with other services quickly.
+
+This feature is particularly used by app services to find other services they need to interact with. The routing table is shared by the service that launches the detection to other services.
+
+## Detection
+
+The routing table is automatically generated when a service prompts Luos engine to initiate network detection. Once the detection process concludes, the routing table is shared with other services. It's important to note that any service can request a detection, but driver services should not utilize this feature. Instead, it should be exclusively used with app services, which can include the _routingTable.h_ file and leverage the routing table API.
+
+To run a detection, type:
+
+```c
+Luos_Detect(app);
+```
+
+where `app` is the `service_t` pointer running the detection.
+
+During the detection process initiation, every service receives a message with the `START_DETECTION` command.
+
+The service responsible for conducting the detection is assigned ID `1`, while the other services are assigned IDs ranging from `2` to `4096`, based on their position from the perspective of the service detector.
+Once each service in the network has been assigned an ID, the detection algorithm proceeds to generate the routing table, which is then shared with every service (stored only once per [node](../node)).
+
+In some cases, multiple services within the network may have the same alias. To avoid service confusion, the detection algorithm adds a sequential number after each instance of an alias in the routing table.
+
+Upon completion of the detection process, each service receives a message with the `END_DETECTION` command. You can utilize this command in your code to determine the precise moment when the detection process concludes.
+
+It's important to note that during detection, Luos engine resets the ID for each service. As a result, IDs may change, requiring you to re-initiate auto-updates of services based on their new IDs upon receiving the `END_DETECTION` command message.
+
+You can also check the detection status of your node, by using the dedicated Luos engine's API:
+
+```c
+Luos_IsNodeDetected();
+```
+
+It returns `true` or `false` depending on whether this node is detected or not.
+
+:::caution
+Warnings:
+
+1. Be careful that a service's ID can change during a detection depending on the service running this detection.
+2. Do not consider your service's ID fixed.
+3. Be aware that every service removes its auto-update configuration during the detection to prevent any ID movement.
+:::
+
+## Modes
+
+Nodes can host multiple services. To get the topology of your device, the routing table references physical connections between the nodes and lists all the services in each one of them.
+
+The routing table is a table of a `routing_table_t` structure containing nodes or services information.
+The precompilation constant `MAX_SERVICE_NUMBER` manages the maximum number of services of your complete architecture (set to 20 by default).
+The precompilation constant `MAX_NODE_NUMBER` manages the maximum number of nodes of your complete architecture (set to 20 by default).
+
+```c
+routing_table_t routing_table[MAX_SERVICE_NUMBER + MAX_NODE_NUMBER];
+```
+
+The routing table structure has two modes: _service entry mode_ and _node entry mode_.
+
+```c
+typedef struct __attribute__((__packed__))
+{
+    uint8_t mode; // entry_mode_t
+    union
+    {
+        struct __attribute__((__packed__))
+        {                               // SERVICE mode entry
+            uint16_t id;                // Service ID.
+            uint16_t type;              // Service type.
+            uint8_t access;             // Service Access access_t
+            char alias[MAX_ALIAS_SIZE]; // Service alias.
+        };
+        struct __attribute__((__packed__))
+        { // NODE mode entry
+            // Watch out this structure have a lot similarities with the node_t struct.
+            // It is similar to allow copy of a node_t struct directly in this one.
+            // But you there is potentially a port_table size difference so
+            // Do not replace it with node_t struct.
+            struct __attribute__((__packed__))
+            {
+                uint16_t node_id : 12;  // Node id
+                uint16_t certified : 4; // True if the node have a certificate
+                uint8_t node_info;      // node info can contain info such as the saving of routing table
+            };
+            connection_t connection; // Node connection source
+        };
+        uint8_t unmap_data[MAX_ALIAS_SIZE + sizeof(uint16_t) + sizeof(uint16_t) + sizeof(uint8_t)];
+    };
+} routing_table_t;
+```
+
+### Service entry mode
+
+Service entry mode allows the routing table to include information about a service. As a node can host one or more services, the routing table is able to obtain the specific information for each one of them:
+
+- **id**: service's unique id
+- **type**: service's type
+- **alias**: service's alias
+
+You can read the [services page](../services/index.mdx) for more information about what services are and how they are used.
+
+### Node entry mode
+
+This mode gives physical information about your devices.
+
+The **node_id** is the unique number that you can use to identify each one of your nodes. At the beginning (or when a reset detection is performed), all node IDs are set to 0. When the `Luos_Detect` API is called, Luos engine assigns a unique ID to nodes and services in your system topology.
+
+The **connection** allows the sharing of topological information of your network. This structure store the connection information between the node and it's parent node by saving the phy_id and the port_id used on each side of this connection to link both of them.
+
+:::info
+Routing tables can be easily displayed using [Pyluos](../../integrations/pyluos.mdx) through a [USB gate](../../tools/gate.mdx). Please refer to the [Pyluos routing table section](../../integrations/pyluos.mdx) for more information.
+:::
+
+## Routing table filtering
+
+The routing table library provides filtering tools to find the services and nodes' information into a Luos network. In order to use these filtering functions, you need to define a `search_result_t` variable, where you will store the filtered information.
+
+The `search_result_t` structure includes a list of the routing table entries, as well as a number that indicates the number of services that it contains:
+
+```c
+typedef struct
+{
+    uint16_t result_nbr;
+    routing_table_t *result_table[MAX_RTB_ENTRY];
+} search_result_t;
+```
+
+First of all, we need to reset the filtering result in order to contain all the services existing in the routing table. Afterwords, we can filter the routing table entries, depending on a specific characteristic of the services like the type, the alias, etc.
+
+Here is an example:
+
+```mermaid
+graph LR
+
+    classDef services fill:#009900;
+    classDef phy fill:#CC7722;
+    classDef engine fill:#3388CC;
+
+    subgraph RTB[bare routing table]
+        direction LR
+        subgraph NODE1[Node 1]
+            subgraph GATE[Gate]
+                ID1(ID: 1)
+            end
+        end
+        subgraph NODE2[Node 2]
+            direction LR
+            subgraph VOLTAGE1[Voltage]
+                ID2(ID: 2)
+            end
+            subgraph VOLTAGE2[Voltage]
+                ID3(ID: 3)
+            end
+            subgraph STATE1[State]
+                ID4(ID: 4)
+            end
+            subgraph STAET2[State]
+                ID5(ID: 5)
+            end
+        end
+        subgraph NODE3[Node 3]
+            subgraph STATE3[State]
+                ID2(ID: 6)
+            end
+        end
+    end
+
+    subgraph RES1[search_result_t result]
+        direction LR
+        subgraph RES1_GATE[Gate]
+            RES1_ID1(ID: 1)
+        end
+        subgraph RES1_VOLT1[Voltage]
+            RES1_ID2(ID: 2)
+        end
+        subgraph RES1_VOLT2[Voltage]
+            RES1_ID3(ID: 3)
+        end
+        subgraph RES1_STATE1[State]
+            RES1_ID4(ID: 4)
+        end
+        subgraph RES1_STATE2[State]
+            RES1_ID5(ID: 5)
+        end
+        subgraph RES1_STATE3[State]
+            RES1_ID6(ID: 6)
+        end
+    end
+
+    subgraph RES2[search_result_t result]
+        direction LR
+        subgraph RES2_STATE1[State]
+            RES2_ID4(ID: 4)
+        end
+        subgraph RES2_STATE2[State]
+            RES2_ID5(ID: 5)
+        end
+        subgraph RES2_STATE3[State]
+            RES2_ID6(ID: 6)
+        end
+    end
+
+    subgraph RES3[search_result_t result]
+        direction LR
+        subgraph RES3_STATE1[State]
+            RES3_ID4(ID: 4)
+        end
+        subgraph RES3_STATE2[State]
+            RES3_ID5(ID: 5)
+        end
+    end
+
+    RTB --"RTFilter_Reset(&result)"--> RES1 --"RTFilter_Type(&result,State)"--> RES2 --"RTFilter_Node(&result,2)"--> RES3
+```
+
+Having access to the different services' information existing in the filtering result is done with the code `result.result_table[i]->id` or `result.result_table[i]->type`, as each `result_table[]` is a routing table entry.
+
+<a
+  href="../services/service_api_ref#luos-routing-table-filtering-functions"
+  className="pagination-nav__link"
+  style={{ display: 'inline-block' }}
+>
+  See all filtering functions APIs
+</a>

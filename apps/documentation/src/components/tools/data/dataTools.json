@@ -2,31 +2,31 @@
     {
         "title": "Gate",
         "desc": "A translation Luos app service allowing you to easily connect your computer to your hardware product.",
-        "link": "/docs/next/tools/gate",
+        "link": "/docs/tools/gate",
         "img": "/assets/images/tools/GATE-LUOS.png"
     },
     {
         "title": "JSON API",
         "desc": "The JSON formatted data is common and widely used by many programming languages. ",
-        "link": "/docs/next/tools/api-json",
+        "link": "/docs/tools/api-json",
         "img": "/assets/images/tools/JSON-API-LUOS.png"
     },
     {
         "title": "Bootloader",
         "desc": "The bootloader feature allows updating the firmware of any node in a Luos network.",
-        "link": "/docs/next/documentation/tools/bootloader",
+        "link": "/docs/tools/bootloader",
         "img": "/assets/images/tools/LUOS-BOOTLOADER.svg"
     },
     {
         "title": "Monitoring",
         "desc": "Luos provides monitoring and debugging mechanisms that give you better visibility of your network.",
-        "link": "/docs/next/tools/monitoring",
+        "link": "/docs/tools/monitoring",
         "img": "/assets/images/tools/MONITOR-LUOS.svg"
     },
     {
         "title": "PlatformIO",
         "desc": "Luos uses PlatformIO, allowing users to easily use and share services and developments on a unified environment.",
-        "link": "/docs/next/tools/platformio",
+        "link": "/docs/tools/platformio",
         "img": "/assets/images/tools/LUOS-AND-PLATFORMIO.svg"
     }
 ]

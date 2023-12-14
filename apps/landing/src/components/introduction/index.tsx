@@ -47,8 +47,8 @@ const Introduction = () => {
               typeSpeed={100}
             />
             <p className={styles.text2}>
-              Don't waste time to create complex software architectures anymore. Luos allows you to
-              easily develop and scale your cyber-physical systems. Our engine is free and open
+              Don't waste time creating software communications architectures anymore.<br /> Luos allows you to
+              easily develop and scale your system.<br /> Our engine is free and open
               source.
             </p>
             <Grid

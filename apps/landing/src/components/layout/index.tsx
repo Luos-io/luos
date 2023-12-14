@@ -81,11 +81,6 @@ export const Layout = ({ children }: LayoutProps) => {
                 type: NavbarItemTypes.LINK,
                 href: '/blog',
               },
-              {
-                name: 'Roadmap',
-                type: NavbarItemTypes.LINK,
-                href: '/roadmap',
-              },
             ],
           },
           {
@@ -96,11 +91,6 @@ export const Layout = ({ children }: LayoutProps) => {
                 name: 'Discord',
                 type: NavbarItemTypes.LINK,
                 href: 'https://discord.gg/luos-community-902486791658041364',
-              },
-              {
-                name: 'Reddit',
-                type: NavbarItemTypes.LINK,
-                href: 'https://www.reddit.com/r/Luos/',
               },
               {
                 name: 'GitHub',

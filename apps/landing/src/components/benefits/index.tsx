@@ -3,6 +3,7 @@ import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import ComputerIcon from '@mui/icons-material/Computer';
 import LinkIcon from '@mui/icons-material/Link';
 import ViewTimelineIcon from '@mui/icons-material/ViewTimeline';
+import MemoryIcon from '@mui/icons-material/Memory';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import List from '@mui/material/List';
@@ -31,8 +32,7 @@ export const Benefits = () => {
       <Grid item container xs={12} marginTop={xsMatches ? '-32px' : '-64px'}>
         <h2 className={`${styles.title} ${styles.underline}`}>Benefits of Luos</h2>
         <Grid item className={styles.text}>
-          Luos gives you access to multiple features created by developers for developers. <br />
-          Many of these features are based on the needs of the community.
+          Luos was created by developers for developers.
         </Grid>
       </Grid>
       <Grid container justifyContent={'center'} style={{ position: 'relative' }}>
@@ -42,7 +42,24 @@ export const Benefits = () => {
               className={styles.listLink}
               alignItems="flex-start"
               component={Link}
-              href="/documentation/integrations/pyluos"
+              href="/docs/luos-technology/basics"
+            >
+              <ListItemAvatar className={styles.listIcon}>
+                <MemoryIcon fontSize="large" />
+              </ListItemAvatar>
+              <ListItemText
+                className={styles.listText}
+                primary="Running on anything"
+                secondary={
+                  'Luos engine runs on any system, linking everything from supercomputers to tiny 8-bit microcontrollers effortlessly.'
+                }
+              />
+            </ListItem>
+            <ListItem
+              className={styles.listLink}
+              alignItems="flex-start"
+              component={Link}
+              href="/docs/integrations/pyluos"
             >
               <ListItemAvatar className={styles.listIcon}>
                 <ComputerIcon fontSize="large" />
@@ -51,7 +68,7 @@ export const Benefits = () => {
                 className={styles.listText}
                 primary="Digital Twins"
                 secondary={
-                  'You can natively remote-control any service anywhere on your computer, on another machine, or in a cloud application.'
+                  "You can natively remote-control any service, whether it's on your computer, another machine, or within a cloud application."
                 }
               />
             </ListItem>
@@ -59,7 +76,7 @@ export const Benefits = () => {
               className={styles.listLink}
               alignItems="flex-start"
               component={Link}
-              href="/documentation/integrations"
+              href="/docs/integrations"
             >
               <ListItemAvatar className={styles.listIcon}>
                 <LinkIcon fontSize="large" />
@@ -68,6 +85,27 @@ export const Benefits = () => {
                 className={styles.listText}
                 primary="Integrations"
                 secondary={'Luos provides existing bridges with multiple other technologies.'}
+              />
+            </ListItem>
+          </List>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <List className={`${styles.list} ${styles.secondList}`}>
+            <ListItem
+              className={styles.listLink}
+              alignItems="flex-start"
+              component={Link}
+              href="/docs/luos-technology/phy"
+            >
+              <ListItemAvatar className={styles.listIcon}>
+                <ViewTimelineIcon fontSize="large" />
+              </ListItemAvatar>
+              <ListItemText
+                className={styles.listText}
+                primary="Multi-network"
+                secondary={
+                  'You have the flexibility to utilize various networks simultaneously, such as UART, WIFI, CAN, RS485, and more.'
+                }
               />
             </ListItem>
             <ListItem
@@ -83,14 +121,10 @@ export const Benefits = () => {
                 className={styles.listText}
                 primary="Deployment"
                 secondary={
-                  'The bootloader feature allows you to update any firmware of your cyber-physical systems from anywhere.'
+                  'The bootloader allows you to update any firmware of your cyber-physical systems from anywhere.'
                 }
               />
             </ListItem>
-          </List>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <List className={`${styles.list} ${styles.secondList}`}>
             <ListItem
               className={styles.listLink}
               alignItems="flex-start"
@@ -112,21 +146,6 @@ export const Benefits = () => {
                 secondary={
                   'Join our community to exchange with other developers and collaborate on projects.'
                 }
-              />
-            </ListItem>
-            <ListItem
-              className={styles.listLink}
-              alignItems="flex-start"
-              component={Link}
-              href="/roadmap"
-            >
-              <ListItemAvatar className={styles.listIcon}>
-                <ViewTimelineIcon fontSize="large" />
-              </ListItemAvatar>
-              <ListItemText
-                className={styles.listText}
-                primary="Soon"
-                secondary={"We are always attentive to developers' needs to give them superpowers."}
               />
             </ListItem>
           </List>

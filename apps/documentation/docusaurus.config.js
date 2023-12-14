@@ -37,6 +37,10 @@ module.exports = {
     isProd,
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
   themeConfig: {
     i18n: {
       defaultLocale: 'en',
@@ -213,6 +217,8 @@ module.exports = {
       contextualSearch: true,
     },
   },
+
+  themes: ['@docusaurus/theme-mermaid'],
 
   presets: [
     [

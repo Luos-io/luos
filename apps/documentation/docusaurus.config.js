@@ -35,7 +35,12 @@ module.exports = {
     robus_def: 'Bus communication protocol used by Luos.',
     luoshal_def: 'Hardware Abstraction Layer used to fit Luos with various hardware designs.',
     isProd,
-  },
+    },
+
+    markdown: {
+      mermaid: true,
+    },
+    themes: ['@docusaurus/theme-mermaid'],
 
   markdown: {
     mermaid: true,

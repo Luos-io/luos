@@ -28,18 +28,17 @@ const items = [
     text: [
       'Visualize your entire embedded network, the physical topology, the route of all your services, and the load of your computing units.',
     ],
-
-    image: '/assets/images/Network_display_Luos.svg',
+    image: '/app/assets/images/Network_display_Luos.svg',
   },
   {
     name: 'Monitor and debug (coming soon)',
     text: ['Monitor your system in real-time, debug it, and update your firmware if needed.'],
-    image: '/assets/images/Coming_soon_Luos.svg',
+    image: '/app/assets/images/Coming_soon_Luos.svg',
   },
   {
     name: 'Projects and registry (coming soon)',
     text: [' Manage your embedded projects.'],
-    image: '/assets/images/Coming_soon_Luos.svg',
+    image: '/app/assets/images/Coming_soon_Luos.svg',
   },
 ];
 

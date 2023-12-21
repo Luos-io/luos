@@ -52,7 +52,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
     return () => {
       router.events.off('routeChangeStart', handleStart);
     };
-  }, [router, notifications]);
+  }, [router, notifications, removeNotifications]);
 
   const LinkNotification = ({ children }: { children: ReactElement }): JSX.Element => {
     if (window.location.pathname !== '/user/profile') {
@@ -66,7 +66,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
     <>
       <Head>
         <title>Luos Dashboard</title>
-        <link rel="icon" href="/assets/images/favicon.png" />
+        <link rel="icon" href="/app/assets/images/favicon.png" />
       </Head>
       <ThemeProvider theme={lightTheme}>
         <CssBaseline />

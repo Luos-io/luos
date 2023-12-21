@@ -39,10 +39,11 @@ export const ButtonAppBar = ({ toogleLight }: HeaderProps) => {
           <Grid item xs={4} display="flex" alignItems="center">
             <Link href="/">
               <Image
-                src="/assets/images/logo_luos_animated_white.gif"
+                src="/app/assets/images/logo_luos_animated_white.gif"
                 alt="Luos Logo"
                 width="86"
                 height="30"
+                priority
               />
             </Link>
             <span style={{ fontSize: '10px', color: 'white' }}>Toolkit Alpha {pjson.version}</span>

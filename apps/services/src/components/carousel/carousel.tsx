@@ -12,12 +12,12 @@ interface ItemProps {
 const Item = ({ image, name, text }: ItemProps) => (
   <Paper elevation={0} className={Styles.carouselItem}>
     <Image src={image} alt="Luos network" width={250} height={250} priority={false} />
-    <div className={Styles.textContainer}>
+    <Paper className={Styles.textContainer}>
       <h2>{name}</h2>
       {text.map((description: string, i: number) => (
         <span key={i}>{description}</span>
       ))}
-    </div>
+    </Paper>
   </Paper>
 );
 

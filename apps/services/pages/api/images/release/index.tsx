@@ -1,3 +1,4 @@
+/* eslint @next/next/no-img-element: 0 */
 import { ImageResponse } from '@vercel/og';
 import { valid } from 'semver';
 
@@ -22,6 +23,7 @@ export default async function handler(req: NextRequest) {
             height: 630,
           }}
           src={`${req.nextUrl.origin}/app/assets/images/nebula.svg`}
+          alt=""
         />
         {version && valid(version) && (
           <p

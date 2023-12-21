@@ -28,9 +28,6 @@ export const Home = ({ game }: InferGetServerSidePropsType<typeof getServerSideP
   const { addNotifications } = useContext(NotificationsContext);
   const { data: session } = useSession();
 
-  console.log('pages/index - TEST1-1 (should display)', process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
-  console.log('pages/index - TEST2-1 (should not display)', process.env.EMAIL_FROM);
-
   useEffect(() => {
     const origin = window.location.origin;
     if (origin === 'https://feel.luos.io') {

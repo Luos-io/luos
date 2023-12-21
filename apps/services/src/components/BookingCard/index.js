@@ -86,7 +86,7 @@ function BookingCard({ image, title, description, action, link, blank }) {
               <Image
                 src={image}
                 alt={title}
-                layout="responsive"
+                // layout="responsive"
                 size="100%"
                 quality={100}
                 style={{

@@ -23,6 +23,7 @@ By writing services code you will have the opportunity to use the Luos engine's 
 | :-------------------------------------------------: | :---------------------------------------------------------------------------: | :--------------: |
 |                 Read a Luos message                 |           `Luos_ReadMsg(service_t *service, msg_t *msg_to_write);`            | `error_return_t` |
 | Read a Luos message comming from a specific service | `Luos_ReadFromService(service_t *service, uint16_t id, msg_t *msg_to_write);` | `error_return_t` |
+|     Read a Luos message with a specific command     |   `Luos_ReadFromCmd(service_t *service, uint16_t id, msg_t *msg_to_write);`   | `error_return_t` |
 |        Get the number of available messages         |                         `Luos_NbrAvailableMsg(void);`                         |    `uint16_t`    |
 
 ## Luos timestamp management functions

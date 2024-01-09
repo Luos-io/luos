@@ -169,17 +169,19 @@ Connect the USB cable of _board 1_ and leave the USB cable of _board 2_ disconne
 
    ```c
    ...
-       Luos_Init();
-       Led_Init();
-       Pipe_Init();
-       Gate_Init();
-       //Blinker_Init(); <== comment this line
+        Luos_Init();
+        Robus_Init();
+        Led_Init();
+        Pipe_Init();
+        Gate_Init();
+        //Blinker_Init(); <== comment this line
    ...
-       Luos_Loop();
-       Led_Loop();
-       Pipe_Loop();
-       Gate_Loop();
-       //Blinker_Loop(); <== comment this line
+        Luos_Loop();
+        Robus_Loop();
+        Led_Loop();
+        Pipe_Loop();
+        Gate_Loop();
+        //Blinker_Loop(); <== comment this line
    ```
 
 :::info
@@ -213,17 +215,19 @@ You should now unplug the USB cable of _board 1_ and connect the USB cable of _b
 
    ```c
    ...
-       Luos_Init();
-       //Led_Init(); <== comment this line
-       //Pipe_Init(); <== comment this line
-       //Gate_Init(); <== comment this line
-       Blinker_Init();
+        Luos_Init();
+        Robus_Init();
+        //Led_Init(); <== comment this line
+        //Pipe_Init(); <== comment this line
+        //Gate_Init(); <== comment this line
+        Blinker_Init();
    ...
-       Luos_Loop();
-       //Led_Loop(); <== comment this line
-       //Pipe_Loop(); <== comment this line
-       //Gate_Loop(); <== comment this line
-       Blinker_Loop();
+        Luos_Loop();
+        Robus_Loop();‡
+        //Led_Loop(); <== comment this line
+        //Pipe_Loop(); <== comment this line
+        //Gate_Loop(); <== comment this line
+        Blinker_Loop();
    ```
 
 :::tip
@@ -293,16 +297,10 @@ To create a link between multiple programs on your computer, Luos will use WebSo
 
 To be able to do that, you need to run a broker that will share any transmitted message with all other programs.
 
-This broker is a simple Python script. To make it run, you need to install _simple_websocket_server_:
-
-```
-pip install simple_websocket_server==0.4.2
-```
-
-Then you can run the broker script on `Get_started/No-Board/`:
+This broker is a simple Python script. To make it run, open a terminal and execute the following command:
 
 ```bash
-python broker.py
+pyluos-ws-broker
 ```
 
 :::info
@@ -310,7 +308,7 @@ By default the broker will use localhost IP address.
 If you want to experiment it using multiple computers, you can configure your IP and port:
 
 ```bash
-python broker.py --ip 'YOUR_LOCAL_IP' -p 8000
+pyluos-ws-broker --ip 'YOUR_LOCAL_IP' -p 8000
 ```
 
 :::
@@ -327,25 +325,23 @@ We will begin by moving the blinker app service from _board 1_ to _board 2_ and 
 
    ```c
    ...
-       Luos_Init();
-       Led_Init();
-       Pipe_Init();
-       Gate_Init();
-       //Blinker_Init(); <== comment this line
+        Luos_Init();
+        Ws_Init();
+        Led_Init();
+        Pipe_Init();
+        Gate_Init();
+        //Blinker_Init(); <== comment this line
    ...
-       Luos_Loop();
-       Led_Loop();
-       Pipe_Loop();
-       Gate_Loop();
-       //Blinker_Loop(); <== comment this line
+        Luos_Loop();
+        Ws_Loop();
+        Led_Loop();
+        Pipe_Loop();
+        Gate_Loop();
+        //Blinker_Loop(); <== comment this line
    ```
 
 :::info
 These lines trigger the initialization and looping execution of all the packages in your project.
-:::
-:::info
-By default the program will use a localhost IP address.
-If you want to experiment it using multiple computers, you can set the broker IP and port in the _node_config.h_ file by replacing `#define WS_BROKER_ADDR "ws://YOUR_LOCAL_IP:8000"` with the correct IP and port.
 :::
 
 4. Build the project.
@@ -370,17 +366,19 @@ For example, the current version has been tested with MinGW-w64 (MSVCRT runtime)
 
    ```c
    ...
-       Luos_Init();
-       //Led_Init(); <== comment this line
-       //Pipe_Init(); <== comment this line
-       //Gate_Init(); <== comment this line
-       Blinker_Init();
+        Luos_Init();
+        Ws_Init();
+        //Led_Init(); <== comment this line
+        //Pipe_Init(); <== comment this line
+        //Gate_Init(); <== comment this line
+        Blinker_Init();
    ...
-       Luos_Loop();
-       //Led_Loop(); <== comment this line
-       //Pipe_Loop(); <== comment this line
-       //Gate_Loop(); <== comment this line
-       Blinker_Loop();
+        Luos_Loop();
+        Ws_Loop();
+        //Led_Loop(); <== comment this line
+        //Pipe_Loop(); <== comment this line
+        //Gate_Loop(); <== comment this line
+        Blinker_Loop();
    ```
 
 :::tip
@@ -463,7 +461,6 @@ device.led.state=False
 ```
 device.blinker.play()
 ```
-
 
 ## 5. Test your skills
 

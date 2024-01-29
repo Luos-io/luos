@@ -96,8 +96,18 @@ If you have an app service on your device managing detections you should define 
 
 ## Gate custom conversion
 
-The Gate is allowing you to create you own custom conversion.
-If you are using Platformio, this specific configuration have to be managed on the `build_flags`. more information on the [Platformio page](platformio)
+The Gate is allowing you to create you own custom conversion (other than the default Json) or custom command management.
+
+### Adding custom commands
+
+In your projects, you will probably have to create custom commands and manage them on your gate. To do so, you can add your custom command conversions from the default `TinyJSON` conversion using the specifically exposed function.
+This specific conversion code can be added to specific functions that need to be compiled with your node containing your gate service.
+You can find an example of this specific conversion and an explanation of those functions on the [custom Gate example](https://github.com/Luos-io/luos_engine/blob/main/examples/projects/product/custom_gate/src/custom_json_conversion.c).
+
+### Adding custom conversion
+
+Alternatively, you may need to create your own conversion format to use something other than JSON. To do this, you will have to replace the default `TinyJSON` conversion folder with your own during compilation.
+If you are using Platformio, this specific configuration have to be managed on the `build_flags` (more information on the [Platformio page](platformio)).
 
 To do so you have to :
 

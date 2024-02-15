@@ -41,7 +41,7 @@ Begin by setting up the MCU pins for your button in the file _button.c_:
 /*******************************************************************************
 * Definitions
 ******************************************************************************/
-// the new line to copy and paste
+// The new line to copy and paste:
 #define BTN_PIN 8
 ```
 
@@ -53,7 +53,7 @@ void Button_Init(void)
 {
     revision_t revision = {1, 0, 0};
     button_service = Luos_CreateService(0, STATE_TYPE, "button", revision);
-    // the new line to copy and paste
+    // The new line to copy and paste:
     pinMode(BTN_PIN, INPUT);
 }
 ```
@@ -150,22 +150,22 @@ Let's fill in the information of the structure:
 ```c
 void Button_Loop(void)
 {
-	msg_t* msg;
-	while (Luos_ReadMsg(button_service, &msg) == SUCCEED)
-	{
+    msg_t* msg;
+    while (Luos_ReadMsg(button_service, &msg) == SUCCEED)
+    {
     if ((msg->header.cmd == IO_STATE)||(msg->header.cmd == UNKNOW)
     {
-      // the new block to copy and paste
-      // fill the message infos
-      msg_t pub_msg;
-      pub_msg.header.cmd         = IO_STATE;
-      pub_msg.header.target_mode = IDACK;
-      pub_msg.header.target      = msg->header.source;
-      pub_msg.header.size        = sizeof(char); // 1 byte
-      pub_msg.data[0]            = digitalRead(BTN_PIN);
-      Luos_SendMsg(service, &pub_msg);
+        // The new block to copy and paste:
+        // fill the message infos
+        msg_t pub_msg;
+        pub_msg.header.cmd         = IO_STATE;
+        pub_msg.header.target_mode = IDACK;
+        pub_msg.header.target      = msg->header.source;
+        pub_msg.header.size        = sizeof(char); // 1 byte
+        pub_msg.data[0]            = digitalRead(BTN_PIN);
+        Luos_SendMsg(service, &pub_msg);
     }
-	}
+    }
 }
 ```
 
@@ -175,22 +175,22 @@ void Button_Loop(void)
 ```c
 void Button_Loop(void)
 {
-	msg_t* msg;
-	while (Luos_ReadMsg(button_service, &msg) == SUCCEED)
-	{
+    msg_t* msg;
+    while (Luos_ReadMsg(button_service, &msg) == SUCCEED)
+    {
     if ((msg->header.cmd == IO_STATE)||(msg->header.cmd == UNKNOW)
     {
-      // the new block to copy and paste
-      // fill the message infos
-      msg_t pub_msg;
-      pub_msg.header.cmd         = IO_STATE;
-      pub_msg.header.target_mode = IDACK;
-      pub_msg.header.target      = msg->header.source;
-      pub_msg.header.size        = sizeof(char); // 1 byte
-      pub_msg.data[0]            = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);
-      Luos_SendMsg(service, &pub_msg);
+        // The new block to copy and paste:
+        // fill the message infos
+        msg_t pub_msg;
+        pub_msg.header.cmd         = IO_STATE;
+        pub_msg.header.target_mode = IDACK;
+        pub_msg.header.target      = msg->header.source;
+        pub_msg.header.size        = sizeof(char); // 1 byte
+        pub_msg.data[0]            = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);
+        Luos_SendMsg(service, &pub_msg);
     }
-	}
+    }
 }
 ```
 
@@ -281,7 +281,7 @@ Let's try a small exercise:
 
    ```c
    while True :
-   	device.led.state = device.button.state
+       device.led.state = device.button.state
    ```
 
 5. Run this while-loop and try to push on the button to see the LED turning on and off.

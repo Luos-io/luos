@@ -1,0 +1,57 @@
+---
+custom_edit_url: null
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Websocket configuration
+
+## Protocol configuration
+
+The websocket network allows you to configure some aspects of the protocol to adapt it to your needs. To modify these options, you have to define them in your `product_config.h` file.
+Learn more about `product_config.h` on the [code organization page](../../luos-technology/basics/organization).
+
+|        Function        |              Description              |                    Comments                     |
+| :--------------------: | :-----------------------------------: | :---------------------------------------------: |
+| WS_NETWORK_BROKER_ADDR | Use it to define your broker address. | By default the address is "ws://127.0.0.1:8000" |
+
+## Compatible MCUs
+
+Webcocket can manage board with wifi or ethernet connectivity. For now only Arduino and Native configurations are ready. If your microcontroller is not supported yet, please contact us:
+
+- on <a href="https://discord.gg/luos" target="_blank" rel="external nofollow">Discord</a>
+- on <a href="https://github.com/Luos-io/luos_engine/issues/new?assignees=nicolas-rabault&labels=porting&template=porting-request.md&title=%5BMCU+PORTING%5D+" target="_blank">GitHub</a>
+
+Check the list of MCU families Websocket cover:<a href="https://github.com/Luos-io/luos_engine/tree/main/network/ws_network/HAL" target="_blank">Hardware Abstraction Layers for MCU families</a>,
+
+## Default Configurations
+
+The WebSocket network is very usefull if you need to interact with some applications running on the web or web based. This network need to connect to a running broker application.
+
+:::info
+To run a broker, please use pyluos and run the `pyluos-ws-broker` command.
+:::
+
+The peripheral configuration is described in the _ws_hal_config.h_ files, and can be redefined in the _node_config.h_ file of your project to fit with your design.
+
+<a
+  href="../../luos-technology/basics/organization"
+  className="pagination-nav__link"
+  style={{ display: 'inline-block' }}
+>
+  Learn more about project organization
+</a>
+
+## WebSocket's HAL configuration
+
+When you use the websocket network in an embedded system, the network code will also have to manage the wifi connectivity. You will have to define the SSID and password of your wifi network in the _node_config.h_ file of your project.
+
+:::info
+Each example provided by Luos has a _node_config.h_ file and includes the file _platformio.ini_.
+:::
+
+|  Function   |    Description    |
+| :---------: | :---------------: |
+| SECRET_SSID |   The wifi SSID   |
+| SECRET_PASS | The wifi password |

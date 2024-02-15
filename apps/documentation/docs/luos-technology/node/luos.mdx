@@ -125,25 +125,23 @@ You can use it to set all your custom configurations to fit your design:
 - for the phys of your node
 - for the Luos engine of your node
 
-|     Parameters           |    Defaults value             |                                                    Description                                                                              |
-| :-----------------------:| :---------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
-|   MAX_NODE_NUMBER        |          20                   |     Max number of node that could be detected on the architecture.                                                                          |
-| MAX_SERVICE_NUMBER       |          20                   |     Max number of services that could be detected in the architecture.                                                                      |
-| MAX_LOCAL_SERVICE_NUMBER |           5                   |                               Number of services in the node.                                                                               |
-| MAX_LOCAL_TOPIC_NUMBER   |          20                   | Max number of pub/sub topics used by all the local services.                                                                                |
-| MAX_LOCAL_PROFILE_NUMBER | MAX_LOCAL_SERVICE_NUMBER      | Max number of profiles used by all the local services.                                                                                      |
-| LOCAL_PHY_NB             | 1                             | Max number of different network interface on the node.                                                                                      |
-|  MSG_BUFFER_SIZE         |      3 \* max_msg_size        |         Size of the Luos message storage. Messages waiting to be treated or re-transmitted are stored in this buffer.                       |
-|     MAX_MSG_NB           | 2 \* MAX_LOCAL_SERVICE_NUMBER |                        The max number of messages that can be referenced by Luos at the same time.                                          |
-|     BOOTLOADER           | undefined                     | By adding this flag you will compile Luos_engine as a bootloader (learn more about it [here](/tutorials/bootloader)).                       |
-| BOOTLOADER_UPDATER       | undefined                     | By adding this flag you will compile Luos_engine as a bootloader updater (learn more about it [here](/tutorials/bootloader)).               |
-| WITH_BOOTLOADER          | undefined                     | By adding this flag you will compile Luos_engine to run on top of a bootloader  (learn more about it [here](/tutorials/bootloader)).        |
-| NO_RTB                   | undefined                     | By adding this flag you will compile Luos_engine without any routing table management. Use it to save RAM if you only have driver services. |
+|        Parameters        |        Defaults value         |                                                                 Description                                                                 |
+| :----------------------: | :---------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
+|     MAX_NODE_NUMBER      |              20               |                                       Max number of node that could be detected on the architecture.                                        |
+|    MAX_SERVICE_NUMBER    |              20               |                                     Max number of services that could be detected in the architecture.                                      |
+| MAX_LOCAL_SERVICE_NUMBER |               5               |                                                     Max number of services in the node.                                                     |
+| MAX_AUTO_REFRESH_NUMBER  |   MAX_LOCAL_SERVICE_NUMBER    |                                                   Max number of auto_refresh in the node.                                                   |
+|  MAX_LOCAL_TOPIC_NUMBER  |              20               |                                        Max number of pub/sub topics used by all the local services.                                         |
+| MAX_LOCAL_PROFILE_NUMBER |   MAX_LOCAL_SERVICE_NUMBER    |                                           Max number of profiles used by all the local services.                                            |
+|       LOCAL_PHY_NB       |               1               |                                           Max number of different network interface on the node.                                            |
+|     MSG_BUFFER_SIZE      |       3 \* max_msg_size       |                Size of the Luos message storage. Messages waiting to be treated or re-transmitted are stored in this buffer.                |
+|        MAX_MSG_NB        | 2 \* MAX_LOCAL_SERVICE_NUMBER |                                 The max number of messages that can be referenced by Luos at the same time.                                 |
+|        BOOTLOADER        |           undefined           |            By adding this flag you will compile Luos_engine as a bootloader (learn more about it [here](/tutorials/bootloader)).            |
+|    BOOTLOADER_UPDATER    |           undefined           |        By adding this flag you will compile Luos_engine as a bootloader updater (learn more about it [here](/tutorials/bootloader)).        |
+|     WITH_BOOTLOADER      |           undefined           |     By adding this flag you will compile Luos_engine to run on top of a bootloader (learn more about it [here](/tutorials/bootloader)).     |
+|          NO_RTB          |           undefined           | By adding this flag you will compile Luos_engine without any routing table management. Use it to save RAM if you only have driver services. |
 
-
-
-
-You will find the default configuration for Luos engine in the file <a href="https://github.com/Luos-io/luos_engine/blob/main/engine/engine_config.h" target="_blank" rel="external nofollow">engine\_config.h<IconExternalLink width="10"></IconExternalLink>_</a>.
+You will find the default configuration for Luos engine in the file <a href="https://github.com/Luos-io/luos_engine/blob/main/engine/engine_config.h" target="_blank" rel="external nofollow">engine_config.h<IconExternalLink width="10"></IconExternalLink>\_</a>.
 
 Check the _Luos_hal_config.h_ and your _Network_hal_config.h_ of your MCU family to see parameters that can be changed to fit your design.
 

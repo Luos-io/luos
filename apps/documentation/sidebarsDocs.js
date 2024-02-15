@@ -274,6 +274,26 @@ module.exports = {
                         },
                     ],
                 },
+                {
+                    type: 'category',
+                    label: 'WebSocket',
+                    link: {
+                        type: 'doc',
+                        id: 'networks/websocket/websocket',
+                    },
+                    items: [
+                        {
+                            type: 'doc',
+                            label: 'Minimum requirements',
+                            id: 'networks/websocket/minimum-requirements',
+                        },
+                        {
+                            type: 'doc',
+                            label: 'WebSocket configuration',
+                            id: 'networks/websocket/config',
+                        },
+                    ],
+                },
             ],
         },
         {

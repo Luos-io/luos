@@ -1,0 +1,35 @@
+---
+hide_title: true
+hide_table_of_contents: true
+custom_edit_url: null
+title: 'WebSocket network'
+---
+
+import IconExternalLink from '@theme/Icon/ExternalLink';
+import Image from '@site/src/components/Image';
+
+# Network capabilities
+
+|              Feature               |                                                  Status                                                   |
+| :--------------------------------: | :-------------------------------------------------------------------------------------------------------: |
+|             Multipoint             |                                         ✅ (thanks to the broker)                                         |
+| Deterministc topological detection |                                                    ❌                                                     |
+|      Messages acknoledgement       |                              ❌ (already managed by the WebSocket protocol)                               |
+|        Messages timestamps         |                                                    ❌                                                     |
+|              Protocol              |                                                 WebSocket                                                 |
+|                Bus                 |                                                   TCPIP                                                   |
+|      Overhead on top of Luos       |                                                   a lot                                                   |
+|  Package performances indications  | Do nont use WebSocket for high density messaging or time constrained applications. (1.7K FLASH, 0.7K RAM) |
+
+# WebSocket
+
+The Websocket network is the default network used to communicate over a TCP/IP network. You cna use it to run application on both side, computer and embedded system.
+Keep in mind that this network is not deterministic and is not made to run real time application. This is a good solution to interact with a web application or a web based application.
+Your board will need to be connected to a wifi or ethernet network to be able to communicate with other nodes.
+You will have to take care of your network port configuration to be able to communicate with your board.
+
+This network need to connect to a running broker application. The ws Address you will have to configure in your product_config.h file will be the address of the broker.
+
+:::info
+To run a broker, please use pyluos and run the `pyluos-ws-broker` command.
+:::

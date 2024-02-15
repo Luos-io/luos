@@ -55,7 +55,7 @@ You can create your service in the button package's `Init` function, but this ti
 ```c
 void Button_Init(void)
 {
-    // the two new lines to copy and paste
+    // The two new lines to copy and paste:
     revision_t revision = {1, 0, 0};
     Luos_CreateService(0, STATE_TYPE, "button", revision);
 }
@@ -98,7 +98,7 @@ To pull messages from Luos engine, we will need to know which service is asking 
 /*******************************************************************************
  * Variable
  ******************************************************************************/
-// the new line to copy and paste
+// The new line to copy and paste:
 service_t *button_service;
 ```
 
@@ -107,9 +107,9 @@ Assign the variable to your service creation:
 ```c
 void Button_Init(void)
 {
-  // the two new lines to copy and paste
-  revision_t revision = {1, 0, 0};
-  button_service = Luos_CreateService(0, STATE_TYPE, "button", revision);
+    // The two new lines to copy and paste:
+    revision_t revision = {1, 0, 0};
+    button_service = Luos_CreateService(0, STATE_TYPE, "button", revision);
 }
 ```
 
@@ -118,12 +118,12 @@ Because we do not give any message handler to Luos engine, we will have to get t
 ```c
 void Button_Loop(void)
 {
-  // the new block to copy and paste
-  msg_t* msg;
-  if (Luos_ReadMsg(button_service, &msg) == SUCCEED)
-  {
-    // We get a message!
-  }
+    // The new block to copy and paste:
+    msg_t* msg;
+    if (Luos_ReadMsg(button_service, &msg) == SUCCEED)
+    {
+        // We get a message!
+    }
 }
 ```
 
@@ -134,15 +134,15 @@ To be able to send back the button value, we now need to check if the received m
 ```c
 void Button_Loop(void)
 {
-		msg_t* msg;
-		if (Luos_ReadMsg(button_service, &msg) == SUCCEED)
-		{
-        // the new line to copy and paste
-				if ((msg->header.cmd == IO_STATE)||(msg->header.cmd == UNKNOW)
-				{
-		      // We will have to send our button info here
-		    }
-		}
+        msg_t* msg;
+        if (Luos_ReadMsg(button_service, &msg) == SUCCEED)
+        {
+        // The new line to copy and paste:
+                if ((msg->header.cmd == IO_STATE)||(msg->header.cmd == UNKNOW)
+                {
+              // We will have to send our button info here
+            }
+        }
 }
 ```
 

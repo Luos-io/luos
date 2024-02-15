@@ -9,17 +9,21 @@ import Image from '@site/src/components/Image';
 
 Because Luos engine allows you to manage your features as sharable blocks of code, we organized the code in a specific way allowing to easily integrate and share packages from your projects with as little friction as possible.
 
+:::note
+You can find a complete product example with custom service types, custom messages command as well as all the customization to easily take control of your device in the [product example of Luos_engine](https://github.com/Luos-io/luos_engine/tree/main/examples/projects/product).
+:::
+
 ### Luos engine's levels
 
 Different levels on the code projects are defined, corresponding to the different levels of information needed across your entire product.
 
-|  Level  |                                                                            Description                                                                            |
-| :-----: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| Product | This is the place where you will have the configurations and information intended for all your nodes.                                                             |
-|  Node   |                 This is the executable's code. This is your actual Eclipse, PlatformIO, IAR, or any other project.                                                |
-| Package |                       A sharable folder containing code files managing Services or Phy.                                                                           |
-| Service |                       A Luos services can be drivers or apps. Each service manage a specific feature of the product.                                              |
-| Phy     |                       A Phy is a network code allowing Luos to access other nodes and services.                                                                   |
+|  Level  |                                              Description                                              |
+| :-----: | :---------------------------------------------------------------------------------------------------: |
+| Product | This is the place where you will have the configurations and information intended for all your nodes. |
+|  Node   |  This is the executable's code. This is your actual Eclipse, PlatformIO, IAR, or any other project.   |
+| Package |                   A sharable folder containing code files managing Services or Phy.                   |
+| Service |    A Luos services can be drivers or apps. Each service manage a specific feature of the product.     |
+|   Phy   |               A Phy is a network code allowing Luos to access other nodes and services.               |
 
 ```mermaid
 graph TB

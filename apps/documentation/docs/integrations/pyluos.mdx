@@ -347,3 +347,27 @@ device.button_mod.type
 
 device.rgb_led_mod.rename("myLED")
 ```
+
+## Custom services
+
+Pyluos allows you to work with custom services. You can create your own from scratch or override an existing one. To do that, you need to provide Pyluos with your custom service type object before creating the `Device` object.
+
+### Creating a custom service
+
+The best way to create a custom service is to copy and paste an existing one from the [service folder of pyluos](https://github.com/Luos-io/Pyluos/tree/master/pyluos/services) and modify it. An example of managing a custom Pyluos service is available in the [luos_engine product example](https://github.com/Luos-io/luos_engine/tree/main/examples/projects/product).
+
+### Mapping you custom service into pyluos
+
+Once you have created your custom service, you need to map it into Pyluos. To do that, create a custom service type object and provide it to Pyluos before creating the `Device` object.
+
+```python
+from pyluos import Device, map_custom_service
+
+# Import the custom service and map it
+sys.path.append('$PATH_TO_YOUR_FOLDER_CONTAINING_YOUR_OBJECT_FILE')
+from point_2D import Point_2D
+map_custom_service("point_2D", Point_2D)
+
+# Now you can create your device, and your custom service will be used
+device = Device('address of the device')
+```

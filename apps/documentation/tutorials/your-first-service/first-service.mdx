@@ -65,7 +65,8 @@ Throughout this tutorial, you will have to locate the right lines where to copy/
 
 ```c
 // the code to locate:
-#include <luos_engine.h>
+#include "luos_engine.h"
+#include "robus_network.h"
 #include "blinker.h"
 #include "pipe.h"
 #include "gate.h"
@@ -90,12 +91,13 @@ Now that we have everything we need to create our service, we will begin by crea
 void setup()
 {
     Luos_Init();
+    Robus_Init();
     Pipe_Init();
     Gate_Init();
     Blinker_Init();
 
-    // the two new lines to copy and paste:
-	revision_t revision = {1, 0, 0};
+    // The two new lines to copy and paste:
+    revision_t revision = {1, 0, 0};
     Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);
 
 }
@@ -112,17 +114,19 @@ int main(void)
     MX_GPIO_Init();
 
     Luos_Init();
+    Robus_Init();
     Pipe_Init();
     Gate_Init();
     Blinker_Init();
 
-    // the two new lines to copy and paste:
-	revision_t revision = {1, 0, 0};
+    // The two new lines to copy and paste:
+    revision_t revision = {1, 0, 0};
     Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);
 
     while (1)
     {
         Luos_Loop();
+        Robus_Loop();
         Pipe_Loop();
         Gate_Loop();
         Blinker_Loop();
@@ -174,6 +178,7 @@ Add your PIN configuration next to the service initialization in the same file:
 void setup()
 {
     Luos_Init();
+    Robus_Init();
     Pipe_Init();
     Gate_Init();
     Blinker_Init();
@@ -181,7 +186,7 @@ void setup()
     revision_t revision = {1, 0, 0};
     Luos_CreateService(Led_MsgHandler, STATE_TYPE, "led", revision);
 
-    // the new line to copy and paste:
+    // The new line to copy and paste:
     pinMode(LED_BUILTIN, OUTPUT);
 
 }
@@ -196,10 +201,11 @@ int main(void)
     HAL_Init();
     SystemClock_Config();
 
-    // the new line to copy and paste:
+    // The new line to copy and paste:
     MX_GPIO_Init();//Nucleo Led Pin init
 
     Luos_Init();
+    Robus_Init();
     Pipe_Init();
     Gate_Init();
     Blinker_Init();
@@ -209,6 +215,7 @@ int main(void)
     while (1)
     {
         Luos_Loop();
+        Robus_Loop();
         Pipe_Loop();
         Gate_Loop();
         Blinker_Loop();
@@ -235,15 +242,15 @@ To control the LED depending on the message data, you can fill the content of th
 ```c
 void Led_MsgHandler(service_t *service, const msg_t *msg)
 {
-     // the block to copy and paste:
-      if (msg->data[0] == 0)
-      {
-          digitalWrite(LED_BUILTIN, false);
-      }
-      else
-      {
-          digitalWrite(LED_BUILTIN, true);
-      }
+    // the block to copy and paste:
+    if (msg->data[0] == 0)
+    {
+        digitalWrite(LED_BUILTIN, false);
+    }
+    else
+    {
+        digitalWrite(LED_BUILTIN, true);
+    }
 }
 ```
 
@@ -317,17 +324,17 @@ void Led_MsgHandler(service_t *service, const msg_t *msg)
 void Led_MsgHandler(service_t *service, const msg_t *msg)
 {
     // the new line to copy and paste:
-	if (msg->header.cmd == IO_STATE)
+    if (msg->header.cmd == IO_STATE)
     {
-		    if (msg->data[0] == false)
-		    {
-		        HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, false);
-		    }
-		    else
-		    {
-		        HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, true);
-		    }
-		}
+            if (msg->data[0] == false)
+            {
+                HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, false);
+            }
+            else
+            {
+                HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, true);
+            }
+        }
 }
 ```
 

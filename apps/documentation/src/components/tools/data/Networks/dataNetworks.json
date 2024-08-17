@@ -10,5 +10,11 @@
         "desc": "This network aim to be as simple and flexible as possible. Use it to extend your boards network to a computer.",
         "link": "/docs/next/networks/serial",
         "img": "/assets/images/advanced-doc/robus/card/LUOS-ROBUS.svg"
+    },
+    {
+        "title": "Websocket",
+        "desc": "This network is usefull when you need to interact with web based applications or services.",
+        "link": "/docs/next/networks/websocket",
+        "img": "/assets/images/advanced-doc/robus/card/LUOS-ROBUS.svg"
     }
 ]

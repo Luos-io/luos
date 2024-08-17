@@ -11,55 +11,61 @@ By writing services code you will have the opportunity to use the Luos engine's 
 
 ## Luos messages management functions
 
-|                        Description                      |                                       Function                                               |               Return                |
-| :-----------------------------------------------:       | :------------------------------------------------------------------------------------------: | :---------------------------------: |
-|    Remove all pending massages                          | `Luos_Flush(void);`                                                                          |             `void`                  |
-|                    Send a Luos message                  |                    `Luos_SendMsg(service_t *service, msg_t *msg);`                           |          `error_return_t`           |
-| Allow to know if all TX messages have been processed    |                    `Luos_TxComplete(void);`                                                  |          `error_return_t`           |
+|                     Description                      |                    Function                     |      Return      |
+| :--------------------------------------------------: | :---------------------------------------------: | :--------------: |
+|             Remove all pending massages              |               `Luos_Flush(void);`               |      `void`      |
+|                 Send a Luos message                  | `Luos_SendMsg(service_t *service, msg_t *msg);` | `error_return_t` |
+| Allow to know if all TX messages have been processed |            `Luos_TxComplete(void);`             | `error_return_t` |
 
 ## Luos polling message management functions (please consider using callback instead)
-|                        Description                  |                                       Function                                               |               Return                |
-| :-----------------------------------------------:   | :------------------------------------------------------------------------------------------: | :---------------------------------: |
-|                    Read a Luos message              |               `Luos_ReadMsg(service_t *service, msg_t *msg_to_write);`                       |          `error_return_t`           |
-| Read a Luos message comming from a specific service | `Luos_ReadFromService(service_t *service, uint16_t id, msg_t *msg_to_write);`                |          `error_return_t`           |
-|          Get the number of available messages       | `Luos_NbrAvailableMsg(void);`                                                                |          `uint16_t`                 |
+
+|                     Description                     |                                   Function                                    |      Return      |
+| :-------------------------------------------------: | :---------------------------------------------------------------------------: | :--------------: |
+|                 Read a Luos message                 |           `Luos_ReadMsg(service_t *service, msg_t *msg_to_write);`            | `error_return_t` |
+| Read a Luos message comming from a specific service | `Luos_ReadFromService(service_t *service, uint16_t id, msg_t *msg_to_write);` | `error_return_t` |
+|     Read a Luos message with a specific command     |   `Luos_ReadFromCmd(service_t *service, uint16_t id, msg_t *msg_to_write);`   | `error_return_t` |
+|        Get the number of available messages         |                         `Luos_NbrAvailableMsg(void);`                         |    `uint16_t`    |
 
 ## Luos timestamp management functions
-|                        Description                                 |                                       Function                                               |               Return                |
-| :--------------------------------------------------------:         | :------------------------------------------------------------------------------------------: | :---------------------------------: |
-|              Get the current timestamp                             |    `Luos_Timestamp(void);`                                                                   |          `time_luos_t`              |
-|              Return true if the given message is timestamped       |    `Luos_IsMsgTimstamped(const msg_t *msg);`                                                 |          `bool`                     |
-|              Extract the timestamp from a message                  |    `Luos_GetMsgTimestamp(msg_t *msg);`                                                       |          `time_luos_t`              |
-|              Send a timestamped Luos message                       |    `Luos_SendTimestampMsg(service_t *service, msg_t *msg, time_luos_t timestamp);`           |          `error_return_t`           |
 
+|                   Description                   |                                    Function                                     |      Return      |
+| :---------------------------------------------: | :-----------------------------------------------------------------------------: | :--------------: |
+|            Get the current timestamp            |                             `Luos_Timestamp(void);`                             |  `time_luos_t`   |
+| Return true if the given message is timestamped |                    `Luos_IsMsgTimstamped(const msg_t *msg);`                    |      `bool`      |
+|      Extract the timestamp from a message       |                       `Luos_GetMsgTimestamp(msg_t *msg);`                       |  `time_luos_t`   |
+|         Send a timestamped Luos message         | `Luos_SendTimestampMsg(service_t *service, msg_t *msg, time_luos_t timestamp);` | `error_return_t` |
 
 ## Luos big data management functions
-|                        Description                                 |                                       Function                                               |               Return                |
-| :--------------------------------------------------------:         | :------------------------------------------------------------------------------------------: | :---------------------------------: |
-|      Send the remaining data in case of long messages              |    `Luos_SendData(service_t *service, msg_t *msg, void *bin_data, uint16_t size);`           |               `void`                |
-|    Receive the remaining data in case of long messages             |          `Luos_ReceiveData(service_t *service, msg_t *msg, void *bin_data);`                 | `data size at the end of reception` |
+
+|                     Description                     |                                    Function                                     |               Return                |
+| :-------------------------------------------------: | :-----------------------------------------------------------------------------: | :---------------------------------: |
+|  Send the remaining data in case of long messages   | `Luos_SendData(service_t *service, msg_t *msg, void *bin_data, uint16_t size);` |               `void`                |
+| Receive the remaining data in case of long messages |       `Luos_ReceiveData(service_t *service, msg_t *msg, void *bin_data);`       | `data size at the end of reception` |
 
 ## Luos pub/sub functions
-|                        Description                                 |                                       Function                                               |               Return                |
-| :--------------------------------------------------------:         | :------------------------------------------------------------------------------------------: | :---------------------------------: |
-|       Subscribe to a new topic for pub/sub messages                |              `Luos_Subscribe(service_t *service, uint16_t topic);`                           |          `error_return_t`           |
-|       Unsubscribe from a topic for pub/sub messages                |             `Luos_Unsubscribe(service_t *service, uint16_t topic);`                          |          `error_return_t`           |
+
+|                  Description                  |                        Function                         |      Return      |
+| :-------------------------------------------: | :-----------------------------------------------------: | :--------------: |
+| Subscribe to a new topic for pub/sub messages |  `Luos_Subscribe(service_t *service, uint16_t topic);`  | `error_return_t` |
+| Unsubscribe from a topic for pub/sub messages | `Luos_Unsubscribe(service_t *service, uint16_t topic);` | `error_return_t` |
 
 ## Luos streaming messaging management functions
-|                        Description                                 |                                       Function                                                             |               Return                |
-| :--------------------------------------------------------:         | :--------------------------------------------------------------------------------------------------------: | :---------------------------------: |
-|          Send data stored in a streaming channel                   |  `Luos_SendStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);`                        |               `void`                |
-| Send a specific quantity of data stored in a streaming channel     |  `Luos_SendStreamingSize(service_t *service, msg_t *msg, streaming_channel_t *stream, uint32_t max_size);` |               `void`                |
-|           Receive data from a streaming channel                    | `Luos_ReceiveStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);`                      |          `error_return_t`           |
+
+|                          Description                           |                                                 Function                                                  |      Return      |
+| :------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: | :--------------: |
+|            Send data stored in a streaming channel             |            `Luos_SendStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);`             |      `void`      |
+| Send a specific quantity of data stored in a streaming channel | `Luos_SendStreamingSize(service_t *service, msg_t *msg, streaming_channel_t *stream, uint32_t max_size);` |      `void`      |
+|             Receive data from a streaming channel              |           `Luos_ReceiveStreaming(service_t *service, msg_t *msg, streaming_channel_t *stream);`           | `error_return_t` |
 
 ## Luos streaming buffer functions
-|                  Description                   |                             Function                             |       Return       |
-| :--------------------------------------------: | :--------------------------------------------------------------: | :----------------: |
-|  Create a streaming rung buffer                | `Streaming_CreateChannel(const void *ring_buffer, uint16_t ring_buffer_size, uint8_t data_size);` | `streaming_channel_t`  |
-|            Reset the streaming buffer          |     `Streaming_ResetChannel(streaming_channel_t *stream);`       | `void` |
-|      Write samples in the buffer               |       `Streaming_PutSample(streaming_channel_t *stream, const void *data, uint16_t size);`       | `uint16_t` |
-|      Get samples from the buffer               |   `Streaming_GetSample(streaming_channel_t *stream, void *data, uint16_t size);`    | `uint16_t` |
-| Get the number of available sample in the buffer |   `Streaming_GetAvailableSampleNB(streaming_channel_t *stream);`    | `uint16_t` |
-| Get the number of available before the buffer end|     `Streaming_GetAvailableSampleNBUntilEndBuffer(streaming_channel_t *stream);`      | `uint16_t` |
-| Indicate to the streaming structure that samples have been added to the buffer (this is mostly used with DMA) | `Streaming_AddAvailableSampleNB(streaming_channel_t *stream, uint16_t size);` | `uint16_t` |
-| Indicate to the streaming structure that samples have been consumed from the buffer (this is mostly used with DMA) | `Streaming_RmvAvailableSampleNB(streaming_channel_t *stream, uint16_t size);` | `uint16_t` |
+
+|                                                    Description                                                     |                                             Function                                              |        Return         |
+| :----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: | :-------------------: |
+|                                           Create a streaming rung buffer                                           | `Streaming_CreateChannel(const void *ring_buffer, uint16_t ring_buffer_size, uint8_t data_size);` | `streaming_channel_t` |
+|                                             Reset the streaming buffer                                             |                      `Streaming_ResetChannel(streaming_channel_t *stream);`                       |        `void`         |
+|                                            Write samples in the buffer                                             |       `Streaming_PutSample(streaming_channel_t *stream, const void *data, uint16_t size);`        |      `uint16_t`       |
+|                                            Get samples from the buffer                                             |          `Streaming_GetSample(streaming_channel_t *stream, void *data, uint16_t size);`           |      `uint16_t`       |
+|                                  Get the number of available sample in the buffer                                  |                  `Streaming_GetAvailableSampleNB(streaming_channel_t *stream);`                   |      `uint16_t`       |
+|                                 Get the number of available before the buffer end                                  |           `Streaming_GetAvailableSampleNBUntilEndBuffer(streaming_channel_t *stream);`            |      `uint16_t`       |
+|   Indicate to the streaming structure that samples have been added to the buffer (this is mostly used with DMA)    |           `Streaming_AddAvailableSampleNB(streaming_channel_t *stream, uint16_t size);`           |      `uint16_t`       |
+| Indicate to the streaming structure that samples have been consumed from the buffer (this is mostly used with DMA) |           `Streaming_RmvAvailableSampleNB(streaming_channel_t *stream, uint16_t size);`           |      `uint16_t`       |

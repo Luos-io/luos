@@ -1,8 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const withTM = require('next-transpile-modules')(['@packages/services', '@packages/ui']);
-
 /** @type {import('next').NextConfig} */
-module.exports = withTM({
+module.exports = {
   reactStrictMode: true,
   basePath: '/app',
   async redirects() {
@@ -15,4 +12,5 @@ module.exports = withTM({
       },
     ];
   },
-});
+  transpilePackages: ['@packages/services', '@packages/ui'],
+};

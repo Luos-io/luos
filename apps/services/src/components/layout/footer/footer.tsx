@@ -60,7 +60,7 @@ export const Footer = () => {
               className={styles.rsLogo}
               width={32}
               height={32}
-              src="/assets/images/footer/discord.png"
+              src="/app/assets/images/footer/discord.png"
               alt="Join our Discord community"
             />
           </a>
@@ -69,7 +69,7 @@ export const Footer = () => {
               className={styles.rsLogo}
               width={32}
               height={32}
-              src="/assets/images/footer/reddit.png"
+              src="/app/assets/images/footer/reddit.png"
               alt="Follow us on Reddit"
             />
           </a>
@@ -78,7 +78,7 @@ export const Footer = () => {
               className={styles.rsLogo}
               width={32}
               height={32}
-              src="/assets/images/footer/twitter.png"
+              src="/app/assets/images/footer/twitter.png"
               alt="Follow us on Twitter"
             />
           </a>
@@ -87,7 +87,7 @@ export const Footer = () => {
               className={styles.rsLogo}
               width={32}
               height={32}
-              src="/assets/images/footer/linkedin.png"
+              src="/app/assets/images/footer/linkedin.png"
               alt="Follow us on LinkedIn"
             />
           </a>

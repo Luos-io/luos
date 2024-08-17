@@ -110,6 +110,6 @@ export default NextAuth({
     },
   },
   pages: {
-    signIn: 'app/auth/signin',
+    signIn: '/app/auth/signin',
   },
 });

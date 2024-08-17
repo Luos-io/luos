@@ -74,7 +74,7 @@ export const Profile = ({
         })),
       );
     }
-  }, [game?.badges]);
+  }, [game?.badges, addNotifications]);
 
   const handleChange = (panel: string) => (_event: SyntheticEvent, newExpanded: boolean) =>
     setExpanded(newExpanded ? panel : false);
@@ -290,7 +290,7 @@ export const Profile = ({
                       }}
                     >
                       <Image
-                        src={`/assets/images/user/badges/${image}`}
+                        src={`/app/assets/images/user/badges/${image}`}
                         width="72"
                         height="64"
                         alt={`badge: ${description}`}
